@@ -1,1 +1,43 @@
-{"id":"idle","steps":[]}
+{
+  "id": "warp-01",
+  "steps": [
+    {
+      "op": "restart-client"
+    },
+    {
+      "op": "login",
+      "account": "test1"
+    },
+    {
+      "op": "capture",
+      "name": "01-level11-lorencia"
+    },
+    {
+      "op": "chat",
+      "text": "/move Noria"
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "capture",
+      "name": "02-noria"
+    },
+    {
+      "op": "chat",
+      "text": "/move Lorencia"
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "capture",
+      "name": "03-return-lorencia"
+    },
+    {
+      "op": "snapshot"
+    }
+  ]
+}
