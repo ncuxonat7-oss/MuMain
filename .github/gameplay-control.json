@@ -1,14 +1,15 @@
 {
-  "id": "input-02",
+  "id": "warp-ui-03",
   "steps": [
     {
       "op": "click",
-      "x": 907,
-      "y": 695
+      "x": 695,
+      "y": 14
     },
     {
-      "op": "capture",
-      "name": "04-inventory-click"
+      "op": "click",
+      "x": 1000,
+      "y": 14
     },
     {
       "op": "key",
@@ -16,15 +17,35 @@
     },
     {
       "op": "capture",
-      "name": "05-map-menu-key"
+      "name": "07-move-window"
     },
     {
       "op": "key",
-      "text": "c"
+      "text": "{ENTER}"
     },
     {
       "op": "capture",
-      "name": "06-character-key"
+      "name": "08-chat-before"
+    },
+    {
+      "op": "key",
+      "text": "/move Noria"
+    },
+    {
+      "op": "capture",
+      "name": "09-chat-text"
+    },
+    {
+      "op": "key",
+      "text": "{ENTER}"
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "capture",
+      "name": "10-map-after-command"
     }
   ]
 }
