@@ -1,10 +1,26 @@
-# Current confirmed state and economical continuation
+# Current state — confirmed gameplay core and economical bulk validation
 
-GitHub browser access recovered on 2026-10-09. No application source or working resource package changes. Current confirmed state: test0Dk natural level 2, EXP 115, five earned points, STR 28, purchased Small Shield in bag slot 47. Latest preserved database: session 4 / run 37851961862 / artifact 11583409579.
+Updated 2026-10-08 23:49 UTC. Confirmed native Windows MuMain → pinned OpenMU → PostgreSQL → character → Lorencia.
 
-Prepared finite manual workflow `.github/workflows/finish-gameplay.yml`: reuse exact validated client, require existing pinned server cache (fail without rebuilding), restore latest session-4 database, verify expected state before allocating, add exactly three STR through real client UI, equip same purchased shield, restart/relog, capture authentic screenshots, assert saved EXP/level/STR/remaining points/shield slot and original item IDs, preserve final database even on failure. Maximum job 15 minutes; no live command polling, repeated combat, warp/shop repeats or 423-test repeat.
+## Last successful milestone
 
-Next action: run this one prepared smoke scenario and inspect its actual results. Then perform reusable bulk configuration/resource integrity checks using existing definitions/assets and prior audit; defer per-mechanic manual UI checks and optional party/trade to alpha. Do not label unverified mechanics working by default. Save significant completed stages to this repository and update this document. Work credit balance is not visible.
+Manual finite workflow `Finish Gameplay Smoke Test`, run **37860870710**, job **113596011554**, success. Workflow commit **52971f34461304a76587cfe3b6c694be239fc54d**. Reused validated client and server cache; no builds, no repeat of 423 tests, warp/shop/combat tests.
+
+Actual client allocated three earned points: STR 28 → 31, equipped the purchased Small Shield, restarted and logged in again. Screenshots `05-relogin-level-experience-strength.png` and `06-relogin-equipped-shield.png` show Lorencia and saved state. Database independently confirms level 2, EXP 115, STR 31, remaining points 2, purchased shield UUID `801da101-0000-760d-a605-a410efe9185d` in offhand slot 1. All 44 original item UUIDs retained.
+
+Latest recoverable database: run **37860870710**, artifact **11585339277**, `gameplay-final`, 11,495,834 bytes, SHA256 `bebf351e6a295dc15f9e47e9abe83aeb8653fbccbef401c2fcb8aa03bd137615`. Restore THIS latest artifact for further runtime work. Do not allocate STR again or restore older pre-equipment state.
+
+## Bulk check and current unresolved finding
+
+Read-only reusable Python checker `scripts/check-baseline-snapshot.py` checked captured 4,602 items, 118 stores, 1,117 stat attributes, 326 attribute definitions, and five selected characters. 13 of 14 checks passed. Two duplicate occupied anchor-slot groups require triage: store `00001000-00fb-0000-0000-000000000000`, slot 73; store `511da101-0000-7ce5-cdf0-9a7bbb02e86e`, slot 9. Neither is test0Dk inventory. Do not automatically delete or relocate items: ownership/context and slot semantics need verification. Report contains exact item UUIDs in JSON.
+
+This checks snapshot integrity, NOT all standard MU mechanics or a completion percentage. Maps/gates/spawns/shops/item definitions/drops/skills/quests and all client assets are not exported here. Previous `docs/baseline-content-audit.md` remains authoritative for static content evidence. Party/trade/guild/events/crafting remain runtime unverified.
+
+## Exact next action
+
+Economical next step: resolve the two duplicate-slot findings using existing definitions/snapshot, then add a read-only configuration/resource reference exporter and bulk validator for maps/gates/spawns/shops/items/skills. Avoid per-item GUI testing. Minimum two-client party/trade smoke can follow as one bounded runtime session; two native client instances are previously confirmed, their interaction is not.
+
+Do not rebuild/retest verified core. Existing stack/resources stay frozen. Do not broaden research or import resources. Before any costly CI/build/repeated session, explain necessity. Available Work credit balance is not visible; no automatic budget warning can be guaranteed. Save every milestone and exact next step here.
 
 ## Preserved prior checkpoint and evidence
 
