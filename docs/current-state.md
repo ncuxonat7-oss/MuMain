@@ -56,3 +56,6 @@ Artifact 11581969326 (`gameplay-combat-setup-01`) confirms test0Dk re-entered wi
 
 ### Session 4 milestone: real kill, EXP and item drop
 Artifact 11582392895 (`gameplay-combat-kill-02`), screenshots 29-first-combat and 30-combat-xp-level: Budge Dragon combat, “Obtained 22 Exp”, “Small Axe Obtained”, character level 1 EXP 22/100. Real dropped item was picked up with Space. No XP/stat grants. Latest success: kill + EXP + drop pickup. Next unfinished step: naturally reach level 2 (100 EXP), then allocate 3 STR, equip purchased Small Shield and relog. Character needs normal healing potions during continued combat.
+
+### Latest combat checkpoint before the next result
+Artifact 11582453969 (`gameplay-combat-safe-04`) proves another normal kill awarded 51 EXP and Vine Gloves was picked up. test0Dk now shows level 1, EXP 73/100, STR 28, HP 88/112, back safely at Lorencia (117,140). Healing potions were consumed normally. Next unfinished step: earn at least 27 additional EXP naturally, then add 3 STR, equip the already purchased shield and verify a relog. No new level or equipped-shield success is claimed yet.
