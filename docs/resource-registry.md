@@ -2,6 +2,17 @@
 Last verified: 2026-10-08. Canonical project record: ncuxonat7-oss/MuMain, docs/resource-registry.md.
 Scope: current OpenMU/MuMain prototype; narrow resource evaluation only. No purchases, no server-engine comparison.
 
+## Confirmed Lorencia runtime result — 2026-10-08
+
+This result supersedes earlier runtime-status observations below. Full recovery checkpoint: [current-state.md](current-state.md).
+
+- Existing 423-test Windows MuMain binary authenticated `test0`, selected `test0Dk`, and entered **Lorencia (149, 123)** on our pinned OpenMU with real **PostgreSQL 17.11**. No client rebuild or repeat tests.
+- Authentic `06-world-attempt.png` shows “Welcome to Lorencia” / “test0Dk entered the game”; client log confirms `Main Scene init success` at 19:18:58 UTC. Established game connection to 127.127.127.127:55902 and server database connections are recorded.
+- Run: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37830707804 ; workflow commit `3b7088f1ca44e056dea5169435dbc4959d3e39b1`.
+- Evidence artifact `lorencia-runtime-probe`, ID `11573356702`, ZIP SHA256 `1dd7ffe7478abe7686682928f1b18ef8fc68c7532e5e9a9b385c2ba2bd7a92d7`; expires 2027-01-06, additionally preserved as user deliverables.
+- Prototype assets were actually used under the recorded prototype authorization. This does not clear commercial distribution rights. Missing models for other maps did not block this Lorencia scenario.
+- Session was ephemeral CI, cleaned up after capture; no persistent hosted service deployed. Requested stage completed; stop further builds/research.
+
 ## CURRENT PROTOTYPE RESOURCES
 ### Current execution status
 - OpenMU source: https://github.com/MUnique/OpenMU at d067b3c11c23c3145de6e2c76201ab9a93b267c8; local working tree clean at audit.
@@ -138,3 +149,4 @@ Resource replacement boundary: runtime archive already omits Data/fonts and upst
 
 
 Execution attempt: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37827108294 ; workflow commit e5dad197bd7ee106e0015ed504c9e971f2057b34. Windows runner uses installed PostgreSQL 17; actual database/client success still pending.
+
