@@ -1,172 +1,17 @@
 {
-  "id": "combat-short-06",
+  "id": "combat-scene-07",
   "steps": [
     {
       "op": "select-client",
       "name": "one"
     },
     {
-      "op": "chat",
-      "text": "/move test0Dk Lorencia 200 130"
+      "op": "capture",
+      "name": "39-current-monster-scene"
     },
     {
       "op": "select-client",
       "name": "two"
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 490,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "hold",
-      "x": 530,
-      "y": 375,
-      "ms": 700
-    },
-    {
-      "op": "key",
-      "vk": 32
-    },
-    {
-      "op": "capture",
-      "name": "37-short-click-combat"
-    },
-    {
-      "op": "select-client",
-      "name": "one"
-    },
-    {
-      "op": "chat",
-      "text": "/move test0Dk Lorencia 117 140"
-    },
-    {
-      "op": "select-client",
-      "name": "two"
-    },
-    {
-      "op": "key",
-      "vk": 67
-    },
-    {
-      "op": "capture",
-      "name": "38-natural-level-check"
-    },
-    {
-      "op": "key",
-      "vk": 67
-    },
-    {
-      "op": "snapshot"
     }
   ]
 }
