@@ -1,0 +1,150 @@
+name: Lorencia Runtime Probe
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  runtime:
+    runs-on: windows-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Reuse validated client
+        uses: actions/download-artifact@v4
+        with:
+          name: mu-client-windows-native-x64-release-editor-off-no-data-main
+          run-id: 37813650810
+          github-token: ${{ github.token }}
+          path: client-download
+      - name: Stage matching resources
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force client,evidence | Out-Null
+          tar -xzf client-download/MuMain-windows-native-x64-release-editor-off-no-data.tar.gz -C client
+          if ($LASTEXITCODE) { throw 'Client extraction failed' }
+          $resourceName = 'MuMain-data-4b0ab29c58b27fc4.tar.gz'
+          $releaseBase = 'https://github.com/sven-n/MuMain/releases/download/data-4b0ab29c58b27fc4'
+          Invoke-WebRequest "$releaseBase/$resourceName" -OutFile $resourceName
+          Invoke-WebRequest "$releaseBase/$resourceName.sha256" -OutFile "$resourceName.sha256"
+          $expected = ((Get-Content "$resourceName.sha256" -Raw).Trim() -split '\s+')[0]
+          $actual = (Get-FileHash $resourceName -Algorithm SHA256).Hash
+          if ($actual -ne $expected) { throw 'Resource SHA256 mismatch' }
+          "Resource archive SHA256: $actual" | Set-Content evidence/resources.txt
+          $entries = @(tar -tzf $resourceName)
+          if ($LASTEXITCODE) { throw 'Resource archive listing failed' }
+          if ($entries | Where-Object { $_ -match '(^/|(^|/)\.\.(/|$)|\.(exe|dll|ps1|bat|cmd)$)' }) {
+            throw 'Unexpected executable or unsafe path in resources'
+          }
+          tar -xzf $resourceName -C client
+          if ($LASTEXITCODE) { throw 'Resource extraction failed' }
+          if (!(Test-Path client/Data) -or !(Test-Path client/fonts)) { throw 'Missing resource directories' }
+          @'
+          [LOGIN]
+          RememberMe=0
+          Language=Eng
+          [Window]
+          Width=1024
+          Height=768
+          Windowed=1
+          [Audio]
+          SoundVolume=0
+          MusicVolume=0
+          [CONNECTION SETTINGS]
+          ServerIP=127.127.127.127
+          ServerPort=44406
+          [UI]
+          Locale=en
+          [Render]
+          VSync=0
+          '@ | Set-Content client/config.ini
+      - name: Checkout pinned OpenMU
+        uses: actions/checkout@v4
+        with:
+          repository: MUnique/OpenMU
+          ref: d067b3c11c23c3145de6e2c76201ab9a93b267c8
+          path: server-source
+      - name: Build server for Windows
+        shell: pwsh
+        run: |
+          dotnet build server-source/src/Startup/MUnique.OpenMU.Startup.csproj -c Release -p:ci=true > evidence/server-build.log 2>&1
+          if ($LASTEXITCODE) {
+            Get-Content evidence/server-build.log -Tail 80
+            throw 'Pinned server build failed'
+          }
+      - name: Start PostgreSQL and test real client
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $evidence = Join-Path $PWD evidence
+          $clientDirectory = Join-Path $PWD client
+          $serverDirectory = Join-Path $PWD server-source/src/Startup/bin/Release
+          $pgBin = $env:PGBIN
+          if (!$pgBin) { $pgBin = 'C:\Program Files\PostgreSQL\17\bin' }
+          $pgData = Join-Path $env:RUNNER_TEMP mu-prototype-pg
+          & "$pgBin/initdb.exe" -D $pgData -U postgres -A trust --no-locale > "$evidence/pg-init.log" 2>&1
+          if ($LASTEXITCODE) { throw 'PostgreSQL initialization failed' }
+          & "$pgBin/pg_ctl.exe" -D $pgData -l "$evidence/postgres.log" -o '-h 127.0.0.1 -p 5432' -w start
+          if ($LASTEXITCODE) { throw 'PostgreSQL start failed' }
+          & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d postgres -c 'select version();' > "$evidence/database-version.txt"
+          $env:DB_ADMIN_USER = 'postgres'
+          $env:DB_ADMIN_PW = 'admin'
+          $env:DB_HOST = '127.0.0.1'
+          $env:RESOLVE_IP = '127.127.127.127'
+          $env:ASPNETCORE_URLS = 'http://127.0.0.1:18080'
+          $server = Start-Process dotnet -ArgumentList 'MUnique.OpenMU.Startup.dll','-autostart','-adminpanel:disabled','-resolveIP:loopback' -WorkingDirectory $serverDirectory -RedirectStandardOutput "$evidence/server.out.log" -RedirectStandardError "$evidence/server.err.log" -PassThru
+          $ready = $false
+          $serverDeadline = [DateTime]::UtcNow.AddMinutes(7)
+          while ([DateTime]::UtcNow -lt $serverDeadline) {
+            if ($server.HasExited) { throw "OpenMU exited: $($server.ExitCode)" }
+            $probe = [Net.Sockets.TcpClient]::new()
+            try {
+              $probe.Connect('127.0.0.1',44406)
+              $ready = $true
+              break
+            } catch { Start-Sleep -Seconds 2 } finally { $probe.Dispose() }
+          }
+          if (!$ready) { throw 'OpenMU extended connect server did not start' }
+          & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d openmu -c "select table_schema,table_name from information_schema.tables where table_name in ('Account','Character','SystemConfiguration');" > "$evidence/database-tables.txt"
+          Add-Type -AssemblyName System.Windows.Forms
+          Add-Type -AssemblyName System.Drawing
+          $desktop = [Windows.Forms.SystemInformation]::VirtualScreen
+          "Desktop: $desktop; interactive: $([Environment]::UserInteractive)" | Set-Content "$evidence/desktop.txt"
+          Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,VideoModeDescription | Format-List | Out-File "$evidence/gpu.txt"
+          $env:SDL_GPU_DRIVER = 'direct3d12'
+          $client = Start-Process "$clientDirectory/Main.exe" -WorkingDirectory $clientDirectory -ArgumentList 'connect','/u127.127.127.127','/p44406' -RedirectStandardOutput "$evidence/client.out.log" -RedirectStandardError "$evidence/client.err.log" -PassThru
+          $captureTimes = @(10,30,60)
+          $previousTime = 0
+          foreach ($captureTime in $captureTimes) {
+            Start-Sleep -Seconds ($captureTime - $previousTime)
+            $previousTime = $captureTime
+            $client.Refresh()
+            $status = [ordered]@{ seconds=$captureTime; pid=$client.Id; exited=$client.HasExited; title=$client.MainWindowTitle; handle=$client.MainWindowHandle.ToInt64() }
+            if ($client.HasExited) { $status.exitCode = $client.ExitCode }
+            $status | ConvertTo-Json -Compress | Add-Content "$evidence/client-status.jsonl"
+            $bitmap = [Drawing.Bitmap]::new($desktop.Width,$desktop.Height)
+            $graphics = [Drawing.Graphics]::FromImage($bitmap)
+            try {
+              $graphics.CopyFromScreen($desktop.Left,$desktop.Top,0,0,$bitmap.Size)
+              $bitmap.Save("$evidence/desktop-$captureTime.png",[Drawing.Imaging.ImageFormat]::Png)
+            } finally { $graphics.Dispose(); $bitmap.Dispose() }
+          }
+          Get-NetTCPConnection | Where-Object { $_.OwningProcess -in @($server.Id,$client.Id) } | Select-Object LocalAddress,LocalPort,RemoteAddress,RemotePort,State,OwningProcess | ConvertTo-Json | Set-Content "$evidence/connections.json"
+          Get-ChildItem $clientDirectory -File -Recurse -Include '*.log' | ForEach-Object {
+            Copy-Item $_.FullName "$evidence/client-$($_.Name)" -Force
+          }
+          if (!$client.HasExited) { Stop-Process -Id $client.Id }
+          Stop-Process -Id $server.Id
+          & "$pgBin/pg_ctl.exe" -D $pgData -m fast -w stop
+      - name: Preserve authentic execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lorencia-runtime-probe
+          path: evidence
+          if-no-files-found: error
+
