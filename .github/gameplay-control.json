@@ -1,27 +1,18 @@
 {
-  "id": "merchant-walk-04",
+  "id": "shop-open-05",
   "steps": [
     {
       "op": "click",
-      "x": 80,
-      "y": 100
-    },
-    {
-      "op": "capture",
-      "name": "22-town-walk-first"
-    },
-    {
-      "op": "click",
-      "x": 80,
-      "y": 100
+      "x": 330,
+      "y": 55
     },
     {
       "op": "wait",
-      "seconds": 3
+      "seconds": 4
     },
     {
       "op": "capture",
-      "name": "23-standard-merchants-area"
+      "name": "24-hanzo-shop-attempt"
     }
   ]
 }
