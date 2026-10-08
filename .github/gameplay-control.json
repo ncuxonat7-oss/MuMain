@@ -1,13 +1,27 @@
 {
-  "id": "combat-level-03",
+  "id": "combat-safe-04",
   "steps": [
     {
-      "op": "key",
-      "vk": 81
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "chat",
+      "text": "/move test0Dk Lorencia 200 130"
+    },
+    {
+      "op": "select-client",
+      "name": "two"
     },
     {
       "op": "key",
       "vk": 81
+    },
+    {
+      "op": "hold",
+      "x": 465,
+      "y": 422,
+      "ms": 5000
     },
     {
       "op": "key",
@@ -16,8 +30,8 @@
     {
       "op": "hold",
       "x": 500,
-      "y": 375,
-      "ms": 10000
+      "y": 390,
+      "ms": 5000
     },
     {
       "op": "key",
@@ -26,8 +40,8 @@
     {
       "op": "hold",
       "x": 500,
-      "y": 375,
-      "ms": 10000
+      "y": 390,
+      "ms": 5000
     },
     {
       "op": "key",
@@ -36,8 +50,8 @@
     {
       "op": "hold",
       "x": 500,
-      "y": 375,
-      "ms": 10000
+      "y": 390,
+      "ms": 5000
     },
     {
       "op": "key",
@@ -46,16 +60,52 @@
     {
       "op": "hold",
       "x": 500,
-      "y": 375,
-      "ms": 10000
+      "y": 390,
+      "ms": 5000
     },
     {
       "op": "key",
       "vk": 81
+    },
+    {
+      "op": "hold",
+      "x": 500,
+      "y": 390,
+      "ms": 5000
+    },
+    {
+      "op": "key",
+      "vk": 81
+    },
+    {
+      "op": "hold",
+      "x": 500,
+      "y": 390,
+      "ms": 5000
+    },
+    {
+      "op": "key",
+      "vk": 81
+    },
+    {
+      "op": "key",
+      "vk": 32
     },
     {
       "op": "capture",
-      "name": "31-combat-continue"
+      "name": "33-combat-round2"
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "chat",
+      "text": "/move test0Dk Lorencia 117 140"
+    },
+    {
+      "op": "select-client",
+      "name": "two"
     },
     {
       "op": "key",
@@ -63,7 +113,7 @@
     },
     {
       "op": "capture",
-      "name": "32-natural-level-check"
+      "name": "34-safe-level-check"
     },
     {
       "op": "key",
