@@ -1,0 +1,317 @@
+name: Finish Gameplay Smoke Test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  runtime:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Reuse validated client
+        uses: actions/download-artifact@v4
+        with:
+          name: mu-client-windows-native-x64-release-editor-off-no-data-main
+          run-id: 37813650810
+          github-token: ${{ github.token }}
+          path: client-download
+      - name: Stage matching resources
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force client,evidence | Out-Null
+          tar -xzf client-download/MuMain-windows-native-x64-release-editor-off-no-data.tar.gz -C client
+          if ($LASTEXITCODE) { throw 'Client extraction failed' }
+          $resourceName = 'MuMain-data-4b0ab29c58b27fc4.tar.gz'
+          $releaseBase = 'https://github.com/sven-n/MuMain/releases/download/data-4b0ab29c58b27fc4'
+          Invoke-WebRequest "$releaseBase/$resourceName" -OutFile $resourceName
+          Invoke-WebRequest "$releaseBase/$resourceName.sha256" -OutFile "$resourceName.sha256"
+          $expected = ((Get-Content "$resourceName.sha256" -Raw).Trim() -split '\s+')[0]
+          $actual = (Get-FileHash $resourceName -Algorithm SHA256).Hash
+          if ($actual -ne $expected) { throw 'Resource SHA256 mismatch' }
+          "Resource archive SHA256: $actual" | Set-Content evidence/resources.txt
+          Get-FileHash client/Main.exe,client/MUnique.Client.Library.dll -Algorithm SHA256 | Format-List | Out-File evidence/client-binary-hashes.txt
+          $entries = @(tar -tzf $resourceName)
+          if ($LASTEXITCODE) { throw 'Resource archive listing failed' }
+          if ($entries | Where-Object { $_ -match '(^/|(^|/)\.\.(/|$)|\.(exe|dll|ps1|bat|cmd)$)' }) {
+            throw 'Unexpected executable or unsafe path in resources'
+          }
+          tar -xzf $resourceName -C client
+          if ($LASTEXITCODE) { throw 'Resource extraction failed' }
+          if (!(Test-Path client/Data) -or !(Test-Path client/fonts)) { throw 'Missing resource directories' }
+          @'
+          [LOGIN]
+          RememberMe=0
+          Language=Eng
+          [Window]
+          Width=1024
+          Height=768
+          Windowed=1
+          [Audio]
+          SoundVolume=0
+          MusicVolume=0
+          [CONNECTION SETTINGS]
+          ServerIP=127.127.127.127
+          ServerPort=44406
+          [UI]
+          Locale=en
+          [Render]
+          VSync=0
+          '@ | Set-Content client/config.ini
+      - name: Checkout pinned OpenMU
+        uses: actions/checkout@v4
+        with:
+          repository: MUnique/OpenMU
+          ref: d067b3c11c23c3145de6e2c76201ab9a93b267c8
+          path: server-source
+      - name: Cache pinned server runtime
+        id: server-cache
+        uses: actions/cache@v4
+        with:
+          path: server-source/src/Startup/bin/Release
+          key: openmu-windows-runtime-d067b3c-net10-v1
+      - name: Require existing server cache
+        if: steps.server-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: throw 'Pinned server cache missing; no rebuild authorized for this smoke run'
+      - name: Restore saved gameplay database artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: gameplay-final
+          run-id: 37851961862
+          github-token: ${{ github.token }}
+          path: saved-gameplay
+      - name: Complete existing-character gameplay smoke
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $evidence = Join-Path $PWD evidence
+          $clientDirectory = Join-Path $PWD client
+          $serverDirectory = Join-Path $PWD server-source/src/Startup/bin/Release
+          $pgBin = $env:PGBIN
+          if (!$pgBin) { $pgBin = 'C:\Program Files\PostgreSQL\17\bin' }
+          $pgData = Join-Path $env:RUNNER_TEMP mu-prototype-pg
+          try {
+          & "$pgBin/initdb.exe" -D $pgData -U postgres -A trust --no-locale > "$evidence/pg-init.log" 2>&1
+          if ($LASTEXITCODE) { throw 'PostgreSQL initialization failed' }
+          & "$pgBin/pg_ctl.exe" -D $pgData -l "$evidence/postgres.log" -o '-h 127.0.0.1 -p 5432' -w start
+          if ($LASTEXITCODE) { throw 'PostgreSQL start failed' }
+          & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d postgres -c 'select version();' > "$evidence/database-version.txt"
+          & "$pgBin/createdb.exe" -h 127.0.0.1 -U postgres openmu
+          if ($LASTEXITCODE) { throw 'Create restore target database failed' }
+          & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d postgres -v ON_ERROR_STOP=1 -c "CREATE ROLE account LOGIN PASSWORD 'account'; CREATE ROLE config LOGIN PASSWORD 'config'; CREATE ROLE guild LOGIN PASSWORD 'guild'; CREATE ROLE friend LOGIN PASSWORD 'friend';" > "$evidence/database-roles.log" 2>&1
+          if ($LASTEXITCODE) { throw 'Restore standard OpenMU roles failed' }
+          & "$pgBin/pg_restore.exe" --exit-on-error -h 127.0.0.1 -U postgres -d openmu saved-gameplay/gameplay-test-db.dump > "$evidence/database-restore.log" 2>&1
+          if ($LASTEXITCODE) { throw 'Restore previous gameplay database failed' }
+          $env:DB_ADMIN_USER = 'postgres'
+          $env:DB_ADMIN_PW = 'admin'
+          $env:DB_HOST = '127.0.0.1'
+          $env:RESOLVE_IP = '127.127.127.127'
+          $env:ASPNETCORE_URLS = 'http://127.0.0.1:18080'
+          $server = Start-Process dotnet -ArgumentList 'MUnique.OpenMU.Startup.dll','-autostart','-adminpanel:disabled','-resolveIP:loopback' -WorkingDirectory $serverDirectory -RedirectStandardOutput "$evidence/server.out.log" -RedirectStandardError "$evidence/server.err.log" -PassThru
+          $ready = $false
+          $serverDeadline = [DateTime]::UtcNow.AddMinutes(7)
+          while ([DateTime]::UtcNow -lt $serverDeadline) {
+            if ($server.HasExited) { throw "OpenMU exited: $($server.ExitCode)" }
+            $probe = [Net.Sockets.TcpClient]::new()
+            try {
+              $probe.Connect('127.0.0.1',44406)
+              $ready = $true
+              break
+            } catch { Start-Sleep -Seconds 2 } finally { $probe.Dispose() }
+          }
+          if (!$ready) { throw 'OpenMU extended connect server did not start' }
+          & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d openmu -c "select table_schema,table_name from information_schema.tables where table_name in ('Account','Character','SystemConfiguration');" > "$evidence/database-tables.txt"
+          Add-Type -AssemblyName System.Windows.Forms
+          Add-Type -AssemblyName System.Drawing
+          $desktop = [Windows.Forms.SystemInformation]::VirtualScreen
+          "Desktop: $desktop; interactive: $([Environment]::UserInteractive)" | Set-Content "$evidence/desktop.txt"
+          Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,VideoModeDescription | Format-List | Out-File "$evidence/gpu.txt"
+          $env:SDL_GPU_DRIVER = 'direct3d12'
+          $client = Start-Process "$clientDirectory/Main.exe" -WorkingDirectory $clientDirectory -ArgumentList 'connect','/u127.127.127.127','/p44406' -RedirectStandardOutput "$evidence/client.out.log" -RedirectStandardError "$evidence/client.err.log" -PassThru
+          Add-Type @'
+          using System;
+          using System.Runtime.InteropServices;
+          public static class PrototypeInput {
+            [StructLayout(LayoutKind.Sequential)] public struct Point { public int X; public int Y; }
+            [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr window);
+            [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr window, ref Point point);
+            [DllImport("user32.dll")] public static extern bool SetCursorPos(int x, int y);
+            [DllImport("user32.dll")] public static extern void keybd_event(byte key,byte scan,uint flags,UIntPtr extra);
+            [DllImport("user32.dll")] public static extern void mouse_event(uint flags,uint x,uint y,uint data,UIntPtr extra);
+          }
+          '@
+          function Capture-Stage([string]$name) {
+            $client.Refresh()
+            $status = [ordered]@{ stage=$name; pid=$client.Id; exited=$client.HasExited; title=$client.MainWindowTitle; handle=$client.MainWindowHandle.ToInt64() }
+            if ($client.HasExited) { $status.exitCode = $client.ExitCode }
+            $status.activeClient = $script:activeClientName
+            $status.clients = @(foreach ($label in $script:clients.Keys) { $p=$script:clients[$label]; $p.Refresh(); @{name=$label;pid=$p.Id;exited=$p.HasExited;title=$p.MainWindowTitle} })
+            $status | ConvertTo-Json -Depth 5 -Compress | Add-Content "$evidence/client-status.jsonl"
+            $bitmap = [Drawing.Bitmap]::new($desktop.Width,$desktop.Height)
+            $graphics = [Drawing.Graphics]::FromImage($bitmap)
+            try {
+              $graphics.CopyFromScreen($desktop.Left,$desktop.Top,0,0,$bitmap.Size)
+              $bitmap.Save("$evidence/$name.png",[Drawing.Imaging.ImageFormat]::Png)
+            } finally { $graphics.Dispose(); $bitmap.Dispose() }
+          }
+          function Click-Client([int]$x,[int]$y) {
+            $client.Refresh()
+            if ($client.HasExited) { throw 'Client exited before input' }
+            [PrototypeInput]::SetForegroundWindow($client.MainWindowHandle) | Out-Null
+            $point = [PrototypeInput+Point]::new()
+            $point.X = $x
+            $point.Y = $y
+            [PrototypeInput]::ClientToScreen($client.MainWindowHandle,[ref]$point) | Out-Null
+            [PrototypeInput]::SetCursorPos($point.X,$point.Y) | Out-Null
+            Start-Sleep -Milliseconds 250
+            [PrototypeInput]::mouse_event(2,0,0,0,[UIntPtr]::Zero)
+            Start-Sleep -Milliseconds 180
+            [PrototypeInput]::mouse_event(4,0,0,0,[UIntPtr]::Zero)
+            Start-Sleep -Seconds 2
+          }
+          
+          function Snapshot-State([string]$name) {
+            $sql = @'
+          select row_to_json(c) from data."Character" c where "Name" in ('test0Dk','test1Dk','test2Dk','test300Dk','testgmDk');
+          select row_to_json(x) from information_schema.columns x where table_schema in ('data','config') and table_name in ('Character','StatAttribute','ItemStorage','Item','AttributeDefinition') order by table_schema,table_name,ordinal_position;
+          select row_to_json(x) from data."StatAttribute" x;
+          select row_to_json(x) from config."AttributeDefinition" x;
+          select row_to_json(x) from data."ItemStorage" x;
+          select row_to_json(x) from data."Item" x;
+          '@
+            & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d openmu -t -A -c $sql > "$evidence/$name-database.jsonl"
+            if ($LASTEXITCODE) { throw 'Read-only database snapshot failed' }
+          }
+          function Wait-ClientReady {
+            $deadline = [DateTime]::UtcNow.AddSeconds(60)
+            while ([DateTime]::UtcNow -lt $deadline) {
+              $client.Refresh()
+              if ($client.HasExited) { throw 'Client exited before ready' }
+              if ((Test-Path "$clientDirectory/MuError.log") -and (Select-String -Path "$clientDirectory/MuError.log" -Pattern 'Success Receive Server List' -Quiet)) { return }
+              Start-Sleep -Seconds 2
+            }
+            throw 'Client did not receive server list before timeout'
+          }
+          function Press-PhysicalKey([byte]$key) {
+            Focus-Client
+            [PrototypeInput]::keybd_event($key,0,0,[UIntPtr]::Zero)
+            Start-Sleep -Milliseconds 250
+            [PrototypeInput]::keybd_event($key,0,2,[UIntPtr]::Zero)
+            Start-Sleep -Milliseconds 400
+          }
+          function Type-AccountName([string]$name) {
+            foreach ($letter in $name.ToCharArray()) { [Windows.Forms.SendKeys]::SendWait([string]$letter); Start-Sleep -Milliseconds 80 }
+          }
+          function Login-TestAccount([string]$account) {
+            if ($account -notin @('test0','test1','test2','test300','testgm')) { throw 'Only named disposable seeded accounts permitted' }
+            Wait-ClientReady
+            Click-Client 334 301
+            Click-Client 512 301
+            Start-Sleep -Seconds 5
+            Click-Client 530 465
+            Type-AccountName $account
+            Click-Client 530 490
+            Type-AccountName $account
+            Click-Client 525 563
+            Start-Sleep -Seconds 10
+            Click-Client 110 550
+            Click-Client 891 694
+            Start-Sleep -Seconds 10
+          }
+          function Focus-Client {
+            $client.Refresh()
+            if ($client.HasExited) { throw 'Client exited' }
+            [PrototypeInput]::SetForegroundWindow($client.MainWindowHandle) | Out-Null
+            Start-Sleep -Milliseconds 200
+          }
+          function Restart-TestClient {
+            if (!$client.HasExited) { Stop-Process -Id $client.Id }
+            Start-Sleep -Seconds 5
+            Get-ChildItem $clientDirectory -File -Filter '*.log' | ForEach-Object { Copy-Item $_.FullName "$evidence/restart-$($_.Name)" -Force; Remove-Item $_.FullName }
+            $script:client = Start-Process "$clientDirectory/Main.exe" -WorkingDirectory $clientDirectory -ArgumentList 'connect','/u127.127.127.127','/p44406' -PassThru
+            $script:clients[$script:activeClientName] = $script:client
+            Start-Sleep -Seconds 12
+          }
+          function Read-GameState {
+            $sql = @'
+          select json_build_object(
+          'experience', c."Experience", 'points', c."LevelUpPoints",
+          'level', (select "Value" from data."StatAttribute" where "CharacterId"=c."Id" and "DefinitionId"='560931ad-0901-4342-b7f4-fd2e2fcc0563'),
+          'strength', (select "Value" from data."StatAttribute" where "CharacterId"=c."Id" and "DefinitionId"='123282fe-fead-448e-ad2c-baece939b4b1'),
+          'shieldSlot', (select "ItemSlot" from data."Item" where "Id"='801da101-0000-760d-a605-a410efe9185d' and "ItemStorageId"=c."InventoryId"),
+          'items', (select json_agg(i order by i."Id") from data."Item" i where i."ItemStorageId"=c."InventoryId"))
+          from data."Character" c where "Name"='test0Dk';
+          '@
+            $json = (& "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d openmu -t -A -v ON_ERROR_STOP=1 -c $sql) -join ''
+            if ($LASTEXITCODE) { throw 'Read persisted gameplay state failed' }
+            return ($json | ConvertFrom-Json)
+          }
+          try {
+            $script:activeClientName = 'one'
+            $script:clients = @{one=$client}
+            $script:clientDirectories = @{one=$clientDirectory}
+            $before = Read-GameState
+            $before | ConvertTo-Json -Depth 12 | Set-Content "$evidence/before-state.json"
+            if ($before.level -ne 2 -or $before.experience -ne 115 -or $before.points -ne 5 -or $before.strength -ne 28 -or $before.shieldSlot -ne 47) { throw 'Saved checkpoint differs; no stat allocation attempted' }
+            Snapshot-State 'before'
+            Login-TestAccount 'test0'
+            Press-PhysicalKey 67
+            Capture-Stage '01-level2-before-allocation'
+            1..3 | ForEach-Object { Click-Client 989 202 }
+            Capture-Stage '02-earned-strength31'
+            Press-PhysicalKey 67
+            Press-PhysicalKey 73
+            Capture-Stage '03-purchased-shield-before-equipment'
+            Click-Client 871 478
+            Click-Client 967 180
+            Capture-Stage '04-purchased-shield-equipped'
+            Restart-TestClient
+            Login-TestAccount 'test0'
+            Press-PhysicalKey 67
+            Capture-Stage '05-relogin-level-experience-strength'
+            Press-PhysicalKey 67
+            Press-PhysicalKey 73
+            Capture-Stage '06-relogin-equipped-shield'
+            Snapshot-State 'after-relogin'
+            $after = Read-GameState
+            $after | ConvertTo-Json -Depth 12 | Set-Content "$evidence/after-state.json"
+            $checks = [ordered]@{
+              level = ($after.level -eq 2)
+              experience = ($after.experience -eq 115)
+              strength = ($after.strength -eq 31)
+              remainingPoints = ($after.points -eq 2)
+              purchasedShieldEquipped = ($after.shieldSlot -eq 1)
+              inventoryItemCount = (@($before.items).Count -eq @($after.items).Count)
+              originalItemsPreserved = ((@($before.items.Id) -join ',') -eq (@($after.items.Id) -join ','))
+            }
+            $checks | ConvertTo-Json | Set-Content "$evidence/verification.json"
+            if ($checks.Values -contains $false) { throw 'Gameplay relog assertion failed; inspect authentic screenshots and database' }
+            'PASS: actual client stat allocation, purchased shield equipment and saved progress after relog' | Set-Content "$evidence/smoke-result.txt"
+          } finally {
+            if (!$client.HasExited) { Stop-Process -Id $client.Id };
+            foreach ($process in $script:clients.Values) { if (!$process.HasExited) { Stop-Process -Id $process.Id } }; Start-Sleep -Seconds 5
+            Snapshot-State 'final'
+            & "$pgBin/pg_dump.exe" -h 127.0.0.1 -U postgres -d openmu -Fc -f "$evidence/gameplay-test-db.dump"
+            Get-ChildItem $clientDirectory -File -Recurse -Include '*.log' | ForEach-Object { Copy-Item $_.FullName "$evidence/client-$($_.Name)" -Force }
+            if (!$server.HasExited) { Stop-Process -Id $server.Id }
+            & "$pgBin/pg_ctl.exe" -D $pgData -m fast -w stop
+          }
+          
+          } finally {
+            if ($client -and !$client.HasExited) { Stop-Process -Id $client.Id -ErrorAction SilentlyContinue }
+            if ($server -and !$server.HasExited) { Stop-Process -Id $server.Id -ErrorAction SilentlyContinue }
+            if (Test-Path "$pgData/postmaster.pid") { & "$pgBin/pg_ctl.exe" -D $pgData -m fast -w stop }
+          }
+      - name: Preserve final gameplay evidence and database
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gameplay-final
+          path: evidence
+          if-no-files-found: error
