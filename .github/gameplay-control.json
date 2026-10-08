@@ -1,25 +1,61 @@
 {
-  "id": "combat-kill-02",
+  "id": "combat-level-03",
   "steps": [
     {
-      "op": "hold",
-      "x": 465,
-      "y": 422,
-      "ms": 10000
+      "op": "key",
+      "vk": 81
     },
     {
-      "op": "capture",
-      "name": "29-first-combat"
+      "op": "key",
+      "vk": 81
+    },
+    {
+      "op": "key",
+      "vk": 81
     },
     {
       "op": "hold",
       "x": 500,
-      "y": 449,
+      "y": 375,
       "ms": 10000
     },
     {
       "op": "key",
-      "vk": 32
+      "vk": 81
+    },
+    {
+      "op": "hold",
+      "x": 500,
+      "y": 375,
+      "ms": 10000
+    },
+    {
+      "op": "key",
+      "vk": 81
+    },
+    {
+      "op": "hold",
+      "x": 500,
+      "y": 375,
+      "ms": 10000
+    },
+    {
+      "op": "key",
+      "vk": 81
+    },
+    {
+      "op": "hold",
+      "x": 500,
+      "y": 375,
+      "ms": 10000
+    },
+    {
+      "op": "key",
+      "vk": 81
+    },
+    {
+      "op": "capture",
+      "name": "31-combat-continue"
     },
     {
       "op": "key",
@@ -27,7 +63,7 @@
     },
     {
       "op": "capture",
-      "name": "30-combat-xp-level"
+      "name": "32-natural-level-check"
     },
     {
       "op": "key",
