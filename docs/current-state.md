@@ -53,3 +53,6 @@ Runtime session 4 dispatched: https://github.com/ncuxonat7-oss/MuMain/actions/ru
 
 ### Session 4 milestone: saved purchase and two connected clients
 Artifact 11581969326 (`gameplay-combat-setup-01`) confirms test0Dk re-entered with the purchased Small Shield and Zen 9,999,770; unchanged XP/level were captured before combat. Both real MuMain processes are running and the character has been placed by the GM at Lorencia (200,130), with live monsters visible. This is an explicit positioning fixture, not a normal warp claim. Latest confirmed step: persistence of the shop purchase and two-client connection. Next unfinished step: actual monster kill and EXP/drop.
+
+### Session 4 milestone: real kill, EXP and item drop
+Artifact 11582392895 (`gameplay-combat-kill-02`), screenshots 29-first-combat and 30-combat-xp-level: Budge Dragon combat, “Obtained 22 Exp”, “Small Axe Obtained”, character level 1 EXP 22/100. Real dropped item was picked up with Space. No XP/stat grants. Latest success: kill + EXP + drop pickup. Next unfinished step: naturally reach level 2 (100 EXP), then allocate 3 STR, equip purchased Small Shield and relog. Character needs normal healing potions during continued combat.
