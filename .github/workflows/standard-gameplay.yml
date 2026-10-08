@@ -1,0 +1,152 @@
+name: Standard Gameplay Session
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  runtime:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Reuse validated client
+        uses: actions/download-artifact@v4
+        with:
+          name: mu-client-windows-native-x64-release-editor-off-no-data-main
+          run-id: 37813650810
+          github-token: ${{ github.token }}
+          path: client-download
+      - name: Stage matching resources
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force client,evidence | Out-Null
+          tar -xzf client-download/MuMain-windows-native-x64-release-editor-off-no-data.tar.gz -C client
+          if ($LASTEXITCODE) { throw 'Client extraction failed' }
+          $resourceName = 'MuMain-data-4b0ab29c58b27fc4.tar.gz'
+          $releaseBase = 'https://github.com/sven-n/MuMain/releases/download/data-4b0ab29c58b27fc4'
+          Invoke-WebRequest "$releaseBase/$resourceName" -OutFile $resourceName
+          Invoke-WebRequest "$releaseBase/$resourceName.sha256" -OutFile "$resourceName.sha256"
+          $expected = ((Get-Content "$resourceName.sha256" -Raw).Trim() -split '\s+')[0]
+          $actual = (Get-FileHash $resourceName -Algorithm SHA256).Hash
+          if ($actual -ne $expected) { throw 'Resource SHA256 mismatch' }
+          "Resource archive SHA256: $actual" | Set-Content evidence/resources.txt
+          Get-FileHash client/Main.exe,client/MUnique.Client.Library.dll -Algorithm SHA256 | Format-List | Out-File evidence/client-binary-hashes.txt
+          $entries = @(tar -tzf $resourceName)
+          if ($LASTEXITCODE) { throw 'Resource archive listing failed' }
+          if ($entries | Where-Object { $_ -match '(^/|(^|/)\.\.(/|$)|\.(exe|dll|ps1|bat|cmd)$)' }) {
+            throw 'Unexpected executable or unsafe path in resources'
+          }
+          tar -xzf $resourceName -C client
+          if ($LASTEXITCODE) { throw 'Resource extraction failed' }
+          if (!(Test-Path client/Data) -or !(Test-Path client/fonts)) { throw 'Missing resource directories' }
+          @'
+          [LOGIN]
+          RememberMe=0
+          Language=Eng
+          [Window]
+          Width=1024
+          Height=768
+          Windowed=1
+          [Audio]
+          SoundVolume=0
+          MusicVolume=0
+          [CONNECTION SETTINGS]
+          ServerIP=127.127.127.127
+          ServerPort=44406
+          [UI]
+          Locale=en
+          [Render]
+          VSync=0
+          '@ | Set-Content client/config.ini
+      - name: Checkout pinned OpenMU
+        uses: actions/checkout@v4
+        with:
+          repository: MUnique/OpenMU
+          ref: d067b3c11c23c3145de6e2c76201ab9a93b267c8
+          path: server-source
+      - name: Cache pinned server runtime
+        id: server-cache
+        uses: actions/cache@v4
+        with:
+          path: server-source/src/Startup/bin/Release
+          key: openmu-windows-runtime-d067b3c-net10-v1
+      - name: Build server for Windows
+        if: steps.server-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: |
+          dotnet build server-source/src/Startup/MUnique.OpenMU.Startup.csproj -c Release -p:ci=true > evidence/server-build.log 2>&1
+          if ($LASTEXITCODE) {
+            Get-Content evidence/server-build.log -Tail 80
+            throw 'Pinned server build failed'
+          }
+      - name: Prepare official artifact SDK
+        shell: pwsh
+        run: |
+          npm install --prefix harness --no-audit --no-fund @actions/artifact@2
+          if ($LASTEXITCODE) { throw 'Artifact SDK installation failed' }
+      - name: Live existing-binary gameplay session
+        uses: actions/github-script@v7
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const {spawn} = require('child_process');
+            const {DefaultArtifactClient} = require(path.resolve('harness/node_modules/@actions/artifact'));
+            const artifact = new DefaultArtifactClient();
+            const psSource = "$ErrorActionPreference = 'Stop'\n$evidence = Join-Path $PWD evidence\n$clientDirectory = Join-Path $PWD client\n$serverDirectory = Join-Path $PWD server-source/src/Startup/bin/Release\n$pgBin = $env:PGBIN\nif (!$pgBin) { $pgBin = 'C:\\Program Files\\PostgreSQL\\17\\bin' }\n$pgData = Join-Path $env:RUNNER_TEMP mu-prototype-pg\n& \"$pgBin/initdb.exe\" -D $pgData -U postgres -A trust --no-locale > \"$evidence/pg-init.log\" 2>&1\nif ($LASTEXITCODE) { throw 'PostgreSQL initialization failed' }\n& \"$pgBin/pg_ctl.exe\" -D $pgData -l \"$evidence/postgres.log\" -o '-h 127.0.0.1 -p 5432' -w start\nif ($LASTEXITCODE) { throw 'PostgreSQL start failed' }\n& \"$pgBin/psql.exe\" -h 127.0.0.1 -U postgres -d postgres -c 'select version();' > \"$evidence/database-version.txt\"\n$env:DB_ADMIN_USER = 'postgres'\n$env:DB_ADMIN_PW = 'admin'\n$env:DB_HOST = '127.0.0.1'\n$env:RESOLVE_IP = '127.127.127.127'\n$env:ASPNETCORE_URLS = 'http://127.0.0.1:18080'\n$server = Start-Process dotnet -ArgumentList 'MUnique.OpenMU.Startup.dll','-autostart','-adminpanel:disabled','-resolveIP:loopback' -WorkingDirectory $serverDirectory -RedirectStandardOutput \"$evidence/server.out.log\" -RedirectStandardError \"$evidence/server.err.log\" -PassThru\n$ready = $false\n$serverDeadline = [DateTime]::UtcNow.AddMinutes(7)\nwhile ([DateTime]::UtcNow -lt $serverDeadline) {\n  if ($server.HasExited) { throw \"OpenMU exited: $($server.ExitCode)\" }\n  $probe = [Net.Sockets.TcpClient]::new()\n  try {\n    $probe.Connect('127.0.0.1',44406)\n    $ready = $true\n    break\n  } catch { Start-Sleep -Seconds 2 } finally { $probe.Dispose() }\n}\nif (!$ready) { throw 'OpenMU extended connect server did not start' }\n& \"$pgBin/psql.exe\" -h 127.0.0.1 -U postgres -d openmu -c \"select table_schema,table_name from information_schema.tables where table_name in ('Account','Character','SystemConfiguration');\" > \"$evidence/database-tables.txt\"\nAdd-Type -AssemblyName System.Windows.Forms\nAdd-Type -AssemblyName System.Drawing\n$desktop = [Windows.Forms.SystemInformation]::VirtualScreen\n\"Desktop: $desktop; interactive: $([Environment]::UserInteractive)\" | Set-Content \"$evidence/desktop.txt\"\nGet-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,VideoModeDescription | Format-List | Out-File \"$evidence/gpu.txt\"\n$env:SDL_GPU_DRIVER = 'direct3d12'\n$client = Start-Process \"$clientDirectory/Main.exe\" -WorkingDirectory $clientDirectory -ArgumentList 'connect','/u127.127.127.127','/p44406' -RedirectStandardOutput \"$evidence/client.out.log\" -RedirectStandardError \"$evidence/client.err.log\" -PassThru\nAdd-Type @'\nusing System;\nusing System.Runtime.InteropServices;\npublic static class PrototypeInput {\n  [StructLayout(LayoutKind.Sequential)] public struct Point { public int X; public int Y; }\n  [DllImport(\"user32.dll\")] public static extern bool SetForegroundWindow(IntPtr window);\n  [DllImport(\"user32.dll\")] public static extern bool ClientToScreen(IntPtr window, ref Point point);\n  [DllImport(\"user32.dll\")] public static extern bool SetCursorPos(int x, int y);\n  [DllImport(\"user32.dll\")] public static extern void keybd_event(byte key,byte scan,uint flags,UIntPtr extra);\n  [DllImport(\"user32.dll\")] public static extern void mouse_event(uint flags,uint x,uint y,uint data,UIntPtr extra);\n}\n'@\nfunction Capture-Stage([string]$name) {\n  $client.Refresh()\n  $status = [ordered]@{ stage=$name; pid=$client.Id; exited=$client.HasExited; title=$client.MainWindowTitle; handle=$client.MainWindowHandle.ToInt64() }\n  if ($client.HasExited) { $status.exitCode = $client.ExitCode }\n  $status | ConvertTo-Json -Compress | Add-Content \"$evidence/client-status.jsonl\"\n  $bitmap = [Drawing.Bitmap]::new($desktop.Width,$desktop.Height)\n  $graphics = [Drawing.Graphics]::FromImage($bitmap)\n  try {\n    $graphics.CopyFromScreen($desktop.Left,$desktop.Top,0,0,$bitmap.Size)\n    $bitmap.Save(\"$evidence/$name.png\",[Drawing.Imaging.ImageFormat]::Png)\n  } finally { $graphics.Dispose(); $bitmap.Dispose() }\n}\nfunction Click-Client([int]$x,[int]$y) {\n  $client.Refresh()\n  if ($client.HasExited) { throw 'Client exited before input' }\n  [PrototypeInput]::SetForegroundWindow($client.MainWindowHandle) | Out-Null\n  $point = [PrototypeInput+Point]::new()\n  $point.X = $x\n  $point.Y = $y\n  [PrototypeInput]::ClientToScreen($client.MainWindowHandle,[ref]$point) | Out-Null\n  [PrototypeInput]::SetCursorPos($point.X,$point.Y) | Out-Null\n  Start-Sleep -Milliseconds 250\n  [PrototypeInput]::mouse_event(2,0,0,0,[UIntPtr]::Zero)\n  Start-Sleep -Milliseconds 180\n  [PrototypeInput]::mouse_event(4,0,0,0,[UIntPtr]::Zero)\n  Start-Sleep -Seconds 2\n}\n\nfunction Snapshot-State([string]$name) {\n  $sql = @'\nselect row_to_json(c) from data.\"Character\" c where \"Name\" in ('test0Dk','test1Dk','test2Dk');\nselect row_to_json(x) from information_schema.columns x where table_schema in ('data','config') and table_name in ('Character','StatAttribute','ItemStorage','Item','AttributeDefinition') order by table_schema,table_name,ordinal_position;\nselect row_to_json(x) from data.\"StatAttribute\" x;\nselect row_to_json(x) from config.\"AttributeDefinition\" x;\nselect row_to_json(x) from data.\"ItemStorage\" x;\nselect row_to_json(x) from data.\"Item\" x;\n'@\n  & \"$pgBin/psql.exe\" -h 127.0.0.1 -U postgres -d openmu -t -A -c $sql > \"$evidence/$name-database.jsonl\"\n  if ($LASTEXITCODE) { throw 'Read-only database snapshot failed' }\n}\nfunction Wait-ClientReady {\n  $deadline = [DateTime]::UtcNow.AddSeconds(60)\n  while ([DateTime]::UtcNow -lt $deadline) {\n    $client.Refresh()\n    if ($client.HasExited) { throw 'Client exited before ready' }\n    if ((Test-Path \"$clientDirectory/MuError.log\") -and (Select-String -Path \"$clientDirectory/MuError.log\" -Pattern 'Success Receive Server List' -Quiet)) { break }\n    Start-Sleep -Seconds 2\n  }\n}\nfunction Login-TestAccount([string]$account) {\n  if ($account -notin @('test0','test1','test2')) { throw 'Only named disposable seeded accounts permitted' }\n  Wait-ClientReady\n  Click-Client 334 301\n  Click-Client 512 301\n  Start-Sleep -Seconds 5\n  Click-Client 530 465\n  [Windows.Forms.SendKeys]::SendWait($account)\n  Click-Client 530 490\n  [Windows.Forms.SendKeys]::SendWait($account)\n  Click-Client 525 563\n  Start-Sleep -Seconds 10\n  Click-Client 110 550\n  Click-Client 891 694\n  Start-Sleep -Seconds 10\n}\nfunction Focus-Client {\n  $client.Refresh()\n  if ($client.HasExited) { throw 'Client exited' }\n  [PrototypeInput]::SetForegroundWindow($client.MainWindowHandle) | Out-Null\n  Start-Sleep -Milliseconds 200\n}\nfunction Restart-TestClient {\n  if (!$client.HasExited) { Stop-Process -Id $client.Id }\n  Start-Sleep -Seconds 5\n  Get-ChildItem $clientDirectory -File -Filter '*.log' | ForEach-Object { Copy-Item $_.FullName \"$evidence/restart-$($_.Name)\" -Force; Remove-Item $_.FullName }\n  $script:client = Start-Process \"$clientDirectory/Main.exe\" -WorkingDirectory $clientDirectory -ArgumentList 'connect','/u127.127.127.127','/p44406' -PassThru\n  Start-Sleep -Seconds 12\n}\ntry {\n  $script:clients = @{}\n  $script:clientDirectories = @{}\n  $script:clients['one'] = $client\n  $script:clientDirectories['one'] = $clientDirectory\n  Login-TestAccount 'test0'\n  Capture-Stage 'ready-world'\n  Snapshot-State 'ready'\n  '{\"id\":\"ready\",\"status\":\"ready\"}' | Set-Content harness-result.json\n  $deadline = [DateTime]::UtcNow.AddMinutes(25)\n  $done = $false\n  while (!$done -and [DateTime]::UtcNow -lt $deadline) {\n    if (!(Test-Path harness-command.json)) { Start-Sleep -Seconds 1; continue }\n    $plan = Get-Content harness-command.json -Raw | ConvertFrom-Json\n    Remove-Item harness-command.json\n    if ($plan.id -notmatch '^[a-zA-Z0-9-]{1,40}$') { throw 'Invalid batch identifier' }\n    foreach ($step in $plan.steps) {\n      switch ($step.op) {\n        'click' { Click-Client ([int]$step.x) ([int]$step.y) }\n        'hold' {\n          if ([int]$step.ms -lt 0 -or [int]$step.ms -gt 10000) { throw 'Invalid hold duration' }\n          Focus-Client\n          $point = [PrototypeInput+Point]::new(); $point.X=[int]$step.x; $point.Y=[int]$step.y\n          [PrototypeInput]::ClientToScreen($client.MainWindowHandle,[ref]$point) | Out-Null\n          [PrototypeInput]::SetCursorPos($point.X,$point.Y) | Out-Null\n          Start-Sleep -Milliseconds 200\n          [PrototypeInput]::mouse_event(2,0,0,0,[UIntPtr]::Zero)\n          Start-Sleep -Milliseconds ([int]$step.ms)\n          [PrototypeInput]::mouse_event(4,0,0,0,[UIntPtr]::Zero)\n          Start-Sleep -Seconds 2\n        }\n        'key' { Focus-Client; [Windows.Forms.SendKeys]::SendWait([string]$step.text); Start-Sleep -Seconds 2 }\n        'chat' { Focus-Client; [Windows.Forms.SendKeys]::SendWait('{ENTER}'); Start-Sleep -Milliseconds 400; [Windows.Forms.SendKeys]::SendWait([string]$step.text); Start-Sleep -Milliseconds 400; [Windows.Forms.SendKeys]::SendWait('{ENTER}'); Start-Sleep -Seconds 3 }\n        'wait' { if ([int]$step.seconds -lt 0 -or [int]$step.seconds -gt 20) { throw 'Invalid wait' }; Start-Sleep -Seconds ([int]$step.seconds) }\n        'capture' { if ($step.name -notmatch '^[a-zA-Z0-9-]{1,60}$') { throw 'Invalid capture name' }; Capture-Stage $step.name }\n        'snapshot' { Snapshot-State $plan.id }\n        'restart-client' { Restart-TestClient }\n        'login' { Login-TestAccount $step.account }\n        'second-client' {\n          $secondDirectory = Join-Path $PWD client-two\n          if (Test-Path $secondDirectory) { throw 'Second client already staged' }\n          New-Item -ItemType Directory $secondDirectory | Out-Null\n          Get-ChildItem $clientDirectory -File | Where-Object { $_.Extension -ne '.log' } | Copy-Item -Destination $secondDirectory\n          foreach ($folder in @('Data','fonts')) { New-Item -ItemType Junction -Path \"$secondDirectory/$folder\" -Target \"$clientDirectory/$folder\" | Out-Null }\n          $script:clients['one'] = $client\n          $script:clientDirectories['one'] = $clientDirectory\n          $script:client = Start-Process \"$secondDirectory/Main.exe\" -WorkingDirectory $secondDirectory -ArgumentList 'connect','/u127.127.127.127','/p44406' -PassThru\n          $script:clientDirectory = $secondDirectory\n          $script:clients['two'] = $client\n          $script:clientDirectories['two'] = $secondDirectory\n          Start-Sleep -Seconds 15\n        }\n        'select-client' {\n          if ($step.name -notin @('one','two') -or !$script:clients.ContainsKey([string]$step.name)) { throw 'Client unavailable' }\n          $script:client = $script:clients[[string]$step.name]\n          $script:clientDirectory = $script:clientDirectories[[string]$step.name]\n          Focus-Client\n        }\n        'finish' { $done=$true }\n        default { throw \"Unsupported operation $($step.op)\" }\n      }\n    }\n    Get-ChildItem $clientDirectory -File -Recurse -Include '*.log' | ForEach-Object { Copy-Item $_.FullName \"$evidence/client-$($_.Name)\" -Force }\n    @{id=$plan.id;status='completed'} | ConvertTo-Json -Compress | Set-Content harness-result.json\n  }\n} finally {\n  foreach ($process in $script:clients.Values) { if (!$process.HasExited) { Stop-Process -Id $process.Id } }; Start-Sleep -Seconds 5\n  Snapshot-State 'final'\n  & \"$pgBin/pg_dump.exe\" -h 127.0.0.1 -U postgres -d openmu -Fc -f \"$evidence/gameplay-test-db.dump\"\n  Get-ChildItem $clientDirectory -File -Recurse -Include '*.log' | ForEach-Object { Copy-Item $_.FullName \"$evidence/client-$($_.Name)\" -Force }\n  if (!$server.HasExited) { Stop-Process -Id $server.Id }\n  & \"$pgBin/pg_ctl.exe\" -D $pgData -m fast -w stop\n}\n";
+            fs.writeFileSync('gameplay-session.ps1', psSource);
+            const child = spawn('pwsh', ['-NoProfile','-File','gameplay-session.ps1'], {stdio:['ignore','pipe','pipe']});
+            child.stdout.on('data', x => process.stdout.write(x));
+            child.stderr.on('data', x => process.stderr.write(x));
+            let exited = false;
+            let exitCode;
+            child.on('exit', code => { exited=true; exitCode=code; });
+            const delay = ms => new Promise(resolve => setTimeout(resolve,ms));
+            const owner=context.repo.owner, repo=context.repo.repo;
+            const consumed = new Set(['idle']);
+            const uploaded = new Set();
+            let pending;
+            let batchCount=0;
+            const root=path.resolve('evidence');
+            const deadline=Date.now()+32*60*1000;
+            while(!exited && Date.now()<deadline) {
+              if(fs.existsSync('harness-result.json')) {
+                const result=JSON.parse(fs.readFileSync('harness-result.json','utf8').replace(/^\uFEFF/,''));
+                if(!uploaded.has(result.id)) {
+                  const files=fs.readdirSync(root).filter(n=>n.endsWith('.png')||n.endsWith('.jsonl')||n.endsWith('.txt')||n.endsWith('.log')).map(n=>path.join(root,n));
+                  const saved=await artifact.uploadArtifact('gameplay-'+result.id,files,root,{retentionDays:90});
+                  uploaded.add(result.id);
+                  core.info(`Evidence ${result.id}: artifact ${saved.id}`);
+                  pending=undefined;
+                }
+              }
+              if(uploaded.has('ready') && !pending && batchCount<8) {
+                const response=await github.rest.repos.getContent({owner,repo,path:'.github/gameplay-control.json',ref:'main',headers:{'Cache-Control':'no-cache'}});
+                const plan=JSON.parse(Buffer.from(response.data.content,'base64').toString('utf8'));
+                if(!consumed.has(plan.id)) {
+                  consumed.add(plan.id);
+                  if(!Array.isArray(plan.steps)||plan.steps.length>35) throw new Error('Invalid batch size');
+                  pending=plan.id;batchCount++;
+                  fs.writeFileSync('harness-command.tmp',JSON.stringify(plan));
+                  fs.renameSync('harness-command.tmp','harness-command.json');
+                  core.info(`Executing UI batch ${plan.id}`);
+                }
+              }
+              await delay(15000);
+            }
+            if(!exited) { child.kill(); throw new Error('Gameplay harness timeout'); }
+            if(exitCode!==0) throw new Error(`Gameplay harness exited ${exitCode}`);
+      - name: Preserve final gameplay evidence and database
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gameplay-final
+          path: evidence
+          if-no-files-found: error
