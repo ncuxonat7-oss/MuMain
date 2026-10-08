@@ -1,98 +1,24 @@
 {
-  "id": "shop-fixture-02",
+  "id": "single-shop-03",
   "steps": [
     {
-      "op": "restart-client"
-    },
-    {
-      "op": "click",
-      "x": 334,
-      "y": 301
-    },
-    {
-      "op": "click",
-      "x": 512,
-      "y": 301
-    },
-    {
-      "op": "wait",
-      "seconds": 5
-    },
-    {
-      "op": "click",
-      "x": 530,
-      "y": 465
+      "op": "select-client",
+      "name": "two"
     },
     {
       "op": "key",
-      "text": "testgm"
-    },
-    {
-      "op": "click",
-      "x": 530,
-      "y": 490
-    },
-    {
-      "op": "key",
-      "text": "testgm"
-    },
-    {
-      "op": "click",
-      "x": 525,
-      "y": 563
-    },
-    {
-      "op": "wait",
-      "seconds": 10
-    },
-    {
-      "op": "click",
-      "x": 110,
-      "y": 550
-    },
-    {
-      "op": "click",
-      "x": 891,
-      "y": 694
-    },
-    {
-      "op": "wait",
-      "seconds": 10
-    },
-    {
-      "op": "capture",
-      "name": "14-existing-gm-client"
-    },
-    {
-      "op": "second-client"
-    },
-    {
-      "op": "login",
-      "account": "test0"
-    },
-    {
-      "op": "capture",
-      "name": "15-second-client-test0"
+      "vk": 13
     },
     {
       "op": "select-client",
       "name": "one"
     },
     {
-      "op": "chat",
-      "text": "/move test0Dk Lorencia 118 141"
+      "op": "restart-client"
     },
     {
-      "op": "capture",
-      "name": "16-gm-fixture-placement"
-    },
-    {
-      "op": "select-client",
-      "name": "two"
-    },
-    {
-      "op": "capture",
-      "name": "17-test0-at-weapon-shop"
+      "op": "login",
+      "account": "test0"
     },
     {
       "op": "key",
@@ -100,11 +26,28 @@
     },
     {
       "op": "capture",
-      "name": "18-test0-before-combat-stats"
+      "name": "19-test0-level1-xp0"
     },
     {
       "op": "key",
       "vk": 67
+    },
+    {
+      "op": "capture",
+      "name": "20-test0-town-before-shop"
+    },
+    {
+      "op": "click",
+      "x": 650,
+      "y": 80
+    },
+    {
+      "op": "wait",
+      "seconds": 8
+    },
+    {
+      "op": "capture",
+      "name": "21-approach-blacksmith"
     },
     {
       "op": "snapshot"
