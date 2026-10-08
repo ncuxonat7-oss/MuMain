@@ -11,7 +11,7 @@ Scope: current OpenMU/MuMain prototype; narrow resource evaluation only. No purc
 - Server demo smoke run passed: existing Release DLL, .NET/ASP.NET runtime 10.0.11, flags -demo -autostart -adminpanel:disabled, TCP 44406 greeting c1040001. Process stopped after check. Demo uses memory persistence; this does NOT prove PostgreSQL works.
 - No graphical client run, account/character creation through MuMain, or Lorencia entry proven. No Lorencia screenshot exists.
 
-### Selected resource candidate — NOT YET USED
+### Selected prototype resource package — AUTHORIZED
 Source: https://github.com/sven-n/MuMain/releases/tag/data-4b0ab29c58b27fc4
 Archive: https://github.com/sven-n/MuMain/releases/download/data-4b0ab29c58b27fc4/MuMain-data-4b0ab29c58b27fc4.tar.gz
 Checksum sidecar: same URL with .sha256 suffix.
@@ -24,7 +24,7 @@ Version: Season 5.2-derived client targeting Season 6 Episode 3, extended OpenMU
 Technical fit: exact tree match to our build, best available immediate prototype candidate; actual runtime verification still pending.
 Origin: published by the MuMain maintainer, with game resources traceable to the repository. Repository credits Webzen/Louis/community. This establishes distribution provenance, NOT a license from the original asset owner.
 Rights: no root license or Data license granting use/modification/redistribution found in the inspected baseline tree. Models, maps, textures and audio have unresolved permissions. No claim that the package is proven stolen, malware or cracked software.
-Gate: user requires stopping before use of a disputed resource. Archive has not been downloaded, extracted, attached to the client or redistributed. Obtain an explicit user decision on this exact package/risk, or find a compatible authorized replacement. A YELLOW label alone is not a gate; this specific user policy is.
+Decision: user replied “Продолжаем” on 2026-10-08 after the exact package and rights uncertainty were presented for approval. Authorized for the closed technical prototype; this does not establish commercial rights. Workflow lorencia-runtime.yml downloads the archive and validates its published SHA256 before extraction; rejects executable assets and unsafe paths. No resource redistribution in our runtime/evidence artifact.
 
 ### Fonts (license texts checked individually)
 Source for each: https://github.com/sven-n/MuMain/tree/21728b1e5b03e0763b38ef9e23f79645e0df7ad2/src/bin/fonts
@@ -129,10 +129,12 @@ No demonstrated technical reason to replace the server or client during the prot
 Resource replacement boundary: runtime archive already omits Data/fonts and upstream publishes separate content-addressed packs. Keep this separation. Later packs must preserve expected format/path/IDs or provide conversion/mapping; not every arbitrary asset package is interchangeable without work. No architecture change implemented now.
 
 ## NEXT EXECUTION CHECKPOINT
-1. Await user's decision ONLY on the exact disputed game Data package, per their current explicit policy; do not request a user-supplied link.
-2. If authorized, download exact archive plus checksum, verify before extraction and inspect contents; never run added untrusted executables.
+1. Prototype resource use approved. Execute Lorencia Runtime Probe and diagnose only its actual blockers.
+2. Verify the runtime workflow results, resource checksum and authentic screenshots. Never run added untrusted executables.
 3. Reuse successful Windows runtime. Try permitted Windows CI instance with PostgreSQL and our pinned OpenMU; no needless repeat of 423 tests.
 4. Establish real database persistence, client graphics, actual server connection, test account/character and Lorencia entry. Save authentic client screenshot/log evidence.
 5. If real GPU/input automation requires a developer/control-socket build, explain the specific necessity first; existing player build has editor/control socket disabled.
 6. Do not label a TCP probe or in-memory demo as completed E2E. No purchases, no external contacts/messages without explicit instruction.
 
+
+Execution attempt: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37827108294 ; workflow commit e5dad197bd7ee106e0015ed504c9e971f2057b34. Windows runner uses installed PostgreSQL 17; actual database/client success still pending.
