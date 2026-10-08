@@ -45,3 +45,14 @@ Last successful step: completed read-only content/reference audit; no builds, CI
 Current completeness blocker: most gameplay has no runtime proof; full Crywolf and Illusion Temple server lifecycles were not found. RED labels are standard-content gaps, not a fundamental stack dead end. Estimated evidence readiness 63.3% (judgment range 55–75%); this is not measured playable/test coverage.
 
 Next recommended action: a bounded existing-binary single-character loop (gate, merchant, kill, XP, pickup/equip, level/stats, relog with the same DB), then two-client party/trade/guild. Not executed. Stop after audit; wait for the next user task. Notify before substantial new builds/research/retry series.
+
+
+## Active stage — Standard gameplay runtime validation (2026-10-08)
+
+User authorized the bounded single-character gameplay loop followed by real two-client party/trade/guild checks. Previous stop-after-audit instruction is superseded by this explicit task.
+
+Last successful step: committed `.github/workflows/standard-gameplay.yml` at `8d3cc2dfba516bc0a4cbcca448988dd890ed25c8` and initial `.github/gameplay-control.json` at `2305f706b1bcf6333ff934e317b56e167371ab34`. No application source, resources or game definitions changed. Existing client build and pinned server cache are reused.
+
+Runtime run dispatched once: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37843108952 . Its harness accepts a bounded allowlist of native GUI actions, uploads authentic screenshots and read-only SQL snapshots between batches, and saves a PostgreSQL dump at cleanup. No experience/stat grants are used. Low-level test0Dk is reserved for combat/leveling; seeded level-11 test1Dk can meet normal map-warp level requirements.
+
+Current blocker: gameplay results are not yet verified. Next action: inspect the ready-world screenshot, issue observed GUI actions, compare client UI and database state; then test a second real client. A workflow status alone is not feature proof. Available Work credit balance is not visible.
