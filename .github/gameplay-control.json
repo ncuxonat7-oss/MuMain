@@ -1,17 +1,78 @@
 {
-  "id": "combat-scene-07",
+  "id": "combat-cluster-08",
   "steps": [
     {
       "op": "select-client",
       "name": "one"
     },
     {
-      "op": "capture",
-      "name": "39-current-monster-scene"
+      "op": "chat",
+      "text": "/move test0Dk Lorencia 205 130"
+    },
+    {
+      "op": "chat",
+      "text": "/teleport 117 140"
     },
     {
       "op": "select-client",
       "name": "two"
+    },
+    {
+      "op": "capture",
+      "name": "40-real-monster-targets"
+    },
+    {
+      "op": "hold",
+      "x": 550,
+      "y": 420,
+      "ms": 4000
+    },
+    {
+      "op": "hold",
+      "x": 500,
+      "y": 400,
+      "ms": 4000
+    },
+    {
+      "op": "hold",
+      "x": 470,
+      "y": 400,
+      "ms": 4000
+    },
+    {
+      "op": "key",
+      "vk": 32
+    },
+    {
+      "op": "capture",
+      "name": "41-real-cluster-combat"
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "chat",
+      "text": "/move test0Dk Lorencia 117 140"
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "key",
+      "vk": 67
+    },
+    {
+      "op": "capture",
+      "name": "42-level-check-after-cluster"
+    },
+    {
+      "op": "key",
+      "vk": 67
+    },
+    {
+      "op": "snapshot"
     }
   ]
 }
