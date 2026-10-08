@@ -1,13 +1,59 @@
 {
-  "id": "physical-warp-01",
+  "id": "shop-fixture-02",
   "steps": [
     {
+      "op": "restart-client"
+    },
+    {
+      "op": "click",
+      "x": 334,
+      "y": 301
+    },
+    {
+      "op": "click",
+      "x": 512,
+      "y": 301
+    },
+    {
+      "op": "wait",
+      "seconds": 5
+    },
+    {
+      "op": "click",
+      "x": 530,
+      "y": 465
+    },
+    {
       "op": "key",
-      "vk": 27
+      "text": "testgm"
     },
     {
-      "op": "chat",
-      "text": "/move Noria"
+      "op": "click",
+      "x": 530,
+      "y": 490
+    },
+    {
+      "op": "key",
+      "text": "testgm"
+    },
+    {
+      "op": "click",
+      "x": 525,
+      "y": 563
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "click",
+      "x": 110,
+      "y": 550
+    },
+    {
+      "op": "click",
+      "x": 891,
+      "y": 694
     },
     {
       "op": "wait",
@@ -15,19 +61,38 @@
     },
     {
       "op": "capture",
-      "name": "11-normal-warp-noria"
+      "name": "14-existing-gm-client"
     },
     {
-      "op": "chat",
-      "text": "/move Lorencia"
+      "op": "second-client"
     },
     {
-      "op": "wait",
-      "seconds": 10
+      "op": "login",
+      "account": "test0"
     },
     {
       "op": "capture",
-      "name": "12-normal-warp-return"
+      "name": "15-second-client-test0"
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "chat",
+      "text": "/move test0Dk Lorencia 118 141"
+    },
+    {
+      "op": "capture",
+      "name": "16-gm-fixture-placement"
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "capture",
+      "name": "17-test0-at-weapon-shop"
     },
     {
       "op": "key",
@@ -35,7 +100,7 @@
     },
     {
       "op": "capture",
-      "name": "13-seeded-level300-stats"
+      "name": "18-test0-before-combat-stats"
     },
     {
       "op": "key",
