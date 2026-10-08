@@ -1,43 +1,30 @@
 {
-  "id": "warp-01",
+  "id": "input-02",
   "steps": [
     {
-      "op": "restart-client"
-    },
-    {
-      "op": "login",
-      "account": "test1"
-    },
-    {
-      "op": "capture",
-      "name": "01-level11-lorencia"
-    },
-    {
-      "op": "chat",
-      "text": "/move Noria"
-    },
-    {
-      "op": "wait",
-      "seconds": 10
+      "op": "click",
+      "x": 907,
+      "y": 695
     },
     {
       "op": "capture",
-      "name": "02-noria"
+      "name": "04-inventory-click"
     },
     {
-      "op": "chat",
-      "text": "/move Lorencia"
-    },
-    {
-      "op": "wait",
-      "seconds": 10
+      "op": "key",
+      "text": "m"
     },
     {
       "op": "capture",
-      "name": "03-return-lorencia"
+      "name": "05-map-menu-key"
     },
     {
-      "op": "snapshot"
+      "op": "key",
+      "text": "c"
+    },
+    {
+      "op": "capture",
+      "name": "06-character-key"
     }
   ]
 }
