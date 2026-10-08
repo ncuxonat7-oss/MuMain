@@ -1,14 +1,56 @@
 {
-  "id": "shop-buy-06",
+  "id": "combat-setup-01",
   "steps": [
     {
-      "op": "click",
-      "x": 470,
-      "y": 108
+      "op": "second-client"
+    },
+    {
+      "op": "login",
+      "account": "test0"
+    },
+    {
+      "op": "key",
+      "vk": 73
     },
     {
       "op": "capture",
-      "name": "25-after-small-shield-purchase"
+      "name": "26-saved-shield-relogin"
+    },
+    {
+      "op": "key",
+      "vk": 73
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "chat",
+      "text": "/move test0Dk Lorencia 200 130"
+    },
+    {
+      "op": "chat",
+      "text": "/teleport 205 130"
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "capture",
+      "name": "27-combat-initial"
+    },
+    {
+      "op": "key",
+      "vk": 67
+    },
+    {
+      "op": "capture",
+      "name": "28-combat-stats-before"
+    },
+    {
+      "op": "key",
+      "vk": 67
     },
     {
       "op": "snapshot"
