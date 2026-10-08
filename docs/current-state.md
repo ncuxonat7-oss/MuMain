@@ -66,3 +66,11 @@ Evidence: ready artifact 11578638189; warp-01 11577984876; input-02 11578424712;
 Fixed the harness at commit `ee4029ce666aa44fc7f8e110e5ff13cfb115e766`: 250 ms Win32 physical key presses, proper active-client cleanup, restore previous gameplay database before starting OpenMU. No application/client rebuild, 423 tests repeat, assets/config/content/stat grants or imports.
 
 Continuation run **37845483038**, workflow/control commit `67cf1faffd30dbabc87bd5a360ec362c31c238d6`: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37845483038 . Initial actor is existing seeded `test300` for normal warp eligibility; natural leveling still reserved for `test0`. Current blocker: await physical-input and map-warp proof. Next action: inspect screenshots, then merchant/combat/XP/drop/equip/level/relog, followed by two clients for party/trade/guild. Do not claim gameplay completion from workflow success.
+
+### Restore blocker resolved in harness; continuation 3
+
+Run 37845483038 failed before launching OpenMU/client: pg_restore log contains exactly 127 missing-role errors for standard OpenMU PostgreSQL roles `account`, `config`, `guild`, `friend`; no other restore errors. Failure evidence artifact 11579298825 (5.26 KB) is retained. The run was canceled after the failed bootstrap left PostgreSQL alive; no gameplay results from it.
+
+Commit `6a4a287055abfd6d5e2491a6c3998b5a94d616b9` now creates the exact four standard roles from pinned OpenMU ConnectionSettings.xml before restoring existing grants, uses pg_restore --exit-on-error, encloses bootstrap in process cleanup, and redirects the child harness output to a file instead of inherited Node pipes. No game rules/assets/application source changed. Original run-1 dump remains the restore source.
+
+Active continuation: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37846640006 , job 113549047110. Cached server build skipped again. Current blocker: pending restored-server/client screenshots; physical key correction has not yet been runtime verified. Next action: normal warp proof, then merchant/combat/XP/drop/equip/level/relogin and two-client party/trade/guild.
