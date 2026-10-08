@@ -56,3 +56,13 @@ Last successful step: committed `.github/workflows/standard-gameplay.yml` at `8d
 Runtime run dispatched once: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37843108952 . Its harness accepts a bounded allowlist of native GUI actions, uploads authentic screenshots and read-only SQL snapshots between batches, and saves a PostgreSQL dump at cleanup. No experience/stat grants are used. Low-level test0Dk is reserved for combat/leveling; seeded level-11 test1Dk can meet normal map-warp level requirements.
 
 Current blocker: gameplay results are not yet verified. Next action: inspect the ready-world screenshot, issue observed GUI actions, compare client UI and database state; then test a second real client. A workflow status alone is not feature proof. Available Work credit balance is not visible.
+
+### Gameplay session 1 checkpoint
+
+Run 37843108952 finished successfully as a harness run, not as a gameplay-suite pass. Existing client/server/PG reached Lorencia on test0Dk and test1Dk. Inventory opened by mouse; character UI opened and showed level 11, XP 19000/24200, 50 unused points, seeded items and 10,000,000 Zen. A real reconnect from test0 to test1 succeeded. Map warps remain **unverified**: chat text `/move Noria` was captured still in the input field after a short SendKeys Enter. This is a test-input timing defect, not evidence that server warp fails.
+
+Evidence: ready artifact 11578638189; warp-01 11577984876; input-02 11578424712; warp-ui-03 11578684284. Final artifact **11580160294**, `gameplay-final`, ZIP 20,056,292 bytes, SHA256 `0908bda3fcfed47f1529e292ff7579ae0f2ce3bfb806a04a176df8205647ad5d`, includes compressed PostgreSQL dump `gameplay-test-db.dump` (1,366,613 bytes). Keep this dump when resuming rather than discarding progress. Original final ZIP and character screenshot additionally saved as durable user deliverables.
+
+Fixed the harness at commit `ee4029ce666aa44fc7f8e110e5ff13cfb115e766`: 250 ms Win32 physical key presses, proper active-client cleanup, restore previous gameplay database before starting OpenMU. No application/client rebuild, 423 tests repeat, assets/config/content/stat grants or imports.
+
+Continuation run **37845483038**, workflow/control commit `67cf1faffd30dbabc87bd5a360ec362c31c238d6`: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37845483038 . Initial actor is existing seeded `test300` for normal warp eligibility; natural leveling still reserved for `test0`. Current blocker: await physical-input and map-warp proof. Next action: inspect screenshots, then merchant/combat/XP/drop/equip/level/relog, followed by two clients for party/trade/guild. Do not claim gameplay completion from workflow success.
