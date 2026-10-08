@@ -1,18 +1,17 @@
 {
-  "id": "shop-open-05",
+  "id": "shop-buy-06",
   "steps": [
     {
       "op": "click",
-      "x": 330,
-      "y": 55
-    },
-    {
-      "op": "wait",
-      "seconds": 4
+      "x": 470,
+      "y": 108
     },
     {
       "op": "capture",
-      "name": "24-hanzo-shop-attempt"
+      "name": "25-after-small-shield-purchase"
+    },
+    {
+      "op": "snapshot"
     }
   ]
 }
