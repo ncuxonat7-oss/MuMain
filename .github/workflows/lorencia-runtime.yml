@@ -68,7 +68,14 @@ jobs:
           repository: MUnique/OpenMU
           ref: d067b3c11c23c3145de6e2c76201ab9a93b267c8
           path: server-source
+      - name: Cache pinned server runtime
+        id: server-cache
+        uses: actions/cache@v4
+        with:
+          path: server-source/src/Startup/bin/Release
+          key: openmu-windows-runtime-d067b3c-net10-v1
       - name: Build server for Windows
+        if: steps.server-cache.outputs.cache-hit != 'true'
         shell: pwsh
         run: |
           dotnet build server-source/src/Startup/MUnique.OpenMU.Startup.csproj -c Release -p:ci=true > evidence/server-build.log 2>&1
@@ -117,22 +124,70 @@ jobs:
           Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,VideoModeDescription | Format-List | Out-File "$evidence/gpu.txt"
           $env:SDL_GPU_DRIVER = 'direct3d12'
           $client = Start-Process "$clientDirectory/Main.exe" -WorkingDirectory $clientDirectory -ArgumentList 'connect','/u127.127.127.127','/p44406' -RedirectStandardOutput "$evidence/client.out.log" -RedirectStandardError "$evidence/client.err.log" -PassThru
-          $captureTimes = @(10,30,60)
-          $previousTime = 0
-          foreach ($captureTime in $captureTimes) {
-            Start-Sleep -Seconds ($captureTime - $previousTime)
-            $previousTime = $captureTime
+          Add-Type @'
+          using System;
+          using System.Runtime.InteropServices;
+          public static class PrototypeInput {
+            [StructLayout(LayoutKind.Sequential)] public struct Point { public int X; public int Y; }
+            [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr window);
+            [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr window, ref Point point);
+            [DllImport("user32.dll")] public static extern bool SetCursorPos(int x, int y);
+            [DllImport("user32.dll")] public static extern void mouse_event(uint flags,uint x,uint y,uint data,UIntPtr extra);
+          }
+          '@
+          function Capture-Stage([string]$name) {
             $client.Refresh()
-            $status = [ordered]@{ seconds=$captureTime; pid=$client.Id; exited=$client.HasExited; title=$client.MainWindowTitle; handle=$client.MainWindowHandle.ToInt64() }
+            $status = [ordered]@{ stage=$name; pid=$client.Id; exited=$client.HasExited; title=$client.MainWindowTitle; handle=$client.MainWindowHandle.ToInt64() }
             if ($client.HasExited) { $status.exitCode = $client.ExitCode }
             $status | ConvertTo-Json -Compress | Add-Content "$evidence/client-status.jsonl"
             $bitmap = [Drawing.Bitmap]::new($desktop.Width,$desktop.Height)
             $graphics = [Drawing.Graphics]::FromImage($bitmap)
             try {
               $graphics.CopyFromScreen($desktop.Left,$desktop.Top,0,0,$bitmap.Size)
-              $bitmap.Save("$evidence/desktop-$captureTime.png",[Drawing.Imaging.ImageFormat]::Png)
+              $bitmap.Save("$evidence/$name.png",[Drawing.Imaging.ImageFormat]::Png)
             } finally { $graphics.Dispose(); $bitmap.Dispose() }
           }
+          function Click-Client([int]$x,[int]$y) {
+            $client.Refresh()
+            if ($client.HasExited) { throw 'Client exited before input' }
+            [PrototypeInput]::SetForegroundWindow($client.MainWindowHandle) | Out-Null
+            $point = [PrototypeInput+Point]::new()
+            $point.X = $x
+            $point.Y = $y
+            [PrototypeInput]::ClientToScreen($client.MainWindowHandle,[ref]$point) | Out-Null
+            [PrototypeInput]::SetCursorPos($point.X,$point.Y) | Out-Null
+            Start-Sleep -Milliseconds 250
+            [PrototypeInput]::mouse_event(2,0,0,0,[UIntPtr]::Zero)
+            Start-Sleep -Milliseconds 180
+            [PrototypeInput]::mouse_event(4,0,0,0,[UIntPtr]::Zero)
+            Start-Sleep -Seconds 2
+          }
+          $clientReadyDeadline = [DateTime]::UtcNow.AddSeconds(60)
+          while ([DateTime]::UtcNow -lt $clientReadyDeadline) {
+            if (Test-Path "$clientDirectory/MuError.log") {
+              if (Select-String -Path "$clientDirectory/MuError.log" -Pattern 'Success Receive Server List' -Quiet) { break }
+            }
+            Start-Sleep -Seconds 2
+          }
+          Capture-Stage '01-server-list'
+          Click-Client 334 301
+          Capture-Stage '02-server-group'
+          Click-Client 512 301
+          Start-Sleep -Seconds 5
+          Capture-Stage '03-login-form'
+          Click-Client 530 465
+          [Windows.Forms.SendKeys]::SendWait('test0')
+          Click-Client 530 490
+          [Windows.Forms.SendKeys]::SendWait('test0')
+          Capture-Stage '04-credentials'
+          [Windows.Forms.SendKeys]::SendWait('{ENTER}')
+          Start-Sleep -Seconds 10
+          Capture-Stage '05-character-list'
+          Click-Client 215 380
+          [Windows.Forms.SendKeys]::SendWait('{ENTER}')
+          Start-Sleep -Seconds 20
+          Capture-Stage '06-world-attempt'
+          & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d openmu -c 'select count(*) as accounts from data."Account"; select count(*) as characters from data."Character";' > "$evidence/database-counts.txt"
           Get-NetTCPConnection | Where-Object { $_.OwningProcess -in @($server.Id,$client.Id) } | Select-Object LocalAddress,LocalPort,RemoteAddress,RemotePort,State,OwningProcess | ConvertTo-Json | Set-Content "$evidence/connections.json"
           Get-ChildItem $clientDirectory -File -Recurse -Include '*.log' | ForEach-Object {
             Copy-Item $_.FullName "$evidence/client-$($_.Name)" -Force
