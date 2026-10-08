@@ -1,11 +1,48 @@
 {
-  "id": "save-db-04",
+  "id": "physical-warp-01",
   "steps": [
     {
-      "op": "restart-client"
+      "op": "key",
+      "vk": 27
     },
     {
-      "op": "finish"
+      "op": "chat",
+      "text": "/move Noria"
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "capture",
+      "name": "11-normal-warp-noria"
+    },
+    {
+      "op": "chat",
+      "text": "/move Lorencia"
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "capture",
+      "name": "12-normal-warp-return"
+    },
+    {
+      "op": "key",
+      "vk": 67
+    },
+    {
+      "op": "capture",
+      "name": "13-seeded-level300-stats"
+    },
+    {
+      "op": "key",
+      "vk": 67
+    },
+    {
+      "op": "snapshot"
     }
   ]
 }
