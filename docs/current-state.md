@@ -1,3 +1,28 @@
+# Current confirmed state and economical continuation
+
+GitHub browser access recovered on 2026-10-09. No application source or working resource package changes. Current confirmed state: test0Dk natural level 2, EXP 115, five earned points, STR 28, purchased Small Shield in bag slot 47. Latest preserved database: session 4 / run 37851961862 / artifact 11583409579.
+
+Prepared finite manual workflow `.github/workflows/finish-gameplay.yml`: reuse exact validated client, require existing pinned server cache (fail without rebuilding), restore latest session-4 database, verify expected state before allocating, add exactly three STR through real client UI, equip same purchased shield, restart/relog, capture authentic screenshots, assert saved EXP/level/STR/remaining points/shield slot and original item IDs, preserve final database even on failure. Maximum job 15 minutes; no live command polling, repeated combat, warp/shop repeats or 423-test repeat.
+
+Next action: run this one prepared smoke scenario and inspect its actual results. Then perform reusable bulk configuration/resource integrity checks using existing definitions/assets and prior audit; defer per-mechanic manual UI checks and optional party/trade to alpha. Do not label unverified mechanics working by default. Save significant completed stages to this repository and update this document. Work credit balance is not visible.
+
+## Preserved prior checkpoint and evidence
+
+# Confirmed final gameplay checkpoint — 2026-10-09 Israel
+
+Runtime session 4 ended successfully and all processes were cleaned up. Core gameplay smoke test is PARTIAL.
+
+- Proven in the actual client: monster kills, real EXP and drop pickup (Small Axe, Vine Gloves), natural level 2, EXP 115/440, five earned stat points. Two real connected MuMain processes were also proven. No GM EXP/stat grants.
+- Final persisted SQL: test0Dk Experience=115, LevelUpPoints=5, Level attribute=2, Strength=28, position Lorencia (117,140), inventory contains 44 items after normal healing-potion consumption and two drops. Purchased Small Shield ID 801da101-0000-760d-a605-a410efe9185d remains in inventory slot 47, durability 22.
+- STR allocation, shield equipment and saved-progress client relog NOT executed. Party/trade NOT tested; guild deferred.
+- Completed runtime: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37851961862 . Job 113566794117 success. Server build skipped from cache; validated client reused; no 423-test repeat.
+- **Restore THIS latest backup:** artifact 11583409579, gameplay-final, 32,934,539 bytes; SHA256 d18505ba1e96558de56db7dbbbd9acc6ad9084f998ecdb98834d51c080f7db51. Local archive gameplay-session-4-final.zip; database dump 1,367,019 bytes. Existing workflow still restores run 3: change only the restore run-id to 37851961862 before the next runtime.
+- Blocker: authorized GitHub browser write channel disconnected (exec-server transport disconnected); one recovery reset timed out. GitHub connector reads remain functional; earlier connector writes returned 403. No repeated retries/new builds. Latest level-2 docs edit and equip control were NOT committed. Remote docs/current-state.md still records 73 EXP. Preserve it and apply this newer checkpoint when write access resumes.
+- **Exact next step:** existing test0Dk, natural Level 2 / 115 EXP / five points / STR 28 → click the normal STR plus exactly three times (character UI x989,y202) → STR31/two points → move purchased Small Shield from bag (x853,y465) to offhand (x967,y180) → verify actual item slot → restart client/login test0 → verify EXP, level, STR, points, equipped item and two real drops against saved database. Stop core smoke test only after this proof. Optional minimal party/trade afterwards; no new warp/shop tests.
+- No laptop is needed. A functioning GitHub write/browser channel in Work is required. Current runtime is closed; use the saved backup and binaries instead of rebuilding. Available Work credits cannot be seen.
+
+## Earlier evidence and checkpoints
+
 # Current confirmed state
 
 Updated 2026-10-08. Current task is **in progress**: normal gameplay loop, then two-client party/trade/guild. Confirmed Lorencia baseline remains valid. No application rebuild or repeat of the 423 client tests in this stage.
@@ -59,3 +84,11 @@ Artifact 11582392895 (`gameplay-combat-kill-02`), screenshots 29-first-combat an
 
 ### Latest combat checkpoint before the next result
 Artifact 11582453969 (`gameplay-combat-safe-04`) proves another normal kill awarded 51 EXP and Vine Gloves was picked up. test0Dk now shows level 1, EXP 73/100, STR 28, HP 88/112, back safely at Lorencia (117,140). Healing potions were consumed normally. Next unfinished step: earn at least 27 additional EXP naturally, then add 3 STR, equip the already purchased shield and verify a relog. No new level or equipped-shield success is claimed yet.
+
+### Session 4 milestone: natural level 2 confirmed
+Artifact 11583028877 (`gameplay-combat-cluster-08`), 42-level-check-after-cluster.png: test0Dk level 2, EXP 115/440, 5 freely earned level-up points, STR 28, HP 107/114. Actual chat shows 27 EXP, “Congratulations, you are Level 2 now”, then 15 EXP. No XP/stat grants. GM was moved out of the combat area to stop attracting monsters; test0 fought the observed real group. Latest successful step: natural level-up. Next unfinished step: allocate exactly 3 earned STR points, equip purchased Small Shield, restart client and verify persisted EXP/level/stats/items; party/trade only if practical afterwards.
+
+## Handoff: GitHub browser transport unavailable
+At 2026-10-08 22:39 UTC, cua_repl disconnected while filling the pending gameplay control and current-state editors. A single recovery reset timed out after 300 seconds. No further browser retries. The STR/equip/relog command is prepared in gameplay-control.json but NOT verified committed or executed. Last verified remote control is combat-cluster-08 at fc674e095a218ecabc0a2e0e453dc41bdf34762a. Remote docs still confirm 73 EXP; this newer level-2 checkpoint could not be pushed. The active bounded runtime should finish automatically and preserve gameplay-final with a database dump; collect that from run 37851961862 before any new run.
+
+Exact next unfinished action: restore the latest session-4 final dump using existing binaries/resources; verify current level 2 / EXP 115 / earned points 5 / STR 28, allocate 3 STR via normal character UI, equip purchased Small Shield from inventory slot 47 to offhand, restart client and verify persistent XP/level/STR/items. No warp/shop/build/test repeats. Party/trade is optional afterwards, guild deferred. No laptop action is needed; continuation requires a working authorized GitHub write/browser channel.
