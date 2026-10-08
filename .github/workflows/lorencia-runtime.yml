@@ -35,6 +35,7 @@ jobs:
           $actual = (Get-FileHash $resourceName -Algorithm SHA256).Hash
           if ($actual -ne $expected) { throw 'Resource SHA256 mismatch' }
           "Resource archive SHA256: $actual" | Set-Content evidence/resources.txt
+          Get-FileHash client/Main.exe,client/MUnique.Client.Library.dll -Algorithm SHA256 | Format-List | Out-File evidence/client-binary-hashes.txt
           $entries = @(tar -tzf $resourceName)
           if ($LASTEXITCODE) { throw 'Resource archive listing failed' }
           if ($entries | Where-Object { $_ -match '(^/|(^|/)\.\.(/|$)|\.(exe|dll|ps1|bat|cmd)$)' }) {
@@ -184,10 +185,9 @@ jobs:
           Click-Client 525 563
           Start-Sleep -Seconds 10
           Capture-Stage '05-character-list'
-          Click-Client 215 380
-          [PrototypeInput]::keybd_event(13,0,0,[UIntPtr]::Zero)
-          Start-Sleep -Milliseconds 350
-          [PrototypeInput]::keybd_event(13,0,2,[UIntPtr]::Zero)
+          Click-Client 110 550
+          Capture-Stage '05b-selected-knight'
+          Click-Client 891 694
           Start-Sleep -Seconds 20
           Capture-Stage '06-world-attempt'
           & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d openmu -c 'select count(*) as accounts from data."Account"; select count(*) as characters from data."Character";' > "$evidence/database-counts.txt"
