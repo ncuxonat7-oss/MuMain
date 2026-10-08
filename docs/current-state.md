@@ -10,15 +10,33 @@ Actual client allocated three earned points: STR 28 → 31, equipped the purchas
 
 Latest recoverable database: run **37860870710**, artifact **11585339277**, `gameplay-final`, 11,495,834 bytes, SHA256 `bebf351e6a295dc15f9e47e9abe83aeb8653fbccbef401c2fcb8aa03bd137615`. Restore THIS latest artifact for further runtime work. Do not allocate STR again or restore older pre-equipment state.
 
-## Bulk check and current unresolved finding
+## Bulk check and confirmed seed-data findings
 
-Read-only reusable Python checker `scripts/check-baseline-snapshot.py` checked captured 4,602 items, 118 stores, 1,117 stat attributes, 326 attribute definitions, and five selected characters. 13 of 14 checks passed. Two duplicate occupied anchor-slot groups require triage: store `00001000-00fb-0000-0000-000000000000`, slot 73; store `511da101-0000-7ce5-cdf0-9a7bbb02e86e`, slot 9. Neither is test0Dk inventory. Do not automatically delete or relocate items: ownership/context and slot semantics need verification. Report contains exact item UUIDs in JSON.
+Read-only snapshot validator captured 4,602 items, 118 stores, 1,117 attributes, 326 definitions, five selected characters. 13/14 checks passed; two duplicate anchor slots were traced to pinned OpenMU seed source, not our test0Dk gameplay:
 
-This checks snapshot integrity, NOT all standard MU mechanics or a completion percentage. Maps/gates/spawns/shops/item definitions/drops/skills/quests and all client assets are not exported here. Previous `docs/baseline-content-audit.md` remains authoritative for static content evidence. Party/trade/guild/events/crafting remain runtime unverified.
+- Hanzo storage `00001000-00fb-0000-0000-000000000000`, slot 73: Gladius and Falchion. Exact initializer: `src/Persistence/Initialization/Version075/MerchantStores.cs`, `CreateHanzoTheBlacksmith`, both `CreateWeapon(73, ...)` calls. This confirms a seeded shop-content collision. Do not delete records or patch stack yet; inspect item footprints and move to an available shop cell in an isolated future correction.
+- Storage `511da101-0000-7ce5-cdf0-9a7bbb02e86e`, slot 9: Broy Pendant of Ice (group13 number25) plus Excellent Pendant of Fire (group13 number13). Exact initializer: `src/Persistence/Initialization/VersionSeasonSix/TestAccounts/GameMaster.cs`, two consecutive `InventoryConstants.PendantSlot` additions. This is a seeded GM-fixture collision; neither affects test0Dk inventory. Avoid using this GM fixture as equipment-validation evidence.
+
+Pinned OpenMU commit d067b3c11c23c3145de6e2c76201ab9a93b267c8 source unchanged. No DB writes, client rebuilds, CI runs or resource imports during this follow-up.
+
+## Prepared bulk configuration validator
+
+`scripts/check-config-references.py` generates read-only repeatable-read SQL and validates exported primary keys and database-declared foreign keys pointing to configuration tables. Exports all config tables and data.Item only, not account credentials. Keep raw exports in private runtime evidence; publish summarized findings only.
+
+```sh
+python3 scripts/check-config-references.py --export-sql export-baseline-config.sql
+# On already-restored PostgreSQL 17, from a private output directory:
+psql -X -A -t -q -v ON_ERROR_STOP=1 -d openmu -f export-baseline-config.sql
+python3 scripts/check-config-references.py --evidence PRIVATE_EXPORT_DIR --out PRIVATE_REPORT_DIR
+```
+
+Prepared checker verified on valid reference, missing target, and nullable-reference cases; SQL generated and checked against the embedded template. **Actual full-config SQL export and full data run are NOT executed yet.** Local existing pg_restore16 cannot read this pg_dump17 archive (format1.16). No repeated retry or fresh environment installation. Run exporter during next necessary bounded session on existing PG17 environment, using newest saved backup.
+
+Scope: structural references across exported configuration tables (maps/gates/spawns/shop definitions/items/skills where declared in schema), not full gameplay semantics or client model/texture availability. Client resource manifest matching remains unfinished. Previous baseline content audit retained; no inflated completion percentage. Party/trade still unverified.
 
 ## Exact next action
 
-Economical next step: resolve the two duplicate-slot findings using existing definitions/snapshot, then add a read-only configuration/resource reference exporter and bulk validator for maps/gates/spawns/shops/items/skills. Avoid per-item GUI testing. Minimum two-client party/trade smoke can follow as one bounded runtime session; two native client instances are previously confirmed, their interaction is not.
+Economical next step: execute the prepared read-only exporter on existing PG17 during the next necessary runtime session; analyze its reference report and add client-resource manifest matching. Duplicate-slot origins are now confirmed; leave stack/data unchanged until narrow corrections are reviewed. Avoid per-item GUI testing. Minimum two-client party/trade smoke can follow as one bounded runtime session; two native client instances are previously confirmed, their interaction is not.
 
 Do not rebuild/retest verified core. Existing stack/resources stay frozen. Do not broaden research or import resources. Before any costly CI/build/repeated session, explain necessity. Available Work credit balance is not visible; no automatic budget warning can be guaranteed. Save every milestone and exact next step here.
 
