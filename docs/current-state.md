@@ -50,3 +50,6 @@ Save significant success to this repository and update this file plus [gameplay-
 
 ## Active continuation checkpoint
 Runtime session 4 dispatched: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37851961862 . Workflow correction commit ddb64812330bbdde66d4591af85c37fc90233857; control commit bd92e0ceaac0d1a4a6d98159cba50591a379a8fa. Latest confirmed gameplay is still the purchased shield; combat, XP/drop, natural level, STR allocation, equipment and saved-progress relog remain unverified. No client rebuild/retest. Stop cleanly with database dump and update this checkpoint if continuation cannot finish.
+
+### Session 4 milestone: saved purchase and two connected clients
+Artifact 11581969326 (`gameplay-combat-setup-01`) confirms test0Dk re-entered with the purchased Small Shield and Zen 9,999,770; unchanged XP/level were captured before combat. Both real MuMain processes are running and the character has been placed by the GM at Lorencia (200,130), with live monsters visible. This is an explicit positioning fixture, not a normal warp claim. Latest confirmed step: persistence of the shop purchase and two-client connection. Next unfinished step: actual monster kill and EXP/drop.
