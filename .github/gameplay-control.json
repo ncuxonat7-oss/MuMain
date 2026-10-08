@@ -1,56 +1,27 @@
 {
-  "id": "single-shop-03",
+  "id": "merchant-walk-04",
   "steps": [
     {
-      "op": "select-client",
-      "name": "two"
-    },
-    {
-      "op": "key",
-      "vk": 13
-    },
-    {
-      "op": "select-client",
-      "name": "one"
-    },
-    {
-      "op": "restart-client"
-    },
-    {
-      "op": "login",
-      "account": "test0"
-    },
-    {
-      "op": "key",
-      "vk": 67
+      "op": "click",
+      "x": 80,
+      "y": 100
     },
     {
       "op": "capture",
-      "name": "19-test0-level1-xp0"
-    },
-    {
-      "op": "key",
-      "vk": 67
-    },
-    {
-      "op": "capture",
-      "name": "20-test0-town-before-shop"
+      "name": "22-town-walk-first"
     },
     {
       "op": "click",
-      "x": 650,
-      "y": 80
+      "x": 80,
+      "y": 100
     },
     {
       "op": "wait",
-      "seconds": 8
+      "seconds": 3
     },
     {
       "op": "capture",
-      "name": "21-approach-blacksmith"
-    },
-    {
-      "op": "snapshot"
+      "name": "23-standard-merchants-area"
     }
   ]
 }
