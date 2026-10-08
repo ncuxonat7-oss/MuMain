@@ -1,51 +1,11 @@
 {
-  "id": "warp-ui-03",
+  "id": "save-db-04",
   "steps": [
     {
-      "op": "click",
-      "x": 695,
-      "y": 14
+      "op": "restart-client"
     },
     {
-      "op": "click",
-      "x": 1000,
-      "y": 14
-    },
-    {
-      "op": "key",
-      "text": "m"
-    },
-    {
-      "op": "capture",
-      "name": "07-move-window"
-    },
-    {
-      "op": "key",
-      "text": "{ENTER}"
-    },
-    {
-      "op": "capture",
-      "name": "08-chat-before"
-    },
-    {
-      "op": "key",
-      "text": "/move Noria"
-    },
-    {
-      "op": "capture",
-      "name": "09-chat-text"
-    },
-    {
-      "op": "key",
-      "text": "{ENTER}"
-    },
-    {
-      "op": "wait",
-      "seconds": 10
-    },
-    {
-      "op": "capture",
-      "name": "10-map-after-command"
+      "op": "finish"
     }
   ]
 }
