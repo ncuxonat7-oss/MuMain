@@ -132,6 +132,7 @@ jobs:
             [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr window);
             [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr window, ref Point point);
             [DllImport("user32.dll")] public static extern bool SetCursorPos(int x, int y);
+            [DllImport("user32.dll")] public static extern void keybd_event(byte key,byte scan,uint flags,UIntPtr extra);
             [DllImport("user32.dll")] public static extern void mouse_event(uint flags,uint x,uint y,uint data,UIntPtr extra);
           }
           '@
@@ -180,11 +181,13 @@ jobs:
           Click-Client 530 490
           [Windows.Forms.SendKeys]::SendWait('test0')
           Capture-Stage '04-credentials'
-          [Windows.Forms.SendKeys]::SendWait('{ENTER}')
+          Click-Client 525 563
           Start-Sleep -Seconds 10
           Capture-Stage '05-character-list'
           Click-Client 215 380
-          [Windows.Forms.SendKeys]::SendWait('{ENTER}')
+          [PrototypeInput]::keybd_event(13,0,0,[UIntPtr]::Zero)
+          Start-Sleep -Milliseconds 350
+          [PrototypeInput]::keybd_event(13,0,2,[UIntPtr]::Zero)
           Start-Sleep -Seconds 20
           Capture-Stage '06-world-attempt'
           & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d openmu -c 'select count(*) as accounts from data."Account"; select count(*) as characters from data."Character";' > "$evidence/database-counts.txt"
