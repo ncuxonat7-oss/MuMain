@@ -1,5 +1,5 @@
 {
-  "id": "combat-safe-04",
+  "id": "combat-level-05",
   "steps": [
     {
       "op": "select-client",
@@ -14,78 +14,28 @@
       "name": "two"
     },
     {
-      "op": "key",
-      "vk": 81
-    },
-    {
       "op": "hold",
       "x": 465,
       "y": 422,
-      "ms": 5000
-    },
-    {
-      "op": "key",
-      "vk": 81
+      "ms": 7000
     },
     {
       "op": "hold",
       "x": 500,
       "y": 390,
-      "ms": 5000
-    },
-    {
-      "op": "key",
-      "vk": 81
+      "ms": 7000
     },
     {
       "op": "hold",
-      "x": 500,
-      "y": 390,
-      "ms": 5000
-    },
-    {
-      "op": "key",
-      "vk": 81
+      "x": 450,
+      "y": 375,
+      "ms": 7000
     },
     {
       "op": "hold",
-      "x": 500,
-      "y": 390,
-      "ms": 5000
-    },
-    {
-      "op": "key",
-      "vk": 81
-    },
-    {
-      "op": "hold",
-      "x": 500,
-      "y": 390,
-      "ms": 5000
-    },
-    {
-      "op": "key",
-      "vk": 81
-    },
-    {
-      "op": "hold",
-      "x": 500,
-      "y": 390,
-      "ms": 5000
-    },
-    {
-      "op": "key",
-      "vk": 81
-    },
-    {
-      "op": "hold",
-      "x": 500,
-      "y": 390,
-      "ms": 5000
-    },
-    {
-      "op": "key",
-      "vk": 81
+      "x": 550,
+      "y": 380,
+      "ms": 7000
     },
     {
       "op": "key",
@@ -93,7 +43,7 @@
     },
     {
       "op": "capture",
-      "name": "33-combat-round2"
+      "name": "35-next-combat"
     },
     {
       "op": "select-client",
@@ -113,7 +63,7 @@
     },
     {
       "op": "capture",
-      "name": "34-safe-level-check"
+      "name": "36-level2-check"
     },
     {
       "op": "key",
