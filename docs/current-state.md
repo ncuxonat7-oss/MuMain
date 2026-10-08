@@ -1,82 +1,49 @@
 # Current confirmed state
 
-Updated: 2026-10-08. Goal completed: real MuMain login into Lorencia on our OpenMU with PostgreSQL.
+Updated 2026-10-08. Current task is **in progress**: normal gameplay loop, then two-client party/trade/guild. Confirmed Lorencia baseline remains valid. No application rebuild or repeat of the 423 client tests in this stage.
 
 ## Last successful step
 
-Authenticated as disposable seeded account `test0`, selected Dark Knight `test0Dk`, entered **Lorencia (149, 123)**. Authentic `06-world-attempt.png` displays “Welcome to Lorencia” and “test0Dk entered the game.” Client log records `Character selected: slot 1` and `Main Scene init success` at 19:18:58 UTC. Screenshot inspected on 2026-10-08; success is based on actual client output, not merely a green workflow.
+On real MuMain → pinned OpenMU → PostgreSQL:
 
-## Confirmed components
+- Normal `test300Dk` warp **Lorencia → Noria (171,114) → Lorencia (142,132)**. Actual screenshots and welcome messages; no GM command for these transitions. Persisted Zen **10,000,000 → 9,996,000**, matching two 2,000-Zen warps.
+- Normal `test0Dk`, **level 1, XP 0/100, STR 28**, walked to Hanzo and opened the real standard NPC shop at Lorencia (117,140).
+- Purchased **Small Shield** for **230 Zen**: inventory **10,000,000 → 9,999,770**. Screenshot and final PostgreSQL snapshot confirm the new item and saved money/position. Item `801da101-0000-760d-a605-a410efe9185d`, definition `00000080-0006-0000-0000-000000000000`, inventory slot **47**, durability **22**.
+- The shield requires **STR 31**; test0 has 28. It is bought but **not equipped**. Natural level-up and three stat points are required; do not grant XP/stats or claim equipment success yet.
 
-- OpenMU source: https://github.com/MUnique/OpenMU, commit `d067b3c11c23c3145de6e2c76201ab9a93b267c8`, MIT; Windows .NET 10 runtime, cached server build.
-- PostgreSQL **17.11**, real local database; initialization created 20 disposable test accounts and 76 characters, including the character used above.
-- Existing MuMain Windows x64 Release build (editor off), previously passed **423 tests**. No client rebuild or repeat tests for this runtime check. Build run: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37813650810 ; artifact `11567737809`.
-- Exact reused `Main.exe` SHA256: `9d895c638eb256b98d728dfc511f4c57d4a9e88cdba703e639426712b0b57cd5`.
-- Exact reused `MUnique.Client.Library.dll` SHA256: `9292041494d9226f105fc07a94c2451f6303b906123b2932ea05a3469c378cb7`.
-- SDL Direct3D 12 rendering on Windows CI. Connect server port 44406; actual game connection `127.127.127.127:55902`. Evidence includes client/server connection endpoints and server database connections to localhost:5432.
-- Assets/fonts: upstream release `data-4b0ab29c58b27fc4`, checked archive checksum. Exact source/trees and prototype authorization are recorded in [resource-registry.md](resource-registry.md). Prototype authorization does not grant commercial redistribution rights.
+## Frozen stack and existing artifacts
 
-## Reproducible evidence
+- OpenMU https://github.com/MUnique/OpenMU commit `d067b3c11c23c3145de6e2c76201ab9a93b267c8`, MIT; cached Windows Release runtime, .NET 10.
+- MuMain fork https://github.com/ncuxonat7-oss/MuMain . Existing Windows x64 Release/editor-off build run **37813650810**, artifact **11567737809**; previously passed **423 tests**.
+- Exact Main.exe SHA256 `9d895c638eb256b98d728dfc511f4c57d4a9e88cdba703e639426712b0b57cd5`; MUnique.Client.Library.dll SHA256 `9292041494d9226f105fc07a94c2451f6303b906123b2932ea05a3469c378cb7`.
+- PostgreSQL **17.11**, ephemeral trusted localhost test instance. Connect port 44406, game endpoint 127.127.127.127:55902. No persistent/public hosting deployed.
+- Same approved prototype Data/fonts release `sven-n/MuMain`, `data-4b0ab29c58b27fc4`, archive SHA256 `8c62a98aaabf13d80c24c0c688dbfafd4b23813966dd3a2f13c445c3a35e8d1d`. Commercial redistribution remains unresolved; exact provenance is in [resource-registry.md](resource-registry.md).
+- Original confirmed Lorencia login: run **37830707804**, artifact **11573356702**, actual `06-world-attempt.png`. Preserve it; do not rebuild or retest merely to reconfirm it.
 
-- Workflow: [.github/workflows/lorencia-runtime.yml](../.github/workflows/lorencia-runtime.yml), manual dispatch only.
-- Successful runtime run: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37830707804
-- Runtime workflow commit: `3b7088f1ca44e056dea5169435dbc4959d3e39b1`.
-- Artifact: `lorencia-runtime-probe`, ID **11573356702**, ZIP size 8,962,127 bytes.
-- Downloaded ZIP SHA256 verified: `1dd7ffe7478abe7686682928f1b18ef8fc68c7532e5e9a9b385c2ba2bd7a92d7`.
-- Evidence files: `06-world-attempt.png`, `05b-selected-knight.png`, `client-MuError.log`, `client-binary-hashes.txt`, `connections.json`, `database-version.txt`, `database-counts.txt`, `resources.txt`, server logs and earlier UI screenshots.
-- GitHub artifact expires 2027-01-06. Original ZIP and final screenshot are additionally saved as user deliverables; do not rely on transient Work paths for recovery.
+## Latest preserved database and evidence
 
-## Current blocker
+Completed gameplay session **37846640006**: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37846640006 . It reached its planned 25-minute interactive limit and saved the database.
 
-**None for the requested Lorencia end-to-end prototype.** Correct UI selection resolved the previous character-selection click issue. Missing models for other maps remain in logs; they did not prevent this Lorencia login. This result does not validate other maps, gameplay, or production distribution.
+**Resume from this database**, not from new seed data:
 
-## Runtime lifecycle and next action
+- Artifact **11581801498**, `gameplay-final`, ZIP **28,263,120 bytes**.
+- ZIP SHA256 `bbd677d82a858bf72a3fbf259a163fd482c54a34f53988c750d75e72745130f9`.
+- Includes `gameplay-test-db.dump`, `final-database.jsonl`, real map/shop/purchase screenshots, logs and exact binary hashes.
+- Purchase screenshot `25-after-small-shield-purchase.png`; shop `24-hanzo-shop-attempt.png`; normal warp `11-normal-warp-noria.png`, `12-normal-warp-return.png`; initial low-level stats `19-test0-level1-xp0.png`.
+- Additional map artifact **11579958340**, purchase batch **11581871100**. Full final ZIP and purchase/Noria screenshots saved additionally as durable user deliverables. GitHub artifacts expire after 90 days.
 
-This was a real but ephemeral Windows GitHub Actions session. Workflow cleanup stopped client, server and PostgreSQL after evidence collection. No persistent public server or hosting was deployed. The disposable database is recreated from OpenMU initialization on each test run.
+## Current blocker and prepared correction
 
-**Stop: requested stage is complete.** Preserve existing commits, client artifact, cached server and evidence. Do not rerun builds/tests/CI merely to reconfirm this result. Future hosting or broader tests require a separate user request. Before any substantial new build/research/retry series, explain its concrete necessity. Available Work credit balance is not visible to the agent.
+Combat/XP/drop/level/equip and changed-gameplay re-login are not verified yet. Party/trade/guild are not verified.
 
-## Latest completed stage — Baseline + Reference Gap Audit (2026-10-08)
+The second process failed because the test harness copied only root files plus Data/fonts and omitted **shaders**. Actual log: `client-two\shaders\basic_textured.vert.dxil` not found. This is a packaging defect in the harness, not an established GPU/driver limitation. The GM positioning attempt reported `Character test0Dk not found`; it did not move test0 because the second client had not logged in. Normal shop approach was completed with the first full client instead.
 
-[baseline-content-audit.md](baseline-content-audit.md) audits the exact unchanged server/client/Data baseline. Static content is extensive: 73 map initializer entries / 68 distinct map IDs, 949 client item entries, 889 model records with no missing explicit BMD paths, 128 active weapon and 22 shield IDs cross-matched, 40 warp entries, 35 recipe attachments. These are source/inventory counts, not runtime success.
+Prepared harness correction adds the existing `shaders` directory to the second client, checks the shader file before launch, throws on readiness timeout, tracks restarted client PIDs for cleanup, and restores the latest run-3 database. No application source, resources, game rules or XP/stat values changed. Next session uploads only new screenshots/snapshots per batch to reduce transfers. Current official upload-artifact v4 documentation supports 500 artifacts/job using the same @actions/artifact 2 SDK; harness is bounded to 25 command batches and 35 interactive minutes, stopping earlier with `finish`.
 
-Last successful step: completed read-only content/reference audit; no builds, CI dispatches, new runtime tests, code/resource imports or stack changes. Existing Lorencia E2E evidence remains valid. Three bounded references: MuEmu, exact MuMain source/assets, Babylon client README; no imports.
+Earlier restore failure (run **37845483038**) was exactly 127 missing-role errors for standard PostgreSQL roles account/config/guild/friend. Fixed in commit `6a4a287055abfd6d5e2491a6c3998b5a94d616b9`: recreate those exact standard roles before restoring original grants, stop failed bootstrap processes, redirect child output to a file. Original first-session backup also remains preserved (run 37843108952, artifact 11580160294).
 
-Current completeness blocker: most gameplay has no runtime proof; full Crywolf and Illusion Temple server lifecycles were not found. RED labels are standard-content gaps, not a fundamental stack dead end. Estimated evidence readiness 63.3% (judgment range 55–75%); this is not measured playable/test coverage.
+## Next action and checkpoint policy
 
-Next recommended action: a bounded existing-binary single-character loop (gate, merchant, kill, XP, pickup/equip, level/stats, relog with the same DB), then two-client party/trade/guild. Not executed. Stop after audit; wait for the next user task. Notify before substantial new builds/research/retry series.
+Launch the corrected bounded continuation with the latest preserved database. Use existing seeded `testgm` and normal `test0` as two actual MuMain processes. Verify saved purchase, then use standard GM movement **only as a named positioning fixture** near normal Lorencia monster spawns; no XP/stat grants or fabricated drops. Fight, collect real XP/drop, naturally level, add three STR points, equip the purchased shield, and reconnect to verify saved progress. Then test two-client party/trade/guild; seeded normal test1Dk level 11 can meet guild-join eligibility if needed.
 
-
-## Active stage — Standard gameplay runtime validation (2026-10-08)
-
-User authorized the bounded single-character gameplay loop followed by real two-client party/trade/guild checks. Previous stop-after-audit instruction is superseded by this explicit task.
-
-Last successful step: committed `.github/workflows/standard-gameplay.yml` at `8d3cc2dfba516bc0a4cbcca448988dd890ed25c8` and initial `.github/gameplay-control.json` at `2305f706b1bcf6333ff934e317b56e167371ab34`. No application source, resources or game definitions changed. Existing client build and pinned server cache are reused.
-
-Runtime run dispatched once: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37843108952 . Its harness accepts a bounded allowlist of native GUI actions, uploads authentic screenshots and read-only SQL snapshots between batches, and saves a PostgreSQL dump at cleanup. No experience/stat grants are used. Low-level test0Dk is reserved for combat/leveling; seeded level-11 test1Dk can meet normal map-warp level requirements.
-
-Current blocker: gameplay results are not yet verified. Next action: inspect the ready-world screenshot, issue observed GUI actions, compare client UI and database state; then test a second real client. A workflow status alone is not feature proof. Available Work credit balance is not visible.
-
-### Gameplay session 1 checkpoint
-
-Run 37843108952 finished successfully as a harness run, not as a gameplay-suite pass. Existing client/server/PG reached Lorencia on test0Dk and test1Dk. Inventory opened by mouse; character UI opened and showed level 11, XP 19000/24200, 50 unused points, seeded items and 10,000,000 Zen. A real reconnect from test0 to test1 succeeded. Map warps remain **unverified**: chat text `/move Noria` was captured still in the input field after a short SendKeys Enter. This is a test-input timing defect, not evidence that server warp fails.
-
-Evidence: ready artifact 11578638189; warp-01 11577984876; input-02 11578424712; warp-ui-03 11578684284. Final artifact **11580160294**, `gameplay-final`, ZIP 20,056,292 bytes, SHA256 `0908bda3fcfed47f1529e292ff7579ae0f2ce3bfb806a04a176df8205647ad5d`, includes compressed PostgreSQL dump `gameplay-test-db.dump` (1,366,613 bytes). Keep this dump when resuming rather than discarding progress. Original final ZIP and character screenshot additionally saved as durable user deliverables.
-
-Fixed the harness at commit `ee4029ce666aa44fc7f8e110e5ff13cfb115e766`: 250 ms Win32 physical key presses, proper active-client cleanup, restore previous gameplay database before starting OpenMU. No application/client rebuild, 423 tests repeat, assets/config/content/stat grants or imports.
-
-Continuation run **37845483038**, workflow/control commit `67cf1faffd30dbabc87bd5a360ec362c31c238d6`: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37845483038 . Initial actor is existing seeded `test300` for normal warp eligibility; natural leveling still reserved for `test0`. Current blocker: await physical-input and map-warp proof. Next action: inspect screenshots, then merchant/combat/XP/drop/equip/level/relog, followed by two clients for party/trade/guild. Do not claim gameplay completion from workflow success.
-
-### Restore blocker resolved in harness; continuation 3
-
-Run 37845483038 failed before launching OpenMU/client: pg_restore log contains exactly 127 missing-role errors for standard OpenMU PostgreSQL roles `account`, `config`, `guild`, `friend`; no other restore errors. Failure evidence artifact 11579298825 (5.26 KB) is retained. The run was canceled after the failed bootstrap left PostgreSQL alive; no gameplay results from it.
-
-Commit `6a4a287055abfd6d5e2491a6c3998b5a94d616b9` now creates the exact four standard roles from pinned OpenMU ConnectionSettings.xml before restoring existing grants, uses pg_restore --exit-on-error, encloses bootstrap in process cleanup, and redirects the child harness output to a file instead of inherited Node pipes. No game rules/assets/application source changed. Original run-1 dump remains the restore source.
-
-Active continuation: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37846640006 , job 113549047110. Cached server build skipped again. Current blocker: pending restored-server/client screenshots; physical key correction has not yet been runtime verified. Next action: normal warp proof, then merchant/combat/XP/drop/equip/level/relogin and two-client party/trade/guild.
-
-### Confirmed normal map transitions — 2026-10-08 21:29 UTC
-
-Restored database and pinned OpenMU/client now run successfully. Physical M opened the actual Warp Command Window (screenshot `ready-physical-move-menu.png`). Normal player `test300Dk` used ordinary `/move Noria` and `/move Lorencia`; authentic `11-normal-warp-noria.png` shows **Noria (171,114)** and “Welcome to Noria”; `12-normal-warp-return.png` shows **Lorencia (142,132)** and both welcome messages. No GM command was used for these map transitions. Ready artifact 11579274096; map-transition artifact **11579958340**, ZIP SHA256 `14a50fbb4af2b72abc4aac581dea159f414487e24d5aae5f12bc2010095b4422`.
-
-Last successful step: real normal map warp out and back, on restored prior PostgreSQL. Next action currently submitted: switch first process to existing `testgm`, launch a second actual Main.exe for `test0`, use the standard GM move command solely as a named shop/combat positioning fixture, inspect shop, then actual combat/XP/drop/equip/level/relogin. GM positioning must not be counted as ordinary map-warp proof or as natural XP/leveling. Party/trade/guild are still not verified.
+Save significant success to this repository and update this file plus [gameplay-runtime-checks.md](gameplay-runtime-checks.md). Prior detailed baseline/reference audit is [baseline-content-audit.md](baseline-content-audit.md). Do not repeat builds/tests/research without a technical need. Notify before substantial new build/research/retry series. Available Work credit balance is not visible; automatic balance warnings cannot be promised.
