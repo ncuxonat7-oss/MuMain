@@ -1,1 +1,125 @@
-{"id":"idle","steps":[]}
+{
+  "id": "trade-cancel-relog-11",
+  "steps": [
+    {
+      "op": "second-client"
+    },
+    {
+      "op": "login",
+      "account": "test300"
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "key",
+      "vk": 68
+    },
+    {
+      "op": "click",
+      "x": 872,
+      "y": 70
+    },
+    {
+      "op": "right-click",
+      "x": 581,
+      "y": 362
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "click",
+      "x": 420,
+      "y": 292
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "right-click",
+      "x": 792,
+      "y": 428
+    },
+    {
+      "op": "click",
+      "x": 611,
+      "y": 643
+    },
+    {
+      "op": "key",
+      "text": "100"
+    },
+    {
+      "op": "key",
+      "vk": 13
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "capture",
+      "name": "23-cancel-item-and-zen-offered"
+    },
+    {
+      "op": "click",
+      "x": 463,
+      "y": 643
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "capture",
+      "name": "24-trade-cancelled"
+    },
+    {
+      "op": "restart-client"
+    },
+    {
+      "op": "login",
+      "account": "testgm"
+    },
+    {
+      "op": "key",
+      "vk": 73
+    },
+    {
+      "op": "capture",
+      "name": "25-donor-relogged-after-cancel"
+    },
+    {
+      "op": "snapshot"
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "restart-client"
+    },
+    {
+      "op": "login",
+      "account": "test300"
+    },
+    {
+      "op": "key",
+      "vk": 73
+    },
+    {
+      "op": "capture",
+      "name": "26-recipient-relogged-after-cancel"
+    },
+    {
+      "op": "snapshot"
+    },
+    {
+      "op": "finish"
+    }
+  ]
+}
