@@ -21,10 +21,12 @@ Dates UTC; this is evidence, not a conversation transcript. Latest state always 
 
 |Corrected trade37882579366/artifact11594978877|33-step plan consumed (item cell792:428,20-second focused pauses); both clients captured/restarted; core DK unchanged|Trade UI/grid still incomplete; nine-assertion overallFAIL; donor-100Zen/recipient0; original UUID stayed donor. No successful transfer. Stop repeated drag plans; direct auto-move is next targeted candidate.|
 
-Screenshots05/06 of finite smoke are authentic native captures, not generated images. Restore clean pre-trade run37879360808 (which retains core run37860870710), not interrupted37881728154/37882579366 or pre-equipment37851961862.
+|Trade37947724161/artifact11624674487|Direct native item offer visible in both clients17/18; item+100Zen confirmed;20 shows100Zen Obtained;21 recipient relog; final9 assertionsPASS|One ordinary item/Zen exchange between GM400 and normal300 fixtures. Same potionUUID/quantity3 transferred, all two-inventory IDs conserved, core DK unchanged. Cancel/disconnect safety and guild/shared EXP not tested.|
+
+Screenshots05/06 of finite smoke are authentic native captures, not generated images. Restore newest successful run37947724161 (which retains core run37860870710), not interrupted37881728154/37882579366 or pre-equipment37851961862.
 
 ## NOT VERIFIED
 
-Party shared EXP/leave; trade completion/guild interactions and transaction persistence; all seven classes/casting/buffs/master skills; quest/promotion cycle; Chaos mix outcomes; event entry/lifecycle/reward; all monster ID/render/AI/respawn mappings; sustained server stability; client resource textures/animations/audio; production hosting/security/licensing.
+Party shared EXP/leave; guild interactions, trade cancel/disconnect/crash safety and general multiplayer transaction stability; all seven classes/casting/buffs/master skills; quest/promotion cycle; Chaos mix outcomes; event entry/lifecycle/reward; all monster ID/render/AI/respawn mappings; sustained server stability; client resource textures/animations/audio; production hosting/security/licensing.
 
 Earlier failures and workarounds are in lessons-learned.md. Current readiness scoring is in baseline-content-audit.md and baseline-readiness.json. Do not infer a PASS from an implementation/test name or a server/client resource count.

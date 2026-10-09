@@ -10,7 +10,7 @@
 |Relog/persisted progress|VERIFIED; do not repeat|same run,seven assertions PASS,44 same item UUIDs retained|
 |Two native client connections|VERIFIED prerequisite only|run37851961862; no membership/transfer proof|
 |Party membership|VERIFIED invite/accept/member lists|run37879360808/artifact11593403578; shared EXP/leave untested|
-|Trade + recipient persistence|NOT VERIFIED; two finite attempts failed|37881728154/37882579366; empty trade grid/open UI; donor-100Zen/recipient0. Next scoped direct-auto-move check, no repeat drag plans|
+|Trade + recipient persistence|VERIFIED normal transfer/relog;9PASS|37947724161/artifact11624674487; same itemUUID/quantity3,+100/-100Zen; cancellation/disconnect/refund remainsUNKNOWN|
 |Guild,all quests/events/skills/Chaos Machine|UNKNOWN or scoped static only|See baseline-content-audit.md; no exhaustive runtime plan|
 
 No builds were rerun. Subsequent party/finite trade CI reused validated binaries. Fixture account/character seeded, new-character UI not proven. Screenshots are genuine; see test-history.md and resource-registry.md for exact evidence. Fail a check honestly; source code/UI availability is not a PASS. Checkpoint after each new confirmed milestone and update existing model1.0 ledger.

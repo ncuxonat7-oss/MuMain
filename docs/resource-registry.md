@@ -131,12 +131,15 @@ Resource replacement boundary: runtime archive already omits Data/fonts and upst
 
 ### 2026-10-09 party membership recovery
 
-run37879360808, artifact11593403578; saved party-accept.zip, authorized-user libfile_14d3ff11c6cc81919de262261fce9f58, SHA256 b6be122a32245dd47f6b1a4b880431b6f907981aafcf08f2a1ba49d0cff956b4. Genuine07/08 member lists and10 received trade request. No completed trade/DB persistence proof in this archive; active job final evidence will supersede it.
+run37879360808, artifact11593403578; saved party-accept.zip, authorized-user libfile_14d3ff11c6cc81919de262261fce9f58, SHA256 b6be122a32245dd47f6b1a4b880431b6f907981aafcf08f2a1ba49d0cff956b4. Genuine07/08 member lists and10 received trade request. No completed trade/DB persistence proof in this archive; historical party evidence only; newest completed trade evidence is below.
 
-### Latest pre-trade persisted snapshot
+### Historical clean pre-trade snapshot (superseded by completed trade)
 
-run37879360808/artifact11594420323; party-trade-final.zip,23259299bytes,SHA256 58ac2b8bc1c916b83a660f2d881bc548096149ca2d921d0949ee90851bb93676; authorized-user libfile_5822066d47a481918d68a925818e17a3. Contains final DB/logs/screenshots. Core test0Dk stats/items unchanged; test300Dk repositioned to118,140. Trade UI opened but no transfer. Restore this for finite trade continuation; keep earlier run37860870710 as independent core checkpoint.
+run37879360808/artifact11594420323; party-trade-final.zip,23259299bytes,SHA256 58ac2b8bc1c916b83a660f2d881bc548096149ca2d921d0949ee90851bb93676; authorized-user libfile_5822066d47a481918d68a925818e17a3. Contains final DB/logs/screenshots. Core test0Dk stats/items unchanged; test300Dk repositioned to118,140. Trade UI opened but no transfer. Retained for reproducing the pre-trade fixture only; newest working snapshot is37947724161 below; keep earlier run37860870710 as independent core checkpoint.
 
 - Failed finite trade37881728154/artifact11595121043:9410516bytes, SHA2569707e0b09fe2cc01a37f1f2697083c08a25bf6f6d4df23fe7a88062e7bd71e93; authorized-user backup libfile_06af9997bb2481919f7df53072a65b14. Evidence only: do NOT promote its interrupted-trade DB over the clean baseline37879360808.
 
 - Corrected failed trade37882579366/artifact11594978877:9420594bytes, SHA25673c4d78f48fde231a2b855b46f2363ba5be1038033589dde56083c5e54df26e5; authorized-user backup libfile_65ce7197607c8191bb0a9c01f69d018a. Includes consumed33-step plan, real screenshots13–16, final dump and assertion JSON. Evidence only; DO NOT promote interrupted DB.
+
+### Newest WORKING gameplay snapshot — completed trade
+Run37947724161 (head21cce30c978057f95bdca5bc5d1b3dc2fbd4faf9), finalartifact11624674487. ZIP12788613bytes, SHA256906ac9266d5fdf78ab748178fecfc3aade1e79c947e3ade4529c53466f33420e. Authorized-user backup libfile_b540571e9f208191bf4af1d3991fe2c7. Contains complete PostgreSQL dump, final/ready JSONL, hashes/logs, consumed09/10 plans, actual native screenshots17–22 and9-check PASS. Normal item+100Zen transfer is persisted; core DK unchanged. Recipient screenshot21 backup libfile_9776c84f50208191a9376f798bdeb25b. This successful snapshot supersedes37879360808 as current working state; old pre-trade snapshot remains recoverable. Do NOT restore failed37881728154/37882579366 snapshots over it.

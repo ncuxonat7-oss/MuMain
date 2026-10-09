@@ -1,6 +1,6 @@
 # Standard MU baseline content audit
 
-Updated2026-10-09. Exact stack: OpenMU d067b3c11c23c3145de6e2c76201ab9a93b267c8; validated MuMain8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5/upstream21728b1e5b03e0763b38ef9e23f79645e0df7ad2; Data tree77f7830f542d106fc519c8821832d49a3dd8ae3a. Target: ordinary playable S6E3-oriented standard baseline, not every proprietary retail feature. No stack modifications/imports/new CI in this audit.
+Updated2026-10-09. Exact stack: OpenMU d067b3c11c23c3145de6e2c76201ab9a93b267c8; validated MuMain8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5/upstream21728b1e5b03e0763b38ef9e23f79645e0df7ad2; Data tree77f7830f542d106fc519c8821832d49a3dd8ae3a. Target: ordinary playable S6E3-oriented standard baseline, not every proprietary retail feature. Static audit used no new CI; later bounded runtime checks reused existing binaries. No stack modifications/imports/rebuilds.
 
 GREEN means sufficiently confirmed for the stated scope, not universal proof. YELLOW means incomplete/uncertain. RED means specific missing/incompatible behavior/content. VERIFIED, AUTOMATICALLY VALIDATED, STATICALLY CONFIRMED, INFERRED and UNKNOWN remain separate.
 
@@ -10,6 +10,7 @@ GREEN means sufficiently confirmed for the stated scope, not universal proof. YE
 - A1: baseline-config export37863153228,47,417 rows/89 nonempty tables;272 structural constraints PASS,0FAIL,3NOT_CHECKED empty ItemOption. Seven local scalar checks0violations. See bulk-config-validation.md and scripts/check-config-references.py. Referential integrity does not prove gameplay rules.
 - A2: scripts/check-client-resources.py;690 server item definitions vs949 client JSON entries/889 model entries; complete nontruncated13,188-file pinned manifest;73 map records/68 numbers. Results client-resource-check.json. Actual ItemJsonFormat defaults and ItemDataHandler/ItemModelLoader shared-model resolver were checked.
 - S1: preserved original pinned source/reference audit baseline-content-audit-legacy-2026-10-08.md. Its runtime/scoring observations are historical, superseded here. No repeated repository analysis.
+- R5: party37879360808/artifact11593403578; R6: completed trade/relog37947724161/artifact11624674487, nine persisted assertionsPASS.
 - Recovery/source provenance in resource-registry.md; chronological limits in test-history.md.
 
 ## Feature matrix
@@ -30,12 +31,12 @@ GREEN means sufficiently confirmed for the stated scope, not universal proof. YE
 |Skills|288 definitions and structural references|Resource presence not fully linked to skill IDs/effects|Basic attack only; no complete casting proof|YELLOW STATIC/AUTO|Casting/buffs/master/tree/client effects UNKNOWN|Map supported packet/effect references and small representative test|S1,A1|
 |Leveling/stats|Progression formulas/attributes present|UI works for exercised DK|Natural level2/5 points;STR31/2 remaining points saved|GREEN for basic DK / YELLOW across classes|Other classes/high-level/formulas/master progression UNKNOWN|Validate formula boundary cases, not repeated low-level grind|R3/R4,A1|
 |Quests|499 definitions and references|Quest dialogs/source exist; resource/runtime coverage incomplete|None|YELLOW|Promotion/reward/requirements not end-to-end proven|Bulk prerequisites/rewards sanity; one representative cycle|A1/S1|
-|Party|Handlers/config source present|Real native party lists on both clients|Invite/accept/two-member lists VERIFIED|YELLOW partially VERIFIED|Shared EXP/leave/relog behavior UNKNOWN|Continue only remaining transaction check|run37879360808/artifact11593403578;07/08 screenshots|
-|Trade|Handlers/source present|UI logic exists|No transfer proof|YELLOW UNKNOWN interaction|Atomicity/item/Zen recipient persistence UNKNOWN|Same bounded job transfer ordinary item/Zen, relog|S1|
+|Party|Handlers/config source present|Real native party lists on both clients|Invite/accept/two-member lists VERIFIED|YELLOW partially VERIFIED|Shared EXP/leave/relog behavior UNKNOWN|Shared EXP/leave remain optional next scope; do not repeat membership|run37879360808/artifact11593403578;07/08 screenshots|
+|Trade|Pinned handlers|Native auto-move/confirmation|Ordinary item+100Zen transfer and recipient relog|GREEN scoped / YELLOW safety|Cancel/refund/disconnect/crash UNKNOWN; prior interrupted100Zen discrepancy open|Target cancellation/refund only; no successful transfer repeat|R6;17–22;9PASS|
 |Guild|Handlers and persistence source present|UI/resources source present|None|YELLOW|Creation/roles/member persistence UNKNOWN|Defer guild internals until actual block; later small transaction test|S1|
 |Chaos Machine/crafting|39 recipes, links and numeric bounds partly checked|NPC/UI source present; all effects UNKNOWN|None|YELLOW|Success/failure/consumption/options/reset semantics UNKNOWN|Recipe ingredient/output bulk audit then one ordinary mix|A1/S1|
 |Standard events|Blood Castle/Devil Square/Chaos Castle source/map definitions; other event definitions|Aliased core map triplets found, effects not runtime proof|None|RED Crywolf/Illusion Temple; YELLOW others|Pinned audit: complete specialized Crywolf/Illusion Temple lifecycle missing/incomplete; access maps alone cannot implement event|Explicitly define mandatory S6 event scope; targeted server implementation/verification only, not resource replacement|S1,A2|
-|Persistence|PG config/player/inventory links valid|Native relog actual|Same level/EXP/STR/points/44itemUUIDs and equipped shield|GREEN exercised core / YELLOW wider scope|Party/trade/guild/event state, crash/recovery/load UNKNOWN|Transaction test; preserve final DB|R4,A1|
+|Persistence|PG config/player/inventory links valid|Native relog actual|Core progression/shield; conserved trade/itemUUID after recipient relog|GREEN exercised flows / YELLOW wider scope|Cancel/disconnect/guild/events/crash/load UNKNOWN|Preserve37947724161; targeted cancel/refund check|R4,R6,A1|
 |Stability/regression|423 client tests; server scoped evidence|Known working shaders/client binary|Finite sessions only|YELLOW|Long duration/load/crash replay not verified; earlier resource warnings scoped|Target regressions after specific changes; no full rebuild now|R1–R4,S1|
 
 Sphere4/5 definitions have DropsFromMonsters=false and no live item instance in the saved snapshot; defects do not invalidate the proven ordinary-item loop. Five unresolved explicit model mappings:13:19 Weapon of Archangel,13:20 Wizard's Ring,14:162 Magic Backpack,14:163 Vault Expansion Certificate,14:169 Rage Fighter Character Card. UNKNOWN mapping is not a proven missing runtime render. SharedModels.json references were resolved before reporting absent files.
@@ -54,13 +55,13 @@ Model1.0 is fixed by the owner's weighting. Machine-readable criteria/evidence/l
 |NPCs/shops|10%|40%|4|
 |Classes/skills/stats/leveling|10%|60%|6|
 |Quests/events/Chaos Machine/crafting|10%|20%|2|
-|Party/trade/guild|5%|30%|1.5|
-|Persistence/stability/regression|10%|60%|6|
-|TOTAL|100%||58.5%|
+|Party/trade/guild|5%|40%|2|
+|Persistence/stability/regression|10%|70%|7|
+|TOTAL|100%||60%|
 
-Engineering estimate:58.5%, Evidence Confidence MEDIUM. Weighted acceptance-checklist coverage:35.5% runtime verified,23% automatically validated,18% static only,17.5% unknown,6% broken/missing. These percentages describe this fixed checklist's evidence scope, not a measured percentage of all MU mechanics. Structural checks score only structural acceptance criteria, not complete mechanic functionality. Two clients merely connecting earns prerequisite coverage, not party/trade PASS.
+Engineering estimate:60%, Evidence Confidence MEDIUM. Weighted acceptance-checklist coverage:37% runtime verified,23% automatically validated,17% static only,17% unknown,6% broken/missing. These percentages describe this fixed checklist's evidence scope, not a measured percentage of all MU mechanics. Structural checks score only structural acceptance criteria, not complete mechanic functionality. Two clients merely connecting earns prerequisite coverage, not party/trade PASS.
 
-Native continuation:run37879360808 uses saved client/server cache/newest DB, no builds. Party membership VERIFIED; delivered trade request is not yet completed exchange. Shared EXP not tested.
+Native continuation37947724161: ordinary trade and actual recipient relog VERIFIED,9PASS; no builds. Party membership already VERIFIED. Shared EXP/leave, guild, cancellation/refund/disconnect remain unverified.
 
 ### Readiness history
 
@@ -69,8 +70,9 @@ Native continuation:run37879360808 uses saved client/server cache/newest DB, no 
 |Legacy2026-10-08 audit|63.3% legacy|35.45/56;14 equally weighted S/C/A/R presence-oriented groups; excluded core. Preserved as historical record only|
 |2026-10-09 owner model1.0 introduction|N/A →58%; delta N/A|Owner's10 subsystem weights;50 explicit criteria; reuses existing runtime/config evidence plus new pinned client cross-check. Not a gameplay regression from63.3%|
 |2026-10-09 native party membership|58% →58.5% (+0.5)|Same model; partial invite/shared EXP/leave criterion earns0.5 for membership only|
+|2026-10-09 completed trade/relog|58.5% →60% (+1.5)|Scoped trade and transaction persistence partial0.5 each; same model; no cancel/crash credit|
 
-Critical RED standard-content areas:2 — Crywolf and Illusion Temple complete lifecycle. Other localized RED metadata/seed issues are listed in matrix and ledger. No confirmed fundamental core connectivity, normal-item handling, basic progression or persisted-state RED blocker.
+Critical RED standard-content areas:2 — Crywolf and Illusion Temple complete lifecycle. Other localized RED metadata/seed issues are listed in matrix and ledger. Core progression and completed trade are verified; interrupted-trade100Zen discrepancy remains unresolved, so general transaction safety is not cleared.
 
 NOT YET READY FOR MAJOR CUSTOMIZATION. Required gate:readiness>=85%, confidence>=MEDIUM and no unresolved fundamental core/persistence/item/progression RED. Numerical threshold alone is insufficient.
 
@@ -95,3 +97,13 @@ Run37881728154/artifact11595121043 did not complete trade: actual windows remain
 
 ### Corrected finite attempt / recovery checkpoint (2026-10-09)
 Run37882579366/artifact11594978877 consumed the corrected33 steps and focused20-second waits; no item transfer, no recipient Zen credit, trade UI remained open, final donor-100Zen. Nine-check overallFAIL, core DK unchanged. VERIFIED: offered100Zen appeared in recipient UI. UNKNOWN: item placement/held-item binding, normal completed trade, interrupted-trade refund/teardown persistence. This is a blocking YELLOW multiplayer uncertainty, not evidence of a diagnosed normal-trade server defect. Existing critical standard-contentRED count remains2 (Crywolf/Illusion Temple); multiplayer safety is not cleared. Next: pinned caller→direct auto-move→actual trade-grid screenshot→one transfer/relog, no further drag-loop attempts. Readiness58.5→58.5(+0), MEDIUM; unchanged weights/criteria/coverage.
+
+### Completed ordinary trade / readiness milestone (2026-10-09)
+VERIFIED run37947724161/artifact11624674487: item visible in both trade grids17/18; ordinary item+100Zen confirmation20; actual recipient client restart/relog21. AUTOMATICALLY VALIDATED: nine observed persisted assertionsPASS, same transferred itemUUID/quantity/options, Zen conserved, two-inventory ID union unchanged, baseline DK unchanged. No build/core/party retest.
+
+|Feature/subsystem|Server present|Client present|Runtime verified|Status|Known gap/action|Evidence|
+|---|---|---|---|---|---|---|
+|Ordinary trade and relog|Yes, pinned|Yes; existing native auto-move|YES one item+100Zen|GREEN scoped normal flow|Cancel/refund/disconnect UNKNOWN; investigate earlier interrupted100Zen delta separately|37947724161,17–22,9PASS|
+|Multiplayer persistence|Yes|Yes|YES scoped trade+recipient relog|YELLOW broader safety|No crash/load/cancel proof; not cleared by normal trade|Same itemUUID and conserved balances in final DB|
+
+Readiness58.5%→60%(+1.5), model1.0 unchanged: trade transfer/cancel/relog=.5 because transfer/relog verified but cancellation untested; transaction persistence/duplication-loss=.5 for this one completed exchange, not generalized crash safety. ConfidenceMEDIUM. Scores:Core100,Maps70,Monsters40,Items50,Drops80,NPC40,Classes60,Quests/events/crafting20,Party/trade/guild40,Persistence70. Weighted evidenceRUNTIME37/AUTOMATIC23/STATIC17/UNKNOWN17/BROKEN6. Critical standard-contentRED2 unchanged. NOT YET READY FOR MAJOR CUSTOMIZATION. Next shortest stage: targeted trade cancellation/refund/relog investigation, using successful snapshot; do not repeat normal trade or drag emulation.
