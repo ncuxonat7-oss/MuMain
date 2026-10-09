@@ -1,8 +1,16 @@
 # Current state — confirmed gameplay core and economical bulk validation
 
-Updated 2026-10-08 23:49 UTC. Confirmed native Windows MuMain → pinned OpenMU → PostgreSQL → character → Lorencia.
+Updated 2026-10-09 00:10 UTC. Confirmed native Windows MuMain → pinned OpenMU → PostgreSQL → character → Lorencia.
 
-## Last successful milestone
+## Last completed bulk configuration run
+
+User-authorized database-only run **37863153228**, job **113603471810**, workflow commit **926eef40d5431bbb104fd6594d7ced93ea5335e1**, completed successfully 2026-10-09 00:08 UTC. No duplicate run, builds, server/client start, repeated tests or asset download. Latest source backup restored read-only for export; original backup unchanged. PostgreSQL stopped cleanly.
+
+Artifact **11587091295**, `baseline-config-evidence`, ZIP1,059,611 bytes, SHA256 `b952abed311e6f77cc9aa3ae1f5fbb43ca302b75e5f58b602200bf70e029accd`. Exported **47,417 rows / 89 nonempty tables**. **272 structural constraints PASS / zero FAIL / three NOT_CHECKED** for empty config.ItemOption. Full report in `docs/bulk-config-validation.md`. Seven supplementary scalar checks on the same export passed locally: spawn/gate coordinate bounds, positive spawn quantities, nonnegative warp costs/levels, drop chances0..1, positive item dimensions. No second CI was needed.
+
+Presence counts: 73 maps, 6,330 spawn areas, 483 monster definitions, 690 item definitions, 288 skills, 499 quests, 39 crafting definitions. These counts and valid references are NOT evidence that every feature works in the client.
+
+## Last successful milestone## Last successful milestone
 
 Manual finite workflow `Finish Gameplay Smoke Test`, run **37860870710**, job **113596011554**, success. Workflow commit **52971f34461304a76587cfe3b6c694be239fc54d**. Reused validated client and server cache; no builds, no repeat of 423 tests, warp/shop/combat tests.
 
@@ -30,13 +38,13 @@ psql -X -A -t -q -v ON_ERROR_STOP=1 -d openmu -f export-baseline-config.sql
 python3 scripts/check-config-references.py --evidence PRIVATE_EXPORT_DIR --out PRIVATE_REPORT_DIR
 ```
 
-Prepared checker verified on valid reference, missing target, and nullable-reference cases; SQL generated and checked against the embedded template. **Actual full-config SQL export and full data run are NOT executed yet.** Local existing pg_restore16 cannot read this pg_dump17 archive (format1.16). No repeated retry or fresh environment installation. Run exporter during next necessary bounded session on existing PG17 environment, using newest saved backup.
+Prepared checker verified on valid reference, missing target, and nullable-reference cases; SQL generated and checked against the embedded template. **Actual export and complete reference run are now confirmed by run37863153228.** Local existing pg_restore16 cannot read this pg_dump17 archive (format1.16). No repeated retry or fresh environment installation. The PostgreSQL17 workflow resolved this blocker; reuse its complete export for further local inspection.
 
 Scope: structural references across exported configuration tables (maps/gates/spawns/shop definitions/items/skills where declared in schema), not full gameplay semantics or client model/texture availability. Client resource manifest matching remains unfinished. Previous baseline content audit retained; no inflated completion percentage. Party/trade still unverified.
 
 ## Exact next action
 
-Economical next step: execute the prepared read-only exporter on existing PG17 during the next necessary runtime session; analyze its reference report and add client-resource manifest matching. Duplicate-slot origins are now confirmed; leave stack/data unchanged until narrow corrections are reviewed. Avoid per-item GUI testing. Minimum two-client party/trade smoke can follow as one bounded runtime session; two native client instances are previously confirmed, their interaction is not.
+Economical next step: obtain only a filename manifest of the exact approved resource archive and match maps/items/monsters/skills against this preserved export. No more database or CI runs needed for static data inspection. Duplicate-slot seed origins confirmed; working stack/data left unchanged pending isolated layout/fixture corrections. Avoid per-item GUI testing. Minimum two-client party/trade smoke can follow as one bounded runtime session; two native client instances are previously confirmed, their interaction is not.
 
 Do not rebuild/retest verified core. Existing stack/resources stay frozen. Do not broaden research or import resources. Before any costly CI/build/repeated session, explain necessity. Available Work credit balance is not visible; no automatic budget warning can be guaranteed. Save every milestone and exact next step here.
 
