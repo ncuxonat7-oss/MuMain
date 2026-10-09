@@ -12,6 +12,9 @@ Working client source/artifacts/server configuration were not modified. Processe
 
 ## CURRENT UNFINISHED TASK / EXACT NEXT ACTION
 
+2026-10-09 continuation: bounded two-client fixture prepared in existing standard-gameplay.yml; latest DB run37860870710, cache REQUIRED (abort instead of build),15-minute live/25-minute job limit. Existing command window requires right-click; harness adds only that operation. Initial plan party-trade-setup-01 positions test300Dk adjacent to testgmDk, launches second native client and captures command UI. These are test fixtures, NOT party/trade verification. Client blocks outgoing trade below level6; do not raise test0Dk's proven level2. No new runtime result yet. Readiness remains58%,MEDIUM.
+
+
 Next recommended bounded milestone: minimum two-client party/trade transaction and persisted-result check, reusing the existing native build and newest DB snapshot. Use existing workflows as starting points; inspect current inputs once, not CI internals. Confirm party membership, transfer one ordinary item/Zen, relog recipient, save logs/db and update readiness. Do not retest warp/shop/kill/STR/shield to position the clients. This may require one targeted runtime job; tell owner why before starting it. Not launched during this checkpoint because static audit already delivered substantial evidence at lower cost.
 
 Known follow-up defects: Hanzo/GM duplicate stock anchors; missing Sphere4/5 client records;12 Seed Sphere4/5 zero-sized client entries. Diagnose/fix smallest affected metadata/seed scope with targeted validation; no new resource packs or stack replacement. Crywolf/Illusion Temple full standard lifecycle remains incomplete. Exile object and five model mappings remain uncertain, not proven runtime failures.
