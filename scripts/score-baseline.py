@@ -1,29 +1,46 @@
 #!/usr/bin/env python3
-"""Recalculate the frozen owner-weighted baseline acceptance score."""
+"""Recalculate readiness with the versioned owner-defined baseline scope."""
 import argparse
 import json
 from pathlib import Path
 
 EXPECTED_WEIGHTS = [15, 10, 10, 10, 10, 10, 10, 10, 5, 10]
-CRITERIA_PER_SUBSYSTEM = 5
+LEGACY_CRITERIA_COUNT = 5
 ALLOWED_VALUES = (0, 0.5, 1)
+EXCLUDED_CRITERION = 'Required Crywolf and Illusion Temple lifecycle completeness'
+EVENT_SUBSYSTEM = 'Quests/events/Chaos Machine/crafting'
+ACCEPTED_EVIDENCE = ('RUNTIME_VERIFIED', 'AUTOMATICALLY_VALIDATED')
+
+
+def required_criteria(system, version):
+    criteria = system['criteria']
+    if len(criteria) != LEGACY_CRITERIA_COUNT:
+        raise ValueError('Original checklist must remain preserved.')
+    excluded = [item for item in criteria if item.get('scope') == 'excluded']
+    expected = [EXCLUDED_CRITERION] if version == '1.1' and system['name'] == EVENT_SUBSYSTEM else []
+    if [item['criterion'] for item in excluded] != expected:
+        raise ValueError('Unexpected scope migration; record owner authorization first.')
+    return [item for item in criteria if item not in excluded]
+
+
+def subsystem_score(system, version):
+    criteria = required_criteria(system, version)
+    for item in criteria:
+        if item['value'] not in ALLOWED_VALUES:
+            raise ValueError('Invalid acceptance evidence value.')
+        if item['value'] and item['evidence_type'] not in ACCEPTED_EVIDENCE:
+            raise ValueError('Presence/inference cannot earn acceptance points.')
+    return sum(item['value'] for item in criteria) / len(criteria) * 100
 
 
 def calculate(document):
     systems = document['subsystems']
-    if document['model_version'] != '1.0' or [system['weight'] for system in systems] != EXPECTED_WEIGHTS:
-        raise ValueError('Model/weights changed: document a comparable migration before recalculating.')
-    scores = {}
-    for system in systems:
-        criteria = system['criteria']
-        if len(criteria) != CRITERIA_PER_SUBSYSTEM or any(item['value'] not in ALLOWED_VALUES for item in criteria):
-            raise ValueError('Invalid frozen acceptance checklist or criterion value.')
-        for item in criteria:
-            if item['value'] and item['evidence_type'] not in ('RUNTIME_VERIFIED', 'AUTOMATICALLY_VALIDATED'):
-                raise ValueError('Presence/inference cannot earn acceptance points.')
-        scores[system['name']] = sum(item['value'] for item in criteria) / CRITERIA_PER_SUBSYSTEM * 100
+    version = document['model_version']
+    if version not in ('1.0', '1.1') or [system['weight'] for system in systems] != EXPECTED_WEIGHTS:
+        raise ValueError('Unsupported model/weights migration.')
+    scores = {system['name']: subsystem_score(system, version) for system in systems}
     score = sum(system['weight'] * scores[system['name']] / 100 for system in systems)
-    return {'model': document['model_version'], 'readiness': score, 'confidence': document['confidence'],
+    return {'model': version, 'readiness': score, 'confidence': document['confidence'],
             'subsystem_scores': scores, 'coverage': document['weighted_acceptance_evidence_coverage'],
             'critical_red_blockers': document['critical_red_blockers'], 'decision': document['readiness_decision']}
 
