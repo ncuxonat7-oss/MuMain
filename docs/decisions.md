@@ -22,3 +22,7 @@ No purchases, public deployment, core refactor, resource replacement, custom gam
 
 Confirmed normal cancellation lost offered Zen because ItemStorageAdapter forwarded Items only. Retain pinned OpenMU d067b3c and apply narrow Unwrap-based backup/refund patch. No DataModel/schema/resource/client change. Virtual Money candidate failed generated clone compilation CS0266; discard that approach rather than changing clone architecture. Revised run37959672391: build/1 regression/14 native relog assertionsPASS. Preserve compiled artifact+DB privately; cache miss restores verified binary, never silently rebuilds. Normal cancellation proof does not establish disconnect/concurrency/crash safety. Readiness model1.0 unchanged,60→60.5,MEDIUM; owner-defined event scope unchanged.
 
+
+## 2026-10-10 — owner scope correction
+
+Illusion Temple OUT OF SCOPE; Crywolf DEFERRED late stage. Neither is a current critical RED or readiness penalty. Preserve findings; no fix/runtime resources now. See baseline-scope.md: model1.0 score61%→model1.1 score61.5% solely by quest/event denominator5→4, zero implementation credit; all subsystem weights unchanged. No deeper trade testing. Continue existing config+exact Data bulk validation, confirmed local fixes, external imports only proven missing compatible S6 records. This supersedes prior mandatory-event statements and previous audit stop.

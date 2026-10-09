@@ -1,10 +1,10 @@
 {
-  "model_version": "1.1",
+  "model_version": "1.0",
   "metric": "STANDARD BASELINE READINESS FOR CUSTOMIZATION",
   "created": "2026-10-09",
-  "criteria_per_subsystem": "Five original entries preserved; required denominator4 for quest/event/crafting,5 elsewhere.",
-  "criterion_points": "100/required criterion count within each fixed-weight subsystem",
-  "score_rule": "Sum(weight * mean(required evidence values)); excluded criteria kept but neither numerator nor denominator. Presence=0. Owner scope migration documented in baseline-scope.md.",
+  "criteria_per_subsystem": 5,
+  "criterion_points": 20,
+  "score_rule": "Sum(weight * mean(values)). Values 0,.5,1 require scoped reducing-uncertainty evidence. Presence alone=0. No silent weight/criterion changes.",
   "subsystems": [
     {
       "name": "Core client/server/database/connectivity",
@@ -330,9 +330,7 @@
           "value": 0,
           "evidence_type": "BROKEN_MISSING",
           "evidence": "Prior pinned-source audit; specialized lifecycle incomplete",
-          "limit": "",
-          "scope": "excluded",
-          "scope_reason": "Owner2026-10-10: Illusion Temple out of scope; Crywolf deferred to late stage. Original finding retained, no current penalty/work."
+          "limit": ""
         }
       ]
     },
@@ -420,7 +418,10 @@
     }
   ],
   "confidence": "MEDIUM",
-  "critical_red_blockers": [],
+  "critical_red_blockers": [
+    "Crywolf standard event lifecycle incomplete",
+    "Illusion Temple standard event lifecycle incomplete"
+  ],
   "scoped_red_findings": [
     "Hanzo stock overlap",
     "Seeded GM pendant overlap",
@@ -496,46 +497,13 @@
       "change": 0.5,
       "confidence": "MEDIUM",
       "milestone": "One prepared disconnect37996918917 PASS,14 scoped assertions and native screenshots27–30 verified. Multiplayer disconnect criterion0→.5 only. No imports; audit adds zero credit. Trade closed for baseline; prioritize breadth."
-    },
-    {
-      "date": "2026-10-10",
-      "model": "1.1",
-      "previous_model": "1.0",
-      "previous_readiness": 61,
-      "readiness": 61.5,
-      "change": 0.5,
-      "change_type": "OWNER_SCOPE_DENOMINATOR_ONLY",
-      "evidence_gain": 0,
-      "milestone": "Owner excludes IT and defers Crywolf. Combined required lifecycle criterion removed from quest/event denominator5→4; subsystem20→25. All weights/evidence unchanged; critical blockers2→0 by scope, findings preserved."
     }
   ],
   "weighted_acceptance_evidence_coverage": {
     "RUNTIME_VERIFIED": 38.5,
-    "AUTOMATICALLY_VALIDATED": 23.5,
-    "STATICALLY_CONFIRMED": 17.5,
-    "UNKNOWN": 16,
-    "BROKEN_MISSING": 4
-  },
-  "excluded_or_deferred_findings": [
-    {
-      "finding": "Crywolf standard event lifecycle incomplete",
-      "status": "DEFERRED_LATE_STAGE",
-      "current_blocker": false,
-      "required_baseline": false
-    },
-    {
-      "finding": "Illusion Temple standard event lifecycle incomplete",
-      "status": "OUT_OF_SCOPE",
-      "current_blocker": false,
-      "required_baseline": false
-    }
-  ],
-  "scope_migration": {
-    "from_model": "1.0",
-    "previous_ledger": "baseline-readiness-model1.0-2026-10-09.json",
-    "owner_decision": "baseline-scope.md",
-    "previous_readiness": 61,
-    "current_readiness": 61.5,
-    "evidence_gain": 0
+    "AUTOMATICALLY_VALIDATED": 23,
+    "STATICALLY_CONFIRMED": 17,
+    "UNKNOWN": 15.5,
+    "BROKEN_MISSING": 6
   }
 }

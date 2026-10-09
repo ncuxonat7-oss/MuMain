@@ -1,8 +1,8 @@
-# Current confirmed state — 2026-10-09
+# Current confirmed state — 2026-10-10
 
 ## LAST CONFIRMED STATE
 
-**Baseline Readiness:60.5% →61%(+0.5), model1.0; Evidence Confidence:MEDIUM. Critical RED blockers:2. NOT YET READY FOR MAJOR CUSTOMIZATION.**
+**Baseline Readiness:61% →61.5%(+0.5 scope only), model1.1; Evidence Confidence:MEDIUM. Current critical RED blockers:0; Crywolf deferred / Illusion Temple out of scope. NOT YET READY FOR MAJOR CUSTOMIZATION.**
 
 Working MuMain→OpenMU→PostgreSQL→authentication→Dark Knight→Lorencia remains preserved. Previously confirmed warp/shop/kill/EXP/drop/level-up/STR/Small Shield/relog, party membership and ordinary item+100Zen trade are not to be repeated.
 
@@ -12,15 +12,15 @@ The real Money defect was an ItemStorageAdapter that forwarded Items but not non
 
 ## CURRENT UNFINISHED TASK / EXACT NEXT ACTION
 
-No runtime/build is active. Gameplay control is idle; CI processes stopped after saving newest proven DB. Owner requested STOP after feasibility/mapping audit; it is complete in season6-reference-feasibility.md. NO imports, importer implementation or additional gameplay run.
+No runtime/build is active. Gameplay control is idle; CI processes stopped after saving newest proven DB. Owner scope correction2026-10-10 supersedes the prior audit stop: continue broad bulk validation and confirmed local fixes. Illusion Temple OUT OF SCOPE; Crywolf DEFERRED late stage; neither penalizes current readiness. No work/runtime on their lifecycles. See baseline-scope.md and model1.0→1.1 migration; no new evidence credit.
 
 SHIFT STRATEGY: breadth first across maps/gates/warps; monsters/spawns; NPCs/shops; items/sets; drops; skills; quests/events/crafting. Prefer pinned native configuration/update comparison and exact client semantic bulk validation; selective external adapter only for admitted, proven missing S6 records. Runtime only critical chains, real mismatches or insufficient static evidence. No further trade edge-case work absent a later defect; do not replay verified core/trade tests.
 
-If owner resumes, shortest evidence-based step is read-only seven-category semantic/client validator on saved export and exact resources, including 81 installed-update identity comparison; not wholesale external import. Reference sample overlaps all68 baseline map numbers and483monster numbers but contains later-season IDs/custom stores/duplicate wave rows. Scoped Hanzo/GM and Sphere/SeedSphere defects remain priority. Full Crywolf/IT lifecycle needs implementation proof; data cannot substitute it.
+Current authorized next step is read-only seven-category semantic/client validator on saved export and exact resources, including 81 installed-update identity comparison; not wholesale external import. Reference sample overlaps all68 baseline map numbers and483monster numbers but contains later-season IDs/custom stores/duplicate wave rows. Scoped Hanzo/GM and Sphere/SeedSphere defects remain priority. Crywolf/IT findings remain archived outside current required baseline; do not fix or runtime-test them now.
 
 ## KNOWN BLOCKERS / UNKNOWN
 
-Critical standard-content RED: incomplete Crywolf and Illusion Temple lifecycles. Scoped RED: Hanzo/GM duplicate item anchors, absent Sphere4/5 entries,12 zero-sized Seed Sphere4/5 client entries. Unknown: concurrency/hard server crash, party shared EXP/leave, guild, representative skills/quests/crafting/events, wider rendering/AI and long-session stability. No permanent hosted service exists; CI processes stopped after saving DB.
+Historical/deferred findings: Crywolf incomplete (late stage), Illusion Temple incomplete (OUT OF SCOPE). Current critical blocker list is empty by owner scope decision, not event fixes. Scoped RED: Hanzo/GM duplicate item anchors, absent Sphere4/5 entries,12 zero-sized Seed Sphere4/5 client entries. Unknown: concurrency/hard server crash, party shared EXP/leave, guild, representative skills/quests/crafting/events, wider rendering/AI and long-session stability. No permanent hosted service exists; CI processes stopped after saving DB.
 
 ## FILES / ARTIFACTS TO REUSE
 
