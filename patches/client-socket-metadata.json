@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "data_tree": "77f7830f542d106fc519c8821832d49a3dd8ae3a",
+  "path": "Items/Group12_Wing.json",
+  "group": 12,
+  "before_sha256": "257d80a8738d24cae83afc68077fc3cbbcfb39b5637ce61f1e68c30ca6549da5",
+  "add": [
+    {
+      "number": 73,
+      "name": {
+        "en": "Sphere (4)",
+        "de": "Sphäre (4)"
+      },
+      "tags": [
+        "socketSphere"
+      ],
+      "width": 1,
+      "height": 1
+    },
+    {
+      "number": 74,
+      "name": {
+        "en": "Sphere (5)",
+        "de": "Sphäre (5)"
+      },
+      "tags": [
+        "socketSphere"
+      ],
+      "width": 1,
+      "height": 1
+    }
+  ],
+  "update": [
+    {
+      "number": 118,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 119,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 120,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 121,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 122,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 123,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 124,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 125,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 126,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 127,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 128,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "number": 129,
+      "remove": [
+        "slot"
+      ],
+      "set": {
+        "width": 1,
+        "height": 1
+      }
+    }
+  ],
+  "evidence": "Pinned OpenMU actual ItemDefinition 1x1/no equipping slot; exact MuMain loader defaults zero dimensions and no slot; existing models in pinned Data. No external import or balance change.",
+  "after_sha256": "1441360f93d80291659f63912022e0816125863acd0212ab4ec02fca33ebbb73"
+}
