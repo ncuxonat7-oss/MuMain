@@ -1,0 +1,76 @@
+name: Baseline Data Maintenance
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  local-data-fix:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore newest verified baseline artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: gameplay-final
+          run-id: 37996918917
+          github-token: ${{ github.token }}
+          path: saved-gameplay
+      - name: Guarded Hanzo repair and bulk validation
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force evidence | Out-Null
+          $pgBin = $env:PGBIN
+          if (!$pgBin) { $pgBin = 'C:\Program Files\PostgreSQL\17\bin' }
+          $pgData = Join-Path $env:RUNNER_TEMP mu-baseline-data-pg
+          $dumpHash = (Get-FileHash saved-gameplay/gameplay-test-db.dump -Algorithm SHA256).Hash
+          if ($dumpHash -ne '2a8cad430eda3f952c98c8c6716cd3f47f96d2557265bb0904cbdbad836da865') { throw 'Newest verified dump hash differs' }
+          'Input artifact11647981651/run37996918917; no runtime or build' | Set-Content evidence/provenance.txt
+          function Run-Pg([string]$program, [string[]]$arguments) {
+            & "$pgBin/$program.exe" @arguments
+            if ($LASTEXITCODE) { throw "$program failed:$LASTEXITCODE" }
+          }
+          try {
+            Run-Pg initdb @('-D',$pgData,'-U','postgres','-A','trust','--no-locale')
+            Run-Pg pg_ctl @('-D',$pgData,'-l',"$PWD/evidence/postgres.log",'-o','-h 127.0.0.1 -p 5432','-w','start')
+            Run-Pg createdb @('-h','127.0.0.1','-U','postgres','openmu')
+            Run-Pg psql @('-h','127.0.0.1','-U','postgres','-d','postgres','-v','ON_ERROR_STOP=1','-c','CREATE ROLE account LOGIN; CREATE ROLE config LOGIN; CREATE ROLE guild LOGIN; CREATE ROLE friend LOGIN;')
+            Run-Pg pg_restore @('--exit-on-error','-h','127.0.0.1','-U','postgres','-d','openmu','saved-gameplay/gameplay-test-db.dump')
+            $snapshot = @'
+          SELECT row_to_json(c) FROM data."Character" c ORDER BY "Id";
+          SELECT row_to_json(s) FROM data."StatAttribute" s ORDER BY "Id";
+          SELECT row_to_json(s) FROM data."ItemStorage" s ORDER BY "Id";
+          SELECT row_to_json(g) FROM guild."Guild" g ORDER BY "Id";
+          SELECT row_to_json(g) FROM guild."GuildMember" g ORDER BY "Id";
+          '@
+            Run-Pg psql @('-X','-h','127.0.0.1','-U','postgres','-d','openmu','-A','-t','-v','ON_ERROR_STOP=1','-c',$snapshot,'-o',"$PWD/evidence/preserved-before.jsonl")
+            Run-Pg psql @('-X','-h','127.0.0.1','-U','postgres','-d','openmu','-f','patches/fix-hanzo-stock.sql')
+            Run-Pg psql @('-X','-h','127.0.0.1','-U','postgres','-d','openmu','-f','patches/fix-hanzo-stock.sql')
+            Run-Pg psql @('-X','-h','127.0.0.1','-U','postgres','-d','openmu','-A','-t','-v','ON_ERROR_STOP=1','-c',$snapshot,'-o',"$PWD/evidence/preserved-after.jsonl")
+            $before = (Get-FileHash evidence/preserved-before.jsonl -Algorithm SHA256).Hash
+            $after = (Get-FileHash evidence/preserved-after.jsonl -Algorithm SHA256).Hash
+            if ($before -ne $after) { throw 'Characters/stats/money/guild data changed' }
+            "PRESERVED_DATA_SHA256:$after" | Add-Content evidence/provenance.txt
+            Run-Pg psql @('-X','-h','127.0.0.1','-U','postgres','-d','openmu','-A','-t','-q','-v','ON_ERROR_STOP=1','-f','scripts/export-baseline-config.sql')
+            python scripts/validate-baseline-semantics.py --export baseline-config.jsonl --out evidence/semantic-after.json
+            if ($LASTEXITCODE) { throw 'Semantic validator failed' }
+            $report = Get-Content evidence/semantic-after.json -Raw | ConvertFrom-Json
+            if ($report.shops.findings.Count) { throw 'Shop rectangle validation failed' }
+            foreach ($check in $report.checks.PSObject.Properties) {
+              if ($check.Value.Count) { throw "Semantic check failed:$($check.Name)" }
+            }
+            Copy-Item baseline-*.jsonl evidence/
+            Run-Pg pg_dump @('-h','127.0.0.1','-U','postgres','-d','openmu','-Fc','-f',"$PWD/evidence/gameplay-test-db.dump")
+            Get-FileHash evidence/gameplay-test-db.dump -Algorithm SHA256 | Format-List | Out-File evidence/database-hash.txt
+            'PASS: one guarded stock slot correction, idempotent repeat, 22 shop grids, semantic checks, preserved characters/stats/money/guilds. No runtime/build/trade/import.' | Set-Content evidence/result.txt
+          } finally {
+            if (Test-Path "$pgData/postmaster.pid") { & "$pgBin/pg_ctl.exe" -D $pgData -m fast -w stop }
+          }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: baseline-data-final
+          path: evidence
+          retention-days: 30
