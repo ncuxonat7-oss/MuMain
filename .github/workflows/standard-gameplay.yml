@@ -86,6 +86,17 @@ jobs:
         run: |
           dotnet build server-source/src/Startup/MUnique.OpenMU.Startup.csproj --configuration Release
           if ($LASTEXITCODE) { throw 'Targeted server build failed.' }
+      - name: Record patched server compilation identity
+        shell: pwsh
+        run: |
+          git -C server-source rev-parse HEAD > evidence/server-source-commit.txt
+          Get-FileHash patches/openmu-trade-money.patch,server-source/src/Startup/bin/Release/MUnique.OpenMU.Startup.dll,server-source/src/Startup/bin/Release/MUnique.OpenMU.GameLogic.dll,server-source/src/Startup/bin/Release/MUnique.OpenMU.DataModel.dll -Algorithm SHA256 | Format-List | Out-File evidence/server-patch-binary-hashes.txt
+      - name: Preserve patched server compilation before runtime tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: patched-openmu-runtime
+          path: server-source/src/Startup/bin/Release
+          if-no-files-found: error
       - name: Targeted real-player cancellation regression
         shell: pwsh
         run: |
