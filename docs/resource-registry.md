@@ -136,3 +136,5 @@ run37879360808, artifact11593403578; saved party-accept.zip, authorized-user lib
 ### Latest pre-trade persisted snapshot
 
 run37879360808/artifact11594420323; party-trade-final.zip,23259299bytes,SHA256 58ac2b8bc1c916b83a660f2d881bc548096149ca2d921d0949ee90851bb93676; authorized-user libfile_5822066d47a481918d68a925818e17a3. Contains final DB/logs/screenshots. Core test0Dk stats/items unchanged; test300Dk repositioned to118,140. Trade UI opened but no transfer. Restore this for finite trade continuation; keep earlier run37860870710 as independent core checkpoint.
+
+- Failed finite trade37881728154/artifact11595121043:9410516bytes, SHA2569707e0b09fe2cc01a37f1f2697083c08a25bf6f6d4df23fe7a88062e7bd71e93; authorized-user backup libfile_06af9997bb2481919f7df53072a65b14. Evidence only: do NOT promote its interrupted-trade DB over the clean baseline37879360808.

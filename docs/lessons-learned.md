@@ -22,3 +22,5 @@
 - GitHub editor modal hydration can lag a successful click. Inspect current DOM before one corrective click; do not resubmit workflow or erase content.
 
 -15-minute live CI window was consumed by per-step artifact retrieval and GitHub commits. It completed normally, but trade-offer-06 was never consumed. Stage known UI actions as one finite plan before launching; add final-state assertions so CI success alone cannot masquerade as gameplay success. Do not replay the party stage in the trade-only continuation.
+
+- Finite trade37881728154: screenshots13/14 show no offered item and open trade UI. Correct inventory cell from actual image is792:428, not760:428. Pinned client confirmation waits150 update frames after an offer change; software CI frame rate makes a5-second pause insufficient. One corrected20-second pause attempt is planned; no new input framework. Final validator correctly prevented a false success. Keep interruption-related100Zen discrepancy open; restore the pre-trade DB for the next attempt.
