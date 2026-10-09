@@ -1,25 +1,23 @@
 {
-  "id": "party-near-02",
+  "id": "party-invite-03",
   "steps": [
     {
       "op": "select-client",
       "name": "one"
     },
     {
-      "op": "key",
-      "vk": 68
+      "op": "click",
+      "x": 872,
+      "y": 165
     },
     {
-      "op": "chat",
-      "text": "/move test300Dk Lorencia 118 140"
-    },
-    {
-      "op": "key",
-      "vk": 68
+      "op": "right-click",
+      "x": 581,
+      "y": 362
     },
     {
       "op": "capture",
-      "name": "03-party-commands-near-target"
+      "name": "05-party-request-sent"
     },
     {
       "op": "select-client",
@@ -27,7 +25,7 @@
     },
     {
       "op": "capture",
-      "name": "04-nearby-test-characters"
+      "name": "06-party-request-received"
     }
   ]
 }
