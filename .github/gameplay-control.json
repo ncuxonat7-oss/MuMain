@@ -76,12 +76,12 @@
       "y": 643
     },
     {
-      "op": "wait",
-      "seconds": 20
-    },
-    {
       "op": "select-client",
       "name": "two"
+    },
+    {
+      "op": "wait",
+      "seconds": 20
     },
     {
       "op": "click",
