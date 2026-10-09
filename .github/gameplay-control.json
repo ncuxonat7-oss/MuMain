@@ -1,5 +1,5 @@
 {
-  "id": "party-accept-trade-04",
+  "id": "trade-open-05",
   "steps": [
     {
       "op": "click",
@@ -7,16 +7,8 @@
       "y": 292
     },
     {
-      "op": "key",
-      "vk": 80
-    },
-    {
       "op": "capture",
-      "name": "07-party-members-recipient"
-    },
-    {
-      "op": "key",
-      "vk": 80
+      "name": "11-trade-open-recipient"
     },
     {
       "op": "select-client",
@@ -24,29 +16,10 @@
     },
     {
       "op": "capture",
-      "name": "08-party-members-leader"
+      "name": "12-trade-open-donor"
     },
     {
-      "op": "click",
-      "x": 872,
-      "y": 70
-    },
-    {
-      "op": "right-click",
-      "x": 581,
-      "y": 362
-    },
-    {
-      "op": "capture",
-      "name": "09-trade-request-sent"
-    },
-    {
-      "op": "select-client",
-      "name": "two"
-    },
-    {
-      "op": "capture",
-      "name": "10-trade-request-received"
+      "op": "snapshot"
     }
   ]
 }
