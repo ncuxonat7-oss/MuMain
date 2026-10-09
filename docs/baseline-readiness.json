@@ -356,8 +356,8 @@
           "criterion": "Trade transfer/cancel/relog",
           "value": 1,
           "evidence_type": "RUNTIME_VERIFIED",
-          "evidence": "37959672391/artifact11630634143; normal item+100Zen cancellation and both native relogs;14 scoped saved-state assertionsPASS. Earlier completed exchange37947724161/9PASS retained.",
-          "limit": "Scoped ordinary transfer and normal cancel/relog verified. Open-trade disconnect, concurrency and server crash remain UNKNOWN."
+          "evidence": "37959672391/artifact11630634143; normal item+100Zen cancellation and both native relogs;14 scoped saved-state assertionsPASS. Earlier completed exchange37947724161/9PASS retained.; disconnect37996918917/artifact11647981651/screenshots27–30/14PASS",
+          "limit": "Ordinary transfer, normal cancel and one item+100Zen donor-process disconnect with both relogs verified. Concurrency and hard server crash remain UNKNOWN; trade sufficient for current baseline, no additional trade edge cases absent a specific later defect."
         },
         {
           "criterion": "Guild create/join/relog",
@@ -368,10 +368,10 @@
         },
         {
           "criterion": "Multiplayer transaction/disconnect safety",
-          "value": 0,
-          "evidence_type": "UNKNOWN",
-          "evidence": "Earlier interrupted100Zen losses plus normal-cancel failure37954653808; disconnect cause not separately instrumented.",
-          "limit": ""
+          "value": 0.5,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "37996918917/artifact11647981651; real item+100Zen offer, donor process terminated, recipient auto cancel, both native relogs;14/14 saved-state assertionsPASS.",
+          "limit": "Ordinary transfer, normal cancel and one item+100Zen donor-process disconnect with both relogs verified. Concurrency and hard server crash remain UNKNOWN; trade sufficient for current baseline, no additional trade edge cases absent a specific later defect."
         }
       ]
     },
@@ -404,8 +404,8 @@
           "criterion": "Multiplayer transaction persistence and duplication/loss checks",
           "value": 0.5,
           "evidence_type": "RUNTIME_VERIFIED",
-          "evidence": "37959672391/artifact11630634143; normal item+100Zen cancellation and both native relogs;14 scoped saved-state assertionsPASS. Earlier completed exchange37947724161/9PASS retained.",
-          "limit": "Scoped ordinary transfer and normal cancel/relog verified. Open-trade disconnect, concurrency and server crash remain UNKNOWN."
+          "evidence": "37959672391/artifact11630634143; normal item+100Zen cancellation and both native relogs;14 scoped saved-state assertionsPASS. Earlier completed exchange37947724161/9PASS retained.; disconnect37996918917/artifact11647981651/screenshots27–30/14PASS",
+          "limit": "Ordinary transfer, normal cancel and one item+100Zen donor-process disconnect with both relogs verified. Concurrency and hard server crash remain UNKNOWN; trade sufficient for current baseline, no additional trade edge cases absent a specific later defect."
         },
         {
           "criterion": "Sustained gameplay stability and targeted regression beyond smoke",
@@ -487,14 +487,23 @@
       "readiness": 60.5,
       "change": 0.5,
       "confidence": "MEDIUM",
-      "milestone": "37959672391: actual-storage Money patch compiled;1 targeted regressionPASS; native normal cancellation and both relogs;14 scoped assertionsPASS. Critical cancellation Money RED resolved; trade criterion .5\u21921. Persistence criterion remains .5: disconnect/concurrency/crash UNKNOWN. Weights/checklist unchanged."
+      "milestone": "37959672391: actual-storage Money patch compiled;1 targeted regressionPASS; native normal cancellation and both relogs;14 scoped assertionsPASS. Critical cancellation Money RED resolved; trade criterion .5→1. Persistence criterion remains .5: disconnect/concurrency/crash UNKNOWN. Weights/checklist unchanged."
+    },
+    {
+      "date": "2026-10-09",
+      "model": "1.0",
+      "previous_readiness": 60.5,
+      "readiness": 61,
+      "change": 0.5,
+      "confidence": "MEDIUM",
+      "milestone": "One prepared disconnect37996918917 PASS,14 scoped assertions and native screenshots27–30 verified. Multiplayer disconnect criterion0→.5 only. No imports; audit adds zero credit. Trade closed for baseline; prioritize breadth."
     }
   ],
   "weighted_acceptance_evidence_coverage": {
-    "RUNTIME_VERIFIED": 37.5,
+    "RUNTIME_VERIFIED": 38.5,
     "AUTOMATICALLY_VALIDATED": 23,
     "STATICALLY_CONFIRMED": 17,
-    "UNKNOWN": 16.5,
+    "UNKNOWN": 15.5,
     "BROKEN_MISSING": 6
   }
 }

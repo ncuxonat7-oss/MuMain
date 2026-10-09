@@ -2,6 +2,12 @@
 
 Updated2026-10-09. Current prototype uses exact frozen resources below. Auth/Lorencia/normal gameplay/relog are VERIFIED, not pending. Historical future candidates were checked2026-10-08; prices are historical, not a fresh offer. No purchases/imports during this audit.
 
+## NEWEST WORKING DATABASE / EVIDENCE — disconnect checkpoint
+
+Run37996918917/headb0e1a816dc6c1e13f8be8a7edb3310df4176188b SUCCESS7m17s. gameplay-final artifact11647981651,9869132bytes, SHA25642c1372b158b1bbec16a1f571c3129f5976ef7e995e30a92d1ae1a907837e9ab; private durable archive libfile_6e1c5002e01881919a8e9284aac71584, trade-disconnect-final.zip. Native screenshots27–30 and14 persisted assertionsPASS. Same binaries/resources/current Money patch; runtime11630698202 is still reused. This DB supersedes11630634143 as newest working baseline; retain previous proved DB as fallback. Do not promote failed/interrupted snapshots. Future workflow restoration must select this newest DB deliberately; no next run dispatched now.
+
+Feasibility report: docs/season6-reference-feasibility.md; durable standalone libfile_972ce66838a08191a344b8ecfa2a6319. No reference import or resource replacement. XML candidates read-only; no server pack backup added to baseline.
+
 ## CURRENT PROTOTYPE RESOURCES
 
 |Component|Exact source / identity|Type / provenance / rights|
@@ -157,3 +163,4 @@ Base OpenMU d067b3c + patches/openmu-trade-money.patch canonical SHA25685d842845
 Run37959672391/head5a3cd675df6095995b2355bdd4368b1ac2260bd5 SUCCESS, finalartifact11630634143. trade-cancel-fixed-final.zip,9882407bytes,SHA256900ec2df736d44d8c47a71776612de5312c4dcbc6820b3a50e6253ddff7d7eed; private durable backup libfile_384c0829e2548191a69976943a31e85f. Contains final PG dump, snapshots/logs, exact consumed plan,14PASS assertions,1PASS regressionTRX, source/patch/binary manifest, authentic fixed23–26. Native donor relog screenshot fixed25 backup libfile_d61c9047cfc48191932e86d45e614f8f. Donor9999900/recipient9996100; original offered potion/quantity/slot exactly restored; core unchanged. Supersedes completed-trade37947724161 as working restore source.
 
 Compiled DLL SHA256: Startup5cf46ff5a89b08692b00d112b59ba8a98bf7300f3289e215caaab1122d10a776; GameLogic1ef6eee0479cf17aa567c4c720401adde84e2dc2909b6ff5b40b3883bc8cfa89; DataModel6374c47837f657afafbc1bc6558a2b2e95356c72f9a008ca7c7f538a8a02c501. Exact saved artifact root extracts into server-source/src/Startup/bin/Release. Patch canonical LF85d8428452a25fef598c19ef2cda8d0ab94b2d5c13296481445ae84b7fad197d; equivalent Windows CRLF52e385decd20a06efb4d84d71fe5ea6fab9f5d620c3eb045e4c89dfba95586b0. No migration needed. Restore workflow now artifact fallback without build; idle control avoids replaying proven cancel plan. If GitHub retention expires, restore named private backup with hash before any rebuild.
+

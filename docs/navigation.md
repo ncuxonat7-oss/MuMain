@@ -31,3 +31,8 @@ Client-resource check usage and input provenance are in resource-registry.md. Fu
 Map/name or number; coordinates; character/class/level; NPC/monster/item/skill name if known; action; expected; actual; screenshot if available; approximate time. Agent appends exact build/Data version and relevant client/server logs. Never request or paste account passwords/tokens. Owner need not know IDs, source filenames or database internals.
 
 Recommended triage: query preserved export → inspect exact referenced source/client resource → small reproducer if uncertainty remains → smallest fix → targeted verification → GitHub checkpoint/readiness update → owner tests. Avoid rebuilding or repeating known Lorencia/warp/shop/smoke tests without contradictory evidence.
+
+
+## Broad baseline strategy — 2026-10-09
+
+Read season6-reference-feasibility.md for exact OpenMU/MuMain/Data mappings and reference-source admission. Prefer native pinned config/update comparison + semantic/client bulk validation before selective foreign XML/TXT adapter. No import performed or authorized by the feasibility request. Trade baseline closed after37996918917; no additional trade edge cases unless a later defect. Static/bulk first; runtime only critical chains, real mismatches or gaps that bulk checks cannot resolve. Current continuation is stopped after audit, not a queued importer/job.
