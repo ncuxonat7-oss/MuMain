@@ -1,75 +1,36 @@
 {
-  "id": "combat-cluster-08",
+  "id": "party-trade-setup-01",
   "steps": [
     {
-      "op": "select-client",
-      "name": "one"
-    },
-    {
       "op": "chat",
-      "text": "/move test0Dk Lorencia 205 130"
+      "text": "/move test300Dk Lorencia 118 140"
     },
     {
       "op": "chat",
       "text": "/teleport 117 140"
     },
     {
-      "op": "select-client",
-      "name": "two"
+      "op": "second-client"
+    },
+    {
+      "op": "login",
+      "account": "test300"
     },
     {
       "op": "capture",
-      "name": "40-real-monster-targets"
-    },
-    {
-      "op": "hold",
-      "x": 550,
-      "y": 420,
-      "ms": 4000
-    },
-    {
-      "op": "hold",
-      "x": 500,
-      "y": 400,
-      "ms": 4000
-    },
-    {
-      "op": "hold",
-      "x": 470,
-      "y": 400,
-      "ms": 4000
-    },
-    {
-      "op": "key",
-      "vk": 32
-    },
-    {
-      "op": "capture",
-      "name": "41-real-cluster-combat"
+      "name": "01-second-trade-capable-character"
     },
     {
       "op": "select-client",
       "name": "one"
     },
     {
-      "op": "chat",
-      "text": "/move test0Dk Lorencia 117 140"
-    },
-    {
-      "op": "select-client",
-      "name": "two"
-    },
-    {
       "op": "key",
-      "vk": 67
+      "vk": 68
     },
     {
       "op": "capture",
-      "name": "42-level-check-after-cluster"
-    },
-    {
-      "op": "key",
-      "vk": 67
+      "name": "02-party-trade-commands"
     },
     {
       "op": "snapshot"
