@@ -18,4 +18,5 @@ Client dependency identities: SDL d9d5536704d585616d4db3c8ba3c4ff6fc2757e1; SDL3
 
 Future staging, incremental updater, diagnostics/API and rollback can be added around this structure. OpenMU extensibility suggests feasibility; these are INFERRED architectural possibilities, not implemented/verified product features. Native MU marketplace/offline progression/personalized customer deployment need scoped design and testing later.
 
-Recovery: resource-registry.md lists exact sources, build/db artifacts, checksums, durable authorized-user backup references and expiry caveats. Prefer cached server key openmu-windows-runtime-d067b3c-net10-v1. If cache disappears, explain the need before a targeted server build; do not silently rerun the entire client matrix.
+Recovery: resource-registry.md lists exact sources, build/db artifacts, checksums, durable authorized-user backup references and expiry caveats. Current server is d067b3c plus patches/openmu-trade-money.patch, verified run37959672391. Prefer patched cache keyed by patch hash; fallback to verified patched-openmu-runtime artifact11630698202/private backup. Do not rebuild on cache miss. DataModel/schema/client/resources unchanged; normal cancellation and both relogs verified, disconnect/crash UNKNOWN. Original unpatched cache retained for historical comparison only.
+

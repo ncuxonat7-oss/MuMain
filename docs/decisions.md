@@ -16,3 +16,9 @@
 | Secrets and raw account backups are not source files | GitHub is canonical documentation, not a credentials vault | Keep authorized-user evidence separately; repository stores references/hashes only |
 
 No purchases, public deployment, core refactor, resource replacement, custom gameplay or automatic production administration was performed for this checkpoint.
+
+
+## 2026-10-09 — Fix cancellation on actual persisted storage
+
+Confirmed normal cancellation lost offered Zen because ItemStorageAdapter forwarded Items only. Retain pinned OpenMU d067b3c and apply narrow Unwrap-based backup/refund patch. No DataModel/schema/resource/client change. Virtual Money candidate failed generated clone compilation CS0266; discard that approach rather than changing clone architecture. Revised run37959672391: build/1 regression/14 native relog assertionsPASS. Preserve compiled artifact+DB privately; cache miss restores verified binary, never silently rebuilds. Normal cancellation proof does not establish disconnect/concurrency/crash safety. Readiness model1.0 unchanged,60→60.5,MEDIUM; owner-defined event scope unchanged.
+

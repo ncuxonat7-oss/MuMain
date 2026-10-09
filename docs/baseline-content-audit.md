@@ -1,3 +1,4 @@
+<!-- Latest evidence overrides historical milestone paragraphs below. -->
 # Standard MU baseline content audit
 
 Updated2026-10-09. Exact stack: OpenMU d067b3c11c23c3145de6e2c76201ab9a93b267c8; validated MuMain8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5/upstream21728b1e5b03e0763b38ef9e23f79645e0df7ad2; Data tree77f7830f542d106fc519c8821832d49a3dd8ae3a. Target: ordinary playable S6E3-oriented standard baseline, not every proprietary retail feature. Static audit used no new CI; later bounded runtime checks reused existing binaries. No stack modifications/imports/rebuilds.
@@ -32,11 +33,11 @@ GREEN means sufficiently confirmed for the stated scope, not universal proof. YE
 |Leveling/stats|Progression formulas/attributes present|UI works for exercised DK|Natural level2/5 points;STR31/2 remaining points saved|GREEN for basic DK / YELLOW across classes|Other classes/high-level/formulas/master progression UNKNOWN|Validate formula boundary cases, not repeated low-level grind|R3/R4,A1|
 |Quests|499 definitions and references|Quest dialogs/source exist; resource/runtime coverage incomplete|None|YELLOW|Promotion/reward/requirements not end-to-end proven|Bulk prerequisites/rewards sanity; one representative cycle|A1/S1|
 |Party|Handlers/config source present|Real native party lists on both clients|Invite/accept/two-member lists VERIFIED|YELLOW partially VERIFIED|Shared EXP/leave/relog behavior UNKNOWN|Shared EXP/leave remain optional next scope; do not repeat membership|run37879360808/artifact11593403578;07/08 screenshots|
-|Trade|Pinned handlers|Native auto-move/confirmation|Ordinary item+100Zen transfer and recipient relog|GREEN scoped / YELLOW safety|Cancel/refund/disconnect/crash UNKNOWN; prior interrupted100Zen discrepancy open|Target cancellation/refund only; no successful transfer repeat|R6;17–22;9PASS|
+|Trade|Pinned handlers + actual-storage Money patch|Native offer/cancel/confirmation|Ordinary transfer/relog; normal cancel and BOTH relogs|GREEN scoped / YELLOW safety|Disconnect/concurrency/crash UNKNOWN|One finite disconnect check with existing binaries|R6;37959672391/fixed23–26;14PASS;1 regressionPASS|
 |Guild|Handlers and persistence source present|UI/resources source present|None|YELLOW|Creation/roles/member persistence UNKNOWN|Defer guild internals until actual block; later small transaction test|S1|
 |Chaos Machine/crafting|39 recipes, links and numeric bounds partly checked|NPC/UI source present; all effects UNKNOWN|None|YELLOW|Success/failure/consumption/options/reset semantics UNKNOWN|Recipe ingredient/output bulk audit then one ordinary mix|A1/S1|
 |Standard events|Blood Castle/Devil Square/Chaos Castle source/map definitions; other event definitions|Aliased core map triplets found, effects not runtime proof|None|RED Crywolf/Illusion Temple; YELLOW others|Pinned audit: complete specialized Crywolf/Illusion Temple lifecycle missing/incomplete; access maps alone cannot implement event|Explicitly define mandatory S6 event scope; targeted server implementation/verification only, not resource replacement|S1,A2|
-|Persistence|PG config/player/inventory links valid|Native relog actual|Core progression/shield; conserved trade/itemUUID after recipient relog|GREEN exercised flows / YELLOW wider scope|Cancel/disconnect/guild/events/crash/load UNKNOWN|Preserve37947724161; targeted cancel/refund check|R4,R6,A1|
+|Persistence|PG config/player/inventory links valid|Native relog actual|Core progression/shield; conserved trade/itemUUID after recipient relog|GREEN exercised flows / YELLOW wider scope|Disconnect/guild/events/crash/load UNKNOWN|Preserve37959672391; targeted interruption only|R4,R6,A1|
 |Stability/regression|423 client tests; server scoped evidence|Known working shaders/client binary|Finite sessions only|YELLOW|Long duration/load/crash replay not verified; earlier resource warnings scoped|Target regressions after specific changes; no full rebuild now|R1–R4,S1|
 
 Sphere4/5 definitions have DropsFromMonsters=false and no live item instance in the saved snapshot; defects do not invalidate the proven ordinary-item loop. Five unresolved explicit model mappings:13:19 Weapon of Archangel,13:20 Wizard's Ring,14:162 Magic Backpack,14:163 Vault Expansion Certificate,14:169 Rage Fighter Character Card. UNKNOWN mapping is not a proven missing runtime render. SharedModels.json references were resolved before reporting absent files.
@@ -55,13 +56,13 @@ Model1.0 is fixed by the owner's weighting. Machine-readable criteria/evidence/l
 |NPCs/shops|10%|40%|4|
 |Classes/skills/stats/leveling|10%|60%|6|
 |Quests/events/Chaos Machine/crafting|10%|20%|2|
-|Party/trade/guild|5%|40%|2|
+|Party/trade/guild|5%|50%|2.5|
 |Persistence/stability/regression|10%|70%|7|
-|TOTAL|100%||60%|
+|TOTAL|100%||60.5%|
 
-Engineering estimate:60%, Evidence Confidence MEDIUM. Weighted acceptance-checklist coverage:37% runtime verified,23% automatically validated,17% static only,15.5% unknown,7.5% broken/missing. These percentages describe this fixed checklist's evidence scope, not a measured percentage of all MU mechanics. Structural checks score only structural acceptance criteria, not complete mechanic functionality. Two clients merely connecting earns prerequisite coverage, not party/trade PASS.
+Engineering estimate:60.5%, Evidence Confidence MEDIUM. Weighted acceptance-checklist coverage:37.5% runtime verified,23% automatically validated,17% static only,16.5% unknown,6% broken/missing. These percentages describe this fixed checklist's evidence scope, not a measured percentage of all MU mechanics. Structural checks score only structural acceptance criteria, not complete mechanic functionality. Two clients merely connecting earns prerequisite coverage, not party/trade PASS.
 
-Native continuation37947724161: ordinary trade and actual recipient relog VERIFIED,9PASS; no builds. Party membership already VERIFIED. Shared EXP/leave, guild, cancellation/refund/disconnect remain unverified.
+Native continuation37947724161: ordinary trade and actual recipient relog VERIFIED,9PASS; no builds. Party membership already VERIFIED. Shared EXP/leave, guild and disconnect/crash remain unverified. Normal cancel/refund and both-client relog now verified in37959672391.
 
 ### Readiness history
 
@@ -72,7 +73,7 @@ Native continuation37947724161: ordinary trade and actual recipient relog VERIFI
 |2026-10-09 native party membership|58% →58.5% (+0.5)|Same model; partial invite/shared EXP/leave criterion earns0.5 for membership only|
 |2026-10-09 completed trade/relog|58.5% →60% (+1.5)|Scoped trade and transaction persistence partial0.5 each; same model; no cancel/crash credit|
 
-Critical RED areas:3 — Crywolf and Illusion Temple complete lifecycle; normal trade cancellation loses offered Zen after relog. Other localized RED metadata/seed issues are listed in matrix and ledger. Core progression and completed trade are verified; interrupted-trade100Zen discrepancy remains unresolved, so general transaction safety is not cleared.
+Critical RED areas:2 — Crywolf and Illusion Temple complete lifecycle. Normal cancellation Money defect was fixed and verified in37959672391. Other localized RED metadata/seed issues are listed in matrix and ledger. Core progression and completed trade are verified; interrupted-trade100Zen discrepancy remains unresolved, so general transaction safety is not cleared.
 
 NOT YET READY FOR MAJOR CUSTOMIZATION. Required gate:readiness>=85%, confidence>=MEDIUM and no unresolved fundamental core/persistence/item/progression RED. Numerical threshold alone is insufficient.
 
@@ -88,7 +89,7 @@ No verified rights-cleared compatible package that fills the major server-conten
 
 ## Shortest path
 
-Core runtime chain already complete. Next bounded stage:fix proven trade-cancellation Zen refund; do not repeat verified party or completed trade. Then scoped seed/item metadata fixes with targeted checks, generate monster/skill/recipe cross-reference exceptions, and only sample runtime cases validators cannot resolve. Decide required event scope explicitly before implementing incomplete events. Preserve standard MU first; do not introduce custom systems now.
+Core runtime chain already complete. Next bounded stage:one scoped open-trade client-disconnect/refund/relog validation with verified runtime; do not repeat verified party or completed trade. Then scoped seed/item metadata fixes with targeted checks, generate monster/skill/recipe cross-reference exceptions, and only sample runtime cases validators cannot resolve. Decide required event scope explicitly before implementing incomplete events. Preserve standard MU first; do not introduce custom systems now.
 
 Continuation run37879360808 completed normally; trade request/accept/UI proven, transfer/persistence still UNKNOWN.15-minute harness window ended before offer packet; no score increase beyond party membership58.5%. Final DB comparator showed0Zen deltas, original potion ownership, unchanged baseline DK. Saved recovery pointers in resource-registry.md. Next finite trade-only plan avoids per-click GitHub handshakes; final transaction assertions are required for PASS.
 
@@ -110,5 +111,13 @@ Readiness58.5%→60%(+1.5), model1.0 unchanged: trade transfer/cancel/relog=.5 b
 
 
 ### Normal cancellation diagnostic (2026-10-09)
-Run37954653808/artifact11627378814 FAIL. VERIFIED: native item+100Zen offer23, normal cancel24, both relogs25/26. AUTOMATIC: original offered item exactly restored, ownership IDs/core DK preserved. BROKEN: donor9999900→9999800, recipient9996100 unchanged;100Zen lost. Other strict differences (equipped durability, Current Ability) are outside offered-item rollback, not established persistence defects. Static root: ItemStorageAdapter forwards Items but lacks Money forwarding; base ItemStorage.Money is non-virtual. No fix or rebuild performed yet. New criticalRED for cancellation/persistence. Numerical score60%→60%(+0); previous normal-flow credit retained, no credit for diagnosis. ConfidenceMEDIUM; coverage runtime37/automatic23/static17/unknown15.5/broken7.5. Preserved working37947724161; failed37954653808 must not become restore baseline. Next minimum action: targeted Money forwarding patch + regression + one server rebuild/cancel-only runtime; no client rebuild or broad audit.
+Run37954653808/artifact11627378814 FAIL. VERIFIED: native item+100Zen offer23, normal cancel24, both relogs25/26. AUTOMATIC: original offered item exactly restored, ownership IDs/core DK preserved. BROKEN: donor9999900→9999800, recipient9996100 unchanged;100Zen lost. Other strict differences (equipped durability, Current Ability) are outside offered-item rollback, not established persistence defects. Static root: ItemStorageAdapter forwards Items but lacks Money forwarding; base ItemStorage.Money is non-virtual. At this historical checkpoint no fix had been validated; resolved in the latest milestone below. New criticalRED for cancellation/persistence. Numerical score60%→60%(+0); previous normal-flow credit retained, no credit for diagnosis. ConfidenceMEDIUM; coverage runtime37/automatic23/static17/unknown15.5/broken7.5. Preserved working37947724161; failed37954653808 must not become restore baseline. Next minimum action: targeted Money forwarding patch + regression + one server rebuild/cancel-only runtime; no client rebuild or broad audit.
 
+
+## Latest confirmed cancellation fix / readiness milestone — 2026-10-09
+
+VERIFIED run37959672391/head5a3cd675df6095995b2355bdd4368b1ac2260bd5: existing MuMain and Data, patched pinned OpenMU, genuine native item+100Zen offer→normal cancel→both client restarts/relogs. Donor9999900 and recipient9996100 restored/unchanged; offered medium potion UUID511da101-0000-7bac-41a0-aad9f93fe7fd quantity3 originalslot37 restored exactly. AUTOMATICALLY VALIDATED:14 scoped assertionsPASS, all owned IDs/core DK preserved;1 targeted real-player Money cancellation regressionPASS. Equipment durability and mutable Current Ability on test trade actors are explicitly excluded from rollback comparison; offered item/full core state are not excluded. Source/compile identity and all evidence saved privately; no client build or423-test rerun.
+
+Resolved critical Money RED: adapter Money did not forward to actual persisted inventory. Unwrap-based backup/refund patch, no schema/DataModel/client/resource change. First virtual-property candidate failed generated clone CS0266 and was replaced; failure recorded, no score credit for diagnosis/build alone.
+
+Readiness **60%→60.5%(+0.5)**, model1.0 unchanged. Trade transfer/cancel/relog .5→1; Persistence multiplayer safety remains .5. Subsystems:Core100,Maps70,Monsters40,Items50,Drops80,NPC40,Classes60,Quests/events/crafting20,Party/trade/guild50,Persistence70. ConfidenceMEDIUM; weighted checklist evidence runtime37.5/automatic23/static17/unknown16.5/broken6. Critical RED **2**, localized RED4 unchanged. NOT YET READY FOR MAJOR CUSTOMIZATION. UNKNOWN interruption/concurrency/crash cannot be inferred from normal cancellation. Shortest next milestone:single finite client-disconnect/refund/relog on the verified server, then scoped metadata fixes. No further runtime launched for this checkpoint.

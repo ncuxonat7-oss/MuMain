@@ -23,7 +23,7 @@ Dates UTC; this is evidence, not a conversation transcript. Latest state always 
 
 |Trade37947724161/artifact11624674487|Direct native item offer visible in both clients17/18; item+100Zen confirmed;20 shows100Zen Obtained;21 recipient relog; final9 assertionsPASS|One ordinary item/Zen exchange between GM400 and normal300 fixtures. Same potionUUID/quantity3 transferred, all two-inventory IDs conserved, core DK unchanged. Cancel/disconnect safety and guild/shared EXP not tested.|
 
-Screenshots05/06 of finite smoke are authentic native captures, not generated images. Restore newest successful run37947724161 (which retains core run37860870710), not interrupted37881728154/37882579366 or pre-equipment37851961862.
+Screenshots05/06 of finite smoke are authentic native captures, not generated images. Restore newest successful run37959672391 (which retains core run37860870710), not interrupted37881728154/37882579366 or pre-equipment37851961862.
 
 ## NOT VERIFIED
 
@@ -35,3 +35,11 @@ Earlier failures and workarounds are in lessons-learned.md. Current readiness sc
 ### Normal cancellation diagnostic37954653808 — FAILED
 One cached native run, restored successful37947724161, no build/repeated successful gameplay tests. Artifact11627378814;23 item+100Zen offered,24 native cancelled,25/26 both clients restarted/relogged. Donor9999900→9999800; recipient9996100 unchanged. Offered medium potion UUID511da101-0000-7bac-41a0-aad9f93fe7fd exactly restored, all ownership IDs conserved, baseline DK unchanged.13 strict checks9PASS/4FAIL: money loss is confirmed; the other differences are two equipped durabilities and recipient Current Ability, not diagnosed as rollback defects. Run overallFAIL; native harness completed normally. Root diagnosis static: adapter forwards Items but not Money. No fix validated. Never promote failed DB over37947724161. Readiness60→60, MEDIUM, criticalRED3.
 
+
+## Latest confirmed cancellation fix / readiness milestone — 2026-10-09
+
+VERIFIED run37959672391/head5a3cd675df6095995b2355bdd4368b1ac2260bd5: existing MuMain and Data, patched pinned OpenMU, genuine native item+100Zen offer→normal cancel→both client restarts/relogs. Donor9999900 and recipient9996100 restored/unchanged; offered medium potion UUID511da101-0000-7bac-41a0-aad9f93fe7fd quantity3 originalslot37 restored exactly. AUTOMATICALLY VALIDATED:14 scoped assertionsPASS, all owned IDs/core DK preserved;1 targeted real-player Money cancellation regressionPASS. Equipment durability and mutable Current Ability on test trade actors are explicitly excluded from rollback comparison; offered item/full core state are not excluded. Source/compile identity and all evidence saved privately; no client build or423-test rerun.
+
+Resolved critical Money RED: adapter Money did not forward to actual persisted inventory. Unwrap-based backup/refund patch, no schema/DataModel/client/resource change. First virtual-property candidate failed generated clone CS0266 and was replaced; failure recorded, no score credit for diagnosis/build alone.
+
+Readiness **60%→60.5%(+0.5)**, model1.0 unchanged. Trade transfer/cancel/relog .5→1; Persistence multiplayer safety remains .5. Subsystems:Core100,Maps70,Monsters40,Items50,Drops80,NPC40,Classes60,Quests/events/crafting20,Party/trade/guild50,Persistence70. ConfidenceMEDIUM; weighted checklist evidence runtime37.5/automatic23/static17/unknown16.5/broken6. Critical RED **2**, localized RED4 unchanged. NOT YET READY FOR MAJOR CUSTOMIZATION. UNKNOWN interruption/concurrency/crash cannot be inferred from normal cancellation. Shortest next milestone:single finite client-disconnect/refund/relog on the verified server, then scoped metadata fixes. No further runtime launched for this checkpoint.

@@ -39,3 +39,7 @@ Normal cancel37954653808 isolated the earlier100Zen discrepancy without another 
 
 ### Failed first refund patch build —37957806468
 Making DataModel.ItemStorage.Money virtual caused CloneableGenerator ItemStorage_Cloneable.cs CS0266(object to int); runtime/regression were not reached. Do not repeat this approach or modify the clone generator for this bug. Revised patch resolves actual storage only at Money snapshot/cancel/teardown, leaves DataModel unchanged. Preserve successful server compilation as an artifact before later tests so failed fixtures do not force another server build. Scoped cancellation validator still fails prior37954653808 precisely for100Zen loss while tolerating equipped wear/Current Ability, preserving exact offered item/core DK.
+
+## Confirmed refund solution / avoid wasted rebuilds
+
+Run37959672391 succeeded: unwrap ItemStorageAdapter to actual storage for backup/refund; do not virtualize DataModel.Money or alter generated clone architecture. New narrow1-test regression and native both-client relog/14 assertionsPASS. Keep interruption/crash UNKNOWN. Canonical patch LF SHA85d8428452a25fef598c19ef2cda8d0ab94b2d5c13296481445ae84b7fad197d; Windows CRLF checkout SHA52e385decd20a06efb4d84d71fe5ea6fab9f5d620c3eb045e4c89dfba95586b0. This known newline difference is not a source mismatch/rebuild reason. Reuse compiled artifact11630698202/private backup and newest DB11630634143. Future cache misses must download this verified artifact or restore exact private backup; no automatic build or repeated successful test.
