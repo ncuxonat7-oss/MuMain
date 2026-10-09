@@ -1,25 +1,28 @@
 {
-  "id": "trade-open-05",
+  "id": "trade-offer-06",
   "steps": [
     {
       "op": "click",
-      "x": 420,
-      "y": 292
+      "x": 760,
+      "y": 428
+    },
+    {
+      "op": "click",
+      "x": 450,
+      "y": 448
     },
     {
       "op": "capture",
-      "name": "11-trade-open-recipient"
+      "name": "13-potion-offered"
     },
     {
-      "op": "select-client",
-      "name": "one"
+      "op": "click",
+      "x": 611,
+      "y": 643
     },
     {
       "op": "capture",
-      "name": "12-trade-open-donor"
-    },
-    {
-      "op": "snapshot"
+      "name": "14-trade-zen-input"
     }
   ]
 }
