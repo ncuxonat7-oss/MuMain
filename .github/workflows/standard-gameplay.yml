@@ -69,17 +69,30 @@ jobs:
           repository: MUnique/OpenMU
           ref: d067b3c11c23c3145de6e2c76201ab9a93b267c8
           path: server-source
+      - name: Apply targeted trade money forwarding patch
+        shell: pwsh
+        run: |
+          git -C server-source apply ../patches/openmu-trade-money.patch
+          if ($LASTEXITCODE) { throw 'Pinned trade patch did not apply; stop.' }
       - name: Cache pinned server runtime
         id: server-cache
         uses: actions/cache@v4
         with:
           path: server-source/src/Startup/bin/Release
-          key: openmu-windows-runtime-d067b3c-net10-v1
-      - name: Require cached server runtime (no rebuild)
+          key: openmu-windows-runtime-d067b3c-net10-money-${{ hashFiles('patches/openmu-trade-money.patch') }}
+      - name: Build targeted patched OpenMU only when uncached
         if: steps.server-cache.outputs.cache-hit != 'true'
         shell: pwsh
         run: |
-          throw 'Pinned server cache unavailable; stop before a new build.'
+          dotnet build server-source/src/Startup/MUnique.OpenMU.Startup.csproj --configuration Release
+          if ($LASTEXITCODE) { throw 'Targeted server build failed.' }
+      - name: Targeted real-player cancellation regression
+        shell: pwsh
+        run: |
+          dotnet test server-source/tests/MUnique.OpenMU.Tests/MUnique.OpenMU.Tests.csproj --configuration Release --filter FullyQualifiedName~TradeCancelRestoresMoneyAsync --logger "trx;LogFileName=trade-money-regression.trx" --results-directory evidence
+          if ($LASTEXITCODE) { throw 'Trade cancellation regression failed.' }
+          git -C server-source rev-parse HEAD > evidence/server-source-commit.txt
+          Get-FileHash patches/openmu-trade-money.patch,server-source/src/Startup/bin/Release/MUnique.OpenMU.Startup.dll,server-source/src/Startup/bin/Release/MUnique.OpenMU.GameLogic.dll,server-source/src/Startup/bin/Release/MUnique.OpenMU.DataModel.dll -Algorithm SHA256 | Format-List | Out-File evidence/server-patch-binary-hashes.txt
       - name: Restore saved gameplay database artifact
         uses: actions/download-artifact@v4
         with:
