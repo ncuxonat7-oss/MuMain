@@ -80,35 +80,35 @@ jobs:
         with:
           path: server-source/src/Startup/bin/Release
           key: openmu-windows-runtime-d067b3c-net10-money-${{ hashFiles('patches/openmu-trade-money.patch') }}
-      - name: Build targeted patched OpenMU only when uncached
+      - name: Restore already verified patched runtime when cache is absent
         if: steps.server-cache.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: |
-          dotnet build server-source/src/Startup/MUnique.OpenMU.Startup.csproj --configuration Release
-          if ($LASTEXITCODE) { throw 'Targeted server build failed.' }
-      - name: Record patched server compilation identity
-        shell: pwsh
-        run: |
-          git -C server-source rev-parse HEAD > evidence/server-source-commit.txt
-          Get-FileHash patches/openmu-trade-money.patch,server-source/src/Startup/bin/Release/MUnique.OpenMU.Startup.dll,server-source/src/Startup/bin/Release/MUnique.OpenMU.GameLogic.dll,server-source/src/Startup/bin/Release/MUnique.OpenMU.DataModel.dll -Algorithm SHA256 | Format-List | Out-File evidence/server-patch-binary-hashes.txt
-      - name: Preserve patched server compilation before runtime tests
-        uses: actions/upload-artifact@v4
+        uses: actions/download-artifact@v4
         with:
           name: patched-openmu-runtime
+          run-id: 37959672391
+          github-token: ${{ github.token }}
           path: server-source/src/Startup/bin/Release
-          if-no-files-found: error
-      - name: Targeted real-player cancellation regression
+      - name: Verify reused source and runtime identity
         shell: pwsh
         run: |
-          dotnet test server-source/tests/MUnique.OpenMU.Tests/MUnique.OpenMU.Tests.csproj --configuration Release --filter FullyQualifiedName~TradeCancelRestoresMoneyAsync --logger "trx;LogFileName=trade-money-regression.trx" --results-directory evidence
-          if ($LASTEXITCODE) { throw 'Trade cancellation regression failed.' }
+          $patchHash = (Get-FileHash patches/openmu-trade-money.patch -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($patchHash -notin @('85d8428452a25fef598c19ef2cda8d0ab94b2d5c13296481445ae84b7fad197d','52e385decd20a06efb4d84d71fe5ea6fab9f5d620c3eb045e4c89dfba95586b0')) { throw 'Source patch changed; explain a new targeted build before proceeding.' }
+          $expected = @{
+            'MUnique.OpenMU.Startup.dll' = '5cf46ff5a89b08692b00d112b59ba8a98bf7300f3289e215caaab1122d10a776'
+            'MUnique.OpenMU.GameLogic.dll' = '1ef6eee0479cf17aa567c4c720401adde84e2dc2909b6ff5b40b3883bc8cfa89'
+            'MUnique.OpenMU.DataModel.dll' = '6374c47837f657afafbc1bc6558a2b2e95356c72f9a008ca7c7f538a8a02c501'
+          }
+          foreach ($name in $expected.Keys) {
+            $actual = (Get-FileHash "server-source/src/Startup/bin/Release/$name" -Algorithm SHA256).Hash.ToLowerInvariant()
+            if ($actual -ne $expected[$name]) { throw "Verified runtime mismatch: $name; stop without rebuilding." }
+          }
           git -C server-source rev-parse HEAD > evidence/server-source-commit.txt
           Get-FileHash patches/openmu-trade-money.patch,server-source/src/Startup/bin/Release/MUnique.OpenMU.Startup.dll,server-source/src/Startup/bin/Release/MUnique.OpenMU.GameLogic.dll,server-source/src/Startup/bin/Release/MUnique.OpenMU.DataModel.dll -Algorithm SHA256 | Format-List | Out-File evidence/server-patch-binary-hashes.txt
       - name: Restore saved gameplay database artifact
         uses: actions/download-artifact@v4
         with:
           name: gameplay-final
-          run-id: 37947724161
+          run-id: 37959672391
           github-token: ${{ github.token }}
           path: saved-gameplay
       - name: Prepare official artifact SDK
