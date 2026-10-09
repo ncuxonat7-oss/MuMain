@@ -20,3 +20,5 @@
 - GM /move by name requires an online target: start second client BEFORE positioning it. First offline move returned character not found; corrected online move worked.
 - Client outgoing trade minimum is level6 (NewUICommandWindow::CommandTrade). Use existing level300/400 fixtures; never alter verified level2 DK to unlock trade.
 - GitHub editor modal hydration can lag a successful click. Inspect current DOM before one corrective click; do not resubmit workflow or erase content.
+
+-15-minute live CI window was consumed by per-step artifact retrieval and GitHub commits. It completed normally, but trade-offer-06 was never consumed. Stage known UI actions as one finite plan before launching; add final-state assertions so CI success alone cannot masquerade as gameplay success. Do not replay the party stage in the trade-only continuation.

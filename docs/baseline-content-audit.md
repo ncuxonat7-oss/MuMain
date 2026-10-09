@@ -87,3 +87,5 @@ No verified rights-cleared compatible package that fills the major server-conten
 ## Shortest path
 
 Core runtime chain already complete. Next bounded stage:reuse two native clients and latest DB for party + one trade with persisted recipient result. Then scoped seed/item metadata fixes with targeted checks, generate monster/skill/recipe cross-reference exceptions, and only sample runtime cases validators cannot resolve. Decide required event scope explicitly before implementing incomplete events. Preserve standard MU first; do not introduce custom systems now.
+
+Continuation run37879360808 completed normally; trade request/accept/UI proven, transfer/persistence still UNKNOWN.15-minute harness window ended before offer packet; no score increase beyond party membership58.5%. Final DB comparator showed0Zen deltas, original potion ownership, unchanged baseline DK. Saved recovery pointers in resource-registry.md. Next finite trade-only plan avoids per-click GitHub handshakes; final transaction assertions are required for PASS.

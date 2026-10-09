@@ -15,6 +15,7 @@ Dates UTC; this is evidence, not a conversation transcript. Latest state always 
 |2026-10-09 pinned client cross-check |690 server definitions vs949 client entries/889 model entries; full13,188-file manifest; shared models resolved;73 maps/68 numbers with aliases |2 missing item entries,12 zero dimension entries,5 unknown mappings; Exile object absent. No rendering/effect/binary proof |
 |2026-10-09 navigation tool | Lorencia(116,141) resolves Hanzo251, exact spawn, definition and merchant storage | Read-only locator, not additional gameplay test |
 |2026-10-09 runtime37879360808/artifact11593403578|Party invite/accept, two native member lists (07/08); trade request received (10)|No shared EXP/leave proof; trade transfer/relog still pending|
+|Runtime37879360808 final artifact11594420323|Successful cache-only Windows session; final DB saved; baseline DK stats/items unchanged|15-minute live window ended before offer-06; no completed trade,0Zen deltas; trade validator correctly FAILS expected-transfer checks|
 
 Screenshots05/06 of finite smoke are authentic native captures, not generated images. Restore newest run37860870710, not the pre-equipment run37851961862.
 
