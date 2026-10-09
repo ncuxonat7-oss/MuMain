@@ -1,1 +1,68 @@
-{"id":"idle","steps":[]}
+{
+  "source_blob_sha": "3180d0047020cceff7082a4b04fdbb1472d445f9",
+  "id": "trade-automove-offer-09",
+  "steps": [
+    {
+      "op": "second-client"
+    },
+    {
+      "op": "login",
+      "account": "test300"
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "key",
+      "vk": 68
+    },
+    {
+      "op": "click",
+      "x": 872,
+      "y": 70
+    },
+    {
+      "op": "right-click",
+      "x": 581,
+      "y": 362
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "click",
+      "x": 420,
+      "y": 292
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "right-click",
+      "x": 760,
+      "y": 428
+    },
+    {
+      "op": "wait",
+      "seconds": 10
+    },
+    {
+      "op": "capture",
+      "name": "17-auto-move-offer-donor"
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "capture",
+      "name": "18-auto-move-offer-recipient"
+    },
+    {
+      "op": "snapshot"
+    }
+  ]
+}
