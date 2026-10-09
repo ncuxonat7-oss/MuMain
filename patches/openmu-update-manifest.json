@@ -1,0 +1,1095 @@
+{
+  "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "source_files": 147,
+  "plugins": [
+    {
+      "path": "src/Persistence/Initialization/Updates/AddAreaSkillSettingsUpdatePlugIn.cs",
+      "key": "D01DA745-BF72-40C4-BD90-D2D637AEDF99",
+      "version": 3,
+      "version_explicit": true,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddCashShopUpdatePlugIn.cs",
+      "key": "C6B9A9DB-FFA6-4C66-B9E7-43166A06B2D5",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddCastleSiegeDataUpdatePlugIn.cs",
+      "key": "CD201E33-37C9-4C85-95CC-16042B28E974",
+      "version": 2,
+      "version_explicit": true,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddCrestOfMonarchDropGroupUpdateSeason6.cs",
+      "key": "FF14A478-3EA8-4C41-A298-8E6698D5973D",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddDarkHorseCanFlyPlugIn.cs",
+      "key": "B2A18B26-5BF6-4EBC-80D9-421CB8B6BFCE",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddDoppelgangerDataUpdatePlugIn.cs",
+      "key": "8E4D2B17-6A3F-4C95-9D02-B7E15A6C3F48",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddDragonSlasherPveMultiplierPlugIn.cs",
+      "key": "7DF15560-0A0D-404E-A947-6349E0AB8811",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddDuelConfigurationPlugIn.cs",
+      "key": "5DC5638E-581E-4ACC-81E4-D565C625649B",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddElfSoldierBuffPlugIn.cs",
+      "key": "9BCFC8B1-6A6E-48F9-AE7C-0D34FA6D706B",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddFenrirMaterialDropGroupsUpdateSeason6.cs",
+      "key": "3C0E6B55-9D2F-4A71-8E43-5B7F1A2D9C64",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddGlobalMoneyAmountRateAttributePlugIn075.cs",
+      "key": "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddGlobalMoneyAmountRateAttributePlugIn095d.cs",
+      "key": "B2C3D4E5-F6A7-8901-BCDE-F12345678901",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddGlobalMoneyAmountRateAttributePlugInSeason6.cs",
+      "key": "C3D4E5F6-A7B8-9012-CDEF-123456789012",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddGuardsDataPlugIn.cs",
+      "key": "1EF50759-0A5F-4301-A5E9-B68A8B7D29F9",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddHarmonyOptionWeightsUpdateSeason6.cs",
+      "key": "E94DE59E-5B3A-4498-A4AF-E7F4F173B754",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddImperialGuardianDataUpdatePlugIn.cs",
+      "key": "4D8E2A17-B63C-4F95-A0E1-7C2B9F5D3E68",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddItemDropGroupForJewelsUpdate075.cs",
+      "key": "DCF14924-BB19-4CA2-93EC-397A89AA3EB3",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddItemDropGroupForJewelsUpdate095d.cs",
+      "key": "D21056E6-E912-416B-A076-3C2D17DA517B",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddItemDropGroupForJewelsUpdateSeason6.cs",
+      "key": "F958CC5B-C1E6-4F67-B48D-4BF75EC5CAA8",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddItemRegistrationAttributesUpdatePlugIn.cs",
+      "key": "182FC652-3277-4CDB-8BA8-DE70311E67C9",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddItemRuleFlagsPlugIn.cs",
+      "key": "C0F83AEA-C8E1-4E40-9B85-D344B7F93238",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddKalimaPlugIn.cs",
+      "key": "0C99155F-1289-4E73-97F0-47CB67C3716F",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddKanturuDataUpdatePlugIn.cs",
+      "key": "3F1B7A64-9C2E-4D58-B0A7-5E6C8D19F204",
+      "version": 2,
+      "version_explicit": true,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddLorenMarketJuliaWarpPlugIn.cs",
+      "key": "ed2f1728-b35c-4a3d-810e-eab5b6e12a82",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddMasterSkillPassivePowerUpsPlugIn.cs",
+      "key": "684F5375-A5A6-41CC-83A6-479E33484707",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddMaximumAllianceSizeUpdatePlugInSeason6.cs",
+      "key": "2C2743B0-1305-47BF-85D9-09F6CA64AD54",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddMissingMerchantStoresPlugIn.cs",
+      "key": "f78d6e1d-1cb5-45f7-912d-54b2cb1220eb",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddMovementSpeedAttributesPlugIn075.cs",
+      "key": "890E2FCB-EC93-4CC1-84FC-67A1B398D5C8",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddMovementSpeedAttributesPlugIn095D.cs",
+      "key": "7C38C30F-163B-4625-A82D-5C3A0A9ED883",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddMovementSpeedAttributesPlugInSeason6.cs",
+      "key": "1D4968DA-9C9C-42A7-AF80-D4811535EC63",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddPointsPerResetAttributePlugIn.cs",
+      "key": "6011A1B8-7FA5-48EB-935D-EEAF83017799",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddQuestItemLimitPlugIn.cs",
+      "key": "48D40F2E-2844-4058-B1FA-710EEE55157B",
+      "version": 2,
+      "version_explicit": true,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddRaklionEventUpdatePlugIn.cs",
+      "key": "2B7E9C41-5D86-4A13-B0F2-9C4A7E1D3B65",
+      "version": 2,
+      "version_explicit": true,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddRandomExperienceConfigAttributesPlugIn075.cs",
+      "key": "5F412933-CC0F-483B-B6AE-7B358A6257FD",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddRandomExperienceConfigAttributesPlugIn095d.cs",
+      "key": "9A166583-C3E7-4E04-924C-F01FF9840974",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddRandomExperienceConfigAttributesPlugInSeason6.cs",
+      "key": "D1DC70A2-2614-4CC0-81C0-6C8253781019",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddRenaItemUpdatePlugIn.cs",
+      "key": "6A1B7C3D-2E5F-4A7B-8C9D-1E1F2A3B4C6E",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddSmallWingsUpdatePlugIn.cs",
+      "key": "53749584-DF06-4022-9B10-6F7313D3563A",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddSummonerBuffSkillsPlugIn.cs",
+      "key": "B1E2D6C3-1F4A-4D7C-8C2E-3F6D9A7B8E2F",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/AddWhiteWizardInvasionMobsUpdatePlugIn.cs",
+      "key": "D8F4E2C0-5A6B-4C3D-9E7F-1B2A4C6D8E0F",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/ChainLightningUpdatePlugIn.cs",
+      "key": "039D09CB-283C-4CBD-ABBC-FFD3F7D5C62F",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/ChaosCastleDataUpdatePlugIn.cs",
+      "key": "13059991-F3C8-4050-A201-6D6A67E57541",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/ConfigureNpcTalkPlugInsPlugIn075.cs",
+      "key": "E6A089FE-5A7E-4D11-92CB-7BEA5DA267A1",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/ConfigureNpcTalkPlugInsPlugIn095d.cs",
+      "key": "D2B5D4BF-A847-417C-A854-8298575B57EF",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/ConfigureNpcTalkPlugInsPlugInSeason6.cs",
+      "key": "C9323F10-CFB9-4D73-A6E3-D93F25750D02",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FinishDarkKnightMasterTreePlugIn075.cs",
+      "key": "B8F3E2C1-4D5A-6F78-9B0C-2E7D1A3F5B6C",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FinishDarkKnightMasterTreePlugIn095d.cs",
+      "key": "D4F7A9C2-1B3E-56D8-9F0A-7C2E4B1D5A8F",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FinishDarkKnightMasterTreePlugInSeason6.cs",
+      "key": "F7B2C9E4-1A3D-56F8-9B0C-4E2D7A1F8B3C",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FinishDarkLordMasterTreePlugIn.cs",
+      "key": "1A2B3C4D-5E6F-7890-ABCD-EF1234567890",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FinishDarkWizardMasterTreePlugIn.cs",
+      "key": "C1D2E3F4-5A6B-7C8D-9E0F-1A2B3C4D5E6F",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FinishElfMasterTreePlugIn.cs",
+      "key": "D1E2F3A4-B5C6-7D8E-9F0A-1B2C3D4E5F6A",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FinishRageFighterMasterTreePlugIn.cs",
+      "key": "2DAE95BC-AE08-45E8-942A-9F61AE1C277B",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FinishSummonerMasterTreePlugIn.cs",
+      "key": "4A1F9B2C-3D6E-4F70-A8B9-1C2D3E4F5A6B",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixAncientDiscriminatorsUpdatePlugIn.cs",
+      "key": "AB664421-1CA6-4FCE-A150-0007971017E1",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixAttackSpeedCalculationUpdate.cs",
+      "key": "F9977AA7-F52A-4F42-BD6C-98DE700B5980",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixBloodCastleMonsterAttributesUpdatePlugIn.cs",
+      "key": "D4E5F6A0-1B2C-3D4E-5F6A-7B8C9D0E1F2A",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixChaosMixesPlugIn095D.cs",
+      "key": "68BC1F35-FC9A-468F-89FB-0940485AC107",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixChaosMixesPlugInSeason6.cs",
+      "key": "EFD7EA69-56AE-48A3-ACE2-1C3B5B87780A",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixChaosMixesUpdatePlugIn075.cs",
+      "key": "04A5F236-117F-422A-8C38-28D09DE911D7",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixCharStatsForceWavePlugIn075.cs",
+      "key": "D7CD05B7-06EE-4D9F-BAD0-65267F3A9FE8",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixCharStatsForceWavePlugIn095d.cs",
+      "key": "14DFF317-B4E6-424A-A8D1-6D1D5195E970",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixCharStatsForceWavePlugInSeason6.cs",
+      "key": "0C1995AB-A1CC-42A8-9EFC-E5FE8F360C53",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDamageAbsorbItemsUpdatePlugIn.cs",
+      "key": "280ACE93-2B96-476C-A4AF-4FDA7611D5D5",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDamageCalcsPlugIn075.cs",
+      "key": "42B1582B-667F-4098-A339-DDA8560157E3",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDamageCalcsPlugIn095d.cs",
+      "key": "A4410B7B-7E5F-409C-9F6F-4E216208829A",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDamageCalcsPlugInSeason6.cs",
+      "key": "077BA63D-F201-41BE-8A65-CFB859482A1B",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDefenseCalcsPlugIn075.cs",
+      "key": "683A8F8F-EFE9-4EF4-B536-21048E195A87",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDefenseCalcsPlugIn095d.cs",
+      "key": "C6945ADC-0313-47AC-AFAE-61D0544C8935",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDefenseCalcsPlugInSeason6.cs",
+      "key": "447FA95B-091B-4950-B1F3-F4EB6D20DE19",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDinorantOptionNumbersPlugIn095d.cs",
+      "key": "10A4DF3D-5224-4FFB-A3D9-145A0D6EDD9F",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDinorantOptionNumbersPlugInSeason6.cs",
+      "key": "F89EC822-9B82-4265-90E0-98D13CDC79F0",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDrainLifeSkillUpdate.cs",
+      "key": "A8827A3C-7F52-47CF-9EA5-562A9C06B986",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixDuelArenaSafezoneMapUpdate.cs",
+      "key": "27714BB3-43F9-4D90-920F-98EF0EC20232",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "false"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugIn095d.cs",
+      "key": "B9C6D3E2-4F5A-6B7C-8D9E-0F1A2B3C4D5E",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugInSeason6.cs",
+      "key": "A8B5C2D1-3E4F-5A6B-7C8D-9E0F1A2B3C4D",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixHorseFenrirOptionsSoulBarrierPlugIn.cs",
+      "key": "3E362629-AAF3-40E0-BC6D-32230285FB03",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixIgnoreDefenseSkillUpdatePlugIn.cs",
+      "key": "8DEC7BC2-E6A0-4E46-B123-C92CB43B9ED5",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixItemOptionsAndAttackSpeedPlugIn075.cs",
+      "key": "7733CDA9-6F4B-48D2-94F1-796C937F032A",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixItemOptionsAndAttackSpeedPlugIn095d.cs",
+      "key": "C7F90EDB-EC00-467D-826F-9DEFFEA1206A",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixItemOptionsAndAttackSpeedPlugInSeason6.cs",
+      "key": "EEEAA884-4704-48DE-825A-8E588A47E2CC",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixItemRequirementsPlugIn.cs",
+      "key": "9E8DB2CB-1972-40D3-9129-6964ABFEB4DC",
+      "version": 2,
+      "version_explicit": true,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixJeweleryPetsDamageCalcsPlugIn075.cs",
+      "key": "46F50226-B0A2-4FE7-B708-AEB3F306A7C0",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixJeweleryPetsDamageCalcsPlugIn095d.cs",
+      "key": "BF56A0E2-D7B3-4456-81F7-249440489607",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixJeweleryPetsDamageCalcsPlugInSeason6.cs",
+      "key": "DD5B0424-89DB-4DE4-A1BB-B294F2C1FCE6",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixLevelDiv20ExcOptionUpdatePlugIn.cs",
+      "key": "B0F275DC-B3C2-4826-8263-FFDC8A8AFAEA",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixLifeSwellEffectUpdatePlugIn.cs",
+      "key": "FD521A61-D5B4-4CF2-B203-6FFF12C80E51",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixMaxManaAndAbilityJewelryOptionsUpdateSeason6.cs",
+      "key": "EAC7C809-D4B8-443F-BE52-E56560003483",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixRageFighterMultipleHitSkillsPlugIn.cs",
+      "key": "EDDD17F9-BEA5-40F0-A653-8567566C40E7",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixSetBonusesPlugIn.cs",
+      "key": "F858E471-B76D-4AAF-8886-8DEB45BC1AB8",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixSkillMultipliersPlugIn.cs",
+      "key": "753F01BA-5FCA-42FA-9587-7055631C27B7",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixSocketSeedCraftingUpdatePlugIn.cs",
+      "key": "C802EFC2-1D42-4218-871E-8886D115F3ED",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixSummonerCurseSkillsPlugIn.cs",
+      "key": "A3B4C8DB-2F39-4C81-A2D9-5E4FA5B9E004",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixVulcanusWarpIndexUpdatePlugIn.cs",
+      "key": "6B0E3D72-8F14-4C59-A2D6-1E9F7C3B5A40",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWarpLevelUpdatePlugIn.cs",
+      "key": "F4342D86-7042-477A-BC3B-475C1F2A79FF",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWarriorMorningStarPlugIn.cs",
+      "key": "65BA79B5-1DBF-4C97-9628-0D8A429A8C88",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWeaponRisePercentagePlugIn075.cs",
+      "key": "5B63534D-E5DF-46B1-992D-C1637B197EE1",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWeaponRisePercentagePlugIn095d.cs",
+      "key": "33259706-F3DF-4F4D-9935-3DEF7E53BF81",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWeaponRisePercentagePlugInSeason6.cs",
+      "key": "58740F26-6496-4CCA-8C90-C4749E09DDB2",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWingsAndCapesCraftingsUpdatePlugIn.cs",
+      "key": "618A53AF-ED2A-4C78-A103-BAD061FFB0D2",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWingsDmgRatesUpdatePlugIn075.cs",
+      "key": "3821267A-9C37-40E5-B023-BAB1A8E4DAB7",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWingsDmgRatesUpdatePlugIn095d.cs",
+      "key": "F45FA4D0-B19B-48E2-9592-A37F3B36348A",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/FixWingsDmgRatesUpdatePlugInSeason6.cs",
+      "key": "03F49890-CB0E-40B7-A590-174BBA1962F4",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/InfinityArrowSkillOnQuestCompletionPlugIn.cs",
+      "key": "A78B7540-75AC-494C-9AEC-BC943D929C98",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/ItemDurabilityRefactorPlugIn075.cs",
+      "key": "4D8A2F91-C7E3-46B5-9A1D-8F2C6E7B3A50",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/ItemDurabilityRefactorPlugIn095d.cs",
+      "key": "B6E1C4A8-2F9D-47C3-A5B7-1E8D6F2A9C40",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/ItemDurabilityRefactorPlugInSeason6.cs",
+      "key": "D8A4F1C7-6B2E-49D3-A5F0-1C7E9B4D2A86",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/LimitWhiteWizardDropsUpdatePlugIn.cs",
+      "key": "A7B3E5F1-8C2D-4E6F-9A1B-3D5C7E8F2A4B",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugIn075.cs",
+      "key": "F079402E-F557-423C-B376-80A1B87D842D",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugIn095d.cs",
+      "key": "A7C2E9F4-5B1D-4E8A-9C6F-3D2B7A1E5F90",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugInSeason6.cs",
+      "key": "E6A3B9F1-7C4D-48E2-A5B8-1F9D3C6E2A7B",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RemoveDuplicateStatAttributesPlugIn075.cs",
+      "key": "6B0A9D2C-6E4F-4C1B-9B5A-2E7F8D4C0A31",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RemoveDuplicateStatAttributesPlugIn095d.cs",
+      "key": "D1F4C7A8-3B62-4E05-8A9C-5C1B6E3F7D24",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RemoveDuplicateStatAttributesPlugInSeason6.cs",
+      "key": "9C3E5B71-8D04-42A6-BF19-7A2D6C8E5B03",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RemoveJewelDropLevelGapPlugIn075.cs",
+      "key": "CD958BC1-F17A-4C60-B66D-BD29D49B6ADA",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RemoveJewelDropLevelGapPlugIn095d.cs",
+      "key": "6614E91E-5749-478A-96A4-3240E7C1280E",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/RemoveJewelDropLevelGapPlugInSeason6.cs",
+      "key": "AB1C9F8B-5E3B-4F2A-BDCD-9C0F1E5A6B7C",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/SpawnFixesUpdatePlugIn.cs",
+      "key": "15FB42DE-A032-49B5-98B8-4CF34744B3A6",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/SystemConfigurationAddedPlugIn075.cs",
+      "key": "F1151FDE-14F7-4945-AEE9-57DAB6449CFF",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version075.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/SystemConfigurationAddedPlugIn095d.cs",
+      "key": "EC9FE71E-5C6C-456A-AC75-428EBA3FF626",
+      "version": 1,
+      "version_explicit": false,
+      "s6": false,
+      "other_scope": "Version095d.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/SystemConfigurationAddedPlugInSeason6.cs",
+      "key": "7231172F-51AD-4129-9003-C1ACC7E04147",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "inherited"
+    },
+    {
+      "path": "src/Persistence/Initialization/Updates/WizEnhanceAndRagefighterSkillsUpdatePlugIn.cs",
+      "key": "426497DB-A1D7-4EC5-BE6A-C8AEABC288E2",
+      "version": 1,
+      "version_explicit": false,
+      "s6": true,
+      "other_scope": "VersionSeasonSix.DataInitialization.Id",
+      "mandatory": "true"
+    }
+  ]
+}
