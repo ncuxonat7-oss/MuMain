@@ -1,0 +1,64 @@
+name: Bulk Configuration Reference Check
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  validate:
+    runs-on: windows-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore latest confirmed gameplay artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: gameplay-final
+          run-id: 37860870710
+          github-token: ${{ github.token }}
+          path: saved-gameplay
+      - name: Export and validate configuration without starting the game
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force evidence | Out-Null
+          $evidence = Join-Path $PWD evidence
+          $pgBin = 'C:\Program Files\PostgreSQL\17\bin'
+          $pgData = Join-Path $env:RUNNER_TEMP mu-config-audit-pg
+          $env:PGCLIENTENCODING = 'UTF8'
+          try {
+            & "$pgBin/initdb.exe" -D $pgData -U postgres -A trust --no-locale > "$evidence/pg-init.log" 2>&1
+            if ($LASTEXITCODE) { throw 'PostgreSQL init failed' }
+            & "$pgBin/pg_ctl.exe" -D $pgData -l "$evidence/postgres.log" -o '-h 127.0.0.1 -p 5432' -w start
+            if ($LASTEXITCODE) { throw 'PostgreSQL start failed' }
+            & "$pgBin/createdb.exe" -h 127.0.0.1 -U postgres openmu
+            if ($LASTEXITCODE) { throw 'Restore target creation failed' }
+            & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d postgres -v ON_ERROR_STOP=1 -c 'CREATE ROLE account; CREATE ROLE config; CREATE ROLE guild; CREATE ROLE friend;' > "$evidence/roles.log" 2>&1
+            if ($LASTEXITCODE) { throw 'Restore roles failed' }
+            & "$pgBin/pg_restore.exe" --exit-on-error -h 127.0.0.1 -U postgres -d openmu saved-gameplay/gameplay-test-db.dump > "$evidence/restore.log" 2>&1
+            if ($LASTEXITCODE) { throw 'Latest database restore failed' }
+            & "$pgBin/psql.exe" -h 127.0.0.1 -U postgres -d openmu -At -c 'select version();' > "$evidence/database-version.txt"
+            if ($LASTEXITCODE) { throw 'Database version read failed' }
+            Get-FileHash saved-gameplay/gameplay-test-db.dump -Algorithm SHA256 | Format-List | Out-File "$evidence/source-dump-hash.txt"
+            python scripts/check-config-references.py --export-sql "$evidence/export-baseline-config.sql"
+            if ($LASTEXITCODE) { throw 'SQL export preparation failed' }
+            Push-Location $evidence
+            try {
+              & "$pgBin/psql.exe" -X -A -t -q -h 127.0.0.1 -U postgres -d openmu -v ON_ERROR_STOP=1 -f export-baseline-config.sql > export.log 2>&1
+              if ($LASTEXITCODE) { throw 'Read-only configuration export failed' }
+            } finally { Pop-Location }
+            python scripts/check-config-references.py --evidence "$evidence" --out "$evidence" > "$evidence/check-summary.json"
+            if ($LASTEXITCODE) { throw 'Configuration reference check found failures; see preserved report' }
+          } finally {
+            if (Test-Path "$pgData/postmaster.pid") {
+              & "$pgBin/pg_ctl.exe" -D $pgData -m fast -w stop > "$evidence/pg-stop.log" 2>&1
+            }
+          }
+      - name: Preserve bulk configuration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-config-evidence
+          path: evidence
+          retention-days: 90
+          if-no-files-found: error
