@@ -14,7 +14,7 @@ Read only documents relevant to the task:
 |Owner intent/scope/architecture decision|docs/product-vision.md; docs/decisions.md|
 |Blocked operation/repeated failure|Relevant entries in docs/lessons-learned.md; no repeat CI/build just to inspect state|
 
-Model1.0 weights/criteria are stable. Source/config/assets present alone earns no readiness credit. Update evidence limits and score only after uncertainty materially reduces or defects are fixed; preserve comparison/history. Distinguish static/automatic/runtime/inferred/unknown. Two native connections do not prove party/trade.
+Owner-defined model1.1 preserves model1.0 weights and original checklist; see docs/baseline-scope.md and archived ledger. Illusion Temple is OUT OF SCOPE; Crywolf is DEFERRED late stage. Neither is a current RED blocker or readiness penalty. Preserve findings; no fixes/runtime work on them now. Trade baseline is sufficiently validated; no deeper trade tests. Continue bulk local configuration/client validation and confirmed local fixes; external import only proven missing S6 records. Source/config/assets present alone earns no readiness credit. Update evidence limits and score only after uncertainty materially reduces or defects are fixed; preserve comparison/history. Distinguish static/automatic/runtime/inferred/unknown. Two native connections do not prove party/trade.
 
 No complex agent orchestration. Reuse validated artifacts/cache/DB; smallest targeted validation then owner alpha testing. See docs/navigation.md for bug report format. Read the original coding rules below before code changes; preserve existing source structure. This bootstrap adds project memory and does not override original repository rules.
 
@@ -63,4 +63,5 @@ Quick references:
 Don't perform large retroactive cleanups of existing code to fit the rules unless
 the user explicitly asks for it. Apply the rules going forward; pre-existing
 code can be refactored opportunistically when you're already touching it.
+
 
