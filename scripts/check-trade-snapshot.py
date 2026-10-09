@@ -50,15 +50,30 @@ def compare(before_rows, after_rows, amount, item_uuid):
             'item_uuid': item_uuid, 'pass': all(assertions.values()), 'limit': 'Saved observed item/Zen transfer and untouched DK; party/GUI/cancel/crash safety not proven by DB alone.'}
 
 
+def compare_cancel(before_rows, after_rows, item_uuid):
+    names = (DONOR, RECIPIENT, BASELINE)
+    before = {name: character_state(before_rows, name) for name in names}
+    after = {name: character_state(after_rows, name) for name in names}
+    assertions = {'offered_item_present_in_original_inventory': item_uuid in before[DONOR]['items']}
+    for name in names:
+        for field in ('id', 'money', 'attributes', 'items'):
+            assertions[f'{name}_{field}_unchanged'] = before[name][field] == after[name][field]
+    return {'assertions': assertions, 'pass': all(assertions.values()), 'outcome': 'cancel',
+            'item_uuid': item_uuid, 'limit': 'Saved zero-delta state only; native offered/cancel/relog evidence required. Hard server-crash safety unproven.'}
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--before', type=Path, required=True)
     parser.add_argument('--after', type=Path, required=True)
-    parser.add_argument('--zen', type=int, required=True)
+    parser.add_argument('--zen', type=int)
+    parser.add_argument('--outcome', choices=('complete', 'cancel'), default='complete')
     parser.add_argument('--item-uuid', required=True)
     args = parser.parse_args()
-    if args.zen <= 0:
+    if args.outcome == 'complete' and (args.zen is None or args.zen <= 0):
         parser.error('Expected observed trade amount must be positive.')
-    result = compare(read_rows(args.before), read_rows(args.after), args.zen, args.item_uuid)
+    before_rows, after_rows = read_rows(args.before), read_rows(args.after)
+    result = (compare_cancel(before_rows, after_rows, args.item_uuid) if args.outcome == 'cancel'
+              else compare(before_rows, after_rows, args.zen, args.item_uuid))
     print(json.dumps(result, indent=2))
     raise SystemExit(0 if result['pass'] else 1)
