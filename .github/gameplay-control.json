@@ -1,25 +1,6 @@
 {
-  "id": "party-trade-setup-01",
+  "id": "party-near-02",
   "steps": [
-    {
-      "op": "chat",
-      "text": "/move test300Dk Lorencia 118 140"
-    },
-    {
-      "op": "chat",
-      "text": "/teleport 117 140"
-    },
-    {
-      "op": "second-client"
-    },
-    {
-      "op": "login",
-      "account": "test300"
-    },
-    {
-      "op": "capture",
-      "name": "01-second-trade-capable-character"
-    },
     {
       "op": "select-client",
       "name": "one"
@@ -29,11 +10,24 @@
       "vk": 68
     },
     {
-      "op": "capture",
-      "name": "02-party-trade-commands"
+      "op": "chat",
+      "text": "/move test300Dk Lorencia 118 140"
     },
     {
-      "op": "snapshot"
+      "op": "key",
+      "vk": 68
+    },
+    {
+      "op": "capture",
+      "name": "03-party-commands-near-target"
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "capture",
+      "name": "04-nearby-test-characters"
     }
   ]
 }
