@@ -1,0 +1,300 @@
+{
+  "data_tree": "77f7830f542d106fc519c8821832d49a3dd8ae3a",
+  "file_count": 13188,
+  "server_items": 690,
+  "client_entries": 949,
+  "client_model_entries": 889,
+  "server_maps": 73,
+  "distinct_map_numbers": 68,
+  "item_findings": [
+    {
+      "id": "00000080-000c-0049-0000-000000000000",
+      "group": 12,
+      "number": 73,
+      "name": "Sphere (4)",
+      "issues": [
+        "MISSING_CLIENT_ITEM_ENTRY"
+      ],
+      "model_file": "Item/s30_sphere_body04.bmd"
+    },
+    {
+      "id": "00000080-000c-004a-0000-000000000000",
+      "group": 12,
+      "number": 74,
+      "name": "Sphere (5)",
+      "issues": [
+        "MISSING_CLIENT_ITEM_ENTRY"
+      ],
+      "model_file": "Item/s30_sphere_body05.bmd"
+    },
+    {
+      "id": "00000080-000c-0076-0000-000000000000",
+      "group": 12,
+      "number": 118,
+      "name": "Seed Sphere (Fire) (4)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere04.bmd"
+    },
+    {
+      "id": "00000080-000c-0077-0000-000000000000",
+      "group": 12,
+      "number": 119,
+      "name": "Seed Sphere (Water) (4)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere04.bmd"
+    },
+    {
+      "id": "00000080-000c-0078-0000-000000000000",
+      "group": 12,
+      "number": 120,
+      "name": "Seed Sphere (Ice) (4)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere04.bmd"
+    },
+    {
+      "id": "00000080-000c-0079-0000-000000000000",
+      "group": 12,
+      "number": 121,
+      "name": "Seed Sphere (Wind) (4)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere04.bmd"
+    },
+    {
+      "id": "00000080-000c-007a-0000-000000000000",
+      "group": 12,
+      "number": 122,
+      "name": "Seed Sphere (Lightning) (4)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere04.bmd"
+    },
+    {
+      "id": "00000080-000c-007b-0000-000000000000",
+      "group": 12,
+      "number": 123,
+      "name": "Seed Sphere (Earth) (4)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere04.bmd"
+    },
+    {
+      "id": "00000080-000c-007c-0000-000000000000",
+      "group": 12,
+      "number": 124,
+      "name": "Seed Sphere (Fire) (5)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere05.bmd"
+    },
+    {
+      "id": "00000080-000c-007d-0000-000000000000",
+      "group": 12,
+      "number": 125,
+      "name": "Seed Sphere (Water) (5)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere05.bmd"
+    },
+    {
+      "id": "00000080-000c-007e-0000-000000000000",
+      "group": 12,
+      "number": 126,
+      "name": "Seed Sphere (Ice) (5)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere05.bmd"
+    },
+    {
+      "id": "00000080-000c-007f-0000-000000000000",
+      "group": 12,
+      "number": 127,
+      "name": "Seed Sphere (Wind) (5)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere05.bmd"
+    },
+    {
+      "id": "00000080-000c-0080-0000-000000000000",
+      "group": 12,
+      "number": 128,
+      "name": "Seed Sphere (Lightning) (5)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere05.bmd"
+    },
+    {
+      "id": "00000080-000c-0081-0000-000000000000",
+      "group": 12,
+      "number": 129,
+      "name": "Seed Sphere (Earth) (5)",
+      "issues": [
+        "CLIENT_DIMENSIONS_DIFFER"
+      ],
+      "client_dimensions": [
+        0,
+        0
+      ],
+      "server_dimensions": [
+        1,
+        1
+      ],
+      "model_file": "Item/s30_sphere05.bmd"
+    },
+    {
+      "id": "00000080-000d-0013-0000-000000000000",
+      "group": 13,
+      "number": 19,
+      "name": "Weapon of Archangel",
+      "issues": [
+        "MODEL_MAPPING_UNKNOWN"
+      ]
+    },
+    {
+      "id": "00000080-000e-00a2-0000-000000000000",
+      "group": 14,
+      "number": 162,
+      "name": "Magic Backpack",
+      "issues": [
+        "MODEL_MAPPING_UNKNOWN"
+      ]
+    },
+    {
+      "id": "00000080-000e-00a3-0000-000000000000",
+      "group": 14,
+      "number": 163,
+      "name": "Vault Expansion Certificate",
+      "issues": [
+        "MODEL_MAPPING_UNKNOWN"
+      ]
+    },
+    {
+      "id": "00000080-000e-00a9-0000-000000000000",
+      "group": 14,
+      "number": 169,
+      "name": "Rage Fighter Character Card",
+      "issues": [
+        "MODEL_MAPPING_UNKNOWN"
+      ]
+    },
+    {
+      "id": "00000080-000d-0014-0000-000000000000",
+      "group": 13,
+      "number": 20,
+      "name": "Wizard's Ring",
+      "issues": [
+        "MODEL_MAPPING_UNKNOWN"
+      ]
+    }
+  ],
+  "map_findings": [
+    {
+      "map": 5,
+      "name": "Exile",
+      "file": "World6/EncTerrain6.obj"
+    }
+  ],
+  "scope": "Metadata IDs, loader-default dimensions, resolved model paths and aliased terrain triplets only. No binary decoding, textures, animations or runtime proof."
+}

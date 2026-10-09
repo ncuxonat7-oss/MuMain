@@ -1,0 +1,456 @@
+{
+  "model_version": "1.0",
+  "metric": "STANDARD BASELINE READINESS FOR CUSTOMIZATION",
+  "created": "2026-10-09",
+  "criteria_per_subsystem": 5,
+  "criterion_points": 20,
+  "score_rule": "Sum(weight * mean(values)). Values 0,.5,1 require scoped reducing-uncertainty evidence. Presence alone=0. No silent weight/criterion changes.",
+  "subsystems": [
+    {
+      "name": "Core client/server/database/connectivity",
+      "weight": 15,
+      "criteria": [
+        {
+          "criterion": "Validated native build/tests and exact executable identity",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "423 tests; build37813650810; runtime hashes",
+          "limit": ""
+        },
+        {
+          "criterion": "Real PostgreSQL-backed server",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37830707804 and later saved-db runs",
+          "limit": ""
+        },
+        {
+          "criterion": "Actual client authentication and character selection",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37830707804",
+          "limit": ""
+        },
+        {
+          "criterion": "Actual Dark Knight world entry",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "Lorencia screenshot run37830707804",
+          "limit": ""
+        },
+        {
+          "criterion": "Matching native client/server protocol in gameplay",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "runs37851961862/37860870710",
+          "limit": "One pinned S6E3 extended combination"
+        }
+      ]
+    },
+    {
+      "name": "Maps/gates/warps",
+      "weight": 10,
+      "criteria": [
+        {
+          "criterion": "Actual configured gate/map references and coordinate bounds",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "run37863153228 + scalar bounds",
+          "limit": ""
+        },
+        {
+          "criterion": "Configured world terrain triplets with client aliases",
+          "value": 0.5,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "client-resource-check.json; Exile object absent",
+          "limit": "File paths only; Exile gap and event-state variants unverified"
+        },
+        {
+          "criterion": "Normal bidirectional town warp",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37846640006 Lorencia/Noria",
+          "limit": ""
+        },
+        {
+          "criterion": "Warp costs and saved resulting state",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "same run; actual Zen decrease",
+          "limit": ""
+        },
+        {
+          "criterion": "Representative dungeon/late map/event gate behavior",
+          "value": 0,
+          "evidence_type": "UNKNOWN",
+          "evidence": "No runtime evidence",
+          "limit": ""
+        }
+      ]
+    },
+    {
+      "name": "Monsters/spawns",
+      "weight": 10,
+      "criteria": [
+        {
+          "criterion": "Actual spawn references, quantity and coordinate bounds",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "run37863153228",
+          "limit": ""
+        },
+        {
+          "criterion": "All active monster IDs mapped to client assets/animations",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Previous static dispatch/asset inventory",
+          "limit": "Complete ID mapping unknown"
+        },
+        {
+          "criterion": "Normal weak-monster appearance/attack/death",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37851961862",
+          "limit": ""
+        },
+        {
+          "criterion": "Observed respawn and representative AI behavior",
+          "value": 0,
+          "evidence_type": "UNKNOWN",
+          "evidence": "Not captured",
+          "limit": ""
+        },
+        {
+          "criterion": "Representative late-game/event boss behavior",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Server/client families present",
+          "limit": "Presence gives zero points"
+        }
+      ]
+    },
+    {
+      "name": "Items/equipment/sets",
+      "weight": 10,
+      "criteria": [
+        {
+          "criterion": "All server item IDs and inventory dimensions match client",
+          "value": 0,
+          "evidence_type": "BROKEN_MISSING",
+          "evidence": "client-resource-check.json",
+          "limit": "Two missing sphere entries; twelve zero-sized seed-sphere entries"
+        },
+        {
+          "criterion": "Owned-item definition references and IDs",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "runs37860870710/37863153228",
+          "limit": ""
+        },
+        {
+          "criterion": "Normal requirement-aware purchased gear equipment",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37860870710; STR31; shield slot1",
+          "limit": ""
+        },
+        {
+          "criterion": "Resolved model paths for configured items",
+          "value": 0.5,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "client-resource-check.json",
+          "limit": "Five explicit mappings unknown; binaries/materials not decoded"
+        },
+        {
+          "criterion": "Representative ancient/excellent/socket/set behavior",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Definitions and tables present",
+          "limit": "Runtime proof absent"
+        }
+      ]
+    },
+    {
+      "name": "Drops/basic economy",
+      "weight": 10,
+      "criteria": [
+        {
+          "criterion": "Actual drop references and probability range",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "run37863153228 + scalar check",
+          "limit": ""
+        },
+        {
+          "criterion": "Normal monster EXP/item drops and pickup",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37851961862; Small Axe/Vine Gloves",
+          "limit": ""
+        },
+        {
+          "criterion": "Loot persisted without item loss on relog",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37860870710; same44 item IDs",
+          "limit": ""
+        },
+        {
+          "criterion": "Basic shop price and Zen accounting",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37846640006;230 Zen",
+          "limit": ""
+        },
+        {
+          "criterion": "Representative bags/boss drops and coherent configured rates",
+          "value": 0,
+          "evidence_type": "UNKNOWN",
+          "evidence": "No statistical/behavioral proof",
+          "limit": ""
+        }
+      ]
+    },
+    {
+      "name": "NPCs/shops",
+      "weight": 10,
+      "criteria": [
+        {
+          "criterion": "Actual NPC/shop spawn and config references",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "run37863153228",
+          "limit": ""
+        },
+        {
+          "criterion": "All relevant NPC IDs mapped to client interaction/assets",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Dispatch/folder inventory only",
+          "limit": ""
+        },
+        {
+          "criterion": "Normal shop open and purchase",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "Hanzo run37846640006",
+          "limit": ""
+        },
+        {
+          "criterion": "Normal sell/repair/potion services",
+          "value": 0,
+          "evidence_type": "UNKNOWN",
+          "evidence": "Not exercised",
+          "limit": ""
+        },
+        {
+          "criterion": "Consistent standard stock placement",
+          "value": 0,
+          "evidence_type": "BROKEN_MISSING",
+          "evidence": "Hanzo duplicated slot73 in pinned source and persisted data",
+          "limit": ""
+        }
+      ]
+    },
+    {
+      "name": "Classes/skills/stats/leveling",
+      "weight": 10,
+      "criteria": [
+        {
+          "criterion": "Actual class/skill/stat config references",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "run37863153228",
+          "limit": ""
+        },
+        {
+          "criterion": "Normal DK basic combat and earned EXP",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37851961862",
+          "limit": ""
+        },
+        {
+          "criterion": "Natural level-up and earned stat allocation",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "runs37851961862/37860870710",
+          "limit": ""
+        },
+        {
+          "criterion": "Representative combat/casting across all7 base classes",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Seven base classes/18 class definitions; gameplay unknown",
+          "limit": ""
+        },
+        {
+          "criterion": "Basic offensive skill, buff, promotion and master skill",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Client/server support present; not exercised",
+          "limit": ""
+        }
+      ]
+    },
+    {
+      "name": "Quests/events/Chaos Machine/crafting",
+      "weight": 10,
+      "criteria": [
+        {
+          "criterion": "Actual quest/event/crafting definition references",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "run37863153228",
+          "limit": ""
+        },
+        {
+          "criterion": "Quest/recipe binary IDs and requirements align client/server",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Binary resource inventory only",
+          "limit": ""
+        },
+        {
+          "criterion": "One quest and one cheap crafting outcome with persistence",
+          "value": 0,
+          "evidence_type": "UNKNOWN",
+          "evidence": "No runtime proof",
+          "limit": ""
+        },
+        {
+          "criterion": "Representative BC/DS/CC lifecycle/reward",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Dedicated server/client contexts; runtime absent",
+          "limit": ""
+        },
+        {
+          "criterion": "Required Crywolf and Illusion Temple lifecycle completeness",
+          "value": 0,
+          "evidence_type": "BROKEN_MISSING",
+          "evidence": "Prior pinned-source audit; specialized lifecycle incomplete",
+          "limit": ""
+        }
+      ]
+    },
+    {
+      "name": "Party/trade/guild",
+      "weight": 5,
+      "criteria": [
+        {
+          "criterion": "Two actual connected native clients",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37851961862",
+          "limit": "Prerequisite only; no interactions claimed"
+        },
+        {
+          "criterion": "Party invite/shared EXP/leave",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Implemented paths; runtime absent",
+          "limit": ""
+        },
+        {
+          "criterion": "Trade transfer/cancel/relog",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Implemented paths; runtime absent",
+          "limit": ""
+        },
+        {
+          "criterion": "Guild create/join/relog",
+          "value": 0,
+          "evidence_type": "STATICALLY_CONFIRMED",
+          "evidence": "Implemented paths; runtime absent",
+          "limit": ""
+        },
+        {
+          "criterion": "Multiplayer transaction/disconnect safety",
+          "value": 0,
+          "evidence_type": "UNKNOWN",
+          "evidence": "No runtime proof",
+          "limit": ""
+        }
+      ]
+    },
+    {
+      "name": "Persistence/stability/regression",
+      "weight": 10,
+      "criteria": [
+        {
+          "criterion": "Exact saved database restored with correct PostgreSQL version",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "runs37860870710/37863153228",
+          "limit": ""
+        },
+        {
+          "criterion": "Saved progression and equipped item after real relog",
+          "value": 1,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37860870710",
+          "limit": ""
+        },
+        {
+          "criterion": "Item/stat IDs, ownership references and saved-state consistency",
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "snapshot checks;44 item IDs unchanged",
+          "limit": "Known shop/GM duplicate slots tracked separately"
+        },
+        {
+          "criterion": "Multiplayer transaction persistence and duplication/loss checks",
+          "value": 0,
+          "evidence_type": "UNKNOWN",
+          "evidence": "No runtime proof",
+          "limit": ""
+        },
+        {
+          "criterion": "Sustained gameplay stability and targeted regression beyond smoke",
+          "value": 0,
+          "evidence_type": "UNKNOWN",
+          "evidence": "423 prior client tests are not long-lived game stability",
+          "limit": ""
+        }
+      ]
+    }
+  ],
+  "confidence": "MEDIUM",
+  "critical_red_blockers": [
+    "Crywolf standard event lifecycle incomplete",
+    "Illusion Temple standard event lifecycle incomplete"
+  ],
+  "scoped_red_findings": [
+    "Hanzo stock overlap",
+    "Seeded GM pendant overlap",
+    "Sphere4/5 missing item entries",
+    "Seed Sphere4/5 zero inventory dimensions"
+  ],
+  "readiness_decision": "NOT YET READY FOR MAJOR CUSTOMIZATION",
+  "history": [
+    {
+      "date": "2026-10-08",
+      "model": "legacy-presence-rubric",
+      "score": 63.3,
+      "comparable": false,
+      "reason": "35.45/56,14 equal S/C/A/R areas,excluded connectivity."
+    },
+    {
+      "date": "2026-10-09",
+      "model": "1.0",
+      "previous_score": null,
+      "score": 58,
+      "change": null,
+      "milestone": "Initial owner-weighted acceptance-evidence baseline after existing runtime/bulk proof and pinned-resource cross-check; no reconstructed historic score claimed."
+    }
+  ],
+  "weighted_acceptance_evidence_coverage": {
+    "RUNTIME_VERIFIED": 35.0,
+    "AUTOMATICALLY_VALIDATED": 23.0,
+    "STATICALLY_CONFIRMED": 19.0,
+    "UNKNOWN": 17.0,
+    "BROKEN_MISSING": 6.0
+  }
+}

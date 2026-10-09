@@ -1,50 +1,39 @@
-# Resource registry and stack freeze
-Last verified: 2026-10-08. Canonical project record: ncuxonat7-oss/MuMain, docs/resource-registry.md.
-Scope: current OpenMU/MuMain prototype; narrow resource evaluation only. No purchases, no server-engine comparison.
+# Resource registry / stack freeze / recovery
 
-## Confirmed Lorencia runtime result — 2026-10-08
-
-This result supersedes earlier runtime-status observations below. Full recovery checkpoint: [current-state.md](current-state.md).
-
-- Existing 423-test Windows MuMain binary authenticated `test0`, selected `test0Dk`, and entered **Lorencia (149, 123)** on our pinned OpenMU with real **PostgreSQL 17.11**. No client rebuild or repeat tests.
-- Authentic `06-world-attempt.png` shows “Welcome to Lorencia” / “test0Dk entered the game”; client log confirms `Main Scene init success` at 19:18:58 UTC. Established game connection to 127.127.127.127:55902 and server database connections are recorded.
-- Run: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37830707804 ; workflow commit `3b7088f1ca44e056dea5169435dbc4959d3e39b1`.
-- Evidence artifact `lorencia-runtime-probe`, ID `11573356702`, ZIP SHA256 `1dd7ffe7478abe7686682928f1b18ef8fc68c7532e5e9a9b385c2ba2bd7a92d7`; expires 2027-01-06, additionally preserved as user deliverables.
-- Prototype assets were actually used under the recorded prototype authorization. This does not clear commercial distribution rights. Missing models for other maps did not block this Lorencia scenario.
-- Session was ephemeral CI, cleaned up after capture; no persistent hosted service deployed. Requested stage completed; stop further builds/research.
+Updated2026-10-09. Current prototype uses exact frozen resources below. Auth/Lorencia/normal gameplay/relog are VERIFIED, not pending. Historical future candidates were checked2026-10-08; prices are historical, not a fresh offer. No purchases/imports during this audit.
 
 ## CURRENT PROTOTYPE RESOURCES
-### Current execution status
-- OpenMU source: https://github.com/MUnique/OpenMU at d067b3c11c23c3145de6e2c76201ab9a93b267c8; local working tree clean at audit.
-- Client fork: https://github.com/ncuxonat7-oss/MuMain at 8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5. Upstream code baseline: https://github.com/sven-n/MuMain at 21728b1e5b03e0763b38ef9e23f79645e0df7ad2. Fork changes are CI workflow changes.
-- Successful Windows native x64 Release, editor OFF, no Data/fonts: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37813650810. All 423 tests passed. Do not repeat without a runtime-driven reason.
-- Artifact: mu-client-windows-native-x64-release-editor-off-no-data-main, artifact ID 11567737809; ZIP SHA256 eefe0a710518bc6536dd47cde45fb8605ae4ef5c7f4faca4095e8abb5f23297e. Source-built Main.exe and NativeAOT MUnique.Client.Library.dll, compiled shaders and dependencies.
-- Server demo smoke run passed: existing Release DLL, .NET/ASP.NET runtime 10.0.11, flags -demo -autostart -adminpanel:disabled, TCP 44406 greeting c1040001. Process stopped after check. Demo uses memory persistence; this does NOT prove PostgreSQL works.
-- No graphical client run, account/character creation through MuMain, or Lorencia entry proven. No Lorencia screenshot exists.
 
-### Selected prototype resource package — AUTHORIZED
-Source: https://github.com/sven-n/MuMain/releases/tag/data-4b0ab29c58b27fc4
-Archive: https://github.com/sven-n/MuMain/releases/download/data-4b0ab29c58b27fc4/MuMain-data-4b0ab29c58b27fc4.tar.gz
-Checksum sidecar: same URL with .sha256 suffix.
-Size: 457104401 bytes. Free download. Contains Data/ and fonts/; release describes content-addressed resources.
-Exact source trees at client baseline:
-- src/bin/Data: 77f7830f542d106fc519c8821832d49a3dd8ae3a
-- src/bin/fonts: 149f928e2547aa6658977c3f41c63abccfa471ed
-- ID: first 16 hex characters of SHA256(dataTreeSHA + newline + fontsTreeSHA + newline).
-Version: Season 5.2-derived client targeting Season 6 Episode 3, extended OpenMU protocol; not an arbitrary retail S6 client.
-Technical fit: exact tree match to our build, best available immediate prototype candidate; actual runtime verification still pending.
-Origin: published by the MuMain maintainer, with game resources traceable to the repository. Repository credits Webzen/Louis/community. This establishes distribution provenance, NOT a license from the original asset owner.
-Rights: no root license or Data license granting use/modification/redistribution found in the inspected baseline tree. Models, maps, textures and audio have unresolved permissions. No claim that the package is proven stolen, malware or cracked software.
-Decision: user replied “Продолжаем” on 2026-10-08 after the exact package and rights uncertainty were presented for approval. Authorized for the closed technical prototype; this does not establish commercial rights. Workflow lorencia-runtime.yml downloads the archive and validates its published SHA256 before extraction; rejects executable assets and unsafe paths. No resource redistribution in our runtime/evidence artifact.
+|Component|Exact source / identity|Type / provenance / rights|
+|---|---|---|
+|OpenMU|https://github.com/MUnique/OpenMU commit d067b3c11c23c3145de6e2c76201ab9a93b267c8|MIT C# source, existing Release build; no server source changes|
+|MuMain|https://github.com/ncuxonat7-oss/MuMain validated8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5; upstream https://github.com/sven-n/MuMain at21728b1e5b03e0763b38ef9e23f79645e0df7ad2|Source-built C++/NativeAOT Windows binary,423 tests passed; original source permissions unresolved YELLOW|
+|Data/fonts package|https://github.com/sven-n/MuMain/releases/tag/data-4b0ab29c58b27fc4 ; MuMain-data-4b0ab29c58b27fc4.tar.gz|457104401bytes; SHA256 8c62a98aaabf13d80c24c0c688dbfafd4b23813966dd3a2f13c445c3a35e8d1d; maintainer published, exact match to build|
+|Data tree|77f7830f542d106fc519c8821832d49a3dd8ae3a|13,188 files; complete nontruncated manifest captured; game-content permission/redistribution unresolved|
+|Fonts tree|149f928e2547aa6658977c3f41c63abccfa471ed|Cousine/Liberation/Nanum/Noto:OFL1.1; DejaVu:Bitstream Vera plus public-domain changes; retain notices/reserved names|
 
-### Fonts (license texts checked individually)
-Source for each: https://github.com/sven-n/MuMain/tree/21728b1e5b03e0763b38ef9e23f79645e0df7ad2/src/bin/fonts
-- Cousine: SIL OFL 1.1, Google 2010, reserved font name Cousine.
-- Liberation Sans: SIL OFL 1.1; Google/Red Hat copyright and reserved font names.
-- Nanum Gothic: SIL OFL 1.1, NHN 2010, reserved names.
-- Noto Sans TC: included SIL OFL 1.1 text.
-- DejaVu Sans: Bitstream Vera license; DejaVu changes public domain.
-Commercial embedding/modification/redistribution allowed subject to each license's notices and naming/sale restrictions. Preserve all accompanying license files. Fonts do not authorize the game's Data. Nothing deployed yet.
+Season5.2-derived client targeting Season6Episode3 with OpenMU extended protocol. Maintainer provenance is not original rightsholder permission. Owner authorized this exact uncertain-rights pack for closed technical prototype after risk disclosure2026-10-08. No commercial/source redistribution clearance claimed. Do not import positively identified leaked source/cracks/suspicious binaries. Existing workflow verifies tar hash and unsafe/executable asset paths. Binary bundle omits Data/fonts; keep package boundary replaceable. Original editable artist sources unknown.
+
+### Durable recovery inventory
+
+These authorized-user backup IDs are permanent recovery pointers, not public download URLs. GitHub docs are canonical metadata; large archives/evidence are private user files. A fresh agent with the same connected file tool can find/materialize by exact ID/name using the Library skill, verify SHA, then restore. Do not publish DB dumps or raw asset JSON. If file access is unavailable, request only restoration of the named saved archive, not source research.
+
+|Saved artifact|GitHub provenance|Authorized-user backup ID|Integrity / scope|
+|---|---|---|---|
+|validated-mumain-native-build.zip|run37813650810 artifact11567737809|libfile_1174bdeb6c048191ad0be1ac163fdad5|258057783bytes; SHA256 eefe0a710518bc6536dd47cde45fb8605ae4ef5c7f4faca4095e8abb5f23297e; inner MuMain-windows-native-x64-release-editor-off-no-data.tar.gz; full bridge/shaders runtime, not Main.exe-only|
+|gameplay-final evidence ZIP|run37860870710 artifact11585339277|libfile_33e96d9c75048191adff00a6c4235a5b|11495834bytes; SHA256 bebf351e6a295dc15f9e47e9abe83aeb8653fbccbef401c2fcb8aa03bd137615; latest pg snapshot/logs/screenshots; confirmed equipped shield|
+|05-level screenshot|same finite smoke|libfile_1ce42f4769f48191b6b4638c964b8b35|Authentic native UI screenshot|
+|06-shield screenshot|same finite smoke|libfile_b03de463cba8819198a6d940cc8ff55d|Authentic native equipped/relogged character|
+|baseline-config-evidence ZIP|run37863153228 artifact11587091295|libfile_ffa8a767ce3481919c5ce75cf65117c3|1059611bytes; SHA256 b952abed311e6f77cc9aa3ae1f5fbb43ca302b75e5f58b602200bf70e029accd; complete baseline-config.jsonl export and reference result|
+|client-resource-audit-inputs.zip|2026-10-09 exact pinned tree/metadata retrieval, no CI|libfile_7131d39798708191a06116bb1ca38305|127791bytes; SHA256 c68b65f373f09ff0c2a7f01dcafc3f8e1766ff7bdf7d6d50de6e666869354da1; manifest,33 metadata files, prior scalar checks, derived result; private source inputs, not rights-cleared redistribution|
+
+Build executable Main.exe SHA256 9d895c638eb256b98d728dfc511f4c57d4a9e88cdba703e639426712b0b57cd5; MUnique.Client.Library.dll SHA256 9292041494d9226f105fc07a94c2451f6303b906123b2932ea05a3469c378cb7.
+
+GitHub artifact retention is finite; saved backups prevent client rebuild/export repetition. Prototype Data457MB is at pinned maintainer release, NOT duplicated in this checkpoint; upstream disappearance would require recovery of that exact pack, not arbitrary repacks. Server cache openmu-windows-runtime-d067b3c-net10-v1 is opportunistic; if unavailable, use pinned source and explain targeted build cost first. Exact historical SDK patch is unknown; other frozen dependencies in architecture.md and pinned package files. No permanent VPS/service to reconnect to.
+
+Restore order:materialize validated client + newest gameplay-final evidence; inspect archive names; restore its PostgreSQL dump with existing workflow (secrets as temporary fixtures, no commits); acquire exact separate resource pack/check hash; reuse server cache/pinned source; run only targeted next scenario. Configuration validators work from saved export without a server. Client checker works from saved metadata/manifest. Local scratch paths are not recovery pointers.
+
+Newest character511da101-0000-71fb-6952-30e15c234eb0; inventory511da101-0000-7e11-4d14-43e066028e6a; shield801da101-0000-760d-a605-a410efe9185d. Latest expected level2,EXP115,STR31,points2,offhand1,44 same item UUIDs. Never use pre-shield snapshot accidentally.
 
 ## PRODUCTION CANDIDATES
 These are a shortlist, not purchase recommendations or complete ready-to-distribute MU packages. No verified licensed drop-in MU Data replacement found in this narrow check.
@@ -104,10 +93,10 @@ RED means an established fundamental technical dead end requiring substantial st
 | OpenMU | MUnique/OpenMU d067b3c11c23c3145de6e2c76201ab9a93b267c8; C# source-built existing Release | Root MIT verified; retain notices | GREEN |
 | MuMain | ncuxonat7-oss/MuMain 8d18a2b; upstream 21728b1; C++ source-built Windows executable | No root license found; original source rights/provenance unresolved; cannot promise distributable product | YELLOW |
 | MUnique.Client.Library | Built with client, .NET NativeAOT DLL; OpenMU packets 0.9.10 dependency | Client tree includes community adaptations; per-file/upstream rights need distribution audit | YELLOW |
-| Data | Exact data-4b0ab29c58b27fc4; ready assets, not yet used | No verified game-content permission | YELLOW |
+| Data | Exact data-4b0ab29c58b27fc4; ready assets, used in verified core gameplay | No verified game-content permission | YELLOW |
 | Fonts | Above five families; ready font assets | OFL/Bitstream Vera texts verified; preserve notices | GREEN |
 | .NET | Server net10.0 requires .NET/ASP.NET 10.0.0+; current portable runtime 10.0.11; CI setup-dotnet 10.0.x | Microsoft runtime/source licensing and redistribution notices apply; exact historical SDK patch not established | GREEN |
-| PostgreSQL | Official Ubuntu portable PostgreSQL 16 packages; no initialized working database yet | PostgreSQL License; runtime blocked in current root-only execution environment | YELLOW (deployment) |
+| PostgreSQL | Official Windows PostgreSQL17.11; actual saved/restored database in native runs | PostgreSQL License; confirmed working disposable Windows environment | GREEN |
 | EF/Npgsql | EF Core 10.0.2, Npgsql/provider 10.0.0 in existing server deps.json | Permissive upstream licenses; final dependency notices audit outstanding | GREEN |
 | Other server dependencies | Serilog 4.3.0, BCrypt.Net-Next 4.0.3, BlazorInputFile 0.2.0; exact full set in deps.json and src/Directory.Packages.props | Transitive rights/security inventory not completed | YELLOW (release audit) |
 | Windows toolchain | CI Visual Studio 18 Enterprise; MSVC 19.51.36260.0, tools 14.51.36231, Windows SDK 10.0.26100.0; CMake >=3.25, Ninja, vcpkg | Tool use and CRT redistribution governed by Microsoft terms; CRT staged in artifact | YELLOW (release/tool freeze) |
@@ -116,9 +105,9 @@ RED means an established fundamental technical dead end requiring substantial st
 | glm / spdlog / miniaudio | 1.0.1 / v1.15.3 / 9634bedb5b5a2ca38c1ee7108a9358a4e233f14d; source fetched by CMake | Permissive upstream licenses; preserve notices | GREEN |
 | imgui | submodule 21d3299e588b5c702dcca0f448b4f937af369b4a; editor OFF, not needed by current build | MIT upstream | GREEN |
 | Client build/runtime dependencies | vcpkg curl+SSL, OpenSSL, glslang, SPIRV-Cross, DXC; source/build packages and resulting DLLs/shaders | Exact package resolutions in successful CI log, vcpkg.json not baseline-pinned; per-package notices/runtime inventory outstanding | YELLOW (reproducibility/distribution) |
-| GitHub Actions | Windows runner, proven compilation only; future runtime experiment not executed | Available CI route, desktop/GPU suitability not yet established | YELLOW (execution) |
+| GitHub Actions | Windows runner, native client/gameplay and PostgreSQL tested; ephemeral sessions | Established native route; not permanent hosting | YELLOW (execution) |
 
-Database blocker already tried: system apt install failed on protected package-cache path; portable initdb refuses root; only UID 0 is mapped; PRoot non-root emulation fails ptrace(TRACEME) operation not permitted. Do not attempt security bypass. A permitted Windows runner with PostgreSQL is the concrete next environment to test, not proof it already works.
+Earlier Linux-only initdb/root/ptrace blockers are solved for this prototype by the confirmed Windows PostgreSQL route. Failed attempts remain in lessons-learned.md; do not repeat them.
 
 ## FUTURE ARCHITECTURE CHECK (assessment only)
 OpenMU already has plugin points, persisted configuration, reset counters/commands, offline leveling/player management, event/item/monster definitions and server/admin components. Findings from source/docs, not completed feature claims.
@@ -138,15 +127,4 @@ OpenMU already has plugin points, persisted configuration, reset counters/comman
 No demonstrated technical reason to replace the server or client during the prototype. Legal clearance of the MuMain code itself remains a separate future product concern: asset replacement alone does not solve it.
 
 Resource replacement boundary: runtime archive already omits Data/fonts and upstream publishes separate content-addressed packs. Keep this separation. Later packs must preserve expected format/path/IDs or provide conversion/mapping; not every arbitrary asset package is interchangeable without work. No architecture change implemented now.
-
-## NEXT EXECUTION CHECKPOINT
-1. Prototype resource use approved. Execute Lorencia Runtime Probe and diagnose only its actual blockers.
-2. Verify the runtime workflow results, resource checksum and authentic screenshots. Never run added untrusted executables.
-3. Reuse successful Windows runtime. Try permitted Windows CI instance with PostgreSQL and our pinned OpenMU; no needless repeat of 423 tests.
-4. Establish real database persistence, client graphics, actual server connection, test account/character and Lorencia entry. Save authentic client screenshot/log evidence.
-5. If real GPU/input automation requires a developer/control-socket build, explain the specific necessity first; existing player build has editor/control socket disabled.
-6. Do not label a TCP probe or in-memory demo as completed E2E. No purchases, no external contacts/messages without explicit instruction.
-
-
-Execution attempt: https://github.com/ncuxonat7-oss/MuMain/actions/runs/37827108294 ; workflow commit e5dad197bd7ee106e0015ed504c9e971f2057b34. Windows runner uses installed PostgreSQL 17; actual database/client success still pending.
 
