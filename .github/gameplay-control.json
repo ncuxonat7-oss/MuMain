@@ -1,5 +1,5 @@
 {
-  "id": "trade-finite-complete-07",
+  "id": "trade-corrected-finite-08",
   "steps": [
     {
       "op": "second-client"
@@ -41,7 +41,7 @@
     },
     {
       "op": "click",
-      "x": 760,
+      "x": 792,
       "y": 428
     },
     {
@@ -64,7 +64,7 @@
     },
     {
       "op": "wait",
-      "seconds": 5
+      "seconds": 20
     },
     {
       "op": "capture",
@@ -74,6 +74,10 @@
       "op": "click",
       "x": 674,
       "y": 643
+    },
+    {
+      "op": "wait",
+      "seconds": 20
     },
     {
       "op": "select-client",
