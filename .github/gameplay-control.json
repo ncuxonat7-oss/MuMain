@@ -1,6 +1,44 @@
 {
-  "id": "trade-offer-06",
+  "id": "trade-finite-complete-07",
   "steps": [
+    {
+      "op": "second-client"
+    },
+    {
+      "op": "login",
+      "account": "test300"
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "key",
+      "vk": 68
+    },
+    {
+      "op": "click",
+      "x": 872,
+      "y": 70
+    },
+    {
+      "op": "right-click",
+      "x": 581,
+      "y": 362
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "click",
+      "x": 420,
+      "y": 292
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
     {
       "op": "click",
       "x": 760,
@@ -12,17 +50,88 @@
       "y": 448
     },
     {
-      "op": "capture",
-      "name": "13-potion-offered"
-    },
-    {
       "op": "click",
       "x": 611,
       "y": 643
     },
     {
+      "op": "key",
+      "text": "100"
+    },
+    {
+      "op": "key",
+      "vk": 13
+    },
+    {
+      "op": "wait",
+      "seconds": 5
+    },
+    {
       "op": "capture",
-      "name": "14-trade-zen-input"
+      "name": "13-item-and-zen-offered"
+    },
+    {
+      "op": "click",
+      "x": 674,
+      "y": 643
+    },
+    {
+      "op": "select-client",
+      "name": "two"
+    },
+    {
+      "op": "click",
+      "x": 674,
+      "y": 643
+    },
+    {
+      "op": "key",
+      "vk": 13
+    },
+    {
+      "op": "key",
+      "vk": 27
+    },
+    {
+      "op": "wait",
+      "seconds": 4
+    },
+    {
+      "op": "capture",
+      "name": "14-trade-completed-recipient"
+    },
+    {
+      "op": "restart-client"
+    },
+    {
+      "op": "login",
+      "account": "test300"
+    },
+    {
+      "op": "key",
+      "vk": 73
+    },
+    {
+      "op": "capture",
+      "name": "15-recipient-relogged-inventory"
+    },
+    {
+      "op": "select-client",
+      "name": "one"
+    },
+    {
+      "op": "key",
+      "vk": 73
+    },
+    {
+      "op": "capture",
+      "name": "16-donor-inventory-after-trade"
+    },
+    {
+      "op": "snapshot"
+    },
+    {
+      "op": "finish"
     }
   ]
 }
