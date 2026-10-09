@@ -1,0 +1,64 @@
+--- a/src/DataModel/Entities/ItemStorage.cs
++++ b/src/DataModel/Entities/ItemStorage.cs
+@@ -21,7 +21,7 @@
+     /// <summary>
+     /// Gets or sets the money which is stored.
+     /// </summary>
+-    public int Money { get; set; }
++    public virtual int Money { get; set; }
+ 
+     /// <inheritdoc />
+     public override string ToString()
+--- a/src/GameLogic/ItemStorageAdapter.cs
++++ b/src/GameLogic/ItemStorageAdapter.cs
+@@ -29,6 +29,13 @@
+ 
+     /// <inheritdoc />
+     public override ICollection<Item> Items => this._adapter;
++
++    /// <inheritdoc />
++    public override int Money
++    {
++        get => this.ActualStorage.Money;
++        set => this.ActualStorage.Money = value;
++    }
+ 
+     /// <summary>
+     /// Gets the actual storage which is wrapped by this instance.
+--- a/tests/MUnique.OpenMU.Tests/TradeTest.cs
++++ b/tests/MUnique.OpenMU.Tests/TradeTest.cs
+@@ -218,6 +218,34 @@
+         Assert.That(trader2.PlayerState.CurrentState, Is.EqualTo(PlayerState.EnteredWorld));
+         inventoryMock.Verify(i => i.AddItemAsync(21, validItem.Object), Times.Once);
+         Assert.That(trader1.BackupInventory, Is.Null);
++    }
++
++    /// <summary>
++    /// Tests that cancelling an offered item and nonzero Zen restores both real inventories.
++    /// </summary>
++    [Test]
++    public async ValueTask TradeCancelRestoresMoneyAsync()
++    {
++        const int initialMoney = 12345;
++        const uint offeredMoney = 100;
++        const byte itemSlot = 20;
++        var trader1 = await PlayerTestHelper.CreatePlayerAsync().ConfigureAwait(false);
++        var trader2 = await PlayerTestHelper.CreatePlayerAsync().ConfigureAwait(false);
++        trader1.Money = initialMoney;
++        trader2.Money = initialMoney;
++        var item = this.GetItem();
++        await trader1.Inventory!.AddItemAsync(itemSlot, item).ConfigureAwait(false);
++        await new TradeRequestAction().RequestTradeAsync(trader1, trader2).ConfigureAwait(false);
++        await new TradeAcceptAction().HandleTradeAcceptAsync(trader2, true).ConfigureAwait(false);
++        await new MoveItemAction().MoveItemAsync(trader1, itemSlot, Storages.Inventory, 0, Storages.Trade).ConfigureAwait(false);
++        await new TradeMoneyAction().TradeMoneyAsync(trader1, offeredMoney).ConfigureAwait(false);
++        Assert.That(trader1.Money, Is.EqualTo(initialMoney - offeredMoney));
++        await new TradeCancelAction().CancelTradeAsync(trader1).ConfigureAwait(false);
++        Assert.That(trader1.Money, Is.EqualTo(initialMoney));
++        Assert.That(trader2.Money, Is.EqualTo(initialMoney));
++        Assert.That(trader1.Inventory.ItemStorage.Items.Single(), Is.SameAs(item));
++        Assert.That(item.ItemSlot, Is.EqualTo(itemSlot));
++        Assert.That(trader2.Inventory!.ItemStorage.Items, Is.Empty);
+     }
+ 
+     private Item GetItem()
