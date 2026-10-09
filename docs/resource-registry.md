@@ -164,3 +164,14 @@ Run37959672391/head5a3cd675df6095995b2355bdd4368b1ac2260bd5 SUCCESS, finalartifa
 
 Compiled DLL SHA256: Startup5cf46ff5a89b08692b00d112b59ba8a98bf7300f3289e215caaab1122d10a776; GameLogic1ef6eee0479cf17aa567c4c720401adde84e2dc2909b6ff5b40b3883bc8cfa89; DataModel6374c47837f657afafbc1bc6558a2b2e95356c72f9a008ca7c7f538a8a02c501. Exact saved artifact root extracts into server-source/src/Startup/bin/Release. Patch canonical LF85d8428452a25fef598c19ef2cda8d0ab94b2d5c13296481445ae84b7fad197d; equivalent Windows CRLF52e385decd20a06efb4d84d71fe5ea6fab9f5d620c3eb045e4c89dfba95586b0. No migration needed. Restore workflow now artifact fallback without build; idle control avoids replaying proven cancel plan. If GitHub retention expires, restore named private backup with hash before any rebuild.
 
+
+
+### NEWEST WORKING baseline data checkpoint — 2026-10-10
+Run38005996341/head7723123f81daaf655fbf99f9faa94cdf7f71518c SUCCESS54s; artifact11651520969/baseline-data-final. Archive2091291bytes,SHA256 b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea. Private durable backup libfile_d29ae8dc26a08191aeafde8239549d85/file_0000000012c081f5be152d4140056c19. DumpSHA2560a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478. Restored proven disconnect37996918917/artifact11647981651; only Hanzo Falchion ItemSlot73→76. All22 shop grids PASS;13 semantic checks PASS; all4602 item records unchanged apart from1 slot;42,815 config rows unchanged. Character/stat/storage-money/guild snapshotSHA256056106ff5d38807bdb4a2b55659cf8c238783b10fabf2e3865c495b215e0190e matches before/after. No server/client/build/runtime/trade/import.
+
+Prior disconnect37996918917 remains fallback: archive9869132bytes/SHA25642c1372b158b1bbec16a1f571c3129f5976ef7e995e30a92d1ae1a907837e9ab; libfile_6e1c5002e01881919a8e9284aac71584; dumpSHA2562a8cad430eda3f952c98c8c6716cd3f47f96d2557265bb0904cbdbad836da865. Preserve all earlier evidence; failed snapshots are never working restore sources.
+
+Client baseline is pinned original Data tree77f7830f542d106fc519c8821832d49a3dd8ae3a plus patches/client-socket-metadata.json. Apply scripts/apply-client-overlay.py to Data root after archive extraction; guard/backup/idempotence verified. Corrected Group12 SHA2561441360f93d80291659f63912022e0816125863acd0212ab4ec02fca33ebbb73;690/690 itemIDs/dimensionsPASS. No models/textures changed;5special mappingsUNKNOWN. Original runtime/cache remains valid; source-only075/S6 initialization patch retained for a future fresh build. standard-gameplay.yml uses newest baseline DB + overlay; gameplay control remains idle.
+
+Report backup libfile_c3c7d9c73a188191bc703e68bee6b93d; successful-run proof libfile_d046821629ac8191bf2f4bdf809af672. Canonical docs/bulk-baseline-validation.md routes next binary/client crosswalk; current readiness65.5/model1.1/MEDIUM; ITexcluded/Crywolfdeferred with no current penalty.
+

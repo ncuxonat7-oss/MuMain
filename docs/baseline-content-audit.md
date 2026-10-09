@@ -1,4 +1,7 @@
 <!-- Latest evidence overrides historical milestone paragraphs below. -->
+
+> Current owner scope and evidence2026-10-10 supersede historical readiness/RED conclusions below. Illusion Temple OUT OF SCOPE; Crywolf DEFERRED late stage: neither is a current blocker or penalty. Read baseline-scope.md and bulk-baseline-validation.md. Current readiness65.5%, criticalRED0; Hanzo and14 client socket metadata defects resolved; GM duplicate absent in newest proven snapshot. Historical rows retained for traceability.
+
 # Standard MU baseline content audit
 
 Updated2026-10-09. Exact stack: OpenMU d067b3c11c23c3145de6e2c76201ab9a93b267c8; validated MuMain8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5/upstream21728b1e5b03e0763b38ef9e23f79645e0df7ad2; Data tree77f7830f542d106fc519c8821832d49a3dd8ae3a. Target: ordinary playable S6E3-oriented standard baseline, not every proprietary retail feature. Static audit used no new CI; later bounded runtime checks reused existing binaries. No stack modifications/imports/rebuilds.
@@ -121,3 +124,4 @@ VERIFIED run37959672391/head5a3cd675df6095995b2355bdd4368b1ac2260bd5: existing M
 Resolved critical Money RED: adapter Money did not forward to actual persisted inventory. Unwrap-based backup/refund patch, no schema/DataModel/client/resource change. First virtual-property candidate failed generated clone CS0266 and was replaced; failure recorded, no score credit for diagnosis/build alone.
 
 Readiness **60%→60.5%(+0.5)**, model1.0 unchanged. Trade transfer/cancel/relog .5→1; Persistence multiplayer safety remains .5. Subsystems:Core100,Maps70,Monsters40,Items50,Drops80,NPC40,Classes60,Quests/events/crafting20,Party/trade/guild50,Persistence70. ConfidenceMEDIUM; weighted checklist evidence runtime37.5/automatic23/static17/unknown16.5/broken6. Critical RED **2**, localized RED4 unchanged. NOT YET READY FOR MAJOR CUSTOMIZATION. UNKNOWN interruption/concurrency/crash cannot be inferred from normal cancellation. Shortest next milestone:single finite client-disconnect/refund/relog on the verified server, then scoped metadata fixes. No further runtime launched for this checkpoint.
+

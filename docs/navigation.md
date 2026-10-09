@@ -38,3 +38,6 @@ Recommended triage: query preserved export → inspect exact referenced source/c
 Read season6-reference-feasibility.md for exact OpenMU/MuMain/Data mappings and reference-source admission. Prefer native pinned config/update comparison + semantic/client bulk validation before selective foreign XML/TXT adapter. No import performed or authorized by the feasibility request. Trade baseline closed after37996918917; no additional trade edge cases unless a later defect. Static/bulk first; runtime only critical chains, real mismatches or gaps that bulk checks cannot resolve. Current continuation is stopped after audit, not a queued importer/job.
 
 Owner2026-10-10 resumed bulk/local fixes after audit, with IT out of scope and Crywolf deferred. baseline-scope.md is authoritative; findings for these events are non-blocking, no fix/runtime work now.
+
+
+Latest bulk checkpoint: docs/bulk-baseline-validation.md; scripts/validate-baseline-semantics.py --export <actual-export> --updates patches/openmu-update-manifest.json --out <report>. Client overlay is hash-guarded via scripts/apply-client-overlay.py. Newest DB run38005996341/artifact11651520969; prefer it over older runtime dumps. Binary crosswalk is next, no trade depth or IT/Crywolf work.

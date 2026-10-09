@@ -50,3 +50,13 @@ Readiness **60%→60.5%(+0.5)**, model1.0 unchanged. Trade transfer/cancel/relog
 Run37996918917, headb0e1a816dc6c1e13f8be8a7edb3310df4176188b, SUCCESS7m17s. Reused verified MuMain/Data/patchedOpenMU and previous workingDB; no rebuild. Actual donor item+100Zen offer (27), donor process termination/restart (no UI cancel), recipient automatic cancellation (28), both native relogs (29/30). Personally inspected screenshots;14 scoped saved-state assertionsPASS. Offered potion UUID511da101-0000-7bac-41a0-aad9f93fe7fd/qty3/slot37 restored exactly; donor9999900 andrecipient9996100 unchanged; coretest0Dk preserved. CurrentAbility regeneration/other equipped wear excluded as in existing validator; offered item and core remain strict. Artifact11647981651 is NEWEST WORKING DB/evidence. Hard server crash/concurrency remain unknown.
 
 Readiness60.5→61(+.5) for partial disconnect criterion only; weights unchanged,MEDIUM,2criticalRED. Owner: trade sufficient for current baseline; no more trade edge cases unless a specific later defect. New strategy breadth via data-driven seven-category audit. season6-reference-feasibility.md contains exact pin mapping, measured overlap, risks and fastest path. No import/adapter implementation/content runtime tests performed. Stop after this audit; no next job dispatched.
+
+
+## 2026-10-10 broad bulk/data checkpoint
+
+- Owner scope model1.1: IT out of scope, Crywolf deferred, no current blocker/penalty. 61→61.5 scope only; archived1.0 unchanged.
+- run38005996341/head7723123f81daaf655fbf99f9faa94cdf7f71518c SUCCESS54s, data-only PostgreSQL17; no server/client/build/trade. Restored newest37996918917 dump, guarded Hanzo Falchion73→76, repeated SQL idempotently,13 checks +all22 stock grids PASS.
+- Latest snapshot comparison:4602 item records, exactly1 ItemSlot changed;42,815 config rows identical; character/stat/storage-money/guild hashes unchanged. Old GM duplicate absent in newest snapshot.
+- All81 installed S6 updates match147 pinned source files/current versions; no updates rerun/imported.
+-14 client socket metadata corrections guarded by exact hashes;690/690 IDs/dimensions PASS; repeat idempotence and wrong-hash rejection PASS. Five special model mappings and Exile world object remainUNKNOWN, no render/runtime claim.
+- Readiness61.5→65.5 from two criteria0→1(+2 each); no score from source presence, update installation or replayed evidence. Coverage buckets reconciled from actual criteria without score gain.

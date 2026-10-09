@@ -26,3 +26,6 @@ Confirmed normal cancellation lost offered Zen because ItemStorageAdapter forwar
 ## 2026-10-10 — owner scope correction
 
 Illusion Temple OUT OF SCOPE; Crywolf DEFERRED late stage. Neither is a current critical RED or readiness penalty. Preserve findings; no fix/runtime resources now. See baseline-scope.md: model1.0 score61%→model1.1 score61.5% solely by quest/event denominator5→4, zero implementation credit; all subsystem weights unchanged. No deeper trade testing. Continue existing config+exact Data bulk validation, confirmed local fixes, external imports only proven missing compatible S6 records. This supersedes prior mandatory-event statements and previous audit stop.
+
+
+2026-10-10 bulk checkpoint: no proven missing S6 reference records, no external import. Close Hanzo persisted collision and14 client socket metadata defects; source initializer patch retained for future fresh builds. Native runtime/423 tests unchanged. Readiness65.5 from scope+two confirmed fixes; criterion-driven coverage replaces inconsistent inherited display buckets.

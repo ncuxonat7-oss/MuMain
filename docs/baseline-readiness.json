@@ -135,10 +135,10 @@
       "criteria": [
         {
           "criterion": "All server item IDs and inventory dimensions match client",
-          "value": 0,
-          "evidence_type": "BROKEN_MISSING",
-          "evidence": "client-resource-check.json",
-          "limit": "Two missing sphere entries; twelve zero-sized seed-sphere entries"
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "690/690 configured item identities/dimensions PASS against exact pinned metadata plus guarded 14-item overlay; bulk client-final.json",
+          "limit": "Metadata acceptance only; five special model mappings and binary materials/rendering remain unknown"
         },
         {
           "criterion": "Owned-item definition references and IDs",
@@ -245,10 +245,10 @@
         },
         {
           "criterion": "Consistent standard stock placement",
-          "value": 0,
-          "evidence_type": "BROKEN_MISSING",
-          "evidence": "Hanzo duplicated slot73 in pinned source and persisted data",
-          "limit": ""
+          "value": 1,
+          "evidence_type": "AUTOMATICALLY_VALIDATED",
+          "evidence": "run38005996341; restored latest dump; 22 stores/585 stock rectangles PASS after one guarded Hanzo slot73->76 fix; idempotent; preservation checks PASS",
+          "limit": "Does not prove every NPC rendering/interaction or sell/repair behavior"
         }
       ]
     },
@@ -421,12 +421,7 @@
   ],
   "confidence": "MEDIUM",
   "critical_red_blockers": [],
-  "scoped_red_findings": [
-    "Hanzo stock overlap",
-    "Seeded GM pendant overlap",
-    "Sphere4/5 missing item entries",
-    "Seed Sphere4/5 zero inventory dimensions"
-  ],
+  "scoped_red_findings": [],
   "readiness_decision": "NOT YET READY FOR MAJOR CUSTOMIZATION",
   "history": [
     {
@@ -507,14 +502,23 @@
       "change_type": "OWNER_SCOPE_DENOMINATOR_ONLY",
       "evidence_gain": 0,
       "milestone": "Owner excludes IT and defers Crywolf. Combined required lifecycle criterion removed from quest/event denominator5→4; subsystem20→25. All weights/evidence unchanged; critical blockers2→0 by scope, findings preserved."
+    },
+    {
+      "date": "2026-10-10",
+      "model": "1.1",
+      "readiness": 65.5,
+      "reason": "Two acceptance criteria0->1: all690 item IDs/dimensions +2; all22 standard shop grids +2. No runtime/import/update-presence score credit.",
+      "previous_readiness": 61.5,
+      "change": 4,
+      "confidence": "MEDIUM"
     }
   ],
   "weighted_acceptance_evidence_coverage": {
-    "RUNTIME_VERIFIED": 38.5,
-    "AUTOMATICALLY_VALIDATED": 23.5,
-    "STATICALLY_CONFIRMED": 17.5,
-    "UNKNOWN": 16,
-    "BROKEN_MISSING": 4
+    "RUNTIME_VERIFIED": 38.0,
+    "AUTOMATICALLY_VALIDATED": 27.5,
+    "STATICALLY_CONFIRMED": 18.0,
+    "UNKNOWN": 16.5,
+    "BROKEN_MISSING": 0.0
   },
   "excluded_or_deferred_findings": [
     {
@@ -537,5 +541,11 @@
     "previous_readiness": 61,
     "current_readiness": 61.5,
     "evidence_gain": 0
-  }
+  },
+  "coverage_reconciliation": "Recomputed from required criteria: partial runtime/automatic values leave remaining share UNKNOWN. Inherited display buckets overstated runtime by0.5 and understated static/unknown by0.5 each; corrected without changing the score formula or evidence.",
+  "resolved_findings_2026_10_10": [
+    "Hanzo stock collision: persisted slot76, all22 shop grids valid",
+    "Sphere4/5 entries and12 SeedSphere4/5 dimensions/equipping slot corrected by guarded client overlay",
+    "Old GM duplicate anchor absent in latest disconnect snapshot; no new mutation"
+  ]
 }
