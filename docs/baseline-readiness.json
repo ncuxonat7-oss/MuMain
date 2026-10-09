@@ -356,8 +356,8 @@
           "criterion": "Trade transfer/cancel/relog",
           "value": 0,
           "evidence_type": "STATICALLY_CONFIRMED",
-          "evidence": "Implemented paths; runtime absent",
-          "limit": ""
+          "evidence": "Pinned implementation plus failed finite attempts37881728154/37882579366; no completed transfer",
+          "limit": "Empty trade grid/open window; interrupted donor-100Zen discrepancy, root unknown; do not claim trade safe."
         },
         {
           "criterion": "Guild create/join/relog",
@@ -452,6 +452,15 @@
       "score": 58.5,
       "change": 0.5,
       "milestone": "Native party invitation accepted, membership shown on both clients. Trade request is not counted as completed transfer."
+    },
+    {
+      "date": "2026-10-09",
+      "model": "1.0",
+      "previous_readiness": 58.5,
+      "readiness": 58.5,
+      "change": 0,
+      "confidence": "MEDIUM",
+      "milestone": "Two finite trade attempts failed actual transfer; no success credit. UI grids remained empty/open, donor-100Zen under interrupted teardown; core DK preserved. Evidence37881728154/37882579366; multiplayer safety remains unknown."
     }
   ],
   "weighted_acceptance_evidence_coverage": {
