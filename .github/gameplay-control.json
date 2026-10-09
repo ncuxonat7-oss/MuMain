@@ -1,5 +1,5 @@
 {
-  "id": "trade-cancel-relog-11",
+  "id": "trade-cancel-fixed-relog-12",
   "steps": [
     {
       "op": "second-client"
@@ -63,7 +63,7 @@
     },
     {
       "op": "capture",
-      "name": "23-cancel-item-and-zen-offered"
+      "name": "fixed-23-cancel-item-and-zen-offered"
     },
     {
       "op": "click",
@@ -76,7 +76,7 @@
     },
     {
       "op": "capture",
-      "name": "24-trade-cancelled"
+      "name": "fixed-24-trade-cancelled"
     },
     {
       "op": "restart-client"
@@ -91,7 +91,7 @@
     },
     {
       "op": "capture",
-      "name": "25-donor-relogged-after-cancel"
+      "name": "fixed-25-donor-relogged-after-cancel"
     },
     {
       "op": "snapshot"
@@ -113,7 +113,7 @@
     },
     {
       "op": "capture",
-      "name": "26-recipient-relogged-after-cancel"
+      "name": "fixed-26-recipient-relogged-after-cancel"
     },
     {
       "op": "snapshot"
