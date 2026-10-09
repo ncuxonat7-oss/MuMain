@@ -44,6 +44,8 @@ jobs:
           tar -xzf $resourceName -C client
           if ($LASTEXITCODE) { throw 'Resource extraction failed' }
           if (!(Test-Path client/Data) -or !(Test-Path client/fonts)) { throw 'Missing resource directories' }
+          python scripts/apply-client-overlay.py --data client/Data --overlay patches/client-socket-metadata.json | Tee-Object -FilePath evidence/client-metadata-overlay.json
+          if ($LASTEXITCODE) { throw 'Reviewed client metadata overlay failed' }
           @'
           [LOGIN]
           RememberMe=0
@@ -107,8 +109,8 @@ jobs:
       - name: Restore saved gameplay database artifact
         uses: actions/download-artifact@v4
         with:
-          name: gameplay-final
-          run-id: 37959672391
+          name: baseline-data-final
+          run-id: 38005996341
           github-token: ${{ github.token }}
           path: saved-gameplay
       - name: Prepare official artifact SDK
@@ -189,4 +191,3 @@ jobs:
           name: gameplay-final
           path: evidence
           if-no-files-found: error
-
