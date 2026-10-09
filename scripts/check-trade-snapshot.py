@@ -50,16 +50,35 @@ def compare(before_rows, after_rows, amount, item_uuid):
             'item_uuid': item_uuid, 'pass': all(assertions.values()), 'limit': 'Saved observed item/Zen transfer and untouched DK; party/GUI/cancel/crash safety not proven by DB alone.'}
 
 
+def cancel_progress(state, name, mutable_attributes, item_uuid):
+    if name == BASELINE:
+        return state
+    progress = dict(state)
+    progress['attributes'] = {key: value for key, value in state['attributes'].items() if key not in mutable_attributes}
+    progress['items'] = {}
+    for key, item in state['items'].items():
+        stable_item = dict(item)
+        if key != item_uuid and 0 <= item.get('ItemSlot', -1) <= 11:
+            stable_item.pop('Durability', None)
+        progress['items'][key] = stable_item
+    return progress
+
+
 def compare_cancel(before_rows, after_rows, item_uuid):
     names = (DONOR, RECIPIENT, BASELINE)
     before = {name: character_state(before_rows, name) for name in names}
     after = {name: character_state(after_rows, name) for name in names}
     assertions = {'offered_item_present_in_original_inventory': item_uuid in before[DONOR]['items']}
+    assertions['offered_item_exactly_restored'] = (item_uuid in before[DONOR]['items']
+                                                 and before[DONOR]['items'][item_uuid] == after[DONOR]['items'].get(item_uuid))
+    mutable_attributes = {row['Id'] for row in before_rows if row.get('Designation') == 'Current Ability'}
     for name in names:
+        before_progress = cancel_progress(before[name], name, mutable_attributes, item_uuid)
+        after_progress = cancel_progress(after[name], name, mutable_attributes, item_uuid)
         for field in ('id', 'money', 'attributes', 'items'):
-            assertions[f'{name}_{field}_unchanged'] = before[name][field] == after[name][field]
+            assertions[f'{name}_{field}_unchanged'] = before_progress[field] == after_progress[field]
     return {'assertions': assertions, 'pass': all(assertions.values()), 'outcome': 'cancel',
-            'item_uuid': item_uuid, 'limit': 'Saved zero-delta state only; native offered/cancel/relog evidence required. Hard server-crash safety unproven.'}
+            'item_uuid': item_uuid, 'limit': 'Native offer/cancel/relog evidence required. Ignores Current Ability regeneration and other equipped-item wear, never offered-item quantity/slot/options. Core DK exact. Hard server-crash safety unproven.'}
 
 
 if __name__ == '__main__':
