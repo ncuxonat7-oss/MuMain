@@ -84,7 +84,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: gameplay-final
-          run-id: 37879360808
+          run-id: 37947724161
           github-token: ${{ github.token }}
           path: saved-gameplay
       - name: Prepare official artifact SDK
@@ -153,11 +153,11 @@ jobs:
             }
             if(!exited) { child.kill(); throw new Error('Gameplay harness timeout'); }
             if(exitCode!==0) throw new Error(`Gameplay harness exited ${exitCode}`);
-      - name: Validate actual trade and persisted baseline
+      - name: Validate cancelled trade and persisted baseline
         shell: pwsh
         run: |
-          python scripts/check-trade-snapshot.py --before evidence/ready-database.jsonl --after evidence/final-database.jsonl --zen 100 --item-uuid 511da101-0000-700b-5de4-04671daf33bc > evidence/trade-assertions.json
-          if ($LASTEXITCODE) { throw 'Actual persisted trade assertions failed; inspect saved evidence.' }
+          python scripts/check-trade-snapshot.py --before evidence/ready-database.jsonl --after evidence/final-database.jsonl --outcome cancel --item-uuid 511da101-0000-7bac-41a0-aad9f93fe7fd > evidence/trade-assertions.json
+          if ($LASTEXITCODE) { throw 'Cancellation refund/persistence assertions failed; inspect saved evidence.' }
       - name: Preserve final gameplay evidence and database
         if: always()
         uses: actions/upload-artifact@v4
@@ -165,3 +165,4 @@ jobs:
           name: gameplay-final
           path: evidence
           if-no-files-found: error
+
