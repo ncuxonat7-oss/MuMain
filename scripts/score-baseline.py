@@ -33,6 +33,21 @@ def subsystem_score(system, version):
     return sum(item['value'] for item in criteria) / len(criteria) * 100
 
 
+def evidence_coverage(systems, version):
+    coverage = {kind: 0.0 for kind in (*ACCEPTED_EVIDENCE, 'STATICALLY_CONFIRMED', 'UNKNOWN', 'BROKEN_MISSING')}
+    for system in systems:
+        criteria = required_criteria(system, version)
+        weight = system['weight'] / len(criteria)
+        for item in criteria:
+            kind = item['evidence_type']
+            if kind in ACCEPTED_EVIDENCE:
+                coverage[kind] += weight * item['value']
+                coverage['UNKNOWN'] += weight * (1 - item['value'])
+            else:
+                coverage[kind] += weight
+    return coverage
+
+
 def calculate(document):
     systems = document['subsystems']
     version = document['model_version']
@@ -41,7 +56,7 @@ def calculate(document):
     scores = {system['name']: subsystem_score(system, version) for system in systems}
     score = sum(system['weight'] * scores[system['name']] / 100 for system in systems)
     return {'model': version, 'readiness': score, 'confidence': document['confidence'],
-            'subsystem_scores': scores, 'coverage': document['weighted_acceptance_evidence_coverage'],
+            'subsystem_scores': scores, 'coverage': evidence_coverage(systems, version),
             'critical_red_blockers': document['critical_red_blockers'], 'decision': document['readiness_decision']}
 
 

@@ -86,12 +86,28 @@ def validate(tables):
                        'Shared drop probabilities are independent selectors; they are not summed across unrelated groups.']}
 
 
+def validate_updates(tables, manifest):
+    source = {plugin['key'].lower(): plugin for plugin in manifest['plugins']}
+    installed = {row['Key'].lower(): row for row in tables['ConfigurationUpdate']}
+    return {'source_commit': manifest['commit'], 'source_files': manifest['source_files'],
+            'season6_plugins': sum(plugin['s6'] for plugin in source.values()),
+            'installed': len(installed), 'unknown_keys': sorted(set(installed) - set(source)),
+            'outdated': [key for key, row in installed.items()
+                         if key in source and row['Version'] < source[key]['version']],
+            'missing_season6': [key for key, plugin in source.items() if plugin['s6'] and key not in installed]}
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--export', required=True, type=Path)
     parser.add_argument('--out', required=True, type=Path)
+    parser.add_argument('--updates', type=Path)
     args = parser.parse_args()
-    report = validate(load_tables(args.export))
+    tables = load_tables(args.export)
+    report = validate(tables)
+    if args.updates:
+        report['updates'] = validate_updates(tables, json.loads(args.updates.read_text()))
+        report['limits'].remove('Installed update state is checked; pinned source key/version completeness comparison remains pending.')
     report['export_sha256'] = hashlib.sha256(args.export.read_bytes()).hexdigest()
     args.out.write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps({'rows': sum(report['counts'].values()), 'check_findings': {k: len(v) for k, v in report['checks'].items()},
