@@ -347,10 +347,10 @@
         },
         {
           "criterion": "Party invite/shared EXP/leave",
-          "value": 0,
-          "evidence_type": "STATICALLY_CONFIRMED",
-          "evidence": "Implemented paths; runtime absent",
-          "limit": ""
+          "value": 0.5,
+          "evidence_type": "RUNTIME_VERIFIED",
+          "evidence": "run37879360808/artifact11593403578; real invite/accept; screenshots07/08 show two member lists",
+          "limit": "Membership only; shared EXP and leave untested; one GM400/normal300 fixture pair"
         },
         {
           "criterion": "Trade transfer/cancel/relog",
@@ -444,13 +444,21 @@
       "score": 58,
       "change": null,
       "milestone": "Initial owner-weighted acceptance-evidence baseline after existing runtime/bulk proof and pinned-resource cross-check; no reconstructed historic score claimed."
+    },
+    {
+      "date": "2026-10-09",
+      "model": "1.0",
+      "previous_score": 58,
+      "score": 58.5,
+      "change": 0.5,
+      "milestone": "Native party invitation accepted, membership shown on both clients. Trade request is not counted as completed transfer."
     }
   ],
   "weighted_acceptance_evidence_coverage": {
-    "RUNTIME_VERIFIED": 35.0,
     "AUTOMATICALLY_VALIDATED": 23.0,
-    "STATICALLY_CONFIRMED": 19.0,
-    "UNKNOWN": 17.0,
+    "UNKNOWN": 17.5,
+    "RUNTIME_VERIFIED": 35.5,
+    "STATICALLY_CONFIRMED": 18.0,
     "BROKEN_MISSING": 6.0
   }
 }

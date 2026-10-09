@@ -15,3 +15,8 @@
 - Some old scratch ZIPs are incomplete or older single-Main.exe bundles. Only use hash-verified validated native archive. Work scratch is disposable.
 - CI artifacts expire (about90 days). Preserve exact build/db and audit inputs as authorized-user backups; put stable IDs/checksums/recovery instructions in GitHub. Never put expiring signed URLs, tokens or passwords in docs.
 - Budget balance is unavailable. Warn before costly new operations, but do not claim automatic credit monitoring. Stop duplicate attempts after two similar failures and checkpoint the smallest atomic result.
+
+- Native Command Window party/trade actions require RIGHT-click on the selected player; existing harness needed only this small operation. Do not build an input architecture.
+- GM /move by name requires an online target: start second client BEFORE positioning it. First offline move returned character not found; corrected online move worked.
+- Client outgoing trade minimum is level6 (NewUICommandWindow::CommandTrade). Use existing level300/400 fixtures; never alter verified level2 DK to unlock trade.
+- GitHub editor modal hydration can lag a successful click. Inspect current DOM before one corrective click; do not resubmit workflow or erase content.

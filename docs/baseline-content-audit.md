@@ -30,7 +30,7 @@ GREEN means sufficiently confirmed for the stated scope, not universal proof. YE
 |Skills|288 definitions and structural references|Resource presence not fully linked to skill IDs/effects|Basic attack only; no complete casting proof|YELLOW STATIC/AUTO|Casting/buffs/master/tree/client effects UNKNOWN|Map supported packet/effect references and small representative test|S1,A1|
 |Leveling/stats|Progression formulas/attributes present|UI works for exercised DK|Natural level2/5 points;STR31/2 remaining points saved|GREEN for basic DK / YELLOW across classes|Other classes/high-level/formulas/master progression UNKNOWN|Validate formula boundary cases, not repeated low-level grind|R3/R4,A1|
 |Quests|499 definitions and references|Quest dialogs/source exist; resource/runtime coverage incomplete|None|YELLOW|Promotion/reward/requirements not end-to-end proven|Bulk prerequisites/rewards sanity; one representative cycle|A1/S1|
-|Party|Handlers/config source present|Two real native clients connected; party UI logic exists|No invitation/membership/XP sharing proof|YELLOW UNKNOWN interaction|Membership/XP/relog behavior UNKNOWN|One bounded two-client party check|R3,S1|
+|Party|Handlers/config source present|Real native party lists on both clients|Invite/accept/two-member lists VERIFIED|YELLOW partially VERIFIED|Shared EXP/leave/relog behavior UNKNOWN|Continue only remaining transaction check|run37879360808/artifact11593403578;07/08 screenshots|
 |Trade|Handlers/source present|UI logic exists|No transfer proof|YELLOW UNKNOWN interaction|Atomicity/item/Zen recipient persistence UNKNOWN|Same bounded job transfer ordinary item/Zen, relog|S1|
 |Guild|Handlers and persistence source present|UI/resources source present|None|YELLOW|Creation/roles/member persistence UNKNOWN|Defer guild internals until actual block; later small transaction test|S1|
 |Chaos Machine/crafting|39 recipes, links and numeric bounds partly checked|NPC/UI source present; all effects UNKNOWN|None|YELLOW|Success/failure/consumption/options/reset semantics UNKNOWN|Recipe ingredient/output bulk audit then one ordinary mix|A1/S1|
@@ -54,11 +54,13 @@ Model1.0 is fixed by the owner's weighting. Machine-readable criteria/evidence/l
 |NPCs/shops|10%|40%|4|
 |Classes/skills/stats/leveling|10%|60%|6|
 |Quests/events/Chaos Machine/crafting|10%|20%|2|
-|Party/trade/guild|5%|20%|1|
+|Party/trade/guild|5%|30%|1.5|
 |Persistence/stability/regression|10%|60%|6|
-|TOTAL|100%||58%|
+|TOTAL|100%||58.5%|
 
-Engineering estimate:58%, Evidence Confidence MEDIUM. Weighted acceptance-checklist coverage:35% runtime verified,23% automatically validated,19% static only,17% unknown,6% broken/missing. These percentages describe this fixed checklist's evidence scope, not a measured percentage of all MU mechanics. Structural checks score only structural acceptance criteria, not complete mechanic functionality. Two clients merely connecting earns prerequisite coverage, not party/trade PASS.
+Engineering estimate:58.5%, Evidence Confidence MEDIUM. Weighted acceptance-checklist coverage:35.5% runtime verified,23% automatically validated,18% static only,17.5% unknown,6% broken/missing. These percentages describe this fixed checklist's evidence scope, not a measured percentage of all MU mechanics. Structural checks score only structural acceptance criteria, not complete mechanic functionality. Two clients merely connecting earns prerequisite coverage, not party/trade PASS.
+
+Native continuation:run37879360808 uses saved client/server cache/newest DB, no builds. Party membership VERIFIED; delivered trade request is not yet completed exchange. Shared EXP not tested.
 
 ### Readiness history
 
@@ -66,6 +68,7 @@ Engineering estimate:58%, Evidence Confidence MEDIUM. Weighted acceptance-checkl
 |---|---|---|
 |Legacy2026-10-08 audit|63.3% legacy|35.45/56;14 equally weighted S/C/A/R presence-oriented groups; excluded core. Preserved as historical record only|
 |2026-10-09 owner model1.0 introduction|N/A →58%; delta N/A|Owner's10 subsystem weights;50 explicit criteria; reuses existing runtime/config evidence plus new pinned client cross-check. Not a gameplay regression from63.3%|
+|2026-10-09 native party membership|58% →58.5% (+0.5)|Same model; partial invite/shared EXP/leave criterion earns0.5 for membership only|
 
 Critical RED standard-content areas:2 — Crywolf and Illusion Temple complete lifecycle. Other localized RED metadata/seed issues are listed in matrix and ledger. No confirmed fundamental core connectivity, normal-item handling, basic progression or persisted-state RED blocker.
 

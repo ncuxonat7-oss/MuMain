@@ -128,3 +128,7 @@ No demonstrated technical reason to replace the server or client during the prot
 
 Resource replacement boundary: runtime archive already omits Data/fonts and upstream publishes separate content-addressed packs. Keep this separation. Later packs must preserve expected format/path/IDs or provide conversion/mapping; not every arbitrary asset package is interchangeable without work. No architecture change implemented now.
 
+
+### 2026-10-09 party membership recovery
+
+run37879360808, artifact11593403578; saved party-accept.zip, authorized-user libfile_14d3ff11c6cc81919de262261fce9f58, SHA256 b6be122a32245dd47f6b1a4b880431b6f907981aafcf08f2a1ba49d0cff956b4. Genuine07/08 member lists and10 received trade request. No completed trade/DB persistence proof in this archive; active job final evidence will supersede it.

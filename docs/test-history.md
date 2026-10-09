@@ -14,11 +14,12 @@ Dates UTC; this is evidence, not a conversation transcript. Latest state always 
 | Same export, local scalar bounds | Seven checks pass: spawn/gate coordinates, quantities, warp cost/level, drop chance, item dimensions | No rectangle/pathfinding/probability distribution proof |
 |2026-10-09 pinned client cross-check |690 server definitions vs949 client entries/889 model entries; full13,188-file manifest; shared models resolved;73 maps/68 numbers with aliases |2 missing item entries,12 zero dimension entries,5 unknown mappings; Exile object absent. No rendering/effect/binary proof |
 |2026-10-09 navigation tool | Lorencia(116,141) resolves Hanzo251, exact spawn, definition and merchant storage | Read-only locator, not additional gameplay test |
+|2026-10-09 runtime37879360808/artifact11593403578|Party invite/accept, two native member lists (07/08); trade request received (10)|No shared EXP/leave proof; trade transfer/relog still pending|
 
 Screenshots05/06 of finite smoke are authentic native captures, not generated images. Restore newest run37860870710, not the pre-equipment run37851961862.
 
 ## NOT VERIFIED
 
-Party/trade/guild interactions and transaction persistence; all seven classes/casting/buffs/master skills; quest/promotion cycle; Chaos mix outcomes; event entry/lifecycle/reward; all monster ID/render/AI/respawn mappings; sustained server stability; client resource textures/animations/audio; production hosting/security/licensing.
+Party shared EXP/leave; trade completion/guild interactions and transaction persistence; all seven classes/casting/buffs/master skills; quest/promotion cycle; Chaos mix outcomes; event entry/lifecycle/reward; all monster ID/render/AI/respawn mappings; sustained server stability; client resource textures/animations/audio; production hosting/security/licensing.
 
 Earlier failures and workarounds are in lessons-learned.md. Current readiness scoring is in baseline-content-audit.md and baseline-readiness.json. Do not infer a PASS from an implementation/test name or a server/client resource count.
