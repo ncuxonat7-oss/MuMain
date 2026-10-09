@@ -357,7 +357,7 @@
           "value": 0.5,
           "evidence_type": "RUNTIME_VERIFIED",
           "evidence": "37947724161/artifact11624674487; native item+100Zen transfer, recipient restart/relog;9 persisted assertions PASS",
-          "limit": "One ordinary completed exchange; cancel/refund/disconnect/crash safety unknown. Earlier interrupted100Zen discrepancy remains open."
+          "limit": "Ordinary completed trade verified. Normal cancel returns offered item but loses100Zen after both-client relog in37954653808; refund BROKEN. Disconnect/crash safety unresolved."
         },
         {
           "criterion": "Guild create/join/relog",
@@ -370,7 +370,7 @@
           "criterion": "Multiplayer transaction/disconnect safety",
           "value": 0,
           "evidence_type": "UNKNOWN",
-          "evidence": "No runtime proof",
+          "evidence": "Earlier interrupted100Zen losses plus normal-cancel failure37954653808; disconnect cause not separately instrumented.",
           "limit": ""
         }
       ]
@@ -405,7 +405,7 @@
           "value": 0.5,
           "evidence_type": "RUNTIME_VERIFIED",
           "evidence": "37947724161/artifact11624674487; native item+100Zen transfer, recipient restart/relog;9 persisted assertions PASS",
-          "limit": "One ordinary completed exchange; cancel/refund/disconnect/crash safety unknown. Earlier interrupted100Zen discrepancy remains open."
+          "limit": "Ordinary completed trade verified. Normal cancel returns offered item but loses100Zen after both-client relog in37954653808; refund BROKEN. Disconnect/crash safety unresolved."
         },
         {
           "criterion": "Sustained gameplay stability and targeted regression beyond smoke",
@@ -420,7 +420,8 @@
   "confidence": "MEDIUM",
   "critical_red_blockers": [
     "Crywolf standard event lifecycle incomplete",
-    "Illusion Temple standard event lifecycle incomplete"
+    "Illusion Temple standard event lifecycle incomplete",
+    "Normal trade cancellation loses offered Zen after relog (37954653808)"
   ],
   "scoped_red_findings": [
     "Hanzo stock overlap",
@@ -466,17 +467,26 @@
       "date": "2026-10-09",
       "model": "1.0",
       "previous_readiness": 58.5,
-      "readiness": 60.0,
+      "readiness": 60,
       "change": 1.5,
       "confidence": "MEDIUM",
       "milestone": "Native ordinary item+100Zen trade, recipient relog,9 persisted assertionsPASS; same itemUUID/quantity and conserved Zen/item IDs; DK unchanged. Scoped trade/persistence=.5 each; cancellation/disconnect unknown."
+    },
+    {
+      "date": "2026-10-09",
+      "model": "1.0",
+      "previous_readiness": 60,
+      "readiness": 60,
+      "change": 0,
+      "confidence": "MEDIUM",
+      "milestone": "37954653808 normal cancel: offered item exactly restored but donor-100Zen/recipient0 after both-client relog. Refund is confirmed broken, new critical RED; no readiness credit. Static ItemStorageAdapter Money forwarding omission identified; fix not validated."
     }
   ],
   "weighted_acceptance_evidence_coverage": {
-    "AUTOMATICALLY_VALIDATED": 23.0,
-    "UNKNOWN": 17.0,
-    "RUNTIME_VERIFIED": 37.0,
-    "STATICALLY_CONFIRMED": 17.0,
-    "BROKEN_MISSING": 6.0
+    "AUTOMATICALLY_VALIDATED": 23,
+    "UNKNOWN": 15.5,
+    "RUNTIME_VERIFIED": 37,
+    "STATICALLY_CONFIRMED": 17,
+    "BROKEN_MISSING": 7.5
   }
 }

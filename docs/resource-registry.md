@@ -143,3 +143,8 @@ run37879360808/artifact11594420323; party-trade-final.zip,23259299bytes,SHA256 5
 
 ### Newest WORKING gameplay snapshot — completed trade
 Run37947724161 (head21cce30c978057f95bdca5bc5d1b3dc2fbd4faf9), finalartifact11624674487. ZIP12788613bytes, SHA256906ac9266d5fdf78ab748178fecfc3aade1e79c947e3ade4529c53466f33420e. Authorized-user backup libfile_b540571e9f208191bf4af1d3991fe2c7. Contains complete PostgreSQL dump, final/ready JSONL, hashes/logs, consumed09/10 plans, actual native screenshots17–22 and9-check PASS. Normal item+100Zen transfer is persisted; core DK unchanged. Recipient screenshot21 backup libfile_9776c84f50208191a9376f798bdeb25b. This successful snapshot supersedes37879360808 as current working state; old pre-trade snapshot remains recoverable. Do NOT restore failed37881728154/37882579366 snapshots over it.
+
+
+### FAILED normal cancellation evidence — not a restore baseline
+Run37954653808 at8ce1e71d7b6c62bc4e42ed6dcf6a01ca1a645f07; gameplay-final artifact11627378814. Private backup libfile_48289cfc64e481919471983bc4b38d59 (file_00000000f7a081f5ad512bca0273cff3), trade-cancel-final.zip,9879893 bytes, SHA2561ecfb3ab55c4b5e7033d60cb33afd7e261a3e6f23579b4e6632e9329c8f76904. Actual donor relog screenshot25 backup libfile_87531d8711c8819196921391cfabbf3d. Contains failed DB snapshot, logs, native23–26, exact consumed plan and13 strict assertions. Normal cancel returned item but lost100Zen. Keep private; never push dump/fixture hashes. Newest WORKING baseline remains37947724161/artifact11624674487. Restore source in current workflow37947724161. Original server cache retained.
+

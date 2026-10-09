@@ -59,7 +59,7 @@ Model1.0 is fixed by the owner's weighting. Machine-readable criteria/evidence/l
 |Persistence/stability/regression|10%|70%|7|
 |TOTAL|100%||60%|
 
-Engineering estimate:60%, Evidence Confidence MEDIUM. Weighted acceptance-checklist coverage:37% runtime verified,23% automatically validated,17% static only,17% unknown,6% broken/missing. These percentages describe this fixed checklist's evidence scope, not a measured percentage of all MU mechanics. Structural checks score only structural acceptance criteria, not complete mechanic functionality. Two clients merely connecting earns prerequisite coverage, not party/trade PASS.
+Engineering estimate:60%, Evidence Confidence MEDIUM. Weighted acceptance-checklist coverage:37% runtime verified,23% automatically validated,17% static only,15.5% unknown,7.5% broken/missing. These percentages describe this fixed checklist's evidence scope, not a measured percentage of all MU mechanics. Structural checks score only structural acceptance criteria, not complete mechanic functionality. Two clients merely connecting earns prerequisite coverage, not party/trade PASS.
 
 Native continuation37947724161: ordinary trade and actual recipient relog VERIFIED,9PASS; no builds. Party membership already VERIFIED. Shared EXP/leave, guild, cancellation/refund/disconnect remain unverified.
 
@@ -72,7 +72,7 @@ Native continuation37947724161: ordinary trade and actual recipient relog VERIFI
 |2026-10-09 native party membership|58% →58.5% (+0.5)|Same model; partial invite/shared EXP/leave criterion earns0.5 for membership only|
 |2026-10-09 completed trade/relog|58.5% →60% (+1.5)|Scoped trade and transaction persistence partial0.5 each; same model; no cancel/crash credit|
 
-Critical RED standard-content areas:2 — Crywolf and Illusion Temple complete lifecycle. Other localized RED metadata/seed issues are listed in matrix and ledger. Core progression and completed trade are verified; interrupted-trade100Zen discrepancy remains unresolved, so general transaction safety is not cleared.
+Critical RED areas:3 — Crywolf and Illusion Temple complete lifecycle; normal trade cancellation loses offered Zen after relog. Other localized RED metadata/seed issues are listed in matrix and ledger. Core progression and completed trade are verified; interrupted-trade100Zen discrepancy remains unresolved, so general transaction safety is not cleared.
 
 NOT YET READY FOR MAJOR CUSTOMIZATION. Required gate:readiness>=85%, confidence>=MEDIUM and no unresolved fundamental core/persistence/item/progression RED. Numerical threshold alone is insufficient.
 
@@ -88,7 +88,7 @@ No verified rights-cleared compatible package that fills the major server-conten
 
 ## Shortest path
 
-Core runtime chain already complete. Next bounded stage:reuse two native clients and latest DB for party + one trade with persisted recipient result. Then scoped seed/item metadata fixes with targeted checks, generate monster/skill/recipe cross-reference exceptions, and only sample runtime cases validators cannot resolve. Decide required event scope explicitly before implementing incomplete events. Preserve standard MU first; do not introduce custom systems now.
+Core runtime chain already complete. Next bounded stage:fix proven trade-cancellation Zen refund; do not repeat verified party or completed trade. Then scoped seed/item metadata fixes with targeted checks, generate monster/skill/recipe cross-reference exceptions, and only sample runtime cases validators cannot resolve. Decide required event scope explicitly before implementing incomplete events. Preserve standard MU first; do not introduce custom systems now.
 
 Continuation run37879360808 completed normally; trade request/accept/UI proven, transfer/persistence still UNKNOWN.15-minute harness window ended before offer packet; no score increase beyond party membership58.5%. Final DB comparator showed0Zen deltas, original potion ownership, unchanged baseline DK. Saved recovery pointers in resource-registry.md. Next finite trade-only plan avoids per-click GitHub handshakes; final transaction assertions are required for PASS.
 
@@ -107,3 +107,8 @@ VERIFIED run37947724161/artifact11624674487: item visible in both trade grids17/
 |Multiplayer persistence|Yes|Yes|YES scoped trade+recipient relog|YELLOW broader safety|No crash/load/cancel proof; not cleared by normal trade|Same itemUUID and conserved balances in final DB|
 
 Readiness58.5%→60%(+1.5), model1.0 unchanged: trade transfer/cancel/relog=.5 because transfer/relog verified but cancellation untested; transaction persistence/duplication-loss=.5 for this one completed exchange, not generalized crash safety. ConfidenceMEDIUM. Scores:Core100,Maps70,Monsters40,Items50,Drops80,NPC40,Classes60,Quests/events/crafting20,Party/trade/guild40,Persistence70. Weighted evidenceRUNTIME37/AUTOMATIC23/STATIC17/UNKNOWN17/BROKEN6. Critical standard-contentRED2 unchanged. NOT YET READY FOR MAJOR CUSTOMIZATION. Next shortest stage: targeted trade cancellation/refund/relog investigation, using successful snapshot; do not repeat normal trade or drag emulation.
+
+
+### Normal cancellation diagnostic (2026-10-09)
+Run37954653808/artifact11627378814 FAIL. VERIFIED: native item+100Zen offer23, normal cancel24, both relogs25/26. AUTOMATIC: original offered item exactly restored, ownership IDs/core DK preserved. BROKEN: donor9999900→9999800, recipient9996100 unchanged;100Zen lost. Other strict differences (equipped durability, Current Ability) are outside offered-item rollback, not established persistence defects. Static root: ItemStorageAdapter forwards Items but lacks Money forwarding; base ItemStorage.Money is non-virtual. No fix or rebuild performed yet. New criticalRED for cancellation/persistence. Numerical score60%→60%(+0); previous normal-flow credit retained, no credit for diagnosis. ConfidenceMEDIUM; coverage runtime37/automatic23/static17/unknown15.5/broken7.5. Preserved working37947724161; failed37954653808 must not become restore baseline. Next minimum action: targeted Money forwarding patch + regression + one server rebuild/cancel-only runtime; no client rebuild or broad audit.
+

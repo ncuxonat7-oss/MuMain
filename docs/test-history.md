@@ -30,3 +30,8 @@ Screenshots05/06 of finite smoke are authentic native captures, not generated im
 Party shared EXP/leave; guild interactions, trade cancel/disconnect/crash safety and general multiplayer transaction stability; all seven classes/casting/buffs/master skills; quest/promotion cycle; Chaos mix outcomes; event entry/lifecycle/reward; all monster ID/render/AI/respawn mappings; sustained server stability; client resource textures/animations/audio; production hosting/security/licensing.
 
 Earlier failures and workarounds are in lessons-learned.md. Current readiness scoring is in baseline-content-audit.md and baseline-readiness.json. Do not infer a PASS from an implementation/test name or a server/client resource count.
+
+
+### Normal cancellation diagnostic37954653808 — FAILED
+One cached native run, restored successful37947724161, no build/repeated successful gameplay tests. Artifact11627378814;23 item+100Zen offered,24 native cancelled,25/26 both clients restarted/relogged. Donor9999900→9999800; recipient9996100 unchanged. Offered medium potion UUID511da101-0000-7bac-41a0-aad9f93fe7fd exactly restored, all ownership IDs conserved, baseline DK unchanged.13 strict checks9PASS/4FAIL: money loss is confirmed; the other differences are two equipped durabilities and recipient Current Ability, not diagnosed as rollback defects. Run overallFAIL; native harness completed normally. Root diagnosis static: adapter forwards Items but not Money. No fix validated. Never promote failed DB over37947724161. Readiness60→60, MEDIUM, criticalRED3.
+

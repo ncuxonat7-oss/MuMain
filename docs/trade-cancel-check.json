@@ -1,0 +1,21 @@
+{
+  "run": 37954653808,
+  "artifact": 11627378814,
+  "result": "FAIL",
+  "offered_zen": 100,
+  "donor_before": 9999900,
+  "donor_after": 9999800,
+  "recipient_before": 9996100,
+  "recipient_after": 9996100,
+  "offered_item_uuid": "511da101-0000-7bac-41a0-aad9f93fe7fd",
+  "offered_item_exactly_restored": true,
+  "all_item_ownership_ids_unchanged": true,
+  "core_character_unchanged": true,
+  "native_evidence": [
+    "23-cancel-item-and-zen-offered.png",
+    "24-trade-cancelled.png",
+    "25-donor-relogged-after-cancel.png",
+    "26-recipient-relogged-after-cancel.png"
+  ],
+  "other_strict_differences": "Two equipped-item durability decreases and recipient Current Ability change; outside offered-item/Zen rollback, not diagnosed as persistence defects."
+}
