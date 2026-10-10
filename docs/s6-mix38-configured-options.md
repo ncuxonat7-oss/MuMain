@@ -46,6 +46,8 @@ If a concrete gameplay risk later warrants a localized allocator task, preserve 
 
 ## Next small gameplay proposal — not executed
 
+The subsequent [input inventory and exact skill-41 task](s6-gameplay-input-readiness.md) records current metadata availability, execution gates and the single-scenario acceptance criteria.
+
 Propose one ordinary Dark Knight skill milestone: learn **Twisting Slash**, use it against one eligible monster, then relog and verify learned-skill persistence. First confirm from the preserved snapshot/config that the skill is absent and its exact acquisition and character prerequisites can be met without changing baseline configuration; otherwise stop and return the missing prerequisite, without substitutes or broader testing.
 
 Inputs: newest working baseline-data-final snapshot, validated native client/Data overlay, preserved OpenMU d067b3c runtime with the current Money patch, and the existing skill/item definitions. See [current-state inputs](current-state.md#files--artifacts-to-reuse) and [resource registry](resource-registry.md). Use an isolated copy of the saved baseline only after runtime authorization; preserve the canonical snapshot. No rebuild, import, fixture injection or prerequisite bypass is implied.
