@@ -222,3 +222,27 @@ does not establish accepted skill41 use.
 This small test-fixture simplification is separate from the broad deferred
 CONTINUOUS IMPROVEMENT architecture. That architectural backlog remains parked,
 and existing approval requirements remain in force.
+
+## Owner decision — normal-player validation on the owner's PC
+
+2026-10-10 at19:56:24Z, the owner asked:
+«Оставь как у обычного игрока на меня, когда запущу на ПК игру,так будет нормально?»
+The agreed division of work is:
+
+- The owner performs normal-player end-to-end usability/playthrough validation
+  on his PC. Agents will provide a short, concrete owner checklist later.
+- Agents remain responsible for isolated prepared mechanical tests,
+  outcome/persistence checks, technical diagnosis and relevant security and
+  integration checks. This does not transfer all technical bugs to the owner
+  or exempt agents from investigating them.
+
+Reason: avoid spending agent runtime on navigation when navigation is not the
+mechanic under test. A fixture may prepare actor/target state, but injected
+setup must remain explicitly separate from observed native actions/results.
+Fixture PASS is never evidence that the complete ordinary-player journey passed.
+
+Revisit this division if automated native end-to-end testing becomes
+cost-effective or an integration regression warrants it. The broad CONTINUOUS
+IMPROVEMENT architecture remains parked. This is a recorded ownership/testing
+decision, not implementation or launch authorization; no new run, source change,
+runtime action or baseline mutation accompanies this entry.
