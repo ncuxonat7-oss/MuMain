@@ -1,16 +1,29 @@
 {
-  "id": "r16-orb-inspect",
+  "id": "r16-learn",
   "steps": [
+    {
+      "op": "right-click",
+      "x": 888,
+      "y": 493
+    },
+    {
+      "op": "capture",
+      "name": "r16-after-orb"
+    },
+    {
+      "op": "snapshot"
+    },
     {
       "op": "key",
       "vk": 73
     },
     {
-      "op": "capture",
-      "name": "r16-inventory"
+      "op": "key",
+      "vk": 67
     },
     {
-      "op": "snapshot"
+      "op": "capture",
+      "name": "r16-character"
     }
   ]
 }
