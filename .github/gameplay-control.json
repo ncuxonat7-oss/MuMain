@@ -1,18 +1,19 @@
 {
-  "id": "r16-skill-list",
+  "id": "skill41-relog",
   "steps": [
     {
-      "op": "key",
-      "vk": 67
+      "op": "restart-client"
     },
     {
-      "op": "click",
-      "x": 644,
-      "y": 720
+      "op": "login",
+      "account": "test300"
     },
     {
       "op": "capture",
-      "name": "r16-skill-list"
+      "name": "r16-relogged"
+    },
+    {
+      "op": "snapshot"
     }
   ]
 }
