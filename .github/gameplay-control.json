@@ -1,18 +1,18 @@
 {
-  "id": "r17-gate-passage",
+  "id": "r17-bridge",
   "steps": [
     {
       "op": "click",
-      "x": 220,
-      "y": 235
+      "x": 110,
+      "y": 150
     },
     {
       "op": "wait",
-      "seconds": 4
+      "seconds": 5
     },
     {
       "op": "capture",
-      "name": "r17-gate-passage"
+      "name": "r17-bridge"
     },
     {
       "op": "snapshot"
