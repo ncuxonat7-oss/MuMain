@@ -246,3 +246,39 @@ cost-effective or an integration regression warrants it. The broad CONTINUOUS
 IMPROVEMENT architecture remains parked. This is a recorded ownership/testing
 decision, not implementation or launch authorization; no new run, source change,
 runtime action or baseline mutation accompanies this entry.
+
+## Next preparation — guided player QA with digital evidence
+
+Owner proposal,2026-10-10 at19:58:38Z: give prioritized “go here / check this”
+tasks and collect digital reports/logs instead of relying only on verbal feedback.
+This is the **next preparation before owner PC testing**, linked to
+[the owner PC validation decision](#owner-decision--normal-player-validation-on-the-owners-pc).
+It is not active implementation, an architecture selection or a launch request.
+
+Platform is **UNCONFIRMED**: the owner said “APK client”, while surrounding
+context concerns PC play. Clarification is pending; PC is provisional only.
+Do not interpret this entry as authorization for an Android port.
+
+Minimal proposal for later review:
+- GitHub test IDs with priority, short steps and expected result; each report
+  attaches to one test and the exact tested version.
+- Simple owner start/stop and result choices: pass, fail or unclear.
+- A bounded diagnostic bundle: timestamps, client/server versions or commits,
+  relevant logs, and optional screenshots/video only with owner consent.
+- Exclude credentials, tokens and personal data. No automatic unrestricted
+  script execution, unrestricted uploads or third-party sharing.
+- Prefer existing GitHub plus a small collector, if needed, over a new web
+  platform, backend or subscription. This is a preference for evaluation,
+  not a committed design or permission to install a collector.
+
+Draft acceptance criteria:
+1. An agent can reconstruct the test context from its bundle and tie each item
+   of evidence to one test ID/version; missing evidence is explicitly flagged.
+2. Secrets and personal data are filtered; a filtering failure prevents sharing.
+3. Owner actions remain minimal, with clear start/stop and pass/fail/unclear.
+4. Collection can be switched off, with a defined rollback/removal path.
+
+No implementation, script installation, collection, upload of diagnostics or
+test launch is authorized by this documentation entry. Any subsequent execution
+or data transfer remains subject to the existing approval requirements.
+The broader CONTINUOUS IMPROVEMENT architecture remains parked separately.
