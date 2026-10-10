@@ -308,8 +308,8 @@
           "criterion": "Quest/recipe binary IDs and requirements align client/server",
           "value": 0,
           "evidence_type": "STATICALLY_CONFIRMED",
-          "evidence": "s6-client-crosswalk.json: all38 scoped MixIDs and all3step roles of483nonlegacy quests present; exact BMD checksum/layout/pins verified",
-          "limit": "ID presence only;16legacyquests and full recipe category/ingredient/rate/outcome/quest requirements equivalence unresolved. Criterion stays0."
+          "evidence": "s6-client-crosswalk.json:38scopedMixIDs,3step roles of483nonlegacyquests;16legacydefinitions NPC/item/monster-count/Zen match native200\u00d7744byte BMD;14targetedtooltestsPASS",
+          "limit": "Selected fields only;legacyclass-generation/inheritedlevels/prerequisites/itemlevels/rewards and fullrecipevariant/category/ingredient/rate/outcome equivalence unresolved. Criterion stays0."
         },
         {
           "criterion": "One quest and one cheap crafting outcome with persistence",
@@ -520,6 +520,15 @@
       "change": 0,
       "confidence": "MEDIUM",
       "milestone": "Read-only partial S6 semantic diff7735MATCH/1380UNKNOWN; client IDs stronger but full requirements not proved; zero admitted imports/fixes; deferred client optimization backlog adds no score."
+    },
+    {
+      "date": "2026-10-10",
+      "model": "1.1",
+      "previous_readiness": 65.5,
+      "readiness": 65.5,
+      "change": 0,
+      "confidence": "MEDIUM",
+      "milestone": "Owner Work/Codex routing persisted. Focused legacy BMD decoder +16selected-field crosswalk MATCH;14targetedformat/semantic testsPASS;38recipevariant preflight. Full requirements unresolved;no runtime/import/baseline writes;deferred optimization untouched."
     }
   ],
   "weighted_acceptance_evidence_coverage": {

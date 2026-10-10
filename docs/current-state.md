@@ -2,6 +2,8 @@
 
 ## LAST CONFIRMED STATE
 
+New continuation: focused legacy quest decoder/crosswalk completed; all16Group0definitions MATCH explicitly compared NPC/item/monster-count/Zen fields. Exact200×744byte native file layout verified;14targetedbinary/semantic testsPASS. Full requirements/rewards/recipe semantics remain unresolved. See s6-legacy-quest-codex-handoff.md for scope/result;65.5unchanged.
+
 Latest bounded audit: docs/s6-baseline-diff.md;7735partialsemanticMATCH,1380UNKNOWN;clientbinaryIDcrosswalk;noimport/fix/runtime;readiness65.5unchanged. See exact next action below.
 
 Latest completed bulk/data checkpoint38005996341 SUCCESS54s: all22 shop grids/13 semantic checks PASS; all81 S6 update identities/versions current; all690 client item IDs/dimensions PASS with reviewed overlay. See bulk-baseline-validation.md. No runtime/build/import/trade work this milestone.
@@ -20,7 +22,7 @@ Owner routing decision persisted in work-codex-routing.md and AGENTS.md. Current
 
 S6 baseline diff and safe automation audit completed: docs/s6-baseline-diff.md + machine-readable diff/client-crosswalk; reusable scripts and pinned projections saved. 7,735 projected records all MATCH;1,380 current records UNKNOWN;84.86% selected-record adapter coverage is NOT overall S6 completeness. No confirmed missing mapped records, no new defect, no safe import candidate, no baseline mutation. Readiness65.5 unchanged; model1.1/MEDIUM/current critical RED0.
 
-Exact next recommended authorized analysis: extend the reusable semantic client/server crosswalk for38 scoped recipes and16legacy quests. MixID protocol≠MixIndex UI; verify category/NPC dispatch, ingredient ranges/counts/options, costs/rates/outcomes and legacy quest layout/requirements. Compare preserved export only, dry-run findings; no external writes without owner approval. Full existing IDs-and-requirements criterion could earn+2.5 only after proof; ID presence alone earns0. Audit stop condition reached; no next runtime/import job launched.
+Exact next unfinished analysis (WORK): map all38scoped recipe variants, category/NPC dispatch, item ranges/levels/options/counts, costs/formulas and outcomes; include16legacyquests' remaining inherited levels, class-generation eligibility, prerequisites, item levels and rewards. Recipe preflight:35simple settings,16custom handlers,3handler-only,15MixIDs with multiple client variants. The binary-format gap for16legacydefinitions is CLOSED; do not decode it again. Localized mapper implementation becomes CODEX PREFERRED once each semantic rule and acceptance are clear. Compare preserved export only, dry-run findings; no external writes without owner approval. Full IDs-and-requirements criterion could earn+2.5 only after proof; current evidence earns0. No runtime/import/build dispatched.
 
 Read-only CI38008949221 SUCCESS12s/artifact11652516455 extracted4exactclienttables fromnative8d18a2b;650skillslots,99recipeentries,915queststeps decoded. All38scopedrecipeIDs and Number/StartingNumber/RefuseNumber steps of483nonlegacyquests present.282skills named;6blank names UNKNOWNhandling, not missing implementation.16legacyquests remain separateformat. No repeat of previous bulk/update/item/shop/native/trade checks.
 

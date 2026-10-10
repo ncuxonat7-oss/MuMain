@@ -42,3 +42,6 @@ Illusion Temple OUT OF SCOPE; Crywolf DEFERRED late stage. Neither is a current 
 ## 2026-10-10 — partial native S6 reference diff / no import admission
 
 Primary pinned native OpenMU S6/inherited initializers plus explicit verified transformations selected for comparison. It is a compatible drift reference, not an independent official completeness oracle. All7735projected records MATCH;1380UNKNOWN mapping gaps are not missing content. Client MixIDs/quest steps proved, full requirements unresolved. Readiness65.5unchanged; safe_import_plan empty. Mixed-season MuEmu remains secondary DO NOTIMPORT. See s6-baseline-diff.md for reusable rules/false positives/failed approaches.
+
+
+2026-10-10 continuation: scoped legacy decoder implementation performed by current Codex thread after format/scope/acceptance localization, no second agent dispatched. All16selected-field comparisons MATCH;do not claim full quest completion. Recipe variant preflight and falsepositive rate rules recorded in test-history/navigation;readiness65.5unchanged.

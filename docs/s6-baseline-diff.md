@@ -1,5 +1,7 @@
 # S6 baseline diff and safe automation — 2026-10-10
 
+**Follow-on checkpoint:** legacy binary mapping was subsequently completed in this Codex thread; all16Group0definitions match selected NPC/item/monster-count/Zen fields. See s6-legacy-quest-codex-handoff.md, updated s6-client-crosswalk.json and current-state.md. The original audit below is preserved history; its legacy-binary format limitation is superseded; native source-projection counts remain unchanged, and full quest/recipe requirements remain incomplete and readiness stays65.5.
+
 Status: **audit complete; DRY RUN ONLY; no baseline mutation or external import**. Owner scope: Illusion Temple OUT OF SCOPE, Crywolf DEFERRED. Trade closed for this phase. Deferred client optimization is separately recorded in deferred-client-optimization.md and does not affect this audit or readiness.
 
 ## Owner result

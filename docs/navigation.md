@@ -50,3 +50,8 @@ Latest bulk checkpoint: docs/bulk-baseline-validation.md; scripts/validate-basel
 ## S6 semantic diff / client ID crosswalk checkpoint
 
 Read s6-baseline-diff.md before imports or baseline-gap claims. Reuse scripts/diff-baseline-s6.py with patches/s6-reference-projection.json; decode-s6-client-tables.py and crosscheck-s6-client-ids.py use exact pinned tables. Machine-readable docs/s6-baseline-diff.json and s6-client-crosswalk.json distinguish MATCH/UNKNOWN/mapping from admitted gaps. Line numbers are EXTRACTED_CONTEXT. Exact next work: recipe requirements/outcomes and16legacyquests; no repeated bulk/trade checks.
+
+
+## Legacy quest crosswalk / next recipe mapping
+
+Read s6-legacy-quest-codex-handoff.md for completed decoder scope/results and test-history.md for exact layout, class/request rules and recipe false positives. All16legacydefinitions match selected fields; inherited levels/prerequisites/item levels/rewards remainUNKNOWN. Do not decode the format again. Next WORK investigation:38recipe variants/category/ingredient/rate/outcome rules; localized mapper implementation is CODEX PREFERRED after acceptance is clear. Updated s6-client-crosswalk.json includes recipe_mapping_scope. Three handler-only recipes are28/8/2;35simple settings and16handlers overlap, not separate totals. Current-state.md remains the exact resume point.
