@@ -1,0 +1,33 @@
+{
+  "sources": [
+    {
+      "path": "src/GameServer/RemoteView/ItemSerializer.cs",
+      "repository": "MUnique/OpenMU",
+      "pin": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "blob": "eb9747d4f970690a6b8d244a6bcd29f5b14727a9"
+    },
+    {
+      "path": "src/GameServer/RemoteView/ItemSerializerHelper.cs",
+      "repository": "MUnique/OpenMU",
+      "pin": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "blob": "425d8a6c50a88a1eff11c9710d5ac2f6865759d7"
+    },
+    {
+      "path": "src/GameServer/RemoteView/ItemSerializerExtended.cs",
+      "repository": "MUnique/OpenMU",
+      "pin": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "blob": "b5a60f87ec3ff6e8c3afe014a9494c3ccbd943f1"
+    },
+    {
+      "path": "src/source/UI/NewUI/Inventory/NewUIItemMng.cpp",
+      "repository": "ncuxonat7-oss/MuMain",
+      "pin": "8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5",
+      "blob": "42c7b1e88ce1f27ae74b12285866a15b5cd4ddb5"
+    }
+  ],
+  "prior_sources": "patches/s6-recipe-source-provenance.json",
+  "limits": [
+    "Pinned native CreateItem invokes Extended parsing; classic serializer alone cannot establish correspondence",
+    "Runtime serializer plugin selection not re-tested"
+  ]
+}
