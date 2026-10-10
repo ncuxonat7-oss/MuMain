@@ -1,4 +1,14 @@
 {
-  "id": "idle",
-  "steps": []
+  "id": "r17-route-calibrate",
+  "steps": [
+    {
+      "op": "click",
+      "x": 400,
+      "y": 405
+    },
+    {
+      "op": "capture",
+      "name": "r17-route-calibrate"
+    }
+  ]
 }
