@@ -1,0 +1,41 @@
+# Bounded skill-41 native proof — preparation and blocked launch
+
+2026-10-10. Task branch starts at main `6fdebbddb15e584a07ff9c18262a5ae78873683b`. The owner authorized narrow evidence tooling and one finite Twisting Slash learn/use/relog session on an isolated disposable restored snapshot. This supersedes the earlier permission/preflight wording in [draft PR #1 plan](https://github.com/ncuxonat7-oss/MuMain/blob/72c4c9ea44d09b358428ec427f0380e75592b563/docs/s6-gameplay-input-readiness.md). That PR and the separate PvP research branch are unchanged and unmerged.
+
+## Prepared scope
+
+`standard-gameplay.yml` accepts `scenario=skill41`; omitted/default `trade` retains the existing actor, main-branch control polling and cancellation checks. Skill41 uses the existing ordinary actor, reads controls only from the dispatched task ref and runs a separate persistence assessment. No arbitrary SQL/control executor was added. The initial task control remains `idle`.
+
+Each existing snapshot call in skill41 mode additionally reads only the fixed actor's SkillEntry rows in an explicit read-only transaction. The output includes actor identity/existence, count and an explicit empty skills array. The ready-stage guard stops before control batches if skill41 already exists; no replacement fixture or skill removal is allowed. Capture failure also stops. Final evidence remains uploaded by the existing always-run preservation step.
+
+The separate evaluator requires ready, `skill41-relog` and final snapshots. It checks absence initially, exactly the target skill added after relog, its survival after shutdown, initial orb identity/quantity, global orb absence after relog, other actor item IDs and Money, and untouched core DK state. It does not infer gameplay from filenames: native learning/relog sequence must be reviewed. Accepted use/effect/cost and the full proof remain UNKNOWN until independently demonstrated; a persistence-only success is not a full gameplay PASS. No existing trade validator was modified.
+
+## Reused preflight and identities
+
+The supplied saved-data preflight is reused, not rerun: actor `test300Dk` is Blade Knight class 6, level300, and qualifies for the existing orb's level80/class requirements. Orb(12,7) at inventory slot56 links ordinary skill41. One orb is already present; no purchase/grant is needed. Saved mana/AG exceed the configured 10/10 costs; runtime resources and weapon restrictions still require observation. Blade's own skill22 is not proof of skill41 usability.
+
+- Actor: `511da101-0000-7171-e6b7-6ed8654174ee`; skill definition: `00000400-0029-0000-0000-000000000000`.
+- Orb instance: `511da101-0000-780d-d7a9-a661c1e70ec8`; definition: `00000080-000c-0007-0000-000000000000`.
+- Native pin `8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5`; OpenMU pin `d067b3c11c23c3145de6e2c76201ab9a93b267c8` with the current actual-storage Money patch.
+- Existing baseline-data-final run38005996341/artifact11651520969: archive SHA256 `b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea`; export SHA256 `8bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a`.
+- Existing client run37813650810/artifact11567737809 and patched runtime run37959672391/artifact11630698202; exact Data/fonts and inner hashes remain in [resource registry](resource-registry.md).
+- The fixed query's schema/columns were checked against [pinned SkillEntry mapping](https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/CompiledModels/AccountContext/SkillEntryEntityType.cs), blob `5836575f2e47a2c9ac594e01243090cbd7f3a1f3`.
+
+## Launch blocker and honest result
+
+The existing CLI access path returned `Get "https://api.github.com/repos/ncuxonat7-oss/MuMain/actions/workflows/standard-gameplay.yml": Forbidden` on a read-only workflow metadata request. No dispatch operation is exposed by the available GitHub connector. This does not establish whether the repository itself would accept branch dispatch; that was not exercised. No new credentials, security permissions, alternate credential route or main merge were attempted. No workflow was dispatched, no run URL exists, and the one authorized gameplay run has not been consumed.
+
+| Dimension | Result |
+|---|---|
+| Supplied saved actor/orb/class/level preflight | PASS within saved-data scope; reused |
+| Local YAML/Python/embedded-JS syntax, diff and scope checks | PASS: YAML parse/default/permissions/timeout; Python AST; JS syntax in the Actions async wrapper; unchanged trade validator/command; fixed read-only query/empty-array guards. Not runtime tests. |
+| PowerShell execution / live query | UNKNOWN; not executed locally |
+| Skill absence in restored DB | UNKNOWN |
+| Native learning, accepted use/effect/cost, relog persistence | UNKNOWN; no gameplay FAIL inferred |
+| Canonical baseline safety | Unchanged; no DB restored, edited or promoted |
+
+## Single remaining handoff
+
+Use an already authorized, supported dispatch-capable Work environment; do not provision credentials or merge this branch to work around the blocker. After reviewing this narrow tooling, dispatch `standard-gameplay.yml` once on the task branch with `scenario=skill41`, within the existing 25-minute timeout. Reuse the recorded binaries/resources and isolated snapshot. Review ready evidence before any learning; if skill41 exists or a runtime prerequisite fails, stop. Otherwise consume the existing orb through native UI, distinguish one skill41 use from skill22/basic attack using actual accepted effect/cost evidence, then relog and issue a snapshot batch named `skill41-relog`. Review the consumed native control sequence, screenshots and DB captures together. Unknown cost/effect evidence must remain UNKNOWN. Finish and retain narrow evidence without promoting the disposable DB.
+
+No builds, grants/removals, stat/config changes, other skills/events or expanded fixtures. Stop after two identical failures or any new access/cost boundary. Readiness remains65.5/model1.1/MEDIUM. Future runtime risk/cost MEDIUM; preparation alone earns no gameplay credit.
