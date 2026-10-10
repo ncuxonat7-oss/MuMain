@@ -1,3 +1,9 @@
+# OWNER UPDATE — 2026-10-10 evening
+
+This section supersedes the old next-action queues below; historical evidence is preserved. See [owner strategy and mechanics index](s6-strategy-and-mechanics-index.md). Mix38 is closed at the evidence closeout; do not repeat old EXACT NEXT. Run16 skill41 native learning/persistence PASS. Run17 fixture preserved, cast=0; accepted use remains UNKNOWN. Heavy instrumentation attempt stopped. Current priority: coherent Windows 11 private playable package plus bounded key code/data compatibility checks without owner PC, followed by real owner bug reports and targeted fixes. Normal-player journey testing belongs to owner; agents retain technical/security/integration checks. No exhaustive mechanics audit or broad continuous-improvement implementation. Windows 11 confirmed; hardware/host unchosen; no ready one-click package. Readiness 65.5/model1.1/MEDIUM unchanged. This is a docs-branch update, not a main merge or baseline promotion.
+
+---
+
 # Current confirmed state — 2026-10-10
 
 ## NEWEST OPTION CONTINUATION — authoritative next step
