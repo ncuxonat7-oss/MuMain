@@ -1,0 +1,35 @@
+{
+  "client_pin": "8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5",
+  "data_tree": "77f7830f542d106fc519c8821832d49a3dd8ae3a",
+  "baseline_writes": 0,
+  "files": [
+    {
+      "path": "Local/Eng/skill_eng.bmd",
+      "git_blob": "30a6894364bf526a336a451aa72f74641ef8c812",
+      "size": 70204,
+      "sha256": "8ca29f43317552a639fea84153dafb1cc263453318bbbe6d40ca41caacb69982"
+    },
+    {
+      "path": "Local/Eng/Quest_eng.bmd",
+      "git_blob": "ab9472e9f3bccd074edea7003b7404834e9ac085",
+      "size": 148800,
+      "sha256": "561994c1857edf66c253d868c9babc9b86ab41af104ec162c4131e3bd850f89b"
+    },
+    {
+      "path": "Local/QuestProgress.bmd",
+      "git_blob": "25049cccb137ad2014cdf184b8f3cc320b3edb81",
+      "size": 37515,
+      "sha256": "7a06127781fffac83d993d1cdc1f7d1f63a320c790702cf6181165771d82be52"
+    },
+    {
+      "path": "Local/mix.bmd",
+      "git_blob": "0a24d6da76e72af82473951bf930e3f9ea9d0633",
+      "size": 65000,
+      "sha256": "fa3f7a4bd3b35846812492864c0d36ce4753cc9583d25c1a09d6dcd363629894"
+    }
+  ],
+  "run": 38008949221,
+  "artifact": 11652516455,
+  "conclusion": "success",
+  "head": "289310534c6f75719ff6043961007ef2038f2f5e"
+}
