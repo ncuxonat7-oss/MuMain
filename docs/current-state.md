@@ -2,7 +2,7 @@
 
 ## NEWEST OPTION CONTINUATION — authoritative next step
 
-Ordered seven-recipe/34-variant result and mix38 option investigation are prepared, NOT pushed. GitHub durable head still4e3e6ea; direct default-branch write was rejected by automatic approval review. Full pending file list is in CHECKPOINT.md in the continuation archive. No bypass; ask owner approval after delivering the prepared checkpoint.
+Owner approved persistence of all nine prepared files on 2026-10-10. Ordered seven-recipe/34-variant result and mix38 option investigation are saved in GitHub main at checkpoint10ed3acb8c6b888dbbe69c934403e7c550d38a51. All nine Git blob hashes matched the approved archive. Earlier pending-write/approval messages are superseded; do not ask again to save these files. No baseline changes or readiness credit.
 
 Pinned native extended parsing confirmed. Native SET derives from set discriminator; server Ancient Bonus Option checks presence, not membership. New guarded audit:149configured ancient links,148bonus-capable,1bonusless(13,28) outside mix38 native item/level scope.6NEWtestsPASS. No runtime defect inferred. Prior34variant results retained; readiness65.5/model1.1/MEDIUM/RED0 unchanged, baseline untouched.
 
