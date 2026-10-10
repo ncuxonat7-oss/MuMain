@@ -1,6 +1,22 @@
 # Current confirmed state — 2026-10-10
 
+## NEWEST OPTION CONTINUATION — authoritative next step
+
+Ordered seven-recipe/34-variant result and mix38 option investigation are prepared, NOT pushed. GitHub durable head still4e3e6ea; direct default-branch write was rejected by automatic approval review. Full pending file list is in CHECKPOINT.md in the continuation archive. No bypass; ask owner approval after delivering the prepared checkpoint.
+
+Pinned native extended parsing confirmed. Native SET derives from set discriminator; server Ancient Bonus Option checks presence, not membership. New guarded audit:149configured ancient links,148bonus-capable,1bonusless(13,28) outside mix38 native item/level scope.6NEWtestsPASS. No runtime defect inferred. Prior34variant results retained; readiness65.5/model1.1/MEDIUM/RED0 unchanged, baseline untouched.
+
+EXACT NEXT (WORK): join mix38 candidate domains to configured set/normal options and generation-level invariants, trace remaining native wing/accessory option branches; specify full option-aware allocator acceptance for CODEX once localized. See newest s6-recipe-audit.md and patches/s6-option-source-provenance.json. No old projections/tests/runtime/build/trade/IT/Crywolf/client optimization.
+
 ## NEWEST CONTINUATION — supersedes next-action overrides below
+
+Ordered ingredient crosswalk from GitHub4e3e6eaae86df9ace1cabcd858ba46973272c2f2 completed. New scripts/map-s6-ordered-ingredients.py +16NEWtargetedtestsPASS; docs/s6-ordered-ingredients.json maps seven simple-handler recipes3/4/22/23/38/49/50 and34variants, preserving file order, positive masks, option/durability/count predicates and explicitUNKNOWN. Deterministic replay identical; baseline export SHA unchanged. Six upgrade target amounts and other jewel/Chaos predicates field-scopedMATCH; server wildcard includes Box of Luck(14,11) at levels9…14 beyond native range. Mix38server wildcard adds205configured item/level states; option/flag eligibility and overlapping allocation remainUNKNOWN. These are partial STATIC mappings, not runtime defects/fullrecipeMATCH/import/fix. Readiness65.5unchanged/model1.1/MEDIUM/criticalRED0. Details/limits in latest s6-recipe-audit.md. Prior plain/container/rate/bulk tests not repeated.
+
+EXACT NEXT (WORK): establish mix38 Option level/value and Ancient Bonus Option correspondence to native Special values/AncientDiscriminator from pinned native construction and OpenMU serialization/configuration. Then localize full ordered allocator/option validation (CODEX PREFERRED) if acceptance becomes clear. Do not repeat seven ordered projections, four capacity/container proofs or fourteen plain normalization. Customhandlers/outcomes/NPCwire/legacyquest fullrequirements remain unfinished. No corrections/import/build/trade/IT/Crywolf/clientoptimization; retain earlier potion/Fenrir policy differences and unknown runtime.
+
+## PREVIOUS CAPACITY/CONTAINER CHECKPOINT
+
+
 
 Capacity/container phase from3fd4d41 completed. scripts/audit-s6-recipe-containers.py +10NEWtargetedtestsPASS; deterministic replay identical; export SHA unchanged. docs/s6-recipe-containers.json: fourMixIDs15/16/25/26. Both native/server grid8x4;26..32Bless/Soul fit/entryeligible but nativeCountMax25rejects versus serverunbounded. Fenrir full containers pass both; fragmented equal totals servereligible/nativeentryblocked; no implicit temporary-storage merge. STATIC ingredient-policy differences; actual runtime/request/results UNKNOWN; no fix/import admitted. Provenance in patches/s6-container-source-provenance.json; detailed limits in latest s6-recipe-audit.md. BaselineReadiness65.5unchanged/model1.1/MEDIUM/criticalRED0.
 

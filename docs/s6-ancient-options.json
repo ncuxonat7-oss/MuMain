@@ -1,0 +1,2687 @@
+{
+  "mode": "DRY_RUN",
+  "baseline_writes": 0,
+  "safe_import_plan": [],
+  "mix_id": 38,
+  "summary": {
+    "ancient_set_links": 149,
+    "classifications": {
+      "BONUS_CAPABLE_SET": 148,
+      "SET_WITHOUT_BONUS": 1
+    }
+  },
+  "links": [
+    {
+      "set_item_id": "00000093-000d-001c-0100-000000000000",
+      "group": 13,
+      "number": 28,
+      "discriminator": 1,
+      "classification": "SET_WITHOUT_BONUS",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0000-0002-0100-000000000000",
+      "group": 0,
+      "number": 2,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0000-000e-0100-000000000000",
+      "group": 0,
+      "number": 14,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0002-0001-0100-000000000000",
+      "group": 2,
+      "number": 1,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0004-0005-0100-000000000000",
+      "group": 4,
+      "number": 5,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0004-0009-0100-000000000000",
+      "group": 4,
+      "number": 9,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0005-0000-0100-000000000000",
+      "group": 5,
+      "number": 0,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0006-0000-0100-000000000000",
+      "group": 6,
+      "number": 0,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0000-0100-000000000000",
+      "group": 7,
+      "number": 0,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0001-0100-000000000000",
+      "group": 7,
+      "number": 1,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0001-0200-000000000000",
+      "group": 7,
+      "number": 1,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0002-0100-000000000000",
+      "group": 7,
+      "number": 2,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0002-0200-000000000000",
+      "group": 7,
+      "number": 2,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0003-0100-000000000000",
+      "group": 7,
+      "number": 3,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0003-0200-000000000000",
+      "group": 7,
+      "number": 3,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0004-0100-000000000000",
+      "group": 7,
+      "number": 4,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0005-0100-000000000000",
+      "group": 7,
+      "number": 5,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0005-0200-000000000000",
+      "group": 7,
+      "number": 5,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0006-0100-000000000000",
+      "group": 7,
+      "number": 6,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0006-0200-000000000000",
+      "group": 7,
+      "number": 6,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0007-0100-000000000000",
+      "group": 7,
+      "number": 7,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0008-0100-000000000000",
+      "group": 7,
+      "number": 8,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0009-0100-000000000000",
+      "group": 7,
+      "number": 9,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-000a-0100-000000000000",
+      "group": 7,
+      "number": 10,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-000a-0200-000000000000",
+      "group": 7,
+      "number": 10,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-000b-0100-000000000000",
+      "group": 7,
+      "number": 11,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-000c-0100-000000000000",
+      "group": 7,
+      "number": 12,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-000d-0200-000000000000",
+      "group": 7,
+      "number": 13,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-000e-0200-000000000000",
+      "group": 7,
+      "number": 14,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-001a-0100-000000000000",
+      "group": 7,
+      "number": 26,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0028-0100-000000000000",
+      "group": 7,
+      "number": 40,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0007-0028-0200-000000000000",
+      "group": 7,
+      "number": 40,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0000-0100-000000000000",
+      "group": 8,
+      "number": 0,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0001-0200-000000000000",
+      "group": 8,
+      "number": 1,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0002-0100-000000000000",
+      "group": 8,
+      "number": 2,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0003-0100-000000000000",
+      "group": 8,
+      "number": 3,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0003-0200-000000000000",
+      "group": 8,
+      "number": 3,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0004-0100-000000000000",
+      "group": 8,
+      "number": 4,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0004-0200-000000000000",
+      "group": 8,
+      "number": 4,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0005-0100-000000000000",
+      "group": 8,
+      "number": 5,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0006-0100-000000000000",
+      "group": 8,
+      "number": 6,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0006-0200-000000000000",
+      "group": 8,
+      "number": 6,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0007-0100-000000000000",
+      "group": 8,
+      "number": 7,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0007-0200-000000000000",
+      "group": 8,
+      "number": 7,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0008-0100-000000000000",
+      "group": 8,
+      "number": 8,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0009-0100-000000000000",
+      "group": 8,
+      "number": 9,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0009-0200-000000000000",
+      "group": 8,
+      "number": 9,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-000a-0100-000000000000",
+      "group": 8,
+      "number": 10,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-000b-0100-000000000000",
+      "group": 8,
+      "number": 11,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-000c-0100-000000000000",
+      "group": 8,
+      "number": 12,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-000d-0100-000000000000",
+      "group": 8,
+      "number": 13,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-000e-0100-000000000000",
+      "group": 8,
+      "number": 14,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-000e-0200-000000000000",
+      "group": 8,
+      "number": 14,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-000f-0100-000000000000",
+      "group": 8,
+      "number": 15,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-000f-0200-000000000000",
+      "group": 8,
+      "number": 15,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-001a-0100-000000000000",
+      "group": 8,
+      "number": 26,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0008-0028-0200-000000000000",
+      "group": 8,
+      "number": 40,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0000-0100-000000000000",
+      "group": 9,
+      "number": 0,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0000-0200-000000000000",
+      "group": 9,
+      "number": 0,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0001-0200-000000000000",
+      "group": 9,
+      "number": 1,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0002-0100-000000000000",
+      "group": 9,
+      "number": 2,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0002-0200-000000000000",
+      "group": 9,
+      "number": 2,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0003-0200-000000000000",
+      "group": 9,
+      "number": 3,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0004-0100-000000000000",
+      "group": 9,
+      "number": 4,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0005-0100-000000000000",
+      "group": 9,
+      "number": 5,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0005-0200-000000000000",
+      "group": 9,
+      "number": 5,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0006-0100-000000000000",
+      "group": 9,
+      "number": 6,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0006-0200-000000000000",
+      "group": 9,
+      "number": 6,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0007-0100-000000000000",
+      "group": 9,
+      "number": 7,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0007-0200-000000000000",
+      "group": 9,
+      "number": 7,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0008-0100-000000000000",
+      "group": 9,
+      "number": 8,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0008-0200-000000000000",
+      "group": 9,
+      "number": 8,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0009-0100-000000000000",
+      "group": 9,
+      "number": 9,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000a-0100-000000000000",
+      "group": 9,
+      "number": 10,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000a-0200-000000000000",
+      "group": 9,
+      "number": 10,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000b-0100-000000000000",
+      "group": 9,
+      "number": 11,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000b-0200-000000000000",
+      "group": 9,
+      "number": 11,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000c-0100-000000000000",
+      "group": 9,
+      "number": 12,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000c-0200-000000000000",
+      "group": 9,
+      "number": 12,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000d-0100-000000000000",
+      "group": 9,
+      "number": 13,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000d-0200-000000000000",
+      "group": 9,
+      "number": 13,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000e-0200-000000000000",
+      "group": 9,
+      "number": 14,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000f-0100-000000000000",
+      "group": 9,
+      "number": 15,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-000f-0200-000000000000",
+      "group": 9,
+      "number": 15,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-001a-0100-000000000000",
+      "group": 9,
+      "number": 26,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-001a-0200-000000000000",
+      "group": 9,
+      "number": 26,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0009-0028-0100-000000000000",
+      "group": 9,
+      "number": 40,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0000-0100-000000000000",
+      "group": 10,
+      "number": 0,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0001-0100-000000000000",
+      "group": 10,
+      "number": 1,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0002-0100-000000000000",
+      "group": 10,
+      "number": 2,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0003-0100-000000000000",
+      "group": 10,
+      "number": 3,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0004-0100-000000000000",
+      "group": 10,
+      "number": 4,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0005-0100-000000000000",
+      "group": 10,
+      "number": 5,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0006-0100-000000000000",
+      "group": 10,
+      "number": 6,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0007-0100-000000000000",
+      "group": 10,
+      "number": 7,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0008-0100-000000000000",
+      "group": 10,
+      "number": 8,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0009-0100-000000000000",
+      "group": 10,
+      "number": 9,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-000a-0100-000000000000",
+      "group": 10,
+      "number": 10,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-000b-0100-000000000000",
+      "group": 10,
+      "number": 11,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-000b-0200-000000000000",
+      "group": 10,
+      "number": 11,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-000c-0100-000000000000",
+      "group": 10,
+      "number": 12,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-000d-0100-000000000000",
+      "group": 10,
+      "number": 13,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-000e-0100-000000000000",
+      "group": 10,
+      "number": 14,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-000f-0200-000000000000",
+      "group": 10,
+      "number": 15,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-001a-0200-000000000000",
+      "group": 10,
+      "number": 26,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0028-0100-000000000000",
+      "group": 10,
+      "number": 40,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000a-0028-0200-000000000000",
+      "group": 10,
+      "number": 40,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0000-0100-000000000000",
+      "group": 11,
+      "number": 0,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0001-0100-000000000000",
+      "group": 11,
+      "number": 1,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0002-0100-000000000000",
+      "group": 11,
+      "number": 2,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0003-0200-000000000000",
+      "group": 11,
+      "number": 3,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0004-0100-000000000000",
+      "group": 11,
+      "number": 4,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0004-0200-000000000000",
+      "group": 11,
+      "number": 4,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0005-0100-000000000000",
+      "group": 11,
+      "number": 5,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0005-0200-000000000000",
+      "group": 11,
+      "number": 5,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0006-0100-000000000000",
+      "group": 11,
+      "number": 6,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0007-0100-000000000000",
+      "group": 11,
+      "number": 7,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0007-0200-000000000000",
+      "group": 11,
+      "number": 7,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0008-0100-000000000000",
+      "group": 11,
+      "number": 8,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0009-0100-000000000000",
+      "group": 11,
+      "number": 9,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000a-0100-000000000000",
+      "group": 11,
+      "number": 10,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000a-0200-000000000000",
+      "group": 11,
+      "number": 10,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000b-0100-000000000000",
+      "group": 11,
+      "number": 11,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000c-0100-000000000000",
+      "group": 11,
+      "number": 12,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000c-0200-000000000000",
+      "group": 11,
+      "number": 12,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000d-0200-000000000000",
+      "group": 11,
+      "number": 13,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000e-0100-000000000000",
+      "group": 11,
+      "number": 14,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000e-0200-000000000000",
+      "group": 11,
+      "number": 14,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-000f-0100-000000000000",
+      "group": 11,
+      "number": 15,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-001a-0200-000000000000",
+      "group": 11,
+      "number": 26,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000b-0028-0200-000000000000",
+      "group": 11,
+      "number": 40,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0008-0100-000000000000",
+      "group": 13,
+      "number": 8,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0009-0100-000000000000",
+      "group": 13,
+      "number": 9,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0009-0200-000000000000",
+      "group": 13,
+      "number": 9,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-000c-0100-000000000000",
+      "group": 13,
+      "number": 12,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-000d-0100-000000000000",
+      "group": 13,
+      "number": 13,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0015-0100-000000000000",
+      "group": 13,
+      "number": 21,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0015-0200-000000000000",
+      "group": 13,
+      "number": 21,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0016-0100-000000000000",
+      "group": 13,
+      "number": 22,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0016-0200-000000000000",
+      "group": 13,
+      "number": 22,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0017-0100-000000000000",
+      "group": 13,
+      "number": 23,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0018-0100-000000000000",
+      "group": 13,
+      "number": 24,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0018-0200-000000000000",
+      "group": 13,
+      "number": 24,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0019-0100-000000000000",
+      "group": 13,
+      "number": 25,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-0019-0200-000000000000",
+      "group": 13,
+      "number": 25,
+      "discriminator": 2,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-001a-0100-000000000000",
+      "group": 13,
+      "number": 26,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-000d-001b-0100-000000000000",
+      "group": 13,
+      "number": 27,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0006-0006-0100-000000000000",
+      "group": 6,
+      "number": 6,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    },
+    {
+      "set_item_id": "00000093-0006-0009-0100-000000000000",
+      "group": 6,
+      "number": 9,
+      "discriminator": 1,
+      "classification": "BONUS_CAPABLE_SET",
+      "native_item_level_candidate_levels": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligibility": "UNKNOWN: actual options, generation, full allocation and runtime"
+    }
+  ],
+  "limits": [
+    "Bonus-capable definition is not a generated bonus option",
+    "Client SET uses discriminator; server requires Ancient Bonus Option presence",
+    "Native item/level candidates exclude no option, durability or allocation states",
+    "No full-recipe equivalence, runtime defect or readiness credit"
+  ],
+  "inputs": {
+    "baseline_sha256": "8bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a",
+    "native_pin": "8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5",
+    "sources": "patches/s6-option-source-provenance.json"
+  }
+}
