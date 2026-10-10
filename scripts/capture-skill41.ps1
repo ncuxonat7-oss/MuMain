@@ -1,7 +1,8 @@
 param(
     [Parameter(Mandatory = $true)][string]$PgBin,
     [Parameter(Mandatory = $true)][string]$Evidence,
-    [Parameter(Mandatory = $true)][ValidatePattern('^[a-zA-Z0-9-]{1,40}$')][string]$Stage
+    [Parameter(Mandatory = $true)][ValidatePattern('^[a-zA-Z0-9-]{1,40}$')][string]$Stage,
+    [switch]$UseOnly
 )
 
 $ErrorActionPreference = 'Stop'
@@ -25,6 +26,10 @@ $snapshot = Get-Content $outputPath -Raw | ConvertFrom-Json
 if (!$snapshot.actor_exists -or $snapshot.skill_count -ne @($snapshot.skills).Count) {
     throw 'Skill41 capture identity/count guard failed'
 }
-if ($Stage -eq 'ready' -and @($snapshot.skills | Where-Object { $_.SkillId -eq '00000400-0029-0000-0000-000000000000' }).Count -gt 0) {
+if ($Stage -eq 'ready' -and $UseOnly) {
+    python "$PSScriptRoot/check-skill41-use.py" --evidence $Evidence --ready
+    if ($LASTEXITCODE) { throw 'STOP: use-only run16 fixture guard failed' }
+}
+if (!$UseOnly -and $Stage -eq 'ready' -and @($snapshot.skills | Where-Object { $_.SkillId -eq '00000400-0029-0000-0000-000000000000' }).Count -gt 0) {
     throw 'STOP: skill 41 already exists; preserve evidence, no learning or replacement fixture'
 }
