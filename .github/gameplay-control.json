@@ -1,4 +1,16 @@
 {
-  "id": "idle",
-  "steps": []
+  "id": "r16-orb-inspect",
+  "steps": [
+    {
+      "op": "key",
+      "vk": 73
+    },
+    {
+      "op": "capture",
+      "name": "r16-inventory"
+    },
+    {
+      "op": "snapshot"
+    }
+  ]
 }
