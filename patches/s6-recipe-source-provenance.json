@@ -1,0 +1,57 @@
+{
+  "server_pin": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "native_pin": "8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5",
+  "baseline_sha256": "8bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a",
+  "sources": [
+    {
+      "path": "src/source/GameLogic/Items/MixMgr.cpp",
+      "repository": "ncuxonat7-oss/MuMain",
+      "materialized_git_blob": "c91ce9a30a99f511f89a474256a0af63302049e2",
+      "git_blob": "38e7aa82037db0998b8ef6d66a6e5d2a8c8e6689",
+      "materialized_sha256": "846f4e40208b777eb78187fb15a6b88a63f03098eed37708eb52a7d4bce30fbe"
+    },
+    {
+      "path": "src/source/GameLogic/Items/MixMgr.h",
+      "repository": "ncuxonat7-oss/MuMain",
+      "materialized_git_blob": "3e1a748abdec7838e773f0ecb40ee79139fa83fb",
+      "git_blob": "b4253bc6290be23f2883f7d9e6fe0904e8d7f639",
+      "materialized_sha256": "6b29f30bd54d391e567858c304b953df61f3ef797875ba8aefa08d2f06465cea"
+    },
+    {
+      "path": "src/source/Network/Server/WSclient.cpp",
+      "repository": "ncuxonat7-oss/MuMain",
+      "materialized_git_blob": "e709bc61e2ce6c3611cff68481d68abcce3cf239",
+      "git_blob": "1063691e62a1615a3809cee32be69a5ec3c6fad1",
+      "materialized_sha256": "7efb57194026609dff4c85205c90a26d1af9f27b3d9d41f5e42e2d5cc5abab9d"
+    },
+    {
+      "path": "src/GameLogic/PlayerActions/Items/SimpleItemCraftingHandler.cs",
+      "repository": "MUnique/OpenMU",
+      "materialized_git_blob": "e9ee7ab2c1c73078e059644b5819f4af824d0021",
+      "git_blob": "6929f98dec81863ea0bb8f288d70318a0d634e1d",
+      "materialized_sha256": "162c5018e456a9ac3dd165d9279dc5f52f032d9bcec1c3dd3597eaa5dccbbf87"
+    },
+    {
+      "path": "src/GameLogic/PlayerActions/Items/ItemCraftAction.cs",
+      "repository": "MUnique/OpenMU",
+      "materialized_git_blob": "019e43d15d8ce57ca1b3423e769aad936e9512f9",
+      "git_blob": "d544efa24dfb2815c5198be68356038bdae74e9b",
+      "materialized_sha256": "f23eea1aa7e57b22d3593a88a51fd340e3508834438c567cb08bc4badb60d65f"
+    },
+    {
+      "path": "src/GameLogic/ItemExtensions.cs",
+      "repository": "MUnique/OpenMU",
+      "materialized_git_blob": "0950f235140d729e7722e6bd650fb84fa9a1101a",
+      "git_blob": "d00741ab679bbd5f3e4c9c7576edda0ed0e9d7d4",
+      "materialized_sha256": "447f4fbca10bfa4f59040bc695ae67a3b5692d014056ede3fa464876725e550e"
+    },
+    {
+      "path": "src/DataModel/ItemExtensions.cs",
+      "repository": "MUnique/OpenMU",
+      "materialized_git_blob": "32bf19d4147da0ac7810040b3b514f96e24e402d",
+      "git_blob": "2ae96ee535bf6c831ed79d91d19b163b7f3c9189",
+      "materialized_sha256": "027d0f78996030b9ac2813c2cc2ba89963c867d5bb93b34570a1994fa2077e40"
+    }
+  ],
+  "materialization_note": "Public pinned source fetched as UTF-8 text; local reading copies normalize line endings/trailing newline. git_blob is the authoritative repository tree identity; materialized hashes describe the local text copies, not raw repository bytes."
+}
