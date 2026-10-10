@@ -1,8 +1,8 @@
 # Bounded skill-41 native proof — preparation and blocked launch
 
-Latest status: owner-launched run #15 reached the corrected input guard but
-failed the output hash guard before server/DB startup. See
-[run #15 terminal result](#run-15-terminal-result--2026-10-10).
+Latest status: the locale-dependent overlay read is now explicitly UTF-8,
+with a CLI regression; no new gameplay run. See
+[UTF-8 preparation fix](#utf-8-preparation-fix--2026-10-10).
 Historical no-run/dispatch instructions below are superseded; no new dispatch
 is authorized by this checkpoint.
 
@@ -150,3 +150,37 @@ no gameplay credit. One next step: locally investigate Windows overlay text
 decoding (`read_text()` has no explicit encoding) against the pinned UTF-8
 specification and output hash. Encoding is a hypothesis, not an established
 root cause; do not rerun the workflow to investigate it.
+
+## UTF-8 preparation fix — 2026-10-10
+
+The previous focused test parsed the specification using
+`json.loads(read_bytes())` and called `apply()` directly. It bypassed the CLI's
+locale-dependent `read_text()`, so its PASS did not cover specification decoding.
+The CLI now uses `read_text(encoding='utf-8')`; this is the sole production-code
+change. Neither hash guard, either expected hash, nor any correction changed.
+
+CP1252 decoding of the UTF-8 specification reproducibly changes only the German
+names for items73/74 from `Sphäre` to `SphÃ¤re`. Corrected output becomes49,095
+bytes, SHA256 `006c93204d2b0049cd0e98156ef000660bdfa21cc9209e1f67b504eb4209fde5`,
+instead of the reviewed49,091 bytes / `1441360f…bb73`. LF versus CRLF in the
+specification produces identical parsed/output results for each encoding.
+
+Reusable regression (requires the already verified authentic input locally):
+
+```sh
+PYTHONUTF8=0 PYTHONDONTWRITEBYTECODE=1 python scripts/test-client-overlay-encoding.py --source /path/to/authentic/Group12_Wing.json
+```
+
+It runs the real CLI entry point via `runpy`, including argparse and specification
+loading, on a temporary target. Text opens with no explicit encoding (including
+the `locale` sentinel) are emulated as CP1252; explicit UTF-8 is honored. Before
+the fix it exited1 at the output-hash guard. After the fix it passed, asserting
+`APPLIED`, the unchanged full reviewed SHA256, and both correct German names.
+No old input/idempotence/backup tests were repeated. Diff inspection confirms
+the one-line production change and unchanged specification/guards.
+
+This confirms the encoding failure mechanism and closes the test-coverage gap.
+Run15's actual Python default encoding and failed output SHA were not recorded,
+so attribution of that particular runner failure remains unconfirmed. No ZIP
+access retry, dispatch, build, runtime, DB, access/configuration change, merge or
+PR. Readiness **65.5%, MEDIUM**, no gameplay credit.

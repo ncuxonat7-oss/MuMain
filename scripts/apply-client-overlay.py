@@ -58,4 +58,4 @@ if __name__ == '__main__':
     parser.add_argument('--data', required=True, type=Path)
     parser.add_argument('--overlay', required=True, type=Path)
     args = parser.parse_args()
-    print(json.dumps(apply(args.data, json.loads(args.overlay.read_text()))))
+    print(json.dumps(apply(args.data, json.loads(args.overlay.read_text(encoding='utf-8')))))
