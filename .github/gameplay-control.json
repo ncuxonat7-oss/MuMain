@@ -1,14 +1,14 @@
 {
-  "id": "r17-route-calibrate",
+  "id": "r17-route-calibrate2",
   "steps": [
     {
       "op": "click",
-      "x": 400,
-      "y": 405
+      "x": 360,
+      "y": 460
     },
     {
       "op": "capture",
-      "name": "r17-route-calibrate"
+      "name": "r17-route-calibrate2"
     }
   ]
 }
