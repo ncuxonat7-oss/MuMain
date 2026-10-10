@@ -89,3 +89,8 @@ Validation:14 targeted tool tests PASS (7semantic,7binary/ID). Exact skill check
 ## Readiness evidence update
 
 The existing quest/recipe binary IDs **and requirements** criterion stays0: ID lookup is stronger now, but complete legacy quest and recipe requirement/outcome equivalence remains unresolved. No other acceptance criterion completed or verified local defect fixed in this phase. Therefore65.5→65.5,MEDIUM,0currentcriticalRED. Current absence of RED is owner-scope-aware and does not remove representative gameplay/stability unknowns. Future client optimization backlog changes no criterion, weight, gate or current priority.
+
+
+## Recipe follow-on checkpoint
+
+See s6-recipe-audit.md/json:38recipes/86variants normalized; partial cost/rate/category checks plus96boundedupgrade scenarios and13newtests. Combined-condition counterexamples require real-item eligibility proof before defect admission. Ingredients/outcomes remain mapping/UNKNOWN;source-diff7735/1380 and readiness65.5 unchanged. No newly admittedimport/fix.

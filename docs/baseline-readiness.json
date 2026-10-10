@@ -529,6 +529,15 @@
       "change": 0,
       "confidence": "MEDIUM",
       "milestone": "Owner Work/Codex routing persisted. Focused legacy BMD decoder +16selected-field crosswalk MATCH;14targetedformat/semantic testsPASS;38recipevariant preflight. Full requirements unresolved;no runtime/import/baseline writes;deferred optimization untouched."
+    },
+    {
+      "date": "2026-10-10",
+      "model": "1.1",
+      "previous_readiness": 65.5,
+      "readiness": 65.5,
+      "change": 0,
+      "confidence": "MEDIUM",
+      "milestone": "Recipe dryrun38recipes/86variants;38categorybindings/22costs/14constant rates field-scopedMATCH;96modelscenarios60MATCH/36unprovencombinedflag counterexamples;13focusedtestsPASS. Fullingredients/outcomes unproved;no admittedfix/import/runtime/baselinewrite."
     }
   ],
   "weighted_acceptance_evidence_coverage": {

@@ -55,3 +55,8 @@ Read s6-baseline-diff.md before imports or baseline-gap claims. Reuse scripts/di
 ## Legacy quest crosswalk / next recipe mapping
 
 Read s6-legacy-quest-codex-handoff.md for completed decoder scope/results and test-history.md for exact layout, class/request rules and recipe false positives. All16legacydefinitions match selected fields; inherited levels/prerequisites/item levels/rewards remainUNKNOWN. Do not decode the format again. Next WORK investigation:38recipe variants/category/ingredient/rate/outcome rules; localized mapper implementation is CODEX PREFERRED after acceptance is clear. Updated s6-client-crosswalk.json includes recipe_mapping_scope. Three handler-only recipes are28/8/2;35simple settings and16handlers overlap, not separate totals. Current-state.md remains the exact resume point.
+
+
+## Recipe semantic dry-run continuation
+
+Read s6-recipe-audit.md for38recipe/86variant projection, limits, source rules and exact next Work/Codex split. Reuse audit-s6-recipes.py and machine-readable s6-recipe-audit.json;13focused testsPASS. Combined-option counterexamples remain UNPROVEN reachability; no safe import or confirmed baseline defect. Do not replay older checks or deepen the scenario lattice. current-state.md is the resume point.
