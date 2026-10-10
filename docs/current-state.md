@@ -16,6 +16,8 @@ The real Money defect was an ItemStorageAdapter that forwarded Items but not non
 
 ## CURRENT UNFINISHED TASK / EXACT NEXT ACTION
 
+Owner routing decision persisted in work-codex-routing.md and AGENTS.md. Current recipe/legacy-quest cross-system semantics investigation is WORK; localized decoder/validator implementation becomes CODEX PREFERRED after formats/mappings and acceptance are clear. Do not duplicate work or assume shared session context. Client optimization remains DEFERRED. This routing decision adds no readiness credit and changes no S6 priority.
+
 S6 baseline diff and safe automation audit completed: docs/s6-baseline-diff.md + machine-readable diff/client-crosswalk; reusable scripts and pinned projections saved. 7,735 projected records all MATCH;1,380 current records UNKNOWN;84.86% selected-record adapter coverage is NOT overall S6 completeness. No confirmed missing mapped records, no new defect, no safe import candidate, no baseline mutation. Readiness65.5 unchanged; model1.1/MEDIUM/current critical RED0.
 
 Exact next recommended authorized analysis: extend the reusable semantic client/server crosswalk for38 scoped recipes and16legacy quests. MixID protocol≠MixIndex UI; verify category/NPC dispatch, ingredient ranges/counts/options, costs/rates/outcomes and legacy quest layout/requirements. Compare preserved export only, dry-run findings; no external writes without owner approval. Full existing IDs-and-requirements criterion could earn+2.5 only after proof; ID presence alone earns0. Audit stop condition reached; no next runtime/import job launched.

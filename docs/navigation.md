@@ -1,5 +1,7 @@
 # Navigation and lightweight bug reports
 
+Before substantial technical work, read work-codex-routing.md and classify WORK / CODEX PREFERRED / mixed WORK→CODEX. GitHub memory is shared truth; avoid duplicate execution and include the prescribed handoff when transferring a known coding scope.
+
 Future Client Modifiability / Extensibility Audit and client performance work must read [deferred-client-optimization.md](deferred-client-optimization.md). These owner tasks are DEFERRED and do not alter the current S6 baseline audit.
 
 Start with current-state.md, then only the relevant row below. S paths are relative to pinned MUnique/OpenMU; C paths to the pinned MuMain source. Database rows come from preserved baseline-config-evidence, not a newly initialized game.
