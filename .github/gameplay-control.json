@@ -1,14 +1,14 @@
 {
-  "id": "r17-route-calibrate2",
+  "id": "r17-route-join",
   "steps": [
     {
       "op": "click",
-      "x": 360,
-      "y": 460
+      "x": 385,
+      "y": 310
     },
     {
       "op": "capture",
-      "name": "r17-route-calibrate2"
+      "name": "r17-route-join"
     }
   ]
 }
