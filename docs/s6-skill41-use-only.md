@@ -1,4 +1,9 @@
-# Skill41 use-only preparation — local, not published or launched
+# Skill41 use-only preparation and run17 result
+
+Latest: owner authorized publication and manually launched run17, now terminal
+SUCCESS. See the run17 result and deferred continuous-improvement decision below.
+The original preparation-only scope in the historical sections is superseded
+only by that one completed run; no further launch is authorized here.
 
 2026-10-10. Owner authorized preparation only. Local branch
 `task/skill41-use-only` starts from `393a232d4eceeab2043f0eeee7b7714ee0a5851c`
@@ -118,3 +123,73 @@ Remaining runtime limits: actual Windows execution, Octokit ZIP transfer,
 server terrain equivalence/dynamic blockers, native route traversal, living target,
 resource/accepted-hit observability and capture latency. No full accepted-use
 PASS or guaranteed effect screenshot is claimed by this preparation.
+
+## Run17 — completed, use not attempted
+
+[Run38080436067](https://github.com/ncuxonat7-oss/MuMain/actions/runs/38080436067)
+ran on `task/skill41-use-only`, source
+`f40e3ba1c331f338cef386aa296c84e794f6c813`, 19:35:56Z–19:53:28Z on
+2026-10-10, terminal **success**. Scenario was confirmed by the executed use-only
+restore steps and skipped old-baseline restore. Exact run16 archive/fixture
+guards succeeded; ready evidence confirmed the known skill41 entry and initial
+Lorencia(118,140), HP110, Mana176, AG115. No relearning or orb action occurred.
+
+The sole controller issued nine native batches, ending with `r17-finish`.
+Parent inspected the actual screenshots. Observed route positions were
+(118,140) → (117,138) → (117,135) → (114,135) → (114,131) →
+(114,129) → (109,128) → **(101,127)**. This verifies only those observed native
+navigation milestones, not the entire planned route or every intervening tile.
+Two-second click settle was insufficient to assume full arrival; a settled
+capture and longer waits were used. No blind world-to-pixel conversion was
+treated as exact. Visible Guard/Phantom Soldier NPCs were not hostile targets.
+
+A legitimate hostile target and completed safe-zone exit were not established
+within the bounded command window. **Cast: NOT_ATTEMPTED (zero
+`skill41-cast` and zero generic right-click use commands). Accepted
+use/effect/cost: UNKNOWN.** This is not evidence of a skill defect and does not
+add gameplay credit. No actual-effect screenshot exists for this run.
+
+Live session, use-only fixture assessment and final preservation all succeeded.
+Final artifact **11680249154**, `gameplay-final`, 19,553,117 bytes, ZIP digest
+`sha256:f24fa559f55cea9274a715a71bd365ee0f51854e5b030f6d645325286af3d58e`,
+expires2027-01-08T19:35:57Z. It preserves final snapshots/DB, assertions, logs and
+`r17-final-position.png`. These artifact properties and assessment outcome were
+verified through GitHub; this controller did not download/inspect final ZIP
+contents. The parent must inspect final DB position and retain a private durable
+copy before any future fixture decision. Last visually verified position101,127
+is not independently claimed here as read-back from the final DB.
+
+Useful artifact identities:
+- Ready:11679748531, `gameplay-ready`.
+- Route calibration:11680462203; second calibration:11680193105.
+- Joined route:11680367932; turn:11680328138; settled:11680471654.
+- Gate approach:11679759477; passage:11680288667; bridge:11680701717.
+- Final:11680249154.
+
+Finish command commit:`f22d194f41d4210426eccadcfdc81abc979ae229`.
+After terminal completion controls were reset to `idle`:
+`07a31ee9f18ec6168d46b2e8a4f44f2579409162`, blob
+`99c959c6f162f82c1d532deb42fe60e1d90ef0a8`. No main changes,
+new dispatch, game/source changes, grants or access changes were made during
+the run. Readiness remains **65.5%, MEDIUM**.
+
+Exact unfinished work: accepted skill41 use against a verified hostile target.
+Before proposing another run, retain/review final evidence and use the observed
+navigation bottleneck to prepare a narrowly reviewed execution plan. The current
+workflow remains pinned to run16; do not silently restore run17 or relaunch.
+
+## Deferred owner decision — CONTINUOUS IMPROVEMENT
+
+Owner explicitly requested saving this deferred task at19:49:57Z on2026-10-10.
+It is a future architectural backlog item, **not current implementation scope**.
+Wait until the test pipeline is stable. Do not build new orchestration,
+automation, access paths or architecture while finishing the skill41 work.
+
+When subsequently authorized, evaluate recurring patterns by frequency,
+demonstrated root cause, time/credit cost and expected return on investment.
+Choose one appropriate specialist for the localized task rather than expanding
+agent orchestration. Define success criteria, a bounded budget, rollback and a
+concrete GitHub result before implementation. Preserve all applicable approval
+requirements, including separate authorization for publication, costly/runtime
+work, access changes and new test launches. This backlog entry does not grant
+standing permission for any of those actions and earns no readiness credit.
