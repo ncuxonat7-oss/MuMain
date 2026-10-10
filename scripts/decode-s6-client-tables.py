@@ -13,10 +13,16 @@ import struct
 from pathlib import Path
 
 U8, U16, U32, I32 = c.c_uint8, c.c_uint16, c.c_uint32, c.c_int32
+LEGACY_QUEST_COUNT = 200
+LEGACY_REQUIREMENT_CAPACITY = 16
+LEGACY_QUEST_SIZE = 744
+LEGACY_ITEM_ACTION = 1
+LEGACY_MONSTER_ACTION = 2
 APPROVED_BLOBS = {
     'Local/Eng/skill_eng.bmd': '30a6894364bf526a336a451aa72f74641ef8c812',
     'Local/mix.bmd': '0a24d6da76e72af82473951bf930e3f9ea9d0633',
     'Local/QuestProgress.bmd': '25049cccb137ad2014cdf184b8f3cc320b3edb81',
+    'Local/Eng/Quest_eng.bmd': 'ab9472e9f3bccd074edea7003b7404834e9ac085',
 }
 
 
@@ -63,6 +69,23 @@ class Mix(c.LittleEndianStructure):
                 ('RateTokens', RateToken * 32), ('SuccessRate', I32), ('MixOption', U8),
                 ('CharmOption', U8), ('ChaosCharmOption', U8), ('Sources', MixItem * 8),
                 ('NumSources', I32)]
+
+
+class LegacyAct(c.LittleEndianStructure):
+    _fields_ = [('Live', U8), ('Type', U8), ('ItemType', U16), ('ItemSubType', U8),
+                ('ItemLevel', U8), ('ItemCount', U8), ('RequestType', U8),
+                ('Classes', U8 * 7), ('Texts', c.c_int16 * 4)]
+
+
+class LegacyRequest(c.LittleEndianStructure):
+    _fields_ = [('Live', U8), ('Type', U8), ('CompleteQuest', U16), ('LevelMin', U16),
+                ('LevelMax', U16), ('Strength', U16), ('Zen', U32), ('ErrorText', c.c_int16)]
+
+
+class LegacyQuest(c.LittleEndianStructure):
+    _fields_ = [('ActCount', c.c_int16), ('RequestCount', c.c_int16), ('Npc', U16),
+                ('Name', c.c_char * 32), ('Acts', LegacyAct * LEGACY_REQUIREMENT_CAPACITY),
+                ('Requests', LegacyRequest * LEGACY_REQUIREMENT_CAPACITY)]
 
 
 def fields(value):
@@ -122,14 +145,32 @@ def decode_quest_progress(data):
     return result
 
 
+def decode_legacy_quests(data):
+    if c.sizeof(LegacyQuest) != LEGACY_QUEST_SIZE or len(data) != LEGACY_QUEST_COUNT * LEGACY_QUEST_SIZE:
+        raise ValueError('Unsupported legacy quest layout/length')
+    result = []
+    for index in range(LEGACY_QUEST_COUNT):
+        offset = index * LEGACY_QUEST_SIZE
+        row = fields(LegacyQuest.from_buffer_copy(bux(data[offset:offset + LEGACY_QUEST_SIZE])))
+        if any(not 0 <= row[key] <= LEGACY_REQUIREMENT_CAPACITY for key in ('ActCount', 'RequestCount')):
+            raise ValueError('Invalid legacy quest act/request count')
+        row['Acts'] = row['Acts'][:row['ActCount']]
+        row['Requests'] = row['Requests'][:row['RequestCount']]
+        if any(act['Type'] not in (LEGACY_ITEM_ACTION, LEGACY_MONSTER_ACTION) for act in row['Acts']):
+            raise ValueError('Unmapped legacy quest action type')
+        result.append(dict(id=index, **row))
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
     paths = {'skills': 'Local/Eng/skill_eng.bmd', 'crafting': 'Local/mix.bmd',
-             'quest_progress': 'Local/QuestProgress.bmd'}
-    decoders = {'skills': decode_skills, 'crafting': decode_mixes, 'quest_progress': decode_quest_progress}
+             'quest_progress': 'Local/QuestProgress.bmd', 'legacy_quests': 'Local/Eng/Quest_eng.bmd'}
+    decoders = {'skills': decode_skills, 'crafting': decode_mixes,
+                'quest_progress': decode_quest_progress, 'legacy_quests': decode_legacy_quests}
     result = dict(mode='READ_ONLY', baseline_writes=0, native_pin='8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5', tables={}, inputs={})
     for category, relative in paths.items():
         data = (args.data / relative).read_bytes()
@@ -141,7 +182,7 @@ def main():
     result['limitations'] = ['Metadata is not rendering/animation or gameplay proof',
                              'QuestProgress raw keys require verified server packet mapping',
                              'MixID differs from UI MixIndex; ingredients/outcomes require semantic mapping',
-                             'Legacy Quest_eng.bmd format not decoded; retained as pinned input']
+                             'Legacy quest names/NPC/actions decoded; inherited levels, prerequisites, item levels and rewards need semantic mapping']
     args.out.write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps({name: len(rows) for name, rows in result['tables'].items()}))
 
