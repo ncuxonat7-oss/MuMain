@@ -1,12 +1,4 @@
 {
-  "id": "r16-finish",
-  "steps": [
-    {
-      "op": "capture",
-      "name": "r16-final-selected-skill"
-    },
-    {
-      "op": "finish"
-    }
-  ]
+  "id": "idle",
+  "steps": []
 }
