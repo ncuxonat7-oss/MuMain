@@ -25,7 +25,7 @@ Next WORK action: statically prove capacity/entry constraints for15/16 and full-
 
 Read-only continuation of checkpoint8548ab2. Routing: WORK investigates native/server semantics; focused validator implementation is CODEX PREFERRED and was performed in this Codex thread. No second agent/session or duplicate implementation was launched. Frozen OpenMU d067b3c + existing runtime patch, MuMain8d18a2b, exact Data77f783 and preserved export SHA2568bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a remain unchanged.
 
-## Result and limits
+## Prior projection milestone: result and limits
 
 All38owner-scoped recipes and their86client variants now have a reusable semantic projection: protocol MixID, client category/order, source item ranges/known current IDs, levels, option/durability/count bounds, special flags, rate tokens, cost modes, server settings/required items/option types, result references and custom handler. IT37 omitted. Crywolf not investigated. No whole-recipe equivalence or resource-rendering proof is claimed.
 
@@ -69,15 +69,15 @@ Saved export permits bothExcellent andGuardian option families for definitions i
 - BC/DS handler rules are implemented in BaseEventTicketCrafting plus subclasses, not persisted SimpleSettings. NativeDSlevel0 variant displays60%, while subclass uses80% forlevel<5; this is a separate candidate needing baseline eligibility/level0 semantics, not a confirmed missing record. Crywolf commentary inDSsource adds no current task.
 - Charm/chaos-charm handling, item valuation functions, order of overlapping requirements, result selection/distribution and custom overrides remain unresolved. Their source presence earns no readiness credit.
 
-## Readiness and exact next step
+## Prior checkpoint: readiness and next step (superseded above)
 
 Previous65.5%; current65.5%; change0; confidenceMEDIUM; current critical RED0. Full quest/recipe requirements criterion stays0. Expected gain from currently admitted fixes/imports0. Possible+2.5 applies only after the existing fullIDs-and-requirements criterion is actually satisfied; partial projections/scenario models do not qualify.
 
 Next WORK step: verify NPC wire/submenu mapping and actual native item metadata/flag eligibility for representative combined-condition candidates; localize a correction only if confirmed. Next CODEX PREFERRED implementation: bulk ingredient predicate/stack-unit mapper for all38recipes with explicit custom-handler exclusions and named UNKNOWN outcome limits. Do not deepen synthetic combination tests; do not replay old bulk/ID/legacy decoder tests. Remaining16legacyquest full prerequisites/levels/generation/itemlevels/rewards are retained in the backlog. No broad import, baseline mutation, native build, trade test, IT/Crywolf work or client optimization.
 
-## Focused Codex handoff for the next mapper
+## Historical Codex handoff (plain ingredient scope now implemented)
 
-Status: handoff prepared in project memory, not delivered to a separate Codex session. Current audit tool was implemented in this Codex thread.
+Status: bounded plain-ingredient scope now implemented in this Codex thread; latest section is authoritative for remaining work. No separate Codex session was launched. The original handoff is preserved below for constraints and deferred extensions.
 
 - Goal: compare recipe ingredient predicates in bulk with stack/container units and stable semantic IDs.
 - Files: audit-s6-recipes.py, test-s6-recipes.py; existing decoded client projection and preserved export; s6-recipe-audit.md/json.
