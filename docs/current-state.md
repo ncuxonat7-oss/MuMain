@@ -1,5 +1,9 @@
 # Current confirmed state — 2026-10-10
 
+## NEWEST OWNER DIRECTION — mix38 stage closed
+
+The bounded mix38 configuration stage is complete: [findings, evidence and next gameplay proposal](s6-mix38-configured-options.md), [compact result](s6-mix38-configured-options.json). No gameplay defect is proved; configured capability is not reachability. Readiness remains65.5/model1.1/MEDIUM. This supersedes earlier next-action overrides below: deeper source invariants/allocator work are deferred unless a concrete gameplay risk appears. Next direction is a small S6 gameplay milestone; runtime is not started or authorized by this documentation checkpoint. Do not repeat completed extraction/tests.
+
 ## NEWEST OPTION CONTINUATION — authoritative next step
 
 Owner approved persistence of all nine prepared files on 2026-10-10. Ordered seven-recipe/34-variant result and mix38 option investigation are saved in GitHub main at checkpoint10ed3acb8c6b888dbbe69c934403e7c550d38a51. All nine Git blob hashes matched the approved archive. Earlier pending-write/approval messages are superseded; do not ask again to save these files. No baseline changes or readiness credit.
