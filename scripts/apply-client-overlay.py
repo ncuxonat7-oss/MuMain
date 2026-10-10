@@ -35,7 +35,11 @@ def apply(data_directory, specification):
     if actual == specification['after_sha256']:
         return {'status': 'ALREADY_APPLIED', 'sha256': actual}
     if actual != specification['before_sha256']:
-        raise ValueError('Unrecognized client metadata; refusing overwrite')
+        raise ValueError(
+            f'Unrecognized client metadata; refusing overwrite: actual_sha256={actual}; '
+            f'expected_before_sha256={specification["before_sha256"]}; '
+            f'expected_after_sha256={specification["after_sha256"]}; byte_count={len(original)}'
+        )
     corrected = corrected_bytes(original, specification)
     if sha256(corrected) != specification['after_sha256']:
         raise ValueError('Correction output hash differs from reviewed overlay')

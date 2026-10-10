@@ -1,5 +1,9 @@
 # Bounded skill-41 native proof — preparation and blocked launch
 
+Latest status: the owner subsequently launched run #14; the overlay preparation
+fix and evidence limits below supersede the historical no-run/dispatch handoff.
+See [exact input hash correction](#exact-input-hash-correction--2026-10-10).
+
 2026-10-10. Task branch starts at main `6fdebbddb15e584a07ff9c18262a5ae78873683b`. The owner authorized narrow evidence tooling and one finite Twisting Slash learn/use/relog session on an isolated disposable restored snapshot. This supersedes the earlier permission/preflight wording in [draft PR #1 plan](https://github.com/ncuxonat7-oss/MuMain/blob/72c4c9ea44d09b358428ec427f0380e75592b563/docs/s6-gameplay-input-readiness.md). That PR and the separate PvP research branch are unchanged and unmerged.
 
 ## Prepared scope
@@ -45,3 +49,57 @@ Draft PR creation was also blocked by automatic approval review, which cited the
 Use an already authorized, supported dispatch-capable Work environment; do not provision credentials or merge this branch to work around the blocker. After reviewing this narrow tooling, dispatch `standard-gameplay.yml` once on the task branch with `scenario=skill41`, within the existing 25-minute timeout. Reuse the recorded binaries/resources and isolated snapshot. Review ready evidence before any learning; if skill41 exists or a runtime prerequisite fails, stop. Otherwise consume the existing orb through native UI, distinguish one skill41 use from skill22/basic attack using actual accepted effect/cost evidence, then relog and issue a snapshot batch named `skill41-relog`. Review the consumed native control sequence, screenshots and DB captures together. Unknown cost/effect evidence must remain UNKNOWN. Finish and retain narrow evidence without promoting the disposable DB.
 
 No builds, grants/removals, stat/config changes, other skills/events or expanded fixtures. Stop after two identical failures or any new access/cost boundary. Readiness remains65.5/model1.1/MEDIUM. Future runtime risk/cost MEDIUM; preparation alone earns no gameplay credit.
+
+## Exact input hash correction — 2026-10-10
+
+Owner-supplied run evidence: [Standard Gameplay Session #14, run38065540919](https://github.com/ncuxonat7-oss/MuMain/actions/runs/38065540919)
+stopped at Stage matching resources, before server/DB startup. The exact guard
+correctly refused Group12_Wing.json, but its expected input hash described the
+reviewed audit copy with one extra trailing LF, rather than the authentic input.
+The origin of that LF is not attributed to any tool. The actual runner-file SHA
+was not saved; only its Data archive SHA256
+`8c62a98aaabf13d80c24c0c688dbfafd4b23813966dd3a2f13c445c3a35e8d1d`
+was reported to match the frozen registry. No runner-file identity is inferred.
+
+Authentic source: sven-n/MuMain, tag `data-4b0ab29c58b27fc4`, path
+`src/bin/Data/Items/Group12_Wing.json`, Git blob
+`e2d19fa0bab76df8b3eeb9d146a6529ece26d544`, 47,299 bytes, SHA256
+`1bb0997c516e00be4658fc7c08bfd4e387abd11a731f9827cc334c5082a240bc`.
+Retrieved through GitHub connector `github_fetch_blob`, with no shell download.
+This connector exposed decoded UTF-8 content rather than a base64 envelope;
+encoding that exact string without adding a newline reproduced both the Git
+blob SHA1 (including the blob header) and SHA256 above. Thus byte identity was
+verified, but direct inspection of the API's base64 envelope was unavailable.
+
+Only `before_sha256` changed in the overlay specification. Path, tree, group,
+all 14 approved corrections and output SHA256
+`1441360f93d80291659f63912022e0816125863acd0212ab4ec02fca33ebbb73`
+remain unchanged. A mismatch now reports actual SHA256, both expected SHA256
+values and byte count before correction or writes, without file contents.
+There is no trimming, whitespace tolerance or additional accepted hash.
+
+Focused temporary-copy checks PASS:
+
+- Authentic input applied to the unchanged expected output hash; backup was
+  byte-identical to authentic input; no temporary output remained.
+- Repeat returned `ALREADY_APPLIED`; no write/replace calls occurred and file
+  bytes and modification times stayed unchanged.
+- Authentic input plus an unexpected space was refused before correction,
+  backup, temporary or target writes. Write/replace calls were instrumented to
+  fail; the directory snapshot was unchanged and no backup/temp appeared.
+- Authentic input plus LF was likewise refused. This reconstructed fixture
+  was 47,300 bytes with the old reviewed SHA256
+  `257d80a8738d24cae83afc68077fc3cbbcfb39b5637ce61f1e68c30ca6549da5`.
+  Its parsed JSON and `corrected_bytes` output matched authentic input exactly.
+  Both refusal messages matched the complete expected metadata-only diagnostic.
+- Specification comparison confirmed that only the input hash changed;
+  `git diff --check` passed.
+
+The reviewed ZIP was not downloaded again: its previously supplied identity is
+SHA256 `c68b65f373f09ff0c2a7f01dcafc3f8e1766ff7bdf7d6d50de6e666869354da1`,
+Library `libfile_7131d39798708191a06116bb1ca38305`. The original audit-copy
+comparison is reused evidence; this task tested the hash-identical reconstructed
+extra-LF fixture. No old audits/tests, mix38 work, builds, runtime, DB operations,
+workflow dispatch, PR or merge were performed. This is a local preparation fix,
+not proof that staging or native gameplay now succeeds. Stop here; readiness
+remains **65.5%, model1.1, MEDIUM**, with no new gameplay credit.
