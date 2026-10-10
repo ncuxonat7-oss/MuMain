@@ -2,6 +2,8 @@
 
 Canonical repository:ncuxonat7-oss/MuMain. Start with docs/current-state.md (exact next unfinished step). Do not replay successful tests. Work is disposable; commit/push useful atomic checkpoints; never commit secrets or DB dumps. No broad research, stack replacement, paid services or production changes without owner authorization. Credit balance is not visible; explain costly work before starting. After two identical failures reassess. Standard baseline before major customization.
 
+Owner routing: before substantial work classify WORK (uncertain root cause/cross-system/runtime/reference investigation), CODEX PREFERRED (localized repository implementation/refactoring/tests/review with clear scope and acceptance), or mixed WORK→CODEX after investigation. Read docs/work-codex-routing.md for responsibilities and concise handoff. Use Codex proactively, not only after Work gets stuck; do not duplicate the same task. After two similar implementation attempts without meaningful progress reconsider routing. Tiny edits need no ceremony. Useful discoveries from either agent return to GitHub memory; do not assume shared session context. Future client optimization remains DEFERRED in docs/deferred-client-optimization.md and must be assessed by the future Client Modifiability / Extensibility Audit, not executed during S6 baseline work.
+
 Read only documents relevant to the task:
 
 |Task|Read next|
