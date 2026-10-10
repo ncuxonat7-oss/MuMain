@@ -33,27 +33,37 @@ def read_skills(path):
     return set(ids)
 
 
-def compare_persistence(directory, before_skills):
-    helpers = snapshot_helpers()
-    before = helpers.read_rows(directory / 'ready-database.jsonl')
-    after = helpers.read_rows(directory / 'skill41-relog-database.jsonl')
+def scoped_state_assertions(helpers, before, after):
     old = helpers.character_state(before, ACTOR)
     new = helpers.character_state(after, ACTOR)
-    after_skills = read_skills(directory / 'skill41-relog-skill41.json')
-    final_skills = read_skills(directory / 'final-skill41.json')
-    orb = old['items'].get(ORB_ID)
-    assertions = {
+    return {
         'actor_identity': old['id'] == new['id'] == ACTOR_ID,
-        'orb_initially_present': bool(orb and orb['DefinitionId'] == ORB_DEFINITION
-                                     and orb['Durability'] == 1),
-        'only_target_skill_added_after_relog': after_skills == before_skills | {SKILL_ID},
-        'skill_persists_after_shutdown': final_skills == after_skills,
-        'orb_consumed_after_relog': not any(row.get('Id') == ORB_ID for row in after),
+        'orb_consumed': not any(row.get('Id') == ORB_ID for row in after),
         'other_actor_item_ids_preserved': set(new['items']) == set(old['items']) - {ORB_ID},
         'actor_money_unchanged': old['money'] == new['money'],
         'core_dk_unchanged': helpers.character_state(before, 'test0Dk')
                              == helpers.character_state(after, 'test0Dk'),
     }
+
+
+def compare_persistence(directory, before_skills):
+    helpers = snapshot_helpers()
+    before = helpers.read_rows(directory / 'ready-database.jsonl')
+    after = helpers.read_rows(directory / 'skill41-relog-database.jsonl')
+    final = helpers.read_rows(directory / 'final-database.jsonl')
+    old = helpers.character_state(before, ACTOR)
+    after_skills = read_skills(directory / 'skill41-relog-skill41.json')
+    final_skills = read_skills(directory / 'final-skill41.json')
+    orb = old['items'].get(ORB_ID)
+    assertions = {
+        'orb_initially_present': bool(orb and orb['DefinitionId'] == ORB_DEFINITION
+                                     and orb['Durability'] == 1),
+        'only_target_skill_added_after_relog': after_skills == before_skills | {SKILL_ID},
+        'skill_persists_after_client_exit': final_skills == after_skills,
+    }
+    for stage, rows in (('relog', after), ('final', final)):
+        assertions.update({f'{stage}_{key}': value
+                           for key, value in scoped_state_assertions(helpers, before, rows).items()})
     return {key: 'PASS' if value else 'FAIL' for key, value in assertions.items()}
 
 
@@ -70,7 +80,8 @@ def assess(directory):
         'full_learn_use_relog_proof': 'UNKNOWN',
         'limits': 'Requires reviewed native learn/relog sequence and independent accepted-use '
                   'effect/cost evidence. A named snapshot is not proof of relog; DB state or '
-                  'animation alone cannot prove use. No baseline promotion/readiness credit.',
+                  'animation alone cannot prove use. Final capture follows client exit, not '
+                  'server/PostgreSQL restart. No baseline promotion/readiness credit.',
     }
 
 
