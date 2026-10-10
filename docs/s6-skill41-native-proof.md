@@ -1,8 +1,10 @@
 # Bounded skill-41 native proof — preparation and blocked launch
 
-Latest status: the owner subsequently launched run #14; the overlay preparation
-fix and evidence limits below supersede the historical no-run/dispatch handoff.
-See [exact input hash correction](#exact-input-hash-correction--2026-10-10).
+Latest status: owner-launched run #15 reached the corrected input guard but
+failed the output hash guard before server/DB startup. See
+[run #15 terminal result](#run-15-terminal-result--2026-10-10).
+Historical no-run/dispatch instructions below are superseded; no new dispatch
+is authorized by this checkpoint.
 
 2026-10-10. Task branch starts at main `6fdebbddb15e584a07ff9c18262a5ae78873683b`. The owner authorized narrow evidence tooling and one finite Twisting Slash learn/use/relog session on an isolated disposable restored snapshot. This supersedes the earlier permission/preflight wording in [draft PR #1 plan](https://github.com/ncuxonat7-oss/MuMain/blob/72c4c9ea44d09b358428ec427f0380e75592b563/docs/s6-gameplay-input-readiness.md). That PR and the separate PvP research branch are unchanged and unmerged.
 
@@ -103,3 +105,48 @@ extra-LF fixture. No old audits/tests, mix38 work, builds, runtime, DB operation
 workflow dispatch, PR or merge were performed. This is a local preparation fix,
 not proof that staging or native gameplay now succeeds. Stop here; readiness
 remains **65.5%, model1.1, MEDIUM**, with no new gameplay credit.
+
+## Run #15 terminal result — 2026-10-10
+
+[Run38067539204](https://github.com/ncuxonat7-oss/MuMain/actions/runs/38067539204),
+manually started by the owner, was already terminal when inspected:
+`completed/failure`, started 16:24:33Z, updated 16:25:34Z. API and checkout logs
+confirm `task/skill41-native-proof` at
+`5cf5b775768128fd25b95e930916893c2c50bdde`. Scenario `skill41` is established by
+the executed assessment step, whose pinned condition is
+`always() && inputs.scenario == 'skill41'`; the trade assessment was skipped.
+
+Job114258140890 failed Stage matching resources. At 16:25:29.3254593Z its log
+records `ValueError: Correction output hash differs from reviewed overlay`
+at `scripts/apply-client-overlay.py:45`. This is a new output-guard failure,
+not the former input-hash rejection. Reaching this line proves the exact
+authentic input hash was accepted and correction completed, but output differed
+from the reviewed hash. The actual output hash was not logged. The failure
+occurs before backup/temp/target writes; the output guard remains fail-closed.
+
+| Evidence dimension | Result |
+|---|---|
+| Exact input hash guard on runner | PASS, inferred from reaching output-hash exception |
+| Reviewed correction output hash | FAIL; actual output SHA unavailable |
+| Saved DB restore / live session | SKIPPED; no server/DB gameplay startup |
+| Ready evidence / skill absence | UNKNOWN; ready stage never reached |
+| Native learning / accepted use, effect, cost / relog / final persistence | UNKNOWN; no UI batches sent or consumed |
+| Active native controls | Unavailable: session step skipped and run terminal |
+| Skill41 assessment | Step failed for incomplete evidence; no gameplay FAIL inferred |
+
+The preservation step succeeded. GitHub reports artifact `gameplay-final`,
+ID11675675882, 837 bytes, digest
+`sha256:8ad33055826e23a72e48d1af2464f942a2c016220eb2ef13693a165fbeebaebb`,
+expiry 2027-01-08T16:24:34Z. Connector download returned file reference
+`file_00000000902481fda6c3ebc64f0e96c3`, but reading its download URL from the
+execution environment failed with `Tunnel connection failed: 403 Forbidden`.
+No alternate route or retry was attempted. ZIP contents and digest were not
+independently inspected; the artifact name does not establish a final snapshot.
+
+No controls, fixes, builds, runtime actions, grants, configuration/stat changes,
+DB promotion, dispatch, merge or PR were performed during this follow-up.
+Only this evidence checkpoint is saved. Readiness remains **65.5%, MEDIUM**;
+no gameplay credit. One next step: locally investigate Windows overlay text
+decoding (`read_text()` has no explicit encoding) against the pinned UTF-8
+specification and output hash. Encoding is a hypothesis, not an established
+root cause; do not rerun the workflow to investigate it.
