@@ -174,8 +174,9 @@ new dispatch, game/source changes, grants or access changes were made during
 the run. Readiness remains **65.5%, MEDIUM**.
 
 Exact unfinished work: accepted skill41 use against a verified hostile target.
-Before proposing another run, retain/review final evidence and use the observed
-navigation bottleneck to prepare a narrowly reviewed execution plan. The current
+Before proposing another run, retain/review final evidence and prepare the narrow
+isolated fixture described in the run17 lesson below; do not default to more
+route calibration. The current
 workflow remains pinned to run16; do not silently restore run17 or relaunch.
 
 ## Deferred owner decision — CONTINUOUS IMPROVEMENT
@@ -193,3 +194,31 @@ concrete GitHub result before implementation. Preserve all applicable approval
 requirements, including separate authorization for publication, costly/runtime
 work, access changes and new test launches. This backlog entry does not grant
 standing permission for any of those actions and earns no readiness credit.
+
+## Run17 lesson — simplify the next test fixture
+
+The owner correctly challenged spending most of a skill-use test on native
+navigation. Navigation was not the acceptance target; the observed workflow
+spent its bounded window reaching101,127 without attempting the actual cast.
+Further route calibration should not be the default next skill41 test.
+
+Recommended next preparation: a narrowly reviewed, disposable isolated fixture
+which positions the existing learned-skill actor beside a controlled legitimate
+hostile target in a verified attack-permitted area. Preserve the already proven
+learning result. Any injected positioning or target setup must be explicitly
+recorded as **test setup**, separate from the subsequently observed native
+selection/cast, resource accounting, damage/server evidence and screenshots.
+Do not claim native travel, spawning, learning or full end-to-end gameplay from
+injected state. Never mutate or promote this fixture into the production or
+canonical baseline.
+
+Prepare the exact allowed fixture delta, target identity, safety conditions,
+before/after checks and teardown for review before implementation or launch.
+This entry records the approach only: no character relocation, target creation,
+DB modification, fixture implementation or new run occurred in this turn.
+A future fixture must stop if its prerequisites or evidence fail; setup alone
+does not establish accepted skill41 use.
+
+This small test-fixture simplification is separate from the broad deferred
+CONTINUOUS IMPROVEMENT architecture. That architectural backlog remains parked,
+and existing approval requirements remain in force.
