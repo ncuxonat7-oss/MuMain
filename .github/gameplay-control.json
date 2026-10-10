@@ -1,12 +1,4 @@
 {
-  "id": "r17-finish",
-  "steps": [
-    {
-      "op": "capture",
-      "name": "r17-final-position"
-    },
-    {
-      "op": "finish"
-    }
-  ]
+  "id": "idle",
+  "steps": []
 }
