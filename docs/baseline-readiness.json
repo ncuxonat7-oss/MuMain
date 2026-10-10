@@ -308,8 +308,8 @@
           "criterion": "Quest/recipe binary IDs and requirements align client/server",
           "value": 0,
           "evidence_type": "STATICALLY_CONFIRMED",
-          "evidence": "Binary resource inventory only",
-          "limit": ""
+          "evidence": "s6-client-crosswalk.json: all38 scoped MixIDs and all3step roles of483nonlegacy quests present; exact BMD checksum/layout/pins verified",
+          "limit": "ID presence only;16legacyquests and full recipe category/ingredient/rate/outcome/quest requirements equivalence unresolved. Criterion stays0."
         },
         {
           "criterion": "One quest and one cheap crafting outcome with persistence",
@@ -358,7 +358,7 @@
           "criterion": "Trade transfer/cancel/relog",
           "value": 1,
           "evidence_type": "RUNTIME_VERIFIED",
-          "evidence": "37959672391/artifact11630634143; normal item+100Zen cancellation and both native relogs;14 scoped saved-state assertionsPASS. Earlier completed exchange37947724161/9PASS retained.; disconnect37996918917/artifact11647981651/screenshots27–30/14PASS",
+          "evidence": "37959672391/artifact11630634143; normal item+100Zen cancellation and both native relogs;14 scoped saved-state assertionsPASS. Earlier completed exchange37947724161/9PASS retained.; disconnect37996918917/artifact11647981651/screenshots27\u201330/14PASS",
           "limit": "Ordinary transfer, normal cancel and one item+100Zen donor-process disconnect with both relogs verified. Concurrency and hard server crash remain UNKNOWN; trade sufficient for current baseline, no additional trade edge cases absent a specific later defect."
         },
         {
@@ -406,7 +406,7 @@
           "criterion": "Multiplayer transaction persistence and duplication/loss checks",
           "value": 0.5,
           "evidence_type": "RUNTIME_VERIFIED",
-          "evidence": "37959672391/artifact11630634143; normal item+100Zen cancellation and both native relogs;14 scoped saved-state assertionsPASS. Earlier completed exchange37947724161/9PASS retained.; disconnect37996918917/artifact11647981651/screenshots27–30/14PASS",
+          "evidence": "37959672391/artifact11630634143; normal item+100Zen cancellation and both native relogs;14 scoped saved-state assertionsPASS. Earlier completed exchange37947724161/9PASS retained.; disconnect37996918917/artifact11647981651/screenshots27\u201330/14PASS",
           "limit": "Ordinary transfer, normal cancel and one item+100Zen donor-process disconnect with both relogs verified. Concurrency and hard server crash remain UNKNOWN; trade sufficient for current baseline, no additional trade edge cases absent a specific later defect."
         },
         {
@@ -481,7 +481,7 @@
       "readiness": 60.5,
       "change": 0.5,
       "confidence": "MEDIUM",
-      "milestone": "37959672391: actual-storage Money patch compiled;1 targeted regressionPASS; native normal cancellation and both relogs;14 scoped assertionsPASS. Critical cancellation Money RED resolved; trade criterion .5→1. Persistence criterion remains .5: disconnect/concurrency/crash UNKNOWN. Weights/checklist unchanged."
+      "milestone": "37959672391: actual-storage Money patch compiled;1 targeted regressionPASS; native normal cancellation and both relogs;14 scoped assertionsPASS. Critical cancellation Money RED resolved; trade criterion .5\u21921. Persistence criterion remains .5: disconnect/concurrency/crash UNKNOWN. Weights/checklist unchanged."
     },
     {
       "date": "2026-10-09",
@@ -490,7 +490,7 @@
       "readiness": 61,
       "change": 0.5,
       "confidence": "MEDIUM",
-      "milestone": "One prepared disconnect37996918917 PASS,14 scoped assertions and native screenshots27–30 verified. Multiplayer disconnect criterion0→.5 only. No imports; audit adds zero credit. Trade closed for baseline; prioritize breadth."
+      "milestone": "One prepared disconnect37996918917 PASS,14 scoped assertions and native screenshots27\u201330 verified. Multiplayer disconnect criterion0\u2192.5 only. No imports; audit adds zero credit. Trade closed for baseline; prioritize breadth."
     },
     {
       "date": "2026-10-10",
@@ -501,7 +501,7 @@
       "change": 0.5,
       "change_type": "OWNER_SCOPE_DENOMINATOR_ONLY",
       "evidence_gain": 0,
-      "milestone": "Owner excludes IT and defers Crywolf. Combined required lifecycle criterion removed from quest/event denominator5→4; subsystem20→25. All weights/evidence unchanged; critical blockers2→0 by scope, findings preserved."
+      "milestone": "Owner excludes IT and defers Crywolf. Combined required lifecycle criterion removed from quest/event denominator5\u21924; subsystem20\u219225. All weights/evidence unchanged; critical blockers2\u21920 by scope, findings preserved."
     },
     {
       "date": "2026-10-10",
@@ -511,6 +511,15 @@
       "previous_readiness": 61.5,
       "change": 4,
       "confidence": "MEDIUM"
+    },
+    {
+      "date": "2026-10-10",
+      "model": "1.1",
+      "previous_readiness": 65.5,
+      "readiness": 65.5,
+      "change": 0,
+      "confidence": "MEDIUM",
+      "milestone": "Read-only partial S6 semantic diff7735MATCH/1380UNKNOWN; client IDs stronger but full requirements not proved; zero admitted imports/fixes; deferred client optimization backlog adds no score."
     }
   ],
   "weighted_acceptance_evidence_coverage": {
@@ -547,5 +556,15 @@
     "Hanzo stock collision: persisted slot76, all22 shop grids valid",
     "Sphere4/5 entries and12 SeedSphere4/5 dimensions/equipping slot corrected by guarded client overlay",
     "Old GM duplicate anchor absent in latest disconnect snapshot; no new mutation"
-  ]
+  ],
+  "s6_diff_metrics": {
+    "projected_records": 7735,
+    "selected_current_records": 9115,
+    "projection_coverage_percent": 84.86,
+    "unknown": 1380,
+    "required_s6_completeness_percent": null,
+    "confirmed_missing_in_projection": 0,
+    "safe_import_count": 0,
+    "expected_gain_currently_admitted": 0
+  }
 }

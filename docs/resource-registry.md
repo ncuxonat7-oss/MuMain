@@ -175,3 +175,8 @@ Client baseline is pinned original Data tree77f7830f542d106fc519c8821832d49a3dd8
 
 Report backup libfile_c3c7d9c73a188191bc703e68bee6b93d; successful-run proof libfile_d046821629ac8191bf2f4bdf809af672. Canonical docs/bulk-baseline-validation.md routes next binary/client crosswalk; current readiness65.5/model1.1/MEDIUM; ITexcluded/Crywolfdeferred with no current penalty.
 
+
+
+### Read-only exact client binary inputs / S6 diff — 2026-10-10
+
+Run38008949221/head289310534c6f75719ff6043961007ef2038f2f5e SUCCESS12s; artifact11652516455/s6-client-binary-inputs,ZIP22524bytes. Four Git blob/SHA256 identities in patches/s6-client-input-provenance.json. src/bin/Data at native8d18a2b exactly matches approved77f783Data tree. Read-only sparse extraction can regenerate inputs without downloading436MB/rebuilding/runtime. No baseline writes; newest WORKING DB remains11651520969. Preserved export SHA2568bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a. Derived projections/reports + decoders/test rules are canonical source files; raw BMD already exists at native pin, do not replaceData.

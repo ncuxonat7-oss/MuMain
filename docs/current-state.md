@@ -2,6 +2,8 @@
 
 ## LAST CONFIRMED STATE
 
+Latest bounded audit: docs/s6-baseline-diff.md;7735partialsemanticMATCH,1380UNKNOWN;clientbinaryIDcrosswalk;noimport/fix/runtime;readiness65.5unchanged. See exact next action below.
+
 Latest completed bulk/data checkpoint38005996341 SUCCESS54s: all22 shop grids/13 semantic checks PASS; all81 S6 update identities/versions current; all690 client item IDs/dimensions PASS with reviewed overlay. See bulk-baseline-validation.md. No runtime/build/import/trade work this milestone.
 
 **Baseline Readiness:61% →61.5%(+0.5 owner scope only) →65.5%(+4 confirmed local fixes), model1.1; Evidence Confidence:MEDIUM. Current critical RED blockers:0; Crywolf deferred / Illusion Temple out of scope. NOT YET READY FOR MAJOR CUSTOMIZATION.**
@@ -14,11 +16,13 @@ The real Money defect was an ItemStorageAdapter that forwarded Items but not non
 
 ## CURRENT UNFINISHED TASK / EXACT NEXT ACTION
 
-No runtime/build is active. Gameplay control is idle; CI processes stopped after saving newest proven DB. Owner scope correction2026-10-10 supersedes the prior audit stop: continue broad bulk validation and confirmed local fixes. Illusion Temple OUT OF SCOPE; Crywolf DEFERRED late stage; neither penalizes current readiness. No work/runtime on their lifecycles. See baseline-scope.md and model1.0→1.1 migration; no new evidence credit.
+S6 baseline diff and safe automation audit completed: docs/s6-baseline-diff.md + machine-readable diff/client-crosswalk; reusable scripts and pinned projections saved. 7,735 projected records all MATCH;1,380 current records UNKNOWN;84.86% selected-record adapter coverage is NOT overall S6 completeness. No confirmed missing mapped records, no new defect, no safe import candidate, no baseline mutation. Readiness65.5 unchanged; model1.1/MEDIUM/current critical RED0.
 
-SHIFT STRATEGY: breadth first across maps/gates/warps; monsters/spawns; NPCs/shops; items/sets; drops; skills; quests/events/crafting. Prefer pinned native configuration/update comparison and exact client semantic bulk validation; selective external adapter only for admitted, proven missing S6 records. Runtime only critical chains, real mismatches or insufficient static evidence. No further trade edge-case work absent a later defect; do not replay verified core/trade tests.
+Exact next recommended authorized analysis: extend the reusable semantic client/server crosswalk for38 scoped recipes and16legacy quests. MixID protocol≠MixIndex UI; verify category/NPC dispatch, ingredient ranges/counts/options, costs/rates/outcomes and legacy quest layout/requirements. Compare preserved export only, dry-run findings; no external writes without owner approval. Full existing IDs-and-requirements criterion could earn+2.5 only after proof; ID presence alone earns0. Audit stop condition reached; no next runtime/import job launched.
 
-Completed bulk milestone38005996341 SUCCESS54s: 47,417 rows/89tables;13 semantic checks;all22 shops/585 stock rectangles;all81 S6 update keys/versions matched147 pinned source files;all690 item IDs/dimensions match corrected exact client metadata. Next authorized task: reusable binary client/server crosswalk of skill/quest/recipe IDs, NPC/monster dispatch and terrain coordinates; fix confirmed local mismatches; external import only proven missing S6 records. Reference sample overlaps all68 baseline map numbers and483monster numbers but contains later-season IDs/custom stores/duplicate wave rows. Hanzo and Sphere/SeedSphere defects are closed by targeted data fixes; old GM finding resolved from latest evidence. See bulk-baseline-validation.md for limits and score breakdown. Crywolf/IT findings remain archived outside current required baseline; do not fix or runtime-test them now.
+Read-only CI38008949221 SUCCESS12s/artifact11652516455 extracted4exactclienttables fromnative8d18a2b;650skillslots,99recipeentries,915queststeps decoded. All38scopedrecipeIDs and Number/StartingNumber/RefuseNumber steps of483nonlegacyquests present.282skills named;6blank names UNKNOWNhandling, not missing implementation.16legacyquests remain separateformat. No repeat of previous bulk/update/item/shop/native/trade checks.
+
+Owner scope: IT OUT OF SCOPE, Crywolf DEFERRED; no fixes/runtime now. Trade sufficient; no deeper tests. Future client performance/AFK/multi-window/FPS tasks are DEFERRED in docs/deferred-client-optimization.md. Future Client Modifiability / Extensibility Audit must assess clean feasibility/difficulty and prove gameplay timing/network invariance; these tasks affect no current priority or score.
 
 ## KNOWN BLOCKERS / UNKNOWN
 

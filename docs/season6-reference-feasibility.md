@@ -1,4 +1,6 @@
 # MU Online — feasibility audit: broad Season 6 baseline
+
+**Historical feasibility report. Current findings/owner scope/readiness are superseded by s6-baseline-diff.md and current-state.md (2026-10-10). Prior RED/fix/next-step statements below are preserved history, not current instructions.**
 Дата: 2026-10-09. Статус: аудит завершён; импорт и реализация импортёров не выполнялись.
 
 ## Решение

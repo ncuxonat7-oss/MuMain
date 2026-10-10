@@ -60,3 +60,8 @@ Readiness60.5→61(+.5) for partial disconnect criterion only; weights unchanged
 - All81 installed S6 updates match147 pinned source files/current versions; no updates rerun/imported.
 -14 client socket metadata corrections guarded by exact hashes;690/690 IDs/dimensions PASS; repeat idempotence and wrong-hash rejection PASS. Five special model mappings and Exile world object remainUNKNOWN, no render/runtime claim.
 - Readiness61.5→65.5 from two criteria0→1(+2 each); no score from source presence, update installation or replayed evidence. Coverage buckets reconciled from actual criteria without score gain.
+
+
+## 2026-10-10 — bounded S6 semantic diff / read-only binary crosswalk
+
+Primary native pinned S6 reference partialprojection7735MATCH/1380UNKNOWN; zero confirmed mapped missing/mismatch, zero admitted fixes/imports. Exact read-only extraction38008949221 SUCCESS12s/artifact11652516455;650skillslots checksumPASS,99mixrecords,915QuestProgress records.282skills named/6blank UNKNOWN;38/38scopedMixIDs,allthree step roles of483quests present;16legacyquests FORMATMAPPINGREQUIRED.14targetedtooltestsPASS. Deterministic frozen-reference replay and baselineSHA preservation verified. Existing completed bulk/update/item/shop/native/trade evidence reused; not rerun.65.5→65.5,MEDIUM,RED0; no criterion credit forIDpresence. DEFERRED client optimization ownerbacklog persisted, no execution.

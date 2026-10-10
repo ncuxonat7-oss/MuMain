@@ -43,3 +43,8 @@ Owner2026-10-10 resumed bulk/local fixes after audit, with IT out of scope and C
 
 
 Latest bulk checkpoint: docs/bulk-baseline-validation.md; scripts/validate-baseline-semantics.py --export <actual-export> --updates patches/openmu-update-manifest.json --out <report>. Client overlay is hash-guarded via scripts/apply-client-overlay.py. Newest DB run38005996341/artifact11651520969; prefer it over older runtime dumps. Binary crosswalk is next, no trade depth or IT/Crywolf work.
+
+
+## S6 semantic diff / client ID crosswalk checkpoint
+
+Read s6-baseline-diff.md before imports or baseline-gap claims. Reuse scripts/diff-baseline-s6.py with patches/s6-reference-projection.json; decode-s6-client-tables.py and crosscheck-s6-client-ids.py use exact pinned tables. Machine-readable docs/s6-baseline-diff.json and s6-client-crosswalk.json distinguish MATCH/UNKNOWN/mapping from admitted gaps. Line numbers are EXTRACTED_CONTEXT. Exact next work: recipe requirements/outcomes and16legacyquests; no repeated bulk/trade checks.
