@@ -1,29 +1,18 @@
 {
-  "id": "r16-learn",
+  "id": "r16-skill-list",
   "steps": [
-    {
-      "op": "right-click",
-      "x": 888,
-      "y": 493
-    },
-    {
-      "op": "capture",
-      "name": "r16-after-orb"
-    },
-    {
-      "op": "snapshot"
-    },
-    {
-      "op": "key",
-      "vk": 73
-    },
     {
       "op": "key",
       "vk": 67
     },
     {
+      "op": "click",
+      "x": 644,
+      "y": 720
+    },
+    {
       "op": "capture",
-      "name": "r16-character"
+      "name": "r16-skill-list"
     }
   ]
 }
