@@ -1,24 +1,12 @@
 {
-  "id": "r16-identify-skill",
+  "id": "r16-finish",
   "steps": [
     {
-      "op": "click",
-      "x": 644,
-      "y": 720
-    },
-    {
-      "op": "click",
-      "x": 588,
-      "y": 650
-    },
-    {
-      "op": "click",
-      "x": 644,
-      "y": 720
-    },
-    {
       "op": "capture",
-      "name": "r16-selected-tooltip"
+      "name": "r16-final-selected-skill"
+    },
+    {
+      "op": "finish"
     }
   ]
 }
