@@ -1,0 +1,40 @@
+{
+  "native_pin": "8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5",
+  "server_pin": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "sources": [
+    {
+      "path": "src/source/UI/NewUI/Inventory/NewUIMixInventory.cpp",
+      "git_blob": "e1a209d28dcc7b2aae23bdb1365ee86414a9c7e9",
+      "repository": "ncuxonat7-oss/MuMain"
+    },
+    {
+      "path": "src/source/UI/NewUI/Inventory/NewUIInventoryCtrl.cpp",
+      "git_blob": "54659549c6ad9176dd3d2637f4d0b634677f6a36",
+      "repository": "ncuxonat7-oss/MuMain"
+    },
+    {
+      "path": "src/GameLogic/PlayerActions/Items/MoveItemAction.cs",
+      "git_blob": "1a9f78be06bab6ac9ac023bc06123151a2900ee8",
+      "repository": "MUnique/OpenMU"
+    },
+    {
+      "path": "src/DataModel/InventoryConstants.cs",
+      "git_blob": "7964268cda5d20f966774a4251d2d8158eb9a28b",
+      "repository": "MUnique/OpenMU"
+    }
+  ],
+  "prior_rules": "patches/s6-recipe-source-provenance.json",
+  "rules": [
+    "Native mix grid 8x4; server RowSize8/TemporaryStorageRows4",
+    "IsMixSource checks each item predicate, not accumulated CountMax",
+    "CheckRecipeSub rejects unconsumed excess after CountMax",
+    "Fenrir native compares per-container durability; server RequiredItemMatches has no durability bound",
+    "Server stack merging only within player inventory, not temporary craft storage",
+    "Server Disappear removes all matching containers after exact summed-count validation"
+  ],
+  "limitations": [
+    "Static source model; not runtime proof",
+    "No recipe outcome or complete UI-state equivalence",
+    "Existing source has no local gameplay patch for these handlers"
+  ]
+}
