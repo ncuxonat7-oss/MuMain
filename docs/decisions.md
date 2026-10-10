@@ -1,5 +1,9 @@
 # Decisions and rationale
 
+## 2026-10-10 — deferred client optimization (owner)
+
+Persisted in [deferred-client-optimization.md](deferred-client-optimization.md): active cap ~60 FPS, background ~15–30 FPS, minimized rendering savings, multi-client long-AFK optimization, CPU/GPU/temperature profiling, optional effects reduction and possible AFK / Low Power mode. Future Client Modifiability / Extensibility Audit must assess feasibility and difficulty, especially gameplay-clock/network/synchronization invariance. MU Dream is a product/UX reference only; no proprietary code/resource copying. **DEFERRED: do not execute now, change current S6 priorities or affect readiness.**
+
 | Decision | Why / evidence | Revisit condition |
 |---|---|---|
 | Freeze exact OpenMU/MuMain/Data combination | Actual Lorencia and ordinary progression/equipment/relog work | Proven blocker requiring scoped change, not a newer-looking fork |
