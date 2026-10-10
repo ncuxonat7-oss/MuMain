@@ -1,0 +1,1677 @@
+{
+  "mode": "DRY_RUN",
+  "baseline_writes": 0,
+  "safe_import_plan": [],
+  "inputs": {
+    "baseline_sha256": "8bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a",
+    "native_pin": "8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5"
+  },
+  "grid": {
+    "columns": 8,
+    "rows": 4
+  },
+  "recipes": [
+    {
+      "id": 15,
+      "witnesses": [
+        {
+          "name": "25_jewels",
+          "inventory": [
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": true,
+          "server_ingredient_accepts": true,
+          "classification": "MATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        },
+        {
+          "name": "26_jewels",
+          "inventory": [
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": false,
+          "server_ingredient_accepts": true,
+          "classification": "VALUE MISMATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        },
+        {
+          "name": "32_jewels",
+          "inventory": [
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": false,
+          "server_ingredient_accepts": true,
+          "classification": "VALUE MISMATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        },
+        {
+          "name": "33_jewels",
+          "inventory": [
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7181,
+              "level": 0,
+              "durability": 1
+            }
+          ],
+          "slots": null,
+          "grid_fits": false,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": false,
+          "server_ingredient_accepts": true,
+          "classification": "VALUE MISMATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        }
+      ],
+      "safe_to_import": false,
+      "disposition": "MANUAL REVIEW REQUIRED",
+      "limit": "Ingredient predicates only; UI state, money, character level and outcome not executed"
+    },
+    {
+      "id": 16,
+      "witnesses": [
+        {
+          "name": "25_jewels",
+          "inventory": [
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": true,
+          "server_ingredient_accepts": true,
+          "classification": "MATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        },
+        {
+          "name": "26_jewels",
+          "inventory": [
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": false,
+          "server_ingredient_accepts": true,
+          "classification": "VALUE MISMATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        },
+        {
+          "name": "32_jewels",
+          "inventory": [
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": false,
+          "server_ingredient_accepts": true,
+          "classification": "VALUE MISMATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        },
+        {
+          "name": "33_jewels",
+          "inventory": [
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 7182,
+              "level": 0,
+              "durability": 1
+            }
+          ],
+          "slots": null,
+          "grid_fits": false,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": false,
+          "server_ingredient_accepts": true,
+          "classification": "VALUE MISMATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        }
+      ],
+      "safe_to_import": false,
+      "disposition": "MANUAL REVIEW REQUIRED",
+      "limit": "Ingredient predicates only; UI state, money, character level and outcome not executed"
+    },
+    {
+      "id": 25,
+      "witnesses": [
+        {
+          "name": "full_containers",
+          "inventory": [
+            {
+              "id": 6159,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6689,
+              "level": 0,
+              "durability": 20
+            },
+            {
+              "id": 6688,
+              "level": 0,
+              "durability": 20
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": true,
+          "server_ingredient_accepts": true,
+          "classification": "MATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        },
+        {
+          "name": "fragmented_equal_total",
+          "inventory": [
+            {
+              "id": 6159,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6689,
+              "level": 0,
+              "durability": 10
+            },
+            {
+              "id": 6689,
+              "level": 0,
+              "durability": 10
+            },
+            {
+              "id": 6688,
+              "level": 0,
+              "durability": 20
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": false,
+          "native_recipe_accepts": false,
+          "server_ingredient_accepts": true,
+          "classification": "VALUE MISMATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        }
+      ],
+      "safe_to_import": false,
+      "disposition": "MANUAL REVIEW REQUIRED",
+      "limit": "Ingredient predicates only; UI state, money, character level and outcome not executed"
+    },
+    {
+      "id": 26,
+      "witnesses": [
+        {
+          "name": "full_containers",
+          "inventory": [
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6159,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6690,
+              "level": 0,
+              "durability": 10
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": true,
+          "native_recipe_accepts": true,
+          "server_ingredient_accepts": true,
+          "classification": "MATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        },
+        {
+          "name": "fragmented_equal_total",
+          "inventory": [
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6691,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6159,
+              "level": 0,
+              "durability": 1
+            },
+            {
+              "id": 6690,
+              "level": 0,
+              "durability": 5
+            },
+            {
+              "id": 6690,
+              "level": 0,
+              "durability": 5
+            }
+          ],
+          "slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "grid_fits": true,
+          "native_entry_predicate": false,
+          "native_recipe_accepts": false,
+          "server_ingredient_accepts": true,
+          "classification": "VALUE MISMATCH",
+          "evidence": "STATIC_SOURCE_MODEL",
+          "runtime_verified": false
+        }
+      ],
+      "safe_to_import": false,
+      "disposition": "MANUAL REVIEW REQUIRED",
+      "limit": "Ingredient predicates only; UI state, money, character level and outcome not executed"
+    }
+  ],
+  "readiness": 65.5,
+  "limits": [
+    "Static policy differences are not runtime failures",
+    "Fragmented Fenrir stacks fail native entry; modified-client reachability not tested",
+    "No full-recipe equivalence, import permission or score credit"
+  ]
+}

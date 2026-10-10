@@ -1,5 +1,27 @@
 # S6 recipe semantic audit — 2026-10-10
 
+## Latest: capacity and container policy audit
+
+Continuation of 3fd4d41. Routing: cross-system static investigation completed in Work context; bounded repository validator implemented by the current Codex agent. No second session or duplicate task. New scripts/audit-s6-recipe-containers.py models only four disjoint plain recipes using the guarded confirmed export and pinned decoded client projection. Ten NEW boundary/mutation tests PASS; deterministic replay byte-identical; baseline SHA256 unchanged. Prior successful tests were not repeated. Sources/pins: patches/s6-container-source-provenance.json plus prior recipe provenance.
+
+| MixIDs | Static result | Disposition |
+|---|---|---|
+|15,16 Bless/Soul potions|Native and server temporary grid both8x4=32; jewels1x1 and nonstackable. IsMixSource has no aggregate CountMax check.25passes both;26..32fit and satisfy entry predicates, but client CheckRecipeSub rejects excess above25; server unbounded amount accepts ingredient totals.|Confirmed STATIC ingredient-policy difference, not runtime crafting defect. Capacity explanation rejected. MANUAL REVIEW REQUIRED before choosing intended upper bound.|
+|25,26 Fenrir|Native checks durability20/10 per container and exactly one container; server checks sum20/10 without per-container durability constraint. Full containers pass both. Splitting one stack into two equal halves fits grid, passes server count/level/item predicates, fails native entry and mix predicates.|Confirmed STATIC packaging-policy difference. Normal native entry blocks fragments; modified-client behavior not tested. MANUAL REVIEW REQUIRED, no unsafe-import claim.|
+
+Server MoveItemAction only merges stacks when both source and target are player.Inventory; no implicit merge inside temporary craft storage rescues packaging equivalence. RequiredItemMatches checks definition/level/options, not durability. Requirements consume all found items; Disappear removes the matched containers; no fractional craft allocation is assumed. Existing baseline contains no required options or overlapping domains for these four mixes. Native grouping of nonstackables includes durability; each Fenrir fragment remains ineligible regardless of grouping. This audit excludes charms and equipped item flags, custom handlers and overlapping sources.
+
+Capacity is mix INPUT grid, not recipe Width/Height (space required in character inventory for result). Keep these separate. No instruction to cap potions or auto-merge stacks was implemented. Do not report33jewels as reachable: server ingredient predicate permits it but placement fails. Runtime remains UNKNOWN for actual requests, result counts/placement and persistence. Four recipe findings do not close overall crafting acceptance or quest requirements. Safe_import_plan=[], baseline_writes=0; readiness65.5→65.5/change0/model1.1/MEDIUM/current critical RED0. Admitted automated gain0; potential+2.5 only after the entire IDs-and-requirements criterion.
+
+Reusable command (no service/build/export):
+
+```bash
+python3 scripts/audit-s6-recipe-containers.py --baseline <preserved-export.jsonl> --client-tables patches/s6-client-table-projection.json --out <report.json>
+python3 scripts/test-s6-recipe-containers.py
+```
+
+Next: extend ingredient mapper for the seven ordered multi-variant recipes, preserving positive option predicates and first-match order; fail closed on custom handlers/overlap/unproven native flag eligibility. Do not silently convert the two static policy differences into MATCH or import/fix. Four boundary rules are now established and need no repeated investigation. Prepare focused Codex acceptance: use pinned inputs, enumerate current-definition domains, report per-variant coverage and explicit UNKNOWN for allocator/flag gaps, mutation tests for variant order and item/amount bounds. Existing outcome/custom-handler/NPC wire/quest prerequisite gaps remain; no further synthetic upgrade-flag combinations or broad runtime.
+
 ## Latest: ingredient dry-run checkpoint
 
 Continuation of f484a8c. New `scripts/map-s6-recipe-ingredients.py` reuses the preserved export and decoded pinned crafting table. Run with `--baseline`, `--client-tables`, `--out`; result `docs/s6-recipe-ingredients.json`. No extraction, service, runtime, import or baseline write. Guards reject changed export/native/mix identity and canonical crafting contents. Original recipe projection/scenario tests were not repeated. Twelve new targeted mutation/boundary tests PASS (`scripts/test-s6-recipe-ingredients.py`).

@@ -1,5 +1,11 @@
 # Current confirmed state — 2026-10-10
 
+## NEWEST CONTINUATION — supersedes next-action overrides below
+
+Capacity/container phase from3fd4d41 completed. scripts/audit-s6-recipe-containers.py +10NEWtargetedtestsPASS; deterministic replay identical; export SHA unchanged. docs/s6-recipe-containers.json: fourMixIDs15/16/25/26. Both native/server grid8x4;26..32Bless/Soul fit/entryeligible but nativeCountMax25rejects versus serverunbounded. Fenrir full containers pass both; fragmented equal totals servereligible/nativeentryblocked; no implicit temporary-storage merge. STATIC ingredient-policy differences; actual runtime/request/results UNKNOWN; no fix/import admitted. Provenance in patches/s6-container-source-provenance.json; detailed limits in latest s6-recipe-audit.md. BaselineReadiness65.5unchanged/model1.1/MEDIUM/criticalRED0.
+
+EXACT NEXT: bulk ordered-variant ingredient mapping for seven multi-variant recipes, preserving first-match and positive option predicates; localized validator extension CODEX PREFERRED. Keep customhandlers/overlap/unprovenflag eligibility explicitUNKNOWN. Do not repeat completed four-recipe capacity/container proof or fourteen plain normalization. Determine intended behavior and runtime evidence before any potion/Fenrir corrective change. Outcomes/NPCwire/legacyquest fullrequirements remain unfinished. No broadimports/build/trade/clientoptimization/IT/Crywolfwork.
+
 ## LAST CONFIRMED STATE
 
 Ingredient continuation from f484a8c completed: scripts/map-s6-recipe-ingredients.py +12targetedtestsPASS; docs/s6-recipe-ingredients.json covers38recipes.14plainrecipes normalized:10field-scopedMATCH,2amount-boundVALUE MISMATCH(15/16),2full-container mapping(25/26);other24unmapped. No whole-recipe proof/gameplay defect admitted/safeimport/fix/runtime/baselinewrite.65.5unchanged. Rules/limits in s6-recipe-audit.md latest section.
