@@ -1,0 +1,50 @@
+name: S6 Read-only Reference Inputs
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  extract-client-tables:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /src/bin/Data/Local/Eng/skill_eng.bmd
+            /src/bin/Data/Local/Eng/Quest_eng.bmd
+            /src/bin/Data/Local/QuestProgress.bmd
+            /src/bin/Data/Local/mix.bmd
+      - name: Verify pinned blob identities and copy only audit inputs
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, shutil
+          from pathlib import Path
+          expected = {
+              'Local/Eng/skill_eng.bmd': '30a6894364bf526a336a451aa72f74641ef8c812',
+              'Local/Eng/Quest_eng.bmd': 'ab9472e9f3bccd074edea7003b7404834e9ac085',
+              'Local/QuestProgress.bmd': '25049cccb137ad2014cdf184b8f3cc320b3edb81',
+              'Local/mix.bmd': '0a24d6da76e72af82473951bf930e3f9ea9d0633',
+          }
+          proof = {'client_pin': '8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5',
+                   'data_tree': '77f7830f542d106fc519c8821832d49a3dd8ae3a', 'baseline_writes': 0, 'files': []}
+          for name, blob in expected.items():
+              source = Path('src/bin/Data') / name
+              data = source.read_bytes()
+              actual = hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
+              if actual != blob:
+                  raise ValueError('Unexpected pinned client blob: ' + name)
+              target = Path('evidence') / name
+              target.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(source, target)
+              proof['files'].append({'path': name, 'git_blob': actual, 'size': len(data), 'sha256': hashlib.sha256(data).hexdigest()})
+          Path('evidence/provenance.json').write_text(json.dumps(proof, indent=2))
+          print(json.dumps(proof, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: s6-client-binary-inputs
+          path: evidence
+          retention-days: 30
