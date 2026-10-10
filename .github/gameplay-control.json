@@ -1,14 +1,13 @@
 {
-  "id": "r17-route-turn",
+  "id": "r17-route-settled",
   "steps": [
     {
-      "op": "click",
-      "x": 260,
-      "y": 540
+      "op": "wait",
+      "seconds": 3
     },
     {
       "op": "capture",
-      "name": "r17-route-turn"
+      "name": "r17-route-settled"
     }
   ]
 }
