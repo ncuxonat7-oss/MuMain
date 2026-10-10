@@ -1,14 +1,14 @@
 {
-  "id": "r17-route-join",
+  "id": "r17-route-turn",
   "steps": [
     {
       "op": "click",
-      "x": 385,
-      "y": 310
+      "x": 260,
+      "y": 540
     },
     {
       "op": "capture",
-      "name": "r17-route-join"
+      "name": "r17-route-turn"
     }
   ]
 }
