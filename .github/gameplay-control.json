@@ -1,19 +1,24 @@
 {
-  "id": "skill41-relog",
+  "id": "r16-identify-skill",
   "steps": [
     {
-      "op": "restart-client"
+      "op": "click",
+      "x": 644,
+      "y": 720
     },
     {
-      "op": "login",
-      "account": "test300"
+      "op": "click",
+      "x": 588,
+      "y": 650
+    },
+    {
+      "op": "click",
+      "x": 644,
+      "y": 720
     },
     {
       "op": "capture",
-      "name": "r16-relogged"
-    },
-    {
-      "op": "snapshot"
+      "name": "r16-selected-tooltip"
     }
   ]
 }
