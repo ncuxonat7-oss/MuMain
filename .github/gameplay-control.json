@@ -1,21 +1,12 @@
 {
-  "id": "r17-bridge",
+  "id": "r17-finish",
   "steps": [
     {
-      "op": "click",
-      "x": 110,
-      "y": 150
-    },
-    {
-      "op": "wait",
-      "seconds": 5
-    },
-    {
       "op": "capture",
-      "name": "r17-bridge"
+      "name": "r17-final-position"
     },
     {
-      "op": "snapshot"
+      "op": "finish"
     }
   ]
 }
