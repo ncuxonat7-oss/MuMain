@@ -34,6 +34,8 @@ The existing CLI access path returned `Get "https://api.github.com/repos/ncuxona
 | Native learning, accepted use/effect/cost, relog persistence | UNKNOWN; no gameplay FAIL inferred |
 | Canonical baseline safety | Unchanged; no DB restored, edited or promoted |
 
+Draft PR creation was also blocked by automatic approval review, which cited the earlier read-only/no-commit/push/PR restriction. The current task authorization explicitly permits the new task branch and draft PR. The rejected action was not retried or routed around; resolve this authorization mismatch before creating the draft. Preparation is published on `task/skill41-native-proof`, initial code commit `998d346f1a84ccb67fd430d3f97503c6914c7242`; no task PR URL exists. Main, documentation PR #1 and the separate research branch remain unchanged.
+
 ## Single remaining handoff
 
 Use an already authorized, supported dispatch-capable Work environment; do not provision credentials or merge this branch to work around the blocker. After reviewing this narrow tooling, dispatch `standard-gameplay.yml` once on the task branch with `scenario=skill41`, within the existing 25-minute timeout. Reuse the recorded binaries/resources and isolated snapshot. Review ready evidence before any learning; if skill41 exists or a runtime prerequisite fails, stop. Otherwise consume the existing orb through native UI, distinguish one skill41 use from skill22/basic attack using actual accepted effect/cost evidence, then relog and issue a snapshot batch named `skill41-relog`. Review the consumed native control sequence, screenshots and DB captures together. Unknown cost/effect evidence must remain UNKNOWN. Finish and retain narrow evidence without promoting the disposable DB.
