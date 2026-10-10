@@ -79,3 +79,8 @@ Recipe preflight:38scoped recipes,35simple settings,16custom handlers,3handler-o
 ## 2026-10-10 — recipe semantic projection and bounded scenario model
 
 38recipes/86clientvariants projected;38enum/categorybindings,22base-cost formulas,14constant-rate checksMATCH within documented limits.96upgrade source-model scenarios60MATCH/36VALUE MISMATCH, all combined conditions withUNPROVEN reachability;not runtime defects.13newtargetedtestsPASS. CLI guards exact preserved baseline/native/mixblob/canonicalprojection;outputdryrun/noimport. Source/false-positive details and nextscope in s6-recipe-audit.md. No previous bulk/native/trade/legacydecoder checks repeated;no server/client/Data/DBmutation or CI dispatched.65.5→65.5/MEDIUM/RED0.
+
+
+## 2026-10-10 — bulk ingredient predicate mapper
+
+Continuation f484a8c.38scopedrecipes classified;14plainrecipes normalized:10boundedMATCH,2amount-boundVALUE MISMATCH(15/16),2containerFORMAT MAPPING REQUIRED(25/26);24otherunmapped.12newtargetedtestsPASS. Existing bulk/scenario/native/trade/legacychecks not repeated. No runtime/build/CI/import/baselinewrite. Fixed-container totals do not prove packaging equivalence; client25 versus serverunbounded needs capacity proof. Details/rules: s6-recipe-audit.md; results:s6-recipe-ingredients.json.65.5unchanged/MEDIUM/RED0.

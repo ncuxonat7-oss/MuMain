@@ -1,5 +1,28 @@
 # S6 recipe semantic audit — 2026-10-10
 
+## Latest: ingredient dry-run checkpoint
+
+Continuation of f484a8c. New `scripts/map-s6-recipe-ingredients.py` reuses the preserved export and decoded pinned crafting table. Run with `--baseline`, `--client-tables`, `--out`; result `docs/s6-recipe-ingredients.json`. No extraction, service, runtime, import or baseline write. Guards reject changed export/native/mix identity and canonical crafting contents. Original recipe projection/scenario tests were not repeated. Twelve new targeted mutation/boundary tests PASS (`scripts/test-s6-recipe-ingredients.py`).
+
+All38scoped recipes classified;14plain single-variant recipes normalized. Ingredients only:10MATCH,2VALUE MISMATCH,2FORMAT MAPPING REQUIRED. Other24remain FORMAT MAPPING REQUIRED:16customhandlers,7ordered multi-variant recipes,1required-option recipe. Overall10MATCH/2VALUE MISMATCH/26FORMAT MAPPING REQUIRED. Never whole-recipe equivalence: UI eligibility, allocation, consumption and outcomes remain outside this comparison.
+
+|Recipes|Finding|Disposition|
+|---|---|---|
+|6,14,17,27,30,31,32,33,41,46|Configured legal item/level domains and normalized amount predicates MATCH|No fix/import; preserve baseline|
+|15 Potion of Bless,16 Potion of Soul|Server MaximumAmount0=unbounded; client Count1..25|MANUAL REVIEW REQUIRED: prove actual mix-grid capacity/entry constraints before admitting a gameplay defect|
+|25 Fenrir1,26Fenrir2|Totals MATCH after converting one full container to20/10server units; native requires fixed durability per container|AUTO WITH MAPPING: packaging/allocation proof needed; fragmented stacks are not equivalent|
+|Other24|Custom handlers, ordered variants or required options|AUTO WITH MAPPING after the missing rule is localized; no guessed match/import|
+
+Native CMixItem::SetItem counts durability only for(14,3),(14,38),(14,39),(14,53),(14,88),(14,89),(14,90),(14,100); others count containers. Server DataModel.ItemExtensions.IsStackable uses ItemSlotId=null and definition.Durability>1. Fixed container durability is converted to total units while preserving packaging constraints; unknown/mixed unit conversions fail closed. Source fingerprints already live in patches/s6-recipe-source-provenance.json. Do not count all native consumables by durability.
+
+Levels are intersected with each current definition's MaximumItemLevel and lowerbound0. Thus client255 vs server0 can match on configured legal states; malformed or externally introduced levels remain unproved. Range padding is not missing content/resources. Empty/overlapping domains stay unmapped because allocator order is not implemented. Unbounded server vs finite client upper amounts stay explicitly different until a capacity proof establishes reachable equivalence. Optional minimum0 is preserved.
+
+Investigation retained: cached native Data/DataHandler/ItemData/ItemDataLoader.cpp reads binary records but does not itself establish JSON requirements.level→runtime RequireLevel. Do not repeat that loader-only search or claim BoneBlade option reachability from metadata alone. UI/NewUI/Dialogs/NewUICustomMessageBox.cpp sets seed extraction/sphere and attach/detach categories; full wire→submenu path is still unproved. These observations earn no credit.
+
+Readiness65.5→65.5, change0, model1.1/MEDIUM/RED0. Overall required S6 completeness UNKNOWN. Ingredient normalization14/38=36.84%; boundedMATCH10/38=26.32%; neither is overall S6 completeness. No confirmed missing content/resources/implementation, safe import candidate or admitted automated readiness gain. Potential+2.5 requires the entire IDs-and-requirements criterion including quest/recipe gaps, not this partial mapper.
+
+Next WORK action: statically prove capacity/entry constraints for15/16 and full-container/allocation behavior for25/26, then map ordered variants/options in bulk. Focused mapper extension is CODEX PREFERRED once acceptance is clear. Preserve combined-flag candidates without deeper synthetic tests. Client outcomes/custom handlers and inherited quest requirements/rewards remain unfinished. No deeper trade checks; IT excluded; Crywolf/client optimization deferred.
+
 Read-only continuation of checkpoint8548ab2. Routing: WORK investigates native/server semantics; focused validator implementation is CODEX PREFERRED and was performed in this Codex thread. No second agent/session or duplicate implementation was launched. Frozen OpenMU d067b3c + existing runtime patch, MuMain8d18a2b, exact Data77f783 and preserved export SHA2568bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a remain unchanged.
 
 ## Result and limits

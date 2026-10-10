@@ -538,6 +538,14 @@
       "change": 0,
       "confidence": "MEDIUM",
       "milestone": "Recipe dryrun38recipes/86variants;38categorybindings/22costs/14constant rates field-scopedMATCH;96modelscenarios60MATCH/36unprovencombinedflag counterexamples;13focusedtestsPASS. Fullingredients/outcomes unproved;no admittedfix/import/runtime/baselinewrite."
+    },
+    {
+      "date": "2026-10-10",
+      "previous_readiness": 65.5,
+      "current_readiness": 65.5,
+      "change": 0,
+      "confidence": "MEDIUM",
+      "milestone": "Ingredientdryrun38classified/14normalized:10boundedMATCH,2amount-boundVALUE MISMATCH,2container mapping;24othersunmapped.12newtargetedtestsPASS. No fullcriterion proof/admittedfix/import/runtime/baselinewrite."
     }
   ],
   "weighted_acceptance_evidence_coverage": {
@@ -582,6 +590,16 @@
     "unknown": 1380,
     "required_s6_completeness_percent": null,
     "confirmed_missing_in_projection": 0,
+    "safe_import_count": 0,
+    "expected_gain_currently_admitted": 0
+  },
+  "s6_recipe_ingredient_metrics": {
+    "scoped_recipes": 38,
+    "normalized_recipes": 14,
+    "normalization_percent": 36.84,
+    "bounded_matches": 10,
+    "bounded_match_percent": 26.32,
+    "whole_recipe_proof": false,
     "safe_import_count": 0,
     "expected_gain_currently_admitted": 0
   }

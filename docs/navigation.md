@@ -60,3 +60,6 @@ Read s6-legacy-quest-codex-handoff.md for completed decoder scope/results and te
 ## Recipe semantic dry-run continuation
 
 Read s6-recipe-audit.md for38recipe/86variant projection, limits, source rules and exact next Work/Codex split. Reuse audit-s6-recipes.py and machine-readable s6-recipe-audit.json;13focused testsPASS. Combined-option counterexamples remain UNPROVEN reachability; no safe import or confirmed baseline defect. Do not replay older checks or deepen the scenario lattice. current-state.md is the resume point.
+
+
+Ingredient mapper continuation: map-s6-recipe-ingredients.py/test-s6-recipe-ingredients.py and docs/s6-recipe-ingredients.json; usage/rules/limits in s6-recipe-audit.md latest section. Do not repeat14plainrecipe normalization. Next capacity/full-container proof before ordered-variant mapper extension; current-state.md exact resume point.

@@ -1,0 +1,1372 @@
+{
+  "mode": "DRY_RUN",
+  "baseline_writes": 0,
+  "safe_import_plan": [],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Chaos Weapon",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 2,
+      "name": "Devil's Square Ticket",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 3,
+      "name": "+10 Item Combination",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Multiple variants: native ordered selection remains unmapped"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 4,
+      "name": "+11 Item Combination",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Multiple variants: native ordered selection remains unmapped"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 5,
+      "name": "Dinorant",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 6,
+      "name": "Fruits",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7190,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7190,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 7,
+      "name": "2nd Level Wings",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 8,
+      "name": "Blood Castle Ticket",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 11,
+      "name": "1st Level Wings",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 13,
+      "name": "Dark Horse",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 14,
+      "name": "Dark Raven",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7190,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                6687,
+                1
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7182,
+                0
+              ]
+            ],
+            "count": [
+              2,
+              2
+            ]
+          },
+          {
+            "states": [
+              [
+                7181,
+                0
+              ]
+            ],
+            "count": [
+              2,
+              2
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                6687,
+                1
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7181,
+                0
+              ]
+            ],
+            "count": [
+              2,
+              2
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7182,
+                0
+              ]
+            ],
+            "count": [
+              2,
+              2
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7190,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 15,
+      "name": "Potion of Bless",
+      "ingredients": {
+        "classification": "VALUE MISMATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "VALUE MISMATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                7181,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              null
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7181,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              25
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 16,
+      "name": "Potion of Soul",
+      "ingredients": {
+        "classification": "VALUE MISMATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "VALUE MISMATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                7182,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              null
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7182,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              25
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 17,
+      "name": "Life Stone",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7199,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7181,
+                0
+              ]
+            ],
+            "count": [
+              5,
+              5
+            ]
+          },
+          {
+            "states": [
+              [
+                7182,
+                0
+              ]
+            ],
+            "count": [
+              5,
+              5
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7181,
+                0
+              ]
+            ],
+            "count": [
+              5,
+              5
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7182,
+                0
+              ]
+            ],
+            "count": [
+              5,
+              5
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7199,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 22,
+      "name": "+12 Item Combination",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Multiple variants: native ordered selection remains unmapped"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 23,
+      "name": "+13 Item Combination",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Multiple variants: native ordered selection remains unmapped"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 24,
+      "name": "Cape of Lord/Fighter",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 25,
+      "name": "Fenrir Stage 1",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "FORMAT MAPPING REQUIRED",
+        "server": [
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                6689,
+                0
+              ]
+            ],
+            "count": [
+              20,
+              20
+            ]
+          },
+          {
+            "states": [
+              [
+                6688,
+                0
+              ]
+            ],
+            "count": [
+              20,
+              20
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                6688,
+                0
+              ]
+            ],
+            "count": [
+              20,
+              20
+            ],
+            "packaging": [
+              {
+                "item_id": 6688,
+                "container_units": 20
+              },
+              {
+                "durability_bounds": [
+                  20,
+                  20
+                ]
+              }
+            ]
+          },
+          {
+            "states": [
+              [
+                6689,
+                0
+              ]
+            ],
+            "count": [
+              20,
+              20
+            ],
+            "packaging": [
+              {
+                "item_id": 6689,
+                "container_units": 20
+              },
+              {
+                "durability_bounds": [
+                  20,
+                  20
+                ]
+              }
+            ]
+          },
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 26,
+      "name": "Fenrir Stage 2",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "FORMAT MAPPING REQUIRED",
+        "server": [
+          {
+            "states": [
+              [
+                6691,
+                0
+              ]
+            ],
+            "count": [
+              5,
+              5
+            ]
+          },
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                6690,
+                0
+              ]
+            ],
+            "count": [
+              10,
+              10
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                6690,
+                0
+              ]
+            ],
+            "count": [
+              10,
+              10
+            ],
+            "packaging": [
+              {
+                "item_id": 6690,
+                "container_units": 10
+              },
+              {
+                "durability_bounds": [
+                  10,
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "states": [
+              [
+                6691,
+                0
+              ]
+            ],
+            "count": [
+              5,
+              5
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 27,
+      "name": "Fenrir Stage 3",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                6692,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7184,
+                0
+              ]
+            ],
+            "count": [
+              3,
+              3
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                6692,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7184,
+                0
+              ]
+            ],
+            "count": [
+              3,
+              3
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                6159,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 28,
+      "name": "Fenrir Upgrade (Stage 4)",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 30,
+      "name": "Small Shield Potion",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                7171,
+                0
+              ],
+              [
+                7171,
+                1
+              ]
+            ],
+            "count": [
+              3,
+              3
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7171,
+                0
+              ],
+              [
+                7171,
+                1
+              ]
+            ],
+            "count": [
+              3,
+              3
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 31,
+      "name": "Medium Shield Potion",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                7206,
+                0
+              ]
+            ],
+            "count": [
+              3,
+              3
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7206,
+                0
+              ]
+            ],
+            "count": [
+              3,
+              3
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 32,
+      "name": "Large Shield Potion",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                7207,
+                0
+              ]
+            ],
+            "count": [
+              3,
+              3
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7207,
+                0
+              ]
+            ],
+            "count": [
+              3,
+              3
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 33,
+      "name": "Gemstone Refinery",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                7209,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7209,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 34,
+      "name": "Refine Stone",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 35,
+      "name": "Restore Item (Remove JOH Option)",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 36,
+      "name": "Guardian Option (Level 380)",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 38,
+      "name": "3rd Level Wings, Stage 1",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Multiple variants: native ordered selection remains unmapped"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 39,
+      "name": "3rd Level Wings, Stage 2",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 41,
+      "name": "Cherry Blossom Event Mix",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                7258,
+                0
+              ]
+            ],
+            "count": [
+              255,
+              255
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7258,
+                0
+              ]
+            ],
+            "count": [
+              255,
+              255
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 42,
+      "name": "Seed Creation",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Required server options need semantic mapping"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 43,
+      "name": "Seed Sphere Creation",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 44,
+      "name": "Mount Seed Sphere",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 45,
+      "name": "Remove Seed Sphere",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Custom handler: settings alone do not establish eligibility"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 46,
+      "name": "Complete Secromicon",
+      "ingredients": {
+        "classification": "MATCH",
+        "item_level_domains": "MATCH",
+        "normalized_counts": "MATCH",
+        "packaging": "No additional client durability predicate",
+        "server": [
+          {
+            "states": [
+              [
+                7274,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7272,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7276,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7271,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7273,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          },
+          {
+            "states": [
+              [
+                7275,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ]
+          }
+        ],
+        "client": [
+          {
+            "states": [
+              [
+                7271,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7272,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7273,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7274,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7275,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          },
+          {
+            "states": [
+              [
+                7276,
+                0
+              ]
+            ],
+            "count": [
+              1,
+              1
+            ],
+            "packaging": []
+          }
+        ],
+        "limit": "Configured legal item levels only; capacity, UI, consumption and outcomes not proved"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 49,
+      "name": "+14 Item Combination",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Multiple variants: native ordered selection remains unmapped"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    },
+    {
+      "id": 50,
+      "name": "+15 Item Combination",
+      "ingredients": {
+        "classification": "FORMAT MAPPING REQUIRED",
+        "reason": "Multiple variants: native ordered selection remains unmapped"
+      },
+      "outcomes": "UNKNOWN",
+      "safe_to_import": false
+    }
+  ],
+  "summary": {
+    "recipes": 38,
+    "classifications": {
+      "FORMAT MAPPING REQUIRED": 26,
+      "MATCH": 10,
+      "VALUE MISMATCH": 2
+    },
+    "normalized_recipes": 14
+  },
+  "limitations": [
+    "Field-scoped comparison, not full inventory matcher or whole-recipe equivalence",
+    "Unbounded server amounts versus finite client amounts need inventory-capacity proof",
+    "Current definition universe is not an independent S6 completeness oracle",
+    "No client resource missing inferred from range holes; IT excluded, Crywolf deferred"
+  ],
+  "inputs": {
+    "baseline_sha256": "8bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a",
+    "native_pin": "8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5",
+    "mix_blob": "0a24d6da76e72af82473951bf930e3f9ea9d0633",
+    "client_projection_sha256": "abb7a71607372574d77f88c7f973ff73a182585e399d82b4f1ac865000a14f55"
+  }
+}
