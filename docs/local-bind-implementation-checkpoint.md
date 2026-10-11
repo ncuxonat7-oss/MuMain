@@ -1,3 +1,7 @@
+# Static runtime inventory — 2026-10-11 18:00 UTC
+
+The bounded 17:55 inventory verified pinned client and server bytes on the current dot cloud host. See [runtime inventory and exact sanitized evidence maps](windows11-runtime-inventory.md): 36 proposed client runtime files, all 18 shaders, 15 x64 PE files with named non-OS static imports resolved; all 186 server hashes match its archived manifest and 110 dependency references resolve. This updates host-local availability only, not another executor's transfer status. Windows dependency bundles/notices, DB/setup, final manifest and actual Windows acceptance remain unresolved. No package assembled or changed; no build/install/runtime/DB/new tests. launchEnabled=false; readiness 65.5/model1.1/MEDIUM unchanged. Earlier transfer entries below are historical.
+
 # Transfer blocker update — 2026-10-11 16:28 UTC
 
 Parent verified server archive materialization in its own host at 15:25: 22,410,241 bytes, SHA256 `505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c`. Bytes in the consuming task remain UNVERIFIED; parent-host availability does not establish consumer access.
