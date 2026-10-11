@@ -17,7 +17,7 @@ import urllib.request
 import zipfile
 
 PIN = 'd067b3c11c23c3145de6e2c76201ab9a93b267c8'
-SDK = '10.0.109'
+SDK = '10.0.401'
 RESOURCE = 'MuMain-data-4b0ab29c58b27fc4.tar.gz'
 RESOURCE_SHA = '8c62a98aaabf13d80c24c0c688dbfafd4b23813966dd3a2f13c445c3a35e8d1d'
 DUMP_SHA = '0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478'
@@ -126,6 +126,7 @@ def source():
         subprocess.run(['git', 'apply', '--reverse', '--check', str(Path(name).resolve())], cwd=server, check=True)
     save_json('source-provenance.json', {
         'openmu': head, 'sdk': SDK, 'workflow_commit': os.environ['GITHUB_SHA'],
+        'build_arguments': '-c Release -p:ci=true', 'source_eol': 'LF',
         'patches': {name: digest(name) for name in names},
         'helper_sha256': digest(server / 'src/Network/LocalOnlyBinding.cs'),
         'limit': 'Build candidate; integration status is separate from source applicability.'})
@@ -163,10 +164,31 @@ def evidence():
                                 'runtime_success_requires': 'persistedState PASS plus separate native screenshot review; no aggregate PASS'})
     result = Path('evidence/smoke-result.json')
     status = json.loads(result.read_text(encoding='utf-8-sig'))['status'] if result.exists() else 'NOT_RUN'
+    if os.environ.get('LOCAL_BIND_BUILD_ONLY') == '1':
+        status = ('BUILD_ONLY_PASS' if os.environ.get('SMOKE_JOB_STATUS') == 'success'
+                  and Path('evidence/runtime-archive.json').is_file() else 'BUILD_ONLY_FAILED')
+        save_json('build-only-result.json', {'status': status, 'integration': 'NOT_RUN',
+                                          'helper_tests': 'NOT_RUN', 'sdk': SDK})
     Path('evidence/result.txt').write_text(status + '\n', encoding='utf-8')
     log = Path('private-logs/build.txt')
     if log.exists():
-        tail = log.read_text(encoding='utf-8', errors='replace')[-200_000:]
+        build_text = log.read_text(encoding='utf-8', errors='replace')
+        lines = build_text.splitlines()
+        errors = [i for i, line in enumerate(lines)
+                  if re.search(r'\berror(?:\s+[A-Z]+[0-9]+)?\s*:', line, re.IGNORECASE)]
+        # First 20 diagnostics, two surrounding lines; each line and total are bounded.
+        context = sorted({j for i in errors[:20]
+                          for j in range(max(0, i - 2), min(len(lines), i + 3))})
+        first = ''.join(f'{i + 1}: {lines[i][:1500]}\n' for i in context)
+        Path('evidence/build-first-errors.txt').write_text(
+            'Bound: first 20 errors, +/-2 lines, 1500 chars/line, 40000 chars total.\n'
+            + (first[:40_000] if errors else 'No matching error diagnostics in captured log.\n'),
+            encoding='utf-8')
+        save_json('build-diagnostics.json', {'matching_errors': len(errors),
+                  'first_error_line': errors[0] + 1 if errors else None,
+                  'first_excerpt_truncated': len(first) > 40_000,
+                  'tail_truncated': len(build_text) > 200_000})
+        tail = build_text[-200_000:]
         Path('evidence/build-tail.txt').write_text(tail, encoding='utf-8')
     events = {}
     for path in Path('private-logs').glob('*-server.*'):
