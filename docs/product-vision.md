@@ -13,3 +13,8 @@ Development path: AI/Work → GitHub → local development → staging → owner
 Owner preferences: minimize Work/CI usage, no broad competing-server/monetization research, no repeated successful builds/tests, no input-emulation side project. Warn before substantial new work; actual remaining Work balance is not visible. Do not promise automatic credit warnings. Do not add multi-agent infrastructure.
 
 Approved Data is for the closed technical prototype. That approval is not a commercial license. Resolve source/asset rights before distribution. See resource-registry.md.
+
+
+## Long-term owner direction (2026-10-12)
+
+The owner explicitly intends to develop an enduring, owner-operated MU Online product rather than a throwaway experimental prototype: local S6 Alpha → controlled customization → public online Alpha with willing player testers → online Beta and operational hardening → sustainable server and potentially reusable/commercializable **authorized** original modules. Dot is intended to evolve from development coordinator toward supervised server administrator and AI Game Master. Immediate local Alpha remains the priority, but short-term decisions must preserve longer-term data safety, maintainability, administration and season/client flexibility. **See [owner-vision-roadmap.md](owner-vision-roadmap.md) for the owner-approved strategy and review rubric.** This is not permission to start public deployment, monetize, distribute third-party assets, or reprioritize current approved work.
