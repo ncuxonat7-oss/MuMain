@@ -14,6 +14,8 @@ $webPort = 18080; $connectPort = 44406; $pgPort = 5432
 $startSeconds = 180; $stopMilliseconds = 45000
 $expectedPorts = @(); $gamePorts = @(); $chatPorts = @(); $connectPorts = @()
 $desktop = $null
+$pgOwned = $false; $pgDeadline = $null
+$pgStartAttempted = $false; $pgUtilityCleanupIncomplete = $false
 
 function Save-Json([string]$name, $value) {
     $value | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath (Join-Path $evidence $name) -Encoding utf8
@@ -25,23 +27,106 @@ function Invoke-Pg([string]$sql) {
     return ($output -join '')
 }
 
+function Write-PgStage([string]$stage, [string]$state, $details = @{}) {
+    $entry=@{stage=$stage; state=$state; utc=[DateTime]::UtcNow.ToString('o'); details=$details}
+    $entry | ConvertTo-Json -Depth 5 -Compress | Add-Content -LiteralPath "$evidence/pg-stages.jsonl" -Encoding utf8
+    Write-Host ("PG stage {0}: {1}" -f $stage,$state)
+}
+
+function Invoke-PgTool([string]$stage, [string]$tool, [string[]]$arguments, [int]$seconds) {
+    if ($tool -notin @('pg_restore','initdb','pg_ctl','createdb','psql')) { throw 'Unexpected PG utility' }
+    if ($null -ne $pgDeadline -and $stage -ne 'stop') {
+        $seconds=[Math]::Min($seconds,[int][Math]::Floor(($pgDeadline-[DateTime]::UtcNow).TotalSeconds))
+    }
+    Write-PgStage $stage 'begin' @{timeoutSeconds=$seconds; tool=$tool}
+    if ($seconds -le 0) { throw 'PG preparation exceeded five-minute budget' }
+    $info=[Diagnostics.ProcessStartInfo]::new()
+    $info.FileName=Join-Path $pgBin "$tool.exe"
+    $info.UseShellExecute=$false
+    $info.RedirectStandardInput=$true; $info.RedirectStandardOutput=$true; $info.RedirectStandardError=$true
+    $info.Environment['PGCONNECT_TIMEOUT']='10'
+    foreach ($argument in $arguments) { $info.ArgumentList.Add($argument) }
+    $process=[Diagnostics.Process]::new(); $process.StartInfo=$info
+    $utilityStarted=$false
+    $stdout=$null; $stderr=$null; $clock=[Diagnostics.Stopwatch]::StartNew()
+    try {
+        if (!$process.Start()) { throw 'PG utility failed to start' }
+        $utilityStarted=$true
+        Write-PgStage $stage 'started' @{pid=$process.Id}
+        $process.StandardInput.Close() # No interactive input for any PG preparation utility.
+        $stdout=[IO.File]::Open("$privateLogs/pg-$stage.out",'Create','Write','ReadWrite')
+        $stderr=[IO.File]::Open("$privateLogs/pg-$stage.err",'Create','Write','ReadWrite')
+        $outTask=$process.StandardOutput.BaseStream.CopyToAsync($stdout)
+        $errTask=$process.StandardError.BaseStream.CopyToAsync($stderr)
+        if (!$process.WaitForExit($seconds * 1000)) {
+            Write-PgStage $stage 'timeout' @{pid=$process.Id; elapsedSeconds=$clock.Elapsed.TotalSeconds}
+            # Terminate only this owned utility, never its process tree, postgres or OpenMU.
+            $process.Kill()
+            if (!$process.WaitForExit(5000)) { throw 'Timed-out PG utility did not terminate' }
+            throw 'PG utility deadline exceeded'
+        }
+        if (![Threading.Tasks.Task]::WhenAll([Threading.Tasks.Task[]]@($outTask,$errTask)).Wait(5000)) {
+            Write-PgStage $stage 'pipe_timeout' @{pid=$process.Id; exitCode=$process.ExitCode}
+            throw 'PG output pipe did not close after utility exit'
+        }
+        Write-PgStage $stage 'end' @{pid=$process.Id; exitCode=$process.ExitCode; elapsedSeconds=$clock.Elapsed.TotalSeconds}
+        if ($process.ExitCode -ne 0) { throw 'PG utility failed; see bounded stage diagnostics' }
+    } catch {
+        Write-PgStage $stage 'failed' @{errorType=$_.Exception.GetType().Name; elapsedSeconds=$clock.Elapsed.TotalSeconds}
+        throw
+    } finally {
+        try {
+            if ($utilityStarted) {
+                $utilityExited=$false
+                try {
+                    if (!$process.HasExited) {
+                        $process.Kill() # Only this owned utility; never the process tree.
+                        $utilityExited=$process.WaitForExit(5000)
+                    } else { $utilityExited=$true }
+                } catch { $utilityExited=$false }
+                if (!$utilityExited) { $script:pgUtilityCleanupIncomplete=$true }
+                Write-PgStage $stage 'utility-cleanup' @{pid=$process.Id; exitEstablished=$utilityExited}
+            }
+        } finally {
+            if ($null -ne $stdout) { $stdout.Dispose() }
+            if ($null -ne $stderr) { $stderr.Dispose() }
+            $process.Dispose()
+        }
+    }
+}
+
 function Start-DisposablePostgres {
+    $script:pgDeadline=[DateTime]::UtcNow.AddMinutes(5)
+    Write-PgStage 'fresh-path' 'begin'
     if (Test-Path -LiteralPath $pgData) { throw 'Disposable cluster path already exists; refusing reuse' }
-    if (Get-NetTCPConnection -State Listen -LocalPort $pgPort -ErrorAction SilentlyContinue) { throw 'PG port occupied; existing service untouched' }
-    $version = & "$pgBin/pg_restore.exe" --version
-    if ($LASTEXITCODE -or $version -notmatch 'PostgreSQL\) 17\.') { throw 'Expected existing PostgreSQL 17 tools' }
-    & "$pgBin/initdb.exe" -D $pgData -U postgres -A trust --no-locale > "$privateLogs/pg-init.txt" 2>&1
-    if ($LASTEXITCODE) { throw 'Disposable initdb failed' }
-    & "$pgBin/pg_ctl.exe" -D $pgData -l "$privateLogs/postgres.txt" -o '-h 127.0.0.1 -p 5432' -w start > "$privateLogs/pg-start.txt" 2>&1
-    if ($LASTEXITCODE) { throw 'Disposable PG start failed' }
-    $script:pgStarted = $true
-    & "$pgBin/createdb.exe" -w -h 127.0.0.1 -p $pgPort -U postgres openmu 2> "$privateLogs/createdb.err"
-    if ($LASTEXITCODE) { throw 'Fresh database creation failed' }
-    & "$pgBin/psql.exe" -X -w -h 127.0.0.1 -p $pgPort -U postgres -d openmu -v ON_ERROR_STOP=1 -c 'CREATE ROLE account LOGIN; CREATE ROLE config LOGIN; CREATE ROLE guild LOGIN; CREATE ROLE friend LOGIN;' > "$privateLogs/roles.txt" 2>&1
-    if ($LASTEXITCODE) { throw 'Disposable restore roles failed' }
-    & "$pgBin/pg_restore.exe" --exit-on-error -w -h 127.0.0.1 -p $pgPort -U postgres -d openmu saved-gameplay/gameplay-test-db.dump > "$privateLogs/restore.txt" 2>&1
-    if ($LASTEXITCODE) { throw 'Exact approved dump restore failed' }
-    Save-Json 'database-identity.json' @{artifact=11651520969; cluster=$pgData; version=$version; temporary=$true}
+    Write-PgStage 'fresh-path' 'end'
+    Write-PgStage 'port-check' 'begin'
+    $query=Get-NetTCPConnection -State Listen -LocalPort $pgPort -AsJob -ErrorAction SilentlyContinue
+    if (!(Wait-Job -Job $query -Timeout 10)) {
+        Write-PgStage 'port-check' 'timeout'
+        throw 'PG port inventory timed out; no PG initialization attempted'
+    }
+    $ports=@(Receive-Job -Job $query -ErrorAction SilentlyContinue)
+    $queryFailed=$query.State -ne 'Completed'
+    Remove-Job -Job $query
+    if ($queryFailed) { throw 'PG port inventory failed; refusing startup' }
+    if ($ports.Count) { throw 'PG port occupied; existing service untouched' }
+    Write-PgStage 'port-check' 'end'
+    Invoke-PgTool 'version' 'pg_restore' @('--version') 15
+    $version=Get-Content -LiteralPath "$privateLogs/pg-version.out" -Raw
+    if ($version -notmatch 'PostgreSQL\) 17\.') { throw 'Expected existing PostgreSQL 17 tools' }
+    $script:pgOwned=$true
+    Invoke-PgTool 'init' 'initdb' @('-D',$pgData,'-U','postgres','-A','trust','--no-locale') 90
+    $script:pgStartAttempted=$true
+    Invoke-PgTool 'start' 'pg_ctl' @('-D',$pgData,'-l',"$privateLogs/postgres.txt",'-o','-h 127.0.0.1 -p 5432','-t','60','-w','start') 75
+    $script:pgStarted=$true
+    Invoke-PgTool 'createdb' 'createdb' @('-w','-h','127.0.0.1','-p',"$pgPort",'-U','postgres','openmu') 30
+    Invoke-PgTool 'roles' 'psql' @('-X','-w','-h','127.0.0.1','-p',"$pgPort",'-U','postgres','-d','openmu','-v','ON_ERROR_STOP=1','-c',
+        'CREATE ROLE account LOGIN; CREATE ROLE config LOGIN; CREATE ROLE guild LOGIN; CREATE ROLE friend LOGIN;') 30
+    Invoke-PgTool 'restore' 'pg_restore' @('--exit-on-error','-w','-h','127.0.0.1','-p',"$pgPort",'-U','postgres','-d','openmu','saved-gameplay/gameplay-test-db.dump') 120
+    Write-PgStage 'identity-write' 'begin'
+    Save-Json 'database-identity.json' @{artifact=11651520969; cluster=$pgData; version=$version.Trim(); temporary=$true}
+    Write-PgStage 'identity-write' 'end'
 }
 
 function Read-GameState {
@@ -403,19 +488,35 @@ try {
     Save-Json 'smoke-failure.json' @{status='FAIL'; errorType=$_.Exception.GetType().FullName; scriptLine=$_.InvocationInfo.ScriptLineNumber}
     throw 'Bounded server smoke failed; see stage evidence and failure line. No automatic retry.'
 } finally {
-    $cleanupOk=$true
+    $cleanupOk=!$pgUtilityCleanupIncomplete
     if ($null -ne $server -and !$server.HasExited) {
         try { Stop-OwnedServer 'failure-cleanup' } catch { $cleanupOk=$false }
     }
     Close-NativeClient
-    if ($pgStarted -and ($null -eq $server -or $server.HasExited)) {
-        & "$pgBin/pg_ctl.exe" -D $pgData -m fast -w stop > "$privateLogs/pg-stop.txt" 2>&1
-        if ($LASTEXITCODE) { $cleanupOk=$false }
-    } elseif ($pgStarted) {
-        # Keep PG alive if graceful exit failed; runner teardown owns eventual cleanup.
-        $cleanupOk=$false
+    $pgStopAction='not_attempted'; $pgStopped=$false
+    $pgPidFilePresent=Test-Path -LiteralPath (Join-Path $pgData postmaster.pid)
+    if ($pgOwned -and $pgPidFilePresent -and ($null -eq $server -or $server.HasExited)) {
+        # pg_ctl may have spawned PostgreSQL before returning or timing out.
+        $pgStopAction='owned_cluster_fast_stop'
+        try {
+            Invoke-PgTool 'stop' 'pg_ctl' @('-D',$pgData,'-m','fast','-t','60','-w','stop') 75
+            $pgStopped=!(Test-Path -LiteralPath (Join-Path $pgData postmaster.pid))
+            if (!$pgStopped) { $cleanupOk=$false }
+        } catch { $cleanupOk=$false }
+    } elseif ($pgOwned -and $pgPidFilePresent) {
+        $pgStopAction='retained_while_server_alive'; $cleanupOk=$false
+    } else {
+        $pgStopAction='no_owned_pid_file_stop_not_proven'
     }
-    Save-Json 'cleanup.json' @{completed=$cleanupOk; serverForceKill=$false; clusterDeleted=$false}
+    if ($pgStartAttempted -and !$pgStopped) {
+        $cleanupOk=$false
+        if (!$pgPidFilePresent) { $pgStopAction='UNKNOWN_start_attempted_without_shutdown_proof' }
+    }
+    if ($pgUtilityCleanupIncomplete) { $cleanupOk=$false }
+    Save-Json 'cleanup.json' @{completed=$cleanupOk; serverForceKill=$false; clusterDeleted=$false;
+        postgresStartAttempted=$pgStartAttempted; utilityCleanupIncomplete=$pgUtilityCleanupIncomplete;
+        postgresStartedFlag=$pgStarted; clusterPreparationOwned=$pgOwned; postgresPidFileBeforeCleanup=$pgPidFilePresent;
+        postgresStopAction=$pgStopAction; postgresStopped=$pgStopped}
     if (!$cleanupOk) {
         Save-Json 'smoke-result.json' @{status='FAIL_CLEANUP'; serverForceKill=$false}
         throw 'Cleanup incomplete; run must fail, no force-kill substituted'
