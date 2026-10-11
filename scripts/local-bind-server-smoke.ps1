@@ -43,7 +43,11 @@ function Invoke-PgTool([string]$stage, [string]$tool, [string[]]$arguments, [int
     $info=[Diagnostics.ProcessStartInfo]::new()
     $info.FileName=Join-Path $pgBin "$tool.exe"
     $info.UseShellExecute=$false
-    $info.RedirectStandardInput=$true; $info.RedirectStandardOutput=$true; $info.RedirectStandardError=$true
+    # pg_ctl start spawns PostgreSQL: use inherited console output, as in the working setup.
+    # PostgreSQL itself still logs to the existing pg_ctl -l file, not these utility pipes.
+    $daemonStart=($tool -eq 'pg_ctl' -and $stage -eq 'start')
+    $info.RedirectStandardInput=$true
+    $info.RedirectStandardOutput=!$daemonStart; $info.RedirectStandardError=!$daemonStart
     $info.Environment['PGCONNECT_TIMEOUT']='10'
     foreach ($argument in $arguments) { $info.ArgumentList.Add($argument) }
     $process=[Diagnostics.Process]::new(); $process.StartInfo=$info
@@ -54,10 +58,12 @@ function Invoke-PgTool([string]$stage, [string]$tool, [string[]]$arguments, [int
         $utilityStarted=$true
         Write-PgStage $stage 'started' @{pid=$process.Id}
         $process.StandardInput.Close() # No interactive input for any PG preparation utility.
-        $stdout=[IO.File]::Open("$privateLogs/pg-$stage.out",'Create','Write','ReadWrite')
-        $stderr=[IO.File]::Open("$privateLogs/pg-$stage.err",'Create','Write','ReadWrite')
-        $outTask=$process.StandardOutput.BaseStream.CopyToAsync($stdout)
-        $errTask=$process.StandardError.BaseStream.CopyToAsync($stderr)
+        if (!$daemonStart) {
+            $stdout=[IO.File]::Open("$privateLogs/pg-$stage.out",'Create','Write','ReadWrite')
+            $stderr=[IO.File]::Open("$privateLogs/pg-$stage.err",'Create','Write','ReadWrite')
+            $outTask=$process.StandardOutput.BaseStream.CopyToAsync($stdout)
+            $errTask=$process.StandardError.BaseStream.CopyToAsync($stderr)
+        }
         if (!$process.WaitForExit($seconds * 1000)) {
             Write-PgStage $stage 'timeout' @{pid=$process.Id; elapsedSeconds=$clock.Elapsed.TotalSeconds}
             # Terminate only this owned utility, never its process tree, postgres or OpenMU.
@@ -65,9 +71,11 @@ function Invoke-PgTool([string]$stage, [string]$tool, [string[]]$arguments, [int
             if (!$process.WaitForExit(5000)) { throw 'Timed-out PG utility did not terminate' }
             throw 'PG utility deadline exceeded'
         }
-        if (![Threading.Tasks.Task]::WhenAll([Threading.Tasks.Task[]]@($outTask,$errTask)).Wait(5000)) {
-            Write-PgStage $stage 'pipe_timeout' @{pid=$process.Id; exitCode=$process.ExitCode}
-            throw 'PG output pipe did not close after utility exit'
+        if (!$daemonStart) {
+            if (![Threading.Tasks.Task]::WhenAll([Threading.Tasks.Task[]]@($outTask,$errTask)).Wait(5000)) {
+                Write-PgStage $stage 'pipe_timeout' @{pid=$process.Id; exitCode=$process.ExitCode}
+                throw 'PG output pipe did not close after utility exit'
+            }
         }
         Write-PgStage $stage 'end' @{pid=$process.Id; exitCode=$process.ExitCode; elapsedSeconds=$clock.Elapsed.TotalSeconds}
         if ($process.ExitCode -ne 0) { throw 'PG utility failed; see bounded stage diagnostics' }
