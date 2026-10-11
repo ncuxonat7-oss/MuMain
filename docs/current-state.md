@@ -1,3 +1,6 @@
+Review closeout: three lifecycle findings corrected;25lifecycle checks PASS,
+previous28guard PASS preserved. See newest implementation checkpoint. Still unpublished/disabled.
+
 # Local unpublished Windows launcher implementation — 2026-10-11
 
 Owner-approved MEDIUM continuation reconciled the three original scripts/windows11

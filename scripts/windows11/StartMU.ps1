@@ -24,6 +24,7 @@ function Show-LauncherStatus {
     $messages=@{
         RUNNING='Игра запущена. Оставьте это окно открытым; для завершения выберите Остановить.'
         STOPPED='Сеанс штатно остановлен. База не удалена. Сохранение прогресса отдельно не проверялось.'
+        STOPPED_WITH_WARNINGS='Сеанс остановлен, но замечены сообщения об ошибках. Соберите отчёт. Сохранение прогресса не подтверждено.'
         IDLE='В этом окне нет запущенного сеанса.'
         SETUP_REQUIRED='Нужна отдельно согласованная подготовка пакета. База не изменена.'
         MANIFEST_REQUIRED='Нет проверенного описания пакета. Запуск отменён.'
@@ -46,7 +47,10 @@ try {
         switch ($choice) {
             '1' { $null=Start-MuSession $session $PackageRoot; Show-LauncherStatus }
             '2' { $null=Stop-MuSession $session; Show-LauncherStatus }
-            '3' { Write-Host (Write-MuReport $session $PackageRoot) }
+            '3' {
+                try { Write-Host (Write-MuReport $session $PackageRoot) }
+                catch { Write-Host 'REPORT_FAILED: не удалось сохранить отчёт. Сеанс продолжается; окно остаётся открытым.' }
+            }
             '0' {
                 if (!(Stop-MuSession $session)) {
                     Write-Host 'Остановка не завершена. Оставьте окно открытым. PostgreSQL сохранён; принудительной остановки нет.'

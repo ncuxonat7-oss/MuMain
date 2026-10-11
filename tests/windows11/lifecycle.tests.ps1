@@ -32,6 +32,7 @@ function MockLifecycle($Module, [string]$Failure='') {
         function script:Start-MuServer { Event 'server-start'; return @{name='server'} }
         function script:Assert-MuListeners { Event 'pg-recheck'; return $true }
         function script:Start-MuClient { Event 'client-start'; return @{name='client'} }
+        function script:Assert-MuOwner { Event 'client-owned' }
         function script:Stop-MuClient { Event 'client-stop' }
         function script:Stop-MuServer { Event 'server-stop' }
         function script:Stop-MuPostgres { Event 'pg-stop' }
@@ -61,7 +62,33 @@ Check 'start readiness order, duplicate refusal, explicit stop ordering' {
     Assert ($s.Code -eq 'RUNNING')
     Assert (!(Start-MuSession $s '.'))
     Assert (Stop-MuSession $s)
-    Assert ((Events $m) -join ',' -eq 'setup,hashes,ports,lock,ports,pg-start,pg-ready,db-check,server-start,server-ready,pg-recheck,client-start,client-stop,server-stop,pg-stop,dispose,unlock')
+    Assert ((Events $m) -join ',' -eq 'setup,hashes,ports,lock,ports,pg-start,pg-ready,db-check,server-start,server-ready,pg-recheck,client-start,client-owned,client-stop,server-stop,pg-stop,dispose,unlock')
+}
+foreach ($exited in @($false,$true)) {
+    Check "invalid or early-exit client (exited=$exited) never reports RUNNING" {
+        $m=Fresh
+        $real=& $m { @{owner=${function:Assert-MuOwner};close=${function:Stop-MuClient}} }
+        MockLifecycle $m
+        & $m {
+            param($Real,$Exited)
+            Set-Item function:script:Assert-MuOwner $Real.owner
+            Set-Item function:script:Stop-MuClient $Real.close
+            $script:clientResult=@{Pid=42;Ticks=$(if ($Exited) {1} else {0});Path='unused';Process=[pscustomobject]@{HasExited=$Exited}}
+            function script:Start-MuClient { Event 'client-start'; return $script:clientResult }
+        } $real $exited
+        $s=New-MuSession
+        Assert (!(Start-MuSession $s '.'))
+        Assert ($s.Code -ne 'RUNNING')
+        if ($exited) {
+            Assert ($null -eq $s.Lock -and 'server-stop' -in (Events $m) -and 'pg-stop' -in (Events $m))
+        } else {
+            Assert ($s.Code -eq 'STOP_FAILED' -and $null -ne $s.Lock -and $null -ne $s.Client)
+            Assert ('server-stop' -notin (Events $m) -and 'pg-stop' -notin (Events $m))
+            $s.Client.Process.HasExited=$true
+            Assert (Stop-MuSession $s)
+            Assert ($null -eq $s.Lock -and 'pg-stop' -in (Events $m))
+        }
+    }
 }
 foreach ($stage in @('setup','hashes','ports')) {
     Check "preflight failure $stage never starts PostgreSQL" {
@@ -158,6 +185,68 @@ Check 'server timeout retains stdin ownership; retry sends exit only once' {
         if (!$s.ServerStopped -or $writer.ToString() -ne ('exit' + [Environment]::NewLine)) { throw 'Retry sent duplicate exit' }
         $writer.Dispose()
     }
+}
+foreach ($exitCode in @(0,7)) {
+    Check "historical error marker, owned server exit=$exitCode, PostgreSQL ordering and report" {
+        $m=Fresh
+        & $m {
+            param($ExitCode)
+            function script:Assert-MuOwner { }
+            function script:Invoke-MuQuery { return 1 }
+            function script:Stop-MuClient { }
+            $script:pgStopped=$false
+            function script:Stop-MuPostgres($Session) {
+                if (!$Session.ServerStopped -or !$Session.Server.Process.HasExited) { throw 'PG stopped before server exit' }
+                $script:pgStopped=$true
+            }
+            function script:Exit-MuLock($Session) { $Session.Lock=$null }
+            $writer=[IO.StringWriter]::new()
+            $process=[pscustomobject]@{StandardInput=$writer;ExitCode=$ExitCode;HasExited=$false}
+            $process | Add-Member ScriptMethod WaitForExit {param($Timeout) return $this.HasExited}
+            $process | Add-Member ScriptMethod Dispose { }
+            $s=New-MuSession; $s.Lock=@{}
+            $s.Pg=@{Process=$process}
+            $s.Server=@{Process=$process;Output=[Threading.Tasks.Task]::CompletedTask;
+                ErrorOutput=[Threading.Tasks.Task]::CompletedTask;Observer=@{ErrorSeen=$true}}
+            # First Stop times out: historical errors must not permit PG shutdown.
+            if (Stop-MuSession $s) { throw 'Live server accepted' }
+            if ($script:pgStopped -or $null -eq $s.Lock -or !$s.ServerErrorsObserved) { throw 'Unsafe timeout state' }
+            $process.HasExited=$true
+            $success=Stop-MuSession $s
+            if ($ExitCode -eq 0) {
+                if (!$success -or !$script:pgStopped -or $null -ne $s.Lock -or $s.Code -ne 'STOPPED_WITH_WARNINGS') { throw 'Historical errors blocked clean exit' }
+                $null=Stop-MuSession $s # Warning evidence survives an idempotent retry.
+            } elseif ($success -or $script:pgStopped -or $null -eq $s.Lock) { throw 'Nonzero exit lost failure boundary' }
+            if ($writer.ToString() -ne ('exit' + [Environment]::NewLine)) { throw 'Exit sent twice' }
+            $dir=Join-Path ([IO.Path]::GetTempPath()) ([guid]::NewGuid())
+            $null=New-Item -ItemType Directory $dir
+            try {
+                $report=Get-Content -Raw (Write-MuReport $s $dir) | ConvertFrom-Json
+                if (!$report.serverErrorMarkersObserved -or $report.persistence -ne 'UNKNOWN' -or $report.rawLogsIncluded) { throw 'Error evidence lost or save claimed' }
+            } finally { Remove-Item -Recurse $dir; $writer.Dispose() }
+        } $exitCode
+    }
+}
+Check 'report action catches disk failure and preserves the active controller' {
+    $tokens=$null; $errors=$null
+    $ast=[Management.Automation.Language.Parser]::ParseFile(
+        (Join-Path $PSScriptRoot '../../scripts/windows11/StartMU.ps1'),[ref]$tokens,[ref]$errors)
+    $switch=$ast.Find({param($Node) $Node -is [Management.Automation.Language.SwitchStatementAst]},$true)
+    $clause=@($switch.Clauses | Where-Object { $_.Item1.Extent.Text -eq "'3'" })[0]
+    $text=$clause.Item2.Extent.Text
+    $handler=[scriptblock]::Create($text.Substring(1,$text.Length-2))
+    & {
+        param($Handler)
+        $session=@{Code='RUNNING';Lock=@{}}; $PackageRoot='unused'
+        $script:message=''; $script:stopCalled=$false
+        function Write-MuReport { throw 'private-path secret-canary disk-full' }
+        function Stop-MuSession { $script:stopCalled=$true }
+        function Write-Host { param($Message) $script:message+=[string]$Message }
+        $escaped=$false
+        try { & $Handler } catch { $escaped=$true }
+        Assert (!$escaped -and !$script:stopCalled -and $session.Code -eq 'RUNNING' -and $null -ne $session.Lock)
+        Assert ($script:message -match 'REPORT_FAILED' -and $script:message -notmatch 'secret-canary|private-path')
+    } $handler
 }
 Check 'occupied port rejects without adopting process' {
     $m=Fresh

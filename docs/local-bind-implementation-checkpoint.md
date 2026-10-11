@@ -1,3 +1,21 @@
+# Three-finding review closeout — 2026-10-11 (unpublished)
+
+Limited corrections after independent review of c07bfb31:
+- Start now checks the returned client's retained identity and liveness before
+  RUNNING. A live client with invalid identity retains the session without acting
+  on it; an already-exited client permits owned server/PG cleanup.
+- Historical server error markers remain visible in sanitized reports and
+  STOPPED_WITH_WARNINGS after owned exit0/drain and PostgreSQL-last shutdown.
+  They no longer permanently block PostgreSQL shutdown. Timeout, nonzero exit or
+  incomplete drain still refuses PG shutdown. Retry sends no duplicate stdin exit;
+  warning evidence survives successful cleanup. Persistence remains UNKNOWN.
+- A failed menu report write emits fixed REPORT_FAILED text and keeps the active
+  controller/session open, without entering the outer cleanup path.
+
+25 lifecycle checks PASS (5 new focused regressions); previous28 guard PASS retained,
+not rerun. Linux/synthetic only. Setup activation remains disabled; no Windows run,
+publication, dispatch, architecture or additional features in this closeout.
+
 # Bounded Windows 11 daily launcher — 2026-10-11 (unpublished)
 
 CODEX PREFERRED, owner-approved MEDIUM at06:00:12UTC. This replaces the partial
@@ -45,8 +63,9 @@ and fixed local-only settings. No CI authentication is inherited.
 Stop closes the owned client normally, confirms PostgreSQL health, sends OpenMU
 `exit` once, waits for exit0 and output drain, checks conservative error markers,
 then runs pg_ctl fast stop against the owned cluster. No OpenMU/client force kill.
-A timed-out pg_ctl is retained and reused on retry. Error/timeout retains control
+A timed-out pg_ctl is retained and reused on retry. Failed or uncertain process teardown retains control
 handles, PostgreSQL where still alive, and the marker. The cluster is never deleted.
+Historical log error markers alone produce warnings after safe shutdown.
 An orphan marker blocks later starts; it is never automatically cleared or used to
 adopt processes. Console termination/crash recovery remains intentionally manual.
 

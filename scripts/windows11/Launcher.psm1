@@ -3,11 +3,11 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $script:AllowedCodes = @('IDLE','PREFLIGHT','RUNNING','STOPPED','SETUP_REQUIRED','HASH_MISMATCH',
-    'UNSAFE_CONFIG','PORT_BUSY','ALREADY_RUNNING','START_FAILED','STOP_FAILED','OWNER_LOST','WINDOWS_REQUIRED','MANIFEST_REQUIRED','PROBE_FAILED','PREFLIGHT_OK')
+    'UNSAFE_CONFIG','PORT_BUSY','ALREADY_RUNNING','START_FAILED','STOP_FAILED','OWNER_LOST','WINDOWS_REQUIRED','MANIFEST_REQUIRED','PROBE_FAILED','PREFLIGHT_OK','STOPPED_WITH_WARNINGS')
 
 function New-MuSession {
     return @{ Code='IDLE'; Pg=$null; Server=$null; Client=$null; PgStop=$null;
-        Lock=$null; Setup=$null; ExitRequested=$false; ServerStopped=$false }
+        Lock=$null; Setup=$null; ExitRequested=$false; ServerStopped=$false; ServerErrorsObserved=$false }
 }
 
 function Set-MuCode($Session, [string]$Code) {
@@ -199,6 +199,7 @@ function Start-MuSession($Session, [string]$Root) {
         if (!(Assert-MuListeners $Session.Pg @(5432))) { throw 'START_FAILED' }
         $Session.Client=Start-MuClient $Session.Setup
         Save-MuOwners $Session
+        Assert-MuOwner $Session.Client
         Set-MuCode $Session 'RUNNING'
         return $true
     } catch {
@@ -219,6 +220,7 @@ function Stop-MuClient($Owned) {
 function Stop-MuServer($Session) {
     if ($null -eq $Session.Server -or $Session.ServerStopped) { return }
     $owned=$Session.Server
+    $Session.ServerErrorsObserved=$Session.ServerErrorsObserved -or ($null -ne $owned.Observer -and $owned.Observer.ErrorSeen)
     if (!$Session.ExitRequested) {
         Assert-MuOwner $Session.Pg
         if ((Invoke-MuQuery $Session.Setup 'SELECT to_json(1)') -ne 1) { throw 'STOP_FAILED' }
@@ -227,8 +229,9 @@ function Stop-MuServer($Session) {
         $Session.ExitRequested=$true
     }
     if (!$owned.Process.WaitForExit(45000)) { throw 'STOP_FAILED' }
-    if ($owned.Process.ExitCode -ne 0 -or !$owned.Output.Wait(5000) -or !$owned.ErrorOutput.Wait(5000) -or
-        $owned.Observer.ErrorSeen) { throw 'STOP_FAILED' }
+    if (!$owned.Output.Wait(5000) -or !$owned.ErrorOutput.Wait(5000)) { throw 'STOP_FAILED' }
+    $Session.ServerErrorsObserved=$Session.ServerErrorsObserved -or $owned.Observer.ErrorSeen
+    if ($owned.Process.ExitCode -ne 0) { throw 'STOP_FAILED' }
     Assert-MuOwner $Session.Pg
     $Session.ServerStopped=$true
 }
@@ -261,14 +264,17 @@ function Close-MuHandles($Session) {
 }
 
 function Stop-MuSession($Session) {
-    if ($null -eq $Session.Lock) { Set-MuCode $Session 'IDLE'; return $true }
+    if ($null -eq $Session.Lock) {
+        Set-MuCode $Session $(if ($Session.ServerErrorsObserved) {'STOPPED_WITH_WARNINGS'} else {'IDLE'})
+        return $true
+    }
     try {
         Stop-MuClient $Session.Client
         Stop-MuServer $Session
         Stop-MuPostgres $Session
         Close-MuHandles $Session
         Exit-MuLock $Session
-        Set-MuCode $Session 'STOPPED'
+        Set-MuCode $Session $(if ($Session.ServerErrorsObserved) {'STOPPED_WITH_WARNINGS'} else {'STOPPED'})
         return $true
     } catch {
         Set-MuCode $Session 'STOP_FAILED'
@@ -283,6 +289,9 @@ function Write-MuReport($Session, [string]$Directory) {
         launcher='bounded-windows11-v2'; runtimeArtifact='11689365514'; build='38104421623';
         source='71159136c8f8cba949735be3ed0904fc15e5ad73'; sdk='10.0.401';
         openmu='d067b3c11c23c3145de6e2c76201ab9a93b267c8'; setup=$(if ($null -ne $Session.Setup) {'VALIDATED'} else {'NOT_VALIDATED'});
+        serverErrorMarkersObserved=($Session.ServerErrorsObserved -eq $true -or
+            ($null -ne $Session.Server -and $null -ne $Session.Server.Observer -and $Session.Server.Observer.ErrorSeen));
+        persistence='UNKNOWN';
         windowsLifecycle='NOT_RUN'; uploads=$false; rawLogsIncluded=$false }
     Assert-MuLocalPath $Directory
     $path=Join-Path $Directory ('mu-report-' + [Guid]::NewGuid().ToString('N') + '.json')

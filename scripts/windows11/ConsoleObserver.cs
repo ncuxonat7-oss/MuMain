@@ -10,6 +10,7 @@ public sealed class MuConsoleObserver
     private const int MaximumLine = 8192;
     private readonly string expectedPid;
     public volatile bool PidSeen;
+    // Historical diagnostic only; this flag does not mean the process is alive.
     public volatile bool ErrorSeen;
     public Task OutputTask { get; }
     public Task ErrorTask { get; }
