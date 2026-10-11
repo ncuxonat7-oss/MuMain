@@ -1,3 +1,54 @@
+# Private local packaging stage — 2026-10-11 (not published)
+
+Owner approved one bounded MEDIUM packaging stage at07:28UTC. Launcher source is
+published7f5b44a930a501dfc7ea4f522584cb59a22c9499; this packaging work is local/private.
+Latest authoritative docs branch92a3c08 was read. Executor remained responsive after
+the parent's disconnected notification; no duplicate task or build was started.
+
+Available package candidate:13,188Data files +13font files +8unchanged launcher files,
+13,209inventoried files/750,478,371bytes. Source Data tree77f7830f542d106fc519c8821832d49a3dd8ae3a
+and fonts tree149f928e2547aa6658977c3f41c63abccfa471ed matched; every copied file was
+checked against its pinned Git blob. The existing overlay was applied only to the
+package copy; resulting Group12 SHA2561441360f93d80291659f63912022e0816125863acd0212ab4ec02fca33ebbb73.
+The original overlay backup is retained under evidence, outside client/Data.
+Repository assets and reviewed launcher bytes are unchanged. Font notices retained.
+Five NEW packaging/path/hash/draft tests PASS; no unchanged lifecycle/build/gameplay
+checks repeated. Recipe: scripts/package-windows11-local.py; tests/windows11/test_packaging.py.
+
+Blockers, not compatibility findings:
+- Server Library libfile_b1e2679ae4088191859d97f0bbd4903c and client Library
+  libfile_1174bdeb6c048191ad0be1ac163fdad5 both resolved to expected metadata.
+  One supported materialization attempt per file with an explicit destination in
+  this executor returned `library file transfer failed: download failed`. Neither
+  yielded readable local bytes. No HTTP status/cause was exposed; do not label
+  this a proven permission denial, missing backup, or broken game component.
+  No alternate URL, credential or generic-file route was tried.
+- Compiled migration assembly is unavailable. The pinned GitHub migrations
+  directory request through the web tool returned `Failed to fetch restricted URL`.
+  No alternate retrieval route was used. Existing pinned Program/context-provider
+  source establishes migration-check behavior, not the migration ID set.
+  migrationIds/migrationSchema remain null, never inferred from a live database.
+- Windows .NET/ASP.NET, PostgreSQL and PowerShell dependency archives are not local.
+  PE imports and actual Windows dependency compatibility remain unverified.
+
+The private package contains complete inventories for AVAILABLE inputs, a clearly
+named windows11-launch-manifest.draft.json, disabled original session contract,
+Russian readme, dependency/transfer/migration evidence and new static test output.
+It is incomplete and NOT runnable. It includes no DB dump, credentials, prepared
+cluster, installed dependencies, service or activation. The expected server/client
+archive hashes are recorded as expected values, not falsely claimed byte checks.
+Package/archive identities and Library save outcome are supplied in the final
+private artifact handoff, not guessed in advance here.
+
+Next technical prerequisite is supported delivery of the already pinned missing
+bytes; no new owner decision is required merely to verify those files or complete
+static inventory/migration analysis. Genuine later owner approval is for initial
+DB selection/provisioning, persistent authentication/roles/secret handling,
+dependency installation/local directories and a new bounded Windows acceptance.
+Keep launchEnabled=false until complete actual setup and acceptance are reviewed.
+No GitHub publication, workflow dispatch, new access, installation, Windows run,
+main changes or architecture work in this packaging stage.
+
 # Three-finding review closeout — 2026-10-11 (unpublished)
 
 Limited corrections after independent review of c07bfb31:
