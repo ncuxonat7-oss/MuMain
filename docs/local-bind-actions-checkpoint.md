@@ -1,3 +1,11 @@
+# Current blocker — 2026-10-11 03:28 UTC
+
+Manual run38108174523 at9e0ee2591d9e86f462b2250b11eb2927eba3756b failed at line167 before server startup. Evidence11691160010,15279bytes,SHA2562079c09346b4013db351678d3105d6930d6664dd2fea0cce2e6189fa2009f5a6. DB restore, configuration/child-environment prelaunch guard and expected character fixture PASS; owned PG cleanup PASS. Explicit CLR parser correction is now verified through the guard. No OpenMU/native start, restart or persistence proof.
+
+ReadConsoleInput guard requires exactly one SystemConfiguration row with true. Evidence does not distinguish false from unexpected row count. Pinned initialization defaults false; schema has no singleton constraint. Pinned Program has no CLI override for this flag; console pid/exit loop is conditional on it. Do not substitute unproven Ctrl+C/process-kill shutdown. Existing dump/pg_restore not present in parent workspace; no extra run or download was made just to learn this value.
+
+Owner decision requested03:28UTC: conditionally enable only ReadConsoleInput in the disposable restored copy if exactly one row exists and value is false; preserve source artifact and gameplay fixture, stop on multiple/unknown rows. Pending approval; no DB correction implemented or performed. This changes the previous no-SQL-repair contract narrowly only if approved. No repeat run yet. Readiness65.5 unchanged.
+
 # Latest DB guard correction — 2026-10-11 03:22 UTC
 
 Manual run38107679674 at60bec9e, job114376540995 FAILED before OpenMU launch. Verified evidence artifact11690019550,13352bytes,SHA256018b80d7c861d41cc678d840d2c56e283639b151c220bd673fa1989775d41564. PG version/init/start/createdb/roles/restore/identity-write completed successfully; pipe fix now verified. Owned PG cleanup completed successfully. Failure evidence identifies scriptLine456, the DB option allowlist rejection. No native action, server startup or persistence result.
