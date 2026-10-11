@@ -1,3 +1,9 @@
+# Approved disposable console setting — 2026-10-11 03:34 UTC
+
+Owner approved the exact conditional one-field configuration change at03:29:29UTC. Prepared and published3a9dff7a7304c5ca0ddbeaaa81e90ab6b1df32f8 on task/local-bind-isolated-check, exact remote readback and independent static review PASS. Source runtime/artifact and original dump unchanged. New function verifies owned PG process/listener/data-directory/DB identity, locks SystemConfiguration in a bounded transaction, requires exactly one row and boolean flag, updates only false to true, checks other fields unchanged, and records safe committed evidence. True is no-op. Unexpected row count/value or SQL error stops/rolls back. Gameplay fixture checked again. No runtime execution yet.
+
+Next owner NEW manual Windows Client Build run on task/local-bind-isolated-check at3a9dff7, no extra inputs. Full server/native/persistence still NOT_RUN; Readiness65.5 unchanged. Endpoint schema confirmed in pinned source, but current all-row query may reject unused/unlinked definitions; this remaining strict runtime gate was not silently weakened. Native world entry still requires visual evidence. No automatic dispatch or access changes.
+
 # Current blocker — 2026-10-11 03:28 UTC
 
 Manual run38108174523 at9e0ee2591d9e86f462b2250b11eb2927eba3756b failed at line167 before server startup. Evidence11691160010,15279bytes,SHA2562079c09346b4013db351678d3105d6930d6664dd2fea0cce2e6189fa2009f5a6. DB restore, configuration/child-environment prelaunch guard and expected character fixture PASS; owned PG cleanup PASS. Explicit CLR parser correction is now verified through the guard. No OpenMU/native start, restart or persistence proof.
