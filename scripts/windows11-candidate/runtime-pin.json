@@ -1,0 +1,15 @@
+{
+  "status": "review-candidate-not-a-launch-manifest",
+  "artifact": "11689365514",
+  "build": "38104421623",
+  "source": "71159136c8f8cba949735be3ed0904fc15e5ad73",
+  "sdk": "10.0.401",
+  "openmu": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "patches": ["Money", "local-bind"],
+  "outerSha256": "505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c",
+  "innerSha256": "4b1b1d71a0aa992fb3f2dbac7e447a5704cccc7ed38ebacfdebe97eabebf1eec",
+  "runtimeManifestEntries": 186,
+  "privateBackup": "libfile_b1e2679ae4088191859d97f0bbd4903c",
+  "packageHashes": null,
+  "persistentSetupApproval": null
+}

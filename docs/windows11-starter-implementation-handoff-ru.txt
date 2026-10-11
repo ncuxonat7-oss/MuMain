@@ -1,5 +1,5 @@
 Задание на минимальный Windows 11 starter
-Статус: готово для передачи на локализованную реализацию после отдельного разрешения. Сейчас выполнена только LOW подготовка; код не написан и процессы не запускались.
+Статус 2026-10-11: владелец разрешил ограниченный MEDIUM этап в 06:00:12 UTC. Независимый кандидат находится в scripts/windows11-candidate; он не является восстановленной старой заготовкой и пока отказывает в реальном запуске. Исходные StartMU.ps1, CollectReport.ps1, local-session-contract.json и windows11-launch-manifest.json не найдены в существующих ветках/доступной истории. Подробности и блокеры: docs/local-bind-implementation-checkpoint.md, новый раздел в начале.
 
 1. Решение и границы
 Владелец 10.10.2026 в 21:14:23 UTC подтвердил один Windows 11 ноутбук для клиента, OpenMU и PostgreSQL, только закрытое тестирование. Источник: сообщение Sentinel_b51a1a8f189c8191969f779b05f7d288, «Окей» в ответ на вопрос о размещении. Не переспрашивать топологию. Железо и установленные компоненты неизвестны. Старые поля manifest о невыбранном хосте исторические; это задание и обновлённый portable plan их заменяют. Другие pins/hashes manifest остаются входными данными.
@@ -11,7 +11,7 @@
 
 • Клиент: run37813650810 / artifact11567737809, source8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5. В ZIP лежит MuMain-windows-native-x64-release-editor-off-no-data.tar.gz. Цель — полный каталог клиента с DLL/CRT, NativeAOT bridge и shaders; не только Main.exe.
 • Data/fonts: MuMain-data-4b0ab29c58b27fc4.tar.gz из закреплённого release. Распаковать в корень клиента; применить существующий scripts/apply-client-overlay.py с patches/client-socket-metadata.json. При missing Python или несовпадении hashes остановиться, не писать альтернативный overlay.
-• Сервер: run37959672391 / patched-openmu-runtime11630698202. Это содержимое Startup/bin/Release, без внешнего source checkout. Разместить его в выделенном серверном каталоге пакета. Не применять source patch к DLL, не пересобирать и не использовать unpatched cache.
+• Сервер: build38104421623 / runtime11689365514; source71159136c8f8cba949735be3ed0904fc15e5ad73, SDK10.0.401, OpenMU d067b3c11c23c3145de6e2c76201ab9a93b267c8 + Money/local-bind. Outer SHA256505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c; inner SHA2564b1b1d71a0aa992fb3f2dbac7e447a5704cccc7ed38ebacfdebe97eabebf1eec; 186 manifest entries. Private backup libfile_b1e2679ae4088191859d97f0bbd4903c. Старый Money-only11630698202 больше не является intended pin. Не пересобирать и не применять source patch к DLL.
 • DB: предложенный исходный baseline run38005996341 / baseline-data-final11651520969, member gameplay-test-db.dump. Владелец ещё должен явно подтвердить эту DB перед restore. Run16/run17 остаются отдельными fixtures и не выбираются по свежести даты.
 
 Предлагаемые относительные области пакета: client, server, database, evidence и служебное состояние. Это проект layout, не утверждение о существующих каталогах на ноутбуке. Абсолютный путь выбирается при setup.
@@ -26,7 +26,7 @@
 • Подтвердить фактическую loopback-привязку всех слушателей перед клиентом. Отсутствие подтверждения — отказ запуска.
 • Сохранить PID, время старта и путь каждого собственного процесса. Повторный StartMU показывает активную сессию, не дублирует стек.
 
-Остановка: перепроверить PID/start time/path, штатно закрыть свой клиент и OpenMU, дождаться их завершения, затем штатно остановить свой PostgreSQL. Точный безопасный способ graceful shutdown OpenMU ещё не установлен: workflow применяет Stop-Process, что нельзя автоматически назвать штатным завершением сервера. При отказе показать проблему, не переходить молча к force-kill. Чужие процессы не трогать. При ошибке старта откатывать только запущенные текущей попыткой процессы; DB и прогресс сохранять.
+Остановка: перепроверить PID/start time/path, штатно закрыть свой клиент и OpenMU, дождаться их завершения, затем штатно остановить свой PostgreSQL. Маршрут shutdown подтверждён для изолированного smoke38108874540: stdin exit, ReadConsoleInput=true, PostgreSQL остаётся живым до завершения OpenMU. Источник: scripts/local-bind-server-smoke.ps1 на3a9dff7. Это не разрешение менять флаг или authentication на ноутбуке. При отказе показать проблему, не переходить молча к force-kill. Чужие процессы не трогать. При ошибке старта откатывать только запущенные текущей попыткой процессы; DB и прогресс сохранять.
 
 4. Что перенести из existing workflow
 Источник: .github/workflows/standard-gameplay.yml на13bdb1d1f23901e445318b8f3cf203ad5b045a5a.
@@ -39,8 +39,8 @@
 A. ПК: CPU architecture/RAM/GPU+driver/свободный диск; реальные зависимости и runtime support. Численных minimum requirements пока нет.
 B. .NET/ASP.NET10 и PostgreSQL: ранее работали10.0.11 и17.11. Точные установочные файлы/наличие/runtime configuration должны быть проверены; установка только из официальных источников с необходимым разрешением. Наличие Python для существующего overlay тоже неизвестно.
 C. Локальная аутентификация: CI использует trust и временные параметры. Решение владельца о топологии не разрешает перенос trust, использование/сохранение credentials или изменение security settings. Нужна отдельная безопасная схема setup.
-D. OpenMU bind: -resolveIP:loopback и advertised loopback адрес не доказывают bind всех listener sockets на loopback. Точный механизм конфигурации в pinned runtime ещё не проверен; при его отсутствии пакет не запускать.
-E. OpenMU shutdown: подтвердить поддерживаемое graceful завершение и последствия для сохранения состояния.
+D. В новом pinned runtime local-bind patch проверен интеграцией38108874540; OPENMU_LOCAL_ONLY_TCP=1, очищенное окружение и actual listener guards должны сохраняться. Старый runtime использовать нельзя; ноутбук ещё не проверен.
+E. Graceful stdin exit и scoped persistence подтверждены существующей интеграцией. Новое ежедневное управление и owner setup требуют отдельной Windows-проверки; crash safety не доказана.
 F. На ПК пока нет материализованных и проверенных архивов; identities metadata не заменяют byte verification. Базу и локальный каталог ещё явно выбрать.
 
 Эти неизвестные не мешают написать fail-closed preflight и контракт состояний, но не позволяют обещать безопасный рабочий one-click starter уже сейчас.

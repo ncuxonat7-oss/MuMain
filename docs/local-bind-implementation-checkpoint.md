@@ -1,3 +1,115 @@
+# Bounded Windows 11 launcher candidate — 2026-10-11
+
+Classification: CODEX PREFERRED. Owner approval at 06:00:12 UTC covers this bounded
+MEDIUM implementation, not laptop setup or publication. Local task branch
+`task/windows11-local-launcher` starts at authoritative docs commit
+`47ff97ce2676d4b356b2c957535f331139f61e7a`; main remains historical `6fdebbdd`.
+Parent must review the exact local patch before publication. Nothing was pushed,
+merged, dispatched, installed on the owner's laptop, restored or rebuilt.
+
+## Reconciliation and explicit limit
+
+Read AGENTS.md, CODING_RULES.md, current-state, starter handoff, local-server-controls,
+this checkpoint and latest local-bind-actions-checkpoint. No relevant local
+`.agents/skills` were present. Read-only fetch inspected all seven existing remote
+branch tips and available reachable path history. The four named original artifacts
+were absent: StartMU.ps1, CollectReport.ps1, local-session-contract.json and
+windows11-launch-manifest.json. Only documentation references were found.
+The prior checkpoint identifies unpublished review archive
+`libfile_153e4f2e7f4481919c41f665ee93208c`, commit `2e7bb5157e50d2bec1eaac6b1678bf1253266049`.
+Its source must be supplied through an approved project reference, or the parent
+must explicitly accept a replacement after comparing that source. No Library
+archive, runtime, client or database archive was downloaded in this task.
+
+The independent candidate lives under `scripts/windows11-candidate`, deliberately
+not at the missing authoritative scaffold paths. It includes Start.ps1,
+CollectReport.ps1, Launcher.psm1 and a provenance-only runtime-pin.json. This is
+**not a runnable owner package**: Get-MuApprovedSetup and Assert-MuDatabase refuse
+with SETUP_REQUIRED. There is no switch, editable approval receipt or ordinary
+Start path that bypasses these gates. This is a tested lifecycle implementation
+candidate plus prerequisite design, not completion of the deployable launcher.
+
+## Candidate behavior and owner controls
+
+After future reviewed integration, Start.ps1 is intended to stay open while playing:
+1 = Start, 2 = explicit Stop, 3 = local CollectReport, 0 = Stop then exit. The same
+owner process retains stdin; another shell cannot recover or adopt it. Failed Stop
+keeps the menu/session available for retry. Closing/killing the console is not a
+safe Stop and may lose stdin; a retained marker blocks subsequent launches.
+There is no automatic marker deletion, process adoption or force-kill recovery.
+
+Current Start always explains that separately approved preparation is missing and
+starts no service. Report collection works independently; the menu report contains
+the current allowlisted status. A separate CollectReport invocation reports IDLE
+for its own fresh context, not the state of other processes. Reports contain only
+fixed provenance, UTC and allowlisted status; no paths, process IDs, arbitrary
+exceptions, configuration, raw logs, screenshots, dumps or credentials. They stay
+in the selected local directory; nothing uploads. This conservative report cannot
+diagnose game/log errors or prove a save succeeded.
+
+Lifecycle code reuses the smoke's ownership, sanitized child environment, loopback
+checks, retained stdin exit, bounded waits and PostgreSQL-last ordering. No CI
+transfer, restore/init, roles, fixture repair, scripted gameplay or test assertions
+are part of daily launch. PostgreSQL is a direct owned child in this candidate;
+that differs from the smoke's pg_ctl-spawned daemon and needs Windows validation.
+PID/start-time/path checks guard actions, and private session metadata stays out of
+reports. A mutex prevents duplicate controllers; a durable marker blocks recovery
+after controller loss. Client uses CloseMainWindow, without forced termination.
+Server timeout/nonzero exit retains PostgreSQL and session ownership. Clean exit
+alone does not assert persistence. Ordinary Stop never deletes the cluster.
+
+## Exact prerequisites before enabling real Start
+
+- Recover/reconcile the four original files, or review the independent replacement.
+  Supply the complete pinned 186-entry runtime inventory plus client/Data/fonts,
+  overlay, dependencies and executable hashes. The provenance-only pin file is
+  deliberately incomplete; no synthetic hashes or inventory were generated.
+- Separately approve database selection, local directory, initial provisioning,
+  authentication/roles/secret handling and any persisted ReadConsoleInput change.
+  No CI trust settings, temporary passwords, DB_ADMIN_USER or console-flag repair
+  are copied into daily launch. Select/install dependencies only under separate
+  approval; candidate needs PowerShell 7.4+, which is not assumed preinstalled.
+- Integrate a reviewed, read-only setup loader/config guard. It must enforce full
+  inventory coverage, reject extra config/plugin files and reparse paths, pin
+  effective PostgreSQL includes/preloads/auth config, require numeric loopback DB
+  destinations and approved connection options, and disable initialization/migration
+  before any DB/server start. The smoke pins appsettings with
+  `Database.AssumeExternallyProvisioned=false`; do not reuse this blindly. Review
+  the pinned runtime's exact no-initialization behavior and any required config
+  delta before admitting daily launch. The current hash helper alone does not
+  establish those configuration guarantees.
+- Integrate separately approved read-only DB authentication and actual queries for
+  one ReadConsoleInput=true row and exact game/chat/connect endpoint inventory,
+  comparing it with preflight ports (5432/44406/55902/18080 plus configured chat).
+  Reuse Read-EndpointContract from verified helper3a9dff7; no SQL writes/repair.
+  Do not enable the first gate without implementing and reviewing the second.
+- Resolve Windows 11 dependency/hardware/package checks and client/PG environment
+  needs, then validate the new launcher itself in an approved isolated Windows
+  environment. Existing smoke PASS is retained; do not rerun it unchanged.
+
+## New verification evidence
+
+20 focused tests PASS under portable PowerShell7.4.6 on Linux. They cover parsing,
+missing setup, lifecycle ordering, duplicate requests, preflight/start failures,
+Stop failure retention/retry, sanitized report canaries, traversal/hash rejection,
+occupied ports, missing/wildcard/extra/UDP listeners, single stdin-exit request on
+retry, and one harmless real child with ownership mismatch rejection, pipe drain
+and stdin exit0. Mocked checks are not Windows service or DB integration proof.
+Command: `pwsh -NoLogo -NoProfile -File tests/windows11-candidate/lifecycle.tests.ps1`.
+Only an official portable PowerShell test tool was downloaded into /tmp; release
+checksum matched `6f6015203c47806c5cc444c19d8ed019695e610fbd948154264bf9ca8e157561`.
+No global install/configuration; XDG test directories are also under /tmp.
+
+Windows NOT_RUN: menu/console lifetime, cross-session mutex and stale marker,
+actual TCP/UDP inventory, direct PostgreSQL process identity/shutdown and retries,
+real client close, reviewed persistent auth/config preflight, service readiness,
+ordinary Stop/relaunch progress retention and startup interruption recovery.
+No runtime/gameplay/build/helper reruns, no laptop package or crash-safety claim,
+no readiness-score change. Next action is parent review of this exact candidate
+and missing-source/setup decision, not workflow dispatch or laptop installation.
+
+---
+
 # Local-only bind implementation checkpoint
 
 2026-10-10 21:52 UTC. Owner approved one bounded MEDIUM stage. Main and runtime baseline unchanged.

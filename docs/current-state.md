@@ -1,3 +1,16 @@
+# Local unpublished launcher candidate — 2026-10-11
+
+Owner authorized the bounded MEDIUM launcher stage at06:00:12UTC. Task branch
+`task/windows11-local-launcher` contains an independent review candidate and20new
+Linux PowerShell checks PASS; no game/DB/Windows lifecycle execution. Original
+StartMU/CollectReport/session contract/launch manifest were not found in existing
+project branch references. Real Start remains deliberately blocked pending source
+reconciliation and separately approved persistent setup/config/auth integration.
+This is not a ready laptop package. Exact scope, limitations and prerequisites:
+[implementation checkpoint](local-bind-implementation-checkpoint.md).
+No publication, dispatch, main merge, laptop changes or readiness credit. Parent
+review is next; existing runtime/integration PASS below remains unchanged.
+
 # Latest owner checkpoint — 2026-10-11 03:43 UTC
 
 Local integration run38108874540 at3a9dff7a7304c5ca0ddbeaaa81e90ab6b1df32f8 SUCCESS. Pinned built runtime11689365514 reused without rebuild. PostgreSQL restored; approved disposable console-input flag enabled; owned server/DB listeners verified loopback-only. Native test0Dk entered Lorencia, allocated STR31→32/points2→1, server exited gracefully and restarted, native relog retained32/1; level2/EXP115/shieldslot1/44item UUIDs preserved. Both server exits code0 with PG alive, no force kill. Parent personally inspected all three screenshots and verified world entry/relog. Scoped integration gate CLOSED.
