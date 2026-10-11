@@ -162,6 +162,79 @@ function Assert-State($state, [int]$strength, [int]$points, $baseline) {
     }
 }
 
+function Enable-OwnedConsoleInput {
+    # Owner-approved one-field change in this restored disposable cluster only.
+    if (!$pgOwned -or !$pgStarted -or $null -ne $server) { throw 'Owned pre-server PG stage required' }
+    $identity=Get-Content -LiteralPath "$evidence/database-identity.json" -Raw | ConvertFrom-Json
+    if ($identity.artifact -ne 11651520969 -or $identity.cluster -ne $pgData -or !$identity.temporary) {
+        throw 'Disposable database identity mismatch'
+    }
+    $pidLines=Get-Content -LiteralPath (Join-Path $pgData postmaster.pid)
+    $ownerPid=[int]$pidLines[0]
+    if ([IO.Path]::GetFullPath($pidLines[1]) -ne [IO.Path]::GetFullPath($pgData)) { throw 'PG PID file directory mismatch' }
+    $owner=Get-Process -Id $ownerPid -ErrorAction Stop
+    if ([IO.Path]::GetFullPath($owner.Path) -ne [IO.Path]::GetFullPath((Join-Path $pgBin postgres.exe))) {
+        throw 'PG executable identity mismatch'
+    }
+    $listeners=@(Get-NetTCPConnection -State Listen -LocalPort $pgPort -ErrorAction Stop)
+    if (!$listeners.Count -or @($listeners | Where-Object {
+        $_.OwningProcess -ne $ownerPid -or $_.LocalAddress -ne '127.0.0.1'
+    }).Count) { throw 'Owned PG listener identity mismatch' }
+    $sql=@'
+BEGIN;
+SET LOCAL lock_timeout = '5s';
+SET LOCAL statement_timeout = '15s';
+CREATE TEMP TABLE smoke_console_evidence ("rowsBefore" int, "rowsAfter" int, "before" boolean, "after" boolean, "changed" boolean, "otherFieldsUnchanged" boolean) ON COMMIT DROP;
+DO $console_guard$
+DECLARE
+    before_row jsonb;
+    after_row jsonb;
+    row_count integer;
+    changed_count integer := 0;
+BEGIN
+    IF current_database() <> 'openmu' OR inet_server_addr() IS DISTINCT FROM '127.0.0.1'::inet
+       OR inet_server_port() IS DISTINCT FROM 5432
+       OR lower(replace(current_setting('data_directory'), chr(92), '/')) <> lower('__EXPECTED_PG_DATA__') THEN
+        RAISE EXCEPTION 'Owned disposable connection mismatch';
+    END IF;
+    LOCK TABLE config."SystemConfiguration" IN EXCLUSIVE MODE;
+    SELECT count(*) INTO row_count FROM config."SystemConfiguration";
+    IF row_count <> 1 THEN RAISE EXCEPTION 'Expected exactly one SystemConfiguration row'; END IF;
+    SELECT to_jsonb(c) INTO before_row FROM config."SystemConfiguration" c;
+    IF (before_row->'ReadConsoleInput') IS NULL OR (before_row->'ReadConsoleInput') NOT IN ('true'::jsonb, 'false'::jsonb) THEN
+        RAISE EXCEPTION 'Unknown ReadConsoleInput value';
+    END IF;
+    IF before_row->'ReadConsoleInput' = 'false'::jsonb THEN
+        UPDATE config."SystemConfiguration" SET "ReadConsoleInput" = true
+        WHERE "Id" = (before_row->>'Id')::uuid AND "ReadConsoleInput" = false;
+        GET DIAGNOSTICS changed_count = ROW_COUNT;
+        IF changed_count <> 1 THEN RAISE EXCEPTION 'Unexpected console flag update count'; END IF;
+    END IF;
+    SELECT count(*) INTO row_count FROM config."SystemConfiguration";
+    IF row_count <> 1 THEN RAISE EXCEPTION 'Configuration row count changed'; END IF;
+    SELECT to_jsonb(c) INTO after_row FROM config."SystemConfiguration" c;
+    IF after_row->'ReadConsoleInput' IS DISTINCT FROM 'true'::jsonb
+       OR (before_row - 'ReadConsoleInput') IS DISTINCT FROM (after_row - 'ReadConsoleInput') THEN
+        RAISE EXCEPTION 'Unexpected configuration change';
+    END IF;
+    INSERT INTO smoke_console_evidence VALUES (1, 1, (before_row->>'ReadConsoleInput')::boolean, true, changed_count = 1, true);
+END;
+$console_guard$;
+SELECT row_to_json(e) FROM smoke_console_evidence e;
+COMMIT;
+'@
+    # Quote only the owned local path; no credentials or connection strings enter evidence.
+    $sqlPath=Join-Path $privateLogs console-input.sql
+    $sql.Replace('__EXPECTED_PG_DATA__',$pgData.Replace('\','/').Replace("'","''")) | Set-Content -LiteralPath $sqlPath -Encoding utf8
+    Invoke-PgTool 'console-flag' 'psql' @('-X','-w','-q','-t','-A','-h','127.0.0.1','-p',"$pgPort",'-U','postgres',
+        '-d','openmu','-v','ON_ERROR_STOP=1','-f',$sqlPath) 30
+    $change=Get-Content -LiteralPath "$privateLogs/pg-console-flag.out" -Raw | ConvertFrom-Json
+    if ($change.rowsBefore -ne 1 -or $change.rowsAfter -ne 1 -or $change.after -ne $true -or
+        $change.otherFieldsUnchanged -ne $true) { throw 'Console flag transaction evidence invalid' }
+    Save-Json 'console-input-change.json' @{artifact=11651520969; disposable=$true; postgresPid=$ownerPid;
+        transactionCommitted=$true; result=$change}
+}
+
 function Read-EndpointContract {
     $system = @(Invoke-Pg 'select json_agg(json_build_object(''readConsoleInput'',"ReadConsoleInput")) from config."SystemConfiguration";' | ConvertFrom-Json)
     if ($system.Count -ne 1 -or $system[0].readConsoleInput -ne $true) { throw 'ReadConsoleInput is not confirmed true; no server start or SQL repair' }
@@ -503,6 +576,8 @@ try {
     $before=Read-GameState
     Assert-State $before 31 2 $null
     Save-Json 'before-state.json' $before
+    Enable-OwnedConsoleInput
+    Assert-State (Read-GameState) 31 2 $before
     Read-EndpointContract
     Add-Type -AssemblyName System.Windows.Forms
     Add-Type -AssemblyName System.Drawing
