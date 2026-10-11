@@ -20,14 +20,16 @@ jobs:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: '1'
       DOTNET_NOLOGO: '1'
       DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE: 'true'
-      DOTNET_INSTALL_DIR: ${{ runner.temp }}/local-bind-dotnet
-      NUGET_PACKAGES: ${{ runner.temp }}/local-bind-packages
 
     steps:
       - name: Initialize evidence
         run: |
           import os
           from pathlib import Path
+          temporary = Path(os.environ['RUNNER_TEMP'])
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env_file:
+              env_file.write(f"DOTNET_INSTALL_DIR={temporary / 'local-bind-dotnet'}\n")
+              env_file.write(f"NUGET_PACKAGES={temporary / 'local-bind-packages'}\n")
           evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
           evidence.mkdir()
           (evidence / 'scope.txt').write_text(
