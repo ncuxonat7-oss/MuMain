@@ -367,6 +367,19 @@ function Close-NativeClient {
 function Get-CheckedChildEnvironment {
     # Recheck before EACH Process.Start, including restart; do not mutate the runtime.
     $manifest=Get-Content -LiteralPath "$evidence/runtime-manifest.json" -Raw | ConvertFrom-Json -AsHashtable
+    # Exact JSON bytes reviewed in runtime artifact11689365514; no generalized config allowance.
+    $reviewedJson=@{
+        'appsettings.json'='695c85d511324bd8eb901b7132d0d4d4d79164f70746f1f83a13bf3a2673e80e'
+        'MUnique.OpenMU.Startup.runtimeconfig.json'='94b92d437d5be753ff0ba94af9064dbd50f8bf1a7459debbedf6cb5699910d50'
+        'MUnique.OpenMU.Web.AdminPanel.runtimeconfig.json'='41442586a8262bc96a1c80f82f4d9384c03bfd465d221cbf01fb3563170f9e65'
+        'MUnique.OpenMU.Web.Map.runtimeconfig.json'='41442586a8262bc96a1c80f82f4d9384c03bfd465d221cbf01fb3563170f9e65'
+    }
+    foreach ($name in $reviewedJson.Keys) {
+        if (!$manifest.ContainsKey($name) -or $manifest[$name] -ne $reviewedJson[$name] -or
+            (Get-FileHash -LiteralPath (Join-Path $serverDirectory $name) -Algorithm SHA256).Hash -ne $reviewedJson[$name]) {
+            throw 'Reviewed runtime JSON missing or changed; refusing launch'
+        }
+    }
     $configs=@(Get-ChildItem -LiteralPath $serverDirectory -Recurse -File | Where-Object {
         $_.Name -like 'appsettings*' -or $_.Extension -eq '.config' -or
         $_.Name -eq 'ConnectionSettings.xml' -or $_.Name -like '*.runtimeconfig*.json'
@@ -377,41 +390,61 @@ function Get-CheckedChildEnvironment {
             throw 'Runtime configuration changed since verified build'
         }
         if ($file.Extension -eq '.config') { throw 'Unreviewed executable/web configuration; refusing launch' }
-        if ($file.Name -like 'appsettings*') {
-            if ($file.DirectoryName -ne $serverDirectory -or $file.Name -notin @('appsettings.json','appsettings.Production.json')) {
-                throw 'Unreviewed appsettings provider/file; refusing launch'
-            }
-            $settings=Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json -AsHashtable
-            foreach ($key in $settings.Keys) {
-                # Kestrel, hosting startup, ConnectionStrings and unknown sections are rejected.
-                if ($key -notin @('Logging','AllowedHosts','Urls')) { throw 'Unreviewed appsettings section; refusing launch' }
-                if ($key -eq 'Urls' -and $settings[$key] -cne "http://127.0.0.1:$webPort") { throw 'Non-approved web URL configuration' }
-                if ($key -eq 'Logging') {
-                    foreach ($loggingKey in $settings[$key].Keys) {
-                        if ($loggingKey -ne 'LogLevel') { throw 'Unreviewed logging provider configuration' }
-                    }
-                }
+        if ($file.Name -like 'appsettings*' -or $file.Name -like '*.runtimeconfig*.json') {
+            if (!$reviewedJson.ContainsKey($relative) -or $file.DirectoryName -ne $serverDirectory) {
+                throw 'Unreviewed JSON configuration file; refusing launch'
             }
         }
-        if ($file.Name -like '*.runtimeconfig*.json') {
-            if ($file.Name -ne 'MUnique.OpenMU.Startup.runtimeconfig.json' -or $file.DirectoryName -ne $serverDirectory) {
-                throw 'Unreviewed runtime configuration file; refusing launch'
+        if ($file.Name -eq 'appsettings.json') {
+            $settings=Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json -AsHashtable
+            foreach ($key in $settings.Keys) {
+                if ($key -notin @('DetailedErrors','AllowedHosts','Database','Serilog')) {
+                    throw 'Unreviewed appsettings section or endpoint override'
+                }
             }
+            # AllowedHosts is host-header filtering, not a bind address. Keep the pinned value.
+            if ($settings.Count -ne 4 -or $settings.DetailedErrors -ne $true -or $settings.AllowedHosts -cne '*') {
+                throw 'Unexpected pinned application settings'
+            }
+            if ($settings.Database.Count -ne 1 -or !$settings.Database.ContainsKey('AssumeExternallyProvisioned') -or
+                $settings.Database.AssumeExternallyProvisioned -ne $false) { throw 'Unreviewed Database settings' }
+            $logging=$settings.Serilog
+            $sinks=@($logging.WriteTo)
+            if ((@($logging.Using) -join ',') -cne 'Serilog.Sinks.Console,Serilog.Sinks.File' -or
+                $sinks.Count -ne 2 -or $sinks[0].Name -cne 'Console' -or $sinks[1].Name -cne 'File' -or
+                $sinks[1].Args.path -cne 'logs/log.txt') { throw 'Non-approved logging sink or path' }
+            # Every other logging value is pinned by the exact file hash above.
+        }
+        if ($file.Name -like '*.runtimeconfig*.json') {
+            # AdminPanel/Map configs are validated as packaged files, never selected for launch.
             $runtime=Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json -AsHashtable
             if ($runtime.Count -ne 1 -or !$runtime.ContainsKey('runtimeOptions')) { throw 'Unknown runtime configuration shape' }
-            foreach ($key in $runtime.runtimeOptions.Keys) {
-                if ($key -notin @('tfm','framework','frameworks','configProperties','rollForward')) { throw 'Unreviewed runtime option' }
+            $options=$runtime.runtimeOptions
+            if ($options.Count -ne 3 -or $options.tfm -cne 'net10.0' -or
+                !$options.ContainsKey('frameworks') -or !$options.ContainsKey('configProperties')) { throw 'Unreviewed runtime options' }
+            $frameworks=@($options.frameworks)
+            if ($frameworks.Count -ne 2 -or $frameworks[0].name -cne 'Microsoft.NETCore.App' -or
+                $frameworks[1].name -cne 'Microsoft.AspNetCore.App' -or
+                @($frameworks | Where-Object { $_.Count -ne 2 -or $_.version -cne '10.0.0' }).Count) {
+                throw 'Unreviewed runtime framework references'
             }
-            if ($runtime.runtimeOptions.ContainsKey('configProperties')) {
-                foreach ($key in $runtime.runtimeOptions.configProperties.Keys) {
-                    if ($key -notin @('System.GC.Server','System.Reflection.Metadata.MetadataUpdater.IsSupported',
-                        'System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization','System.Globalization.Invariant')) {
-                        throw 'Unreviewed runtime property; refusing launch'
-                    }
+            $flags=@{
+                'System.GC.Server'=$true
+                'System.Reflection.Metadata.MetadataUpdater.IsSupported'=$false
+                'System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization'=$false
+            }
+            if ($file.Name -eq 'MUnique.OpenMU.Startup.runtimeconfig.json') {
+                $flags['System.Reflection.NullabilityInfoContext.IsSupported']=$true
+            }
+            if ($options.configProperties.Count -ne $flags.Count) { throw 'Unreviewed runtime properties' }
+            foreach ($key in $flags.Keys) {
+                if (!$options.configProperties.ContainsKey($key) -or $options.configProperties[$key] -ne $flags[$key]) {
+                    throw 'Unreviewed runtime property value'
                 }
             }
         }
     }
+
     [xml]$xml=Get-Content -LiteralPath "$serverDirectory/ConnectionSettings.xml" -Raw
     $entries=@($xml.SelectNodes('//*[local-name()="ConnectionString"]'))
     if (!$entries.Count) { throw 'Cannot verify runtime DB connection settings' }
