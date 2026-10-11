@@ -1,9 +1,9 @@
-# Independent review candidate, not a recovered copy of the unpublished scaffold.
+# Reconciled Windows launcher lifecycle; separate approved setup is required.
 # PowerShell 7.4+. No setup, downloads, database restore or automatic repair.
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $script:AllowedCodes = @('IDLE','PREFLIGHT','RUNNING','STOPPED','SETUP_REQUIRED','HASH_MISMATCH',
-    'UNSAFE_CONFIG','PORT_BUSY','ALREADY_RUNNING','START_FAILED','STOP_FAILED','OWNER_LOST','WINDOWS_REQUIRED')
+    'UNSAFE_CONFIG','PORT_BUSY','ALREADY_RUNNING','START_FAILED','STOP_FAILED','OWNER_LOST','WINDOWS_REQUIRED','MANIFEST_REQUIRED','PROBE_FAILED','PREFLIGHT_OK')
 
 function New-MuSession {
     return @{ Code='IDLE'; Pg=$null; Server=$null; Client=$null; PgStop=$null;
@@ -15,45 +15,9 @@ function Set-MuCode($Session, [string]$Code) {
     $Session.Code=$Code
 }
 
-function Resolve-MuFile([string]$Root, [string]$Relative) {
-    if ([IO.Path]::IsPathRooted($Relative) -or $Relative -match '(^|[\\/])\.\.([\\/]|$)|:') { throw 'UNSAFE_CONFIG' }
-    $base=[IO.Path]::GetFullPath($Root).TrimEnd([IO.Path]::DirectorySeparatorChar)
-    $path=[IO.Path]::GetFullPath((Join-Path $base $Relative))
-    if (!$path.StartsWith($base + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) { throw 'UNSAFE_CONFIG' }
-    $item=Get-Item -LiteralPath $path -Force
-    while ($item.FullName -ne $base) {
-        if ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'UNSAFE_CONFIG' }
-        $item=Get-Item -LiteralPath (Split-Path $item.FullName) -Force
-    }
-    if ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'UNSAFE_CONFIG' }
-    return $path
-}
-
-function Assert-MuHashes($Setup) {
-    if ($Setup.hashes.Count -eq 0) { throw 'SETUP_REQUIRED' }
-    foreach ($relative in $Setup.hashes.Keys) {
-        if ($Setup.hashes[$relative] -cnotmatch '^[a-f0-9]{64}$') { throw 'HASH_MISMATCH' }
-        $file=Resolve-MuFile $Setup.root $relative
-        if ((Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -ine $Setup.hashes[$relative]) { throw 'HASH_MISMATCH' }
-    }
-    foreach ($relative in @($Setup.dotnet,$Setup.postgres,$Setup.pgCtl,$Setup.psql,$Setup.client,
-        "$($Setup.server)/MUnique.OpenMU.Startup.dll", "$($Setup.server)/appsettings.json",
-        "$($Setup.server)/ConnectionSettings.xml", "$($Setup.pgData)/postgresql.conf",
-        "$($Setup.pgData)/postgresql.auto.conf", "$($Setup.pgData)/pg_hba.conf")) {
-        if (!$Setup.hashes.ContainsKey($relative)) { throw 'HASH_MISMATCH' }
-    }
-}
-
 function Assert-MuPorts([int[]]$Ports) {
     $listeners=@(Get-NetTCPConnection -State Listen -ErrorAction Stop)
     if (@($listeners | Where-Object LocalPort -in $Ports).Count) { throw 'PORT_BUSY' }
-}
-
-function Get-MuApprovedSetup([string]$Root) {
-    # This gate is deliberately code-owned. A fabricated receipt cannot enable an
-    # unreviewed authentication/DB setup. Replace only in the separately approved
-    # setup/package integration patch, after recovering/reconciling original files.
-    throw 'SETUP_REQUIRED'
 }
 
 function Enter-MuLock([string]$Root) {
@@ -66,7 +30,10 @@ function Enter-MuLock([string]$Root) {
     if (Test-Path -LiteralPath $marker) {
         $mutex.ReleaseMutex(); $mutex.Dispose(); throw 'OWNER_LOST'
     }
-    try { [IO.File]::WriteAllText($marker, 'Owned session; do not delete while processes may remain.') }
+    try {
+        $stream=[IO.File]::Open($marker,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::Read)
+        $stream.Dispose()
+    }
     catch { $mutex.ReleaseMutex(); $mutex.Dispose(); throw }
     return @{ Mutex=$mutex; Marker=$marker }
 }
@@ -86,6 +53,7 @@ function Save-MuOwners($Session) {
         }
     }
     # Private recovery evidence only. Never used to adopt processes or in reports.
+    Assert-MuLocalPath $Session.Lock.Marker
     [IO.File]::WriteAllText($Session.Lock.Marker, ($owners | ConvertTo-Json -Depth 4))
 }
 
@@ -94,11 +62,12 @@ function Get-MuEnvironment($Setup, [switch]$Server) {
     foreach ($key in @('SystemRoot','WINDIR','TEMP','TMP')) {
         $value=[Environment]::GetEnvironmentVariable($key)
         if (!$value -or ![IO.Path]::IsPathFullyQualified($value) -or $value.StartsWith('\\')) { throw 'UNSAFE_CONFIG' }
+        Assert-MuLocalPath $value
         $result[$key]=$value
     }
     if ($Server) {
         $result.DOTNET_ROOT=Split-Path (Resolve-MuFile $Setup.root $Setup.dotnet)
-        $result.OPENMU_LOCAL_ONLY_TCP='1'
+        $result.OPENMU_LOCAL_ONLY_TCP='1'; $result.RESOLVE_IP='127.0.0.1'
         $result.ASPNETCORE_URLS='http://127.0.0.1:18080'
         $result.ASPNETCORE_ENVIRONMENT='Production'; $result.DOTNET_ENVIRONMENT='Production'
         $result.ASPNETCORE_PREVENTHOSTINGSTARTUP='true'
@@ -107,7 +76,7 @@ function Get-MuEnvironment($Setup, [switch]$Server) {
     return $result
 }
 
-function Start-MuProcess([string]$File, [string]$Directory, [string[]]$Arguments, $Environment) {
+function Start-MuProcess([string]$File, [string]$Directory, [string[]]$Arguments, $Environment, [switch]$Observe) {
     $info=[Diagnostics.ProcessStartInfo]::new()
     $info.FileName=$File; $info.WorkingDirectory=$Directory; $info.UseShellExecute=$false
     $info.RedirectStandardInput=$true; $info.RedirectStandardOutput=$true; $info.RedirectStandardError=$true
@@ -117,11 +86,16 @@ function Start-MuProcess([string]$File, [string]$Directory, [string[]]$Arguments
     $process=[Diagnostics.Process]::new(); $process.StartInfo=$info
     try { if (!$process.Start()) { throw 'START_FAILED' } }
     catch { $process.Dispose(); throw }
-    $owned=@{ Process=$process; Pid=0; Ticks=0; Path=$File; Output=$null; ErrorOutput=$null }
+    $owned=@{ Process=$process; Pid=0; Ticks=0; Path=$File; Output=$null; ErrorOutput=$null; Observer=$null }
     # Drain both pipes without retaining potentially secret or unbounded raw logs.
     try {
-        $owned.Output=$process.StandardOutput.BaseStream.CopyToAsync([IO.Stream]::Null)
-        $owned.ErrorOutput=$process.StandardError.BaseStream.CopyToAsync([IO.Stream]::Null)
+        if ($Observe) {
+            $owned.Observer=[MuConsoleObserver]::new($process)
+            $owned.Output=$owned.Observer.OutputTask; $owned.ErrorOutput=$owned.Observer.ErrorTask
+        } else {
+            $owned.Output=$process.StandardOutput.BaseStream.CopyToAsync([IO.Stream]::Null)
+            $owned.ErrorOutput=$process.StandardError.BaseStream.CopyToAsync([IO.Stream]::Null)
+        }
         $owned.Pid=$process.Id; $owned.Ticks=$process.StartTime.ToUniversalTime().Ticks
         $owned.Path=$process.MainModule.FileName
     } catch {
@@ -160,6 +134,32 @@ function Wait-MuListeners($Owned, [int[]]$Ports) {
     throw 'START_FAILED'
 }
 
+function Wait-MuServer($Session) {
+    $owned=$Session.Server
+    Assert-MuOwner $owned
+    $owned.Process.StandardInput.WriteLine('pid'); $owned.Process.StandardInput.Flush()
+    $deadline=[DateTime]::UtcNow.AddSeconds(180)
+    do {
+        Assert-MuOwner $Session.Pg
+        if ($owned.Observer.ErrorSeen) { throw 'START_FAILED' }
+        $ready=Assert-MuListeners $owned $Session.Setup.serverPorts
+        if ($ready -and $owned.Observer.PidSeen) { return }
+        Start-Sleep -Milliseconds 500
+    } while ([DateTime]::UtcNow -lt $deadline)
+    throw 'START_FAILED'
+}
+
+function Test-MuPreflight($Session, [string]$Root) {
+    try {
+        if ($null -ne $Session.Lock) { throw 'ALREADY_RUNNING' }
+        $setup=Get-MuApprovedSetup $Root
+        Assert-MuPorts (@(5432) + $setup.serverPorts)
+        if (Test-Path -LiteralPath (Join-Path $Root '.mu-session-active')) { throw 'OWNER_LOST' }
+        $Session.Setup=$setup; Set-MuCode $Session 'PREFLIGHT_OK'
+        return $true
+    } catch { Set-MuCode $Session $_.Exception.Message; return $false }
+}
+
 function Start-MuPostgres($Setup) {
     # Direct child ownership avoids adopting a pg_ctl-spawned process by PID file alone.
     $data=Resolve-MuFile $Setup.root $Setup.pgData
@@ -167,17 +167,10 @@ function Start-MuPostgres($Setup) {
     return Start-MuProcess (Resolve-MuFile $Setup.root $Setup.postgres) $data @('-D',$data,'-h','127.0.0.1','-p','5432') (Get-MuEnvironment $Setup)
 }
 
-function Assert-MuDatabase($Setup) {
-    # Authentication and read-only endpoint/ReadConsoleInput query integration are
-    # intentionally unavailable until separately approved persistent setup exists.
-    # Never set ReadConsoleInput or repair/initialize data here.
-    throw 'SETUP_REQUIRED'
-}
-
 function Start-MuServer($Setup) {
     Assert-MuHashes $Setup
     return Start-MuProcess (Resolve-MuFile $Setup.root $Setup.dotnet) (Resolve-MuFile $Setup.root $Setup.server) @(
-        'MUnique.OpenMU.Startup.dll','-autostart','-adminpanel:disabled','-resolveIP:127.0.0.1') (Get-MuEnvironment $Setup -Server)
+        'MUnique.OpenMU.Startup.dll','-autostart','-adminpanel:disabled','-resolveIP:127.0.0.1') (Get-MuEnvironment $Setup -Server) -Observe
 }
 
 function Start-MuClient($Setup) {
@@ -202,7 +195,7 @@ function Start-MuSession($Session, [string]$Root) {
         Assert-MuDatabase $Session.Setup
         $Session.Server=Start-MuServer $Session.Setup
         Save-MuOwners $Session
-        Wait-MuListeners $Session.Server $Session.Setup.serverPorts
+        Wait-MuServer $Session
         if (!(Assert-MuListeners $Session.Pg @(5432))) { throw 'START_FAILED' }
         $Session.Client=Start-MuClient $Session.Setup
         Save-MuOwners $Session
@@ -228,12 +221,14 @@ function Stop-MuServer($Session) {
     $owned=$Session.Server
     if (!$Session.ExitRequested) {
         Assert-MuOwner $Session.Pg
+        if ((Invoke-MuQuery $Session.Setup 'SELECT to_json(1)') -ne 1) { throw 'STOP_FAILED' }
         Assert-MuOwner $owned
         $owned.Process.StandardInput.WriteLine('exit'); $owned.Process.StandardInput.Flush()
         $Session.ExitRequested=$true
     }
     if (!$owned.Process.WaitForExit(45000)) { throw 'STOP_FAILED' }
-    if ($owned.Process.ExitCode -ne 0) { throw 'STOP_FAILED' }
+    if ($owned.Process.ExitCode -ne 0 -or !$owned.Output.Wait(5000) -or !$owned.ErrorOutput.Wait(5000) -or
+        $owned.Observer.ErrorSeen) { throw 'STOP_FAILED' }
     Assert-MuOwner $Session.Pg
     $Session.ServerStopped=$true
 }
@@ -243,6 +238,7 @@ function Stop-MuPostgres($Session) {
     $setup=$Session.Setup
     if ($null -eq $Session.PgStop) {
         Assert-MuOwner $Session.Pg
+        Assert-MuAreaHashes $setup $setup.pgDirectory
         $pidFile=Join-Path (Resolve-MuFile $setup.root $setup.pgData) 'postmaster.pid'
         if ([int](Get-Content -LiteralPath $pidFile -TotalCount 1) -ne $Session.Pg.Pid) { throw 'OWNER_LOST' }
         $Session.PgStop=Start-MuProcess (Resolve-MuFile $setup.root $setup.pgCtl) $setup.root @(
@@ -284,13 +280,17 @@ function Write-MuReport($Session, [string]$Directory) {
     # Construct an allowlist from constants, never serialize session/setup/errors.
     $code=if ($Session.Code -in $script:AllowedCodes) { $Session.Code } else { 'START_FAILED' }
     $report=[ordered]@{ schema=1; utc=[DateTime]::UtcNow.ToString('o'); status=$code;
-        candidate='bounded-windows11-v1'; runtimeArtifact='11689365514'; build='38104421623';
+        launcher='bounded-windows11-v2'; runtimeArtifact='11689365514'; build='38104421623';
         source='71159136c8f8cba949735be3ed0904fc15e5ad73'; sdk='10.0.401';
-        openmu='d067b3c11c23c3145de6e2c76201ab9a93b267c8'; setup='NOT_APPROVED';
+        openmu='d067b3c11c23c3145de6e2c76201ab9a93b267c8'; setup=$(if ($null -ne $Session.Setup) {'VALIDATED'} else {'NOT_VALIDATED'});
         windowsLifecycle='NOT_RUN'; uploads=$false; rawLogsIncluded=$false }
+    Assert-MuLocalPath $Directory
     $path=Join-Path $Directory ('mu-report-' + [Guid]::NewGuid().ToString('N') + '.json')
     [IO.File]::WriteAllText($path, ($report | ConvertTo-Json))
     return $path
 }
 
-Export-ModuleMember -Function New-MuSession,Start-MuSession,Stop-MuSession,Write-MuReport
+. (Join-Path $PSScriptRoot 'Guards.ps1')
+. (Join-Path $PSScriptRoot 'Database.ps1')
+if (!('MuConsoleObserver' -as [type])) { Add-Type -Path (Join-Path $PSScriptRoot 'ConsoleObserver.cs') }
+Export-ModuleMember -Function New-MuSession,Test-MuPreflight,Start-MuSession,Stop-MuSession,Write-MuReport

@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "stage": "IMPLEMENTED_AWAITING_APPROVED_SETUP",
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null,
+  "serverEnvironment": {
+    "OPENMU_LOCAL_ONLY_TCP": "1",
+    "RESOLVE_IP": "127.0.0.1",
+    "ASPNETCORE_ENVIRONMENT": "Production",
+    "DOTNET_ENVIRONMENT": "Production",
+    "ASPNETCORE_URLS": "http://127.0.0.1:18080",
+    "ASPNETCORE_PREVENTHOSTINGSTARTUP": "true"
+  },
+  "removeFromChildEnvironment": ["ALL_INHERITED_EXCEPT_VALIDATED_WINDOWS_DIRECTORIES"],
+  "rejectBeforeLaunch": [
+    "Missing independently reviewed launch manifest SHA256",
+    "Unverified runtime, client, Data, dependencies or configuration",
+    "Unknown authentication, cluster identity, migrations or endpoint inventory",
+    "Missing or false ReadConsoleInput; enabled AutoUpdateSchema",
+    "Unreviewed configuration, inherited overrides, ports or process ownership"
+  ],
+  "shutdown": {
+    "command": "exit",
+    "transport": "retained server stdin",
+    "identity": ["process handle", "PID", "UTC start time", "executable path"],
+    "postgresql": "stop last after OpenMU exit 0",
+    "timeout": "retain handles and PostgreSQL; never force-kill OpenMU",
+    "persistenceAfterExit": "UNKNOWN until separately verified; exit 0 alone is not save proof"
+  }
+}

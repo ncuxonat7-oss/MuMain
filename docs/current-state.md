@@ -1,15 +1,16 @@
-# Local unpublished launcher candidate — 2026-10-11
+# Local unpublished Windows launcher implementation — 2026-10-11
 
-Owner authorized the bounded MEDIUM launcher stage at06:00:12UTC. Task branch
-`task/windows11-local-launcher` contains an independent review candidate and20new
-Linux PowerShell checks PASS; no game/DB/Windows lifecycle execution. Original
-StartMU/CollectReport/session contract/launch manifest were not found in existing
-project branch references. Real Start remains deliberately blocked pending source
-reconciliation and separately approved persistent setup/config/auth integration.
-This is not a ready laptop package. Exact scope, limitations and prerequisites:
-[implementation checkpoint](local-bind-implementation-checkpoint.md).
-No publication, dispatch, main merge, laptop changes or readiness credit. Parent
-review is next; existing runtime/integration PASS below remains unchanged.
+Owner-approved MEDIUM continuation reconciled the three original scripts/windows11
+files supplied by parent from verified review archive2e7bb515. The old manifest is
+absent from that archive; none invented. Start/Stop/local sanitized CollectReport,
+manifest/config/hash guards and read-only DB/ownership checks are implemented at
+the original paths. No unconditional setup/query stubs remain. Real launch stays
+disabled because actual reviewed package manifest and separately approved persistent
+setup do not exist. 20lifecycle+28guard checks PASS on Linux; Windows/game/PG NOT_RUN.
+[Implementation checkpoint](local-bind-implementation-checkpoint.md) gives exact
+input schema, security/no-initialization boundary and Windows acceptance limits.
+Parent review is next. No publication/dispatch/main merge/laptop setup/readiness
+credit. Existing integration PASS below is unchanged.
 
 # Latest owner checkpoint — 2026-10-11 03:43 UTC
 

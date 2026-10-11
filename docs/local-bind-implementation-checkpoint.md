@@ -1,112 +1,168 @@
-# Bounded Windows 11 launcher candidate — 2026-10-11
+# Bounded Windows 11 daily launcher — 2026-10-11 (unpublished)
 
-Classification: CODEX PREFERRED. Owner approval at 06:00:12 UTC covers this bounded
-MEDIUM implementation, not laptop setup or publication. Local task branch
-`task/windows11-local-launcher` starts at authoritative docs commit
-`47ff97ce2676d4b356b2c957535f331139f61e7a`; main remains historical `6fdebbdd`.
-Parent must review the exact local patch before publication. Nothing was pushed,
-merged, dispatched, installed on the owner's laptop, restored or rebuilt.
+CODEX PREFERRED, owner-approved MEDIUM at06:00:12UTC. This replaces the partial
+candidate9dbf42e3 and uses `scripts/windows11`, not parallel candidate entrypoints.
+No setup tool, installer, service, updater, hosting, main merge, workflow dispatch,
+server build or gameplay work. No laptop changes. Parent reviews the exact patch
+before publication. Readiness65.5/model1.1/MEDIUM unchanged.
 
-## Reconciliation and explicit limit
+## Source reconciliation
 
-Read AGENTS.md, CODING_RULES.md, current-state, starter handoff, local-server-controls,
-this checkpoint and latest local-bind-actions-checkpoint. No relevant local
-`.agents/skills` were present. Read-only fetch inspected all seven existing remote
-branch tips and available reachable path history. The four named original artifacts
-were absent: StartMU.ps1, CollectReport.ps1, local-session-contract.json and
-windows11-launch-manifest.json. Only documentation references were found.
-The prior checkpoint identifies unpublished review archive
-`libfile_153e4f2e7f4481919c41f665ee93208c`, commit `2e7bb5157e50d2bec1eaac6b1678bf1253266049`.
-Its source must be supplied through an approved project reference, or the parent
-must explicitly accept a replacement after comparing that source. No Library
-archive, runtime, client or database archive was downloaded in this task.
+The seven existing remote branch tips and available path history did not contain
+the four old named files. The referenced Library archive was subsequently recovered
+by the parent through supported materialization; parent verified archive SHA256
+`726b2747d45dc9fc6f625533b489ed3aad0058ffe10043a4a9c5aba2d3d4dfa9`.
+Archive: MuMain-local-bind-review-2e7bb515.zip,
+`libfile_153e4f2e7f4481919c41f665ee93208c`, original commit2e7bb515.
+Parent supplied the exact original StartMU.ps1, CollectReport.ps1 and
+local-session-contract.json in this task. They have been reconciled and extended
+at their original paths. Parent confirmed windows11-launch-manifest.json is absent
+from that archive. No authoritative launch manifest was invented.
 
-The independent candidate lives under `scripts/windows11-candidate`, deliberately
-not at the missing authoritative scaffold paths. It includes Start.ps1,
-CollectReport.ps1, Launcher.psm1 and a provenance-only runtime-pin.json. This is
-**not a runnable owner package**: Get-MuApprovedSetup and Assert-MuDatabase refuse
-with SETUP_REQUIRED. There is no switch, editable approval receipt or ordinary
-Start path that bypasses these gates. This is a tested lifecycle implementation
-candidate plus prerequisite design, not completion of the deployable launcher.
+The earlier child transfer failed once; that access failure is superseded by the
+parent-supplied source. Runtime backup remains
+`libfile_b1e2679ae4088191859d97f0bbd4903c`. No runtime/client/Data/DB archive was
+retrieved in this task. No unchanged successful helper/build/gameplay tests rerun.
 
-## Candidate behavior and owner controls
+## Implemented daily controls
 
-After future reviewed integration, Start.ps1 is intended to stay open while playing:
-1 = Start, 2 = explicit Stop, 3 = local CollectReport, 0 = Stop then exit. The same
-owner process retains stdin; another shell cannot recover or adopt it. Failed Stop
-keeps the menu/session available for retry. Closing/killing the console is not a
-safe Stop and may lose stdin; a retained marker blocks subsequent launches.
-There is no automatic marker deletion, process adoption or force-kill recovery.
+StartMU opens one small Russian-language menu: Start, explicit Stop, CollectReport,
+and Stop-and-exit. The controller stays open while playing so it retains OpenMU
+stdin. `-Action Preflight` performs the offline checks and exits; `-Action Start`
+starts then retains the menu. A separate `-Action Stop` refuses with
+NO_OWNED_SESSION and directs the user to the existing window; it cannot recover
+another process's stdin. No IPC service or process adoption is introduced.
 
-Current Start always explains that separately approved preparation is missing and
-starts no service. Report collection works independently; the menu report contains
-the current allowlisted status. A separate CollectReport invocation reports IDLE
-for its own fresh context, not the state of other processes. Reports contain only
-fixed provenance, UTC and allowlisted status; no paths, process IDs, arbitrary
-exceptions, configuration, raw logs, screenshots, dumps or credentials. They stay
-in the selected local directory; nothing uploads. This conservative report cannot
-diagnose game/log errors or prove a save succeeded.
+Start validates the reviewed manifest, every inventoried file, configuration,
+local paths/dependencies, cluster identity, and vacant ports. It acquires a mutex
+and durable ownership marker, rechecks ports, starts its PostgreSQL child, executes
+read-only DB checks, starts OpenMU, requires owned loopback listeners AND a stdin
+PID round-trip, then launches the client. Unexpected exits, unknown identity,
+missing readiness, extra TCP/UDP listeners or config mismatch refuse progression.
+The environment is cleared and rebuilt from validated local Windows directories
+and fixed local-only settings. No CI authentication is inherited.
 
-Lifecycle code reuses the smoke's ownership, sanitized child environment, loopback
-checks, retained stdin exit, bounded waits and PostgreSQL-last ordering. No CI
-transfer, restore/init, roles, fixture repair, scripted gameplay or test assertions
-are part of daily launch. PostgreSQL is a direct owned child in this candidate;
-that differs from the smoke's pg_ctl-spawned daemon and needs Windows validation.
-PID/start-time/path checks guard actions, and private session metadata stays out of
-reports. A mutex prevents duplicate controllers; a durable marker blocks recovery
-after controller loss. Client uses CloseMainWindow, without forced termination.
-Server timeout/nonzero exit retains PostgreSQL and session ownership. Clean exit
-alone does not assert persistence. Ordinary Stop never deletes the cluster.
+Stop closes the owned client normally, confirms PostgreSQL health, sends OpenMU
+`exit` once, waits for exit0 and output drain, checks conservative error markers,
+then runs pg_ctl fast stop against the owned cluster. No OpenMU/client force kill.
+A timed-out pg_ctl is retained and reused on retry. Error/timeout retains control
+handles, PostgreSQL where still alive, and the marker. The cluster is never deleted.
+An orphan marker blocks later starts; it is never automatically cleared or used to
+adopt processes. Console termination/crash recovery remains intentionally manual.
 
-## Exact prerequisites before enabling real Start
+CollectReport writes a local allowlisted JSON containing fixed provenance, UTC,
+status and explicit evidence limits. It rejects UNC/mapped network destinations
+and reparse paths. It reads no raw logs, DB, environment, screenshots or dumps and
+uploads nothing. Menu reports carry that controller's status; a standalone report
+has IDLE for its own fresh context, not a claim about other processes. Runtime
+Serilog may still create its pinned local logs; those are never copied into reports.
+The bounded observer retains only PID-seen/error-seen booleans, not output text.
 
-- Recover/reconcile the four original files, or review the independent replacement.
-  Supply the complete pinned 186-entry runtime inventory plus client/Data/fonts,
-  overlay, dependencies and executable hashes. The provenance-only pin file is
-  deliberately incomplete; no synthetic hashes or inventory were generated.
-- Separately approve database selection, local directory, initial provisioning,
-  authentication/roles/secret handling and any persisted ReadConsoleInput change.
-  No CI trust settings, temporary passwords, DB_ADMIN_USER or console-flag repair
-  are copied into daily launch. Select/install dependencies only under separate
-  approval; candidate needs PowerShell 7.4+, which is not assumed preinstalled.
-- Integrate a reviewed, read-only setup loader/config guard. It must enforce full
-  inventory coverage, reject extra config/plugin files and reparse paths, pin
-  effective PostgreSQL includes/preloads/auth config, require numeric loopback DB
-  destinations and approved connection options, and disable initialization/migration
-  before any DB/server start. The smoke pins appsettings with
-  `Database.AssumeExternallyProvisioned=false`; do not reuse this blindly. Review
-  the pinned runtime's exact no-initialization behavior and any required config
-  delta before admitting daily launch. The current hash helper alone does not
-  establish those configuration guarantees.
-- Integrate separately approved read-only DB authentication and actual queries for
-  one ReadConsoleInput=true row and exact game/chat/connect endpoint inventory,
-  comparing it with preflight ports (5432/44406/55902/18080 plus configured chat).
-  Reuse Read-EndpointContract from verified helper3a9dff7; no SQL writes/repair.
-  Do not enable the first gate without implementing and reviewing the second.
-- Resolve Windows 11 dependency/hardware/package checks and client/PG environment
-  needs, then validate the new launcher itself in an approved isolated Windows
-  environment. Existing smoke PASS is retained; do not rerun it unchanged.
+## Real input gates; no unconditional implementation stubs
 
-## New verification evidence
+Get-MuApprovedSetup and Assert-MuDatabase now implement validation and query paths.
+The supplied contract correctly remains launchEnabled=false and its approved
+manifest SHA256 is null because no approved persistent owner setup exists.
+Changing a boolean alone cannot pass: an independently reviewed manifest digest,
+actual matching bytes and all guards are required. No setup evidence is generated
+by Start. Tests activate only isolated synthetic copies of the contract.
 
-20 focused tests PASS under portable PowerShell7.4.6 on Linux. They cover parsing,
-missing setup, lifecycle ordering, duplicate requests, preflight/start failures,
-Stop failure retention/retry, sanitized report canaries, traversal/hash rejection,
-occupied ports, missing/wildcard/extra/UDP listeners, single stdin-exit request on
-retry, and one harmless real child with ownership mismatch rejection, pipe drain
-and stdin exit0. Mocked checks are not Windows service or DB integration proof.
-Command: `pwsh -NoLogo -NoProfile -File tests/windows11-candidate/lifecycle.tests.ps1`.
-Only an official portable PowerShell test tool was downloaded into /tmp; release
-checksum matched `6f6015203c47806c5cc444c19d8ed019695e610fbd948154264bf9ca8e157561`.
-No global install/configuration; XDG test directories are also under /tmp.
+The missing windows11-launch-manifest.json is an INPUT prerequisite. Its digest
+must be inserted into the release-controlled session contract only in the separate
+approved setup/package review. This is not a user checkbox or a claim of approval.
+Do not hand the disabled source tree to the owner as a ready one-click package.
 
-Windows NOT_RUN: menu/console lifetime, cross-session mutex and stale marker,
-actual TCP/UDP inventory, direct PostgreSQL process identity/shutdown and retries,
-real client close, reviewed persistent auth/config preflight, service readiness,
-ordinary Stop/relaunch progress retention and startup interruption recovery.
-No runtime/gameplay/build/helper reruns, no laptop package or crash-safety claim,
-no readiness-score change. Next action is parent review of this exact candidate
-and missing-source/setup decision, not workflow dispatch or laptop installation.
+Manifest schema1 is enforced by Guards.ps1:
+- Relative paths: runtimeArchive, server, clientDirectory, pgDirectory,
+  dotnetDirectory, pgData, dotnet, postgres, pgCtl, pgControlData, psql, client.
+  Code/data areas must be distinct. PostgreSQL tools reside under pgDirectory/bin;
+  dotnet.exe and Main.exe reside at their declared area roots.
+- hashes: complete SHA256 map for immutable package/dependency/config files,
+  including private ConnectionSettings.xml, the approved probe password file and
+  PG_VERSION/postgresql.conf/postgresql.auto.conf/pg_hba.conf/pg_ident.conf.
+  Every actual code/asset tree file must be inventoried, apart from bounded known
+  server/client log locations. Extra DLL/config/plugin files are refused.
+- database: name=openmu, queryUser, pgPassFile, systemIdentifier, migrationSchema,
+  migrationIds, runtimeRoles and configurationIds. IDs must come from independently
+  reviewed setup and pinned runtime/source evidence, never copied from the current
+  DB merely to make a mismatch pass. In particular, migrationIds must be the full
+  EntityDataContext migration set for the pinned runtime, not a DB-derived guess.
+- endpoints: exact game(port,published), chat(port), connect(port) arrays. Include
+  44406/55902 and configured chat; web18080 and PG5432 remain distinct fixed ports.
+- versions: approved existing .NET/ASP.NET10.0.11 and PostgreSQL17.11. These are
+  prerequisites, not installation instructions or evidence of owner PC support.
+
+Runtime is pinned independently of that manifest to outer archive
+505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c and inner archive
+4b1b1d71a0aa992fb3f2dbac7e447a5704cccc7ed38ebacfdebe97eabebf1eec. It is read locally,
+never extracted/downloaded by Start. Exactly186 runtime inventory entries are
+required. Only the separately reviewed ConnectionSettings.xml may differ from
+build bytes. Client Main.exe, bridge DLL and corrected Group12 overlay hashes are
+also fixed from resource-registry; remaining client/Data/fonts/shaders and tool
+inventories require the real reviewed manifest. No Main.exe-only package accepted.
+
+## Authentication and no-initialization boundary
+
+The implemented validation profile is deliberately narrow: numeric IPv4 loopback,
+SCRAM-only per-role HBA rows, no config includes or preloads, empty auto-config and
+identity mappings, private Windows ACLs on credential files, no CI default passwords,
+and exact approved XML context/connection options. It ONLY checks existing files;
+it never writes config, credentials, roles or ACLs. Owner must separately approve
+and prepare that security profile before activation; it is not silently applied.
+
+Every runtime credential is tested by fixed read-only probes. Elevated roles,
+role memberships, DB/schema creation permission and table/database ownership are
+rejected. The probe role also needs approved read access to the configuration and
+migration tables. PGPASSFILE/PGPASSWORD are passed only in the isolated child
+process environment, never command arguments, reports or global environment.
+Queries use -X/-w/ON_ERROR_STOP, bounded connection/statement timeouts and an explicit
+READ ONLY transaction. The only force termination is of a timed-out synchronous
+read-only/version probe utility, never a service or process tree.
+
+Important correction from pinned source: AssumeExternallyProvisioned=true is NOT
+"disable initialization". Program.cs618–656 can still migrate/build schema and
+initialize data. The launcher leaves the pinned false setting unchanged. Before
+OpenMU, it verifies exact applied migrations, expected nonempty GameConfiguration
+IDs, singleton ReadConsoleInput=true/AutoUpdateSchema=false and complete endpoint
+inventory. It repeats the snapshot using EntityDataContext's actual credential,
+whose migration-read failure would otherwise enter the initializer. Restricted
+non-owner/non-DDL roles provide a second refusal boundary. Start contains no SQL
+writes, initialization, restore, role creation, -reinit, -demo or migration command.
+Starting/stopping PostgreSQL itself can perform normal internal housekeeping; no
+claim of byte-identical physical cluster files is made.
+
+Source checks (read-only, no build) used pinned OpenMU d067b3c:
+Program.cs618–656 and Persistence/EntityFramework/PersistenceContextProvider.cs47–55,
+108–119,136–149. DatabaseExists means any applied migration; UpToDate means no
+pending migration. These findings replace the earlier suggestion that toggling
+AssumeExternallyProvisioned would make daily launch safe by itself.
+
+## Verification and remaining boundaries
+
+New tests: 20 lifecycle +28 guard checks PASS under portable PowerShell7.4.6 on
+Linux. These cover real loader parsing with an isolated synthetic approved manifest,
+receipt tampering, inventories/hashes/path/config refusals, read-only SQL adapter,
+all-credential checks, migration/console/endpoint mismatches, PID observation,
+server and PG utility retry logic, output drainage and report secret canaries.
+Only harmless child processes run. Positive archive/dependency/Windows ACL checks
+use explicit mocks; actual artifact validation is tested negatively against
+unpinned bytes. No claim of successful real package validation is made.
+Commands: tests/windows11/lifecycle.tests.ps1 and tests/windows11/guards.tests.ps1.
+JSON parsing and git diff whitespace checks also pass. Original successful game
+integration38108874540 remains preserved, not repeated or relabeled as launcher QA.
+
+Still Windows NOT_RUN: Win11 x64 menu/console handling, global mutex, actual ACLs,
+real dependency probes, direct-child postgres.exe ownership (different from the
+smoke's pg_ctl daemon), TCP/UDP inventory, real psql credentials/queries, native
+client close, real startup/shutdown/relaunch and persistence. PostgreSQL remains
+running on unsafe/uncertain OpenMU shutdown. Clean exit is not proof all save
+operations succeeded; crash safety and interruption recovery are not promised.
+
+No blanket setup/query placeholders remain. Outstanding work requiring real inputs
+is package/manifest materialization and independently verified migration/config
+identities, separately approved initial DB/authentication/dependency setup, then
+new launcher-specific Windows acceptance in an authorized environment. Parent
+review of this exact patch comes first. No dispatch or laptop instructions now.
 
 ---
 

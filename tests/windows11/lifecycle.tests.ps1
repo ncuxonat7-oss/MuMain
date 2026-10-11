@@ -1,6 +1,6 @@
 # Run with PowerShell 7.4+, on Linux or Windows. No game, DB, network or Pester.
 $ErrorActionPreference='Stop'
-$modulePath=Join-Path $PSScriptRoot '../../scripts/windows11-candidate/Launcher.psm1'
+$modulePath=Join-Path $PSScriptRoot '../../scripts/windows11/Launcher.psm1'
 $script:passed=0
 function Check([string]$Name, [scriptblock]$Body) {
     & $Body
@@ -27,6 +27,7 @@ function MockLifecycle($Module, [string]$Failure='') {
         function script:Save-MuOwners { }
         function script:Start-MuPostgres { Event 'pg-start'; return @{name='pg'} }
         function script:Wait-MuListeners($Owned) { Event "$($Owned.name)-ready" }
+        function script:Wait-MuServer { Event 'server-ready' }
         function script:Assert-MuDatabase { Event 'db-check' }
         function script:Start-MuServer { Event 'server-start'; return @{name='server'} }
         function script:Assert-MuListeners { Event 'pg-recheck'; return $true }
@@ -43,7 +44,7 @@ function MockLifecycle($Module, [string]$Failure='') {
 function Events($Module) { return & $Module { $script:events.ToArray() } }
 
 Check 'all candidate scripts parse' {
-    foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot '../../scripts/windows11-candidate') -Include *.ps1,*.psm1 -Recurse) {
+    foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot '../../scripts/windows11') -Include *.ps1,*.psm1 -Recurse) {
         $tokens=$null; $errors=$null
         $null=[Management.Automation.Language.Parser]::ParseFile($file.FullName,[ref]$tokens,[ref]$errors)
         Assert ($errors.Count -eq 0)
@@ -51,7 +52,7 @@ Check 'all candidate scripts parse' {
 }
 Check 'missing/unapproved setup refuses before process or filesystem changes' {
     $m=Fresh; $s=New-MuSession
-    Assert (!(Start-MuSession $s (Join-Path ([IO.Path]::GetTempPath()) ([guid]::NewGuid()))))
+    Assert (!(Start-MuSession $s ([IO.Path]::GetTempPath())))
     Assert ($s.Code -eq 'SETUP_REQUIRED' -and $null -eq $s.Lock -and $null -eq $s.Pg)
 }
 Check 'start readiness order, duplicate refusal, explicit stop ordering' {
@@ -144,9 +145,11 @@ Check 'server timeout retains stdin ownership; retry sends exit only once' {
     & $m {
         function script:Assert-MuOwner { }
         $writer=[IO.StringWriter]::new()
+        $complete=[Threading.Tasks.Task]::CompletedTask
         $process=[pscustomobject]@{ StandardInput=$writer; ExitCode=0; WaitResult=$false }
         $process | Add-Member ScriptMethod WaitForExit { param($Timeout) return $this.WaitResult }
-        $s=New-MuSession; $s.Pg=@{}; $s.Server=@{Process=$process}
+        function script:Invoke-MuQuery { return 1 }
+        $s=New-MuSession; $s.Pg=@{}; $s.Server=@{Process=$process;Output=$complete;ErrorOutput=$complete;Observer=@{ErrorSeen=$false}}
         $failed=$false
         try { Stop-MuServer $s } catch { $failed=$true }
         if (!$failed -or !$s.ExitRequested -or $s.ServerStopped) { throw 'Timeout state wrong' }
