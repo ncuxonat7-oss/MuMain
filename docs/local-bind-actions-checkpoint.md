@@ -1,3 +1,13 @@
+# Prepared integration stage — 2026-10-11 02:00 UTC
+
+Owner approved MEDIUM server-only build and one isolated Windows smoke with baseline DB artifact11651520969 at 01:30 UTC. Published and exact read-back verified: task/local-bind-isolated-check commit25321d0e38a25e66572e77f13872bdd66cda3e65. Three files: existing windows-client.yml plus scripts/prepare-local-bind-smoke.py and scripts/local-bind-server-smoke.ps1. One manual Windows job35min, build18min, smoke12min. No dispatch by parent; awaiting owner Run. Integration NOT_RUN.
+
+Inputs: pinned OpenMU d067b3c with unchanged Money/local-bind patches, SDK10.0.109, existing client11567737809 and disposable baselineDB11651520969. Historical STR scenario from finish-gameplay.yml at52971f34461304a76587cfe3b6c694be239fc54d: guarded test0Dk STR31→32, points2→1, level2/EXP115/44items/shieldslot1 unchanged. No fixture repair on mismatch. New runtime archived before startup. Existing12helperchecks not repeated.
+
+Review fixes: validate config/runtime hashes and loopback DB destination before each Process.Start; explicit child environment excludes inherited hosting overrides. Native relog is PENDING_VISUAL_REVIEW even if SQL persistedState=PASS; parent must inspect screenshots and cannot infer world entry from TCP/character-list alone. Strict config/schema/ReadConsoleInput prerequisites remain runtime UNKNOWN and fail closed. Server shutdown uses owned stdin exit while PG remains alive; no server force-kill. Client cleanup may terminate owned client.
+
+Review archive Library libfile_7d3e417277c08191a53b9aa879b7ec41 version1, SHA256932a62351fa8381d91ef35db06ca4dc068fa2fe93afbd3786e51b98259bc4667. Static review only; no package readiness upgrade.
+
 # Isolated local bind Actions checkpoint
 
 ## Current result — 2026-10-11 01:24 UTC
