@@ -1,3 +1,13 @@
+# Latest diagnosis / next prepared run — 2026-10-11 02:56 UTC
+
+Manualrun38106487089 at90aa59dffe371c7e14567add11d442e4c57aa766 failed quickly with useful stage evidence. Artifact11689437943,12836bytes,SHA256fa29fb020f78ec5bd27e82be29af48314195ccb0910e03d986dd015f9f4cc847. versionprobePASS; initdbPASS2.74s; pg_ctl start exited0, then output drain hit5-second pipe_timeout. Owned postmaster.pid existed; cleanup pg_ctl stop exited0, postgresStopped=true/completed=true. Restore/OpenMU/native/persistence were NOT RUN. This establishes the output-wait failure; daemon inheritance explains it plausibly but exact handle ownership was not traced.
+
+One-file fix published/readback exact at abe181f3693b58853a6eb18461e07c5e5fb324be on task/local-bind-isolated-check: only pg_ctl start inherits console stdout/stderr rather than waiting for pipe EOF. PostgreSQL still logs via existing -l. Utility deadline, exitcode, PG readiness/ownership checks and cleanup remain; all other utilities retain bounded drain checks. Static applicability checked, Windows behavior NOT YET VERIFIED. No server rebuild, no new permissions or trigger changes, no automatic dispatch.
+
+Next needed action: owner NEW manual Windows Client Build run on task/local-bind-isolated-check selecting abe181f. Existing browser dispatch remains paused. Do not rerun old job SHA as test of this fix. Owner requested continuing bounded fixes/diagnosis within this stage and investigation of minimal supported autonomous access; access investigation is read-only, no pause bypass or token creation.
+
+Verified runtime backup: private Library libfile_b1e2679ae4088191859d97f0bbd4903c version0, file_00000000470081fd83bbe9138f5398a6, openmu-money-local-bind-38104421623.zip. Outer/inner hashes matched existing artifact; no runtime execution. Retain for reuse rather than rebuild after Actions retention.
+
 # Latest runtime attempt — 2026-10-11 02:40 UTC
 
 Owner manually ran38105086865 at a8789a10524a7469e5bb391b183364e62fee516a; job114368780036 FAILED on smoke12-minute timeout (02:27:00–02:39:00). New runtime11689365514 reused: outer/inner hash/provenance, exact186manifestfiles PASS; client/DB/Data stagingPASS. Source checkout/build/helper checks SKIPPED as intended, no rebuild.
