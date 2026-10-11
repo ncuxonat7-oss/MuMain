@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Stage the approved one-run Windows smoke; never starts a server or edits a DB.
 
-Usage: python scripts/prepare-local-bind-smoke.py inputs|source|runtime|evidence
+Usage: python scripts/prepare-local-bind-smoke.py inputs|source|runtime|staged_runtime|evidence
 Run only from the checked-out repository root in the manual Windows workflow.
 """
 import hashlib
@@ -158,6 +158,65 @@ def runtime():
     save_json('runtime-archive.json', {'sha256': digest('downloads/openmu-money-local-bind-runtime.zip')})
 
 
+def staged_runtime():
+    outer = Path('downloads/runtime.zip')
+    inner_sha = '4b1b1d71a0aa992fb3f2dbac7e447a5704cccc7ed38ebacfdebe97eabebf1eec'
+    require(outer.stat().st_size == 22410241 and digest(outer) ==
+            '505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c',
+            'Approved runtime artifact mismatch')
+    # Discover unique basenames from the verified outer ZIP; assume no directory layout.
+    archive = Path('downloads/openmu-money-local-bind-runtime.zip')
+    extract_one(outer, archive.name, archive)
+    require(digest(archive) == inner_sha, 'Approved inner runtime ZIP mismatch')
+    for name in ('runtime-manifest.json', 'runtime-archive.json', 'source-provenance.json'):
+        extract_one(outer, name, Path('evidence', name))
+    manifest = json.loads(Path('evidence/runtime-manifest.json').read_text(encoding='utf-8'))
+    provenance = json.loads(Path('evidence/source-provenance.json').read_text(encoding='utf-8'))
+    require(json.loads(Path('evidence/runtime-archive.json').read_text())['sha256'] == inner_sha,
+            'Runtime archive provenance mismatch')
+    require(provenance['openmu'] == PIN and provenance['sdk'] == SDK and
+            provenance['workflow_commit'] == '71159136c8f8cba949735be3ed0904fc15e5ad73' and
+            provenance['build_arguments'] == '-c Release -p:ci=true' and provenance['source_eol'] == 'LF',
+            'Runtime source/build provenance mismatch')
+    expected_patches = {
+        'patches/openmu-trade-money.patch': '85d8428452a25fef598c19ef2cda8d0ab94b2d5c13296481445ae84b7fad197d',
+        'patches/openmu-local-only-bind.patch': 'd0ee9ada196913fdeaa8036cc57c7712ac77817117a6dd5d19e926965cf6a1a9',
+    }
+    for name in (*expected_patches, 'patches/openmu-local-only-bind-provenance.json'):
+        canonical = subprocess.check_output(['git', 'show', 'HEAD:' + name])
+        sha = hashlib.sha256(canonical).hexdigest()
+        require(sha == provenance['patches'][name], 'Runtime patch provenance mismatch: ' + name)
+        require(name not in expected_patches or sha == expected_patches[name], 'Reviewed patch changed')
+    require(re.fullmatch(r'[0-9a-f]{64}', provenance['helper_sha256']) is not None,
+            'Missing helper provenance in pinned artifact')
+    root = Path('server-source/src/Startup/bin/Release')
+    require(not Path('server-source').exists(), 'Fresh runtime destination required')
+    with zipfile.ZipFile(archive) as source:
+        members = [m for m in source.infolist() if not m.is_dir()]
+        names = [m.filename for m in members]
+        require(names and len(set(n.casefold() for n in names)) == len(names)
+                and set(names) == set(manifest), 'Runtime manifest membership mismatch')
+        require(sum(m.file_size for m in members) < MAX_UNPACKED, 'Runtime exceeds bound')
+        for member in members:
+            path = PurePosixPath(member.filename)
+            require(not path.is_absolute() and '..' not in path.parts and ':' not in member.filename
+                    and '\\' not in member.filename and all(p == p.rstrip(' .') for p in path.parts)
+                    and (member.external_attr >> 16) & 0o170000 != 0o120000, 'Unsafe runtime member')
+            target = root.joinpath(*path.parts)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with source.open(member) as src, target.open('wb') as dst:
+                shutil.copyfileobj(src, dst)
+            require(digest(target) == manifest[member.filename], 'Runtime file hash mismatch')
+    for name in ('MUnique.OpenMU.Startup.dll', 'MUnique.OpenMU.Network.dll',
+                 'MUnique.OpenMU.GameLogic.dll', 'MUnique.OpenMU.Startup.runtimeconfig.json',
+                 'MUnique.OpenMU.Startup.deps.json', 'ConnectionSettings.xml'):
+        require((root / name).is_file(), 'Incomplete runtime: ' + name)
+    save_json('runtime-consumption.json', {'artifact': 11689365514, 'build_run': 38104421623,
+              'inner_sha256': inner_sha, 'files_verified': len(manifest), 'rebuilt': False,
+              'config_provenance': 'Pinned build verified source settings; unchanged manifest bytes rechecked before launch',
+              'consumer_commit': os.environ['GITHUB_SHA']})
+
+
 def evidence():
     Path('evidence').mkdir(exist_ok=True)
     save_json('job-status.json', {'status': os.environ.get('SMOKE_JOB_STATUS', 'unknown'),
@@ -206,5 +265,5 @@ def evidence():
 
 
 if __name__ == '__main__':
-    require(len(sys.argv) == 2 and sys.argv[1] in ('inputs', 'source', 'runtime', 'evidence'), 'Invalid stage')
+    require(len(sys.argv) == 2 and sys.argv[1] in ('inputs', 'source', 'runtime', 'staged_runtime', 'evidence'), 'Invalid stage')
     globals()[sys.argv[1]]()
