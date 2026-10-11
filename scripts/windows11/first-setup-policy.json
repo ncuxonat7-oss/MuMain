@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "runtimeGrantStatus": "BLOCKED_SOURCE_BINARY_ALIGNMENT",
+  "blockers": [
+    "Explicit external admin mode and caller concurrency fix are source-only; pinned runtime binary contains neither patch.",
+    "Entity/Typed eager-navigation reads, enabled-feature scope and emitted SaveChanges table/column closure remain incomplete; no executable full grant profile.",
+    "C# build/tests, new binary/source contract alignment and actual Windows PostgreSQL role/restore and authorization acceptance have not been approved or executed."
+  ],
+  "packageInventorySha256": "85cf983cb786f284747763074b84cd0c6bae9c2b73bd6e0923e3849cefc15feb",
+  "archiveBytes": 2091291,
+  "archiveSha256": "b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea",
+  "dumpBytes": 1367029,
+  "dumpSha256": "0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478",
+  "database": "openmu",
+  "port": 5432,
+  "listenAddress": "127.0.0.1",
+  "encoding": "SQL_ASCII",
+  "locale": "C",
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null,
+  "runtimeSourceStatus": "PATCH_REVIEW_ONLY",
+  "runtimeBinaryAlignment": false,
+  "liveValidationStatus": "NOT_RUN"
+}

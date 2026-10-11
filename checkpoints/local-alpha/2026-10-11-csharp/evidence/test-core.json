@@ -1,0 +1,27 @@
+{
+  "name": "test-core",
+  "arguments": [
+    "test",
+    "tests/MUnique.OpenMU.Tests/MUnique.OpenMU.Tests.csproj",
+    "--no-restore",
+    "-c",
+    "Release",
+    "-p:ci=true",
+    "-p:UseSharedCompilation=false",
+    "-p:BuildInParallel=false",
+    "-m:1",
+    "--filter",
+    "FullyQualifiedName~AdminUserRepositoryStorageTests",
+    "--logger",
+    "trx;LogFileName=admin-storage.trx",
+    "--results-directory",
+    "../test-results/core",
+    "-v:minimal"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 50.39,
+  "stopReason": null,
+  "conservativeDownloadAndCacheBytes": 1247376973,
+  "archiveBytes": 291578619,
+  "globalDeadlineUtc": "2026-10-11T21:49:30Z"
+}

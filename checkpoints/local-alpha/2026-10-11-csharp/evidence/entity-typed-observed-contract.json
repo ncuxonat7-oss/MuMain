@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "grantProfileStatus": "incomplete-observed-lower-bound",
+  "executable": false,
+  "activationAllowed": false,
+  "rows": [
+    {
+      "context": "EntityDataContext",
+      "schema": "public",
+      "table": "__EFMigrationsHistory",
+      "operations": [
+        "SELECT"
+      ],
+      "basis": "PersistenceContextProvider.DatabaseExistsAsync/IsDatabaseUpToDateAsync",
+      "status": "observed-read"
+    },
+    {
+      "context": "EntityDataContext",
+      "schema": "config",
+      "table": "GameConfiguration",
+      "operations": [
+        "SELECT"
+      ],
+      "basis": "PersistenceContextProvider.ConfigurationExistsAsync; Startup.Program.CreateMissingPlugInConfigurations",
+      "status": "observed-read-with-unresolved-navigation-closure"
+    },
+    {
+      "context": "EntityDataContext",
+      "schema": "config",
+      "table": "SystemConfiguration",
+      "operations": [
+        "SELECT (AutoUpdateSchema)"
+      ],
+      "basis": "PersistenceContextProvider.ShouldDoAutoSchemaUpdateAsync",
+      "status": "observed-column-read"
+    },
+    {
+      "context": "EntityDataContext",
+      "schema": "config",
+      "table": "PlugInConfiguration",
+      "operations": [
+        "INSERT",
+        "UPDATE"
+      ],
+      "basis": "Startup.Program missing plugin insertion; KanturuTowerWindow/BotFeaturePlugIn/BotsController saved config updates",
+      "status": "observed-conditional-write; narrower-column-and-save-closure-unverified"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "config",
+      "table": "PlugInConfiguration",
+      "operations": [
+        "SELECT",
+        "UPDATE"
+      ],
+      "basis": "Startup.Program.PlugInConfigurationsFactory",
+      "status": "observed-conditional-write; read-navigation-and-update-column-closure-unverified"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "config",
+      "table": "SystemConfiguration",
+      "operations": [
+        "SELECT"
+      ],
+      "basis": "Startup.Program line683; NetworkObservationExtensions line80",
+      "status": "observed-read"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "data",
+      "table": "GensAbuse",
+      "operations": [
+        "SELECT",
+        "DELETE"
+      ],
+      "basis": "GensRankingPlugIn lines79-91",
+      "status": "observed-feature-conditional"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "data",
+      "table": "GensMember",
+      "operations": [
+        "SELECT",
+        "UPDATE (Rank,RankingPosition)"
+      ],
+      "basis": "GensRankingPlugIn lines127-146",
+      "status": "observed-feature-conditional"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "data",
+      "table": "MiniGameRankingEntry",
+      "operations": [
+        "INSERT"
+      ],
+      "basis": "MiniGameRewardService lines107-123",
+      "status": "observed-feature-conditional"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "data",
+      "table": "CastleSiegePendingReward",
+      "operations": [
+        "INSERT"
+      ],
+      "basis": "CastleSiegeRewardDelivery lines62-73",
+      "status": "observed-feature-conditional"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "data",
+      "table": "CastleSiegeData",
+      "operations": [
+        "SELECT",
+        "INSERT",
+        "UPDATE"
+      ],
+      "basis": "CastleSiegeContext lines422-427,871-879",
+      "status": "observed-feature-conditional"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "data",
+      "table": "CastleSiegeGuild",
+      "operations": [
+        "SELECT",
+        "INSERT",
+        "DELETE"
+      ],
+      "basis": "CastleSiegeContext lines437-461",
+      "status": "observed-feature-conditional"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "data",
+      "table": "CastleSiegeNpcState",
+      "operations": [
+        "SELECT",
+        "INSERT",
+        "UPDATE",
+        "DELETE"
+      ],
+      "basis": "CastleSiegeContext lines487-511",
+      "status": "observed-feature-conditional"
+    },
+    {
+      "context": "TypedContext",
+      "schema": "data",
+      "table": "CastleSiegeGuildRegistration",
+      "operations": [
+        "SELECT",
+        "INSERT",
+        "UPDATE",
+        "DELETE"
+      ],
+      "basis": "CastleSiegeContext lines519-525,674-728",
+      "status": "observed-feature-conditional"
+    }
+  ],
+  "unsupported": [
+    "Full SELECT/navigation closure for eager generic repositories and GameConfigurationJsonObjectLoader",
+    "Enabled runtime feature/plugin set and exact restored data completeness",
+    "Full modified-column/aggregate/join closure for SaveChanges paths",
+    "No extra schema/table objects/triggers/default expressions/ACL inherited effects in restored DB",
+    "Exact patched binary/model alignment"
+  ],
+  "prohibitedInferences": [
+    "Do not grant all DML on config/data/friend/guild merely from generic API capability",
+    "Do not grant SystemConfiguration UPDATE based on its read paths",
+    "Do not turn latest model's 119 tables into privilege allowlist",
+    "Do not assume prefilled plugin configs remove all subsequent config writes",
+    "Do not infer sequence/function/DDL or owner permissions from these findings"
+  ]
+}

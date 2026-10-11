@@ -64,7 +64,7 @@ function Get-MuApprovedSetup([string]$Root) {
 function Assert-MuSetupShape($Setup) {
     Assert-MuKeys $Setup @('schema','runtimeArchive','server','clientDirectory','pgDirectory','dotnetDirectory',
         'pgData','dotnet','postgres','pgCtl','pgControlData','psql','client','hashes','database','endpoints','versions')
-    if ($Setup.schema -ne 1) { throw 'UNSAFE_CONFIG' }
+    if ($Setup.schema -ne 2) { throw 'UNSAFE_CONFIG' }
     foreach ($key in @('runtimeArchive','server','clientDirectory','pgDirectory','dotnetDirectory','pgData',
         'dotnet','postgres','pgCtl','pgControlData','psql','client')) { Assert-MuRelative $Setup[$key] }
     Assert-MuKeys $Setup.versions @('dotnet','postgres')
@@ -79,24 +79,59 @@ function Assert-MuSetupShape($Setup) {
         pgControlData=($Setup.pgDirectory + '/bin/pg_controldata.exe'); psql=($Setup.pgDirectory + '/bin/psql.exe')}
     foreach ($key in $executables.Keys) { if ($Setup[$key] -cne $executables[$key]) { throw 'UNSAFE_CONFIG' } }
     Assert-MuDatabaseShape $Setup.database
+    $databaseSource=Get-MuDatabaseSourceContract
+    $migrationAssembly=$Setup.server + '/' + $databaseSource.migrationAssembly
+    if (!$Setup.hashes.ContainsKey($migrationAssembly) -or
+        $Setup.hashes[$migrationAssembly] -cne $databaseSource.migrationAssemblySha256) { throw 'HASH_MISMATCH' }
     Assert-MuEndpointShape $Setup.endpoints
+    $expectedEndpoints=(Get-MuDatabaseSourceContract).endpoints
+    foreach ($kind in @('game','chat','connect')) {
+        $expected=@($expectedEndpoints[$kind] | ForEach-Object { if ($kind -eq 'game') { '{0}:{1}' -f $_.port,$_.published } else { [string]$_.port } })
+        $actual=@($Setup.endpoints[$kind] | ForEach-Object { if ($kind -eq 'game') { '{0}:{1}' -f $_.port,$_.published } else { [string]$_.port } })
+        Assert-MuExactStrings $actual $expected '^[0-9]+(:[0-9]+)?$'
+    }
     $Setup.serverPorts=@(@($Setup.endpoints.game.port) + @($Setup.endpoints.chat.port) +
         @($Setup.endpoints.connect.port) + @(18080) | Sort-Object -Unique)
     if (5432 -in $Setup.serverPorts -or 44406 -notin $Setup.serverPorts -or 55902 -notin $Setup.serverPorts) { throw 'UNSAFE_CONFIG' }
 }
 
+function Get-MuDatabaseSourceContract {
+    # Independent pinned-source/export expectations, never populated by a DB probe.
+    $path=Join-Path $PSScriptRoot 'database-source-contract.json'
+    Assert-MuLocalPath $path
+    Assert-MuFileHash $path '0718c51ba1367d476a5d3fff7a46e55b16f334688ecbb650af7148b836c2cac6'
+    return Read-MuJson $path
+}
+
+function Assert-MuExactStrings($Actual, $Expected, [string]$Pattern) {
+    # Do not let Compare-Object hide duplicate, scalar, null or malformed identities.
+    if ($Actual -isnot [array] -or $Expected -isnot [array] -or !$Actual.Count -or
+        $Actual.Count -ne $Expected.Count) { throw 'UNSAFE_CONFIG' }
+    foreach ($value in $Actual) {
+        if ($value -isnot [string] -or $value -cnotmatch $Pattern) { throw 'UNSAFE_CONFIG' }
+    }
+    if (@($Actual | Sort-Object -Unique).Count -ne $Actual.Count -or
+        @(Compare-Object @($Expected | Sort-Object) @($Actual | Sort-Object) -CaseSensitive).Count) { throw 'UNSAFE_CONFIG' }
+}
+
 function Assert-MuDatabaseShape($Db) {
-    Assert-MuKeys $Db @('name','queryUser','pgPassFile','systemIdentifier','migrationSchema','migrationIds','runtimeRoles','configurationIds')
-    foreach ($value in @($Db.name,$Db.queryUser,$Db.migrationSchema) + @($Db.runtimeRoles)) {
-        if ($value -cnotmatch '^[a-z_][a-z0-9_]{0,62}$') { throw 'UNSAFE_CONFIG' }
+    Assert-MuKeys $Db @('name','queryUser','pgPassFile','systemIdentifier','migrationHistories','runtimeRoles','configurationIds')
+    foreach ($value in @($Db.name,$Db.queryUser) + @($Db.runtimeRoles)) {
+        if ($value -isnot [string] -or $value -cnotmatch '^[a-z_][a-z0-9_]{0,62}$') { throw 'UNSAFE_CONFIG' }
     }
     Assert-MuRelative $Db.pgPassFile
     if ($Db.name -cne 'openmu' -or $Db.systemIdentifier -cnotmatch '^[0-9]{10,20}$' -or
-        !$Db.configurationIds.Count -or !$Db.runtimeRoles.Count -or !$Db.migrationIds.Count) { throw 'UNSAFE_CONFIG' }
-    foreach ($id in $Db.configurationIds) { if ($id -cnotmatch '^[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}$') { throw 'UNSAFE_CONFIG' } }
-    foreach ($id in $Db.migrationIds) { if ($id -cnotmatch '^[0-9]{14}_[A-Za-z0-9_]+$') { throw 'UNSAFE_CONFIG' } }
-    if (@($Db.migrationIds | Sort-Object -Unique).Count -ne $Db.migrationIds.Count -or
+        $Db.runtimeRoles -isnot [array] -or !$Db.runtimeRoles.Count -or $Db.queryUser -in $Db.runtimeRoles -or
         @($Db.runtimeRoles | Sort-Object -Unique).Count -ne $Db.runtimeRoles.Count) { throw 'UNSAFE_CONFIG' }
+    $contract=Get-MuDatabaseSourceContract
+    Assert-MuExactStrings $Db.configurationIds $contract.configurationIds '^[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}$'
+    Assert-MuKeys $Db.migrationHistories @('EntityDataContext','AdminAuth.AdminPanelContext')
+    foreach ($context in @('EntityDataContext','AdminAuth.AdminPanelContext')) {
+        $history=$Db.migrationHistories[$context]; $expected=$contract.migrationHistories[$context]
+        Assert-MuKeys $history @('schema','table','ids')
+        if ($history.schema -cne $expected.schema -or $history.table -cne $expected.table) { throw 'UNSAFE_CONFIG' }
+        Assert-MuExactStrings $history.ids $expected.ids '^[0-9]{14}_[A-Za-z0-9_]+$'
+    }
 }
 
 function Assert-MuEndpointShape($Endpoints) {
@@ -181,7 +216,7 @@ function Assert-MuPostgresConfig($Setup) {
         $key=$Matches[1]; $value=$Matches[2].Trim("'")
         if ($config.ContainsKey($key) -or $key -notin @('listen_addresses','port','password_encryption',
             'shared_preload_libraries','session_preload_libraries','local_preload_libraries','max_connections',
-            'shared_buffers','logging_collector','log_destination','timezone','datestyle')) { throw 'UNSAFE_CONFIG' }
+            'shared_buffers','logging_collector','log_destination','timezone','datestyle','log_statement','log_min_error_statement')) { throw 'UNSAFE_CONFIG' }
         $config[$key]=$value
     }
     if ($config.listen_addresses -cne '127.0.0.1' -or $config.port -cne '5432' -or
@@ -190,6 +225,8 @@ function Assert-MuPostgresConfig($Setup) {
         if ($config.ContainsKey($key) -and $config[$key] -ne '') { throw 'UNSAFE_CONFIG' }
     }
     if ($config.ContainsKey('log_destination') -and $config.log_destination -cne 'stderr') { throw 'UNSAFE_CONFIG' }
+    if ($config.ContainsKey('log_statement') -and $config.log_statement -cne 'none') { throw 'UNSAFE_CONFIG' }
+    if ($config.ContainsKey('log_min_error_statement') -and $config.log_min_error_statement -cne 'panic') { throw 'UNSAFE_CONFIG' }
     if (@(Read-MuConfigLines (Join-Path $data 'postgresql.auto.conf')).Count -or
         @(Read-MuConfigLines (Join-Path $data 'pg_ident.conf')).Count) { throw 'UNSAFE_CONFIG' }
     Assert-MuHba $Setup (Read-MuConfigLines (Join-Path $data 'pg_hba.conf'))
@@ -221,6 +258,16 @@ function Assert-MuPrivateFile([string]$Path) {
     }
 }
 
+function Assert-MuConnectionSchemaMode($Entry,[string]$Name) {
+    $children=@($Entry.ChildNodes | Where-Object NodeType -eq 'Element')
+    $expected=@('ConnectionString','ContextTypeName','DatabaseEngine')
+    if ($Name -ceq 'AdminAuth.AdminPanelContext') { $expected+=@('AdminSchemaManagement') }
+    if ($children.Count -ne $expected.Count -or
+        @($children | Where-Object NamespaceURI -cne 'http://www.munique.net/ConnectionSettings').Count -or
+        @(Compare-Object @($children.LocalName | Sort-Object) @($expected | Sort-Object) -CaseSensitive).Count) { throw 'UNSAFE_CONFIG' }
+    if ($Name -ceq 'AdminAuth.AdminPanelContext' -and [string]$Entry.AdminSchemaManagement -cne 'ExternallyProvisioned') { throw 'UNSAFE_CONFIG' }
+}
+
 function Get-MuConnections($Setup) {
     $path=Resolve-MuFile $Setup.root ($Setup.server + '/ConnectionSettings.xml')
     Assert-MuPrivateFile $path
@@ -233,10 +280,9 @@ function Get-MuConnections($Setup) {
     if ($entries.Count -ne $contexts.Count) { throw 'UNSAFE_CONFIG' }
     $result=@{}
     foreach ($entry in $entries) {
-        $children=@($entry.ChildNodes | Where-Object NodeType -eq 'Element' | ForEach-Object LocalName | Sort-Object)
-        if (@(Compare-Object $children @('ConnectionString','ContextTypeName','DatabaseEngine') -CaseSensitive).Count) { throw 'UNSAFE_CONFIG' }
         $context=[string]$entry.ContextTypeName
         $name=$context -creplace '^MUnique.OpenMU.Persistence.EntityFramework\.',''
+        Assert-MuConnectionSchemaMode $entry $name
         if ($context -cne ('MUnique.OpenMU.Persistence.EntityFramework.' + $name) -or $name -notin $contexts -or $result.ContainsKey($name) -or $entry.DatabaseEngine -cne 'Npgsql') { throw 'UNSAFE_CONFIG' }
         $cs=[Data.Common.DbConnectionStringBuilder]::new(); $cs.set_ConnectionString([string]$entry.ConnectionString)
         foreach ($key in $cs.get_Keys()) { if ($key -notin @('Server','Port','Database','User Id','Password','Command Timeout','Pooling','Minimum Pool Size','Maximum Pool Size','Timeout')) { throw 'UNSAFE_CONFIG' } }

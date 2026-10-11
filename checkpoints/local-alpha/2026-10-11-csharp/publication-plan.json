@@ -1,0 +1,10 @@
+{
+  "baseBranch": "task/windows11-local-launcher",
+  "baseCommit": "7f5b44a930a501dfc7ea4f522584cb59a22c9499",
+  "baseTree": "84fbf108cf9d702110219f35857185bb68b12b86",
+  "mainObserved": "9f2a64adc35fc9d36eed5f5147542a6176a1c545",
+  "docsObserved": "5131c1e0902aa2da8e0b2c699bbab4fa96865eb3",
+  "workflowInspection": "all12workflow trigger headers read at pinned base; no create trigger; ci push protected by [skip ci] and separate slash-namespaced branch; no workflow file changes or dispatch",
+  "commitMessage": "Preserve reviewed local Alpha source and C# evidence [skip ci]",
+  "noPrOrMerge": true
+}

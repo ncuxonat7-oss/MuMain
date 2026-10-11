@@ -1,0 +1,8 @@
+{
+  "method": "read-only PE/CLR bytes, not test replacement",
+  "newArtifactSha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+  "migrationCount": 65,
+  "sameIdsAndContextsAsPreviouslyIndependentPinnedSourceAndBinary": true,
+  "game": 63,
+  "admin": 2
+}

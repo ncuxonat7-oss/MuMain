@@ -1,0 +1,50 @@
+Bounded explicit-preprovisioned admin source candidate — 2026-10-11
+PARTIAL / BLOCKED. No new binary or deployment.
+
+55/55 first-setup PowerShell mock checks PASS, exit0. Existing portable Linux
+PowerShell7.4.20 used. Tests include explicit admin XML mode, missing/incorrect/
+duplicate/namespace rejection, source-review/binary/live-validation fences and
+previous procedure mocks. No DB utility, Windows ACL, credential, game/server,
+install, build, publication/main/workflow or package activation occurred.
+
+29/29 Python checks PASS:17 source/patch checks and12 hand-authored mocked
+behavior checks. Exact patch application to a private fixture verified. These
+are not C# execution/compilation or provider integration tests. Bounded static
+review found no additional repository-patch or staged-guard blocker, retaining
+the explicit caller-level authorization limit below.
+
+Server patch is limited to AdminUserRepository, ConnectionConfigurator,
+ConnectionSetting and new AdminSchemaManagementMode. Explicit admin connection
+AdminSchemaManagement=ExternallyProvisioned replaces runtime MigrateAsync with
+read-only exact applied-versus-compiled history comparison. The legacy valid
+omitted/default setting keeps its migration branch. Config resolution errors now
+propagate; default error behavior is not claimed byte-for-byte unchanged.
+
+IMPORTANT: repository failures propagate, but whole-panel fail-closed is NOT
+established. Existing AdminUserAvailabilityService may return cached false while
+another request holds its semaphore; auth interprets false as bootstrap. This is
+an explicit deployment blocker, not silently fixed by expanding this stage.
+
+Entity/Typed contract now records14 observed source operation rows with precise
+paths/hashes. Startup conditionally INSERTs/UPDATEs config.PlugInConfiguration;
+read-only Entity/Typed is not universally sufficient. Exact eager-navigation
+read closure, enabled features and SaveChanges table/column closure remain
+unproven. Full grant setter remains an unconditional stop. No blanket config
+DML, SystemConfiguration UPDATE or runtime CREATE was fabricated.
+
+Policy is hash pinned, blocked before mutations and requires source review,
+boolean binary alignment and live validation even after a future status change.
+New private XML generator/guard use exact admin mode. Old package controls and
+runtime evidence are unchanged. No packager pin integration or new candidate
+payload was made; current fixed pins intentionally reject changed guard bytes.
+launchEnabled=false; approvedLaunchManifestSha256=null throughout.
+
+Smallest next decision: whether to authorize a narrow caller change that denies
+unresolved/in-progress admin availability in explicit external mode. That closes
+the identified concurrency/bootstrap gap; it does not authorize a build, actual
+DB deployment or broadening the grant profile. Grant closure, new approved build
+and Windows PostgreSQL acceptance remain distinct gates.
+
+Map closure: existing ALPHA-NAV-01/02/03 do not match this work. Existing STACK-01
+is stale for later Money+local-bind runtime; local update proposal saved under
+source/docs/alpha-nav-local-refresh-proposal.md. No remote doc update.

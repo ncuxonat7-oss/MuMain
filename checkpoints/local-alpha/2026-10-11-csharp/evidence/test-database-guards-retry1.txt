@@ -1,0 +1,41 @@
+PASS exact source contracts accepted
+PASS both exact histories accepted separately
+PASS old single-history manifest rejected
+PASS missing admin contract rejected
+PASS merged histories rejected
+PASS extra game migration rejected
+PASS missing game migration rejected
+PASS duplicate migration rejected
+PASS wrong schema rejected
+PASS schema interpolation injection rejected
+PASS wrong history table rejected
+PASS unknown context rejected
+PASS wrong configuration identity rejected
+PASS duplicate configuration identity rejected
+PASS scalar configuration identity rejected
+PASS probe cannot also be runtime role
+PASS snapshot expected settings accepted
+PASS baseline AutoUpdateSchema true rejected
+PASS baseline ReadConsoleInput false rejected
+PASS string true cannot masquerade as bool
+PASS wrong system identity rejected
+PASS multiple system rows rejected
+PASS observed configuration mismatch rejected
+PASS empty admin history rejected despite good game history
+PASS admin missing migration rejected
+PASS observed context spoof rejected
+PASS array history ID rejected before pipeline projection
+PASS null history ID rejected
+PASS extra null ID row rejected
+PASS missing ProductVersion rejected
+PASS null ProductVersion rejected
+PASS nonstring ProductVersion rejected
+PASS empty ProductVersion rejected
+PASS both EF history columns queried
+PASS game default search path wrong resolution rejected
+PASS game default search path missing resolution rejected
+PASS game SQL verifies actual unqualified resolution
+PASS admin SQL uses explicit schema
+PASS both probe and correct runtime credential used per context
+PASS admin runtime ProductVersion SELECT denial blocks despite successful probe
+PASS TOTAL 40

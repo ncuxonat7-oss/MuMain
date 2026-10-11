@@ -1,0 +1,79 @@
+Bounded local packaging stage — 2026-10-11 18:34 UTC
+
+Result: implementation complete within available current-host inputs. New component
+control staging passed; this is NOT a complete or runnable Windows package.
+
+Local source: phase1828-packaging/source/
+Source preservation base: ncuxonat7-oss/MuMain f2fdde60a3c49592be6d4925e500e216d5499310.
+Authoritative runtime inventory: docs-branch commit 5131c1e0902aa2da8e0b2c699bbab4fa96865eb3,
+Git blob f8e36cfe1f8167094a77e26009df314589197a39. Exact retrieved small files are local,
+not a full Git checkout. No main/branch/push/workflow operations occurred.
+AGENTS.md, coding rules, current checkpoint, preservation and routing rules read.
+
+Changed: scripts/package-windows11-local.py; tests/windows11/test_packaging.py;
+docs/windows11-package-preservation/README.md. changes.diff applies to preserved
+source base (git apply --check passed). source-checksums.json identifies final files.
+The inventory JSON is copied unchanged from the newer authoritative docs commit;
+it must accompany applying the patch to the older preservation checkout.
+
+Implementation:
+- Local-only input archives, outer/inner SHA256 gates and exact per-file size/hash checks.
+- Exact 36 client runtime files; MuClient.lib/Main.map/Main.pdb excluded, not deleted.
+- Full 186 server tree retained, including locales/runtimes/Web UI metadata.
+- Unsafe paths, nonregular links, collisions, encrypted ZIP entries and missing,
+  extra or corrupt required files rejected. Selected files streamed with size caps.
+- Existing destination rejected, exclusive file creation, incomplete fail-closed status.
+- Full Data/font tree and launcher pins retained. Overlay helper Git blob
+  287c4f7cb980b0ac13ded1a231f03c1e92653f46 and JSON blob
+  ccb1a945603be57f7f3d7001adf690dde56e6e43 verified before executing/parsing them.
+- New explicit runtime-only control flag cannot make mandatory assets optional.
+- launchEnabled=false and approvedLaunchManifestSha256=null always retained.
+
+Actual checks:
+20 NEW RuntimePackagingTests PASS; exact names/output in tests-runtime.txt.
+Command from source/: PYTHONDONTWRITEBYTECODE=1 python tests/windows11/test_packaging.py RuntimePackagingTests
+Tests cover exact map counts, build exclusions, missing shader, corrupt client DLL,
+client size, TAR traversal/links/collisions, full server locale/Web metadata,
+missing/extra/corrupt server files, unsafe ZIP paths/case collisions/symlinks,
+map destinations, outer/inner identities, inventory/overlay identities, incomplete
+success/failure gates, existing output/symlink nonoverwrite, both input requirements,
+and preserved full-mode launcher/Data gates. No old suite rerun.
+The first new test invocation caught an extra newline introduced during local small
+file materialization; exact Git blob bytes restored before successful tests/staging.
+No archive inventory investigation or old migration/runtime checks were repeated.
+
+Actual control:
+phase1828-packaging/control-runtime-20261011/
+CLI and output in control-stage.txt. Reused existing:
+phase1755-inventory/client/validated-mumain-native-build.zip
+server_attachment_check/openmu-money-local-bind-38104421623.zip
+No new download. Source archives only opened read-only; old evidence preserved.
+36 client + 186 server files = 166,412,893 payload bytes.
+A separate inputs/server source ZIP is retained for the existing launcher provenance
+contract: total 223 inventoried files, 188,823,134 bytes. This is not a 187th server file.
+Every staged output size/hash was verified against the generated inventory;
+control-verification.json records counts and fail-closed status.
+
+Limits and first-launch requirements:
+No verified local pinned Data/fonts/launcher checkout exists on this host. Therefore
+full merged control packaging and real overlay application are NOT_RUN; those
+remain mandatory missing components, not optional. Existing pins/logic are preserved.
+Windows x64 dotnet host + .NET/ASP.NET selected runtime10.0.11, PostgreSQL17.11 tools
+and support files, PowerShell7.4+ availability/distribution, dependency identity and
+redistribution/license notices still missing. No SDK/compiler is assumed daily-use.
+Persistent DB selection/provisioning, authentication/roles/private credentials,
+independently reconciled migration/configuration IDs, final endpoints and reviewed
+manifest remain unresolved. No DB was read/created/modified. Portable Web UI remains
+UNVERIFIED (existing CI content roots/no established portable assets); retained
+untouched and neither declared optional nor repaired. Windows host/GPU/OS dependency
+resolution, launch/shutdown and persistence acceptance are NOT_RUN.
+No game/server process, installation, rebuild, architecture/production or readiness
+score change. No large output ZIP created.
+
+Suggested next bounded phase:
+Supply the existing pinned Data/fonts/launcher checkout through an authorized
+available local route, then merge and verify these components using full mode.
+Keep dependency/DB/Windows acceptance gates explicit; do not launch yet.
+
+Preservation: local files only. No external backup, Library output, GitHub save,
+publication or runnable-package delivery is claimed. Existing checkpoints survive.

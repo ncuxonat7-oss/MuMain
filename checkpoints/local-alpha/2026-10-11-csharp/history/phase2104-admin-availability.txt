@@ -1,0 +1,50 @@
+Narrow admin availability caller correction — 2026-10-11
+SOURCE-ONLY CANDIDATE. Real setup and launch remain blocked.
+
+Implemented exactly one additional upstream file:
+src/Web/AdminPanel/Auth/AdminUserAvailabilityService.cs.
+Concurrent callers await the semaphore using their cancellation token instead of
+receiving initial cached false. Cache reads/publication use a short synchronous
+lock. Invalidate advances a version and clears freshness; a superseded in-flight
+check does not publish its result and returns true (authentication required).
+Exceptions propagate without publishing a new false cache; finally releases the
+semaphore only after acquisition. Legitimate completed zero-user checks and the
+legacy repository's initial-setup semantics remain. No mode interfaces or new
+subsystems were added. Configured bootstrap-user shortcut remains unchanged.
+
+The previous four-file explicit-preprovisioned repository patch is retained
+byte-for-byte in the cumulative patch. No runtime binary contains either local
+patch yet. Default behavior differs intentionally only in pending waits/cache
+coherence and prior documented malformed-configuration error propagation.
+
+42/42 targeted Python checks PASS:18 source-contract and24 hand-modeled
+concurrency/cancellation/exception/invalidation checks, warnings treated as errors.
+Both incremental one-file and cumulative five-file patches applied exactly to
+private fixtures. Initial model run had14 AsyncMock callback errors; the test
+adapter was corrected to its explicit async method, without changing C# source.
+Initial and final logs retained. Previous29-check suite was not rerun.
+Bounded static review found no blocking defect within the caller scope.
+
+55/55 PowerShell mock checks PASS against the updated hash-pinned blocked setup
+policy. No C# compilation/execution, provider integration, database utility,
+Windows ACL, credential operation, game/server launch, install, publication,
+main/workflow change or binary replacement was performed.
+
+Deployment gates remaining:
+- Entity/Typed full grant closure remains incomplete: eager-navigation reads,
+  enabled feature branches and emitted SaveChanges table/column closure.
+- An approved build/C# test and recorded source/binary alignment are absent.
+- Real isolated Windows PostgreSQL restricted-role, restore and admin
+  authorization acceptance are NOT_RUN and require separate approval.
+The unconditional full-grant stop and source/binary/live-validation fences remain.
+launchEnabled=false; approvedLaunchManifestSha256=null.
+
+STACK-01 is the existing matching provenance entry. Updated local proposal adds
+this source-only caller correction and evidence limits; no ALPHA-NAV mechanic
+entry or remote document was added/changed. Prior source and package controls
+remain untouched. No grants audit was reopened during this task.
+
+Checkpoint is a review bundle, not a complete runnable package. The source base
+is phase2049-runtime-ddl/source. Caller Python tests reuse the preserved prior
+phase2049 repository-model test helper; that dependency was not recopied or
+reinterpreted as a C# test. Original controls and evidence must remain available.

@@ -1,0 +1,938 @@
+{
+  "root": "phase2129-csharp-build/openmu/src/Startup/bin/Release",
+  "type": "framework-dependent net10.0 build, Linux native apphost, NOT Windows RID/publish",
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null,
+  "files": [
+    {
+      "path": "BCrypt.Net-Next.dll",
+      "bytes": 23040,
+      "sha256": "115b9faff8b909a1a08b65b315058eb182c0c4c3a77c19fcd5f4da9da49d4a63"
+    },
+    {
+      "path": "BlazorInputFile.dll",
+      "bytes": 20480,
+      "sha256": "0b42ab3262d0404ebc71dd7e14dc08396f3d9cd19b387e3c851c5002848169a0"
+    },
+    {
+      "path": "Castle.Core.dll",
+      "bytes": 385024,
+      "sha256": "9c5762ae27f2afe0913e8ffa494f705ffe9680699aa4fb79c2613344c918ee28"
+    },
+    {
+      "path": "ChatServerPackets.xml",
+      "bytes": 5993,
+      "sha256": "bcb784e9ef9ea7d0440ea042d1cadb5e01c291c25a3c605517237301fb2c00ec"
+    },
+    {
+      "path": "ClientToServerPackets.xml",
+      "bytes": 163177,
+      "sha256": "bf4016043a85d1469caf9e3ed6116f455fb506c9b08b36a07b7a674748ca3c0b"
+    },
+    {
+      "path": "CommonEnums.xml",
+      "bytes": 12249,
+      "sha256": "d1cfaf6710c885e448fb4fdd34affdecf186b3b80f466760fcb3cdfa9660b74c"
+    },
+    {
+      "path": "ConnectServerPackets.xml",
+      "bytes": 8837,
+      "sha256": "7779d528b443c9d2a9eea121f163de4ba1c674b9d19e1215936ccb84c33b7cee"
+    },
+    {
+      "path": "ConnectionSettings.xml",
+      "bytes": 3957,
+      "sha256": "f485a2accd54ab98322b01d6bc009653c2bed5d307aca0bd0df02fd4e8e94c09"
+    },
+    {
+      "path": "MUnique.OpenMU.Annotations.dll",
+      "bytes": 4608,
+      "sha256": "288e3481ea83b94a0e680f3f4db5e52cc7c0cdcc51b3619a988d960b3497a4a2"
+    },
+    {
+      "path": "MUnique.OpenMU.Annotations.pdb",
+      "bytes": 7796,
+      "sha256": "f4458321563fd65439520ac9b4e2b0e4934d52efceacbc7285e52eab5fdb13f3"
+    },
+    {
+      "path": "MUnique.OpenMU.AttributeSystem.dll",
+      "bytes": 24064,
+      "sha256": "5af18e7a818bc5767326257a7dfd07b0393ac1fa57d016a23111099ee2e4efeb"
+    },
+    {
+      "path": "MUnique.OpenMU.AttributeSystem.pdb",
+      "bytes": 18308,
+      "sha256": "5bfb5cf642bb866cb236d4d1a69abaf7433cbb7e7ff72ababe68b5bd204890f5"
+    },
+    {
+      "path": "MUnique.OpenMU.AttributeSystem.xml",
+      "bytes": 45929,
+      "sha256": "4376b506e86904064c1ea77833c49b8d4a404312e4add845481d2143e0af12a5"
+    },
+    {
+      "path": "MUnique.OpenMU.ChatServer.dll",
+      "bytes": 46080,
+      "sha256": "3e4db0d85f6afc51c30159762c9646c952971e38e8850fda8a421832545059cf"
+    },
+    {
+      "path": "MUnique.OpenMU.ChatServer.pdb",
+      "bytes": 21296,
+      "sha256": "573e71a30c0ae9f2d7cd9285a0eaa0ee4823a0210c5b426431f7b5cf52e619fe"
+    },
+    {
+      "path": "MUnique.OpenMU.ChatServer.xml",
+      "bytes": 26083,
+      "sha256": "183d4c0a543dd0db1bb4c28534644448af4978514972fc680454e70b60271357"
+    },
+    {
+      "path": "MUnique.OpenMU.ConnectServer.dll",
+      "bytes": 46592,
+      "sha256": "54bf060342efdbfa13441a06216c7cec7c1104eece981786a1eafaa0b0ee1f89"
+    },
+    {
+      "path": "MUnique.OpenMU.ConnectServer.pdb",
+      "bytes": 22536,
+      "sha256": "3e16f5aeafe681570571a78e129a9d429787f0b89bcc2f7d550b5d4a373397a9"
+    },
+    {
+      "path": "MUnique.OpenMU.ConnectServer.xml",
+      "bytes": 33125,
+      "sha256": "9691938c5bb6d8725aa93376d2184c2415af8569a3aa62aee1b83f6805eb7c70"
+    },
+    {
+      "path": "MUnique.OpenMU.DataModel.dll",
+      "bytes": 432128,
+      "sha256": "2886c3bd3bb2029cff348456a1543a6cffce6c88ef6bc44f50a50125e90ef5e3"
+    },
+    {
+      "path": "MUnique.OpenMU.DataModel.pdb",
+      "bytes": 142100,
+      "sha256": "b5480ff71f4eeda715528d45057b755699f16d24249952f797cced8c3df64492"
+    },
+    {
+      "path": "MUnique.OpenMU.DataModel.xml",
+      "bytes": 418622,
+      "sha256": "16f01585f615235cedf7a367e9d45cc110189173463ed0d28b46262fea271fb9"
+    },
+    {
+      "path": "MUnique.OpenMU.FriendServer.dll",
+      "bytes": 27648,
+      "sha256": "d6f1f75385f09ca0fe6aa09f68adc6890128b4dd8d84a04dd241a07b87ef7fc0"
+    },
+    {
+      "path": "MUnique.OpenMU.FriendServer.pdb",
+      "bytes": 17328,
+      "sha256": "ac2eed42e4630e394f622a6cbc61b71bd9ff12223c35ec6a6fe999080d746bf1"
+    },
+    {
+      "path": "MUnique.OpenMU.FriendServer.xml",
+      "bytes": 13170,
+      "sha256": "f0d09bb7ea7d39d44cc4ab0aff9335f48fbee5d43518bf35f6c39f6efc019d06"
+    },
+    {
+      "path": "MUnique.OpenMU.GameLogic.dll",
+      "bytes": 3414528,
+      "sha256": "b815ccd8623b1d5622eece11aaf2005bc52106ee44ef59fa5aeef45dd87b9e9f"
+    },
+    {
+      "path": "MUnique.OpenMU.GameLogic.pdb",
+      "bytes": 771792,
+      "sha256": "0779c8b873be54df0be6c04454812d2346a1b0f35b602fb2239bd9d8729d5c4b"
+    },
+    {
+      "path": "MUnique.OpenMU.GameLogic.xml",
+      "bytes": 2387496,
+      "sha256": "8fb690699cc64185c84b2d44c61f04ba8edd41d3509b9cd59e2b5f7c21354304"
+    },
+    {
+      "path": "MUnique.OpenMU.GameServer.dll",
+      "bytes": 1205760,
+      "sha256": "cff7ebcd2271d5a81f7eecbde8c1b9a99bc7f6eef4ea96c6297745bad1f54683"
+    },
+    {
+      "path": "MUnique.OpenMU.GameServer.pdb",
+      "bytes": 269936,
+      "sha256": "d68e477733de2b139f3fa7a3a81373bbadcb23502ae3a9f18d06ea24fb388e26"
+    },
+    {
+      "path": "MUnique.OpenMU.GameServer.xml",
+      "bytes": 815660,
+      "sha256": "939201560ffe514d9b60bdee771faf6091b37adda644c403016a8a4d03c0a660"
+    },
+    {
+      "path": "MUnique.OpenMU.GuildServer.dll",
+      "bytes": 61952,
+      "sha256": "7a8a2fbca9768fee620f1c581e963bc64442f3e0115b158d26f598b91f0ceb57"
+    },
+    {
+      "path": "MUnique.OpenMU.GuildServer.pdb",
+      "bytes": 22292,
+      "sha256": "8b0061b4b7acdc22d8046c92e146382c8fddb4bccc6be092967dbebd47a67d8e"
+    },
+    {
+      "path": "MUnique.OpenMU.GuildServer.xml",
+      "bytes": 19028,
+      "sha256": "24bd35d7dd50dd0cdb7f126ff357997f3fde2902a72d59dd23db04f4ce3e68b8"
+    },
+    {
+      "path": "MUnique.OpenMU.Interfaces.dll",
+      "bytes": 56320,
+      "sha256": "b47fa99855fc4bcce2af6d1731b1608494b370f34c66d41549496a4e62bf145a"
+    },
+    {
+      "path": "MUnique.OpenMU.Interfaces.pdb",
+      "bytes": 21636,
+      "sha256": "cf2922fd89a26a06886cb91156a3ad18072e56a2f625cc91d93203a7a43a22c7"
+    },
+    {
+      "path": "MUnique.OpenMU.Interfaces.xml",
+      "bytes": 93990,
+      "sha256": "e96b1d5222ed5af2fa0109ed0da7bd43024dfedb8835160ac19865bdac96cc13"
+    },
+    {
+      "path": "MUnique.OpenMU.LoginServer.dll",
+      "bytes": 7680,
+      "sha256": "e9f11dfeb75a7a0fc90abf6a71c79a2225f5f6f61256d0b4d1c2376494f41666"
+    },
+    {
+      "path": "MUnique.OpenMU.LoginServer.pdb",
+      "bytes": 12280,
+      "sha256": "78bd9e2fd5797833d79ea0a7bfba03efd0bf7d046ae8f04b4a7c170d6fc0fdbd"
+    },
+    {
+      "path": "MUnique.OpenMU.LoginServer.xml",
+      "bytes": 775,
+      "sha256": "1aa8c98976f7c59b5a39480b443c260fd3c261106c0a8d04c7b257d8c90c69ee"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.Analyzer.dll",
+      "bytes": 77824,
+      "sha256": "293327eb65bad68d52ac537dcbff2882ed96190f4c6fb5c7c6a61649f4396322"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.Analyzer.pdb",
+      "bytes": 28280,
+      "sha256": "2cd34d378c737f4578a428968061cb76316117ee535cf9b00a175125efd04e7c"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.Analyzer.xml",
+      "bytes": 54499,
+      "sha256": "c5e92dc94ee5c10b8596ac94d8e6c9c8a55b4b1612f72e15dafea499cb336ba7"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.Packets.dll",
+      "bytes": 1674240,
+      "sha256": "194254cc20ee293b71e13b45271ea8b27b4cd01c842b8cb5a13895b7bf0c1450"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.Packets.pdb",
+      "bytes": 684304,
+      "sha256": "dbf3ed09a20288b89c76d33b6c2c997e6719058aba59223fb42313a9d246777f"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.Packets.xml",
+      "bytes": 5429952,
+      "sha256": "67da04caeea885a1fde34689fb1d2a28e72285c06e19ffa6854957541bda272a"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.dll",
+      "bytes": 379392,
+      "sha256": "fd0fa1c9014be949732599310d7a34aa440226e7bec1ccdc7c7094903fcfa000"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.pdb",
+      "bytes": 180784,
+      "sha256": "7b5b6845791677b66e2a6150a68516e8e41cebf61ecbdebe72f47daba023543f"
+    },
+    {
+      "path": "MUnique.OpenMU.Network.xml",
+      "bytes": 161385,
+      "sha256": "eefac5229af070be90c4df13e0c058fbcea46cc029211d8c75d42522d217242a"
+    },
+    {
+      "path": "MUnique.OpenMU.Pathfinding.dll",
+      "bytes": 31232,
+      "sha256": "b0d0fdf71a29ed7b73cd004935d281464e87230289eefc89ae5c9832ff77d3e7"
+    },
+    {
+      "path": "MUnique.OpenMU.Pathfinding.pdb",
+      "bytes": 19984,
+      "sha256": "984f8f77eb083940b8515de28d0354ace2c66989c2f7d3cd808e52fd88bce937"
+    },
+    {
+      "path": "MUnique.OpenMU.Pathfinding.xml",
+      "bytes": 40639,
+      "sha256": "f84054a8d0100c3e6fc5df3dd391c6c5c21d4f0b336c047cf319a1a7a7adeae6"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "bytes": 5968896,
+      "sha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.EntityFramework.pdb",
+      "bytes": 1355144,
+      "sha256": "5463f2470ca8e537de76063d71a875f17d9397471c871e3de64c3b70361ec299"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.EntityFramework.xml",
+      "bytes": 647171,
+      "sha256": "a58c64828b2ef6639a360aceab373d6ae2ac319494b01aaf14f7e1f2a2e78d5a"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.InMemory.dll",
+      "bytes": 65536,
+      "sha256": "b5f61e85ef03d6c726dc0602426b35255ae955184902b93c06b92b6a400f4be3"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.InMemory.pdb",
+      "bytes": 22400,
+      "sha256": "e0ea08988191db9bf79d640fc31304b25fad0ef4aa71e02aa15cdfa48d0f4fc0"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.InMemory.xml",
+      "bytes": 24370,
+      "sha256": "e16d1b3b03abeaab0e4280317fcd01d9985eba38455ae1025fc3a5b0c0a72390"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.Initialization.dll",
+      "bytes": 7328256,
+      "sha256": "aae2c36d39310d6ac968fa67130949aedbd17e42981ce048f60aa58369da9fbc"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.Initialization.pdb",
+      "bytes": 498448,
+      "sha256": "7d50800e7cb05a57dbd51c573062e215c90fedcd977a221e7d9495bf54b0c46e"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.Initialization.xml",
+      "bytes": 1264425,
+      "sha256": "647deee985dae099b3889a422260cc4ede11969fb16bb3d98304d1d9e4c61522"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.dll",
+      "bytes": 408576,
+      "sha256": "0d1debca6c172418ebf1bb2eee976d58a56fcaf4e5ce48ff771f7c04eeb805a3"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.pdb",
+      "bytes": 288632,
+      "sha256": "bac58372dcb666cf3871a13143a37da233849ee87bca81718487c862c1d1a7fc"
+    },
+    {
+      "path": "MUnique.OpenMU.Persistence.xml",
+      "bytes": 503858,
+      "sha256": "b520c1858ee6f523c4633f254e387ce245b7c0be3cbc769ec1e2f7628704664a"
+    },
+    {
+      "path": "MUnique.OpenMU.PlugIns.dll",
+      "bytes": 58880,
+      "sha256": "256c6650cf5a38355329e58c4a10dcab24c90586a094d3d3aed2e07e2559abed"
+    },
+    {
+      "path": "MUnique.OpenMU.PlugIns.pdb",
+      "bytes": 25756,
+      "sha256": "7fe98634a268e0dfa2934e2d74751c59ef639543b4ebb3d67f7beb6ca7dd5704"
+    },
+    {
+      "path": "MUnique.OpenMU.PlugIns.xml",
+      "bytes": 59934,
+      "sha256": "116bf653c256c58d066a6c806a786b5491358f27e16eceef46936495181083f7"
+    },
+    {
+      "path": "MUnique.OpenMU.Startup",
+      "bytes": 78256,
+      "sha256": "6502f9334e333ff54df1cff01c4bc9391233b3b28c49ec178c6ed4d70d3b2122"
+    },
+    {
+      "path": "MUnique.OpenMU.Startup.deps.json",
+      "bytes": 45646,
+      "sha256": "26703e49b88a9653f91058e044f6bbcf64097d6c0c3eb3348aa8125f3f606046"
+    },
+    {
+      "path": "MUnique.OpenMU.Startup.dll",
+      "bytes": 91136,
+      "sha256": "f82b35ad9151eb75b9eb968ea161e43d8bf1d54ce8e64596c73ab22548e1c7df"
+    },
+    {
+      "path": "MUnique.OpenMU.Startup.pdb",
+      "bytes": 41712,
+      "sha256": "2dc5e8cd74942afdb9207156aa84265a49cbb549bd660f90554427f0138283e5"
+    },
+    {
+      "path": "MUnique.OpenMU.Startup.runtimeconfig.json",
+      "bytes": 540,
+      "sha256": "eff38a9750f7cca2407b1d639a963d56ffea92088e6da971bbbfa74e3dcd7224"
+    },
+    {
+      "path": "MUnique.OpenMU.Startup.staticwebassets.endpoints.json",
+      "bytes": 10994539,
+      "sha256": "338e95aa169a066aa149dc973396c3bfa30b0a27761f205c6dd4cf8e9fda232a"
+    },
+    {
+      "path": "MUnique.OpenMU.Startup.staticwebassets.runtime.json",
+      "bytes": 1032218,
+      "sha256": "07c3d774a173b76286a79ad15e2cfd07362ccf9ca8941f3121cf83b4019d0520"
+    },
+    {
+      "path": "MUnique.OpenMU.Startup.xml",
+      "bytes": 24960,
+      "sha256": "1d26bb42311c06e2163a42bb817fd6d4e703dc6f3ea76f476b78bf08f75ba1fa"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.AdminPanel",
+      "bytes": 78256,
+      "sha256": "eb84223605a0cce23f3e294b66801f765035c6fd92f2da2601c70da77315cb03"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.AdminPanel.deps.json",
+      "bytes": 31477,
+      "sha256": "0334f21cbd478e371a7962f21ee2e675e23f7a5a5ebe627519272469eb4baaba"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.AdminPanel.dll",
+      "bytes": 921088,
+      "sha256": "8871779377979fdad5c38cda956622653a0de0a79eb9a2fd3a9816746b73d20f"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.AdminPanel.pdb",
+      "bytes": 394940,
+      "sha256": "8cc42066246c45a8580c518a56d8a05faa1b3cc55f951daf82d4c728c6e1b4f4"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.AdminPanel.runtimeconfig.json",
+      "bytes": 472,
+      "sha256": "f71b4c67b5233a19be9131b5fe4b45fe7829997cf2b42e762d6baa037da93863"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.AdminPanel.staticwebassets.endpoints.json",
+      "bytes": 10985141,
+      "sha256": "670b21910badcaedbdc3a111ee08b1c52e5adebe31a63048aee9bbaad618100d"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.AdminPanel.staticwebassets.runtime.json",
+      "bytes": 1031627,
+      "sha256": "7cce3d211d8e1772a41ca2aba85682fa692c450bb1aa85c8e3eb7fc3345964d2"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.AdminPanel.xml",
+      "bytes": 387548,
+      "sha256": "0dff7de8af96bcefc857e3a11173539b887705b9bc55c102e533d70253af9243"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.ItemEditor.dll",
+      "bytes": 34816,
+      "sha256": "28de9302a34d7687d725c00dc0804cb422d315ee2226e3817a34111ae2660963"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.ItemEditor.pdb",
+      "bytes": 26592,
+      "sha256": "177a0eaef675c37a12ea14c3c2ed81db8340b4410963ebc95954487e07d57d67"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.ItemEditor.staticwebassets.endpoints.json",
+      "bytes": 9224463,
+      "sha256": "b9514e90b59523545c90b62e5b578ca0b11d2e57e72144b890548446e6ec9a68"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.ItemEditor.staticwebassets.runtime.json",
+      "bytes": 1010422,
+      "sha256": "1c398c46e5d1eb9d66f6ac465f409a51c6f6ddba2483905eef821c63549cfcf0"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.ItemEditor.xml",
+      "bytes": 15632,
+      "sha256": "e2fdf1ba3968728008a997b394d4e6295b559ef4689b09b6bad9d22ac973fa27"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Map",
+      "bytes": 78256,
+      "sha256": "3337efcae3c46ff14fc59c23348fcc24a4cb25261fabebd53d0c82d7b80f3c31"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Map.deps.json",
+      "bytes": 23965,
+      "sha256": "9a28277b9a39b9a2d4bc1b5e0bf1d3a5b73e57846ca16206ce363795f8337f41"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Map.dll",
+      "bytes": 91648,
+      "sha256": "a411b81919a93781e370f2ea5c2c383af4544c8d6580a057bfb04b5da4393f3a"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Map.pdb",
+      "bytes": 60500,
+      "sha256": "40135e5d596fc5ec83e6778cb4142e314e399d815c8ad1515754fc4da345a3f8"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Map.runtimeconfig.json",
+      "bytes": 472,
+      "sha256": "f71b4c67b5233a19be9131b5fe4b45fe7829997cf2b42e762d6baa037da93863"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Map.staticwebassets.endpoints.json",
+      "bytes": 10947168,
+      "sha256": "c8ce3033a59ad12bf64c707ee342607747f6561e30ab7c07662ac7b0e828eac6"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Map.staticwebassets.runtime.json",
+      "bytes": 1029181,
+      "sha256": "a50635e83d4a78ecea7befff054b53a78d855762a43e6cd9822b77e7883832fc"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Map.xml",
+      "bytes": 50253,
+      "sha256": "65856ca9ec11557ef2c0bc1179c8d644b16136ac9be0e474e3caa22cc394655c"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Shared.dll",
+      "bytes": 504832,
+      "sha256": "69642db64ab4a449c58297aed2781c39a0926432bc4dbc2234a2195d059b44ac"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Shared.pdb",
+      "bytes": 289252,
+      "sha256": "9b0511b9cec3e6c503a2de70e234c973c6ae8f6a347d06e4cb616945e1991103"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Shared.staticwebassets.endpoints.json",
+      "bytes": 10890886,
+      "sha256": "dcdeb6d969a60d5557e1fccd4615fd646ac3b9c1a1bb9a904d518019d91c8e6d"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Shared.staticwebassets.runtime.json",
+      "bytes": 1017056,
+      "sha256": "603eabb70d04f2b89c9055a1fff0b42fc3ea8199fd456e0b72a671f92da62069"
+    },
+    {
+      "path": "MUnique.OpenMU.Web.Shared.xml",
+      "bytes": 305574,
+      "sha256": "7764f7eb9970fcdb7fcf9ae0ca4e9308bb9cfac1a0525e495ebaa15536dc61d6"
+    },
+    {
+      "path": "Mapster.Core.dll",
+      "bytes": 32256,
+      "sha256": "8d81e1fa0b1dbdeda21216b5df5752c1850e8063200c5436a0da95daaa2e163b"
+    },
+    {
+      "path": "Mapster.dll",
+      "bytes": 170496,
+      "sha256": "71920ceb5ee454369ad420eb4f3085ad41855cb445fbdbab306ad6d187c37ea4"
+    },
+    {
+      "path": "MathParser.org-mXparser.dll",
+      "bytes": 821248,
+      "sha256": "2849f007af64bf04f2ac815654775fe2f114d862a03b3299033aa14cf6550c52"
+    },
+    {
+      "path": "Microsoft.AspNetCore.Components.QuickGrid.dll",
+      "bytes": 66312,
+      "sha256": "d7e5a889d7394bb05db0c1e4766e926ce4e5ff932902d49d395a987e25f6326f"
+    },
+    {
+      "path": "Microsoft.CodeAnalysis.CSharp.dll",
+      "bytes": 6697768,
+      "sha256": "53302acca07700e9bb10dcf21034435d6e0454c8eebf2481164ec13e520004c9"
+    },
+    {
+      "path": "Microsoft.CodeAnalysis.dll",
+      "bytes": 3029800,
+      "sha256": "395736b2d0e02be77bedc3847b269da7a93bf8e49cd3431a4a8e68d2c52d5846"
+    },
+    {
+      "path": "Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "bytes": 34888,
+      "sha256": "52db99e23651582f518f64408511710b15cbdbd0ef4ba3b3489d03629b9cdf19"
+    },
+    {
+      "path": "Microsoft.EntityFrameworkCore.Relational.dll",
+      "bytes": 2193440,
+      "sha256": "34dc06980825195b4bd8d596995f2895caf0dd46793fe913a202b2740dea8cbf"
+    },
+    {
+      "path": "Microsoft.EntityFrameworkCore.dll",
+      "bytes": 2824736,
+      "sha256": "674bc6d68545b9a56388c048742258a4b266f19f14d2495496541f39f788fa7f"
+    },
+    {
+      "path": "Microsoft.Extensions.DependencyModel.dll",
+      "bytes": 85264,
+      "sha256": "0d7fae30684654fa9173ad248ab41b713a48d81df0ef446ee4e40c8d380893e8"
+    },
+    {
+      "path": "Microsoft.Win32.SystemEvents.dll",
+      "bytes": 26224,
+      "sha256": "ca495bf6c86b7f092d624928101985a941532d149dcd8acfea170f8a53be8850"
+    },
+    {
+      "path": "Moq.dll",
+      "bytes": 312320,
+      "sha256": "8d56b9cbec93f401f7e4a4031c1691c3c849411ff09cef6f777109c0701dc30b"
+    },
+    {
+      "path": "Nito.AsyncEx.Context.dll",
+      "bytes": 13824,
+      "sha256": "02cc09c061f8927841659b06031d800e969eff20a68b9462672a0fa68c3b43df"
+    },
+    {
+      "path": "Nito.AsyncEx.Coordination.dll",
+      "bytes": 40960,
+      "sha256": "d2baa6a62d5328e982707eeafaaac23428a36c3af78bceea44a0b0f5df34514e"
+    },
+    {
+      "path": "Nito.AsyncEx.Interop.WaitHandles.dll",
+      "bytes": 8704,
+      "sha256": "a2e1affc27326261bfcdc5f2f64621802f8498c643d8be1f0258142467f65ceb"
+    },
+    {
+      "path": "Nito.AsyncEx.Oop.dll",
+      "bytes": 6656,
+      "sha256": "c438a7f3cb756a2738e4cfc6f0445770da61b536f2b8f9d02b0bcb7d550ea248"
+    },
+    {
+      "path": "Nito.AsyncEx.Tasks.dll",
+      "bytes": 35840,
+      "sha256": "2b7b0132e793b248352ea719ac116365643279fc8e2f25de4f516a11ba7be41e"
+    },
+    {
+      "path": "Nito.Cancellation.dll",
+      "bytes": 8704,
+      "sha256": "b0ef5dfb70ec0486f0a332b83dd271b89d7e2b7282220b7b17cb1516e9dae780"
+    },
+    {
+      "path": "Nito.Collections.Deque.dll",
+      "bytes": 16896,
+      "sha256": "509bed02f2ea6c4bff4e68cae5907797244d1e87a58e7aad75748139ad70eeda"
+    },
+    {
+      "path": "Nito.Disposables.dll",
+      "bytes": 22528,
+      "sha256": "2e1e58ae51be2bca21e1574de9d02435a18d6e514304a5c6a92d273cd910f703"
+    },
+    {
+      "path": "Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+      "bytes": 676864,
+      "sha256": "0b8ca4484e12f1cd119fc6b4711015ba6ce2364f9890504f6f4f13036c2075bf"
+    },
+    {
+      "path": "Npgsql.dll",
+      "bytes": 1477632,
+      "sha256": "9d8db086e9eda5ff20c4a7f83fa3eae7689198f57277ff9ceea1ee3526f5fcf8"
+    },
+    {
+      "path": "Pipelines.Sockets.Unofficial.dll",
+      "bytes": 167424,
+      "sha256": "fa2cdb1d5ffbb2b06512c92ce8bd18918a1a996171d0a72dfc73035bc586a711"
+    },
+    {
+      "path": "QRCoder.dll",
+      "bytes": 204288,
+      "sha256": "5cacb8e071ef6b355615e8cae1d02d94b9d191ec33db12a05d82099cddb16e9a"
+    },
+    {
+      "path": "Serilog.Extensions.Hosting.dll",
+      "bytes": 35840,
+      "sha256": "3e6d0284179ee0e1c197568fd79b58f869d15298fff8ecb8447322fe87d44f47"
+    },
+    {
+      "path": "Serilog.Extensions.Logging.dll",
+      "bytes": 28672,
+      "sha256": "80d3edbe3e3ac0b4c5bc764474220e7da11df8d285e0098f3dc1b65a734c8507"
+    },
+    {
+      "path": "Serilog.Settings.Configuration.dll",
+      "bytes": 70144,
+      "sha256": "ec8cfd1f8970a44e2aa3f7bcc71116ca2691b196564bff83e3e3ead0c1143b67"
+    },
+    {
+      "path": "Serilog.Sinks.Console.dll",
+      "bytes": 38400,
+      "sha256": "dc88002ddd9f5fd0ffec9a6568ef89954671f60f2c9161593ee78932538c1e3e"
+    },
+    {
+      "path": "Serilog.Sinks.File.dll",
+      "bytes": 36864,
+      "sha256": "4f4282671c2ac68284b4dc99f7a76eac9cbd4e659978cef642cff9e6c01b676d"
+    },
+    {
+      "path": "Serilog.dll",
+      "bytes": 161792,
+      "sha256": "9fbf7441a9bdc9459652dc66e18f008040651f14cb8d7a7bb806ac4a8b722d10"
+    },
+    {
+      "path": "ServerToClientPackets.xml",
+      "bytes": 519222,
+      "sha256": "d0b70d050487979765bbf981629ed14040c253247e34cf2b01dc731adc2afed5"
+    },
+    {
+      "path": "SixLabors.Fonts.dll",
+      "bytes": 1135616,
+      "sha256": "e1e2f107e7c78fb859f1b23383107a125acd8b3a7470140850daa6f6f6c45d9f"
+    },
+    {
+      "path": "SixLabors.ImageSharp.Drawing.dll",
+      "bytes": 173056,
+      "sha256": "072840f7554cab2e8a96ed1be9c199c2d07ee4d283be78418f5830836a087e93"
+    },
+    {
+      "path": "SixLabors.ImageSharp.dll",
+      "bytes": 1806848,
+      "sha256": "df2815a7802fd509ab941692ff5aac0fc4c8e0568abb0c79969dbc9e7e3a070d"
+    },
+    {
+      "path": "System.Configuration.ConfigurationManager.dll",
+      "bytes": 444728,
+      "sha256": "6dbd70f8d9f7d9183b753f16db6d7964d843665b5598e4b3e7a15f97ff20d113"
+    },
+    {
+      "path": "System.Drawing.Common.dll",
+      "bytes": 175216,
+      "sha256": "98d07e6b1e7d3641a8608a360b3dc273fe8a0f78926b6e1e5f679a7a074d491f"
+    },
+    {
+      "path": "System.Security.Cryptography.ProtectedData.dll",
+      "bytes": 40208,
+      "sha256": "2bb0582bdcfcd7cb1ca0bcc531ae177fc3002dcc18b69eb8b0c06a62a5ce2d5f"
+    },
+    {
+      "path": "appsettings.json",
+      "bytes": 1185,
+      "sha256": "695c85d511324bd8eb901b7132d0d4d4d79164f70746f1f83a13bf3a2673e80e"
+    },
+    {
+      "path": "cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 441640,
+      "sha256": "f719e4b45e06f203a1c2d4e79fa2b496f8b16f6f63c4265809844def53ad41f3"
+    },
+    {
+      "path": "cs/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 48424,
+      "sha256": "818f84b95fd8273ec0e9753f90af2a98820bb0492cb53268db70a7403eaaa2af"
+    },
+    {
+      "path": "de/MUnique.OpenMU.DataModel.resources.dll",
+      "bytes": 124416,
+      "sha256": "d0728b31a625c0791c21d767d3f1f9dffb163d2c9cdc19f0adaa7020a6f64317"
+    },
+    {
+      "path": "de/MUnique.OpenMU.GameLogic.resources.dll",
+      "bytes": 128512,
+      "sha256": "207cf4138403d311371922e0c2ed4692e809ab31399b38a7bf261196fd827f03"
+    },
+    {
+      "path": "de/MUnique.OpenMU.GameServer.resources.dll",
+      "bytes": 127488,
+      "sha256": "92d4eb958339463bfb05a75a45409f330db2301f85048bc23e0ac4a9c772f4dc"
+    },
+    {
+      "path": "de/MUnique.OpenMU.Interfaces.resources.dll",
+      "bytes": 10752,
+      "sha256": "943f649a12cd69c5ae842b7bd1b8d22f1e83b854352652b7d370fb8ff0121103"
+    },
+    {
+      "path": "de/MUnique.OpenMU.Network.resources.dll",
+      "bytes": 8192,
+      "sha256": "2a903ee0200543af780b95c401949ffc39518b19856c127c69b0dedfd0b87fef"
+    },
+    {
+      "path": "de/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "bytes": 91648,
+      "sha256": "c4c4af31b9f69afe9d95d6319c853b2d0ba1cad3a551bd4356d0f7eba7b3c2fd"
+    },
+    {
+      "path": "de/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "bytes": 52224,
+      "sha256": "4c136c96130834136634808b66f07cb2632a48788b03f8f90512866bb38cb7f3"
+    },
+    {
+      "path": "de/MUnique.OpenMU.Web.Map.resources.dll",
+      "bytes": 4608,
+      "sha256": "463cff86baf9ff58559b41de4cc519a591d9d5577682d027ace9e8dedab424da"
+    },
+    {
+      "path": "de/MUnique.OpenMU.Web.Shared.resources.dll",
+      "bytes": 26624,
+      "sha256": "08f872a0a19c37fb57e3ae89b29df170e273064a32e2305c27f1c3496359c2e1"
+    },
+    {
+      "path": "de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 471848,
+      "sha256": "d936e4075af47eb5a34e8418e6bf1eaa3e4d3c86d6b40ab7dffefbd8e6f8b594"
+    },
+    {
+      "path": "de/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50456,
+      "sha256": "1b1d805608929ec02b8acc2fb8c09ec7a335797b11686719ee2112d5bfbb18fc"
+    },
+    {
+      "path": "es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 461608,
+      "sha256": "559fa2a4d36a832a5e05f92dabff6ba737cc0443f95850611c485b21592046fe"
+    },
+    {
+      "path": "es/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 49960,
+      "sha256": "4c83f9c227fa9a912209c5450380ef34e84d91867aff8208300e8aadab269456"
+    },
+    {
+      "path": "fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 473880,
+      "sha256": "c538cddb8e217bc1b96312956b7923855d6f392e467d7b7c7ce9341d9da1f23c"
+    },
+    {
+      "path": "fr/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50488,
+      "sha256": "a92746c7d8f241e7d207a7995007f59d694a10e5f8903ceadfc5a73c195f63a0"
+    },
+    {
+      "path": "it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 468240,
+      "sha256": "995a868345367e1c68011617d8b8ac85decf2dd15fb85ea92a28205e2c6a5fba"
+    },
+    {
+      "path": "it/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50440,
+      "sha256": "9489584f3d6ec723bfd2adf1a0d1bdc9bafcadab857fa7c48d18157e223a5541"
+    },
+    {
+      "path": "ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 515376,
+      "sha256": "866eabb5f0f51df82de1a2be933c542df60617d033f463e7010719bdc6f55fa7"
+    },
+    {
+      "path": "ja/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 54040,
+      "sha256": "9b0bea97965c04ce925e92a5b8575b866c75b185a89741185f4b24f72182a0bb"
+    },
+    {
+      "path": "ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 473392,
+      "sha256": "f8b995c988ddee33a02e41fe4658d63aef32f380678aef70a5164143a25c1ee4"
+    },
+    {
+      "path": "ko/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50464,
+      "sha256": "2c799493e0a5032ed0e643a550d149dc324210da3a69337a68ae6460f56bb2e1"
+    },
+    {
+      "path": "pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 474416,
+      "sha256": "bfd0ba4491a1e072f243b4599d0b9fe1f189ecbef4aae6b0aa4c6306079717df"
+    },
+    {
+      "path": "pl/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50488,
+      "sha256": "a6d855a49e7b867ff1837b5b24d037a67a7bc9723a569ebdea85f0c73c8146e2"
+    },
+    {
+      "path": "pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 453928,
+      "sha256": "0bb661e270c1b6675bf2b06b0465ea8b0b551f0765999f31ab9cae308f83e3de"
+    },
+    {
+      "path": "pt-BR/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 49424,
+      "sha256": "40258d2ce74c4fb71bd7b145f6d33081f3d73e19afda25050832dde3e58cf33f"
+    },
+    {
+      "path": "ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 621360,
+      "sha256": "68c0ed0122bd4e153717bcbd7d8a53d52d90535859b622df601c27eab58cfb3b"
+    },
+    {
+      "path": "ru/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 60728,
+      "sha256": "9f6778a2b6d2141397b8d331fc38577ae2b398b6120eb3654db7575b62e1b0d4"
+    },
+    {
+      "path": "runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+      "bytes": 427112,
+      "sha256": "89ea595ccb1fd1384480c1e30bd487c92af5d06d3b06f295323eff601acd9019"
+    },
+    {
+      "path": "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+      "bytes": 53352,
+      "sha256": "142cce4ed8ac9da22d69c38a6f22738abfb22090dc9313e8b58e6f91978e89af"
+    },
+    {
+      "path": "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+      "bytes": 454248,
+      "sha256": "4d3001697df50cca54f32ed2dbbd1f3f415b48d5d756b1bf9500a43ae9b68da0"
+    },
+    {
+      "path": "tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 449848,
+      "sha256": "93202286c8514bfa1b1c4b413666cd11a84abd69496e7aa8d2f9d565bd2d15a1"
+    },
+    {
+      "path": "tr/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 48936,
+      "sha256": "6af8e8e793b071ef1de200629bb551dd2bdbce3823376b347836a2af15367a5c"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 732,
+      "sha256": "52ab953196b56c21c8906deeaed1890705874f7cdf749d2f7b213ecd38d729b5"
+    },
+    {
+      "path": "zh-CN/MUnique.OpenMU.DataModel.resources.dll",
+      "bytes": 219136,
+      "sha256": "1f2dc7803a883e578ec104a1f3b92e7faa6447dec5770366d536f28aea6529b1"
+    },
+    {
+      "path": "zh-CN/MUnique.OpenMU.GameLogic.resources.dll",
+      "bytes": 89600,
+      "sha256": "ebc7cb4f1d87c01df45390574c61f6963705dded59f2d1990802b12e35a92ffb"
+    },
+    {
+      "path": "zh-CN/MUnique.OpenMU.GameServer.resources.dll",
+      "bytes": 112128,
+      "sha256": "acd787fd0b9478d81c87d4a0ef05049361bd64b611b3f1590f431007d16dd57b"
+    },
+    {
+      "path": "zh-CN/MUnique.OpenMU.Interfaces.resources.dll",
+      "bytes": 16896,
+      "sha256": "bebae0cfbc3a73a95eb494d1e86025dd4b697ba65a0b46536f9061358c0a48e8"
+    },
+    {
+      "path": "zh-CN/MUnique.OpenMU.Network.resources.dll",
+      "bytes": 7680,
+      "sha256": "22739cebb1a6ba17c577157331388432ac3b866a24854a8841e6c1ded277ffc6"
+    },
+    {
+      "path": "zh-CN/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "bytes": 152064,
+      "sha256": "4aa31679d6c4e3c1e24db262ab4fcc85a73f5329ebcbc5914788c0a3e4279735"
+    },
+    {
+      "path": "zh-CN/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "bytes": 48640,
+      "sha256": "f3122939907aea76b38436a1f6caaf39307fcda1599a75651ecfc2b1e1eac2cd"
+    },
+    {
+      "path": "zh-CN/MUnique.OpenMU.Web.Shared.resources.dll",
+      "bytes": 24576,
+      "sha256": "14ef10e1a70192384487d9d418765c26cf704300a0436bd440433b402285b80e"
+    },
+    {
+      "path": "zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 401168,
+      "sha256": "5b81b1d4537d44a365fdb48aa24e51a0b0c3ee308debcc225c9339249e0a8bb3"
+    },
+    {
+      "path": "zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 45368,
+      "sha256": "a41b72555a1943e367e9714fb3329454dbad4366500db0899519ffb558a060cb"
+    },
+    {
+      "path": "zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 400680,
+      "sha256": "d1e716652b5705373fb560105ca2710ff2bc0b704285b50b08ec8df9fd2f8287"
+    },
+    {
+      "path": "zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 45328,
+      "sha256": "0bb422559a2582df1a49faed25a337b6037eb3878ac4ee7c118b68349ca312b7"
+    }
+  ]
+}

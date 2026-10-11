@@ -1,0 +1,21 @@
+{
+  "name": "build-startup",
+  "arguments": [
+    "build",
+    "src/Startup/MUnique.OpenMU.Startup.csproj",
+    "--no-restore",
+    "-c",
+    "Release",
+    "-p:ci=true",
+    "-p:UseSharedCompilation=false",
+    "-p:BuildInParallel=false",
+    "-m:1",
+    "-v:minimal"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 266.34,
+  "stopReason": null,
+  "conservativeDownloadAndCacheBytes": 1247376973,
+  "archiveBytes": 291578619,
+  "globalDeadlineUtc": "2026-10-11T21:49:30Z"
+}

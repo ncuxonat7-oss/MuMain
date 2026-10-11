@@ -1,0 +1,27 @@
+{
+  "name": "test-web",
+  "arguments": [
+    "test",
+    "tests/MUnique.OpenMU.Web.Tests/MUnique.OpenMU.Web.Tests.csproj",
+    "--no-restore",
+    "-c",
+    "Release",
+    "-p:ci=true",
+    "-p:UseSharedCompilation=false",
+    "-p:BuildInParallel=false",
+    "-m:1",
+    "--filter",
+    "FullyQualifiedName~AdminUserAvailabilityTests|FullyQualifiedName~AdminAuthenticationTests.AvailabilityCheckWaitsForARunningProbeAsync|FullyQualifiedName~AdminAuthenticationTests.UnavailableStorageIsNotProbedOnEveryCheckAsync|FullyQualifiedName~AdminAuthenticationTests.ExistingUserIsRememberedAsync",
+    "--logger",
+    "trx;LogFileName=admin-availability.trx",
+    "--results-directory",
+    "../test-results/web",
+    "-v:minimal"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 27.92,
+  "stopReason": null,
+  "conservativeDownloadAndCacheBytes": 1247376973,
+  "archiveBytes": 291578619,
+  "globalDeadlineUtc": "2026-10-11T21:49:30Z"
+}

@@ -1,0 +1,65 @@
+Two-context database guard implementation — 2026-10-11 20:16 UTC
+Local candidate only. Approved scope: read-only migration/configuration guards
+and focused tests. No DB utility, restore, mutation, credentials, install, runtime,
+rebuild, large download, game-resource replay, main/workflow or publication.
+
+Implemented in fresh source tree, old controls unchanged:
+- Launch-manifest schema2 replaces the one-history shape with exactly two contexts.
+- Fixed-hash independent source contract binds 63 game and2 admin migration IDs,
+  exact configuration/system IDs, endpoint inventory, and inspected DLL identity.
+- Each history queried independently under probe and its own runtime credential;
+  both MigrationId and ProductVersion read and type/shape checked.
+- Game default history resolution must be public under actual role search_path;
+  admin history is explicitly admin. Catalog functions/operators qualified.
+- Missing/extra/duplicate/scalar/array/null identities, bad ProductVersion, wrong
+  schema, incomplete context or permission failure refuse launch.
+- Original singleton/flag guards retained and now tied to exact system ID.
+
+New evidence:
+Pinned OpenMU d067b3c11c23c3145de6e2c76201ab9a93b267c8 untruncated source tree,
+actual Migration/DbContext attributes =>63game+2admin. Static PE/CLR parsing of
+staged persistence DLL yields exact same65 attributed nonabstract subclasses.
+DLL5,963,264bytes/SHA256f05e117d596f6bb74f953d8b4cbe83c73c0b30a6acf94876b6e8619bf92f1042
+also matches existing phase1924 and1938 package-inventory record. No DLL execution.
+
+Existing local baseline archive11651520969, export and dump member rehashed;
+all match established identities. No new download or database tool.
+Configuration ID00000001-0001-0000-0000-000000000000;
+System ID00000010-0000-0000-0000-000000000000.
+IMPORTANT actual original flags: AutoUpdateSchema=true, ReadConsoleInput=false.
+Persistent launcher requires false/true. Both remain unchanged and rejected.
+Prior disposable flag approval does not approve persistent deltas.
+
+Testing/review:
+19 NEW Python offline evidence/source-contract checks PASS;1PowerShell execution
+test explicitly SKIPPED.40mock-only PowerShell behavior cases prepared NOT_RUN
+because no pwsh is available. No dynamic PowerShell/SQL/Windows pass claimed.
+Independent static review identified ProductVersion read gap, then array-ID
+projection gap; both fixed and narrow rereview confirmed. Final focused suite
+rerun after fixes. Existing successful launcher/package/game tests not repeated.
+
+Important scope limits:
+- This is source-only. Prior packager still pins old launcher, and no control was
+  altered/repacked. Later approved launcher-overlay/inventory integration must
+  include new contract and guards while preserving asset/runtime gates.
+- Actual restored histories/schema, restricted grants/ACLs, real Windows execution,
+  host/root/system identifier/credentials remain unknown or unapproved.
+- Admin source invokes MigrateAsync through several read/auth paths; even reads
+  must not be used as preflight. Guards must run before server/admin requests.
+- New draft is a partial proposal, not a complete launch manifest.
+- launchEnabled=false, approvedLaunchManifestSha256=null unchanged.
+
+Changed/new source files:
+scripts/windows11/Database.ps1
+scripts/windows11/Guards.ps1
+scripts/windows11/database-source-contract.json
+tests/windows11/test_database_contract.py
+tests/windows11/Test-DatabaseGuards.ps1
+docs/windows11-database-manifest-draft.json
+docs/windows11-database-guards.md
+
+Next useful bounded step: run the prepared40mock-only PowerShell checks in an
+approved available environment (no database needed), address any actual failures,
+then separately integrate reviewed guard files into a disabled package. Actual
+persistent setup still requires host/root, role/credential/ACL and both flag-delta
+approvals. No ready/runnable-alpha claim or readiness score change.

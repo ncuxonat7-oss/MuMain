@@ -1,0 +1,5079 @@
+{
+  "schema_version": 1,
+  "title": "Bounded build-warning assessment",
+  "assessment_date_utc": "2026-10-11",
+  "source": {
+    "artifact": "phase2129-csharp-build/build-startup.log",
+    "sha256": "4f53e0d4ba55882f49c962810fece56eaad454704bbdb7066c59dc886fb7db7f",
+    "build_result": "succeeded",
+    "reported_warnings": 247,
+    "reported_errors": 0
+  },
+  "method": {
+    "warning_line_occurrences_entire_log": 494,
+    "execution_warning_count": 247,
+    "final_summary_warning_count": 247,
+    "unique_diagnostics": 247,
+    "distinct_warning_codes": 43,
+    "summary_duplicates_execution_exactly": true,
+    "identity_fields": [
+      "code",
+      "file",
+      "line",
+      "column",
+      "project",
+      "message"
+    ],
+    "note": "Counts use execution diagnostics before Build succeeded. The final summary reproduces every diagnostic once. Identical advisory IDs across different projects remain separate project diagnostics; there are five unique advisory IDs."
+  },
+  "counts_by_prefix": {
+    "NU": 20,
+    "SA": 85,
+    "CS": 100,
+    "ASP": 33,
+    "VSTHRD": 5,
+    "CA": 2,
+    "BL": 1,
+    "RZ": 1
+  },
+  "codes": [
+    {
+      "code": "ASP0006",
+      "count": 33,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+          "count": 7,
+          "locations": [
+            {
+              "line": 48,
+              "column": 35
+            },
+            {
+              "line": 49,
+              "column": 34
+            },
+            {
+              "line": 50,
+              "column": 34
+            },
+            {
+              "line": 56,
+              "column": 35
+            },
+            {
+              "line": 57,
+              "column": 34
+            },
+            {
+              "line": 58,
+              "column": 34
+            },
+            {
+              "line": 59,
+              "column": 34
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+          "count": 9,
+          "locations": [
+            {
+              "line": 43,
+              "column": 35
+            },
+            {
+              "line": 44,
+              "column": 34
+            },
+            {
+              "line": 45,
+              "column": 34
+            },
+            {
+              "line": 50,
+              "column": 35
+            },
+            {
+              "line": 51,
+              "column": 34
+            },
+            {
+              "line": 52,
+              "column": 34
+            },
+            {
+              "line": 53,
+              "column": 34
+            },
+            {
+              "line": 54,
+              "column": 34
+            },
+            {
+              "line": 55,
+              "column": 34
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Pages/EditConnectionServer.cs",
+          "count": 3,
+          "locations": [
+            {
+              "line": 24,
+              "column": 59
+            },
+            {
+              "line": 25,
+              "column": 30
+            },
+            {
+              "line": 26,
+              "column": 30
+            }
+          ]
+        },
+        {
+          "file": "src/Web/Shared/ComponentBuilders/BaseComponentBuilder.cs",
+          "count": 4,
+          "locations": [
+            {
+              "line": 74,
+              "column": 31
+            },
+            {
+              "line": 77,
+              "column": 34
+            },
+            {
+              "line": 78,
+              "column": 34
+            },
+            {
+              "line": 79,
+              "column": 34
+            }
+          ]
+        },
+        {
+          "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+          "count": 10,
+          "locations": [
+            {
+              "line": 25,
+              "column": 29
+            },
+            {
+              "line": 26,
+              "column": 39
+            },
+            {
+              "line": 27,
+              "column": 30
+            },
+            {
+              "line": 28,
+              "column": 30
+            },
+            {
+              "line": 29,
+              "column": 30
+            },
+            {
+              "line": 30,
+              "column": 30
+            },
+            {
+              "line": 36,
+              "column": 33
+            },
+            {
+              "line": 37,
+              "column": 34
+            },
+            {
+              "line": 40,
+              "column": 38
+            },
+            {
+              "line": 46,
+              "column": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BL0007",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Web/ItemEditor/MuItemStorage.razor.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 21,
+              "column": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CA2265",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/GameServer/RemoteView/World/ObjectMovedPlugIn.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 192,
+              "column": 13
+            }
+          ]
+        },
+        {
+          "file": "src/GameServer/RemoteView/World/ObjectMovedPlugInExtended.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 68,
+              "column": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS0067",
+      "count": 5,
+      "files": [
+        {
+          "file": "src/DataModel/Entities/AppearanceData.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 20,
+              "column": 32
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/NPC/SoccerBall.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 40,
+              "column": 50
+            }
+          ]
+        },
+        {
+          "file": "src/GameServer/RemoteView/Character/CharacterAppearanceDataAdapter.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 32,
+              "column": 32
+            }
+          ]
+        },
+        {
+          "file": "src/Web/Map/Program.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 39,
+              "column": 51
+            }
+          ]
+        },
+        {
+          "file": "src/Web/Shared/LocalServerProvider.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 25,
+              "column": 47
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS0108",
+      "count": 5,
+      "files": [
+        {
+          "file": "src/GameLogic/MiniGames/ImperialGuardian/ImperialGuardianContext.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 35,
+              "column": 38
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugIn095d.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 22,
+              "column": 27
+            },
+            {
+              "line": 27,
+              "column": 27
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugInSeason6.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 22,
+              "column": 27
+            },
+            {
+              "line": 27,
+              "column": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS0612",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Web/Map/Program.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 27,
+              "column": 52
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS0618",
+      "count": 8,
+      "files": [
+        {
+          "file": "src/Persistence/EntityFramework/Json/JsonQueryBuilder.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 149,
+              "column": 30
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/ModelExtensions.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 162,
+              "column": 42
+            },
+            {
+              "line": 164,
+              "column": 128
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Items/ArmorInitializerBase.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 406,
+              "column": 23
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Orbs.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 88,
+              "column": 23
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Scrolls.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 96,
+              "column": 23
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Weapons.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 362,
+              "column": 41
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Wings.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 309,
+              "column": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS1066",
+      "count": 9,
+      "files": [
+        {
+          "file": "src/Persistence/EntityFramework/CachedRepository{T}.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 40,
+              "column": 76
+            },
+            {
+              "line": 61,
+              "column": 82
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/ConfigurationTypeRepository.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 66,
+              "column": 76
+            },
+            {
+              "line": 112,
+              "column": 82
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/GenericRepositoryBase.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 65,
+              "column": 76
+            },
+            {
+              "line": 102,
+              "column": 82
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/InMemory/MemoryRepository{TValue}.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 80,
+              "column": 82
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/RepositoryAdapter.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 41,
+              "column": 76
+            },
+            {
+              "line": 59,
+              "column": 76
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS1570",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/Pages/NetworkAnalyzer.razor.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 30,
+              "column": 1
+            },
+            {
+              "line": 121,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS1574",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/GameServer/DefaultTcpGameServerListener.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 60,
+              "column": 84
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminPolicies.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 28,
+              "column": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CS1591",
+      "count": 68,
+      "files": [
+        {
+          "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+          "count": 68,
+          "locations": [
+            {
+              "line": 17,
+              "column": 18
+            },
+            {
+              "line": 28,
+              "column": 56
+            },
+            {
+              "line": 39,
+              "column": 56
+            },
+            {
+              "line": 48,
+              "column": 30
+            },
+            {
+              "line": 54,
+              "column": 30
+            },
+            {
+              "line": 60,
+              "column": 30
+            },
+            {
+              "line": 66,
+              "column": 30
+            },
+            {
+              "line": 72,
+              "column": 30
+            },
+            {
+              "line": 78,
+              "column": 30
+            },
+            {
+              "line": 84,
+              "column": 30
+            },
+            {
+              "line": 90,
+              "column": 30
+            },
+            {
+              "line": 96,
+              "column": 30
+            },
+            {
+              "line": 102,
+              "column": 30
+            },
+            {
+              "line": 108,
+              "column": 30
+            },
+            {
+              "line": 114,
+              "column": 30
+            },
+            {
+              "line": 120,
+              "column": 30
+            },
+            {
+              "line": 126,
+              "column": 30
+            },
+            {
+              "line": 132,
+              "column": 30
+            },
+            {
+              "line": 138,
+              "column": 30
+            },
+            {
+              "line": 144,
+              "column": 30
+            },
+            {
+              "line": 150,
+              "column": 30
+            },
+            {
+              "line": 156,
+              "column": 30
+            },
+            {
+              "line": 162,
+              "column": 30
+            },
+            {
+              "line": 168,
+              "column": 30
+            },
+            {
+              "line": 174,
+              "column": 30
+            },
+            {
+              "line": 180,
+              "column": 30
+            },
+            {
+              "line": 186,
+              "column": 30
+            },
+            {
+              "line": 192,
+              "column": 30
+            },
+            {
+              "line": 198,
+              "column": 30
+            },
+            {
+              "line": 204,
+              "column": 30
+            },
+            {
+              "line": 210,
+              "column": 30
+            },
+            {
+              "line": 216,
+              "column": 30
+            },
+            {
+              "line": 222,
+              "column": 30
+            },
+            {
+              "line": 228,
+              "column": 30
+            },
+            {
+              "line": 234,
+              "column": 30
+            },
+            {
+              "line": 240,
+              "column": 30
+            },
+            {
+              "line": 246,
+              "column": 30
+            },
+            {
+              "line": 252,
+              "column": 30
+            },
+            {
+              "line": 258,
+              "column": 30
+            },
+            {
+              "line": 264,
+              "column": 30
+            },
+            {
+              "line": 270,
+              "column": 30
+            },
+            {
+              "line": 276,
+              "column": 30
+            },
+            {
+              "line": 282,
+              "column": 30
+            },
+            {
+              "line": 288,
+              "column": 30
+            },
+            {
+              "line": 294,
+              "column": 30
+            },
+            {
+              "line": 300,
+              "column": 30
+            },
+            {
+              "line": 306,
+              "column": 30
+            },
+            {
+              "line": 312,
+              "column": 30
+            },
+            {
+              "line": 318,
+              "column": 30
+            },
+            {
+              "line": 324,
+              "column": 30
+            },
+            {
+              "line": 330,
+              "column": 30
+            },
+            {
+              "line": 336,
+              "column": 30
+            },
+            {
+              "line": 342,
+              "column": 30
+            },
+            {
+              "line": 348,
+              "column": 30
+            },
+            {
+              "line": 354,
+              "column": 30
+            },
+            {
+              "line": 360,
+              "column": 30
+            },
+            {
+              "line": 366,
+              "column": 30
+            },
+            {
+              "line": 372,
+              "column": 30
+            },
+            {
+              "line": 378,
+              "column": 30
+            },
+            {
+              "line": 384,
+              "column": 30
+            },
+            {
+              "line": 390,
+              "column": 30
+            },
+            {
+              "line": 396,
+              "column": 30
+            },
+            {
+              "line": 402,
+              "column": 30
+            },
+            {
+              "line": 408,
+              "column": 30
+            },
+            {
+              "line": 414,
+              "column": 30
+            },
+            {
+              "line": 420,
+              "column": 30
+            },
+            {
+              "line": 426,
+              "column": 30
+            },
+            {
+              "line": 432,
+              "column": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NU1902",
+      "count": 8,
+      "files": [
+        {
+          "file": "src/Startup/MUnique.OpenMU.Startup.csproj",
+          "count": 2,
+          "locations": []
+        },
+        {
+          "file": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+          "count": 2,
+          "locations": []
+        },
+        {
+          "file": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+          "count": 2,
+          "locations": []
+        },
+        {
+          "file": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+          "count": 2,
+          "locations": []
+        }
+      ]
+    },
+    {
+      "code": "NU1903",
+      "count": 12,
+      "files": [
+        {
+          "file": "src/Startup/MUnique.OpenMU.Startup.csproj",
+          "count": 3,
+          "locations": []
+        },
+        {
+          "file": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+          "count": 3,
+          "locations": []
+        },
+        {
+          "file": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+          "count": 3,
+          "locations": []
+        },
+        {
+          "file": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+          "count": 3,
+          "locations": []
+        }
+      ]
+    },
+    {
+      "code": "RZ10012",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/Components/Routes.razor",
+          "count": 1,
+          "locations": [
+            {
+              "line": 8,
+              "column": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA0001",
+      "count": 2,
+      "files": [
+        {
+          "file": "CSC [src/Annotations/MUnique.OpenMU.Annotations.csproj]",
+          "count": 1,
+          "locations": []
+        },
+        {
+          "file": "CSC [src/SourceGenerators/MUnique.OpenMU.SourceGenerators.csproj]",
+          "count": 1,
+          "locations": []
+        }
+      ]
+    },
+    {
+      "code": "SA1100",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Persistence/InMemory/InMemoryRepositoryProvider.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 17,
+              "column": 67
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1101",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/GameLogic/AttackableExtensions.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 37,
+              "column": 42
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/IConfigurationUpdatePlugIn.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 51,
+              "column": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1108",
+      "count": 7,
+      "files": [
+        {
+          "file": "src/GameLogic/Player.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 2214,
+              "column": 115
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/PlayerActions/Skills/DrainLifeSkillPlugIn.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 30,
+              "column": 61
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/FinishRageFighterMasterTreePlugIn.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 79,
+              "column": 92
+            },
+            {
+              "line": 92,
+              "column": 67
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugIn095d.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 44,
+              "column": 67
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugInBase.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 181,
+              "column": 90
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugInSeason6.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 118,
+              "column": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1118",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 200,
+              "column": 17
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminPanelAuthExtensions.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 151,
+              "column": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1124",
+      "count": 3,
+      "files": [
+        {
+          "file": "src/GameLogic/PlayerActions/Craftings/RefineStoneCrafting.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 16,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Skills/MagicEffectNumber.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 13,
+              "column": 5
+            },
+            {
+              "line": 360,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1129",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Web/Shared/Components/Form/ValueTable.razor.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 67,
+              "column": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1201",
+      "count": 6,
+      "files": [
+        {
+          "file": "CSC [src/GameLogic/MUnique.OpenMU.GameLogic.csproj]",
+          "count": 1,
+          "locations": []
+        },
+        {
+          "file": "src/Network/IpAddressResolverFactory.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 117,
+              "column": 18
+            }
+          ]
+        },
+        {
+          "file": "src/Startup/Program.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 61,
+              "column": 52
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/ApiKeyAuthenticationDefaults.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 45,
+              "column": 27
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/ApiKeyGenerator.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 26,
+              "column": 23
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Pages/AdminUsers.razor.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 21,
+              "column": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1202",
+      "count": 7,
+      "files": [
+        {
+          "file": "src/GameLogic/CastleSiege/CastleSiegeContext.cs",
+          "count": 3,
+          "locations": [
+            {
+              "line": 125,
+              "column": 21
+            },
+            {
+              "line": 237,
+              "column": 17
+            },
+            {
+              "line": 403,
+              "column": 28
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/PlayerMapTransitions.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 405,
+              "column": 30
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/EntityFrameworkContextBase.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 294,
+              "column": 26
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/AddRaklionEventUpdatePlugIn.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 101,
+              "column": 34
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/Initialization/Updates/DataUpdateService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 193,
+              "column": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1203",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/Web/Shared/Services/BotAccountService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 22,
+              "column": 26
+            }
+          ]
+        },
+        {
+          "file": "src/Web/Shared/Services/LoggedInAccountService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 19,
+              "column": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1204",
+      "count": 8,
+      "files": [
+        {
+          "file": "src/GameLogic/Bots/BotFeaturePlugIn.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 685,
+              "column": 25
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/Bots/BotGenerator.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 335,
+              "column": 42
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/Bots/BotManager.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 302,
+              "column": 27
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/GameMapTerrain.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 392,
+              "column": 25
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/PlayerActions/Skills/SummonPartySkillPlugin.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 98,
+              "column": 36
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/BackupService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 190,
+              "column": 31
+            }
+          ]
+        },
+        {
+          "file": "src/Startup/Program.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 671,
+              "column": 42
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 191,
+              "column": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1208",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/WebApplicationExtensions.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 27,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1210",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/Components/Layout/ConfigurationSearch.razor.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 10,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1211",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/GameServer/RemoteView/CastleSiege/CastleSiegeMachineRegionNotifyPlugIn.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 13,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1214",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/Persistence/EntityFramework/AdminAuth/AdminUserRepository.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 38,
+              "column": 35
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Pages/Captions.razor.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 45,
+              "column": 46
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1402",
+      "count": 5,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminAccessRequirement.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 23,
+              "column": 14
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 44,
+              "column": 15
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminPanelAuthOptions.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 52,
+              "column": 14
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/ApiKeyRegistry.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 81,
+              "column": 15
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AuthenticatorSetupService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 17,
+              "column": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1413",
+      "count": 9,
+      "files": [
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20260930044257_AddGensMember.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 26,
+              "column": 21
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20261001002816_AddGensAbuse.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 23,
+              "column": 21
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+          "count": 5,
+          "locations": [
+            {
+              "line": 58,
+              "column": 21
+            },
+            {
+              "line": 83,
+              "column": 21
+            },
+            {
+              "line": 102,
+              "column": 21
+            },
+            {
+              "line": 129,
+              "column": 21
+            },
+            {
+              "line": 156,
+              "column": 21
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260824171349_InitialAdminPanelUsers.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 36,
+              "column": 21
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260829110159_AddApiKeys.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 25,
+              "column": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1507",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/Pages/NetworkAnalyzer.razor.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 169,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1513",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/PlugIns/PlugInProxyTypeGenerator.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 110,
+              "column": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1514",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/Persistence/EntityFramework/DatabaseConnectionStringHelper.cs",
+          "count": 2,
+          "locations": [
+            {
+              "line": 21,
+              "column": 5
+            },
+            {
+              "line": 25,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1515",
+      "count": 3,
+      "files": [
+        {
+          "file": "src/GameLogic/MiniGames/MiniGameContext.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 63,
+              "column": 9
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/PlayerMapTransitions.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 298,
+              "column": 9
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Pages/EditItemDrops.razor.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 529,
+              "column": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1600",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Network/LocalOnlyBinding.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 15,
+              "column": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1623",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/GameLogic/Bots/BotStartupProfile.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 38,
+              "column": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1625",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/Auth/AuthEndpoints.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 29,
+              "column": 9
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/UnavailableApiKeyRepository.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 40,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1633",
+      "count": 11,
+      "files": [
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20260813000114_AddSystemConfigurationTimeZoneId.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20260819100503_AddConstValueAttributeAggregateType.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20260829211237_AddNetworkObservation.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20260926142218_AddItemRuleFlags.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20260926235208_MigrateConfigurationUpdatesToGuidKey.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20260930044257_AddGensMember.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20261001002816_AddGensAbuse.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20261002180754_AddMasterSkillPassivePowerUps.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260824171349_InitialAdminPanelUsers.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        },
+        {
+          "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260829110159_AddApiKeys.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SA1649",
+      "count": 3,
+      "files": [
+        {
+          "file": "src/PlugIns/AsyncEventHandler.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 22,
+              "column": 21
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 44,
+              "column": 15
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AuthenticatorSetupService.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 17,
+              "column": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VSTHRD003",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/GameLogic/MiniGames/SkippableDelay.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 94,
+              "column": 47
+            }
+          ]
+        },
+        {
+          "file": "src/GameLogic/NPC/GateNpc.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 63,
+              "column": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VSTHRD101",
+      "count": 1,
+      "files": [
+        {
+          "file": "src/Web/AdminPanel/API/ServerController.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 93,
+              "column": 46
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VSTHRD200",
+      "count": 2,
+      "files": [
+        {
+          "file": "src/Persistence/EntityFramework/AdminAuth/AdminUserRepository.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 303,
+              "column": 23
+            }
+          ]
+        },
+        {
+          "file": "src/Web/AdminPanel/Auth/AdminPanelAuthExtensions.cs",
+          "count": 1,
+          "locations": [
+            {
+              "line": 196,
+              "column": 25
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "file": "CSC [src/Annotations/MUnique.OpenMU.Annotations.csproj]",
+      "count": 1,
+      "codes": {
+        "SA0001": 1
+      }
+    },
+    {
+      "file": "CSC [src/GameLogic/MUnique.OpenMU.GameLogic.csproj]",
+      "count": 1,
+      "codes": {
+        "SA1201": 1
+      }
+    },
+    {
+      "file": "CSC [src/SourceGenerators/MUnique.OpenMU.SourceGenerators.csproj]",
+      "count": 1,
+      "codes": {
+        "SA0001": 1
+      }
+    },
+    {
+      "file": "src/DataModel/Entities/AppearanceData.cs",
+      "count": 1,
+      "codes": {
+        "CS0067": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/AttackableExtensions.cs",
+      "count": 1,
+      "codes": {
+        "SA1101": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/Bots/BotFeaturePlugIn.cs",
+      "count": 1,
+      "codes": {
+        "SA1204": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/Bots/BotGenerator.cs",
+      "count": 1,
+      "codes": {
+        "SA1204": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/Bots/BotManager.cs",
+      "count": 1,
+      "codes": {
+        "SA1204": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/Bots/BotStartupProfile.cs",
+      "count": 1,
+      "codes": {
+        "SA1623": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/CastleSiege/CastleSiegeContext.cs",
+      "count": 3,
+      "codes": {
+        "SA1202": 3
+      }
+    },
+    {
+      "file": "src/GameLogic/GameMapTerrain.cs",
+      "count": 1,
+      "codes": {
+        "SA1204": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/MiniGames/ImperialGuardian/ImperialGuardianContext.cs",
+      "count": 1,
+      "codes": {
+        "CS0108": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/MiniGames/MiniGameContext.cs",
+      "count": 1,
+      "codes": {
+        "SA1515": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/MiniGames/SkippableDelay.cs",
+      "count": 1,
+      "codes": {
+        "VSTHRD003": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/NPC/GateNpc.cs",
+      "count": 1,
+      "codes": {
+        "VSTHRD003": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/NPC/SoccerBall.cs",
+      "count": 1,
+      "codes": {
+        "CS0067": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/Player.cs",
+      "count": 1,
+      "codes": {
+        "SA1108": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/PlayerActions/Craftings/RefineStoneCrafting.cs",
+      "count": 1,
+      "codes": {
+        "SA1124": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/PlayerActions/Skills/DrainLifeSkillPlugIn.cs",
+      "count": 1,
+      "codes": {
+        "SA1108": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/PlayerActions/Skills/SummonPartySkillPlugin.cs",
+      "count": 1,
+      "codes": {
+        "SA1204": 1
+      }
+    },
+    {
+      "file": "src/GameLogic/PlayerMapTransitions.cs",
+      "count": 2,
+      "codes": {
+        "SA1202": 1,
+        "SA1515": 1
+      }
+    },
+    {
+      "file": "src/GameServer/DefaultTcpGameServerListener.cs",
+      "count": 1,
+      "codes": {
+        "CS1574": 1
+      }
+    },
+    {
+      "file": "src/GameServer/RemoteView/CastleSiege/CastleSiegeMachineRegionNotifyPlugIn.cs",
+      "count": 1,
+      "codes": {
+        "SA1211": 1
+      }
+    },
+    {
+      "file": "src/GameServer/RemoteView/Character/CharacterAppearanceDataAdapter.cs",
+      "count": 1,
+      "codes": {
+        "CS0067": 1
+      }
+    },
+    {
+      "file": "src/GameServer/RemoteView/World/ObjectMovedPlugIn.cs",
+      "count": 1,
+      "codes": {
+        "CA2265": 1
+      }
+    },
+    {
+      "file": "src/GameServer/RemoteView/World/ObjectMovedPlugInExtended.cs",
+      "count": 1,
+      "codes": {
+        "CA2265": 1
+      }
+    },
+    {
+      "file": "src/Network/IpAddressResolverFactory.cs",
+      "count": 1,
+      "codes": {
+        "SA1201": 1
+      }
+    },
+    {
+      "file": "src/Network/LocalOnlyBinding.cs",
+      "count": 1,
+      "codes": {
+        "SA1600": 1
+      }
+    },
+    {
+      "file": "src/Persistence/BackupService.cs",
+      "count": 1,
+      "codes": {
+        "SA1204": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/AdminAuth/AdminUserRepository.cs",
+      "count": 2,
+      "codes": {
+        "SA1214": 1,
+        "VSTHRD200": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/CachedRepository{T}.cs",
+      "count": 2,
+      "codes": {
+        "CS1066": 2
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/ConfigurationTypeRepository.cs",
+      "count": 2,
+      "codes": {
+        "CS1066": 2
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/DatabaseConnectionStringHelper.cs",
+      "count": 2,
+      "codes": {
+        "SA1514": 2
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/EntityFrameworkContextBase.cs",
+      "count": 1,
+      "codes": {
+        "SA1202": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/GenericRepositoryBase.cs",
+      "count": 2,
+      "codes": {
+        "CS1066": 2
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Json/JsonQueryBuilder.cs",
+      "count": 1,
+      "codes": {
+        "CS0618": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20260813000114_AddSystemConfigurationTimeZoneId.cs",
+      "count": 1,
+      "codes": {
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20260819100503_AddConstValueAttributeAggregateType.cs",
+      "count": 1,
+      "codes": {
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20260829211237_AddNetworkObservation.cs",
+      "count": 1,
+      "codes": {
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20260926142218_AddItemRuleFlags.cs",
+      "count": 1,
+      "codes": {
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20260926235208_MigrateConfigurationUpdatesToGuidKey.cs",
+      "count": 1,
+      "codes": {
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20260930044257_AddGensMember.cs",
+      "count": 2,
+      "codes": {
+        "SA1413": 1,
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20261001002816_AddGensAbuse.cs",
+      "count": 2,
+      "codes": {
+        "SA1413": 1,
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20261002180754_AddMasterSkillPassivePowerUps.cs",
+      "count": 1,
+      "codes": {
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+      "count": 6,
+      "codes": {
+        "SA1413": 5,
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260824171349_InitialAdminPanelUsers.cs",
+      "count": 2,
+      "codes": {
+        "SA1413": 1,
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260829110159_AddApiKeys.cs",
+      "count": 2,
+      "codes": {
+        "SA1413": 1,
+        "SA1633": 1
+      }
+    },
+    {
+      "file": "src/Persistence/EntityFramework/ModelExtensions.cs",
+      "count": 2,
+      "codes": {
+        "CS0618": 2
+      }
+    },
+    {
+      "file": "src/Persistence/InMemory/InMemoryRepositoryProvider.cs",
+      "count": 1,
+      "codes": {
+        "SA1100": 1
+      }
+    },
+    {
+      "file": "src/Persistence/InMemory/MemoryRepository{TValue}.cs",
+      "count": 1,
+      "codes": {
+        "CS1066": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Items/ArmorInitializerBase.cs",
+      "count": 1,
+      "codes": {
+        "CS0618": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Skills/MagicEffectNumber.cs",
+      "count": 2,
+      "codes": {
+        "SA1124": 2
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/AddRaklionEventUpdatePlugIn.cs",
+      "count": 1,
+      "codes": {
+        "SA1202": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/DataUpdateService.cs",
+      "count": 1,
+      "codes": {
+        "SA1202": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/FinishRageFighterMasterTreePlugIn.cs",
+      "count": 2,
+      "codes": {
+        "SA1108": 2
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugIn095d.cs",
+      "count": 2,
+      "codes": {
+        "CS0108": 2
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugInSeason6.cs",
+      "count": 2,
+      "codes": {
+        "CS0108": 2
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/IConfigurationUpdatePlugIn.cs",
+      "count": 1,
+      "codes": {
+        "SA1101": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugIn095d.cs",
+      "count": 1,
+      "codes": {
+        "SA1108": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugInBase.cs",
+      "count": 1,
+      "codes": {
+        "SA1108": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugInSeason6.cs",
+      "count": 1,
+      "codes": {
+        "SA1108": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Orbs.cs",
+      "count": 1,
+      "codes": {
+        "CS0618": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Scrolls.cs",
+      "count": 1,
+      "codes": {
+        "CS0618": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Weapons.cs",
+      "count": 1,
+      "codes": {
+        "CS0618": 1
+      }
+    },
+    {
+      "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Wings.cs",
+      "count": 1,
+      "codes": {
+        "CS0618": 1
+      }
+    },
+    {
+      "file": "src/Persistence/RepositoryAdapter.cs",
+      "count": 2,
+      "codes": {
+        "CS1066": 2
+      }
+    },
+    {
+      "file": "src/PlugIns/AsyncEventHandler.cs",
+      "count": 1,
+      "codes": {
+        "SA1649": 1
+      }
+    },
+    {
+      "file": "src/PlugIns/PlugInProxyTypeGenerator.cs",
+      "count": 1,
+      "codes": {
+        "SA1513": 1
+      }
+    },
+    {
+      "file": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "count": 5,
+      "codes": {
+        "NU1902": 2,
+        "NU1903": 3
+      }
+    },
+    {
+      "file": "src/Startup/Program.cs",
+      "count": 2,
+      "codes": {
+        "SA1201": 1,
+        "SA1204": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/API/ServerController.cs",
+      "count": 1,
+      "codes": {
+        "VSTHRD101": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/AdminAccessRequirement.cs",
+      "count": 1,
+      "codes": {
+        "SA1402": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+      "count": 4,
+      "codes": {
+        "SA1118": 1,
+        "SA1204": 1,
+        "SA1402": 1,
+        "SA1649": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/AdminPanelAuthExtensions.cs",
+      "count": 2,
+      "codes": {
+        "SA1118": 1,
+        "VSTHRD200": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/AdminPanelAuthOptions.cs",
+      "count": 1,
+      "codes": {
+        "SA1402": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/AdminPolicies.cs",
+      "count": 1,
+      "codes": {
+        "CS1574": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/ApiKeyAuthenticationDefaults.cs",
+      "count": 1,
+      "codes": {
+        "SA1201": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/ApiKeyGenerator.cs",
+      "count": 1,
+      "codes": {
+        "SA1201": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/ApiKeyRegistry.cs",
+      "count": 1,
+      "codes": {
+        "SA1402": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/AuthEndpoints.cs",
+      "count": 1,
+      "codes": {
+        "SA1625": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/AuthenticatorSetupService.cs",
+      "count": 2,
+      "codes": {
+        "SA1402": 1,
+        "SA1649": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Auth/UnavailableApiKeyRepository.cs",
+      "count": 1,
+      "codes": {
+        "SA1625": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Components/Layout/ConfigurationSearch.razor.cs",
+      "count": 1,
+      "codes": {
+        "SA1210": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Components/Routes.razor",
+      "count": 1,
+      "codes": {
+        "RZ10012": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "count": 5,
+      "codes": {
+        "NU1902": 2,
+        "NU1903": 3
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Pages/AdminUsers.razor.cs",
+      "count": 1,
+      "codes": {
+        "SA1201": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Pages/Captions.razor.cs",
+      "count": 1,
+      "codes": {
+        "SA1214": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+      "count": 7,
+      "codes": {
+        "ASP0006": 7
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "count": 9,
+      "codes": {
+        "ASP0006": 9
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Pages/EditConnectionServer.cs",
+      "count": 3,
+      "codes": {
+        "ASP0006": 3
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Pages/EditItemDrops.razor.cs",
+      "count": 1,
+      "codes": {
+        "SA1515": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/Pages/NetworkAnalyzer.razor.cs",
+      "count": 3,
+      "codes": {
+        "CS1570": 2,
+        "SA1507": 1
+      }
+    },
+    {
+      "file": "src/Web/AdminPanel/WebApplicationExtensions.cs",
+      "count": 1,
+      "codes": {
+        "SA1208": 1
+      }
+    },
+    {
+      "file": "src/Web/ItemEditor/MuItemStorage.razor.cs",
+      "count": 1,
+      "codes": {
+        "BL0007": 1
+      }
+    },
+    {
+      "file": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "count": 5,
+      "codes": {
+        "NU1902": 2,
+        "NU1903": 3
+      }
+    },
+    {
+      "file": "src/Web/Map/Program.cs",
+      "count": 2,
+      "codes": {
+        "CS0067": 1,
+        "CS0612": 1
+      }
+    },
+    {
+      "file": "src/Web/Shared/ComponentBuilders/BaseComponentBuilder.cs",
+      "count": 4,
+      "codes": {
+        "ASP0006": 4
+      }
+    },
+    {
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "count": 10,
+      "codes": {
+        "ASP0006": 10
+      }
+    },
+    {
+      "file": "src/Web/Shared/Components/Form/ValueTable.razor.cs",
+      "count": 1,
+      "codes": {
+        "SA1129": 1
+      }
+    },
+    {
+      "file": "src/Web/Shared/LocalServerProvider.cs",
+      "count": 1,
+      "codes": {
+        "CS0067": 1
+      }
+    },
+    {
+      "file": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "count": 5,
+      "codes": {
+        "NU1902": 2,
+        "NU1903": 3
+      }
+    },
+    {
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "count": 68,
+      "codes": {
+        "CS1591": 68
+      }
+    },
+    {
+      "file": "src/Web/Shared/Services/BotAccountService.cs",
+      "count": 1,
+      "codes": {
+        "SA1203": 1
+      }
+    },
+    {
+      "file": "src/Web/Shared/Services/LoggedInAccountService.cs",
+      "count": 1,
+      "codes": {
+        "SA1203": 1
+      }
+    }
+  ],
+  "dependency": {
+    "package": "SixLabors.ImageSharp",
+    "pinned_version": "2.1.11",
+    "pin_file": "src/Directory.Packages.props",
+    "pin_line": 66,
+    "related_package": "SixLabors.ImageSharp.Drawing",
+    "related_pin": "1.0.0",
+    "related_pin_line": 67,
+    "warning_projects": [
+      "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj"
+    ],
+    "distinct_advisory_count": 5,
+    "advisories": [
+      {
+        "id": "GHSA-gwg2-r3hj-4w44",
+        "cve": "CVE-2026-106114",
+        "topic": "ICC profile allocation",
+        "severity": "moderate",
+        "cvss_v3_1": 5.3,
+        "affected_versions": ">= 1.0.0-beta0001, <= 4.1.1",
+        "code": "NU1902",
+        "impact_and_preconditions": "Excessive allocation while parsing malformed ICC CLUT metadata. For ImageSharp v1-v3, the relevant public path accesses IccProfile.Entries after decode; automatic conversion applies to v4. The advisory demonstrates memory pressure, not unhandled process termination.",
+        "url": "https://github.com/advisories/GHSA-gwg2-r3hj-4w44",
+        "patched_versions_listed": [
+          "4.1.2"
+        ],
+        "pinned_2_1_11_in_affected_range": true,
+        "diagnostic_count": 4,
+        "verified_date_utc": "2026-10-11",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+      },
+      {
+        "id": "GHSA-j3p4-wp97-rph4",
+        "cve": "CVE-2026-106113",
+        "topic": "Histogram equalization indexing",
+        "severity": "high",
+        "cvss_v3_1": 7.5,
+        "affected_versions": ">= 2.0.0, <= 4.1.1",
+        "code": "NU1903",
+        "impact_and_preconditions": "Unsafe histogram indexing can terminate a process when a crafted floating-point TIFF is decoded as HalfVector4 and HistogramEqualization is applied. This is operation-specific, not a claim about every image load.",
+        "url": "https://github.com/advisories/GHSA-j3p4-wp97-rph4",
+        "patched_versions_listed": [
+          "4.1.2"
+        ],
+        "pinned_2_1_11_in_affected_range": true,
+        "diagnostic_count": 4,
+        "verified_date_utc": "2026-10-11",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      {
+        "id": "GHSA-j9gm-c75j-xc9q",
+        "cve": "CVE-2026-106110",
+        "topic": "TIFF Group 3 encoder buffer",
+        "severity": "high",
+        "cvss_v3_1": 7.5,
+        "affected_versions": ">= 2.0.0, <= 4.1.1",
+        "code": "NU1903",
+        "impact_and_preconditions": "TIFF CCITT Group 3 one-bit encoding can overrun its output buffer and terminate the process. Re-encoding TIFF with retained compression metadata can reach this path.",
+        "url": "https://github.com/advisories/GHSA-j9gm-c75j-xc9q",
+        "patched_versions_listed": [
+          "4.1.2"
+        ],
+        "pinned_2_1_11_in_affected_range": true,
+        "diagnostic_count": 4,
+        "verified_date_utc": "2026-10-11",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      {
+        "id": "GHSA-jjfr-hcj7-qf5w",
+        "cve": "CVE-2026-106115",
+        "topic": "TIFF Group 4 encoder buffer",
+        "severity": "high",
+        "cvss_v3_1": 7.5,
+        "affected_versions": ">= 2.1.0, <= 4.1.1",
+        "code": "NU1903",
+        "impact_and_preconditions": "TIFF CCITT Group 4 one-bit encoding can write beyond its logical buffer. The advisory reproduces an unhandled exception during decode and re-encode; this assessment makes no remote-code-execution claim.",
+        "url": "https://github.com/advisories/GHSA-jjfr-hcj7-qf5w",
+        "patched_versions_listed": [
+          "4.1.2"
+        ],
+        "pinned_2_1_11_in_affected_range": true,
+        "diagnostic_count": 4,
+        "verified_date_utc": "2026-10-11",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      {
+        "id": "GHSA-wmxv-xphr-5c9g",
+        "cve": "CVE-2026-106116",
+        "topic": "BigTIFF decoder non-progress",
+        "severity": "moderate",
+        "cvss_v3_1": 5.3,
+        "affected_versions": ">= 2.0.0, <= 4.1.1",
+        "code": "NU1902",
+        "impact_and_preconditions": "A malformed BigTIFF entry count can keep one decoder thread busy without consuming input. The advisory demonstrates prolonged execution of one invocation, not worker-pool exhaustion.",
+        "url": "https://github.com/advisories/GHSA-wmxv-xphr-5c9g",
+        "patched_versions_listed": [
+          "4.1.2"
+        ],
+        "pinned_2_1_11_in_affected_range": true,
+        "diagnostic_count": 4,
+        "verified_date_utc": "2026-10-11",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+      }
+    ]
+  },
+  "reachability": {
+    "scope": "Bounded static search of first-party src C# and Razor files, excluding obj and bin, followed by inspection of ImageSharp use sites. No exploit execution or full call-graph audit.",
+    "observations": [
+      {
+        "file": "src/Web/Shared/GameMapTerrainExtensions.cs",
+        "line": 24,
+        "finding": "Creates a fixed 256 x 256 Image<Rgba32> from terrain flags."
+      },
+      {
+        "file": "src/Web/Map/Map/GameMapTerrainExtensions.cs",
+        "line": 23,
+        "finding": "Creates a fixed 256 x 256 Image<Rgba32> from terrain flags."
+      },
+      {
+        "file": "src/Web/Map/Map/GameMapInfoExtensions.cs",
+        "line": 80,
+        "finding": "Writes the generated terrain bitmap with SaveAsPng."
+      },
+      {
+        "file": "src/Web/Shared/Components/ExitGatePicker.razor.cs",
+        "line": 64,
+        "finding": "Converts generated terrain image to PNG using PngFormat.Instance."
+      },
+      {
+        "file": "src/Web/Shared/Components/MapEditor/MapEditor.razor.cs",
+        "line": 140,
+        "finding": "Converts generated terrain image to PNG using PngFormat.Instance."
+      }
+    ],
+    "direct_source_symbols_not_found": [
+      "Image.Load",
+      "Image.Identify",
+      "TiffEncoder",
+      "TiffCompression",
+      "HistogramEqualization",
+      "HalfVector4",
+      "IccProfile"
+    ],
+    "conclusion": "No direct route to these five vulnerable operations was established in the inspected first-party image uses. This is not proof of non-reachability or non-exploitability.",
+    "limits": [
+      "No inspection of third-party package internals, dynamically loaded plugins, reflection paths, or deployment network controls.",
+      "No end-to-end trace from all input entry points; keyword search can miss aliases or indirect use.",
+      "The build log is a point-in-time warning list, not an exhaustive current vulnerability scan.",
+      "Existing successful builds and tests do not establish security of untested operations."
+    ]
+  },
+  "assessment": {
+    "private_alpha": "These warnings do not by themselves invalidate an isolated private-alpha checkpoint. Continuing such a checkpoint is conditional on verified restricted access, trusted inputs/operators, no untrusted image decode or TIFF processing, bounded resources, and owner acceptance of remaining risk. Those deployment controls were not verified in this assessment.",
+    "future_public": "Do not treat successful build/tests as public-release security approval. Before public exposure, close the dependency-risk decision with a reviewed compatibility/remediation plan or defensible non-reachability evidence and compensating controls, and review the concrete runtime-oriented warnings. No public-readiness verdict is established here.",
+    "dependency_change": "The advisory-listed patched version 4.1.2 is factual reference information, not a recommendation to upgrade automatically. The current ImageSharp.Drawing 1.0.0 pin and API/runtime/license compatibility require a separate, approved evaluation. No dependency was changed.",
+    "follow_up_priorities": [
+      "Review the five ImageSharp advisories against the intended deployment and any image-processing plugins before public exposure.",
+      "Review VSTHRD101 at ServerController.cs:93 and the two VSTHRD003 diagnostics for exception/deadlock behavior.",
+      "Review CA2265 span/default comparisons and RZ10012 access-denied component rendering; the latter does not itself demonstrate an authorization bypass.",
+      "Address ASP0006 and BL0007 rendering/component diagnostics with focused tests if those UI surfaces are in scope.",
+      "Track style, generated-documentation, obsolete API, hiding, unused event, and optional-argument warnings separately from security advisories."
+    ]
+  },
+  "diagnostics": [
+    {
+      "code": "NU1902",
+      "file": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-gwg2-r3hj-4w44",
+      "execution_log_line": 1
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-j3p4-wp97-rph4",
+      "execution_log_line": 2
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-j9gm-c75j-xc9q",
+      "execution_log_line": 3
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-jjfr-hcj7-qf5w",
+      "execution_log_line": 4
+    },
+    {
+      "code": "NU1902",
+      "file": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wmxv-xphr-5c9g",
+      "execution_log_line": 5
+    },
+    {
+      "code": "NU1902",
+      "file": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-gwg2-r3hj-4w44",
+      "execution_log_line": 6
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-j3p4-wp97-rph4",
+      "execution_log_line": 7
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-j9gm-c75j-xc9q",
+      "execution_log_line": 8
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-jjfr-hcj7-qf5w",
+      "execution_log_line": 9
+    },
+    {
+      "code": "NU1902",
+      "file": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wmxv-xphr-5c9g",
+      "execution_log_line": 10
+    },
+    {
+      "code": "SA0001",
+      "file": "CSC",
+      "line": null,
+      "column": null,
+      "project": "src/Annotations/MUnique.OpenMU.Annotations.csproj",
+      "message": "XML comment analysis is disabled due to project configuration (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md)",
+      "execution_log_line": 11
+    },
+    {
+      "code": "SA1649",
+      "file": "src/PlugIns/AsyncEventHandler.cs",
+      "line": 22,
+      "column": 21,
+      "project": "src/PlugIns/MUnique.OpenMU.PlugIns.csproj",
+      "message": "File name should match first type name (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1649.md)",
+      "execution_log_line": 15
+    },
+    {
+      "code": "SA1513",
+      "file": "src/PlugIns/PlugInProxyTypeGenerator.cs",
+      "line": 110,
+      "column": 14,
+      "project": "src/PlugIns/MUnique.OpenMU.PlugIns.csproj",
+      "message": "Closing brace should be followed by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1513.md)",
+      "execution_log_line": 16
+    },
+    {
+      "code": "SA1600",
+      "file": "src/Network/LocalOnlyBinding.cs",
+      "line": 15,
+      "column": 27,
+      "project": "src/Network/MUnique.OpenMU.Network.csproj",
+      "message": "Elements should be documented (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1600.md)",
+      "execution_log_line": 19
+    },
+    {
+      "code": "SA1201",
+      "file": "src/Network/IpAddressResolverFactory.cs",
+      "line": 117,
+      "column": 18,
+      "project": "src/Network/MUnique.OpenMU.Network.csproj",
+      "message": "A enum should not follow a method (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1201.md)",
+      "execution_log_line": 20
+    },
+    {
+      "code": "SA0001",
+      "file": "CSC",
+      "line": null,
+      "column": null,
+      "project": "src/SourceGenerators/MUnique.OpenMU.SourceGenerators.csproj",
+      "message": "XML comment analysis is disabled due to project configuration (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md)",
+      "execution_log_line": 22
+    },
+    {
+      "code": "CS0067",
+      "file": "src/DataModel/Entities/AppearanceData.cs",
+      "line": 20,
+      "column": 32,
+      "project": "src/DataModel/MUnique.OpenMU.DataModel.csproj",
+      "message": "The event 'AppearanceData.AppearanceChanged' is never used",
+      "execution_log_line": 24
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/RepositoryAdapter.cs",
+      "line": 41,
+      "column": 76,
+      "project": "src/Persistence/MUnique.OpenMU.Persistence.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 28
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/RepositoryAdapter.cs",
+      "line": 59,
+      "column": 76,
+      "project": "src/Persistence/MUnique.OpenMU.Persistence.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 29
+    },
+    {
+      "code": "SA1204",
+      "file": "src/Persistence/BackupService.cs",
+      "line": 190,
+      "column": 31,
+      "project": "src/Persistence/MUnique.OpenMU.Persistence.csproj",
+      "message": "Static members should appear before non-static members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md)",
+      "execution_log_line": 30
+    },
+    {
+      "code": "CS0108",
+      "file": "src/GameLogic/MiniGames/ImperialGuardian/ImperialGuardianContext.cs",
+      "line": 35,
+      "column": 38,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "'ImperialGuardianContext.CountdownDuration' hides inherited member 'MiniGameContext.CountdownDuration'. Use the new keyword if hiding was intended.",
+      "execution_log_line": 32
+    },
+    {
+      "code": "CS0067",
+      "file": "src/GameLogic/NPC/SoccerBall.cs",
+      "line": 40,
+      "column": 50,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "The event 'SoccerBall.Died' is never used",
+      "execution_log_line": 33
+    },
+    {
+      "code": "SA1515",
+      "file": "src/GameLogic/MiniGames/MiniGameContext.cs",
+      "line": 63,
+      "column": 9,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Single-line comment should be preceded by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1515.md)",
+      "execution_log_line": 34
+    },
+    {
+      "code": "SA1201",
+      "file": "CSC",
+      "line": null,
+      "column": null,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "A <unknown> should not follow a field (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1201.md)",
+      "execution_log_line": 35
+    },
+    {
+      "code": "SA1204",
+      "file": "src/GameLogic/Bots/BotFeaturePlugIn.cs",
+      "line": 685,
+      "column": 25,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Static members should appear before non-static members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md)",
+      "execution_log_line": 36
+    },
+    {
+      "code": "SA1204",
+      "file": "src/GameLogic/Bots/BotGenerator.cs",
+      "line": 335,
+      "column": 42,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Static members should appear before non-static members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md)",
+      "execution_log_line": 37
+    },
+    {
+      "code": "SA1623",
+      "file": "src/GameLogic/Bots/BotStartupProfile.cs",
+      "line": 38,
+      "column": 26,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "The property's documentation summary text should begin with: 'Gets a value indicating whether' (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1623.md)",
+      "execution_log_line": 38
+    },
+    {
+      "code": "SA1204",
+      "file": "src/GameLogic/Bots/BotManager.cs",
+      "line": 302,
+      "column": 27,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Static members should appear before non-static members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md)",
+      "execution_log_line": 39
+    },
+    {
+      "code": "SA1515",
+      "file": "src/GameLogic/PlayerMapTransitions.cs",
+      "line": 298,
+      "column": 9,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Single-line comment should be preceded by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1515.md)",
+      "execution_log_line": 40
+    },
+    {
+      "code": "SA1202",
+      "file": "src/GameLogic/CastleSiege/CastleSiegeContext.cs",
+      "line": 125,
+      "column": 21,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "'public' members should come before 'internal' members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1202.md)",
+      "execution_log_line": 41
+    },
+    {
+      "code": "SA1202",
+      "file": "src/GameLogic/CastleSiege/CastleSiegeContext.cs",
+      "line": 237,
+      "column": 17,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "'public' members should come before 'internal' members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1202.md)",
+      "execution_log_line": 42
+    },
+    {
+      "code": "SA1202",
+      "file": "src/GameLogic/CastleSiege/CastleSiegeContext.cs",
+      "line": 403,
+      "column": 28,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "'public' members should come before 'internal' members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1202.md)",
+      "execution_log_line": 43
+    },
+    {
+      "code": "SA1204",
+      "file": "src/GameLogic/GameMapTerrain.cs",
+      "line": 392,
+      "column": 25,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Static members should appear before non-static members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md)",
+      "execution_log_line": 44
+    },
+    {
+      "code": "SA1124",
+      "file": "src/GameLogic/PlayerActions/Craftings/RefineStoneCrafting.cs",
+      "line": 16,
+      "column": 5,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Do not use regions (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1124.md)",
+      "execution_log_line": 45
+    },
+    {
+      "code": "SA1204",
+      "file": "src/GameLogic/PlayerActions/Skills/SummonPartySkillPlugin.cs",
+      "line": 98,
+      "column": 36,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Static members should appear before non-static members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md)",
+      "execution_log_line": 46
+    },
+    {
+      "code": "SA1202",
+      "file": "src/GameLogic/PlayerMapTransitions.cs",
+      "line": 405,
+      "column": 30,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "'internal' members should come before 'private' members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1202.md)",
+      "execution_log_line": 47
+    },
+    {
+      "code": "VSTHRD003",
+      "file": "src/GameLogic/MiniGames/SkippableDelay.cs",
+      "line": 94,
+      "column": 47,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Avoid awaiting or returning a Task representing work that was not started within your context as that can lead to deadlocks.",
+      "execution_log_line": 48
+    },
+    {
+      "code": "SA1108",
+      "file": "src/GameLogic/Player.cs",
+      "line": 2214,
+      "column": 115,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Block statements should not contain embedded comments (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1108.md)",
+      "execution_log_line": 49
+    },
+    {
+      "code": "SA1101",
+      "file": "src/GameLogic/AttackableExtensions.cs",
+      "line": 37,
+      "column": 42,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Prefix local calls with this (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1101.md)",
+      "execution_log_line": 50
+    },
+    {
+      "code": "VSTHRD003",
+      "file": "src/GameLogic/NPC/GateNpc.cs",
+      "line": 63,
+      "column": 15,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Avoid awaiting or returning a Task representing work that was not started within your context as that can lead to deadlocks.",
+      "execution_log_line": 51
+    },
+    {
+      "code": "SA1108",
+      "file": "src/GameLogic/PlayerActions/Skills/DrainLifeSkillPlugIn.cs",
+      "line": 30,
+      "column": 61,
+      "project": "src/GameLogic/MUnique.OpenMU.GameLogic.csproj",
+      "message": "Block statements should not contain embedded comments (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1108.md)",
+      "execution_log_line": 52
+    },
+    {
+      "code": "CS0067",
+      "file": "src/GameServer/RemoteView/Character/CharacterAppearanceDataAdapter.cs",
+      "line": 32,
+      "column": 32,
+      "project": "src/GameServer/MUnique.OpenMU.GameServer.csproj",
+      "message": "The event 'CharacterAppearanceDataAdapter.AppearanceChanged' is never used",
+      "execution_log_line": 58
+    },
+    {
+      "code": "CS1574",
+      "file": "src/GameServer/DefaultTcpGameServerListener.cs",
+      "line": 60,
+      "column": 84,
+      "project": "src/GameServer/MUnique.OpenMU.GameServer.csproj",
+      "message": "XML comment has cref attribute 'NetworkPort' that could not be resolved",
+      "execution_log_line": 59
+    },
+    {
+      "code": "SA1211",
+      "file": "src/GameServer/RemoteView/CastleSiege/CastleSiegeMachineRegionNotifyPlugIn.cs",
+      "line": 13,
+      "column": 1,
+      "project": "src/GameServer/MUnique.OpenMU.GameServer.csproj",
+      "message": "Using alias directive for 'MachinePacketType' should appear before using alias directive for 'MachineType' (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1211.md)",
+      "execution_log_line": 60
+    },
+    {
+      "code": "CA2265",
+      "file": "src/GameServer/RemoteView/World/ObjectMovedPlugInExtended.cs",
+      "line": 68,
+      "column": 13,
+      "project": "src/GameServer/MUnique.OpenMU.GameServer.csproj",
+      "message": "Comparing a span to 'default' might not do what you intended, make the code more explicit by checking 'IsEmpty' (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2265)",
+      "execution_log_line": 61
+    },
+    {
+      "code": "CA2265",
+      "file": "src/GameServer/RemoteView/World/ObjectMovedPlugIn.cs",
+      "line": 192,
+      "column": 13,
+      "project": "src/GameServer/MUnique.OpenMU.GameServer.csproj",
+      "message": "Comparing a span to 'default' might not do what you intended, make the code more explicit by checking 'IsEmpty' (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2265)",
+      "execution_log_line": 62
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/InMemory/MemoryRepository{TValue}.cs",
+      "line": 80,
+      "column": 82,
+      "project": "src/Persistence/InMemory/MUnique.OpenMU.Persistence.InMemory.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 64
+    },
+    {
+      "code": "SA1100",
+      "file": "src/Persistence/InMemory/InMemoryRepositoryProvider.cs",
+      "line": 17,
+      "column": 67,
+      "project": "src/Persistence/InMemory/MUnique.OpenMU.Persistence.InMemory.csproj",
+      "message": "Do not prefix calls with base unless local implementation exists (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1100.md)",
+      "execution_log_line": 65
+    },
+    {
+      "code": "CS0108",
+      "file": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugIn095d.cs",
+      "line": 22,
+      "column": 27,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'FixEventItemsDropFromMonstersUpdatePlugIn095d.PlugInName' hides inherited member 'FixEventItemsDropFromMonstersUpdatePlugInBase.PlugInName'. Use the new keyword if hiding was intended.",
+      "execution_log_line": 67
+    },
+    {
+      "code": "CS0108",
+      "file": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugIn095d.cs",
+      "line": 27,
+      "column": 27,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'FixEventItemsDropFromMonstersUpdatePlugIn095d.PlugInDescription' hides inherited member 'FixEventItemsDropFromMonstersUpdatePlugInBase.PlugInDescription'. Use the new keyword if hiding was intended.",
+      "execution_log_line": 68
+    },
+    {
+      "code": "CS0108",
+      "file": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugInSeason6.cs",
+      "line": 22,
+      "column": 27,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'FixEventItemsDropFromMonstersUpdatePlugInSeason6.PlugInName' hides inherited member 'FixEventItemsDropFromMonstersUpdatePlugInBase.PlugInName'. Use the new keyword if hiding was intended.",
+      "execution_log_line": 69
+    },
+    {
+      "code": "CS0108",
+      "file": "src/Persistence/Initialization/Updates/FixEventItemsDropFromMonstersUpdatePlugInSeason6.cs",
+      "line": 27,
+      "column": 27,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'FixEventItemsDropFromMonstersUpdatePlugInSeason6.PlugInDescription' hides inherited member 'FixEventItemsDropFromMonstersUpdatePlugInBase.PlugInDescription'. Use the new keyword if hiding was intended.",
+      "execution_log_line": 70
+    },
+    {
+      "code": "CS0618",
+      "file": "src/Persistence/Initialization/Items/ArmorInitializerBase.cs",
+      "line": 406,
+      "column": 23,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'CharacterClassHelper.DetermineCharacterClasses(GameConfiguration, int, int, int, int, int, int, int)' is obsolete: 'Use the overload with the CharacterClasses enum instead.'",
+      "execution_log_line": 71
+    },
+    {
+      "code": "CS0618",
+      "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Wings.cs",
+      "line": 309,
+      "column": 23,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'CharacterClassHelper.DetermineCharacterClasses(GameConfiguration, int, int, int, int, int, int, int)' is obsolete: 'Use the overload with the CharacterClasses enum instead.'",
+      "execution_log_line": 72
+    },
+    {
+      "code": "CS0618",
+      "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Weapons.cs",
+      "line": 362,
+      "column": 41,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'CharacterClassHelper.DetermineCharacterClasses(GameConfiguration, int, int, int, int, int, int, int)' is obsolete: 'Use the overload with the CharacterClasses enum instead.'",
+      "execution_log_line": 73
+    },
+    {
+      "code": "CS0618",
+      "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Scrolls.cs",
+      "line": 96,
+      "column": 23,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'CharacterClassHelper.DetermineCharacterClasses(GameConfiguration, int, int, int, int, int, int, int)' is obsolete: 'Use the overload with the CharacterClasses enum instead.'",
+      "execution_log_line": 74
+    },
+    {
+      "code": "CS0618",
+      "file": "src/Persistence/Initialization/VersionSeasonSix/Items/Orbs.cs",
+      "line": 88,
+      "column": 23,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'CharacterClassHelper.DetermineCharacterClasses(GameConfiguration, int, int, int, int, int, int, int)' is obsolete: 'Use the overload with the CharacterClasses enum instead.'",
+      "execution_log_line": 75
+    },
+    {
+      "code": "SA1124",
+      "file": "src/Persistence/Initialization/Skills/MagicEffectNumber.cs",
+      "line": 13,
+      "column": 5,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "Do not use regions (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1124.md)",
+      "execution_log_line": 76
+    },
+    {
+      "code": "SA1124",
+      "file": "src/Persistence/Initialization/Skills/MagicEffectNumber.cs",
+      "line": 360,
+      "column": 5,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "Do not use regions (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1124.md)",
+      "execution_log_line": 77
+    },
+    {
+      "code": "SA1202",
+      "file": "src/Persistence/Initialization/Updates/AddRaklionEventUpdatePlugIn.cs",
+      "line": 101,
+      "column": 34,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'protected' members should come before 'private' members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1202.md)",
+      "execution_log_line": 78
+    },
+    {
+      "code": "SA1202",
+      "file": "src/Persistence/Initialization/Updates/DataUpdateService.cs",
+      "line": 193,
+      "column": 45,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "'internal' members should come before 'private' members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1202.md)",
+      "execution_log_line": 79
+    },
+    {
+      "code": "SA1108",
+      "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugInSeason6.cs",
+      "line": 118,
+      "column": 70,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "Block statements should not contain embedded comments (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1108.md)",
+      "execution_log_line": 80
+    },
+    {
+      "code": "SA1108",
+      "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugInBase.cs",
+      "line": 181,
+      "column": 90,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "Block statements should not contain embedded comments (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1108.md)",
+      "execution_log_line": 81
+    },
+    {
+      "code": "SA1108",
+      "file": "src/Persistence/Initialization/Updates/RegenerationsRefactorPlugIn095d.cs",
+      "line": 44,
+      "column": 67,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "Block statements should not contain embedded comments (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1108.md)",
+      "execution_log_line": 82
+    },
+    {
+      "code": "SA1101",
+      "file": "src/Persistence/Initialization/Updates/IConfigurationUpdatePlugIn.cs",
+      "line": 51,
+      "column": 27,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "Prefix local calls with this (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1101.md)",
+      "execution_log_line": 83
+    },
+    {
+      "code": "SA1108",
+      "file": "src/Persistence/Initialization/Updates/FinishRageFighterMasterTreePlugIn.cs",
+      "line": 79,
+      "column": 92,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "Block statements should not contain embedded comments (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1108.md)",
+      "execution_log_line": 84
+    },
+    {
+      "code": "SA1108",
+      "file": "src/Persistence/Initialization/Updates/FinishRageFighterMasterTreePlugIn.cs",
+      "line": 92,
+      "column": 67,
+      "project": "src/Persistence/Initialization/MUnique.OpenMU.Persistence.Initialization.csproj",
+      "message": "Block statements should not contain embedded comments (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1108.md)",
+      "execution_log_line": 85
+    },
+    {
+      "code": "NU1902",
+      "file": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-gwg2-r3hj-4w44",
+      "execution_log_line": 87
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-j3p4-wp97-rph4",
+      "execution_log_line": 88
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-j9gm-c75j-xc9q",
+      "execution_log_line": 89
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-jjfr-hcj7-qf5w",
+      "execution_log_line": 90
+    },
+    {
+      "code": "NU1902",
+      "file": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wmxv-xphr-5c9g",
+      "execution_log_line": 91
+    },
+    {
+      "code": "NU1902",
+      "file": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-gwg2-r3hj-4w44",
+      "execution_log_line": 92
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-j3p4-wp97-rph4",
+      "execution_log_line": 93
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-j9gm-c75j-xc9q",
+      "execution_log_line": 94
+    },
+    {
+      "code": "NU1903",
+      "file": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-jjfr-hcj7-qf5w",
+      "execution_log_line": 95
+    },
+    {
+      "code": "NU1902",
+      "file": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "line": null,
+      "column": null,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wmxv-xphr-5c9g",
+      "execution_log_line": 96
+    },
+    {
+      "code": "BL0007",
+      "file": "src/Web/ItemEditor/MuItemStorage.razor.cs",
+      "line": 21,
+      "column": 18,
+      "project": "src/Web/ItemEditor/MUnique.OpenMU.Web.ItemEditor.csproj",
+      "message": "Component parameter 'MUnique.OpenMU.Web.ItemEditor.MuItemStorage.SelectedItem' should be auto property",
+      "execution_log_line": 97
+    },
+    {
+      "code": "CS0067",
+      "file": "src/Web/Shared/LocalServerProvider.cs",
+      "line": 25,
+      "column": 47,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "The event 'LocalServerProvider.PropertyChanged' is never used",
+      "execution_log_line": 99
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 17,
+      "column": 18,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources'",
+      "execution_log_line": 100
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 28,
+      "column": 56,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.ResourceManager'",
+      "execution_log_line": 101
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 39,
+      "column": 56,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Culture'",
+      "execution_log_line": 102
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 48,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Loading'",
+      "execution_log_line": 103
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 54,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.All'",
+      "execution_log_line": 104
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 60,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.TargetMap'",
+      "execution_log_line": 105
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 66,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Target'",
+      "execution_log_line": 106
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 72,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.SelectedMap'",
+      "execution_log_line": 107
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 78,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Map'",
+      "execution_log_line": 108
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 84,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Toolbar'",
+      "execution_log_line": 109
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 90,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.CreationGroup'",
+      "execution_log_line": 110
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 96,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.ControlGroup'",
+      "execution_log_line": 111
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 102,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Remove'",
+      "execution_log_line": 112
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 108,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.TerrainOf'",
+      "execution_log_line": 113
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 114,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.SelectedObject'",
+      "execution_log_line": 114
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 120,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AncientOptionLevel'",
+      "execution_log_line": 115
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 126,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Bonus'",
+      "execution_log_line": 116
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 132,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.OptionLevel'",
+      "execution_log_line": 117
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 138,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.HasGuardianOption'",
+      "execution_log_line": 118
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 144,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.SocketNumber'",
+      "execution_log_line": 119
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 150,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AccountCreationParameters_LoginName_Name'",
+      "execution_log_line": 120
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 156,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AccountCreationParameters_Password_Name'",
+      "execution_log_line": 121
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 162,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AccountCreationParameters_SecurityCode_Name'",
+      "execution_log_line": 122
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 168,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AccountCreationParameters_EMail_Name'",
+      "execution_log_line": 123
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 174,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AccountCreationParameters_State_Name'",
+      "execution_log_line": 124
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 180,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.UserCreationParameters_LoginName_Name'",
+      "execution_log_line": 125
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 186,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.UserCreationParameters_Password_Name'",
+      "execution_log_line": 126
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 192,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.TheValueMustNotContain'",
+      "execution_log_line": 127
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 198,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.PleaseSelectItemDefinition'",
+      "execution_log_line": 128
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 204,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Duplicate'",
+      "execution_log_line": 129
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 210,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Filter'",
+      "execution_log_line": 130
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 216,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Search'",
+      "execution_log_line": 131
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 222,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.NoResultsFound'",
+      "execution_log_line": 132
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 228,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Monster'",
+      "execution_log_line": 133
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 234,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.TargetMaps'",
+      "execution_log_line": 134
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 240,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Quantity'",
+      "execution_log_line": 135
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 246,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.SpawnRules'",
+      "execution_log_line": 136
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 252,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.SpawnOnAllSelectedMaps'",
+      "execution_log_line": 137
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 258,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.SpawnOnAllSelectedMapsTooltip'",
+      "execution_log_line": 138
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 264,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AnnounceDeath'",
+      "execution_log_line": 139
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 270,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AnnounceDeathTooltip'",
+      "execution_log_line": 140
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 276,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.AddValue'",
+      "execution_log_line": 141
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 282,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.ResetZoom'",
+      "execution_log_line": 142
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 288,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.ToggleGrid'",
+      "execution_log_line": 143
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 294,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.NoSelection'",
+      "execution_log_line": 144
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 300,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Undo'",
+      "execution_log_line": 145
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 306,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Save'",
+      "execution_log_line": 146
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 312,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.TypeFilter'",
+      "execution_log_line": 147
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 318,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Monsters'",
+      "execution_log_line": 148
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 324,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Npcs'",
+      "execution_log_line": 149
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 330,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Gates'",
+      "execution_log_line": 150
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 336,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Others'",
+      "execution_log_line": 151
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 342,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Submit'",
+      "execution_log_line": 152
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 348,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Cancel'",
+      "execution_log_line": 153
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 354,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.DiscardEntryTitle'",
+      "execution_log_line": 154
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 360,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.DiscardEntryQuestion'",
+      "execution_log_line": 155
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 366,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Refresh'",
+      "execution_log_line": 156
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 372,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.ToggleTheme'",
+      "execution_log_line": 157
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 378,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.SwitchToDarkMode'",
+      "execution_log_line": 158
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 384,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.SwitchToLightMode'",
+      "execution_log_line": 159
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 390,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.MapEditorShortcutPan'",
+      "execution_log_line": 160
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 396,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.MapEditorShortcutDrag'",
+      "execution_log_line": 161
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 402,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.MapEditorShortcutCycle'",
+      "execution_log_line": 162
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 408,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.MapEditorShortcutDelete'",
+      "execution_log_line": 163
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 414,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.ExportMap'",
+      "execution_log_line": 164
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 420,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.ImportMap'",
+      "execution_log_line": 165
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 426,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.Yes'",
+      "execution_log_line": 166
+    },
+    {
+      "code": "CS1591",
+      "file": "src/Web/Shared/Properties/Resources.Designer.cs",
+      "line": 432,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Missing XML comment for publicly visible type or member 'Resources.No'",
+      "execution_log_line": 167
+    },
+    {
+      "code": "SA1203",
+      "file": "src/Web/Shared/Services/BotAccountService.cs",
+      "line": 22,
+      "column": 26,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Constant fields should appear before non-constant fields (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1203.md)",
+      "execution_log_line": 168
+    },
+    {
+      "code": "SA1203",
+      "file": "src/Web/Shared/Services/LoggedInAccountService.cs",
+      "line": 19,
+      "column": 26,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Constant fields should appear before non-constant fields (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1203.md)",
+      "execution_log_line": 169
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/ComponentBuilders/BaseComponentBuilder.cs",
+      "line": 74,
+      "column": 31,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'currentIndex++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 170
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/ComponentBuilders/BaseComponentBuilder.cs",
+      "line": 77,
+      "column": 34,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'currentIndex++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 171
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/ComponentBuilders/BaseComponentBuilder.cs",
+      "line": 78,
+      "column": 34,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'currentIndex++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 172
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/ComponentBuilders/BaseComponentBuilder.cs",
+      "line": 79,
+      "column": 34,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'currentIndex++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 173
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 25,
+      "column": 29,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 174
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 26,
+      "column": 39,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 175
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 27,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 176
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 28,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 177
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 29,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 178
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 30,
+      "column": 30,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 179
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 36,
+      "column": 33,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 180
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 37,
+      "column": 34,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 181
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 40,
+      "column": 38,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 182
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/Shared/Components/Form/EnumSelect.cs",
+      "line": 46,
+      "column": 32,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "'i++' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 183
+    },
+    {
+      "code": "SA1129",
+      "file": "src/Web/Shared/Components/Form/ValueTable.razor.cs",
+      "line": 67,
+      "column": 31,
+      "project": "src/Web/Shared/MUnique.OpenMU.Web.Shared.csproj",
+      "message": "Do not use default value type constructor (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1129.md)",
+      "execution_log_line": 184
+    },
+    {
+      "code": "CS0612",
+      "file": "src/Web/Map/Program.cs",
+      "line": 27,
+      "column": 52,
+      "project": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "message": "'MapApp' is obsolete",
+      "execution_log_line": 186
+    },
+    {
+      "code": "CS0067",
+      "file": "src/Web/Map/Program.cs",
+      "line": 39,
+      "column": 51,
+      "project": "src/Web/Map/MUnique.OpenMU.Web.Map.csproj",
+      "message": "The event 'Program.NullGameServer.PropertyChanged' is never used",
+      "execution_log_line": 187
+    },
+    {
+      "code": "CS1570",
+      "file": "src/Web/AdminPanel/Pages/NetworkAnalyzer.razor.cs",
+      "line": 30,
+      "column": 1,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "XML comment has badly formed XML -- 'Expected an end tag for element 'summary'.'",
+      "execution_log_line": 189
+    },
+    {
+      "code": "CS1570",
+      "file": "src/Web/AdminPanel/Pages/NetworkAnalyzer.razor.cs",
+      "line": 121,
+      "column": 1,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "XML comment has badly formed XML -- 'Expected an end tag for element 'summary'.'",
+      "execution_log_line": 190
+    },
+    {
+      "code": "RZ10012",
+      "file": "src/Web/AdminPanel/Components/Routes.razor",
+      "line": 8,
+      "column": 13,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Found markup element with unexpected name 'Pages.AccessDenied'. If this is intended to be a component, add a @using directive for its namespace.",
+      "execution_log_line": 191
+    },
+    {
+      "code": "CS1574",
+      "file": "src/Web/AdminPanel/Auth/AdminPolicies.cs",
+      "line": 28,
+      "column": 50,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "XML comment has cref attribute 'CashShop' that could not be resolved",
+      "execution_log_line": 192
+    },
+    {
+      "code": "SA1402",
+      "file": "src/Web/AdminPanel/Auth/AdminAccessRequirement.cs",
+      "line": 23,
+      "column": 14,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "File may only contain a single type (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1402.md)",
+      "execution_log_line": 193
+    },
+    {
+      "code": "SA1649",
+      "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+      "line": 44,
+      "column": 15,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "File name should match first type name (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1649.md)",
+      "execution_log_line": 194
+    },
+    {
+      "code": "SA1402",
+      "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+      "line": 44,
+      "column": 15,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "File may only contain a single type (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1402.md)",
+      "execution_log_line": 195
+    },
+    {
+      "code": "SA1208",
+      "file": "src/Web/AdminPanel/WebApplicationExtensions.cs",
+      "line": 27,
+      "column": 1,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Using directive for 'System.IO' should appear before directive for 'MUnique.OpenMU.Web.Shared.Services' (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1208.md)",
+      "execution_log_line": 196
+    },
+    {
+      "code": "SA1402",
+      "file": "src/Web/AdminPanel/Auth/AdminPanelAuthOptions.cs",
+      "line": 52,
+      "column": 14,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "File may only contain a single type (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1402.md)",
+      "execution_log_line": 197
+    },
+    {
+      "code": "SA1402",
+      "file": "src/Web/AdminPanel/Auth/ApiKeyRegistry.cs",
+      "line": 81,
+      "column": 15,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "File may only contain a single type (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1402.md)",
+      "execution_log_line": 198
+    },
+    {
+      "code": "SA1649",
+      "file": "src/Web/AdminPanel/Auth/AuthenticatorSetupService.cs",
+      "line": 17,
+      "column": 15,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "File name should match first type name (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1649.md)",
+      "execution_log_line": 199
+    },
+    {
+      "code": "SA1402",
+      "file": "src/Web/AdminPanel/Auth/AuthenticatorSetupService.cs",
+      "line": 17,
+      "column": 15,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "File may only contain a single type (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1402.md)",
+      "execution_log_line": 200
+    },
+    {
+      "code": "SA1515",
+      "file": "src/Web/AdminPanel/Pages/EditItemDrops.razor.cs",
+      "line": 529,
+      "column": 13,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Single-line comment should be preceded by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1515.md)",
+      "execution_log_line": 201
+    },
+    {
+      "code": "SA1507",
+      "file": "src/Web/AdminPanel/Pages/NetworkAnalyzer.razor.cs",
+      "line": 169,
+      "column": 1,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Code should not contain multiple blank lines in a row (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1507.md)",
+      "execution_log_line": 202
+    },
+    {
+      "code": "SA1204",
+      "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+      "line": 191,
+      "column": 40,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Static members should appear before non-static members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md)",
+      "execution_log_line": 203
+    },
+    {
+      "code": "SA1201",
+      "file": "src/Web/AdminPanel/Auth/ApiKeyGenerator.cs",
+      "line": 26,
+      "column": 23,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "A field should not follow a property (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1201.md)",
+      "execution_log_line": 204
+    },
+    {
+      "code": "SA1201",
+      "file": "src/Web/AdminPanel/Auth/ApiKeyAuthenticationDefaults.cs",
+      "line": 45,
+      "column": 27,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "A field should not follow a property (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1201.md)",
+      "execution_log_line": 205
+    },
+    {
+      "code": "SA1210",
+      "file": "src/Web/AdminPanel/Components/Layout/ConfigurationSearch.razor.cs",
+      "line": 10,
+      "column": 1,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Using directives should be ordered alphabetically by the namespaces (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1210.md)",
+      "execution_log_line": 206
+    },
+    {
+      "code": "SA1201",
+      "file": "src/Web/AdminPanel/Pages/AdminUsers.razor.cs",
+      "line": 21,
+      "column": 30,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "A field should not follow a property (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1201.md)",
+      "execution_log_line": 207
+    },
+    {
+      "code": "SA1214",
+      "file": "src/Web/AdminPanel/Pages/Captions.razor.cs",
+      "line": 45,
+      "column": 46,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Readonly fields should appear before non-readonly fields (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1214.md)",
+      "execution_log_line": 208
+    },
+    {
+      "code": "VSTHRD101",
+      "file": "src/Web/AdminPanel/API/ServerController.cs",
+      "line": 93,
+      "column": 46,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Avoid using async lambda for a void returning delegate type, because any exceptions not handled by the delegate will crash the process (https://microsoft.github.io/vs-threading/analyzers/VSTHRD101.html)",
+      "execution_log_line": 209
+    },
+    {
+      "code": "SA1625",
+      "file": "src/Web/AdminPanel/Auth/UnavailableApiKeyRepository.cs",
+      "line": 40,
+      "column": 9,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Element documentation should not be copied and pasted (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1625.md)",
+      "execution_log_line": 210
+    },
+    {
+      "code": "SA1625",
+      "file": "src/Web/AdminPanel/Auth/AuthEndpoints.cs",
+      "line": 29,
+      "column": 9,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Element documentation should not be copied and pasted (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1625.md)",
+      "execution_log_line": 211
+    },
+    {
+      "code": "SA1118",
+      "file": "src/Web/AdminPanel/Auth/AdminPanelAuthExtensions.cs",
+      "line": 151,
+      "column": 21,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "The parameter spans multiple lines (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1118.md)",
+      "execution_log_line": 212
+    },
+    {
+      "code": "VSTHRD200",
+      "file": "src/Web/AdminPanel/Auth/AdminPanelAuthExtensions.cs",
+      "line": 196,
+      "column": 25,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "Use \"Async\" suffix in names of methods that return an awaitable type (https://microsoft.github.io/vs-threading/analyzers/VSTHRD200.html)",
+      "execution_log_line": 213
+    },
+    {
+      "code": "SA1118",
+      "file": "src/Web/AdminPanel/Auth/AdminLoginService.cs",
+      "line": 200,
+      "column": 17,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "The parameter spans multiple lines (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1118.md)",
+      "execution_log_line": 214
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConnectionServer.cs",
+      "line": 24,
+      "column": 59,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 215
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConnectionServer.cs",
+      "line": 25,
+      "column": 30,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 216
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConnectionServer.cs",
+      "line": 26,
+      "column": 30,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 217
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+      "line": 48,
+      "column": 35,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 218
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+      "line": 49,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 219
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+      "line": 50,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 220
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+      "line": 56,
+      "column": 35,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 221
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+      "line": 57,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 222
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+      "line": 58,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 223
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditAccount.razor.cs",
+      "line": 59,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 224
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 43,
+      "column": 35,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 225
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 44,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 226
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 45,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 227
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 50,
+      "column": 35,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 228
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 51,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 229
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 52,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 230
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 53,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 231
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 54,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 232
+    },
+    {
+      "code": "ASP0006",
+      "file": "src/Web/AdminPanel/Pages/EditConfig.cs",
+      "line": 55,
+      "column": 34,
+      "project": "src/Web/AdminPanel/MUnique.OpenMU.Web.AdminPanel.csproj",
+      "message": "'++currentSequence' should not be used as a sequence number. Instead, use an integer literal representing source code order. (https://aka.ms/aspnet/analyzers)",
+      "execution_log_line": 233
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/EntityFramework/CachedRepository{T}.cs",
+      "line": 40,
+      "column": 76,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 240
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/EntityFramework/CachedRepository{T}.cs",
+      "line": 61,
+      "column": 82,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 241
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/EntityFramework/ConfigurationTypeRepository.cs",
+      "line": 66,
+      "column": 76,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 242
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/EntityFramework/ConfigurationTypeRepository.cs",
+      "line": 112,
+      "column": 82,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 243
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/EntityFramework/GenericRepositoryBase.cs",
+      "line": 65,
+      "column": 76,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 244
+    },
+    {
+      "code": "CS1066",
+      "file": "src/Persistence/EntityFramework/GenericRepositoryBase.cs",
+      "line": 102,
+      "column": 82,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The default value specified for parameter 'cancellationToken' will have no effect because it applies to a member that is used in contexts that do not allow optional arguments",
+      "execution_log_line": 245
+    },
+    {
+      "code": "CS0618",
+      "file": "src/Persistence/EntityFramework/ModelExtensions.cs",
+      "line": 162,
+      "column": 42,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "'IReadOnlyProperty.DeclaringEntityType' is obsolete: 'Use DeclaringType and cast to IReadOnlyEntityType or IReadOnlyComplexType'",
+      "execution_log_line": 246
+    },
+    {
+      "code": "CS0618",
+      "file": "src/Persistence/EntityFramework/ModelExtensions.cs",
+      "line": 164,
+      "column": 128,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "'IReadOnlyProperty.DeclaringEntityType' is obsolete: 'Use DeclaringType and cast to IReadOnlyEntityType or IReadOnlyComplexType'",
+      "execution_log_line": 247
+    },
+    {
+      "code": "CS0618",
+      "file": "src/Persistence/EntityFramework/Json/JsonQueryBuilder.cs",
+      "line": 149,
+      "column": 30,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "'IProperty.DeclaringEntityType' is obsolete: 'Use DeclaringType and cast to IEntityType or IComplexType'",
+      "execution_log_line": 248
+    },
+    {
+      "code": "SA1214",
+      "file": "src/Persistence/EntityFramework/AdminAuth/AdminUserRepository.cs",
+      "line": 38,
+      "column": 35,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Readonly fields should appear before non-readonly fields (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1214.md)",
+      "execution_log_line": 249
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20260813000114_AddSystemConfigurationTimeZoneId.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 250
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20260819100503_AddConstValueAttributeAggregateType.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 251
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20260829211237_AddNetworkObservation.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 252
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20260926142218_AddItemRuleFlags.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 253
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20260926235208_MigrateConfigurationUpdatesToGuidKey.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 254
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20260930044257_AddGensMember.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 255
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20261001002816_AddGensAbuse.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 256
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20261002180754_AddMasterSkillPassivePowerUps.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 257
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 258
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260824171349_InitialAdminPanelUsers.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 259
+    },
+    {
+      "code": "SA1633",
+      "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260829110159_AddApiKeys.cs",
+      "line": 1,
+      "column": 1,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md)",
+      "execution_log_line": 260
+    },
+    {
+      "code": "SA1514",
+      "file": "src/Persistence/EntityFramework/DatabaseConnectionStringHelper.cs",
+      "line": 21,
+      "column": 5,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Element documentation header should be preceded by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1514.md)",
+      "execution_log_line": 261
+    },
+    {
+      "code": "SA1514",
+      "file": "src/Persistence/EntityFramework/DatabaseConnectionStringHelper.cs",
+      "line": 25,
+      "column": 5,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Element documentation header should be preceded by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1514.md)",
+      "execution_log_line": 262
+    },
+    {
+      "code": "SA1202",
+      "file": "src/Persistence/EntityFramework/EntityFrameworkContextBase.cs",
+      "line": 294,
+      "column": 26,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "'internal' members should come before 'protected' members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1202.md)",
+      "execution_log_line": 263
+    },
+    {
+      "code": "VSTHRD200",
+      "file": "src/Persistence/EntityFramework/AdminAuth/AdminUserRepository.cs",
+      "line": 303,
+      "column": 23,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use \"Async\" suffix in names of methods that return an awaitable type (https://microsoft.github.io/vs-threading/analyzers/VSTHRD200.html)",
+      "execution_log_line": 264
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/20261001002816_AddGensAbuse.cs",
+      "line": 23,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 265
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/20260930044257_AddGensMember.cs",
+      "line": 26,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 266
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+      "line": 58,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 267
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+      "line": 83,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 268
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+      "line": 102,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 269
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+      "line": 129,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 270
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.cs",
+      "line": 156,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 271
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260829110159_AddApiKeys.cs",
+      "line": 25,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 272
+    },
+    {
+      "code": "SA1413",
+      "file": "src/Persistence/EntityFramework/Migrations/AdminPanel/20260824171349_InitialAdminPanelUsers.cs",
+      "line": 36,
+      "column": 21,
+      "project": "src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj",
+      "message": "Use trailing comma in multi-line initializers (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md)",
+      "execution_log_line": 273
+    },
+    {
+      "code": "SA1201",
+      "file": "src/Startup/Program.cs",
+      "line": 61,
+      "column": 52,
+      "project": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "message": "A field should not follow a property (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1201.md)",
+      "execution_log_line": 275
+    },
+    {
+      "code": "SA1204",
+      "file": "src/Startup/Program.cs",
+      "line": 671,
+      "column": 42,
+      "project": "src/Startup/MUnique.OpenMU.Startup.csproj",
+      "message": "Static members should appear before non-static members (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md)",
+      "execution_log_line": 276
+    }
+  ],
+  "actions_performed": [
+    "Parsed the existing build log.",
+    "Read bounded first-party image use sites and selected diagnostic locations.",
+    "Verified the five official GitHub advisory records.",
+    "Created sanitized Markdown and JSON reports."
+  ],
+  "actions_not_performed": [
+    "No build or test rerun.",
+    "No dependency change.",
+    "No exploit reproduction or broad security audit.",
+    "No external publication or external write."
+  ],
+  "sanitization": {
+    "repository_relative_paths_only": true,
+    "raw_log_published": false,
+    "credentials_or_database_data_included": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "basis": "filesystem record timestamps minus measured process elapsed time; source hash equality in separate binary identity manifest",
+  "repositorySourceLastWrittenUtc": "2026-10-11T21:32:02.398585+00:00",
+  "runs": [
+    {
+      "command": "build-startup",
+      "recordWrittenUtc": "2026-10-11T21:40:15.915393+00:00",
+      "approximateStartFromElapsedUtc": "2026-10-11T21:35:49.575393+00:00",
+      "elapsedSeconds": 266.34
+    },
+    {
+      "command": "test-web",
+      "recordWrittenUtc": "2026-10-11T21:40:17.105665+00:00",
+      "approximateStartFromElapsedUtc": "2026-10-11T21:39:49.185665+00:00",
+      "elapsedSeconds": 27.92
+    },
+    {
+      "command": "test-core",
+      "recordWrittenUtc": "2026-10-11T21:41:26.934618+00:00",
+      "approximateStartFromElapsedUtc": "2026-10-11T21:40:36.544618+00:00",
+      "elapsedSeconds": 50.39
+    }
+  ],
+  "sourceChangedAfterBuild": false,
+  "runnerCertificateOptOutAddedAfterAllSdkRuns": true,
+  "runnerReexecutedAfterOptOut": false
+}

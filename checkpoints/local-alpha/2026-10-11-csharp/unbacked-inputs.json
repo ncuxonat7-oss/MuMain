@@ -1,0 +1,65 @@
+{
+  "checkpointBacksUpThesePayloads": false,
+  "baselineDatabase": {
+    "run": 38005996341,
+    "artifact": 11651520969,
+    "url": "https://github.com/ncuxonat7-oss/MuMain/actions/runs/38005996341",
+    "archiveBytes": 2091291,
+    "archiveSha256": "b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea",
+    "dumpMember": "gameplay-test-db.dump",
+    "dumpBytes": 1367029,
+    "dumpSha256": "0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478",
+    "state": "not published; existing artifact reference only; current retention not revalidated"
+  },
+  "integrationEvidenceOnly": {
+    "run": 38108874540,
+    "artifact": 11691151847,
+    "sha256": "d50c2194e37544f72d2b10f518f693fe11c9ea6203df4f489512fa6e1033f54c",
+    "containsDatabaseBackup": false
+  },
+  "client": {
+    "run": 37813650810,
+    "artifact": 11567737809,
+    "sourceCommit": "8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5",
+    "outerSha256": "eefe0a710518bc6536dd47cde45fb8605ae4ef5c7f4faca4095e8abb5f23297e",
+    "innerSha256": "ccfcfc6c8d199d3a192a5abf22551926de35aaa88ebeea7c5ef6f905f695e66a",
+    "state": "existing upstream artifact only; not newly backed up"
+  },
+  "oldServerBaseline": {
+    "run": 38104421623,
+    "artifact": 11689365514,
+    "openmuCommit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+    "outerSha256": "505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c",
+    "innerSha256": "4b1b1d71a0aa992fb3f2dbac7e447a5704cccc7ed38ebacfdebe97eabebf1eec",
+    "state": "existing upstream artifact only; not replaced"
+  },
+  "dataAndFonts": {
+    "repository": "ncuxonat7-oss/MuMain",
+    "commit": "7f5b44a930a501dfc7ea4f522584cb59a22c9499",
+    "DataGitTree": "77f7830f542d106fc519c8821832d49a3dd8ae3a",
+    "fontsGitTree": "149f928e2547aa6658977c3f41c63abccfa471ed",
+    "upstreamRelease": "https://github.com/sven-n/MuMain/releases/tag/data-4b0ab29c58b27fc4",
+    "state": "existing Git/release provenance; no new large payload"
+  },
+  "newServerBuild": {
+    "files": 186,
+    "bytes": 132740035,
+    "inventory": "evidence/server-build-inventory.json",
+    "keyHashes": "evidence/key-binary-identities.json",
+    "state": "temporary local binaries NOT backed up; source/patch/test evidence published; rebuilding would need separate approval"
+  },
+  "officialDependencies": {
+    "manifest": "../../../../docs/windows11-dependencies.json",
+    "state": "vendor URLs/hashes/per-file inventory preserved; archives NOT newly backed up"
+  },
+  "sdk": {
+    "manifest": "evidence/sdk-pin.json",
+    "state": "official URL/SHA512 preserved; SDK/archive/cache not backed up"
+  },
+  "privateCertificate": {
+    "state": "excluded; exact path and contents not published; no deletion/trust/export"
+  },
+  "rawLogsAndArchives": {
+    "state": "raw local logs/TRX/checkpoint ZIPs not uploaded; compact sanitized results and hashes published"
+  }
+}

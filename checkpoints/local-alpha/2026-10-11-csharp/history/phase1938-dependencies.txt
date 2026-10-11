@@ -1,0 +1,63 @@
+Official Windows dependency phase — 2026-10-11 19:48 UTC
+
+Completed locally within approved MEDIUM scope. Detailed usage/provenance/limits
+and exact DB proposal are in source/docs/windows11-dependencies.md.
+
+Obtained and verified: official .NET10.0.11 ZIP; official ASP.NET10.0.11 ZIP; official
+PowerShell7.4.20 ZIP; EDB PostgreSQL17.11-3 ZIP; Microsoft VC++14.51.36247.0 EXE.
+No retrieval blocker encountered. Each acquired artifact's exact URL/size/hash and
+provider-hash comparison are recorded locally. No browser route used.
+
+Actually included in control-dependencies-20261011/:
+339 files in dotnet/ (ASP.NET bundle includes both required shared frameworks and
+host; byte-identical full .NET ZIP subset verified, not duplicated),
+924 files in powershell/ (full official self-contained runtime),
+1464 files in postgres/ (selected runtime/setup tools, DLL closure, runtime lib DLLs,
+share and licenses), plus unrun VC++ installer in prerequisites/.
+2728 new files,498614046 bytes: all staged size/SHA256 checks PASS.
+16160 total inventory files,1437915551 bytes.
+
+13432 old game/launcher/provenance files were reused from phase1924's verified
+control, with pinned inventory and file-size/non-symlink path checks. Their content
+was NOT rehashed and prior resource checks were NOT rerun. A same-size old-file
+alteration is not detected by this continuation. Do not claim a new complete
+candidate SHA256 verification. The previous full verification is recorded in
+phase1924-git-merge/integration-result.json; immutable-base preservation and the
+existing full launcher hash gate remain required before future approved launch.
+
+18 NEW dependency tests PASS. tests-dependencies.txt lists exact names/results.
+Final added base symlink guard tested against real recorded paths without content
+rehash or repack. Required dotnet/pwsh/PG launcher executables statically x64;
+static-version-evidence.json confirms runtime version files/PE version resources.
+No Windows executable was run. No install, DB access, rebuild, SDK or standalone
+development tooling added. Existing launcher Add-Type support remains in PowerShell.
+Source packager extended in this phase's source copy; prior source preserved.
+
+Important remaining gates:
+- VC++ installer is downloaded only; approved installation/availability and Windows
+  Authenticode verification remain pending. Its license terms are linked, not accepted.
+- Actual Windows11 loader/API/GPU/dependency/Add-Type/start/stop/persistence acceptance
+  NOT_RUN. Optional PG extension/interpreter loads remain unproven.
+- .NET10.0.12 security update already exists;10.0.11 pin intentionally unchanged.
+  PowerShell7.4 support ends10-Nov-2026. Review support/patch policy before activation.
+- Private persistent DB/setup, credentials/ACLs, independently reconciled migration
+  and configuration identities, final endpoints and approved manifest unresolved.
+- Portable Web UI still unverified; no repair/removal/optional declaration.
+- Dependency notices are included; pre-existing MU/client redistribution rights and
+  notices remain separate unresolved issues. No public redistribution clearance.
+
+Next concrete DB step: prepare for approval an initial setup plan choosing the exact
+known-good snapshot (latest successful integration38108874540, exact backup identity
+to confirm), dedicated new Windows PG17 cluster directory and restricted runtime/
+probe roles. Independently reconcile EntityDataContext/AdminPanelContext migration
+expectations and endpoint/configuration IDs before restoring; define read-only
+post-restore acceptance. No cluster/role/secret/restore action taken here.
+
+launchEnabled=false,approvedLaunchManifestSha256=null. Draft DB/endpoints null;
+no approved manifest, ready entrypoint or runnable-alpha claim.
+Unique source files for separately approved external checkpoint:
+scripts/package-windows11-local.py; tests/windows11/test_dependencies.py;
+docs/windows11-dependencies.json; docs/windows11-dependencies.md.
+Plus this phase's new patch, acquisition/static/test/control evidence and checksums.
+No publication, main/workflow change or external backup. Large binaries/control
+remain only on current host; no large final package ZIP produced.

@@ -1,0 +1,787 @@
+{
+  "artifactPath": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.EntityFramework.dll",
+  "artifactSha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+  "inspection": "PE/CLR metadata bytes parsed using Python standard library; no assembly loading or execution",
+  "migrations": [
+    {
+      "id": "00000000000000_Initial",
+      "migrationAttributeValues": [
+        "00000000000000_Initial"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.Initial",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20221008183306_PetLevels",
+      "migrationAttributeValues": [
+        "20221008183306_PetLevels"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.PetLevels",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20221018194652_Combo",
+      "migrationAttributeValues": [
+        "20221018194652_Combo"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.Combo",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20221121161552_DeleteCascade",
+      "migrationAttributeValues": [
+        "20221121161552_DeleteCascade"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.DeleteCascade",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20221121163220_AttributeRelationship_OperandAttribute",
+      "migrationAttributeValues": [
+        "20221121163220_AttributeRelationship_OperandAttribute"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AttributeRelationshipOperandAttribute",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20221128203249_RemoveConsumeHandler",
+      "migrationAttributeValues": [
+        "20221128203249_RemoveConsumeHandler"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.RemoveConsumeHandler",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20221128204928_AddItemDropDuration",
+      "migrationAttributeValues": [
+        "20221128204928_AddItemDropDuration"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddItemDropDuration",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20221221182248_MuHelper",
+      "migrationAttributeValues": [
+        "20221221182248_MuHelper"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.MuHelper",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20230303185735_ConfigurationUpdate",
+      "migrationAttributeValues": [
+        "20230303185735_ConfigurationUpdate"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.ConfigurationUpdate",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20230306185635_MiniGameExt",
+      "migrationAttributeValues": [
+        "20230306185635_MiniGameExt"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.MiniGameExt",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20230324205415_AddSystemConfiguration",
+      "migrationAttributeValues": [
+        "20230324205415_AddSystemConfiguration"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddSystemConfiguration",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20230504172021_StorageLimitPerCharacter",
+      "migrationAttributeValues": [
+        "20230504172021_StorageLimitPerCharacter"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.StorageLimitPerCharacter",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20230701010432_AddChatBanUntil",
+      "migrationAttributeValues": [
+        "20230701010432_AddChatBanUntil"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddChatBanUntil",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20230724154747_AccountAndMapAttributes",
+      "migrationAttributeValues": [
+        "20230724154747_AccountAndMapAttributes"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AccountAndMapAttributes",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20240602060055_FixItemOptions",
+      "migrationAttributeValues": [
+        "20240602060055_FixItemOptions"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.FixItemOptions",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20240602085237_FixItemOptions2",
+      "migrationAttributeValues": [
+        "20240602085237_FixItemOptions2"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.FixItemOptions2",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20240707081614_DuelConfiguration",
+      "migrationAttributeValues": [
+        "20240707081614_DuelConfiguration"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.DuelConfiguration",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20240714154210_FixSetOptions",
+      "migrationAttributeValues": [
+        "20240714154210_FixSetOptions"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.FixSetOptions",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20240805183034_ExpFormulas",
+      "migrationAttributeValues": [
+        "20240805183034_ExpFormulas"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.ExpFormulas",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20240805184944_FixGameMapMonsterSpawnRelation",
+      "migrationAttributeValues": [
+        "20240805184944_FixGameMapMonsterSpawnRelation"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.FixGameMapMonsterSpawnRelation",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20240816132011_AddAggregateTypeToItemBasePowerUpDef",
+      "migrationAttributeValues": [
+        "20240816132011_AddAggregateTypeToItemBasePowerUpDef"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddAggregateTypeToItemBasePowerUpDef",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20240902181002_AddPvpOptionToGameServer",
+      "migrationAttributeValues": [
+        "20240902181002_AddPvpOptionToGameServer"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddPvpOptionToGameServer",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20241003093659_AddGameConfigurationMaxItemOptLevelDrop",
+      "migrationAttributeValues": [
+        "20241003093659_AddGameConfigurationMaxItemOptLevelDrop"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddGameConfigurationMaxItemOptLevelDrop",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20241018200704_AddAttributeMaximum",
+      "migrationAttributeValues": [
+        "20241018200704_AddAttributeMaximum"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddAttributeMaximum",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20241021134401_AddIncreasableItemOptionWeight",
+      "migrationAttributeValues": [
+        "20241021134401_AddIncreasableItemOptionWeight"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddIncreasableItemOptionWeight",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20241021175011_AddAreaSkillConfiguration",
+      "migrationAttributeValues": [
+        "20241021175011_AddAreaSkillConfiguration"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddAreaSkillConfiguration",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20241204090233_UpdateSimpleCraftingSettings",
+      "migrationAttributeValues": [
+        "20241204090233_UpdateSimpleCraftingSettings"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.UpdateSimpleCraftingSettings",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20250114201231_AddAccountIsTemplate",
+      "migrationAttributeValues": [
+        "20250114201231_AddAccountIsTemplate"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddAccountIsTemplate",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20250228170503_AddMasterSkillDefinitionExtendsDuration",
+      "migrationAttributeValues": [
+        "20250228170503_AddMasterSkillDefinitionExtendsDuration"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddMasterSkillDefinitionExtendsDuration",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20250302164032_AddStoreProperties",
+      "migrationAttributeValues": [
+        "20250302164032_AddStoreProperties"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddStoreProperties",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20250728194753_AddSkillAttributeRelationships",
+      "migrationAttributeValues": [
+        "20250728194753_AddSkillAttributeRelationships"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddSkillAttributeRelationships",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20251019192544_AddAccountLanguage",
+      "migrationAttributeValues": [
+        "20251019192544_AddAccountLanguage"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddAccountLanguage",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20251116031101_AddClampMoneyOnPickup",
+      "migrationAttributeValues": [
+        "20251116031101_AddClampMoneyOnPickup"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddClampMoneyOnPickup",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20251117222914_PreventExperienceOverflowToggle",
+      "migrationAttributeValues": [
+        "20251117222914_PreventExperienceOverflowToggle"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.PreventExperienceOverflowToggle",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20251211145710_AddMagicEffectChanceAndOthers",
+      "migrationAttributeValues": [
+        "20251211145710_AddMagicEffectChanceAndOthers"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddMagicEffectChanceAndOthers",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20251217154940_AddSkillNumberOfHitsPerAttack",
+      "migrationAttributeValues": [
+        "20251217154940_AddSkillNumberOfHitsPerAttack"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddSkillNumberOfHitsPerAttack",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260103173108_AddProjectileCountToAreaSkillSettings",
+      "migrationAttributeValues": [
+        "20260103173108_AddProjectileCountToAreaSkillSettings"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddProjectileCountToAreaSkillSettings",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260202204523_NonNullableLocalizedString",
+      "migrationAttributeValues": [
+        "20260202204523_NonNullableLocalizedString"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.NonNullableLocalizedString",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260320211230_AddGlobalAttributes",
+      "migrationAttributeValues": [
+        "20260320211230_AddGlobalAttributes"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddGlobalAttributes",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260324211344_ExtendAreaSkillSettings",
+      "migrationAttributeValues": [
+        "20260324211344_ExtendAreaSkillSettings"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.ExtendAreaSkillSettings",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260402113000_AddGlobalMasterExperienceRate",
+      "migrationAttributeValues": [
+        "20260402113000_AddGlobalMasterExperienceRate"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddGlobalMasterExperienceRate",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260404225637_AddExcellentItemDropLevelDelta",
+      "migrationAttributeValues": [
+        "20260404225637_AddExcellentItemDropLevelDelta"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddExcellentItemDropLevelDelta",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260405170905_UpdateDaybreakWeaponDimensions",
+      "migrationAttributeValues": [
+        "20260405170905_UpdateDaybreakWeaponDimensions"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.UpdateDaybreakWeaponDimensions",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260425205521_MaximumDropLevel",
+      "migrationAttributeValues": [
+        "20260425205521_MaximumDropLevel"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.MaximumDropLevel",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260627120000_AddAccountIsBot",
+      "migrationAttributeValues": [
+        "20260627120000_AddAccountIsBot"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddAccountIsBot",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260710205741_AddIsQuestItemFlag",
+      "migrationAttributeValues": [
+        "20260710205741_AddIsQuestItemFlag"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddIsQuestItemFlag",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260712014203_AddBuff",
+      "migrationAttributeValues": [
+        "20260712014203_AddBuff"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddBuff",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260723073950_CascadeDeleteMiniGameRankingEntries",
+      "migrationAttributeValues": [
+        "20260723073950_CascadeDeleteMiniGameRankingEntries"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.CascadeDeleteMiniGameRankingEntries",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260730194321_AddCastleSiege",
+      "migrationAttributeValues": [
+        "20260730194321_AddCastleSiege"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddCastleSiege",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260801162427_ConfigureCastleSiegePersistence",
+      "migrationAttributeValues": [
+        "20260801162427_ConfigureCastleSiegePersistence"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.ConfigureCastleSiegePersistence",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260806161456_ConfigureCastleSiegeRegistration",
+      "migrationAttributeValues": [
+        "20260806161456_ConfigureCastleSiegeRegistration"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.ConfigureCastleSiegeRegistration",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260807073826_AddCastleSiegeGuildSelection",
+      "migrationAttributeValues": [
+        "20260807073826_AddCastleSiegeGuildSelection"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddCastleSiegeGuildSelection",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260807142316_ConfigureCastleSiegeRepairCosts",
+      "migrationAttributeValues": [
+        "20260807142316_ConfigureCastleSiegeRepairCosts"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.ConfigureCastleSiegeRepairCosts",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260813000114_AddSystemConfigurationTimeZoneId",
+      "migrationAttributeValues": [
+        "20260813000114_AddSystemConfigurationTimeZoneId"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddSystemConfigurationTimeZoneId",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260819100503_AddConstValueAttributeAggregateType",
+      "migrationAttributeValues": [
+        "20260819100503_AddConstValueAttributeAggregateType"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddConstValueAttributeAggregateType",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260824171349_InitialAdminPanelUsers",
+      "migrationAttributeValues": [
+        "20260824171349_InitialAdminPanelUsers"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.AdminAuth.AdminPanelContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AdminPanel.InitialAdminPanelUsers",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260829110159_AddApiKeys",
+      "migrationAttributeValues": [
+        "20260829110159_AddApiKeys"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.AdminAuth.AdminPanelContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AdminPanel.AddApiKeys",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260829211237_AddNetworkObservation",
+      "migrationAttributeValues": [
+        "20260829211237_AddNetworkObservation"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddNetworkObservation",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260926142218_AddItemRuleFlags",
+      "migrationAttributeValues": [
+        "20260926142218_AddItemRuleFlags"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddItemRuleFlags",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260926235208_MigrateConfigurationUpdatesToGuidKey",
+      "migrationAttributeValues": [
+        "20260926235208_MigrateConfigurationUpdatesToGuidKey"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.MigrateConfigurationUpdatesToGuidKey",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260930044257_AddGensMember",
+      "migrationAttributeValues": [
+        "20260930044257_AddGensMember"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddGensMember",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20260930194102_AddConfigurationUpdateVersioning",
+      "migrationAttributeValues": [
+        "20260930194102_AddConfigurationUpdateVersioning"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddConfigurationUpdateVersioning",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20261001002816_AddGensAbuse",
+      "migrationAttributeValues": [
+        "20261001002816_AddGensAbuse"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddGensAbuse",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20261002180754_AddMasterSkillPassivePowerUps",
+      "migrationAttributeValues": [
+        "20261002180754_AddMasterSkillPassivePowerUps"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddMasterSkillPassivePowerUps",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    },
+    {
+      "id": "20261006212931_AddCashShop",
+      "migrationAttributeValues": [
+        "20261006212931_AddCashShop"
+      ],
+      "contextAttributeValues": [
+        "MUnique.OpenMU.Persistence.EntityFramework.EntityDataContext"
+      ],
+      "class": "MUnique.OpenMU.Persistence.EntityFramework.Migrations.AddCashShop",
+      "extends": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+      "flags": 1048577
+    }
+  ]
+}

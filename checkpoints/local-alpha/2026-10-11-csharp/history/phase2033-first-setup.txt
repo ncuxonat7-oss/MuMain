@@ -1,0 +1,45 @@
+First-setup source phase — 2026-10-11 20:45 UTC
+PARTIAL IMPLEMENTATION; actual deployment blocked before any mutation.
+
+43/43 new first-setup mock tests PASS in existing LinuxPowerShell7.4.20, exit0.
+Separate from earlier40guard tests. Full Windows/PG/credential/ACL operations
+were mocked; no DB utility, server/game, network/permission change or secrets used.
+
+Implemented source: fresh dedicated path/claim refusal; pinned input verification;
+private handoff/ACL preparation; explicit SCRAM init/start/role-definition/freshDB/
+transactional restore functions; bounded utility calls; owned-process stop;
+exact two-flag transaction with postconditions; staged private runtime config,
+read-only acceptance hooks, sealed disabled draft and sanitized failure journal.
+
+INCOMPLETE: full runtime grants. Known game/probe subset is proposal only; full
+setter throws RUNTIME_GRANTS_UNRESOLVED. Hash-pinned policy is blocked and checked
+before path claims/credentials/PG. Actual first setup cannot proceed.
+Source-proven blocker: when AdminUserRepository.EnsureStorageAsync is invoked,
+MigrateAsync generates history CREATE TABLE IF NOT EXISTS; PG17 checks schema
+CREATE before existing-table skip. History UPDATE solves lock only, not CREATE.
+No proof claimed that this optional-admin path runs on every disabled-admin
+startup. Entity/Typed minimum grants also remain unresolved. No DDL fallback.
+
+Static review corrections: exact final flag values/count verified in transaction;
+statement-log suppression preserved at seal, with two tightly constrained keys
+added to Guards.ps1. Final43test run after fixes PASS.
+
+New unique source:
+scripts/windows11/FirstSetup.ps1
+scripts/windows11/SetupMU.ps1
+scripts/windows11/first-setup-policy.json
+tests/windows11/Test-FirstSetup.ps1
+docs/windows11-first-setup.md
+Modified: scripts/windows11/Guards.ps1 (only two exact-safe logging keys).
+No new package integration; oldcontrol/pins preserved. Current packager correctly
+refuses changed guard bytes until separately reviewed pin integration.
+
+Next owner decision: narrowly suppress automatic runtime DDL for explicitly
+provisioned local DB and finish restricted grant contract, before real setup.
+Requires separate approval; no implementation beyond current stage undertaken.
+Alternative disabled-admin exemption requires proof; no assumption made.
+
+Read source/docs/windows11-first-setup.md for exact implementation boundaries,
+conditional source blocker,43test scope and single gated deployment path.
+Detailed pinned-source evidence is retained locally under evidence/.
+No publication/main/workflow/rebuild. launchfalse/null throughout. Not ready.

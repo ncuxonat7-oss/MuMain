@@ -1,0 +1,22 @@
+[
+  {
+    "assembly": "MUnique.OpenMU.Persistence.EntityFramework.dll",
+    "serverBytes": 5968896,
+    "sha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+    "testedCopy": "phase2129-csharp-build/openmu/tests/MUnique.OpenMU.Tests/bin/Release/MUnique.OpenMU.Persistence.EntityFramework.dll",
+    "identicalServerAndTestedCopy": true
+  },
+  {
+    "assembly": "MUnique.OpenMU.Web.AdminPanel.dll",
+    "serverBytes": 921088,
+    "sha256": "8871779377979fdad5c38cda956622653a0de0a79eb9a2fd3a9816746b73d20f",
+    "testedCopy": "phase2129-csharp-build/openmu/tests/MUnique.OpenMU.Web.Tests/bin/Release/MUnique.OpenMU.Web.AdminPanel.dll",
+    "identicalServerAndTestedCopy": true
+  },
+  {
+    "assembly": "MUnique.OpenMU.Startup.dll",
+    "serverBytes": 91136,
+    "sha256": "f82b35ad9151eb75b9eb968ea161e43d8bf1d54ce8e64596c73ab22548e1c7df",
+    "executed": false
+  }
+]

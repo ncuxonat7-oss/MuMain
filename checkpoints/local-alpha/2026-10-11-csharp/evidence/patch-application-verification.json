@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "files": 8,
+  "exactBytesCompared": true,
+  "packagingCorrection": "Initial difflib output lacked no-newline/new-file metadata; regenerated with git diff --no-index, source bytes unchanged."
+}

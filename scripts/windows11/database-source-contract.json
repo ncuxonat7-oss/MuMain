@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "sourceCommit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "runtimeArchiveSha256": "505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c",
+  "baselineArchiveSha256": "b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea",
+  "configurationExportSha256": "8bc79da233fef2b91f703a8189423bbb573830b573b8657b4c7fd21c5467a54a",
+  "configurationIds": [
+    "00000001-0001-0000-0000-000000000000"
+  ],
+  "systemConfigurationId": "00000010-0000-0000-0000-000000000000",
+  "migrationHistories": {
+    "EntityDataContext": {
+      "schema": "public",
+      "table": "__EFMigrationsHistory",
+      "ids": [
+        "00000000000000_Initial",
+        "20221008183306_PetLevels",
+        "20221018194652_Combo",
+        "20221121161552_DeleteCascade",
+        "20221121163220_AttributeRelationship_OperandAttribute",
+        "20221128203249_RemoveConsumeHandler",
+        "20221128204928_AddItemDropDuration",
+        "20221221182248_MuHelper",
+        "20230303185735_ConfigurationUpdate",
+        "20230306185635_MiniGameExt",
+        "20230324205415_AddSystemConfiguration",
+        "20230504172021_StorageLimitPerCharacter",
+        "20230701010432_AddChatBanUntil",
+        "20230724154747_AccountAndMapAttributes",
+        "20240602060055_FixItemOptions",
+        "20240602085237_FixItemOptions2",
+        "20240707081614_DuelConfiguration",
+        "20240714154210_FixSetOptions",
+        "20240805183034_ExpFormulas",
+        "20240805184944_FixGameMapMonsterSpawnRelation",
+        "20240816132011_AddAggregateTypeToItemBasePowerUpDef",
+        "20240902181002_AddPvpOptionToGameServer",
+        "20241003093659_AddGameConfigurationMaxItemOptLevelDrop",
+        "20241018200704_AddAttributeMaximum",
+        "20241021134401_AddIncreasableItemOptionWeight",
+        "20241021175011_AddAreaSkillConfiguration",
+        "20241204090233_UpdateSimpleCraftingSettings",
+        "20250114201231_AddAccountIsTemplate",
+        "20250228170503_AddMasterSkillDefinitionExtendsDuration",
+        "20250302164032_AddStoreProperties",
+        "20250728194753_AddSkillAttributeRelationships",
+        "20251019192544_AddAccountLanguage",
+        "20251116031101_AddClampMoneyOnPickup",
+        "20251117222914_PreventExperienceOverflowToggle",
+        "20251211145710_AddMagicEffectChanceAndOthers",
+        "20251217154940_AddSkillNumberOfHitsPerAttack",
+        "20260103173108_AddProjectileCountToAreaSkillSettings",
+        "20260202204523_NonNullableLocalizedString",
+        "20260320211230_AddGlobalAttributes",
+        "20260324211344_ExtendAreaSkillSettings",
+        "20260402113000_AddGlobalMasterExperienceRate",
+        "20260404225637_AddExcellentItemDropLevelDelta",
+        "20260405170905_UpdateDaybreakWeaponDimensions",
+        "20260425205521_MaximumDropLevel",
+        "20260627120000_AddAccountIsBot",
+        "20260710205741_AddIsQuestItemFlag",
+        "20260712014203_AddBuff",
+        "20260723073950_CascadeDeleteMiniGameRankingEntries",
+        "20260730194321_AddCastleSiege",
+        "20260801162427_ConfigureCastleSiegePersistence",
+        "20260806161456_ConfigureCastleSiegeRegistration",
+        "20260807073826_AddCastleSiegeGuildSelection",
+        "20260807142316_ConfigureCastleSiegeRepairCosts",
+        "20260813000114_AddSystemConfigurationTimeZoneId",
+        "20260819100503_AddConstValueAttributeAggregateType",
+        "20260829211237_AddNetworkObservation",
+        "20260926142218_AddItemRuleFlags",
+        "20260926235208_MigrateConfigurationUpdatesToGuidKey",
+        "20260930044257_AddGensMember",
+        "20260930194102_AddConfigurationUpdateVersioning",
+        "20261001002816_AddGensAbuse",
+        "20261002180754_AddMasterSkillPassivePowerUps",
+        "20261006212931_AddCashShop"
+      ]
+    },
+    "AdminAuth.AdminPanelContext": {
+      "schema": "admin",
+      "table": "__EFMigrationsHistory",
+      "ids": [
+        "20260824171349_InitialAdminPanelUsers",
+        "20260829110159_AddApiKeys"
+      ]
+    }
+  },
+  "endpoints": {
+    "game": [
+      {
+        "port": 55901,
+        "published": 0
+      },
+      {
+        "port": 55902,
+        "published": 0
+      },
+      {
+        "port": 55903,
+        "published": 0
+      },
+      {
+        "port": 55904,
+        "published": 0
+      },
+      {
+        "port": 55905,
+        "published": 0
+      },
+      {
+        "port": 55906,
+        "published": 0
+      }
+    ],
+    "chat": [
+      {
+        "port": 55980
+      }
+    ],
+    "connect": [
+      {
+        "port": 44405
+      },
+      {
+        "port": 44406
+      }
+    ]
+  },
+  "migrationAssembly": "MUnique.OpenMU.Persistence.EntityFramework.dll",
+  "migrationAssemblySha256": "f05e117d596f6bb74f953d8b4cbe83c73c0b30a6acf94876b6e8619bf92f1042"
+}

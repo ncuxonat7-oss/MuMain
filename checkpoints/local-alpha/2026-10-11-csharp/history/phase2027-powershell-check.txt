@@ -1,0 +1,35 @@
+Approved LOW PowerShell mock check and disabled candidate integration
+2026-10-11 20:30 UTC — completed locally
+
+Actual existing40mock cases PASS, exit0. No source/test repair was needed.
+Official portableLinuxPowerShell7.4.20 archive72,533,071bytes verified against
+provider SHA256ed8008345c7f5337f5e293145f5e243ce132e5ee4dfc24ac551c45a4b3092181.
+Safely unpacked671members/185,160,327bytes in workspace, no system installation.
+First invocation failed before tests due to read-only default cache path(exit134).
+One retry with process-local workspace XDG directories passed40/40 within60s.
+Both logs preserved. No apt/root/PATH/dependency change, DB or Windows execution.
+
+Fresh candidate: control-database-guards-20261011/
+16,161inventory entries;1,437,924,984payload bytes.
+Exactly Database.ps1 and Guards.ps1 replaced; database-source-contract.json added.
+All3staged byte identities verified against the same tested source. Existing
+16,158other entries reused without rehashing contents; no fullhash certification.
+Previous phase1938inventory/status hash identities verified unchanged.
+
+Existing packager extended with one narrow --database-guards continuation mode,
+exact base inventory/status and3source pins, using existing guarded copy helper.
+Updated inventory, local-overlay provenance and draftmanifest schema2. Known
+histories/config IDs/endpoints populated; roles/pgpass/systemIdentifier staynull.
+No approved manifest. launchEnabled=false/approvedLaunchManifestSha256=null.
+
+DB first-setup creation/restore procedure remains NOT_IMPLEMENTED.
+No DB/cluster/roles/grants/secret/ACL/config mutation. Baseline flag mismatches
+AutoUpdateSchema=true and ReadConsoleInput=false remain unmodified.
+Actual PostgreSQL/Windows acceptance and private setup still require next phase.
+No game/server build/run, gameasset test replay, main/workflow/publication.
+
+Small checkpoint is local only; Linux runtime and large control are not included.
+Changed source relative to prior guard phase: existingpackager, updatedguarddoc,
+new integrationdoc. The same3guardfiles and unchanged40testharness are retained
+in checkpoint for exact review/recovery. See checkpoint-files.json and
+integration-result.json for verified bytes/results and acknowledged limits.

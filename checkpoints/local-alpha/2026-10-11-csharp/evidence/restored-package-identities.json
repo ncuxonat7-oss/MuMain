@@ -1,0 +1,827 @@
+[
+  {
+    "package": "anglesharp",
+    "version": "1.1.2",
+    "sha512Base64": "SQQVQyPEH45c5dcC/zHd/jwTG+o2eKbp5/qyVrNpq3KSPgCa33a0M/T0mVk4uqRUys5FQ3aq84p1/8ZEVeYNHw=="
+  },
+  {
+    "package": "anglesharp",
+    "version": "1.5.0",
+    "sha512Base64": "pTnSjneR5PRsVz1MoGF3PcEfY3+wTXCd3AbIQPFsOMtjcs1IzwC1KDvv4xYo5YZzYab7OMTkSDkCt6dzWOA79w=="
+  },
+  {
+    "package": "anglesharp",
+    "version": "1.7.0",
+    "sha512Base64": "hoxs5nRlddnKfSKyS2en4KWC6z5cGUukcyfim5poibiXaDvQg9a/ebLFUDY9Ovyy74GKyjtSnb9+1FNZo7EYWw=="
+  },
+  {
+    "package": "anglesharp.css",
+    "version": "1.0.0-beta.144",
+    "sha512Base64": "AS57R70HkIiwxvH8vUr/4Gz2D168oUg57l+FmfrVf73PIEBCp2jxtqFAoAqCXUBO04w3nn8vhn0taxveXtsLfg=="
+  },
+  {
+    "package": "anglesharp.css",
+    "version": "1.0.1",
+    "sha512Base64": "bUIez0BEAAhqrZvVEizoRMh0G8OoOhuk3K23uaHmUMCM4fCQNl+3BZ82x/rCFelQDLnSWp2PBwlITptfUhZoLA=="
+  },
+  {
+    "package": "anglesharp.diffing",
+    "version": "1.1.1",
+    "sha512Base64": "PHWHNOzhL4chOoGKZU26iFx8G9wEqdNbEUWirPCct0m3dkz4rnr5jixND2cuPjp46t1yemoF+rnAKRT4w0qdKw=="
+  },
+  {
+    "package": "bcrypt.net-next",
+    "version": "4.0.3",
+    "sha512Base64": "F9OGUY7hD2StKLM5OAWh/SbeYf7NSOyebkUbdf1pSG1qYtAErrmPquwwJpDp7RjXUXHvOUkwa4z1/ojhKNGdxw=="
+  },
+  {
+    "package": "blazorinputfile",
+    "version": "0.2.0",
+    "sha512Base64": "CDm7FLRqDf7C7N3fwlw1Y+HPViS9e60vvnIw03oqCj1kRYmjI1lvDuQ4RRlRn051vbupKN1wfs8l3REYOyiI7g=="
+  },
+  {
+    "package": "bunit",
+    "version": "2.9.0",
+    "sha512Base64": "36rGq7eZ9G+sbDBeR+JhAmG6jH0FNybyn22QFSM62HsSKRef5lrS2Z8Ge+eJ4n6PYbNpx5jljFFg+ITKcdXyCg=="
+  },
+  {
+    "package": "castle.core",
+    "version": "5.1.1",
+    "sha512Base64": "N4oUnr+qEtAMs1vK7ogGgD33vHWYDJ4MZ/NuPgV9avKrrq0kzYJ0qVlcesdMuVl8nWkTsRJbhuaxVqZvehrC+g=="
+  },
+  {
+    "package": "humanizer.core",
+    "version": "2.14.1",
+    "sha512Base64": "yzqGU/HKNLZ9Uvr6kvSc3wYV/S5O/IvklIUW5WF7MuivGLY8wS5IZnLPkt7D1KW8Et2Enl0I3Lzg2vGWM24Xsw=="
+  },
+  {
+    "package": "mapster",
+    "version": "7.4.0",
+    "sha512Base64": "e+7Vqu/4Wz1SOJcicxGbYL6QkOnD5f2NQgf/wn1ZnwbQsoCI46bZLuIGDWkf28jx3vgOPrJbUEs/rCFnQ7lNbw=="
+  },
+  {
+    "package": "mapster.core",
+    "version": "1.2.1",
+    "sha512Base64": "QKEVk4gBry+UpIelsxPdAcXRVY2ga9QQ0XX3mcEIPrO9gN9wZYGDvWGu/kIZH4YyB0ZQb9eKTXc17JY5EtQEwQ=="
+  },
+  {
+    "package": "mathparser.org-mxparser",
+    "version": "4.4.2",
+    "sha512Base64": "yJPUo9ZZnfdhE5bSk7apJRwDurbSbUiIjB2W/SOwE2wXBuMzQCZsAPHzMFkTJhXPnnHsWJXZeQYpK36qZcS+Mg=="
+  },
+  {
+    "package": "microsoft.aspnetcore.app.internal.assets",
+    "version": "10.0.12",
+    "sha512Base64": "fCG8AplzhdByuZbdL+cdbxdwkLaOm5SQEyhIczrsvdhD3heFAXmSpKYaoePyZKcgtDO9e58sxEUq49s2xkBglw=="
+  },
+  {
+    "package": "microsoft.aspnetcore.authorization",
+    "version": "10.0.10",
+    "sha512Base64": "Xbphnj4gm9XPyGLa/ZZ6+WkJP89YnlfkxKkc0joinT6xaNHbd27rOlQI8XU89xqgH5AlCii/ta7BnAOjlFczgQ=="
+  },
+  {
+    "package": "microsoft.aspnetcore.authorization",
+    "version": "10.0.2",
+    "sha512Base64": "STvaXR33lEHeFgKp3MS3Rrw8mf6Xv1Fn2iTxF2F8bkd72SV1fOyihwOA4f0G15bKmIbQdysro9Trsg5z0CGsLA=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components",
+    "version": "10.0.10",
+    "sha512Base64": "0WmKlAtXYGkDk+WZHaZzZ00/RrXRsFLABiU30AE6ZbvnbEvi/H78zFa4GP4Ms0DU0F0R0lDeqKMYRPUX+cRlLQ=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components",
+    "version": "10.0.2",
+    "sha512Base64": "rdZ3aXL2Q3+qOb6qwlIUMPnn9mBC3ywo+JjuViJ0+0O3UhUFd5Vt9m5zabZq8Uhv1LLA0sICk1qRXbGGrOr0Tg=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components",
+    "version": "3.1.0-preview3.19555.2",
+    "sha512Base64": "7rLrp+omfVgynIpkuEuEuw+cFRtS5YvoOM4rLKVh+8uaBdAhf4GeS+0D7Is2UxhF12RAdvGIW/IYYR2FmhFtWw=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.analyzers",
+    "version": "10.0.10",
+    "sha512Base64": "AfYjmBcR2vmQCL4s24jjnR2+dccycNN+3uiUX2jioGV6719SsKcNcSRUfudR9hcSK9AhQzoPdJJAy+3ZGj2vdQ=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.analyzers",
+    "version": "10.0.2",
+    "sha512Base64": "bTCvFCPflK7r9itwSM0/SdAVqdY7tfPGMd/KjVZrKxz3yx4m9G1Lj2h6cGYKHd3/fPWS28fwFHf6tIYW+f+9ZQ=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.authorization",
+    "version": "10.0.10",
+    "sha512Base64": "H5O/WLPj1GJfTaUjbcVdQJi8O+7sOQ+dc7PcZMXYzVsL/8oim/S6z4fj4g6oIpRLKxNYnzl7mDB/jZnAm1+IqA=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.forms",
+    "version": "10.0.10",
+    "sha512Base64": "/ZYYmdKObLN8WR/hT1mPfZg0wZd6wE/eaBLQXdI8HZOdRmY3BfgOJp0p8b9RPx49xgDpLarYtf4Y8sWF/8k5bg=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.forms",
+    "version": "10.0.2",
+    "sha512Base64": "zbg3LOjg5Vql/yGP99uT7VaRMHSK9l5e2H9A2ruYsIP6JeYmBahN9hBeheg3bCH83yz24ulCLEy/VLxF1+thhg=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.quickgrid",
+    "version": "10.0.2",
+    "sha512Base64": "pSDtzsa+ShYJDAhk6Q9CZPGRyVJ+J1iCIXfOGBnM6MhnAVyZ/rRdfvrOMItXcuJmtmizx3O9nXa0LEssxcBMkg=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.web",
+    "version": "10.0.10",
+    "sha512Base64": "UnmS5cxlz0twqQV0j3L/t5HHIeqfzvlCu+C2rgF2UpwR+wUeHzN6uivDrwj5zecTjh5aWEC6HCwifWNIyX86Gw=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.web",
+    "version": "10.0.2",
+    "sha512Base64": "Ved1N2SvDBLyUMB6iBlwYzmgRZPRQUz+0SIhbbCRForWHfp5P45sCT9jxqNShx/GesN99fxxBSD6FR8a060KGQ=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.web",
+    "version": "3.1.0-preview3.19555.2",
+    "sha512Base64": "kyrz3sBxn60JNoWhsrru7SkEE50zp7vs83S/0A5I7Zbis//M25ccnzM/K6M0BXZk4/ywhSbKrVVc2WRyqGmMuQ=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.webassembly",
+    "version": "10.0.10",
+    "sha512Base64": "IjHrw3iqM021rF2T6QeVsj6ynBJV2LhyrMdHUNk3PBbi+sBbMtXDobZZ9tCwvlCChx6voggnfggbxI+Gl9/o4w=="
+  },
+  {
+    "package": "microsoft.aspnetcore.components.webassembly.authentication",
+    "version": "10.0.10",
+    "sha512Base64": "LqxyqldHYycCEGWOYfJsbLuLhfKIMkGIgHuhXOaENl+XknOb8qDm/F8eAus0qpt7zY2VHk2pW2y2wahYHnXJNQ=="
+  },
+  {
+    "package": "microsoft.aspnetcore.metadata",
+    "version": "10.0.10",
+    "sha512Base64": "X4C8Couk2W3PVj2ju4dpXAIUvGGAuvQCan+hpOq5lLLDewbEhfu9lPjd4aGr3JjDdrT2Oran6jrXf1DgS3QB7Q=="
+  },
+  {
+    "package": "microsoft.aspnetcore.metadata",
+    "version": "10.0.2",
+    "sha512Base64": "rN62rUjgnKZeaSrrA5aNu/K9G3RlR6JGMYDUvZ/xTlo4YwtnPx/igRHmMONNBJuWg01dCzwyKrTavBBW2a9Umg=="
+  },
+  {
+    "package": "microsoft.build.framework",
+    "version": "17.11.31",
+    "sha512Base64": "AJhJajWEn24D9qRmKJXLAldRm3DvKitOQlhzQ4RxmO2h4h4mvN7+Y0nsx9nJflyCYf7LZdn74XbMowXxLe4ksQ=="
+  },
+  {
+    "package": "microsoft.build.framework",
+    "version": "18.0.2",
+    "sha512Base64": "cmXoGncAIrDZgu0NumtXJSTILv9NHU2sPhrlkckefMK1XCuJUrvClVxkmvQDpvm4sCKwSFolW2AanGCLNJ6xDw=="
+  },
+  {
+    "package": "microsoft.codeanalysis.analyzers",
+    "version": "3.11.0",
+    "sha512Base64": "tP9SLzLK72XCExlh8KXfrKbU6ycmZL3ExGl/a3Ml7LNy2Uaam7gFjjUmdzyTYkMXTyckCHHpzx7bD6BMumh8Bg=="
+  },
+  {
+    "package": "microsoft.codeanalysis.common",
+    "version": "4.14.0",
+    "sha512Base64": "k9AIzOrtcZVqr9+lmcEW0vY80emyXx5JB/757K0HUF96GeUeiTD+djOlFF2y7k4XPZo20Lru4tDgQos+VKBr0w=="
+  },
+  {
+    "package": "microsoft.codeanalysis.common",
+    "version": "5.0.0",
+    "sha512Base64": "uK5yslTJQ2UznzYlttFuDCa/6KruN1aQW/ZNFFHvK+yyA6q7vZ5o0BSPvLj+Com1/R7wGJ07c2O0lPcbDrmQdw=="
+  },
+  {
+    "package": "microsoft.codeanalysis.csharp",
+    "version": "4.14.0",
+    "sha512Base64": "kqS2NihVvNQHxzLePtyYiiJmFzoYO9Wm46O9DhfUgIIf5NwTbvSy66kV9EM+qAHmGpi7zQy4w8JU6DFnPlAyTA=="
+  },
+  {
+    "package": "microsoft.codeanalysis.csharp",
+    "version": "5.0.0",
+    "sha512Base64": "wwT/CJOQyQ72Ldouy7gjS/3Vi92hbAAoU3Y0e/6mb39+Vp7aXr3PxuBD73U2QrK1zzgTyv3QhvJPrQX0EiWS8Q=="
+  },
+  {
+    "package": "microsoft.codeanalysis.csharp.workspaces",
+    "version": "5.0.0",
+    "sha512Base64": "Fy0BNxco9b7XC7LKdTgq+Kk62HKapyEM05LN5ua3Nt6PZ4pzfAAh+9Dg/VW4aSflgYoiQw/mjnotgUuM9NP6Kw=="
+  },
+  {
+    "package": "microsoft.codeanalysis.workspaces.common",
+    "version": "5.0.0",
+    "sha512Base64": "zbKJyIkFW+2Bx5eQl/IWBLmbPTpo9/UyAbt8vaVTXsoi4EYlXrJftCRZmUsmyQP7pg3qKMiR6czPdUjTadNkhA=="
+  },
+  {
+    "package": "microsoft.codeanalysis.workspaces.msbuild",
+    "version": "5.0.0",
+    "sha512Base64": "x/hX68Lh4dLGqcKOMrLUuWzfVETm7ciwqw8tG8x67bVCHCOFiPM8Xj4r/ZjBFgX6IVDnzttAoJWnVHHmMg/Hrg=="
+  },
+  {
+    "package": "microsoft.codecoverage",
+    "version": "18.0.1",
+    "sha512Base64": "0bzrz+vR49E/jtdBySXaJSPP4plwnMHE2qsyJZgZJuDdIOtLUFswInVa7krxIVz2ur6KJZFdTPXr3WMXfgnDNg=="
+  },
+  {
+    "package": "microsoft.entityframeworkcore",
+    "version": "10.0.0",
+    "sha512Base64": "xrP1Pjc/6Z5pQ75pyjUc0D1mz1BnkzQ4lscUODF/J8bj3BXTr6hd7CBJZtKcigQJc54nC1AO/1traUGk7Zqlyg=="
+  },
+  {
+    "package": "microsoft.entityframeworkcore",
+    "version": "10.0.2",
+    "sha512Base64": "5z02PWJVZcwI5OUV/6k3NGUbyl3UQLcG37RRrjUEWbFI7tUutsdiHzck8IdvnNpAx7muj66tyFU8yL3DK/Q++A=="
+  },
+  {
+    "package": "microsoft.entityframeworkcore.abstractions",
+    "version": "10.0.2",
+    "sha512Base64": "jy8sAMDDefclvgHDwa4CFTYp3zmbLc5LQ162aF122fgSLIxM0c0cT6I6+1nLBy63Q10xRgKGDlaDRbmPJHTJoQ=="
+  },
+  {
+    "package": "microsoft.entityframeworkcore.analyzers",
+    "version": "10.0.2",
+    "sha512Base64": "GRccgtGEGPQAkpns9czIvVo78TBt2mF4D4O5aX4JewquwZfZquFy9C4YfusxvNspD/XJ0uoiwhQp7f/Xt03c1w=="
+  },
+  {
+    "package": "microsoft.entityframeworkcore.design",
+    "version": "10.0.2",
+    "sha512Base64": "aKNCPqHuWLMiJHFKSUc1zAfJ2WxV9/rbTVbSYdZRc0J56nTVKkjiQ6wHPRBkqUGeJjWs6Z51PSltDTM7C/Ra1w=="
+  },
+  {
+    "package": "microsoft.entityframeworkcore.relational",
+    "version": "10.0.0",
+    "sha512Base64": "3GiOKC1RPbRgLeurkZuJud9FN9kEFuUftfgnYClymhr+LyvW13vCwFJwXcYg1a3MYfnbtuEfQAQsZHixg6CKWg=="
+  },
+  {
+    "package": "microsoft.entityframeworkcore.relational",
+    "version": "10.0.2",
+    "sha512Base64": "gGMRevLpzDupV6EDemVzHYyL1K5zPpyGwp3MriNTbKyBbI2rWGxKQ8Hkns7OGJOox+PXF9mG91TvhmkdSDS+RA=="
+  },
+  {
+    "package": "microsoft.entityframeworkcore.tools",
+    "version": "10.0.2",
+    "sha512Base64": "4yfPscDv5U0ioJXpMCKMtRjixFtTtuRGanIFOt6OlvyCeoLl2sAq8sk9DZkxATZ0R2GCm28whsl77CAZQtAv3w=="
+  },
+  {
+    "package": "microsoft.extensions.caching.abstractions",
+    "version": "10.0.10",
+    "sha512Base64": "AoWKbx6BTS/LpVBqHl4bwSUYb+duiSNdBzsNyoTGKALmaA5sE62KwHrFtjWKBpHPRzyAEiwGKnrIrlV9elp6Ww=="
+  },
+  {
+    "package": "microsoft.extensions.caching.abstractions",
+    "version": "10.0.2",
+    "sha512Base64": "AwaEa4NvHd2NQGUkGWxdsBTveLRAdGcIqX3+6KsqGOKQjH7GgpcHNK+wBgIelyuUF7j6di2YF/9i8ubT8GWRVQ=="
+  },
+  {
+    "package": "microsoft.extensions.caching.memory",
+    "version": "10.0.10",
+    "sha512Base64": "3bvsDZpsST9b6uEKFEbiRmShf5qOW2lMbP0xXujD8ZSQrFH1q7tiS9Uf0UzaOB1RW8/38aTTqu8G9Ynqj6ft9A=="
+  },
+  {
+    "package": "microsoft.extensions.caching.memory",
+    "version": "10.0.2",
+    "sha512Base64": "7nLN4h4MJRWNG5DRutPMer3MmqFZjY/R8pxx05A02ZD7SMZ4oPtzIeOjNC/6QOE9OPWBRLoqzQKNOlTH+XtSlg=="
+  },
+  {
+    "package": "microsoft.extensions.configuration",
+    "version": "10.0.10",
+    "sha512Base64": "lDwJ1rdZlj3UAb2PPD1/l0RDauEVfvk4EKjKyCPj7QlqUYFzJ6+t3FdB5UGRLUk9BT1WbNiY5vhig5jHJkmBsw=="
+  },
+  {
+    "package": "microsoft.extensions.configuration",
+    "version": "10.0.2",
+    "sha512Base64": "SPZvhXqebipj30tMwHo3dXXHVb95AMPrdDED2/bn7B3JBG7uanosWwoBDiJN5mJS4jlXBKdmpfFs9X2/EUkrmA=="
+  },
+  {
+    "package": "microsoft.extensions.configuration.abstractions",
+    "version": "10.0.10",
+    "sha512Base64": "e/TNbyXX4DDjZsyctZO3mokPNH31mAYsDSAwzbYtI/Rl9pzN/H6D0+cJ/L4S7cS9SvaCKcLYiSFqqE69Q6axYg=="
+  },
+  {
+    "package": "microsoft.extensions.configuration.abstractions",
+    "version": "10.0.2",
+    "sha512Base64": "XyvdrvvRZDTJfdi4Tqi4hnu4kfMglkV4BInJshzoSZHCcjVkIglL0mNqIl53kUKsfjqcFFcoLqmtD7xu2bNMyA=="
+  },
+  {
+    "package": "microsoft.extensions.configuration.binder",
+    "version": "10.0.10",
+    "sha512Base64": "I0FLveB0o+SUhIdIgj2MokskKjkVuqd9lsj4JRtzznPDKYEybmZzgpHvMDwMK19LKTPBN0G/XOWuEG7rrK8GwA=="
+  },
+  {
+    "package": "microsoft.extensions.configuration.binder",
+    "version": "10.0.2",
+    "sha512Base64": "K/wk/DWF0UVpTU9LS0PHSqSqK+ZP6AUFWzdVpFKFLyomQzdYB2Y3R+cHcig1gUcFyJSCLTshNw+PT0bfEqpWqw=="
+  },
+  {
+    "package": "microsoft.extensions.configuration.fileextensions",
+    "version": "10.0.10",
+    "sha512Base64": "Dqf7VxyBnhzTcf0h8FMjMwyDUAUKeLOQUDT9fFNQTujEN9AuEJtkSQ5YykBnJ6Xah0mJjpaUYHVVWMwKTgTz9A=="
+  },
+  {
+    "package": "microsoft.extensions.configuration.json",
+    "version": "10.0.10",
+    "sha512Base64": "FSIyn156zoJw07adGXPF2aMv3+3m+AULME40mhbf2PCwjfweYUMTn8WaPOTgtysvRUzD1hwCyT5TtAEsnaZ4eQ=="
+  },
+  {
+    "package": "microsoft.extensions.dependencyinjection",
+    "version": "10.0.10",
+    "sha512Base64": "hijuwcJvJ6eVbuzz0EaP3YZQOYJncPJn+aTuvo15SeN9HCmLhbinOoc9mgT99eUOWTDgKJ88SCQTewVD/g57DQ=="
+  },
+  {
+    "package": "microsoft.extensions.dependencyinjection",
+    "version": "10.0.2",
+    "sha512Base64": "a0qWRfI2NJcpAt8NslxfZB4Wka69sahVABWH3AdIwYzfTu36dR504GqmxFn0qnm/1VQWYZZKWHIDhSHsLYOOwQ=="
+  },
+  {
+    "package": "microsoft.extensions.dependencyinjection",
+    "version": "9.0.0",
+    "sha512Base64": "PNP5OcBBlBw9bxheCw4ppRnJpWHWFxbEV02O9Ee+0Kn3h1CPiHgMU7qekUKq+SYUcCRQB4TaiPOVWgQaU1D4zw=="
+  },
+  {
+    "package": "microsoft.extensions.dependencyinjection.abstractions",
+    "version": "10.0.10",
+    "sha512Base64": "xArycDUtAEn73bZAPrC1IG8LYxh2AUboCTqZcrKrll16UhOijkc3QnEuVPersojqt6RmWbQcdCbUVOzuSpMerA=="
+  },
+  {
+    "package": "microsoft.extensions.dependencyinjection.abstractions",
+    "version": "10.0.2",
+    "sha512Base64": "K2USqpXtl4t4m6kXiDlII2vl3DU/D9QUgHe1HmPG4N1q0b6c60YU+UIioHpVnsr9T8WTUgomzqg1YZBT4DwkDA=="
+  },
+  {
+    "package": "microsoft.extensions.dependencyinjection.abstractions",
+    "version": "9.0.0",
+    "sha512Base64": "YtacWR8fUzkwus7vltE1YsRvOiVO3aIHrt4534aqNEwMoTOJtyrbwD+UOxINuUXASURVHZoXFl+CCrC/7Jt+Kw=="
+  },
+  {
+    "package": "microsoft.extensions.dependencymodel",
+    "version": "10.0.0",
+    "sha512Base64": "xv3DeOEZ4RO+sYdkexiuwMcdmkerW5dehJcihhstyiNPRh1Ph7DuB9LI1a74ElqjfeJ7vW4bd8LdrOStiHtWYA=="
+  },
+  {
+    "package": "microsoft.extensions.dependencymodel",
+    "version": "10.0.2",
+    "sha512Base64": "tDj++rsXQ+cQWxnS0ASs3gGWAs5I47AX1qkiTxA9wwj1Va0V7clG/25KXE6nrwr5RbnZLDoQlvtgWvKCB/jlfw=="
+  },
+  {
+    "package": "microsoft.extensions.diagnostics",
+    "version": "10.0.10",
+    "sha512Base64": "76ZfDfwZumYIBQ+H2cnMM6BrXBBbIH18QlnSgPOjYlP3o4D+/GyWQa2ZKf3L/14AtIhvEjmWmMxxbWXOgTG+Yg=="
+  },
+  {
+    "package": "microsoft.extensions.diagnostics",
+    "version": "10.0.2",
+    "sha512Base64": "WrcK00SO41tNHiAgEe4Q4HOLa+L8eYYcZP+6qti53XYmsS7NwqK/H0kEDz2stKNTrsv1XQyKAHfEI0Rf4I22ew=="
+  },
+  {
+    "package": "microsoft.extensions.diagnostics.abstractions",
+    "version": "10.0.10",
+    "sha512Base64": "sWPhHd1eEM601Akc++NaJKYcpwop1I2Yjpykj16aeZtA4cd1JwH39406WGsXh1B1gTV+SigTqPVhvpy4Cju0rw=="
+  },
+  {
+    "package": "microsoft.extensions.diagnostics.abstractions",
+    "version": "10.0.2",
+    "sha512Base64": "wgHJsprsoprYmumreVb9HGlsFQRFcgSB/XjzxL8eNolfHe4hof0un48JQjwI5rIiAesCOAgYwCHWvKhN20WILQ=="
+  },
+  {
+    "package": "microsoft.extensions.fileproviders.abstractions",
+    "version": "10.0.10",
+    "sha512Base64": "bzg2PR7uwwNMG8/5BYspXxnE8m6c7arsZxrz+iLSEuZx24yrBojdsBYJyFCgbQwsWxAxdvhi9/fcq6FkgdUcUQ=="
+  },
+  {
+    "package": "microsoft.extensions.fileproviders.abstractions",
+    "version": "10.0.2",
+    "sha512Base64": "uyplEpSbAYG1OgkRGlSTrvUtaACy5VdWNm6px9sS5rmf7X4SAzD2J4nQwmbdO1QWxVl1hllBbATjp4MjQhWwgg=="
+  },
+  {
+    "package": "microsoft.extensions.fileproviders.physical",
+    "version": "10.0.10",
+    "sha512Base64": "9i0tZxylK+5r+OJShT2EqdV1+4fYoE6d2Y6luyXoa6HG+RLRBCynoESrZLh5cF1FimLxdtscpCJPrAbNUhAqvQ=="
+  },
+  {
+    "package": "microsoft.extensions.filesystemglobbing",
+    "version": "10.0.10",
+    "sha512Base64": "GUnnwojYhLX/bStKVNRo/6QvAoX6sHhqXVj6R6fw9dqqOkkarQkvMdB9GQyifMJfYy26DI0l0tRL3zIFjt0E1Q=="
+  },
+  {
+    "package": "microsoft.extensions.hosting.abstractions",
+    "version": "10.0.2",
+    "sha512Base64": "ANlcmMM3fJS3OIdlbch6qNURlOLZXBKnbhgT05T0/i4cDok5L6byizYdfjbk7WlgFDPwS7kYaOBQ7typC0IqXQ=="
+  },
+  {
+    "package": "microsoft.extensions.localization.abstractions",
+    "version": "10.0.10",
+    "sha512Base64": "aiZEMAf/Tw7OPJTQFqMpJ7bvCHDZFk3zyFwUqbuRRwLFqaeqcHErBuCf/nqlf12EIXrDwUL4NzincchfiHLBGA=="
+  },
+  {
+    "package": "microsoft.extensions.logging",
+    "version": "10.0.10",
+    "sha512Base64": "UmHJqv9rg7s6gG79kc+ze+1/6Ptf2ZD+QfC7a3cr8prIMgxoNxtQ+4rn2OwzlEKOq0ci3B7G1yAVuhZjUZVnEA=="
+  },
+  {
+    "package": "microsoft.extensions.logging",
+    "version": "10.0.2",
+    "sha512Base64": "/hZJjan+rk5NBZc59q1ZEWPkonV+tFTYRi29fPSXJSW7megThl3823vqWh0MxmIQh4d65RXB0MHaItbQCL4yzg=="
+  },
+  {
+    "package": "microsoft.extensions.logging",
+    "version": "9.0.0",
+    "sha512Base64": "OLjpWtYTOryTsge19MqPzFgte4sTeprwYJOfeO9Pgkez5ZW0yu9xM5KBdNVxp8DTHOOzrTHoGI+jRyzcN8jn6Q=="
+  },
+  {
+    "package": "microsoft.extensions.logging.abstractions",
+    "version": "10.0.0",
+    "sha512Base64": "CElGLz6i7loG2KuKixPwXzz0Zt5m67xqCpysS+/JHOsYCuA8QgiasMp6Jsp/5bTtGo9z4jXhMI2Zl8lSnDad0Q=="
+  },
+  {
+    "package": "microsoft.extensions.logging.abstractions",
+    "version": "10.0.10",
+    "sha512Base64": "b8xabNM7zKc7R8B3G9GtnMBE6sU9OvQ8AXzGhJMvHxB5gcegMSkiwU5uKqm43x06cGVd0Kzc+bl9POl1/CHViA=="
+  },
+  {
+    "package": "microsoft.extensions.logging.abstractions",
+    "version": "10.0.2",
+    "sha512Base64": "IOHUK0FvqmKUwKqfElftOyTXUixfDe8q/QnV6IVcqtAFLR1S0vdhGstLzEXaFKUwgwXBPg/VOdRmr8KlSrpYCA=="
+  },
+  {
+    "package": "microsoft.extensions.logging.abstractions",
+    "version": "9.0.0",
+    "sha512Base64": "/K7YtoMDNzepzPs2GkFWlmPARcY5l4h/N2cmdIxYyS15woeW8TLvflYcnNlgLHAR4fsRKp0wv5lzYmWHsK5ddA=="
+  },
+  {
+    "package": "microsoft.extensions.objectpool",
+    "version": "10.0.2",
+    "sha512Base64": "gwUkmsjY6oVOFDe61HzgvK+TLNkDljSeY54lmZtTL3l5BYFlrstEfGX8Ht+FOFT5sET8s6ikknn3XurPefRnmw=="
+  },
+  {
+    "package": "microsoft.extensions.options",
+    "version": "10.0.10",
+    "sha512Base64": "U4Mion/ZuwBMTD/CH8WE7Ajt6IdAtU3JXLwkG1UzOWM1lNFnoO8NAuQtZILNpkKyGEFP9t7FvQakgHnMCUjZKQ=="
+  },
+  {
+    "package": "microsoft.extensions.options",
+    "version": "10.0.2",
+    "sha512Base64": "uwO5rvUxDqYshA8UbTt9itkXuQuD1yXk+nFh3VUEFordg6oA9hA6zhJ8gHBRSAeMOuHgX/f0uDE+2pBru1MPAg=="
+  },
+  {
+    "package": "microsoft.extensions.options",
+    "version": "9.0.0",
+    "sha512Base64": "BefJBCUjCU/KL8gTRbFX9eeOQvA5F7IkWFKNy5+tdyFfD2+weOq9MDICLJ1m1//69/MkN+Kf7MYTzFl6wHcLnQ=="
+  },
+  {
+    "package": "microsoft.extensions.options.configurationextensions",
+    "version": "10.0.10",
+    "sha512Base64": "B/BW5mblQnKaJaBsZy3zUTc/nVApvKDRStOtCNrizKkD53ayPm3ju+UFHaaIdsvAA/ev0u9MCOezLmADNGWkWg=="
+  },
+  {
+    "package": "microsoft.extensions.options.configurationextensions",
+    "version": "10.0.2",
+    "sha512Base64": "SGtoqzHHDj8sbfdy23zAfYxFQAiS3WGAFTGpsPQqMCG5ATuzOSAuS3w+GYAVRmTIbXEtlusfi3R+iOMWwBpPfw=="
+  },
+  {
+    "package": "microsoft.extensions.primitives",
+    "version": "10.0.10",
+    "sha512Base64": "s/d40kr99HEb66EN5nP56zq67BCLhoYv3x3mT1VLVDpQP7O7sKvDjgr4uADvOdNmD8ZglDI1xzR4b66xHU+tZA=="
+  },
+  {
+    "package": "microsoft.extensions.primitives",
+    "version": "10.0.2",
+    "sha512Base64": "MViAzizSi6yjonFmosj3qWtnERlNbFuyvc3laYp0FRgZYk0lbz2MzomAZgecVeIlfQvaEDEnWfAWyZQURlj6Pw=="
+  },
+  {
+    "package": "microsoft.extensions.primitives",
+    "version": "9.0.0",
+    "sha512Base64": "Z515hrDcUbQa3csLsN4cbYu4D29Ma/Gekpr9yoeE+oz6Pg6ajKY0vTrO5M3uqDpDoykPYOhx5glQLq7uwaqUWw=="
+  },
+  {
+    "package": "microsoft.extensions.validation",
+    "version": "10.0.10",
+    "sha512Base64": "poS33vi7ic9bxu01aRpqWUko4whwSXejuhsremInKMHe4caG3YzHfbalZLoAYZo4+bfBmGGo1QTdhU/cDbWJSg=="
+  },
+  {
+    "package": "microsoft.extensions.validation",
+    "version": "10.0.2",
+    "sha512Base64": "q2oX8sc9EYgOl6ss3DsdS/Uu6Pbs8Pq6KbVTmiCie9/uTtfKKY8yeOKsRb7h82tVv9ZGpuUrWtGLfWV0IDnhvQ=="
+  },
+  {
+    "package": "microsoft.jsinterop",
+    "version": "10.0.10",
+    "sha512Base64": "ux8tWzV0fMYR7ZteTfBrZFEy+QhGLvm23SHSyu50Le7gQ/DhY/Vib28AsPVED4xKP/TO5bXwcWeD4fbPIXRTiw=="
+  },
+  {
+    "package": "microsoft.jsinterop",
+    "version": "10.0.2",
+    "sha512Base64": "Uk7xKuiNtm77PnM740WdiN27D2SXfarjPqhwzWKCxtbJrTBZiBjjlERzr7WkkndAcVxg60UXlP6OCwhwwHxHsQ=="
+  },
+  {
+    "package": "microsoft.jsinterop.webassembly",
+    "version": "10.0.10",
+    "sha512Base64": "JdG4iCOxMFLOU0yzHpfRUmMqRdufbTyDzCrYmPLlvF/fiMW1370mOh756NIOmtV5vQD9UTVR7QIRVQHN9J3cmA=="
+  },
+  {
+    "package": "microsoft.net.test.sdk",
+    "version": "18.0.1",
+    "sha512Base64": "cfpn4IW0Q+emID8eUocS7xfmwwYgD/JX5S+zCZA2l7gcYzxZ1vvfcdZHcKkuzCH4gMbBYqcZqtBn9uZa0WJRUg=="
+  },
+  {
+    "package": "microsoft.netcore.platforms",
+    "version": "1.1.0",
+    "sha512Base64": "a/iSwnRZb+LHFk49hQOyThh/ZNC3vsbZsF65XwQIb863qF6msmhdQtxGXFL28Ob2NsCz/drEj28BJd/YPpLRBg=="
+  },
+  {
+    "package": "microsoft.testplatform.objectmodel",
+    "version": "18.0.1",
+    "sha512Base64": "qZKcsS5mN7GMwtpd+tRfAt4Dmg8yVbtWkm9iGfqY2GNOG2qW95NH6zf/FrTLXTiS7rB7zqihWGEcSspOaSK8TQ=="
+  },
+  {
+    "package": "microsoft.testplatform.testhost",
+    "version": "18.0.1",
+    "sha512Base64": "SX1FnYA8zcNv/lbWK3GjLnAx93jalmyHyQMVi+TNWA61R6xzkLMNpC3fotbfpDheXCFhwy/1rKoULyaOOe0jEg=="
+  },
+  {
+    "package": "microsoft.visualstudio.azure.containers.tools.targets",
+    "version": "1.22.1",
+    "sha512Base64": "GNk2O4GqnhCAb02sMcJtKrwCVAkCxRMTxBgpL/q93cdbnxsNWhw9ApfFEBwqjOlPzco/WXTsKOpl2ELqpyG3aw=="
+  },
+  {
+    "package": "microsoft.visualstudio.solutionpersistence",
+    "version": "1.0.52",
+    "sha512Base64": "lHyMm5j5wRwVaC3vlCWrFH2FGy2SpFUZqLvYhzwf1cEUIQCUChU960h8kteFSf01ZkLSgJwrznmspwjW8kPtrA=="
+  },
+  {
+    "package": "microsoft.visualstudio.threading.analyzers",
+    "version": "17.14.15",
+    "sha512Base64": "qdPMGqovR9HFghkinUUhxrjpFHRec7OpiWZuKE0akvRRiOUX0y6lvwQ1YNCrKtiO8x32xknuR1Og85gJJoLUlw=="
+  },
+  {
+    "package": "microsoft.win32.systemevents",
+    "version": "6.0.0",
+    "sha512Base64": "XidKzplsPrpjCZ7VEW+dw59p9oT3wediPCjDxzmIt1xn38ySmlCnYfAiLfJD3VQHIKbliOkd+nhPgb/Oeok4dQ=="
+  },
+  {
+    "package": "mono.texttemplating",
+    "version": "3.0.0",
+    "sha512Base64": "wp92abUdV1fhjMn2TkDnQ71S2o9raF7hYgsgogJI2irsVURculBMq7uLYAruum3fGcCOC+YuELNNh3/p+mt/mg=="
+  },
+  {
+    "package": "moq",
+    "version": "4.20.72",
+    "sha512Base64": "HeLdAKzFe2G4fUg+tUa1WRf/Mye9zbkiv57jHRSb5IVi7GXVPgWbbEaUP8SaOpt43JJFRlWY9N5Yro32/tgRpQ=="
+  },
+  {
+    "package": "netstandard.library",
+    "version": "2.0.0",
+    "sha512Base64": "49ZAcrnNn56GIJwGoiaI7NpwcEJ8mjUyfSqVYIJMDhOBzPe8HSHS74swF2H0v8fzj7pxLfcYjS9P5PdIqsTQxw=="
+  },
+  {
+    "package": "netstandard.library",
+    "version": "2.0.3",
+    "sha512Base64": "548M6mnBSJWxsIlkQHfbzoYxpiYFXZZSL00p4GHYv8PkiqFBnnT68mW5mGEsA/ch9fDO9GkPgkFQpWiXZN7mAQ=="
+  },
+  {
+    "package": "newtonsoft.json",
+    "version": "13.0.3",
+    "sha512Base64": "mbJSvHfRxfX3tR/U6n1WU+mWHXswYc+SB/hkOpx8yZZe68hNZGfymJu0cjsaJEkVzCMqePiU6LdIyogqfIn7kg=="
+  },
+  {
+    "package": "nito.asyncex",
+    "version": "5.1.2",
+    "sha512Base64": "2C6t/FyK4/QCNRh7RdSO7epptU8y6jOM0OYk2HlQBgg+dhhlVrbznAroZq1R90CDbZt6Fr4hzvTWrynFNsUzwA=="
+  },
+  {
+    "package": "nito.asyncex.context",
+    "version": "5.1.2",
+    "sha512Base64": "euoapxaYixbP4G1kmf11VFdyCG6Zjaqnz2XSUs7ri8x+S4bpD4SgiKl2XLGSotpK+YSl9dyeSm/VYIBn37xB5g=="
+  },
+  {
+    "package": "nito.asyncex.coordination",
+    "version": "5.1.2",
+    "sha512Base64": "ApP1+l8zwbz89E/FMRn8pPpUIYUwkesdEUZVOPpzztBJ+nqaLW29cnIIvatkbeuX0VKJfFI4HcbI3z4PyaSF1w=="
+  },
+  {
+    "package": "nito.asyncex.interop.waithandles",
+    "version": "5.1.2",
+    "sha512Base64": "qdOth/Q2+wCwCuBfyW0nlQaRxpHAjHART0VNpBe6XWGppPk5s4V/pGOaKpVzxC5rKApb/+H6TkHTN0LdG95O/w=="
+  },
+  {
+    "package": "nito.asyncex.oop",
+    "version": "5.1.2",
+    "sha512Base64": "RutJ0kAlbbMI6YzH3gHu1thGcRJu+eaKNWmH286QpQpGgpI3DoMaMAsreMmHENkT1VI+Hj7yLCj+VhB40+tQRQ=="
+  },
+  {
+    "package": "nito.asyncex.tasks",
+    "version": "5.1.2",
+    "sha512Base64": "WLXTXQ2KraRktGf4cICkNyxWiBa0CWnnHFlmN1ZcnPM+kQPNpv8pXCIijfMcwzzWIi9Zi3CQxU8Xv24aBOnvJw=="
+  },
+  {
+    "package": "nito.cancellation",
+    "version": "1.1.2",
+    "sha512Base64": "ImM0Q3PyJcZSiHxrE4HRi9DCixl4EHoEGBBX5XHPazofQjo0+XiPwjMeQulIlyrJH9cIIGA1uAGDLvwRYFilug=="
+  },
+  {
+    "package": "nito.collections.deque",
+    "version": "1.1.1",
+    "sha512Base64": "Mp1Tnp5em/THUWWQPh2YVvQ+nrfvAX0yI3X25/fcosbKk0S4eHdVLdfmRq/0EcJznHOBNQXVRl19P0aFl3oYkA=="
+  },
+  {
+    "package": "nito.disposables",
+    "version": "2.2.1",
+    "sha512Base64": "kJ4ti5UhJ9YnTLJ5OpgmhIpmc9LolY4mC/pGBI5f1xdAbTOVnHbxENGQr6SwptDUkrZPacfCoLtuv9ooTJzy7Q=="
+  },
+  {
+    "package": "npgsql",
+    "version": "10.0.0",
+    "sha512Base64": "Mk5ZQPZAtu4soHyUHwpDlVgYGg78EJuwG0a4KoVP2qS6U3Kba7R0EVIJ4+0O8jHoMXpOqZgIjur8bLiz1iucdQ=="
+  },
+  {
+    "package": "npgsql.entityframeworkcore.postgresql",
+    "version": "10.0.0",
+    "sha512Base64": "WeE6TjmlsfDreXVFLGGWQE5j0bVaZ372sh9/F/AaK1qejcHD7jCz3K9NcrZRJHwCxIm1Hz0zVL0GTnXFCf44OA=="
+  },
+  {
+    "package": "nunit",
+    "version": "3.14.0",
+    "sha512Base64": "XXEZJblHyeSp9T9rXXabxKcC79crz/a0/k/lGnJFRKUmbQIxf9tf5eMS+STOvjFUnl7rLFeBycLzXD5OMa40hA=="
+  },
+  {
+    "package": "nunit3testadapter",
+    "version": "4.6.0",
+    "sha512Base64": "Tkid6gicvzLgG3QQUAPq9koR4RpIiu+6UFU/hWr94pQKJlnQAXBVuKhqeqeSR9VXK+5BtJfOsO/nB06LnIYpSg=="
+  },
+  {
+    "package": "pipelines.sockets.unofficial",
+    "version": "2.2.8",
+    "sha512Base64": "OMpD1FmaUwuqnEO0z2mn0TqezlOeTBaqQZ7zvidIG663+g8XBu0hDroCKanS57Zj0aPFdFQGHIjd1tUkRBJ0sw=="
+  },
+  {
+    "package": "qrcoder",
+    "version": "1.8.0",
+    "sha512Base64": "WVQOLFZ3S4aLzLPq/i+WedWLs6FzZ5SCefwC24JA5Gtn3Wz/vDjEQ+A94uJQsRPn270PFZZRRqM9dY94HJDXvg=="
+  },
+  {
+    "package": "serilog",
+    "version": "4.3.0",
+    "sha512Base64": "j2R/5h3kMbCg1Ap/kMzrlQo8Kph4Qi4PVyEYYAm3khCoCzA154BhyTWy+gGohlVgtEkxSi9R41LT2Www7ysswg=="
+  },
+  {
+    "package": "serilog.extensions.hosting",
+    "version": "10.0.0",
+    "sha512Base64": "z2fcyvStvD/OLy7nc7P3RtlMfPgJTOzce/WPtdzagPMO6eu4kVP+JtRHexldzEjbVC8YvMVsVfhhXR2Yru66jg=="
+  },
+  {
+    "package": "serilog.extensions.logging",
+    "version": "10.0.0",
+    "sha512Base64": "L+CJ9w6jXwzw9Xo1i2QeIDuDnf7SanpBX94ky9BhRO/l2rolvrebYRwuX1QmqwsPFPdqSQCeVdNIDhwxqmOL1A=="
+  },
+  {
+    "package": "serilog.settings.configuration",
+    "version": "10.0.0",
+    "sha512Base64": "LaIR6Y66osw6z6dxrSIetxjZu3kjyKh7/cJKaJhyoDbXHdmuoD4705iq7iSmvZizcyaQryOA0duoQ7O0SHw4XQ=="
+  },
+  {
+    "package": "serilog.sinks.console",
+    "version": "6.1.1",
+    "sha512Base64": "9EdHB6m82W1uj68/60naxxzhwTSeOxaB38xbIalYXwN3JhpCGzcbDV4Oc0FJxQShj+DvuODqQtx5jwOUUUYfCA=="
+  },
+  {
+    "package": "serilog.sinks.file",
+    "version": "7.0.0",
+    "sha512Base64": "YIH0hBPjwEtH3xc3rxtrHSHcstYMH+eoZtpsFNcCxQmV/tM+oHBY6XXluSUmnmddw0C9IKOioWewXhTq1D9UGQ=="
+  },
+  {
+    "package": "sixlabors.fonts",
+    "version": "1.0.0",
+    "sha512Base64": "y9lgwbuRveayAGi0smm8ehFxC7CXWIThV+8svd2mqa3lpsRCMuASA7SaCf7GafctrAG68S/lB/f7tY3tiuYTsg=="
+  },
+  {
+    "package": "sixlabors.imagesharp",
+    "version": "2.1.11",
+    "sha512Base64": "zkPSa8VehzelG6hanvIyl6Qfsu7f941cfoo3EnE0aBUPkWY0NFLX+3//K/iZ7bDnjEld78A4/BedJntLDsnxPw=="
+  },
+  {
+    "package": "sixlabors.imagesharp",
+    "version": "2.1.5",
+    "sha512Base64": "Jg+jbZDALEmHdVauKpx8qyA7PfCpczfZSJHRgfCyiAyGIiSd0WNvRmRkMkjRfx+l6Y7w+Ia19Ock3RvYtIF1oA=="
+  },
+  {
+    "package": "sixlabors.imagesharp.drawing",
+    "version": "1.0.0",
+    "sha512Base64": "qqk+f84DHNlp5s2k3tg52nqidQjxaIN8COcyTSPzG+BUNIUgkRSzyhKYUhlLsgoedWRJeCLyj+HyAEWe5RrMNg=="
+  },
+  {
+    "package": "stylecop.analyzers",
+    "version": "1.2.0-beta.556",
+    "sha512Base64": "CBY/YGHrwm6puAaagun1ddZWpQ8dkpntqHT0EHcx6y4CtRLyAfHDTGmD2SuuzW7l6ZKqa2HHiulJCn/dvdUYgg=="
+  },
+  {
+    "package": "stylecop.analyzers.unstable",
+    "version": "1.2.0.556",
+    "sha512Base64": "Dp+65xPS0waQuzMecwimGYlO4mwTeYhV7AolKbMkaNZ/vPK8HwKqDzrn5oUdK1lWhO9BUkWqgRm5sbfVjDCRaw=="
+  },
+  {
+    "package": "system.buffers",
+    "version": "4.5.1",
+    "sha512Base64": "gNphWOVbm89+C15jebnPRaYykU8De1PFv1YJV24814IfeGGVa3PXRHDS0MLlbdI1pe9Mpv/n4ZK4INwtAjqv8g=="
+  },
+  {
+    "package": "system.codedom",
+    "version": "6.0.0",
+    "sha512Base64": "K5EbfJvFJMhlYqJlR9/JKox3TtWTeZOkoi6KnKGxRhUa6urxXkJx/2/mzyCvY0gVqhSFpaTEjSSs85sqa8PPJw=="
+  },
+  {
+    "package": "system.collections.immutable",
+    "version": "9.0.0",
+    "sha512Base64": "z/Oo7nxWmZ0Y578vj8EUVrFJZ3DX6OMuUGlgeYgeeUZOFGT89XfaM8fDFMvJy6+mOIqW6ux5NdNzEnlTnQGJ7A=="
+  },
+  {
+    "package": "system.componentmodel.annotations",
+    "version": "6.0.0-preview.4.21253.7",
+    "sha512Base64": "5PHjOsT9zXcv0BtU2VjFMOAxsavBKIzYXhraiVBi/3gCVgzWh/syJI6w4Aeq9JD29K5gOTCuztWD/1bY9hyQFg=="
+  },
+  {
+    "package": "system.composition",
+    "version": "9.0.0",
+    "sha512Base64": "aWcyK90nIChHyxq7rpQ83Bbvt/t9l1X6yQtkvODaZ+rJlYHUMVpSji0YXIZTX5VlcWRCVRFdeEY767BCOzueaw=="
+  },
+  {
+    "package": "system.composition.attributedmodel",
+    "version": "9.0.0",
+    "sha512Base64": "oYuQzlIvO31GxSlTo6NCU+RnK9dVb1m154BNE7VGm9PUyJM+RrOQss8cNbMj+iIWVcp6VRnyJlBJ3MfzYo14AA=="
+  },
+  {
+    "package": "system.composition.convention",
+    "version": "9.0.0",
+    "sha512Base64": "3efhxn/7hQI9kNy6M6UUwWrMJCzdBZZ4hkYS3MUxqXyGdQ2sLCWToX1nLnnrRYafcdRSMOY2naMPNlRAEKDAGA=="
+  },
+  {
+    "package": "system.composition.hosting",
+    "version": "9.0.0",
+    "sha512Base64": "zLPGbMYw6y2GoNBjcoPnvXt7wSJM/qIG1fU2Do8kDObDTYWHG6fFOhulSViX0Ip2j+qGeuCESqEswCRG+xDvwA=="
+  },
+  {
+    "package": "system.composition.runtime",
+    "version": "9.0.0",
+    "sha512Base64": "P777aBPIwmLvL0Q8mPA7RiiomfjqLTbpX/xzKpk7YTJLcvPDMTvRIfNFognEpfJYRLadBymaBIU81vW3MzZYnA=="
+  },
+  {
+    "package": "system.composition.typedparts",
+    "version": "9.0.0",
+    "sha512Base64": "7b7mkn4H0149jNKD1tZRUG2gmkszNzO6YAGV+xEsxdfIU+5SLhxWRYJpqm1zKzKNdzpKUW93oyEFGcTuoNvqGg=="
+  },
+  {
+    "package": "system.configuration.configurationmanager",
+    "version": "10.0.2",
+    "sha512Base64": "qi5oEtETowQcz2QMM2wmFxdwkUvlJ0hnBrMbGjDrxIHG+yGsQ8KcKgYr+ShIf6Co8y1l30OOy4OFlFSjlwNmyg=="
+  },
+  {
+    "package": "system.diagnostics.eventlog",
+    "version": "6.0.0",
+    "sha512Base64": "QBA9W3yytBx8r8pinBEsVSa7dz0RNnymKRjYhk+6jawrSBUfN2cbz1BJnY+LJoSJ7hyt4vuJR8wG4gWh+sZ4TA=="
+  },
+  {
+    "package": "system.drawing.common",
+    "version": "6.0.0",
+    "sha512Base64": "1h8KPgHD6sFfE/wboEosfOTqyVZACy+qNh/sq9ODbUnVvTRPOYXuPZTNw/anK44H5CPNspZbT1yiIitd4ymI5A=="
+  },
+  {
+    "package": "system.memory",
+    "version": "4.5.5",
+    "sha512Base64": "6MjlNsl7lKw0Q8lAsw2tQ89ul9x6jD2Yk3EEj+dOFoYGOE9eAUO9wNhvd4O/n97oQXlkyzqKXXUnE+kLElFy3A=="
+  },
+  {
+    "package": "system.numerics.vectors",
+    "version": "4.4.0",
+    "sha512Base64": "gdRrUJs1RrjW3JB5p82hYjA67xoeFLvh0SdSIWjTiN8qExlbFt/RtXwVYNc5BukJ/f9OKzQQS6gakzbJeHTqHg=="
+  },
+  {
+    "package": "system.numerics.vectors",
+    "version": "4.5.0",
+    "sha512Base64": "nATsBTD2CKr4AYN6eRszhX4sptImWmBJwB/U6XKCWWfnCcrTBw8XSCm3QA9gjppkHTr8OkXUY21MR91D3QZXsw=="
+  },
+  {
+    "package": "system.reflection.metadata",
+    "version": "9.0.0",
+    "sha512Base64": "jz+Y2m/CpdPvdjCNRigiWJYKFusdkfJlxDx4V5cWX2TubAMaz5CZpODBD/P2+20SpWvmZG6J3UYjl+R2Yg7yFw=="
+  },
+  {
+    "package": "system.runtime.compilerservices.unsafe",
+    "version": "4.5.3",
+    "sha512Base64": "dl2H02p7dBXe5bbL06COrZdikV+/rPrYogWnjUoYfOxmd9okB/f3wtG1X+n4wCV5JcmwvBk9QClywyOXlni6qw=="
+  },
+  {
+    "package": "system.runtime.compilerservices.unsafe",
+    "version": "6.0.0",
+    "sha512Base64": "1AVzAb5OxJNvJLnOADtexNmWgattm2XVOT3TjQTN7Dd4SqoSwai1CsN2fth42uQldJSQdz/sAec0+TzxBFgisw=="
+  },
+  {
+    "package": "system.security.cryptography.protecteddata",
+    "version": "10.0.2",
+    "sha512Base64": "KjuvHhYI/IqW8mlCk1IfrtnyG+yv+ZVtsBtPpzNTt8lWnmcF/N+xa0wI5zjB5Ty0sKrLctusCNC9+jlaispjVg=="
+  },
+  {
+    "package": "system.text.encoding.codepages",
+    "version": "7.0.0",
+    "sha512Base64": "SFq/rrH52sMHJJsthDdafWPEuxdRCRB7pZ46trR2xSpi1nfKPAbw6amZr9W/LyHTlqS01TRWO7najRuO1vxFig=="
+  },
+  {
+    "package": "system.threading.tasks.extensions",
+    "version": "4.5.4",
+    "sha512Base64": "aAUghud9PHGYc3o9oWPWd0C3xE+TJQw5ZZs78htlR6mr9ky/QEgfXHjyQ2GvOq9H1S0YizcVVKCSin92ZcH8FA=="
+  }
+]

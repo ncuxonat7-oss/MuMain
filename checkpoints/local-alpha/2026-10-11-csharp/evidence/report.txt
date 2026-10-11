@@ -1,0 +1,95 @@
+ACTUAL C# BUILD AND TARGETED TESTS — 2026-10-11
+Result: build and29/29 C# NUnit tests PASS. Deployment remains disabled.
+
+Environment/toolchain
+Current Debian13 x86_64 host; official user-local .NET SDK10.0.401 verified against
+Microsoft release-metadata SHA512. SDK archive240059572bytes; host/runtime10.0.12.
+No apt/root/global PATH/system installation. Original source/binaries preserved.
+Start21:29:42UTC, hard deadline21:49:30UTC. All build/test commands finished by
+21:41:28UTC. No extension requested or used.
+
+Inputs/source
+Exact OpenMU d067b3c11c23c3145de6e2c76201ab9a93b267c8 source tar SHA256:
+4d5bf550d6fc5f30e4b51c9b4d68570db506662c54e07c3370dec28c388b6c33.
+Money patch SHA25685d8428452a25fef598c19ef2cda8d0ab94b2d5c13296481445ae84b7fad197d;
+local-bind patch SHA256d0ee9ada196913fdeaa8036cc57c7712ac77817117a6dd5d19e926965cf6a1a9.
+Both pins matched and applied before the phase2104 cumulative five-file patch.
+New scope: one internal context/mode seam in AdminUserRepository (public default
+unchanged), replacement of the old unsafe immediate-false C# regression, two new
+NUnit fixtures in existing test projects. No new framework or project required.
+Final eight-file cumulative admin/test patch applies exactly to pristine pinned
+source fixture. Source bytes/hashes are in source-manifest.json.
+
+Actual results
+Startup project built Release -p:ci=true, single MSBuild worker, shared compilation
+disabled; exit0,247warnings,0errors. No whole-solution build or server launch.
+Web.Tests selected14tests:14passed,0failed,0skipped.
+Core.Tests selected15tests:15passed,0failed,0skipped (actual31-second retry delay).
+Exact commands, time/exit status, full logs and TRX individual names are preserved.
+Caller tests execute actual C# service: concurrent positive/zero, cancellation,
+exceptions, invalidation/cache, legacy unavailable mode and corrected old test.
+Repository tests execute actual EnsureStorageAsync with strict EF mocks, including
+history mismatches, errors, cancellation/backoff and no migrator/create/lock calls.
+No real database provider/socket or PostgreSQL utility is used by these fixtures.
+This is compiled C# execution, not a Python behavior model. Standard-library byte
+hashing and PE/CLR inspection only were used separately for artifact provenance.
+
+Outputs/binary identity
+Separate Startup build directory: openmu/src/Startup/bin/Release.
+186files,132740035bytes, complete per-file SHA256 inventory saved.
+Framework-dependent net10.0 build with Linux ELF native apphost; NOT a Windows RID
+publish or validated portable Windows package. Runtimeconfig requests shared
+Microsoft.NETCore.App/Microsoft.AspNetCore.App10.0.0; actual test host10.0.12.
+EF and AdminPanel DLLs in the executed test outputs match the candidate DLLs
+byte-for-byte. Exact key hashes are in key-binary-identities.json.
+New EF DLL metadata has exactly the same65migration IDs/contexts:63game,2admin.
+This records the new assembly separately; no old runtime evidence was rewritten.
+The Startup program itself was never executed. Static-web-assets runtime manifests
+can contain build paths; portable UI assets and Windows loading remain unverified.
+
+Failures/warnings preserved
+Two initial restore graph attempts failed with no normal error diagnostics and
+worker failure stubs; single-worker MSBuild succeeded. Inherited approved proxy/
+certificate routing was retained, no access-denial bypass or weakened certificate
+verification was used. Successful restores retained NuGet audit warnings.
+Existing ImageSharp2.1.11 has NU1902/NU1903 moderate/high advisory warnings; no
+package version or analyzer policy was altered. No broad security audit was run.
+Initial diff packaging lacked newline/new-file metadata; git diff regeneration
+fixed the bundle only. C# source and passing test results were unchanged.
+
+Important SDK side effect
+Despite the first-use settings, the SDK automatically generated an ASP.NET
+DEVELOPMENT certificate PFX in the isolated session/home user certificate store.
+It was not read, exported, used for server access or explicitly system-trusted.
+No DB/account credential was created. The PFX and entire private session home are
+EXCLUDED from this checkpoint. No deletion was attempted. Parent was notified;
+cleanup needs explicit approval. Future approved runs should additionally set
+DOTNET_GENERATE_ASPNET_CERTIFICATE=false before first SDK use.
+
+Budget
+Source+SDK+release metadata291578619bytes; NuGet HTTP cache166886043bytes.
+These are observed payload/cache figures, not an exact wire-byte meter. A
+conservative watchdog counted archives plus expanded and duplicated NuGet content
+(1247376973bytes), capped below2GiB with reserve; no cap was reached. Small SDK
+home metadata/CRL/advertising files are recorded separately by size only; no
+certificate contents are logged or included. No workloads were installed.
+
+Remaining gates
+Full Entity/Typed runtime grant closure remains incomplete. No first-setup, role,
+DB credential handoff, ACL/network change, restore, real migration acceptance,
+Windows tests, live PostgreSQL permissions/SQL, whole-panel HTTP authorization or
+game runtime occurred. Existing disabled package is not repinned or activated.
+launchEnabled=false; approvedLaunchManifestSha256=null. Passing C# tests does not
+make the database procedure ready. Publication/main/workflow remained untouched.
+
+Additional closeout detail
+Recorded Startup build interval approximately21:35:49.58–21:40:15.92UTC;
+Web tests command ended21:40:17.11UTC; core tests ended21:41:26.93UTC.
+Repository seam source was last written21:32:02.40UTC, before the build; matching
+executed-test/candidate DLL hashes prove the tested copies are the candidate bytes.
+Default build-output connection settings are NOT approved private external-mode
+configuration. Do not start this directory as a ready installation.
+The runner source now sets DOTNET_GENERATE_ASPNET_CERTIFICATE=false for future
+approved use; this was added AFTER all SDK commands, not retroactive protection.
+No further SDK command was executed. Exact PFX path is retained only in an excluded
+private local note, with no secret bytes read or copied.

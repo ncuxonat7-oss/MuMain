@@ -1,0 +1,193 @@
+[
+  {
+    "trx": "phase2129-csharp-build/test-results/core/admin-storage.trx",
+    "counters": {
+      "total": "15",
+      "executed": "15",
+      "passed": "15",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "tests": [
+      {
+        "name": "ReadErrorsPropagateAndBackOff(True)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0030690"
+      },
+      {
+        "name": "ReadErrorsPropagateAndBackOff(False)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0052390"
+      },
+      {
+        "name": "MismatchedHistoryThrowsAndBacksOff(\"A,B\",\"A,B,C\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0025140"
+      },
+      {
+        "name": "MismatchedHistoryThrowsAndBacksOff(\"A,B\",\"A\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0103180"
+      },
+      {
+        "name": "MismatchedHistoryThrowsAndBacksOff(\"A,B\",\"A,A,B\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0017520"
+      },
+      {
+        "name": "CancelledReadPropagatesAndBacksOffAsync",
+        "outcome": "Passed",
+        "duration": "00:00:00.2374930"
+      },
+      {
+        "name": "MismatchedHistoryThrowsAndBacksOff(\"A,B\",\"\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0064850"
+      },
+      {
+        "name": "MatchingHistoryIsReadOnlyAndCachedAsync(\"B,A\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0029320"
+      },
+      {
+        "name": "UnreachableStorageThrowsAndBacksOff",
+        "outcome": "Passed",
+        "duration": "00:00:00.0037360"
+      },
+      {
+        "name": "MismatchedHistoryThrowsAndBacksOff(\"A,B\",\"A,A\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0020780"
+      },
+      {
+        "name": "MismatchedHistoryThrowsAndBacksOff(\"A,B\",\"A,C\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0020730"
+      },
+      {
+        "name": "ConcurrentValidationAndCancelledWaiterAreSafeAsync",
+        "outcome": "Passed",
+        "duration": "00:00:00.0117020"
+      },
+      {
+        "name": "FailureCanRetryAfterRealBackoffAsync",
+        "outcome": "Passed",
+        "duration": "00:00:31.0152930"
+      },
+      {
+        "name": "MismatchedHistoryThrowsAndBacksOff(\"\",\"\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0025070"
+      },
+      {
+        "name": "MatchingHistoryIsReadOnlyAndCachedAsync(\"A,B\")",
+        "outcome": "Passed",
+        "duration": "00:00:00.0073270"
+      }
+    ]
+  },
+  {
+    "trx": "phase2129-csharp-build/test-results/web/admin-availability.trx",
+    "counters": {
+      "total": "14",
+      "executed": "14",
+      "passed": "14",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "tests": [
+      {
+        "name": "FailedCheckPropagatesAndNextCallRetriesAsync(True)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0018260"
+      },
+      {
+        "name": "InvalidationRefreshesCompletedCacheAsync(1)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0011670"
+      },
+      {
+        "name": "CancelledOwnerAllowsFreshWaitingCheckAsync",
+        "outcome": "Passed",
+        "duration": "00:00:00.0095830"
+      },
+      {
+        "name": "CancelledWaiterLeavesOwnerAndSemaphoreIntactAsync",
+        "outcome": "Passed",
+        "duration": "00:00:00.0041650"
+      },
+      {
+        "name": "ConcurrentFirstChecksWaitAndCacheAsync(0)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0058310"
+      },
+      {
+        "name": "InvalidationDuringCheckRequiresFreshProbeAsync(0)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0059690"
+      },
+      {
+        "name": "ExistingUserIsRememberedAsync",
+        "outcome": "Passed",
+        "duration": "00:00:00.2922240"
+      },
+      {
+        "name": "CancellationAfterRepositoryCompletionIsNotCachedAsync",
+        "outcome": "Passed",
+        "duration": "00:00:00.1006570"
+      },
+      {
+        "name": "AvailabilityCheckWaitsForARunningProbeAsync",
+        "outcome": "Passed",
+        "duration": "00:00:00.0685770"
+      },
+      {
+        "name": "UnavailableStorageIsNotProbedOnEveryCheckAsync",
+        "outcome": "Passed",
+        "duration": "00:00:00.0134380"
+      },
+      {
+        "name": "InvalidationDuringCheckRequiresFreshProbeAsync(1)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0021450"
+      },
+      {
+        "name": "FailedCheckPropagatesAndNextCallRetriesAsync(False)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0047430"
+      },
+      {
+        "name": "InvalidationRefreshesCompletedCacheAsync(0)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0020460"
+      },
+      {
+        "name": "ConcurrentFirstChecksWaitAndCacheAsync(1)",
+        "outcome": "Passed",
+        "duration": "00:00:00.0016950"
+      }
+    ]
+  }
+]

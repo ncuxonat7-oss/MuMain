@@ -1,0 +1,362 @@
+[
+  {
+    "path": "docs/admin-availability-concurrency-candidate.md",
+    "originalSha256": "bf6caa7507b6aa1d707c89a85f332078ba728f0914265a87d13bbb36316e9791",
+    "publishedSha256": "8f8d99cba1e96969f243daceec3b6f552d94c852017aeb5387e8dc67f3d41706",
+    "sanitizedOrStatusBannerAdded": true
+  },
+  {
+    "path": "docs/alpha-nav-local-refresh-proposal.md",
+    "originalSha256": "01a248795ac07d7d6449bedce964b0a60a23bc0631d6f9fa30c013b0189728e1",
+    "publishedSha256": "821548a32597d83b57d7719841c0e70c1aa3ccaadd99a475a18ff813071f5115",
+    "sanitizedOrStatusBannerAdded": true
+  },
+  {
+    "path": "docs/windows11-database-guard-integration.md",
+    "originalSha256": "3292579ed293314e9200acb2683569ee7957f211d925362c133053de0734e018",
+    "publishedSha256": "e5a85ecf201de91ed32749678bf0c683089799a1866c9d39e433aab53bac5164",
+    "sanitizedOrStatusBannerAdded": true
+  },
+  {
+    "path": "docs/windows11-database-guards.md",
+    "originalSha256": "4174c834306991d138669759d8f8750a2fdb7a7fddd3ca5d8839bde17b3ab0e5",
+    "publishedSha256": "4174c834306991d138669759d8f8750a2fdb7a7fddd3ca5d8839bde17b3ab0e5",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "docs/windows11-database-manifest-draft.json",
+    "originalSha256": "96611ad3964de263c57bfca8da52b89dab2d2b57aa11d1143165aa1f0da3afaa",
+    "publishedSha256": "96611ad3964de263c57bfca8da52b89dab2d2b57aa11d1143165aa1f0da3afaa",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "docs/windows11-dependencies.json",
+    "originalSha256": "a5f0e64145763509a43100afd05a38ed27fbbc870e35a091e320c8be387038c6",
+    "publishedSha256": "a5f0e64145763509a43100afd05a38ed27fbbc870e35a091e320c8be387038c6",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "docs/windows11-dependencies.md",
+    "originalSha256": "691d19623029ebe5f5b78747778a3241d0a9a28e307ffebc61a1c181f25d6f50",
+    "publishedSha256": "691d19623029ebe5f5b78747778a3241d0a9a28e307ffebc61a1c181f25d6f50",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "docs/windows11-first-setup.md",
+    "originalSha256": "10a39cf0bae951d465ccfd16c2ec66e0e3b5ecfff0a32070439677d39e3d6d98",
+    "publishedSha256": "905491640ffee3f87a79746d76d7cf43452c8fdd3f0ee8617aa2300c3f58b7c8",
+    "sanitizedOrStatusBannerAdded": true
+  },
+  {
+    "path": "docs/windows11-preprovisioned-runtime.md",
+    "originalSha256": "14d4953fe9a4b48f17f72ce92c12aa2ae9f31b90d93e1d5024b8e814d2fe9b30",
+    "publishedSha256": "b6b7c61f452998907c6a8dbf003208887f407fe3d83d5293ec1585411b051529",
+    "sanitizedOrStatusBannerAdded": true
+  },
+  {
+    "path": "scripts/package-windows11-local.py",
+    "originalSha256": "c700e0ed3a0fe2a6bbd77de0f0bd5c60f814ca4dd49852cf15734473a53459e7",
+    "publishedSha256": "3bb9fa18baf332fc00eec47f50176510760b85e61561274ecf7a0219f7a056a4",
+    "sanitizedOrStatusBannerAdded": true
+  },
+  {
+    "path": "scripts/windows11/Database.ps1",
+    "originalSha256": "c8089453f95413cb178d03cd351ddea6140c188eb4ba2405e7c36ddbcc010b1d",
+    "publishedSha256": "c8089453f95413cb178d03cd351ddea6140c188eb4ba2405e7c36ddbcc010b1d",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "scripts/windows11/FirstSetup.ps1",
+    "originalSha256": "e44570b84439d0587d7721770748518c36e883b9d057dcdee254be227055dde0",
+    "publishedSha256": "e44570b84439d0587d7721770748518c36e883b9d057dcdee254be227055dde0",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "scripts/windows11/Guards.ps1",
+    "originalSha256": "cf3354fb5c7d06b951a394c1cacbe21b62599fe1acee7f56e78291cfd0795bda",
+    "publishedSha256": "cf3354fb5c7d06b951a394c1cacbe21b62599fe1acee7f56e78291cfd0795bda",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "scripts/windows11/SetupMU.ps1",
+    "originalSha256": "c21f00c132d4028b947c0112b486da77cdfe238fd14d05af44d35d278c756434",
+    "publishedSha256": "c21f00c132d4028b947c0112b486da77cdfe238fd14d05af44d35d278c756434",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "scripts/windows11/database-source-contract.json",
+    "originalSha256": "0718c51ba1367d476a5d3fff7a46e55b16f334688ecbb650af7148b836c2cac6",
+    "publishedSha256": "0718c51ba1367d476a5d3fff7a46e55b16f334688ecbb650af7148b836c2cac6",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "scripts/windows11/first-setup-policy.json",
+    "originalSha256": "65bea58489911fc5c1da1ee99a0ffdd8de085bad9c37251fb04d6f4e9a5c6cb0",
+    "publishedSha256": "65bea58489911fc5c1da1ee99a0ffdd8de085bad9c37251fb04d6f4e9a5c6cb0",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "tests/windows11/Test-DatabaseGuards.ps1",
+    "originalSha256": "0c56cce00ee90aaef0c7c40463528ededeb6f2c9bf9334c53c194ebeca85e98b",
+    "publishedSha256": "0c56cce00ee90aaef0c7c40463528ededeb6f2c9bf9334c53c194ebeca85e98b",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "tests/windows11/Test-FirstSetup.ps1",
+    "originalSha256": "32ff8ae1bd06141eac511d0e4218e2ce86706dd8d1dc469515142fb0cd3681bb",
+    "publishedSha256": "32ff8ae1bd06141eac511d0e4218e2ce86706dd8d1dc469515142fb0cd3681bb",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "tests/windows11/test_database_contract.py",
+    "originalSha256": "ec125cf8e50e223c0836b846cafc9c11da9db432ef28e0a7141d7b2ce89d6891",
+    "publishedSha256": "ec125cf8e50e223c0836b846cafc9c11da9db432ef28e0a7141d7b2ce89d6891",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "tests/windows11/test_dependencies.py",
+    "originalSha256": "c632d157831c64abd0f2e827c8f5ba8e520cd2420e20ca58d49ee8e76734d365",
+    "publishedSha256": "c632d157831c64abd0f2e827c8f5ba8e520cd2420e20ca58d49ee8e76734d365",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "tests/windows11/test_packaging.py",
+    "originalSha256": "95abdc5eb29589387d202f6ef9644fc368b4e234018e2b9dfc1387039862eee2",
+    "publishedSha256": "95abdc5eb29589387d202f6ef9644fc368b4e234018e2b9dfc1387039862eee2",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "docs/windows11-package-preservation/README.md",
+    "originalSha256": "ad50a9e060863687e37c0e39f5f428f0b0ad19eae3af8ef646d33ca3c381918a",
+    "publishedSha256": "ad50a9e060863687e37c0e39f5f428f0b0ad19eae3af8ef646d33ca3c381918a",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/source/src/Persistence/EntityFramework/AdminAuth/AdminUserRepository.cs",
+    "originalSha256": "4c1590a8239a88b7449b1997e8711038447f2e30d1fcd6096aded9df5f74cec9",
+    "publishedSha256": "4c1590a8239a88b7449b1997e8711038447f2e30d1fcd6096aded9df5f74cec9",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/source/src/Persistence/EntityFramework/AdminSchemaManagementMode.cs",
+    "originalSha256": "66841d8968fb6b30369f6d723e686f473b7d69f6f3650b10f3257dd5a69c74d6",
+    "publishedSha256": "66841d8968fb6b30369f6d723e686f473b7d69f6f3650b10f3257dd5a69c74d6",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/source/src/Persistence/EntityFramework/ConnectionConfigurator.cs",
+    "originalSha256": "a6a687b72b9581e38a60a74aca2ff38c51a34df6dca73a8939f11eb99da2bfe3",
+    "publishedSha256": "a6a687b72b9581e38a60a74aca2ff38c51a34df6dca73a8939f11eb99da2bfe3",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/source/src/Persistence/EntityFramework/ConnectionSetting.cs",
+    "originalSha256": "6951ddfa0211d1598bc3796baeead3585bc4ee2551327368cd8c4162c1ca0271",
+    "publishedSha256": "6951ddfa0211d1598bc3796baeead3585bc4ee2551327368cd8c4162c1ca0271",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/source/src/Web/AdminPanel/Auth/AdminUserAvailabilityService.cs",
+    "originalSha256": "a90f772940d67606032c0eee42ae0a7b1529e61265bcfacb25c9f5909d4a29bf",
+    "publishedSha256": "a90f772940d67606032c0eee42ae0a7b1529e61265bcfacb25c9f5909d4a29bf",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/source/tests/MUnique.OpenMU.Tests/AdminUserRepositoryStorageTests.cs",
+    "originalSha256": "6346801e7743c43fbca6f111a1fe33d72f6bec99bf81e16b7b99923c86debfd9",
+    "publishedSha256": "6346801e7743c43fbca6f111a1fe33d72f6bec99bf81e16b7b99923c86debfd9",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/source/tests/MUnique.OpenMU.Web.Tests/AdminAuth/AdminAuthenticationTests.cs",
+    "originalSha256": "db5e68ee397c2f3e08570252fd09001f409c4d5f825b5a645551e319549ec30d",
+    "publishedSha256": "db5e68ee397c2f3e08570252fd09001f409c4d5f825b5a645551e319549ec30d",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/source/tests/MUnique.OpenMU.Web.Tests/AdminAuth/AdminUserAvailabilityTests.cs",
+    "originalSha256": "940cd956029ef06bb30c6c639d250b2bce2a8f99b4ed1443622ee1bfac83866f",
+    "publishedSha256": "940cd956029ef06bb30c6c639d250b2bce2a8f99b4ed1443622ee1bfac83866f",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/LICENSE",
+    "originalSha256": "5bb9233798b4cc12299466d8844cee646292487a3dd8246ee7494e802f7c5c8b",
+    "publishedSha256": "5bb9233798b4cc12299466d8844cee646292487a3dd8246ee7494e802f7c5c8b",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "patches/openmu/preprovisioned-admin-20261011/openmu-admin-preprovisioned.patch",
+    "originalSha256": "0b2dcf7fefe520e273b0bfe003a002ac5db0bccdfe2de6b9c0cae76d2cb6bbab",
+    "publishedSha256": "0b2dcf7fefe520e273b0bfe003a002ac5db0bccdfe2de6b9c0cae76d2cb6bbab",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/source-manifest.json",
+    "originalSha256": "696e73545b8631e53d0a333b986abbb33666648422a3183ef26ef014babcf923",
+    "publishedSha256": "696e73545b8631e53d0a333b986abbb33666648422a3183ef26ef014babcf923",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/key-binary-identities.json",
+    "originalSha256": "57919945ea01f87e046bb010f37f25f84239a20c155b1e15a4c4a73702d31ab6",
+    "publishedSha256": "57919945ea01f87e046bb010f37f25f84239a20c155b1e15a4c4a73702d31ab6",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/server-build-inventory.json",
+    "originalSha256": "2fd45f91244d60758bb6b33f8ddd0e0e47c58e86aa64e58307b63fc854225a57",
+    "publishedSha256": "2fd45f91244d60758bb6b33f8ddd0e0e47c58e86aa64e58307b63fc854225a57",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/actual-csharp-test-results.json",
+    "originalSha256": "e8cabca1313ccc42929a6e14f6936204fa341407e0a01be444451739cd083673",
+    "publishedSha256": "e8cabca1313ccc42929a6e14f6936204fa341407e0a01be444451739cd083673",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/restored-package-identities.json",
+    "originalSha256": "d40078716593c4a156261c8b0b764c43af6cafba0d989a52438fc8c9ea37d9d0",
+    "publishedSha256": "d40078716593c4a156261c8b0b764c43af6cafba0d989a52438fc8c9ea37d9d0",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/compiled-migration-metadata.json",
+    "originalSha256": "985333d8ca70c8118936d48fcb77edd87d128ee7cbbcee9ada9128f9a2f5cb12",
+    "publishedSha256": "985333d8ca70c8118936d48fcb77edd87d128ee7cbbcee9ada9128f9a2f5cb12",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/compiled-migration-comparison.json",
+    "originalSha256": "236d04fb2f77c522617f30fe4025cfd70fd6c3129af19eb7bc4848af1d5ccbe8",
+    "publishedSha256": "236d04fb2f77c522617f30fe4025cfd70fd6c3129af19eb7bc4848af1d5ccbe8",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/patch-application-verification.json",
+    "originalSha256": "1e28a410c5c211a541d7f93901274b26c2063722691924400f5d7a6798567d8b",
+    "publishedSha256": "1e28a410c5c211a541d7f93901274b26c2063722691924400f5d7a6798567d8b",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/source-build-time-alignment.json",
+    "originalSha256": "2ef89d51fc01c032ac9edcc7a8da41e5f666f3d83d3dc0d83ac4a3e17be3e336",
+    "publishedSha256": "2ef89d51fc01c032ac9edcc7a8da41e5f666f3d83d3dc0d83ac4a3e17be3e336",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/sdk-pin.json",
+    "originalSha256": "085e1f8d96297b6a875b32b6caa1eb489f5b40cef41c88fa9b651257f7ce481a",
+    "publishedSha256": "085e1f8d96297b6a875b32b6caa1eb489f5b40cef41c88fa9b651257f7ce481a",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/sdk-verification.json",
+    "originalSha256": "d7369e241fd248b034808fe0755c383f8e1e52c049d1288250935ffa881461ba",
+    "publishedSha256": "d7369e241fd248b034808fe0755c383f8e1e52c049d1288250935ffa881461ba",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/budget-closeout.json",
+    "originalSha256": "cde55971ed2e519fe3aa2ca24072618b706f395d861c69faab9854dedb1a16de",
+    "publishedSha256": "cde55971ed2e519fe3aa2ca24072618b706f395d861c69faab9854dedb1a16de",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/report.txt",
+    "originalSha256": "d2e53fa12b51c26a4fb23ed9d2952dd9823b10783007cecc333f17d863b76535",
+    "publishedSha256": "d2e53fa12b51c26a4fb23ed9d2952dd9823b10783007cecc333f17d863b76535",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/dotnet-info.txt",
+    "originalSha256": "80e4d28ca3186113d5fefec078f0bfcea578ab455211723915b736e3845bc2d7",
+    "publishedSha256": "d6cb0a265295aaaf4b6da52c37293777045380ddefbc7157362d132237a3765f",
+    "sanitizedOrStatusBannerAdded": true
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/build-startup.json",
+    "originalSha256": "4ae753939ca939196d137494f83a934bc5af64ca9276b69b06015ebfa8614d21",
+    "publishedSha256": "4ae753939ca939196d137494f83a934bc5af64ca9276b69b06015ebfa8614d21",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/test-web.json",
+    "originalSha256": "cd3fa114af141cdccf9332eaa9512861d089331e61b92078b5c4b386eb6256f1",
+    "publishedSha256": "cd3fa114af141cdccf9332eaa9512861d089331e61b92078b5c4b386eb6256f1",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/test-core.json",
+    "originalSha256": "86a60c2335093b008656acb35e0ce3b2d04635882760affc3631059645b2d96f",
+    "publishedSha256": "86a60c2335093b008656acb35e0ce3b2d04635882760affc3631059645b2d96f",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/history/phase1828-packaging.txt",
+    "originalSha256": "5ceddc60bd66a70bfb7a76c869b376a0f04b4f41f97405fde76430b6f21a12b8",
+    "publishedSha256": "5ceddc60bd66a70bfb7a76c869b376a0f04b4f41f97405fde76430b6f21a12b8",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/history/phase1938-dependencies.txt",
+    "originalSha256": "a5b1430b4b4b9c5e8ad24e9c1ab565df0258339fa96b69ac79f099f1c09e01de",
+    "publishedSha256": "a5b1430b4b4b9c5e8ad24e9c1ab565df0258339fa96b69ac79f099f1c09e01de",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/history/phase2006-database-guards.txt",
+    "originalSha256": "c8db777105e688f48cbd7a77286b403365580ccecb9435b7b6b10c6cd8436f99",
+    "publishedSha256": "c8db777105e688f48cbd7a77286b403365580ccecb9435b7b6b10c6cd8436f99",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/history/phase2027-powershell-check.txt",
+    "originalSha256": "2e8c52cab6e038506702f51a781e8f791b29cedcee47bc88758feaff5e2e2cd6",
+    "publishedSha256": "2e8c52cab6e038506702f51a781e8f791b29cedcee47bc88758feaff5e2e2cd6",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/history/phase2033-first-setup.txt",
+    "originalSha256": "1950c054227bb908380b6440bc81b00894a944cac6c11adfcab3f37c9b9ee713",
+    "publishedSha256": "1950c054227bb908380b6440bc81b00894a944cac6c11adfcab3f37c9b9ee713",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/history/phase2049-runtime-ddl.txt",
+    "originalSha256": "64a436b1930f43882676c074b525268ec3a8c58c0ba3d4562af0b2439a1d23b5",
+    "publishedSha256": "64a436b1930f43882676c074b525268ec3a8c58c0ba3d4562af0b2439a1d23b5",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/history/phase2104-admin-availability.txt",
+    "originalSha256": "41903568c9adcd4939f87617c9f0802b30be07160b6dc3514c947314bc170536",
+    "publishedSha256": "41903568c9adcd4939f87617c9f0802b30be07160b6dc3514c947314bc170536",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/entity-typed-observed-contract.json",
+    "originalSha256": "27a11d9f840f0297febf3ae7dac7ed1add38ddbcc936612f766c2921931b283d",
+    "publishedSha256": "27a11d9f840f0297febf3ae7dac7ed1add38ddbcc936612f766c2921931b283d",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/entity-typed-grants-report.md",
+    "originalSha256": "a23bf2a543f776828f4f91525f15b38bb3aee82c5516ee9c5b3884e7082be9f2",
+    "publishedSha256": "a23bf2a543f776828f4f91525f15b38bb3aee82c5516ee9c5b3884e7082be9f2",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/test-database-guards-retry1.txt",
+    "originalSha256": "865a8ccdcd438265f6427cefa28ca0478cdc755fab3c5d009e1bae0a37639340",
+    "publishedSha256": "865a8ccdcd438265f6427cefa28ca0478cdc755fab3c5d009e1bae0a37639340",
+    "sanitizedOrStatusBannerAdded": false
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/test-first-setup.txt",
+    "originalSha256": "1c1792373a9b0ea68dd0a8396b8e510f33ded932a3a2e10a8476737e44c01f79",
+    "publishedSha256": "1c1792373a9b0ea68dd0a8396b8e510f33ded932a3a2e10a8476737e44c01f79",
+    "sanitizedOrStatusBannerAdded": false
+  }
+]

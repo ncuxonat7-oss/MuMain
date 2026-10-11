@@ -1,0 +1,54 @@
+{
+  "openmuCommit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "sourceArchiveSha256": "4d5bf550d6fc5f30e4b51c9b4d68570db506662c54e07c3370dec28c388b6c33",
+  "files": [
+    {
+      "path": "src/Persistence/EntityFramework/AdminAuth/AdminUserRepository.cs",
+      "beforeSha256": "939f309743e52653aaec0d4f9977c60e63ec63e226d8ae945e4c1c70c80e13b6",
+      "afterSha256": "4c1590a8239a88b7449b1997e8711038447f2e30d1fcd6096aded9df5f74cec9",
+      "bytes": 12277
+    },
+    {
+      "path": "src/Persistence/EntityFramework/ConnectionConfigurator.cs",
+      "beforeSha256": "0c35341a5301dc95ed8113094481a21fe0be12247caee75e992fc49f89ffb807",
+      "afterSha256": "a6a687b72b9581e38a60a74aca2ff38c51a34df6dca73a8939f11eb99da2bfe3",
+      "bytes": 6571
+    },
+    {
+      "path": "src/Persistence/EntityFramework/ConnectionSetting.cs",
+      "beforeSha256": "2508ed8900d19b1c5f00aa87622f88b64cd1cf28c9eb017ac89d4f152957385a",
+      "afterSha256": "6951ddfa0211d1598bc3796baeead3585bc4ee2551327368cd8c4162c1ca0271",
+      "bytes": 1852
+    },
+    {
+      "path": "src/Persistence/EntityFramework/AdminSchemaManagementMode.cs",
+      "beforeSha256": null,
+      "afterSha256": "66841d8968fb6b30369f6d723e686f473b7d69f6f3650b10f3257dd5a69c74d6",
+      "bytes": 901
+    },
+    {
+      "path": "src/Web/AdminPanel/Auth/AdminUserAvailabilityService.cs",
+      "beforeSha256": "218b9dc77d5c7a09fd448b5db6085d27c540ac28d55243ec7ba40659ddb9c6e0",
+      "afterSha256": "a90f772940d67606032c0eee42ae0a7b1529e61265bcfacb25c9f5909d4a29bf",
+      "bytes": 4637
+    },
+    {
+      "path": "tests/MUnique.OpenMU.Web.Tests/AdminAuth/AdminAuthenticationTests.cs",
+      "beforeSha256": "b912388aecb2ceef90534d2cf29dece2c89bc4bbbc3e91d3f08808c41c417cc4",
+      "afterSha256": "db5e68ee397c2f3e08570252fd09001f409c4d5f825b5a645551e319549ec30d",
+      "bytes": 21838
+    },
+    {
+      "path": "tests/MUnique.OpenMU.Web.Tests/AdminAuth/AdminUserAvailabilityTests.cs",
+      "beforeSha256": null,
+      "afterSha256": "940cd956029ef06bb30c6c639d250b2bce2a8f99b4ed1443622ee1bfac83866f",
+      "bytes": 10709
+    },
+    {
+      "path": "tests/MUnique.OpenMU.Tests/AdminUserRepositoryStorageTests.cs",
+      "beforeSha256": null,
+      "afterSha256": "6346801e7743c43fbca6f111a1fe33d72f6bec99bf81e16b7b99923c86debfd9",
+      "bytes": 12425
+    }
+  ]
+}
