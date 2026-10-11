@@ -5,69 +5,75 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
-  local-bind-isolated:
-    name: Isolated local bind helper/socket check
+  server-smoke:
+    name: Pinned server build and one local STR persistence smoke
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/task/local-bind-isolated-check'
     runs-on: windows-latest
-    timeout-minutes: 10
-    defaults:
-      run:
-        shell: python {0}
+    timeout-minutes: 35
     env:
       DOTNET_CLI_TELEMETRY_OPTOUT: '1'
-      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: '1'
       DOTNET_NOLOGO: '1'
       DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE: 'true'
-
     steps:
-      - name: Initialize evidence
-        run: |
-          import json, os, subprocess
-          from pathlib import Path
-          temporary = Path(os.environ['RUNNER_TEMP'])
-          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env_file:
-              env_file.write(f"DOTNET_INSTALL_DIR={temporary / 'local-bind-dotnet'}\n")
-              env_file.write(f"NUGET_PACKAGES={temporary / 'local-bind-packages'}\n")
-          evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
-          evidence.mkdir()
-          settings = {}
-          for key in ('core.autocrlf', 'core.eol'):
-              result = subprocess.run(['git', 'config', '--get', key], cwd=temporary,
-                                      capture_output=True, text=True)
-              if result.returncode not in (0, 1):
-                  raise RuntimeError(f'Cannot inspect {key}: exit {result.returncode}')
-              origin = subprocess.run(['git', 'config', '--show-origin', '--get', key],
-                                      cwd=temporary, capture_output=True, text=True, check=False)
-              if origin.returncode != result.returncode:
-                  raise RuntimeError(f'Inconsistent configuration read: {key}')
-              settings[key] = {'value': result.stdout.strip() if result.returncode == 0 else None,
-                               'origin': origin.stdout.strip()}
-          (evidence / 'original-git-settings.json').write_text(
-              json.dumps(settings, indent=2), encoding='utf-8')
-          (evidence / 'scope.txt').write_text(
-              'Isolated helper/socket check only; 12 existing checks.\n'
-              'Not production OpenMU integration, Windows package, or persistence proof.\n'
-              f"Workflow commit: {os.environ['GITHUB_SHA']}\n"
-              'SDK requested: 10.0.109\n', encoding='utf-8')
-
-      - name: Checkout selected branch
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
-          fetch-depth: 1
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /.github/workflows/windows-client.yml
-            /patches/openmu-local-only-bind-provenance.json
-            /patches/openmu-local-only-bind.patch
-            /patches/openmu-trade-money.patch
-            /scripts/check-local-bind-source.py
-            /tests/network/local_only_bind/LocalOnlyBind.csproj
-            /tests/network/local_only_bind/Program.cs
-
-      - name: Verify pinned sources and apply bind patch in isolation
+      - name: Prepare directories and validate PowerShell syntax
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory evidence,private-logs,downloads | Out-Null
+          $errors = $null; $tokens = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            "$PWD/scripts/local-bind-server-smoke.ps1", [ref]$tokens, [ref]$errors) | Out-Null
+          if ($errors.Count) { throw ($errors | Out-String) }
+          "DOTNET_INSTALL_DIR=$env:RUNNER_TEMP/local-bind-dotnet" >> $env:GITHUB_ENV
+          "NUGET_PACKAGES=$env:RUNNER_TEMP/local-bind-nuget" >> $env:GITHUB_ENV
+          'NOT_RUN: build and integration pending' | Set-Content evidence/result.txt
+      - name: Fetch exact approved DB and ready client archives
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const crypto = require('crypto');
+            const specs = [
+              [11651520969, 38005996341, 'baseline-data-final', 'database.zip', 'b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea'],
+              [11567737809, 37813650810, 'mu-client-windows-native-x64-release-editor-off-no-data-main', 'client.zip', 'eefe0a710518bc6536dd47cde45fb8605ae4ef5c7f4faca4095e8abb5f23297e']
+            ];
+            const evidence = [];
+            for (const [id, run, name, file, sha256] of specs) {
+              const {data: meta} = await github.rest.actions.getArtifact({...context.repo, artifact_id:id});
+              if (meta.expired || meta.name !== name || meta.workflow_run.id !== run) throw new Error('Artifact identity unavailable: ' + id);
+              const {data} = await github.rest.actions.downloadArtifact({...context.repo, artifact_id:id, archive_format:'zip'});
+              const bytes = Buffer.from(data);
+              if (crypto.createHash('sha256').update(bytes).digest('hex') !== sha256) throw new Error('Artifact hash mismatch: ' + id);
+              fs.writeFileSync('downloads/' + file, bytes);
+              evidence.push({id, run, name, sha256, bytes:bytes.length});
+            }
+            fs.writeFileSync('evidence/input-artifacts.json', JSON.stringify(evidence, null, 2));
+      - name: Stage verified client and disposable DB input
+        shell: pwsh
+        run: |
+          python scripts/prepare-local-bind-smoke.py inputs
+          if ($LASTEXITCODE) { throw 'Input staging failed' }
+      - name: Checkout exact server source with LF bytes
+        uses: actions/checkout@v4
+        env:
+          GIT_CONFIG_COUNT: '2'
+          GIT_CONFIG_KEY_0: core.autocrlf
+          GIT_CONFIG_VALUE_0: 'false'
+          GIT_CONFIG_KEY_1: core.eol
+          GIT_CONFIG_VALUE_1: lf
+        with:
+          repository: MUnique/OpenMU
+          ref: d067b3c11c23c3145de6e2c76201ab9a93b267c8
+          path: server-source
+          persist-credentials: false
+      - name: Verify and apply both existing patches
+        shell: pwsh
         env:
           GIT_CONFIG_COUNT: '2'
           GIT_CONFIG_KEY_0: core.autocrlf
@@ -75,161 +81,54 @@ jobs:
           GIT_CONFIG_KEY_1: core.eol
           GIT_CONFIG_VALUE_1: lf
         run: |
-          import contextlib, hashlib, json, os, subprocess, sys, tempfile, traceback
-          import urllib.request
-          from pathlib import Path
-          root = Path(os.environ['RUNNER_TEMP']) / 'local-bind-check'
-          review = root / 'review'
-          source = root / 'openmu'
-          evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
-          paths = [
-              'patches/openmu-local-only-bind-provenance.json',
-              'patches/openmu-local-only-bind.patch',
-              'patches/openmu-trade-money.patch',
-              'scripts/check-local-bind-source.py',
-              'tests/network/local_only_bind/LocalOnlyBind.csproj',
-              'tests/network/local_only_bind/Program.cs',
-          ]
-          with (evidence / 'source-check.txt').open('w', encoding='utf-8') as log:
-              with contextlib.redirect_stdout(log), contextlib.redirect_stderr(log):
-                  try:
-                      for name in paths:
-                          data = subprocess.check_output(['git', 'show', f'HEAD:{name}'])
-                          target = review / name
-                          target.parent.mkdir(parents=True, exist_ok=True)
-                          target.write_bytes(data)
-                          print('Review SHA256', hashlib.sha256(data).hexdigest(), name)
-                      provenance = json.loads((review / paths[0]).read_text())
-                      pin = 'd067b3c11c23c3145de6e2c76201ab9a93b267c8'
-                      assert provenance['repository'] == 'https://github.com/MUnique/OpenMU'
-                      assert provenance['commit'] == pin
-                      assert len(provenance['sourceSha256']) == 7
-                      for name, expected in provenance['sourceSha256'].items():
-                          assert not Path(name).is_absolute() and '..' not in Path(name).parts
-                          url = f'https://raw.githubusercontent.com/MUnique/OpenMU/{pin}/{name}'
-                          print('GET', url, flush=True)
-                          with urllib.request.urlopen(url, timeout=30) as response:
-                              data = response.read()
-                          actual = hashlib.sha256(data).hexdigest()
-                          assert actual == expected, f'Source hash mismatch: {name}'
-                          target = source / name
-                          target.parent.mkdir(parents=True, exist_ok=True)
-                          target.write_bytes(data)
-                          print('Source SHA256', actual, name, flush=True)
-                      original = (source / 'src/Network/Listener.cs').read_bytes()
-                      expected = original.replace(
-                          b'new TcpListener(IPAddress.Any, this._port)',
-                          b'new TcpListener(LocalOnlyBinding.GetAddress(), this._port)')
-                      def describe(label, data):
-                          print(label, json.dumps({
-                              'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest(),
-                              'LF_total': data.count(b'\n'), 'CRLF': data.count(b'\r\n'),
-                              'LF_only': data.count(b'\n') - data.count(b'\r\n'),
-                              'CR_only': data.count(b'\r') - data.count(b'\r\n'),
-                              'UTF8_BOM': data.startswith(b'\xef\xbb\xbf')
-                          }), flush=True)
-                      describe('original', original)
-                      describe('expected', expected)
-                      settings = json.loads((evidence / 'original-git-settings.json').read_text())
-                      print('Original Git settings:', json.dumps(settings), flush=True)
-                      control_git = ['git']
-                      for key, default in (('core.autocrlf', 'false'), ('core.eol', 'native')):
-                          value = settings[key]['value']
-                          control_git.extend(['-c', key + '=' + (default if value is None else value)])
-                      with tempfile.TemporaryDirectory() as control:
-                          control = Path(control)
-                          listener = control / 'src/Network/Listener.cs'
-                          listener.parent.mkdir(parents=True)
-                          listener.write_bytes(original)
-                          subprocess.run(['git', 'init', '-q', str(control)],
-                                         check=True, stdout=log, stderr=log)
-                          result = subprocess.run(
-                              control_git + ['apply', str(review / paths[1])],
-                              cwd=control, stdout=log, stderr=log, check=False)
-                          print('Control apply exit:', result.returncode, flush=True)
-                          actual = listener.read_bytes()
-                          describe('control actual', actual)
-                          print('Control exact expected match:', actual == expected, flush=True)
-                      print('Strict Git settings: core.autocrlf=false; core.eol=lf', flush=True)
-                      subprocess.run(
-                          [sys.executable, str(review / paths[3]), str(source)],
-                          check=True, stdout=log, stderr=log)
-                      patch = str(review / paths[1])
-                      subprocess.run(['git', 'init', '-q', str(source)], check=True,
-                                     stdout=log, stderr=log)
-                      subprocess.run(['git', 'apply', '--check', patch], cwd=source,
-                                     check=True, stdout=log, stderr=log)
-                      subprocess.run(['git', 'apply', patch], cwd=source,
-                                     check=True, stdout=log, stderr=log)
-                      actual = (source / 'src/Network/Listener.cs').read_bytes()
-                      describe('strict actual', actual)
-                      assert actual == expected, 'Isolated source differs from exact expected bytes'
-                      print('PASS: source checker and isolated bind patch application.', flush=True)
-                  except BaseException:
-                      traceback.print_exc()
-                      raise
-
-      - name: Setup pinned official .NET SDK
+          python scripts/prepare-local-bind-smoke.py source
+          if ($LASTEXITCODE) { throw 'Pinned source or patch verification failed' }
+      - name: Setup confirmed SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.109'
-
-      - name: Run existing helper/socket test
+      - name: Build only server Startup and preserve clean runtime
+        timeout-minutes: 18
+        shell: pwsh
         run: |
-          import contextlib, json, os, subprocess, traceback
-          from pathlib import Path
-          root = Path(os.environ['RUNNER_TEMP']) / 'local-bind-check'
-          project = root / 'review/tests/network/local_only_bind'
-          evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
-          (project / 'global.json').write_text(json.dumps({
-              'sdk': {'version': '10.0.109', 'rollForward': 'disable', 'allowPrerelease': False}
-          }), encoding='utf-8')
-          config = project / 'NuGet.Config'
-          config.write_text('<configuration><packageSources><clear /></packageSources></configuration>',
-                            encoding='utf-8')
-          source_arg = '-p:OpenMuSource=' + (root / 'openmu').as_posix()
-          with (evidence / 'helper-socket.txt').open('w', encoding='utf-8') as log:
-              with contextlib.redirect_stdout(log), contextlib.redirect_stderr(log):
-                  try:
-                      version = subprocess.check_output(['dotnet', '--version'], cwd=project,
-                                                        text=True, stderr=log).strip()
-                      print('Selected SDK:', version, flush=True)
-                      assert version == '10.0.109', 'Unexpected SDK selection'
-                      commands = [
-                          ['dotnet', '--info'],
-                          ['dotnet', 'restore', 'LocalOnlyBind.csproj', '--configfile', str(config),
-                           '-p:NuGetAudit=false', source_arg],
-                          ['dotnet', 'run', '--project', 'LocalOnlyBind.csproj',
-                           '--configuration', 'Release', '--no-restore', source_arg],
-                      ]
-                      for command in commands:
-                          print('COMMAND', json.dumps(command), flush=True)
-                          subprocess.run(command, cwd=project, check=True, stdout=log, stderr=log)
-                      print('PASS: all 12 existing helper/socket checks completed.', flush=True)
-                  except BaseException:
-                      traceback.print_exc()
-                      raise
-
-      - name: Record job status
+          $ErrorActionPreference = 'Stop'
+          Push-Location server-source
+          try {
+            if ((dotnet --version).Trim() -ne '10.0.109') { throw 'Unexpected SDK' }
+            dotnet --info > ../evidence/sdk.txt
+            dotnet build src/Startup/MUnique.OpenMU.Startup.csproj -c Release -p:ci=true > ../private-logs/build.txt 2>&1
+            if ($LASTEXITCODE) { throw 'Server build failed; inspect bounded build evidence' }
+          } finally { Pop-Location }
+          python scripts/prepare-local-bind-smoke.py runtime
+          if ($LASTEXITCODE) { throw 'Runtime provenance failed' }
+      - name: Save newly built runtime before any server launch
+        uses: actions/upload-artifact@v4
+        with:
+          name: openmu-money-local-bind-${{ github.run_id }}
+          path: |
+            downloads/openmu-money-local-bind-runtime.zip
+            evidence/runtime-manifest.json
+            evidence/runtime-archive.json
+            evidence/source-provenance.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: One guarded STR persistence check; native relog needs visual review
+        timeout-minutes: 12
+        shell: pwsh
+        run: ./scripts/local-bind-server-smoke.ps1
+      - name: Finalize bounded evidence
         if: always()
+        shell: pwsh
         env:
-          JOB_STATUS: ${{ job.status }}
+          SMOKE_JOB_STATUS: ${{ job.status }}
         run: |
-          import os
-          from pathlib import Path
-          evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
-          evidence.mkdir(exist_ok=True)
-          (evidence / 'status.txt').write_text(
-              'Job status before upload: ' + os.environ['JOB_STATUS'] + '\n'
-              'Missing test PASS means NOT_PROVEN; inspect step logs.\n', encoding='utf-8')
-
-      - name: Upload short evidence even on failure
+          python scripts/prepare-local-bind-smoke.py evidence
+          if ($LASTEXITCODE) { throw 'Evidence finalization failed' }
+      - name: Preserve evidence on success or failure
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: local-bind-isolated-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            ${{ runner.temp }}/local-bind-evidence/*.txt
-            ${{ runner.temp }}/local-bind-evidence/original-git-settings.json
+          name: local-bind-server-smoke-${{ github.run_id }}-${{ github.run_attempt }}
+          path: evidence/
+          retention-days: 14
           if-no-files-found: error
-          retention-days: 7
