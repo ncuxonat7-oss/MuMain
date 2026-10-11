@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Initialize evidence
         run: |
-          import os
+          import json, os, subprocess
           from pathlib import Path
           temporary = Path(os.environ['RUNNER_TEMP'])
           with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env_file:
@@ -32,6 +32,20 @@ jobs:
               env_file.write(f"NUGET_PACKAGES={temporary / 'local-bind-packages'}\n")
           evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
           evidence.mkdir()
+          settings = {}
+          for key in ('core.autocrlf', 'core.eol'):
+              result = subprocess.run(['git', 'config', '--get', key], cwd=temporary,
+                                      capture_output=True, text=True)
+              if result.returncode not in (0, 1):
+                  raise RuntimeError(f'Cannot inspect {key}: exit {result.returncode}')
+              origin = subprocess.run(['git', 'config', '--show-origin', '--get', key],
+                                      cwd=temporary, capture_output=True, text=True, check=False)
+              if origin.returncode != result.returncode:
+                  raise RuntimeError(f'Inconsistent configuration read: {key}')
+              settings[key] = {'value': result.stdout.strip() if result.returncode == 0 else None,
+                               'origin': origin.stdout.strip()}
+          (evidence / 'original-git-settings.json').write_text(
+              json.dumps(settings, indent=2), encoding='utf-8')
           (evidence / 'scope.txt').write_text(
               'Isolated helper/socket check only; 12 existing checks.\n'
               'Not production OpenMU integration, Windows package, or persistence proof.\n'
@@ -54,8 +68,14 @@ jobs:
             /tests/network/local_only_bind/Program.cs
 
       - name: Verify pinned sources and apply bind patch in isolation
+        env:
+          GIT_CONFIG_COUNT: '2'
+          GIT_CONFIG_KEY_0: core.autocrlf
+          GIT_CONFIG_VALUE_0: 'false'
+          GIT_CONFIG_KEY_1: core.eol
+          GIT_CONFIG_VALUE_1: lf
         run: |
-          import contextlib, hashlib, json, os, subprocess, sys, traceback
+          import contextlib, hashlib, json, os, subprocess, sys, tempfile, traceback
           import urllib.request
           from pathlib import Path
           root = Path(os.environ['RUNNER_TEMP']) / 'local-bind-check'
@@ -96,6 +116,41 @@ jobs:
                           target.parent.mkdir(parents=True, exist_ok=True)
                           target.write_bytes(data)
                           print('Source SHA256', actual, name, flush=True)
+                      original = (source / 'src/Network/Listener.cs').read_bytes()
+                      expected = original.replace(
+                          b'new TcpListener(IPAddress.Any, this._port)',
+                          b'new TcpListener(LocalOnlyBinding.GetAddress(), this._port)')
+                      def describe(label, data):
+                          print(label, json.dumps({
+                              'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest(),
+                              'LF_total': data.count(b'\n'), 'CRLF': data.count(b'\r\n'),
+                              'LF_only': data.count(b'\n') - data.count(b'\r\n'),
+                              'CR_only': data.count(b'\r') - data.count(b'\r\n'),
+                              'UTF8_BOM': data.startswith(b'\xef\xbb\xbf')
+                          }), flush=True)
+                      describe('original', original)
+                      describe('expected', expected)
+                      settings = json.loads((evidence / 'original-git-settings.json').read_text())
+                      print('Original Git settings:', json.dumps(settings), flush=True)
+                      control_git = ['git']
+                      for key, default in (('core.autocrlf', 'false'), ('core.eol', 'native')):
+                          value = settings[key]['value']
+                          control_git.extend(['-c', key + '=' + (default if value is None else value)])
+                      with tempfile.TemporaryDirectory() as control:
+                          control = Path(control)
+                          listener = control / 'src/Network/Listener.cs'
+                          listener.parent.mkdir(parents=True)
+                          listener.write_bytes(original)
+                          subprocess.run(['git', 'init', '-q', str(control)],
+                                         check=True, stdout=log, stderr=log)
+                          result = subprocess.run(
+                              control_git + ['apply', str(review / paths[1])],
+                              cwd=control, stdout=log, stderr=log, check=False)
+                          print('Control apply exit:', result.returncode, flush=True)
+                          actual = listener.read_bytes()
+                          describe('control actual', actual)
+                          print('Control exact expected match:', actual == expected, flush=True)
+                      print('Strict Git settings: core.autocrlf=false; core.eol=lf', flush=True)
                       subprocess.run(
                           [sys.executable, str(review / paths[3]), str(source)],
                           check=True, stdout=log, stderr=log)
@@ -106,6 +161,9 @@ jobs:
                                      check=True, stdout=log, stderr=log)
                       subprocess.run(['git', 'apply', patch], cwd=source,
                                      check=True, stdout=log, stderr=log)
+                      actual = (source / 'src/Network/Listener.cs').read_bytes()
+                      describe('strict actual', actual)
+                      assert actual == expected, 'Isolated source differs from exact expected bytes'
                       print('PASS: source checker and isolated bind patch application.', flush=True)
                   except BaseException:
                       traceback.print_exc()
@@ -170,6 +228,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: local-bind-isolated-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/local-bind-evidence/*.txt
+          path: |
+            ${{ runner.temp }}/local-bind-evidence/*.txt
+            ${{ runner.temp }}/local-bind-evidence/original-git-settings.json
           if-no-files-found: error
           retention-days: 7
