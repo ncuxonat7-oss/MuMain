@@ -1,3 +1,13 @@
+# Latest DB guard correction — 2026-10-11 03:22 UTC
+
+Manual run38107679674 at60bec9e, job114376540995 FAILED before OpenMU launch. Verified evidence artifact11690019550,13352bytes,SHA256018b80d7c861d41cc678d840d2c56e283639b151c220bd673fa1989775d41564. PG version/init/start/createdb/roles/restore/identity-write completed successfully; pipe fix now verified. Owned PG cleanup completed successfully. Failure evidence identifies scriptLine456, the DB option allowlist rejection. No native action, server startup or persistence result.
+
+Pinned XML uses only permitted keys. Source-level diagnosis: PowerShell IDictionary adaptation directs dot-property assignment to dictionary set_Item; assigning ConnectionString that way creates an unexpected key rather than calling the CLR parser. Explicit set_ConnectionString/get_Keys resolves this mechanism while retaining host/database/port and key guards. References: PowerShell v7.4.6 Binders.cs lines5530–5558; dotnet/runtime v10.0.0 DbConnectionStringBuilder.cs lines153–172. No local pwsh reproduction available, so fixed runtime remains UNVERIFIED.
+
+One-file patch published at9e0ee2591d9e86f462b2250b11eb2927eba3756b on task/local-bind-isolated-check; exact remote readback and independent static review PASS. Safe diagnostics include only entry index, error type and restricted key metadata, never connection values. No rebuild or automatic dispatch. Next owner NEW manual Windows Client Build run on this branch/head9e0ee25, no inputs; supersedes60bec9e Run instruction. Owner informed03:21UTC.
+
+Access read-only check: saved environment has gh2.46.0 at/usr/bin/gh, but API request receives proxy CONNECT403 and gh auth status reports invalid token. Account/authentication and Actions write remain UNCONFIRMED; network failure prevents attributing failure to credentials alone. No setup/access changes; owner deferred access work in favor of current smoke. Browser dispatch remains paused. Readiness65.5 unchanged.
+
 # Current prepared integration check — 2026-10-11 03:07 UTC
 
 Latest test branch commit: 60bec9e87db2ec35e2b36716b6fff13ae5aa91ac (task/local-bind-isolated-check). Published one-file PS guard correction with exact remote readback; includes prior pg_ctl output-pipe fix abe181f. No new run dispatched. This supersedes the older instruction to launch abe181f.
