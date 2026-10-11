@@ -1,3 +1,7 @@
+## 2026-10-11 continuation after 07:48 UTC owner instruction
+
+See windows11-package-static-continuation.md for pinned client dependency/shader evidence and the exact missing migration inputs. One supported Library read failed at tools/list with network; no retry/upload. Existing ZIP hashes and launcher activation remain unchanged.
+
 # Packaging save outcome — local artifacts retained
 
 Full partial-package ZIP:470,974,707bytes,
