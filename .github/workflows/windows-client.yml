@@ -3,391 +3,171 @@ name: Windows Client Build
 on:
   workflow_dispatch:
 
-concurrency:
-  group: windows-client-${{ github.ref }}
-  cancel-in-progress: true
-
 permissions:
   contents: read
 
 jobs:
-  build-windows:
-    name: Windows Native Build (x64, Release, editor OFF)
-    timeout-minutes: 90
+  local-bind-isolated:
+    name: Isolated local bind helper/socket check
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/task/local-bind-isolated-check'
     runs-on: windows-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: python {0}
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: '1'
+      DOTNET_NOLOGO: '1'
+      DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE: 'true'
+      DOTNET_INSTALL_DIR: ${{ runner.temp }}/local-bind-dotnet
+      NUGET_PACKAGES: ${{ runner.temp }}/local-bind-packages
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Initialize evidence
+        run: |
+          import os
+          from pathlib import Path
+          evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
+          evidence.mkdir()
+          (evidence / 'scope.txt').write_text(
+              'Isolated helper/socket check only; 12 existing checks.\n'
+              'Not production OpenMU integration, Windows package, or persistence proof.\n'
+              f"Workflow commit: {os.environ['GITHUB_SHA']}\n"
+              'SDK requested: 10.0.109\n', encoding='utf-8')
 
-      - name: Setup .NET 10
+      - name: Checkout selected branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/workflows/windows-client.yml
+            /patches/openmu-local-only-bind-provenance.json
+            /patches/openmu-local-only-bind.patch
+            /patches/openmu-trade-money.patch
+            /scripts/check-local-bind-source.py
+            /tests/network/local_only_bind/LocalOnlyBind.csproj
+            /tests/network/local_only_bind/Program.cs
+
+      - name: Verify pinned sources and apply bind patch in isolation
+        run: |
+          import contextlib, hashlib, json, os, subprocess, sys, traceback
+          import urllib.request
+          from pathlib import Path
+          root = Path(os.environ['RUNNER_TEMP']) / 'local-bind-check'
+          review = root / 'review'
+          source = root / 'openmu'
+          evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
+          paths = [
+              'patches/openmu-local-only-bind-provenance.json',
+              'patches/openmu-local-only-bind.patch',
+              'patches/openmu-trade-money.patch',
+              'scripts/check-local-bind-source.py',
+              'tests/network/local_only_bind/LocalOnlyBind.csproj',
+              'tests/network/local_only_bind/Program.cs',
+          ]
+          with (evidence / 'source-check.txt').open('w', encoding='utf-8') as log:
+              with contextlib.redirect_stdout(log), contextlib.redirect_stderr(log):
+                  try:
+                      for name in paths:
+                          data = subprocess.check_output(['git', 'show', f'HEAD:{name}'])
+                          target = review / name
+                          target.parent.mkdir(parents=True, exist_ok=True)
+                          target.write_bytes(data)
+                          print('Review SHA256', hashlib.sha256(data).hexdigest(), name)
+                      provenance = json.loads((review / paths[0]).read_text())
+                      pin = 'd067b3c11c23c3145de6e2c76201ab9a93b267c8'
+                      assert provenance['repository'] == 'https://github.com/MUnique/OpenMU'
+                      assert provenance['commit'] == pin
+                      assert len(provenance['sourceSha256']) == 7
+                      for name, expected in provenance['sourceSha256'].items():
+                          assert not Path(name).is_absolute() and '..' not in Path(name).parts
+                          url = f'https://raw.githubusercontent.com/MUnique/OpenMU/{pin}/{name}'
+                          print('GET', url, flush=True)
+                          with urllib.request.urlopen(url, timeout=30) as response:
+                              data = response.read()
+                          actual = hashlib.sha256(data).hexdigest()
+                          assert actual == expected, f'Source hash mismatch: {name}'
+                          target = source / name
+                          target.parent.mkdir(parents=True, exist_ok=True)
+                          target.write_bytes(data)
+                          print('Source SHA256', actual, name, flush=True)
+                      subprocess.run(
+                          [sys.executable, str(review / paths[3]), str(source)],
+                          check=True, stdout=log, stderr=log)
+                      patch = str(review / paths[1])
+                      subprocess.run(['git', 'init', '-q', str(source)], check=True,
+                                     stdout=log, stderr=log)
+                      subprocess.run(['git', 'apply', '--check', patch], cwd=source,
+                                     check=True, stdout=log, stderr=log)
+                      subprocess.run(['git', 'apply', patch], cwd=source,
+                                     check=True, stdout=log, stderr=log)
+                      print('PASS: source checker and isolated bind patch application.', flush=True)
+                  except BaseException:
+                      traceback.print_exc()
+                      raise
+
+      - name: Setup pinned official .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: '10.0.109'
 
-      - name: Activate Visual Studio developer environment
-        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
-        with:
-          arch: x64
-
-      - name: Assert MSVC developer environment
-        shell: pwsh
+      - name: Run existing helper/socket test
         run: |
-          $compiler = (Get-Command cl.exe -ErrorAction Stop).Source
-          $linker = (Get-Command link.exe -ErrorAction Stop).Source
-          $compilerIdentity = (& $compiler /? 2>&1 | Out-String)
-          $linkerIdentity = (& $linker /? 2>&1 | Out-String)
+          import contextlib, json, os, subprocess, traceback
+          from pathlib import Path
+          root = Path(os.environ['RUNNER_TEMP']) / 'local-bind-check'
+          project = root / 'review/tests/network/local_only_bind'
+          evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
+          (project / 'global.json').write_text(json.dumps({
+              'sdk': {'version': '10.0.109', 'rollForward': 'disable', 'allowPrerelease': False}
+          }), encoding='utf-8')
+          config = project / 'NuGet.Config'
+          config.write_text('<configuration><packageSources><clear /></packageSources></configuration>',
+                            encoding='utf-8')
+          source_arg = '-p:OpenMuSource=' + (root / 'openmu').as_posix()
+          with (evidence / 'helper-socket.txt').open('w', encoding='utf-8') as log:
+              with contextlib.redirect_stdout(log), contextlib.redirect_stderr(log):
+                  try:
+                      version = subprocess.check_output(['dotnet', '--version'], cwd=project,
+                                                        text=True, stderr=log).strip()
+                      print('Selected SDK:', version, flush=True)
+                      assert version == '10.0.109', 'Unexpected SDK selection'
+                      commands = [
+                          ['dotnet', '--info'],
+                          ['dotnet', 'restore', 'LocalOnlyBind.csproj', '--configfile', str(config),
+                           '-p:NuGetAudit=false', source_arg],
+                          ['dotnet', 'run', '--project', 'LocalOnlyBind.csproj',
+                           '--configuration', 'Release', '--no-restore', source_arg],
+                      ]
+                      for command in commands:
+                          print('COMMAND', json.dumps(command), flush=True)
+                          subprocess.run(command, cwd=project, check=True, stdout=log, stderr=log)
+                      print('PASS: all 12 existing helper/socket checks completed.', flush=True)
+                  except BaseException:
+                      traceback.print_exc()
+                      raise
 
-          Write-Host "cl.exe:   $compiler"
-          Write-Host "link.exe: $linker"
-
-          if ($compilerIdentity -notmatch 'Microsoft \(R\) C/C\+\+ Optimizing Compiler') {
-            throw "cl.exe is not the Microsoft C/C++ compiler."
-          }
-          if ($compilerIdentity -notmatch 'for x64') {
-            throw "cl.exe does not target x64."
-          }
-          if ($linkerIdentity -notmatch 'Microsoft \(R\) Incremental Linker') {
-            throw "link.exe is not the Microsoft linker."
-          }
-          exit 0
-
-      - name: Cache FetchContent and NuGet dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            out/build/windows-ci-x64-release/_deps
-            .nuget
-          key: windows-x64-release-deps-${{ hashFiles('CMakeLists.txt', 'src/CMakeLists.txt', 'ClientLibrary/**/*.csproj', 'ClientLibrary/**/*.props') }}
-          restore-keys: windows-x64-release-deps-
-
-      - name: Cache vcpkg packages
-        uses: actions/cache@v4
-        with:
-          path: |
-            C:/vcpkg/installed
-            C:/vcpkg/packages
-          key: vcpkg-windows-x64-${{ hashFiles('vcpkg.json') }}
-          restore-keys: vcpkg-windows-x64-
-
-      - name: Configure CMake
-        run: >
-          cmake --preset windows-x64
-          -B out/build/windows-ci-x64-release
-          -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake
-          -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=${{ github.workspace }}/toolchain-x64.cmake
-          -DVCPKG_TARGET_TRIPLET=x64-windows
-          -DVCPKG_INSTALLED_DIR=C:/vcpkg/installed
-          -DVCPKG_MANIFEST_MODE=ON
-          -DENABLE_EDITOR=OFF
-          -DMU_ENABLE_SHADER_COMPILATION=ON
-          -DGLSLANG_EXE=C:/vcpkg/installed/x64-windows/tools/glslang/glslangValidator.exe
-          -DSPIRV_CROSS_EXE=C:/vcpkg/installed/x64-windows/tools/spirv-cross/spirv-cross.exe
-          -DDXC_EXE=C:/vcpkg/installed/x64-windows/tools/directx-dxc/dxc.exe
-          -DMU_COPY_RUNTIME_ASSETS=OFF
-          -DBUILD_TESTING=ON
-
-      - name: Assert configured MSVC compiler
-        shell: pwsh
+      - name: Record job status
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
         run: |
-          $buildDirectory = "out/build/windows-ci-x64-release"
-          $compilerStates = @(
-            Get-ChildItem `
-              -Path "$buildDirectory/CMakeFiles/*/CMakeCXXCompiler.cmake" `
-              -File
-          )
-          if ($compilerStates.Count -ne 1) {
-            throw "Expected one top-level CMakeCXXCompiler.cmake; found $($compilerStates.Count)."
-          }
+          import os
+          from pathlib import Path
+          evidence = Path(os.environ['RUNNER_TEMP']) / 'local-bind-evidence'
+          evidence.mkdir(exist_ok=True)
+          (evidence / 'status.txt').write_text(
+              'Job status before upload: ' + os.environ['JOB_STATUS'] + '\n'
+              'Missing test PASS means NOT_PROVEN; inspect step logs.\n', encoding='utf-8')
 
-          $compilerState = $compilerStates[0]
-          $state = Get-Content -LiteralPath $compilerState.FullName -Raw
-          if ($state -notmatch 'set\(CMAKE_CXX_COMPILER_ID "MSVC"\)') {
-            throw "CMake did not configure the MSVC C++ compiler."
-          }
-
-          $compilerMatch = [regex]::Match(
-            $state,
-            'set\(CMAKE_CXX_COMPILER "([^"]+)"\)'
-          )
-          if (-not $compilerMatch.Success) {
-            throw "CMake did not record the C++ compiler path."
-          }
-
-          $configuredCompiler = [IO.Path]::GetFullPath($compilerMatch.Groups[1].Value)
-          $activeCompiler = [IO.Path]::GetFullPath(
-            (Get-Command cl.exe -ErrorAction Stop).Source
-          )
-          Write-Host "CMake compiler ID: MSVC"
-          Write-Host "CMake C++ compiler: $configuredCompiler"
-          if (-not [StringComparer]::OrdinalIgnoreCase.Equals(
-            $configuredCompiler,
-            $activeCompiler
-          )) {
-            throw "CMake selected a compiler outside the active MSVC environment."
-          }
-
-      - name: Build
-        run: cmake --build out/build/windows-ci-x64-release --config Release
-
-      - name: Run tests
-        run: >
-          ctest --test-dir out/build/windows-ci-x64-release --build-config Release
-          --output-on-failure
-          --no-tests=error
-
-      - name: Stage MSVC redistributable runtime
-        shell: pwsh
-        run: |
-          $runtimeDirectory = "out/build/windows-ci-x64-release/src/Release"
-          if (-not (Test-Path -LiteralPath $runtimeDirectory -PathType Container)) {
-            throw "Missing native runtime directory: $runtimeDirectory"
-          }
-          if ([string]::IsNullOrWhiteSpace($env:VCToolsRedistDir)) {
-            throw "VCToolsRedistDir is missing from the active MSVC developer environment."
-          }
-
-          $redistArchitectureDirectory = Join-Path $env:VCToolsRedistDir "x64"
-          $crtDirectories = @(
-            Get-ChildItem -LiteralPath $redistArchitectureDirectory -Directory -Filter "Microsoft.VC*.CRT"
-          )
-          if ($crtDirectories.Count -ne 1) {
-            throw "Expected one active Microsoft.VC*.CRT directory under $redistArchitectureDirectory; found $($crtDirectories.Count)."
-          }
-
-          $crtDlls = @(
-            Get-ChildItem -LiteralPath $crtDirectories[0].FullName -File -Filter "*.dll" |
-              Sort-Object Name
-          )
-          if ($crtDlls.Count -eq 0) {
-            throw "Active MSVC CRT directory contains no redistributable DLLs."
-          }
-          Copy-Item -LiteralPath $crtDlls.FullName -Destination $runtimeDirectory -Force
-
-      - name: Validate artifacts
-        shell: pwsh
-        run: |
-          $runtimeDirectory = "out/build/windows-ci-x64-release/src/Release"
-          $requiredFiles = @(
-            "$runtimeDirectory/Main.exe",
-            "$runtimeDirectory/MUnique.Client.Library.dll",
-            "$runtimeDirectory/config.ini"
-          )
-          foreach ($path in $requiredFiles) {
-            if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
-              throw "Missing required runtime file: $path"
-            }
-          }
-          if (-not (Test-Path -LiteralPath "$runtimeDirectory/shaders" -PathType Container)) {
-            throw "Missing required runtime directory: $runtimeDirectory/shaders"
-          }
-          foreach ($path in @("$runtimeDirectory/Data", "$runtimeDirectory/fonts")) {
-            if (Test-Path -LiteralPath $path) {
-              throw "Unexpected bundled game data: $path"
-            }
-          }
-
-          $dumpbin = (Get-Command dumpbin.exe -ErrorAction Stop).Source
-          $expectedMachinePattern = '^\s*8664 machine \(x64\)\s*$' # 8664 machine (x64)
-          if ([string]::IsNullOrWhiteSpace($env:WINDIR)) {
-            throw "WINDIR is required for target Windows OS DLL validation."
-          }
-          if ([Environment]::Is64BitProcess) {
-            $targetSystemDirectory = Join-Path $env:WINDIR "System32"
-          } else {
-            $targetSystemDirectory = Join-Path $env:WINDIR "Sysnative"
-          }
-          $windowsOsDlls = @(
-            "advapi32.dll"
-            "avrt.dll"
-            "bcrypt.dll"
-            "cfgmgr32.dll"
-            "combase.dll"
-            "comctl32.dll"
-            "comdlg32.dll"
-            "crypt32.dll"
-            "d3d12.dll"
-            "dbghelp.dll"
-            "dinput8.dll"
-            "dnsapi.dll"
-            "dwmapi.dll"
-            "dxcore.dll"
-            "dxgi.dll"
-            "dxguid.dll"
-            "gdi32.dll"
-            "glu32.dll"
-            "hid.dll"
-            "imagehlp.dll"
-            "imm32.dll"
-            "iphlpapi.dll"
-            "kernel32.dll"
-            "mf.dll"
-            "mfplat.dll"
-            "mfreadwrite.dll"
-            "mfsensorgroup.dll"
-            "msvcrt.dll"
-            "normaliz.dll"
-            "ntdll.dll"
-            "ole32.dll"
-            "oleaut32.dll"
-            "opengl32.dll"
-            "powrprof.dll"
-            "propsys.dll"
-            "rpcrt4.dll"
-            "sechost.dll"
-            "secur32.dll"
-            "setupapi.dll"
-            "shell32.dll"
-            "shcore.dll"
-            "shlwapi.dll"
-            "ucrtbase.dll"
-            "uiautomationcore.dll"
-            "urlmon.dll"
-            "user32.dll"
-            "usp10.dll"
-            "uuid.dll"
-            "version.dll"
-            "vfw32.dll"
-            "wininet.dll"
-            "winmm.dll"
-            "wintrust.dll"
-            "wldap32.dll"
-            "ws2_32.dll"
-            "wtsapi32.dll"
-          )
-          $windowsOsDllAllowlist = @{}
-          foreach ($windowsOsDll in $windowsOsDlls) {
-            $windowsOsDllAllowlist[$windowsOsDll] = $true
-          }
-
-          $rootRuntimeFiles = @{}
-          Get-ChildItem -LiteralPath $runtimeDirectory -Force -File |
-            ForEach-Object { $rootRuntimeFiles[$_.Name] = $_.FullName }
-          $runtimeBinaries = @(
-            Get-ChildItem -LiteralPath $runtimeDirectory -Force -File -Recurse |
-              Where-Object { $_.Extension -in @(".exe", ".dll") } |
-              Sort-Object FullName
-          )
-          if ($runtimeBinaries.Count -eq 0) {
-            throw "Runtime directory contains no PE files: $runtimeDirectory"
-          }
-
-          $missingImports = @()
-          foreach ($binary in $runtimeBinaries) {
-            $headers = @(& $dumpbin /headers $binary.FullName 2>&1)
-            if ($LASTEXITCODE -ne 0) {
-              throw "dumpbin /headers failed for $($binary.FullName) with exit code $LASTEXITCODE."
-            }
-            $machineMatches = @($headers | Select-String -Pattern $expectedMachinePattern)
-            if ($machineMatches.Count -ne 1) {
-              throw "Unexpected PE architecture for $($binary.FullName); expected x64."
-            }
-
-            $dependents = @(& $dumpbin /DEPENDENTS $binary.FullName 2>&1)
-            if ($LASTEXITCODE -ne 0) {
-              throw "dumpbin /DEPENDENTS failed for $($binary.FullName) with exit code $LASTEXITCODE."
-            }
-            $dependencySection = [regex]::Match(
-              ($dependents -join "`n"),
-              '(?ms)^[ \t]*Image has the following dependencies:[ \t]*\r?\n(?<body>.*?)(?=^[ \t]*Summary[ \t]*$)'
-            )
-            if (-not $dependencySection.Success) {
-              throw "Could not parse dumpbin dependency heading for $($binary.FullName)."
-            }
-            $imports = @(
-              [regex]::Matches(
-                $dependencySection.Groups["body"].Value,
-                '(?im)^[ \t]*(?<name>[^ \t\r\n]+\.dll)[ \t]*$'
-              ) |
-                ForEach-Object { $_.Groups["name"].Value } |
-                Sort-Object -Unique
-            )
-            foreach ($importName in $imports) {
-              $importFileName = [IO.Path]::GetFileName($importName)
-              if (
-                [IO.Path]::IsPathRooted($importName) -or
-                $importName.Contains('/') -or
-                $importName.Contains('\') -or
-                -not [StringComparer]::Ordinal.Equals($importFileName, $importName)
-              ) {
-                $missingImports += "$($binary.FullName): invalid import name: $importName"
-                continue
-              }
-              if ($importName -match '^(?:ucrtbased|(?:vcruntime|msvcp|concrt|vcomp)[0-9]+(?:_[a-z0-9_]+)?d)\.dll$') {
-                $missingImports += "$($binary.FullName): debug CRT import in Release runtime: $importName"
-                continue
-              }
-              if ($rootRuntimeFiles.ContainsKey($importName)) {
-                continue
-              }
-              if ($importName -match '^(?:vcruntime|msvcp|concrt|vcomp)[0-9]+(?:_[a-z0-9_]+)?\.dll$') {
-                $missingImports += "$($binary.FullName): VC runtime import must be staged root-local: $importName"
-                continue
-              }
-              if ($importName -like "api-ms-win-*" -or $importName -like "ext-ms-win-*") {
-                continue
-              }
-              if ($windowsOsDllAllowlist.ContainsKey($importName)) {
-                $systemDllPath = Join-Path $targetSystemDirectory $importName
-                if (Test-Path -LiteralPath $systemDllPath -PathType Leaf) {
-                  continue
-                }
-                $missingImports += "$($binary.FullName): allowlisted Windows OS DLL missing from target system directory: $importName"
-                continue
-              }
-              $missingImports += "$($binary.FullName): $importName"
-            }
-          }
-          $missingImports = @($missingImports | Sort-Object -Unique)
-          if ($missingImports.Count -ne 0) {
-            throw "Missing runtime imports:`n$($missingImports -join "`n")"
-          }
-
-          $expectedShaders = @(
-            "basic_colored.frag.dxil"
-            "basic_colored.frag.msl"
-            "basic_colored.frag.spv"
-            "basic_colored.vert.dxil"
-            "basic_colored.vert.msl"
-            "basic_colored.vert.spv"
-            "basic_textured.frag.dxil"
-            "basic_textured.frag.msl"
-            "basic_textured.frag.spv"
-            "basic_textured.vert.dxil"
-            "basic_textured.vert.msl"
-            "basic_textured.vert.spv"
-            "shadow_volume.vert.dxil"
-            "shadow_volume.vert.msl"
-            "shadow_volume.vert.spv"
-            "skinned_textured.vert.dxil"
-            "skinned_textured.vert.msl"
-            "skinned_textured.vert.spv"
-          )
-          $shaderDirectory = "$runtimeDirectory/shaders"
-          $actualShaders = @(
-            Get-ChildItem -LiteralPath $shaderDirectory -Force -File -Recurse |
-              ForEach-Object {
-                [IO.Path]::GetRelativePath($shaderDirectory, $_.FullName).Replace('\', '/')
-              } |
-              Sort-Object
-          )
-          $shaderDifference = @(
-            Compare-Object -ReferenceObject $expectedShaders -DifferenceObject $actualShaders
-          )
-          if ($shaderDifference.Count -ne 0) {
-            Write-Host ($shaderDifference | Format-Table -AutoSize | Out-String)
-            throw "Runtime shader manifest differs from the exact 18-file manifest."
-          }
-
-          Write-Host "Validated native x64 runtime directory: $runtimeDirectory"
-
-      - name: Archive runtime
-        run: tar -czf MuMain-windows-native-x64-release-editor-off-no-data.tar.gz -C out/build/windows-ci-x64-release/src/Release .
-
-      - name: Upload runtime artifact
+      - name: Upload short evidence even on failure
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: mu-client-windows-native-x64-release-editor-off-no-data-main
-          path: MuMain-windows-native-x64-release-editor-off-no-data.tar.gz
+          name: local-bind-isolated-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/local-bind-evidence/*.txt
           if-no-files-found: error
-
+          retention-days: 7
