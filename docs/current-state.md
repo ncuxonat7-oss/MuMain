@@ -1,3 +1,9 @@
+# Latest owner checkpoint — 2026-10-11 01:25 UTC
+
+Windows isolated local-bind run 38101598438 at c7a7552886ccbc3c657d443a6bda73590904d4b0 succeeded: strict source/patch/reversal checks, official SDK 10.0.109 and 12/12 existing helper/socket checks PASS. Current runner control reproduced Git autocrlf newline conversion; strict step-local settings preserve exact bytes. Full OpenMU integration and one-click Windows package remain UNVERIFIED. Readiness unchanged at 65.5. Do not repeat unchanged helper checks.
+
+Authoritative detail: [local-bind-actions-checkpoint](local-bind-actions-checkpoint.md). Bounded research and independent review: [methodology lessons](research/mu-methodology-lessons-2026-10-11.md). Next proposed step is the smallest full-runtime integration route, not broader mechanics auditing; large execution/publication/security changes require scoped approval. Older statuses below are historical where contradicted by this checkpoint.
+
 # OWNER UPDATE — 2026-10-10 evening
 
 This section supersedes the old next-action queues below; historical evidence is preserved. See [owner strategy and mechanics index](s6-strategy-and-mechanics-index.md). Mix38 is closed at the evidence closeout; do not repeat old EXACT NEXT. Run16 skill41 native learning/persistence PASS. Run17 fixture preserved, cast=0; accepted use remains UNKNOWN. Heavy instrumentation attempt stopped. Current priority: coherent Windows 11 private playable package plus bounded key code/data compatibility checks without owner PC, followed by real owner bug reports and targeted fixes. Normal-player journey testing belongs to owner; agents retain technical/security/integration checks. No exhaustive mechanics audit or broad continuous-improvement implementation. Windows 11 confirmed; hardware/host unchosen; no ready one-click package. Readiness 65.5/model1.1/MEDIUM unchanged. This is a docs-branch update, not a main merge or baseline promotion.
