@@ -1,3 +1,13 @@
+# Latest verified build — 2026-10-11 02:17 UTC
+
+Manual run38104421623 source71159136c8f8cba949735be3ed0904fc15e5ad73, job114366770737 SUCCESS. SDK10.0.401; pinnedOpenMU d067b3c + unchanged Money/local-bind patches; same -c Release -p:ci=true and LF. Full Startup build succeeded in3m01.73s,267warnings,0errors. Build-only resultPASS; DB/client downloads and all integration steps deliberately SKIPPED. No listener/shutdown/persistence/native world-entry proof.
+
+Reusable new runtime artifact11689365514 (openmu-money-local-bind-38104421623),22410241bytes, outerZIP SHA256505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c, expires2026-11-10. Inner runtimeZIP SHA2564b1b1d71a0aa992fb3f2dbac7e447a5704cccc7ed38ebacfdebe97eabebf1eec. Contains runtime and hash/provenance records. This differs from old Money-only artifact11630698202. Do not rebuild unchanged source for next smoke; verify/reuse this output.
+
+Evidence artifact11689275690,25044bytes,SHA256929cb0627486f50225874f56eee317a70abdc6feb313d89ff477311a4787c010,expires2026-10-25. Parent read BUILD_ONLY_PASS, sdk/source provenance, matching_errors0, untruncateddiagnostics and buildtail. SDK10.0.109 failedpreviousfullbuild;10.0.401 nowworks. Precise compiler-internal root cause not claimed.
+
+Next proposed action: reuse exactnewruntime for already scoped temporaryDB nativeSTR/gracefulrestart smoke, with no new build. Any new manual run must select corrected workflowversion; current branch still build-only. Existing integrated smoke safety/readConsoleInput/endpoint schema remain runtimeUNKNOWN and shouldfailclosed. Earlier12helperchecks remainPASS. Readiness65.5unchanged until relevant actualgameplayevidence.
+
 # Latest execution — 2026-10-11 02:05 UTC
 
 Owner manual run38103777523, source25321d0e38a25e66572e77f13872bdd66cda3e65, job114364892672: server build FAILED. PowerShell syntax, approved artifact hashes/staging, pinned source/patch checks and SDK setup PASS. Build tail reports 165 errors/273 warnings in generated AdminPanel Pages_LogFiles_razor.g.cs, including CS0246 __builder, CS7014 and CS0103; elapsed2m01.91s. Root cause NOT YET ESTABLISHED; do not call cascade count165 separate defects.
