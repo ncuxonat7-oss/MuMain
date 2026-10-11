@@ -9,12 +9,12 @@ permissions:
 
 jobs:
   server-smoke:
-    name: One build-only check with SDK 10.0.401
+    name: One smoke using verified runtime 11689365514
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/task/local-bind-isolated-check'
     runs-on: windows-latest
     timeout-minutes: 35
     env:
-      LOCAL_BIND_BUILD_ONLY: '1'
+      LOCAL_BIND_BUILD_ONLY: '0'
       DOTNET_CLI_TELEMETRY_OPTOUT: '1'
       DOTNET_NOLOGO: '1'
       DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE: 'true'
@@ -33,15 +33,15 @@ jobs:
           if ($errors.Count) { throw ($errors | Out-String) }
           "DOTNET_INSTALL_DIR=$env:RUNNER_TEMP/local-bind-dotnet" >> $env:GITHUB_ENV
           "NUGET_PACKAGES=$env:RUNNER_TEMP/local-bind-nuget" >> $env:GITHUB_ENV
-          'NOT_RUN: build pending; integration disabled' | Set-Content evidence/result.txt
-      - name: Fetch exact approved DB and ready client archives
-        if: ${{ false }} # This approved run is build-only.
+          'NOT_RUN: verified runtime staging and integration pending' | Set-Content evidence/result.txt
+      - name: Fetch exact approved runtime, DB and ready client archives
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const crypto = require('crypto');
             const specs = [
+              [11689365514, 38104421623, 'openmu-money-local-bind-38104421623', 'runtime.zip', '505d1053d235417876c59f31e2dbb0338bad955dee31c193ccf167da28355f8c'],
               [11651520969, 38005996341, 'baseline-data-final', 'database.zip', 'b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea'],
               [11567737809, 37813650810, 'mu-client-windows-native-x64-release-editor-off-no-data-main', 'client.zip', 'eefe0a710518bc6536dd47cde45fb8605ae4ef5c7f4faca4095e8abb5f23297e']
             ];
@@ -49,6 +49,7 @@ jobs:
             for (const [id, run, name, file, sha256] of specs) {
               const {data: meta} = await github.rest.actions.getArtifact({...context.repo, artifact_id:id});
               if (meta.expired || meta.name !== name || meta.workflow_run.id !== run) throw new Error('Artifact identity unavailable: ' + id);
+              if (id === 11689365514 && (meta.size_in_bytes !== 22410241 || meta.workflow_run.head_sha !== '71159136c8f8cba949735be3ed0904fc15e5ad73')) throw new Error('Runtime source/size mismatch');
               const {data} = await github.rest.actions.downloadArtifact({...context.repo, artifact_id:id, archive_format:'zip'});
               const bytes = Buffer.from(data);
               if (crypto.createHash('sha256').update(bytes).digest('hex') !== sha256) throw new Error('Artifact hash mismatch: ' + id);
@@ -56,13 +57,18 @@ jobs:
               evidence.push({id, run, name, sha256, bytes:bytes.length});
             }
             fs.writeFileSync('evidence/input-artifacts.json', JSON.stringify(evidence, null, 2));
+      - name: Verify and stage the exact existing runtime
+        shell: pwsh
+        run: |
+          python scripts/prepare-local-bind-smoke.py staged_runtime
+          if ($LASTEXITCODE) { throw 'Existing runtime verification failed; no fallback build' }
       - name: Stage verified client and disposable DB input
-        if: ${{ false }} # This approved run is build-only.
         shell: pwsh
         run: |
           python scripts/prepare-local-bind-smoke.py inputs
           if ($LASTEXITCODE) { throw 'Input staging failed' }
       - name: Checkout exact server source with LF bytes
+        if: ${{ false }} # Reuse verified build; no checkout, patching or rebuild.
         uses: actions/checkout@v4
         env:
           GIT_CONFIG_COUNT: '2'
@@ -76,6 +82,7 @@ jobs:
           path: server-source
           persist-credentials: false
       - name: Verify and apply both existing patches
+        if: ${{ false }} # Reuse verified build; no checkout, patching or rebuild.
         shell: pwsh
         env:
           GIT_CONFIG_COUNT: '2'
@@ -91,6 +98,7 @@ jobs:
         with:
           dotnet-version: '10.0.401'
       - name: Build only server Startup and preserve clean runtime
+        if: ${{ false }} # Reuse verified build; no checkout, patching or rebuild.
         timeout-minutes: 18
         shell: pwsh
         run: |
@@ -105,6 +113,7 @@ jobs:
           python scripts/prepare-local-bind-smoke.py runtime
           if ($LASTEXITCODE) { throw 'Runtime provenance failed' }
       - name: Save newly built runtime before any server launch
+        if: ${{ false }} # Reuse verified build; no checkout, patching or rebuild.
         uses: actions/upload-artifact@v4
         with:
           name: openmu-money-local-bind-${{ github.run_id }}
@@ -116,7 +125,6 @@ jobs:
           retention-days: 30
           if-no-files-found: error
       - name: One guarded STR persistence check; native relog needs visual review
-        if: ${{ false }} # This approved run is build-only.
         timeout-minutes: 12
         shell: pwsh
         run: ./scripts/local-bind-server-smoke.ps1
