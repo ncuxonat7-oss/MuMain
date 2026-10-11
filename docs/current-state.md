@@ -1,8 +1,10 @@
-# Latest owner checkpoint — 2026-10-11 01:25 UTC
+# Latest owner checkpoint — 2026-10-11 03:07 UTC
 
-Windows isolated local-bind run 38101598438 at c7a7552886ccbc3c657d443a6bda73590904d4b0 succeeded: strict source/patch/reversal checks, official SDK 10.0.109 and 12/12 existing helper/socket checks PASS. Current runner control reproduced Git autocrlf newline conversion; strict step-local settings preserve exact bytes. Full OpenMU integration and one-click Windows package remain UNVERIFIED. Readiness unchanged at 65.5. Do not repeat unchanged helper checks.
+Full pinned OpenMU server build38104421623 with SDK10.0.401 PASS; reusable runtime11689365514 is verified and privately backed up. Latest integration attempt38106487089 proved PostgreSQL startup exit0 but stopped on output pipe drain timeout; owned cleanup succeeded. DB restore, OpenMU/native startup and restart persistence remain NOT_RUN for this stage. Readiness65.5/model1.1/MEDIUM unchanged.
 
-Authoritative detail: [local-bind-actions-checkpoint](local-bind-actions-checkpoint.md). Bounded research and independent review: [methodology lessons](research/mu-methodology-lessons-2026-10-11.md). Next proposed step is the smallest full-runtime integration route, not broader mechanics auditing; large execution/publication/security changes require scoped approval. Older statuses below are historical where contradicted by this checkpoint.
+Test branch task/local-bind-isolated-check now contains reviewed fixes at60bec9e87db2ec35e2b36716b6fff13ae5aa91ac: bounded pg_ctl daemon output handling plus strict validation of four actual pinned runtime JSON files. Exact remote readback and independent static review PASS; Windows execution UNVERIFIED. No server rebuild or new dispatch. Next: one owner NEW manual Windows Client Build run on this exact branch, then inspect evidence and native screenshots. Browser automatic dispatch stays explicitly paused; no verified alternative permission/path has been established. Do not repeat unchanged helper/build checks, infer integration success from build success, or resume historical mechanic queues below.
+
+Authoritative detail and artifact hashes: [local-bind-actions-checkpoint](local-bind-actions-checkpoint.md). Strategy and bounded independent research: [methodology lessons](research/mu-methodology-lessons-2026-10-11.md). Current goal remains a simple private Windows11 local Alpha package with targeted technical checks and owner gameplay testing.
 
 # OWNER UPDATE — 2026-10-10 evening
 
