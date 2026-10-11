@@ -1,0 +1,2256 @@
+{
+  "evidence": "Static inspection report 2026-10-11 18:00 UTC; proposed staging only, not an assembled package",
+  "client_files": [
+    {
+      "source": "./concrt140.dll",
+      "destination": "client/concrt140.dll",
+      "bytes": 374200,
+      "sha256": "54716f0738af891f283d213b5c8d11b25896bb8ee3097d301eae718560cf974e"
+    },
+    {
+      "source": "./config.ini",
+      "destination": "client/config.ini",
+      "bytes": 266,
+      "sha256": "03a69fa65ec851908c8b7229f85d50ea4eb1a02fe70996943426309b3c327f57"
+    },
+    {
+      "source": "./config.ini.template",
+      "destination": "client/config.ini.template",
+      "bytes": 266,
+      "sha256": "03a69fa65ec851908c8b7229f85d50ea4eb1a02fe70996943426309b3c327f57"
+    },
+    {
+      "source": "./libcrypto-3-x64.dll",
+      "destination": "client/libcrypto-3-x64.dll",
+      "bytes": 5364736,
+      "sha256": "f7bd9c8289b6339d174e400a3187b32f055d27b75fc72a6451ebd2dd2903388e"
+    },
+    {
+      "source": "./libcurl.dll",
+      "destination": "client/libcurl.dll",
+      "bytes": 729088,
+      "sha256": "4d4ccf1cc7fb3c34fa6f04367a1700046b4e3ea655baad79843786fdaa86e6da"
+    },
+    {
+      "source": "./Main.exe",
+      "destination": "client/Main.exe",
+      "bytes": 21560832,
+      "sha256": "9d895c638eb256b98d728dfc511f4c57d4a9e88cdba703e639426712b0b57cd5"
+    },
+    {
+      "source": "./msvcp140.dll",
+      "destination": "client/msvcp140.dll",
+      "bytes": 643512,
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca"
+    },
+    {
+      "source": "./msvcp140_1.dll",
+      "destination": "client/msvcp140_1.dll",
+      "bytes": 35768,
+      "sha256": "206c931bf90fdad8816de3b5e2ef80b2bcaa9406c89ecc05fe6fddffe251e982"
+    },
+    {
+      "source": "./msvcp140_2.dll",
+      "destination": "client/msvcp140_2.dll",
+      "bytes": 274872,
+      "sha256": "d50d7883f20d1dc6191768d3746f52dd9cac89c346ffaed5be1f110c2f34a838"
+    },
+    {
+      "source": "./msvcp140_atomic_wait.dll",
+      "destination": "client/msvcp140_atomic_wait.dll",
+      "bytes": 57792,
+      "sha256": "3d0cbfaa1bf3eecf5a3f4491d2960ee803cb994f30292c6adc4a07c498f60e2b"
+    },
+    {
+      "source": "./msvcp140_codecvt_ids.dll",
+      "destination": "client/msvcp140_codecvt_ids.dll",
+      "bytes": 31160,
+      "sha256": "8a65c7596ef2e6938731f5a1058e7e40145b6d97967cc649231a076b9a608d78"
+    },
+    {
+      "source": "./MuMainIcon.png",
+      "destination": "client/MuMainIcon.png",
+      "bytes": 70433,
+      "sha256": "950a6a580f6b52bbc8a73178ef2840f6608acb221a66248bbf28202aa14e747d"
+    },
+    {
+      "source": "./MUnique.Client.Library.dll",
+      "destination": "client/MUnique.Client.Library.dll",
+      "bytes": 3283456,
+      "sha256": "9292041494d9226f105fc07a94c2451f6303b906123b2932ea05a3469c378cb7"
+    },
+    {
+      "source": "./vccorlib140.dll",
+      "destination": "client/vccorlib140.dll",
+      "bytes": 350648,
+      "sha256": "09f93d5ff96ae09767f3e1af3cdd43a5a58f2598654fc63089429bb6f9f4737f"
+    },
+    {
+      "source": "./vcruntime140.dll",
+      "destination": "client/vcruntime140.dll",
+      "bytes": 178616,
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    {
+      "source": "./vcruntime140_1.dll",
+      "destination": "client/vcruntime140_1.dll",
+      "bytes": 50112,
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    {
+      "source": "./vcruntime140_threads.dll",
+      "destination": "client/vcruntime140_threads.dll",
+      "bytes": 38840,
+      "sha256": "40f39e8cee5f5a531b4010e18b807e8fe265b908dc58f959ecb7ebc6ea6cb11a"
+    },
+    {
+      "source": "./z.dll",
+      "destination": "client/z.dll",
+      "bytes": 91648,
+      "sha256": "46847d3ff3d576c66dea245824a9c9d751bf656cdb4b84e998626fbae7eaf2e3"
+    },
+    {
+      "source": "./shaders/basic_colored.frag.dxil",
+      "destination": "client/shaders/basic_colored.frag.dxil",
+      "bytes": 2964,
+      "sha256": "097e1988b492387f4764816cd972f9ff79816bbff3abe2d01921283a930d9d88"
+    },
+    {
+      "source": "./shaders/basic_colored.frag.msl",
+      "destination": "client/shaders/basic_colored.frag.msl",
+      "bytes": 756,
+      "sha256": "9985a151b29f630b1fb3f18c8d84fef5519415f0ce0d0c8d5d55a48fa3f187a6"
+    },
+    {
+      "source": "./shaders/basic_colored.frag.spv",
+      "destination": "client/shaders/basic_colored.frag.spv",
+      "bytes": 944,
+      "sha256": "bc918a32627736e54a3ea2301f3933ff1d65057e6f768b72081fe08ed9cf59f2"
+    },
+    {
+      "source": "./shaders/basic_colored.vert.dxil",
+      "destination": "client/shaders/basic_colored.vert.dxil",
+      "bytes": 3748,
+      "sha256": "2283495b0a672b15eda94e2c5aff44fe4019811d2e1f182b0bf9bf94f1348bc6"
+    },
+    {
+      "source": "./shaders/basic_colored.vert.msl",
+      "destination": "client/shaders/basic_colored.vert.msl",
+      "bytes": 1244,
+      "sha256": "9e010800610b9c19198282b9f0d2f843ed96047d58532ee613d10c7796ef6129"
+    },
+    {
+      "source": "./shaders/basic_colored.vert.spv",
+      "destination": "client/shaders/basic_colored.vert.spv",
+      "bytes": 1920,
+      "sha256": "5ac9ef1a3f7cb63ac2a419f309ecac416c28fb677e8662c1f4d99b73466816f6"
+    },
+    {
+      "source": "./shaders/basic_textured.frag.dxil",
+      "destination": "client/shaders/basic_textured.frag.dxil",
+      "bytes": 5072,
+      "sha256": "f5074d3540ff969cc3c1771e0bd2500f82f1d9c146fabe2b118fcc5993e7062b"
+    },
+    {
+      "source": "./shaders/basic_textured.frag.msl",
+      "destination": "client/shaders/basic_textured.frag.msl",
+      "bytes": 1746,
+      "sha256": "0cd177e7db5667c892c3ec02a7ca192d28ddef807337e5cf126d942871f3fa74"
+    },
+    {
+      "source": "./shaders/basic_textured.frag.spv",
+      "destination": "client/shaders/basic_textured.frag.spv",
+      "bytes": 3032,
+      "sha256": "701fccbf9991453ec901e6993b11631d3846821aa27649324900527037ca3373"
+    },
+    {
+      "source": "./shaders/basic_textured.vert.dxil",
+      "destination": "client/shaders/basic_textured.vert.dxil",
+      "bytes": 4892,
+      "sha256": "183d7dcd93d62a26977f01fbe7dc847cac8257c18a98886642930e1a5a10fd2d"
+    },
+    {
+      "source": "./shaders/basic_textured.vert.msl",
+      "destination": "client/shaders/basic_textured.vert.msl",
+      "bytes": 2043,
+      "sha256": "67938bce41fb3578ffecc77ab921cbe2bd2c574a3ee0694ee7d39ce32e3893cc"
+    },
+    {
+      "source": "./shaders/basic_textured.vert.spv",
+      "destination": "client/shaders/basic_textured.vert.spv",
+      "bytes": 3440,
+      "sha256": "e1570d50daff93bdbfa99c8ef19c560f9d10a1f3fd00fa7d8298a46b23ebf577"
+    },
+    {
+      "source": "./shaders/shadow_volume.vert.dxil",
+      "destination": "client/shaders/shadow_volume.vert.dxil",
+      "bytes": 3648,
+      "sha256": "8079429f3b0b0036932b986ed5c59bd5a45a1fa7e1fcc5fd4ddb12d8796d734f"
+    },
+    {
+      "source": "./shaders/shadow_volume.vert.msl",
+      "destination": "client/shaders/shadow_volume.vert.msl",
+      "bytes": 770,
+      "sha256": "230a9b7aaa4eb3dda11123ad331276def650800c46e40b91a906e264c5137c77"
+    },
+    {
+      "source": "./shaders/shadow_volume.vert.spv",
+      "destination": "client/shaders/shadow_volume.vert.spv",
+      "bytes": 1176,
+      "sha256": "24af5dd1dd2dc8f150121ceddd0d13c7e0d73aad3045cb1c843d54b76bc546df"
+    },
+    {
+      "source": "./shaders/skinned_textured.vert.dxil",
+      "destination": "client/shaders/skinned_textured.vert.dxil",
+      "bytes": 7816,
+      "sha256": "846a7ae8f0fe56d22c4ceb5505f2ae9a1d2ee694e74197f693bfa929459045d0"
+    },
+    {
+      "source": "./shaders/skinned_textured.vert.msl",
+      "destination": "client/shaders/skinned_textured.vert.msl",
+      "bytes": 7461,
+      "sha256": "aa9476137aac8367dd4112b42619dfc448270d6ad1f791a1342ab7a71a405e8c"
+    },
+    {
+      "source": "./shaders/skinned_textured.vert.spv",
+      "destination": "client/shaders/skinned_textured.vert.spv",
+      "bytes": 13436,
+      "sha256": "e202bfd214db07eb86dc7e080e7f59b6eb974398e8f530448680458155bbabb2"
+    }
+  ],
+  "server_files": [
+    {
+      "source": "appsettings.json",
+      "destination": "server/appsettings.json",
+      "bytes": 1185,
+      "sha256": "695c85d511324bd8eb901b7132d0d4d4d79164f70746f1f83a13bf3a2673e80e"
+    },
+    {
+      "source": "BCrypt.Net-Next.dll",
+      "destination": "server/BCrypt.Net-Next.dll",
+      "bytes": 23040,
+      "sha256": "115b9faff8b909a1a08b65b315058eb182c0c4c3a77c19fcd5f4da9da49d4a63"
+    },
+    {
+      "source": "BlazorInputFile.dll",
+      "destination": "server/BlazorInputFile.dll",
+      "bytes": 20480,
+      "sha256": "0b42ab3262d0404ebc71dd7e14dc08396f3d9cd19b387e3c851c5002848169a0"
+    },
+    {
+      "source": "Castle.Core.dll",
+      "destination": "server/Castle.Core.dll",
+      "bytes": 385024,
+      "sha256": "9c5762ae27f2afe0913e8ffa494f705ffe9680699aa4fb79c2613344c918ee28"
+    },
+    {
+      "source": "ChatServerPackets.xml",
+      "destination": "server/ChatServerPackets.xml",
+      "bytes": 5993,
+      "sha256": "bcb784e9ef9ea7d0440ea042d1cadb5e01c291c25a3c605517237301fb2c00ec"
+    },
+    {
+      "source": "ClientToServerPackets.xml",
+      "destination": "server/ClientToServerPackets.xml",
+      "bytes": 163177,
+      "sha256": "bf4016043a85d1469caf9e3ed6116f455fb506c9b08b36a07b7a674748ca3c0b"
+    },
+    {
+      "source": "CommonEnums.xml",
+      "destination": "server/CommonEnums.xml",
+      "bytes": 12249,
+      "sha256": "d1cfaf6710c885e448fb4fdd34affdecf186b3b80f466760fcb3cdfa9660b74c"
+    },
+    {
+      "source": "ConnectionSettings.xml",
+      "destination": "server/ConnectionSettings.xml",
+      "bytes": 3957,
+      "sha256": "f485a2accd54ab98322b01d6bc009653c2bed5d307aca0bd0df02fd4e8e94c09"
+    },
+    {
+      "source": "ConnectServerPackets.xml",
+      "destination": "server/ConnectServerPackets.xml",
+      "bytes": 8837,
+      "sha256": "7779d528b443c9d2a9eea121f163de4ba1c674b9d19e1215936ccb84c33b7cee"
+    },
+    {
+      "source": "cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 441640,
+      "sha256": "f719e4b45e06f203a1c2d4e79fa2b496f8b16f6f63c4265809844def53ad41f3"
+    },
+    {
+      "source": "cs/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/cs/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 48424,
+      "sha256": "818f84b95fd8273ec0e9753f90af2a98820bb0492cb53268db70a7403eaaa2af"
+    },
+    {
+      "source": "de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 471848,
+      "sha256": "d936e4075af47eb5a34e8418e6bf1eaa3e4d3c86d6b40ab7dffefbd8e6f8b594"
+    },
+    {
+      "source": "de/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/de/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50456,
+      "sha256": "1b1d805608929ec02b8acc2fb8c09ec7a335797b11686719ee2112d5bfbb18fc"
+    },
+    {
+      "source": "de/MUnique.OpenMU.DataModel.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.DataModel.resources.dll",
+      "bytes": 124416,
+      "sha256": "d0728b31a625c0791c21d767d3f1f9dffb163d2c9cdc19f0adaa7020a6f64317"
+    },
+    {
+      "source": "de/MUnique.OpenMU.GameLogic.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.GameLogic.resources.dll",
+      "bytes": 128512,
+      "sha256": "207cf4138403d311371922e0c2ed4692e809ab31399b38a7bf261196fd827f03"
+    },
+    {
+      "source": "de/MUnique.OpenMU.GameServer.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.GameServer.resources.dll",
+      "bytes": 127488,
+      "sha256": "92d4eb958339463bfb05a75a45409f330db2301f85048bc23e0ac4a9c772f4dc"
+    },
+    {
+      "source": "de/MUnique.OpenMU.Interfaces.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.Interfaces.resources.dll",
+      "bytes": 10752,
+      "sha256": "943f649a12cd69c5ae842b7bd1b8d22f1e83b854352652b7d370fb8ff0121103"
+    },
+    {
+      "source": "de/MUnique.OpenMU.Network.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.Network.resources.dll",
+      "bytes": 8192,
+      "sha256": "2a903ee0200543af780b95c401949ffc39518b19856c127c69b0dedfd0b87fef"
+    },
+    {
+      "source": "de/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "bytes": 91648,
+      "sha256": "c4c4af31b9f69afe9d95d6319c853b2d0ba1cad3a551bd4356d0f7eba7b3c2fd"
+    },
+    {
+      "source": "de/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "bytes": 52224,
+      "sha256": "4c136c96130834136634808b66f07cb2632a48788b03f8f90512866bb38cb7f3"
+    },
+    {
+      "source": "de/MUnique.OpenMU.Web.Map.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.Web.Map.resources.dll",
+      "bytes": 4608,
+      "sha256": "463cff86baf9ff58559b41de4cc519a591d9d5577682d027ace9e8dedab424da"
+    },
+    {
+      "source": "de/MUnique.OpenMU.Web.Shared.resources.dll",
+      "destination": "server/de/MUnique.OpenMU.Web.Shared.resources.dll",
+      "bytes": 26624,
+      "sha256": "08f872a0a19c37fb57e3ae89b29df170e273064a32e2305c27f1c3496359c2e1"
+    },
+    {
+      "source": "es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 461608,
+      "sha256": "559fa2a4d36a832a5e05f92dabff6ba737cc0443f95850611c485b21592046fe"
+    },
+    {
+      "source": "es/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/es/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 49960,
+      "sha256": "4c83f9c227fa9a912209c5450380ef34e84d91867aff8208300e8aadab269456"
+    },
+    {
+      "source": "fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 473880,
+      "sha256": "c538cddb8e217bc1b96312956b7923855d6f392e467d7b7c7ce9341d9da1f23c"
+    },
+    {
+      "source": "fr/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/fr/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50488,
+      "sha256": "a92746c7d8f241e7d207a7995007f59d694a10e5f8903ceadfc5a73c195f63a0"
+    },
+    {
+      "source": "it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 468240,
+      "sha256": "995a868345367e1c68011617d8b8ac85decf2dd15fb85ea92a28205e2c6a5fba"
+    },
+    {
+      "source": "it/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/it/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50440,
+      "sha256": "9489584f3d6ec723bfd2adf1a0d1bdc9bafcadab857fa7c48d18157e223a5541"
+    },
+    {
+      "source": "ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 515376,
+      "sha256": "866eabb5f0f51df82de1a2be933c542df60617d033f463e7010719bdc6f55fa7"
+    },
+    {
+      "source": "ja/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/ja/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 54040,
+      "sha256": "9b0bea97965c04ce925e92a5b8575b866c75b185a89741185f4b24f72182a0bb"
+    },
+    {
+      "source": "ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 473392,
+      "sha256": "f8b995c988ddee33a02e41fe4658d63aef32f380678aef70a5164143a25c1ee4"
+    },
+    {
+      "source": "ko/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/ko/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50464,
+      "sha256": "2c799493e0a5032ed0e643a550d149dc324210da3a69337a68ae6460f56bb2e1"
+    },
+    {
+      "source": "Mapster.Core.dll",
+      "destination": "server/Mapster.Core.dll",
+      "bytes": 32256,
+      "sha256": "8d81e1fa0b1dbdeda21216b5df5752c1850e8063200c5436a0da95daaa2e163b"
+    },
+    {
+      "source": "Mapster.dll",
+      "destination": "server/Mapster.dll",
+      "bytes": 170496,
+      "sha256": "71920ceb5ee454369ad420eb4f3085ad41855cb445fbdbab306ad6d187c37ea4"
+    },
+    {
+      "source": "MathParser.org-mXparser.dll",
+      "destination": "server/MathParser.org-mXparser.dll",
+      "bytes": 821248,
+      "sha256": "2849f007af64bf04f2ac815654775fe2f114d862a03b3299033aa14cf6550c52"
+    },
+    {
+      "source": "Microsoft.AspNetCore.Components.QuickGrid.dll",
+      "destination": "server/Microsoft.AspNetCore.Components.QuickGrid.dll",
+      "bytes": 66312,
+      "sha256": "d7e5a889d7394bb05db0c1e4766e926ce4e5ff932902d49d395a987e25f6326f"
+    },
+    {
+      "source": "Microsoft.CodeAnalysis.CSharp.dll",
+      "destination": "server/Microsoft.CodeAnalysis.CSharp.dll",
+      "bytes": 6697768,
+      "sha256": "53302acca07700e9bb10dcf21034435d6e0454c8eebf2481164ec13e520004c9"
+    },
+    {
+      "source": "Microsoft.CodeAnalysis.dll",
+      "destination": "server/Microsoft.CodeAnalysis.dll",
+      "bytes": 3029800,
+      "sha256": "395736b2d0e02be77bedc3847b269da7a93bf8e49cd3431a4a8e68d2c52d5846"
+    },
+    {
+      "source": "Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "destination": "server/Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "bytes": 34888,
+      "sha256": "52db99e23651582f518f64408511710b15cbdbd0ef4ba3b3489d03629b9cdf19"
+    },
+    {
+      "source": "Microsoft.EntityFrameworkCore.dll",
+      "destination": "server/Microsoft.EntityFrameworkCore.dll",
+      "bytes": 2824736,
+      "sha256": "674bc6d68545b9a56388c048742258a4b266f19f14d2495496541f39f788fa7f"
+    },
+    {
+      "source": "Microsoft.EntityFrameworkCore.Relational.dll",
+      "destination": "server/Microsoft.EntityFrameworkCore.Relational.dll",
+      "bytes": 2193440,
+      "sha256": "34dc06980825195b4bd8d596995f2895caf0dd46793fe913a202b2740dea8cbf"
+    },
+    {
+      "source": "Microsoft.Extensions.DependencyModel.dll",
+      "destination": "server/Microsoft.Extensions.DependencyModel.dll",
+      "bytes": 85264,
+      "sha256": "0d7fae30684654fa9173ad248ab41b713a48d81df0ef446ee4e40c8d380893e8"
+    },
+    {
+      "source": "Microsoft.Win32.SystemEvents.dll",
+      "destination": "server/Microsoft.Win32.SystemEvents.dll",
+      "bytes": 26224,
+      "sha256": "ca495bf6c86b7f092d624928101985a941532d149dcd8acfea170f8a53be8850"
+    },
+    {
+      "source": "Moq.dll",
+      "destination": "server/Moq.dll",
+      "bytes": 312320,
+      "sha256": "8d56b9cbec93f401f7e4a4031c1691c3c849411ff09cef6f777109c0701dc30b"
+    },
+    {
+      "source": "MUnique.OpenMU.Annotations.dll",
+      "destination": "server/MUnique.OpenMU.Annotations.dll",
+      "bytes": 4608,
+      "sha256": "4e3309e8ec65c6f1266025ced1c5e4e70df290b963be09632bb9832a80c8a269"
+    },
+    {
+      "source": "MUnique.OpenMU.Annotations.pdb",
+      "destination": "server/MUnique.OpenMU.Annotations.pdb",
+      "bytes": 8112,
+      "sha256": "2a3746bcecf4a9b3606f69bc4b071a2c4a65a07f149ef42fc1b0d6b52faad865"
+    },
+    {
+      "source": "MUnique.OpenMU.AttributeSystem.dll",
+      "destination": "server/MUnique.OpenMU.AttributeSystem.dll",
+      "bytes": 24064,
+      "sha256": "bc7387850827b4f43a86194a3f9e2515d6c9dfa87288cbb5ea88c67c08330ac0"
+    },
+    {
+      "source": "MUnique.OpenMU.AttributeSystem.pdb",
+      "destination": "server/MUnique.OpenMU.AttributeSystem.pdb",
+      "bytes": 18604,
+      "sha256": "7e6606aec40f44912904c869e30d64e944b474b7779ed1e6d29629757218be3d"
+    },
+    {
+      "source": "MUnique.OpenMU.AttributeSystem.xml",
+      "destination": "server/MUnique.OpenMU.AttributeSystem.xml",
+      "bytes": 46710,
+      "sha256": "0d2d7134e4c85dd7d1e04cd31ddde377e4004fe2911b5c39a7d38e58f74e21ab"
+    },
+    {
+      "source": "MUnique.OpenMU.ChatServer.dll",
+      "destination": "server/MUnique.OpenMU.ChatServer.dll",
+      "bytes": 46080,
+      "sha256": "a0eb51e8f6427da30ff1f951344aac56c48d5b105f6d2d8dbafecdd0eaaceb2f"
+    },
+    {
+      "source": "MUnique.OpenMU.ChatServer.pdb",
+      "destination": "server/MUnique.OpenMU.ChatServer.pdb",
+      "bytes": 21604,
+      "sha256": "e6e9525b3ec20920b56d91b38d2dfb0291620d3a3a764483040907652285b4d3"
+    },
+    {
+      "source": "MUnique.OpenMU.ChatServer.xml",
+      "destination": "server/MUnique.OpenMU.ChatServer.xml",
+      "bytes": 26615,
+      "sha256": "e8753ae80c2c6d974a90172ee3e862c18d74fcdcec3ace643c8fc67d37f4beec"
+    },
+    {
+      "source": "MUnique.OpenMU.ConnectServer.dll",
+      "destination": "server/MUnique.OpenMU.ConnectServer.dll",
+      "bytes": 46592,
+      "sha256": "a3ca975998fb4f3c4af0958c531560854c25f3251156670edce2d6cc67b65de0"
+    },
+    {
+      "source": "MUnique.OpenMU.ConnectServer.pdb",
+      "destination": "server/MUnique.OpenMU.ConnectServer.pdb",
+      "bytes": 22832,
+      "sha256": "44bf203f43ec5f416a0302fd073419189f9f96fc8902d824fa66fb6e9f82c518"
+    },
+    {
+      "source": "MUnique.OpenMU.ConnectServer.xml",
+      "destination": "server/MUnique.OpenMU.ConnectServer.xml",
+      "bytes": 33784,
+      "sha256": "ae0dac9a8f8f13017f632564b18cf0f9318179ddefdc60bb71a20b1aa0a685bf"
+    },
+    {
+      "source": "MUnique.OpenMU.DataModel.dll",
+      "destination": "server/MUnique.OpenMU.DataModel.dll",
+      "bytes": 432128,
+      "sha256": "682d5278061ec4bbd34def7ff1e7b5cd7ac85476130c0a15d7273762d576bacc"
+    },
+    {
+      "source": "MUnique.OpenMU.DataModel.pdb",
+      "destination": "server/MUnique.OpenMU.DataModel.pdb",
+      "bytes": 143400,
+      "sha256": "fd17f9f70a5eb082ab11148a29b3da922992b7145e36ab56e04bf8cefaf0aef0"
+    },
+    {
+      "source": "MUnique.OpenMU.DataModel.xml",
+      "destination": "server/MUnique.OpenMU.DataModel.xml",
+      "bytes": 426814,
+      "sha256": "1c8278683914d7583e96edc5c7486da64ca5cda1c51622add2959f158d1e48e2"
+    },
+    {
+      "source": "MUnique.OpenMU.FriendServer.dll",
+      "destination": "server/MUnique.OpenMU.FriendServer.dll",
+      "bytes": 27648,
+      "sha256": "56cb88c95f1d79aabccad6429b9478797f4e2af1db45d3fb504ccee888f76543"
+    },
+    {
+      "source": "MUnique.OpenMU.FriendServer.pdb",
+      "destination": "server/MUnique.OpenMU.FriendServer.pdb",
+      "bytes": 17640,
+      "sha256": "1c63ca6e3aa09cc41eba3e71cb1055d2d0915ffd3920b1886b4d32b9633c8c53"
+    },
+    {
+      "source": "MUnique.OpenMU.FriendServer.xml",
+      "destination": "server/MUnique.OpenMU.FriendServer.xml",
+      "bytes": 13403,
+      "sha256": "8148f271af319a1168a9a64109345ddd1e83ef7bfd48bd7a6741c22de15bad9d"
+    },
+    {
+      "source": "MUnique.OpenMU.GameLogic.dll",
+      "destination": "server/MUnique.OpenMU.GameLogic.dll",
+      "bytes": 3414528,
+      "sha256": "4ed96e4bc6acb02ddeb838a2144b136a48f532fd5a3572017cecdd65f2cf948c"
+    },
+    {
+      "source": "MUnique.OpenMU.GameLogic.pdb",
+      "destination": "server/MUnique.OpenMU.GameLogic.pdb",
+      "bytes": 771460,
+      "sha256": "23c82d779fc71e0412946e5d43170db82d41f4a50419fcb59d1f024c93c44a5a"
+    },
+    {
+      "source": "MUnique.OpenMU.GameLogic.xml",
+      "destination": "server/MUnique.OpenMU.GameLogic.xml",
+      "bytes": 2428355,
+      "sha256": "f0ba90249632a09147241cf5b694f140aff512cbe152664dd58b79092b0b51ce"
+    },
+    {
+      "source": "MUnique.OpenMU.GameServer.dll",
+      "destination": "server/MUnique.OpenMU.GameServer.dll",
+      "bytes": 1205760,
+      "sha256": "1567109e36cfb26a3fe5f8ac77f2c297b38bc54ea6337e525b46b118de930297"
+    },
+    {
+      "source": "MUnique.OpenMU.GameServer.pdb",
+      "destination": "server/MUnique.OpenMU.GameServer.pdb",
+      "bytes": 269736,
+      "sha256": "241840b85725c04178d66b52b5bb1bd6362e1b03ffc2713da5fb008ed8ae0608"
+    },
+    {
+      "source": "MUnique.OpenMU.GameServer.xml",
+      "destination": "server/MUnique.OpenMU.GameServer.xml",
+      "bytes": 829139,
+      "sha256": "c8ecff5bcdf31fa41976fac08f0fb3465e51513746a6986f7404bb186c0aca0f"
+    },
+    {
+      "source": "MUnique.OpenMU.GuildServer.dll",
+      "destination": "server/MUnique.OpenMU.GuildServer.dll",
+      "bytes": 61952,
+      "sha256": "68887846a3d7cd490b4c7cca47ab1b12fc5208be54f6a3ba502fa913a9c1275b"
+    },
+    {
+      "source": "MUnique.OpenMU.GuildServer.pdb",
+      "destination": "server/MUnique.OpenMU.GuildServer.pdb",
+      "bytes": 22604,
+      "sha256": "78f655d05f56ff520d978344185c48a24f2507172b36b7522099277608ce60ef"
+    },
+    {
+      "source": "MUnique.OpenMU.GuildServer.xml",
+      "destination": "server/MUnique.OpenMU.GuildServer.xml",
+      "bytes": 19343,
+      "sha256": "810603245f4d62f774acefcfff899158e09f0cfc42a252982aade233b13dcebc"
+    },
+    {
+      "source": "MUnique.OpenMU.Interfaces.dll",
+      "destination": "server/MUnique.OpenMU.Interfaces.dll",
+      "bytes": 56320,
+      "sha256": "2976666c0490889b823d6937ba134f8f4207dadcc4b37d9b807af1b65f74edfa"
+    },
+    {
+      "source": "MUnique.OpenMU.Interfaces.pdb",
+      "destination": "server/MUnique.OpenMU.Interfaces.pdb",
+      "bytes": 21920,
+      "sha256": "884b6081e229a7708045dce38ee8e6355560304ce8f79185d2558d69d55a7083"
+    },
+    {
+      "source": "MUnique.OpenMU.Interfaces.xml",
+      "destination": "server/MUnique.OpenMU.Interfaces.xml",
+      "bytes": 95709,
+      "sha256": "ad134df30a642048e5187ca7be6f1f27432fc7fa52f6928481ed2125f1c4469e"
+    },
+    {
+      "source": "MUnique.OpenMU.LoginServer.dll",
+      "destination": "server/MUnique.OpenMU.LoginServer.dll",
+      "bytes": 7680,
+      "sha256": "dc8deecc91da04b9f0256226cfbd2e0c7e2be2f59c62dcb83470219b3f492f22"
+    },
+    {
+      "source": "MUnique.OpenMU.LoginServer.pdb",
+      "destination": "server/MUnique.OpenMU.LoginServer.pdb",
+      "bytes": 12596,
+      "sha256": "2b93175e06c93d99458cd693747a77141889ee8f9b887f159258fa4feffad95d"
+    },
+    {
+      "source": "MUnique.OpenMU.LoginServer.xml",
+      "destination": "server/MUnique.OpenMU.LoginServer.xml",
+      "bytes": 797,
+      "sha256": "2a8a922fc99b3a46edda4694f57ec416d602f4a9c5197e7b787607474978f4e9"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.Analyzer.dll",
+      "destination": "server/MUnique.OpenMU.Network.Analyzer.dll",
+      "bytes": 77824,
+      "sha256": "a2d49628a3dcf16cfcc9fc49cc20348401aebcc5f773a6ec0b3b982c7cc375e6"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.Analyzer.pdb",
+      "destination": "server/MUnique.OpenMU.Network.Analyzer.pdb",
+      "bytes": 28576,
+      "sha256": "4789006f9b6e4547ce2f360d690de1a410dbf180d68f888c05337afbaafe3e47"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.Analyzer.xml",
+      "destination": "server/MUnique.OpenMU.Network.Analyzer.xml",
+      "bytes": 55515,
+      "sha256": "922f377f968a78c0969195dc453fa0e93bba20ae4352acddfe2021e46d0e83c8"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.dll",
+      "destination": "server/MUnique.OpenMU.Network.dll",
+      "bytes": 378880,
+      "sha256": "61d346487761ad8e30d612738330b6f02f8a86f4317239b9b1208dfd622ed8ea"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.Packets.dll",
+      "destination": "server/MUnique.OpenMU.Network.Packets.dll",
+      "bytes": 1673728,
+      "sha256": "39aadf59983ae9b3e3446c58fa1af10bb5b48b41d7055e90d0ce7667d7e7f68b"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.Packets.pdb",
+      "destination": "server/MUnique.OpenMU.Network.Packets.pdb",
+      "bytes": 684600,
+      "sha256": "593204e5a2d12fef5eeb19a6d6bc2e4352b00b2b103a3854ef4389e05c127895"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.Packets.xml",
+      "destination": "server/MUnique.OpenMU.Network.Packets.xml",
+      "bytes": 5521110,
+      "sha256": "bd78a2ac5b7d2df125f392b7ecae11fcd43586cc27c543f5885b3ac85de94840"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.pdb",
+      "destination": "server/MUnique.OpenMU.Network.pdb",
+      "bytes": 180960,
+      "sha256": "f907869e5eb38d0ebf974163c73af51538d4a5ca539002cbcf41bbe2e2ad2512"
+    },
+    {
+      "source": "MUnique.OpenMU.Network.xml",
+      "destination": "server/MUnique.OpenMU.Network.xml",
+      "bytes": 164352,
+      "sha256": "87622c4d46ccf022290576d8697641f7c78dfeb1116cd1f5e37a7af3e96343cc"
+    },
+    {
+      "source": "MUnique.OpenMU.Pathfinding.dll",
+      "destination": "server/MUnique.OpenMU.Pathfinding.dll",
+      "bytes": 31232,
+      "sha256": "124ba42ee3209426a8e3cf79c84b668471d4b53aee2abfc025c270225169ce75"
+    },
+    {
+      "source": "MUnique.OpenMU.Pathfinding.pdb",
+      "destination": "server/MUnique.OpenMU.Pathfinding.pdb",
+      "bytes": 20272,
+      "sha256": "3ee7b21b7a518084087f713d70056d35b8eed674c37cfc76d011d8d418c4e3ea"
+    },
+    {
+      "source": "MUnique.OpenMU.Pathfinding.xml",
+      "destination": "server/MUnique.OpenMU.Pathfinding.xml",
+      "bytes": 41396,
+      "sha256": "f8b8f7c663e7171ee0c4843ac4f8acdddd599f349c9525771c9068bf3f9a5f13"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.dll",
+      "destination": "server/MUnique.OpenMU.Persistence.dll",
+      "bytes": 408576,
+      "sha256": "81cef8008ac3efab9996577f513b5b6c76b6d5723bdd4fa1b881ca63ad23759d"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "destination": "server/MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "bytes": 5963264,
+      "sha256": "f05e117d596f6bb74f953d8b4cbe83c73c0b30a6acf94876b6e8619bf92f1042"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.EntityFramework.pdb",
+      "destination": "server/MUnique.OpenMU.Persistence.EntityFramework.pdb",
+      "bytes": 1355160,
+      "sha256": "a337a943cf174ae297d28f3b880caa250761b8a066d31efddf3a66d86206239f"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.EntityFramework.xml",
+      "destination": "server/MUnique.OpenMU.Persistence.EntityFramework.xml",
+      "bytes": 654225,
+      "sha256": "a750dc65bf6ada806add795720ecdf85ad8cfb2f6095f2dd1fcf24d7a5b05986"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.Initialization.dll",
+      "destination": "server/MUnique.OpenMU.Persistence.Initialization.dll",
+      "bytes": 7328256,
+      "sha256": "34ead9eaf5170439e5e5f967373787c554803dbf580f4cc3cbc99f4f60935b69"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.Initialization.pdb",
+      "destination": "server/MUnique.OpenMU.Persistence.Initialization.pdb",
+      "bytes": 498316,
+      "sha256": "25ed988a0f74c77f0ce5543edf8fd67ebeb114dadb396efb9605276934bb793d"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.Initialization.xml",
+      "destination": "server/MUnique.OpenMU.Persistence.Initialization.xml",
+      "bytes": 1285270,
+      "sha256": "1f70df658edbfa83d8499a47d68f2b95d96e9013fb66ddcdb4a2a8e2ea95716d"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.InMemory.dll",
+      "destination": "server/MUnique.OpenMU.Persistence.InMemory.dll",
+      "bytes": 65536,
+      "sha256": "f30750b51e3b49ac28f0375c34b9c1d9ad24f728737a4d9720a5e275c9af74ee"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.InMemory.pdb",
+      "destination": "server/MUnique.OpenMU.Persistence.InMemory.pdb",
+      "bytes": 22708,
+      "sha256": "d386a711b9078ac16331fc99ea13248b49b4c6cd210c46cad61ecface3c36d5b"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.InMemory.xml",
+      "destination": "server/MUnique.OpenMU.Persistence.InMemory.xml",
+      "bytes": 24784,
+      "sha256": "769126b89829c409033ee0d5ec16b7c83c9b5caf15484c4817cd2edbbeee9c19"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.pdb",
+      "destination": "server/MUnique.OpenMU.Persistence.pdb",
+      "bytes": 290072,
+      "sha256": "63376ef169557aea17354ab1047691ac99ebf58501f7e3eb8215791ac14a4bab"
+    },
+    {
+      "source": "MUnique.OpenMU.Persistence.xml",
+      "destination": "server/MUnique.OpenMU.Persistence.xml",
+      "bytes": 512197,
+      "sha256": "89dedbc2fd0e7ffd7231e78d07022e598eb7f1934cc853d71a1adf751e35a302"
+    },
+    {
+      "source": "MUnique.OpenMU.PlugIns.dll",
+      "destination": "server/MUnique.OpenMU.PlugIns.dll",
+      "bytes": 58880,
+      "sha256": "dcd342a5641b4e59454a3a07d346c835b09aa2a554230a6d8b12373b6ed5a1ed"
+    },
+    {
+      "source": "MUnique.OpenMU.PlugIns.pdb",
+      "destination": "server/MUnique.OpenMU.PlugIns.pdb",
+      "bytes": 26052,
+      "sha256": "d7a9a70e223d06328ff4089762415fa38e43a9c6fb1ac4853d0981a710a04626"
+    },
+    {
+      "source": "MUnique.OpenMU.PlugIns.xml",
+      "destination": "server/MUnique.OpenMU.PlugIns.xml",
+      "bytes": 61021,
+      "sha256": "86761b9494ce9358ab13f0d0bb4d05d14372ba4158933c2d000cf704008c3c1d"
+    },
+    {
+      "source": "MUnique.OpenMU.Startup.deps.json",
+      "destination": "server/MUnique.OpenMU.Startup.deps.json",
+      "bytes": 46992,
+      "sha256": "fdcf5e2ea9855120a7cc922ee2665f1b959b7a31c04bd7c2d6bb452a69c3a7cd"
+    },
+    {
+      "source": "MUnique.OpenMU.Startup.dll",
+      "destination": "server/MUnique.OpenMU.Startup.dll",
+      "bytes": 91648,
+      "sha256": "d054c7d479538adde43d1c5bc40c865b2787b3e1ab4876edd2e6ed21aa193317"
+    },
+    {
+      "source": "MUnique.OpenMU.Startup.exe",
+      "destination": "server/MUnique.OpenMU.Startup.exe",
+      "bytes": 162816,
+      "sha256": "5b1b9b5cf87f37a3ecb87539dd8d7423b4d2dc839cb565fbfc20d9c4164761ba"
+    },
+    {
+      "source": "MUnique.OpenMU.Startup.pdb",
+      "destination": "server/MUnique.OpenMU.Startup.pdb",
+      "bytes": 42704,
+      "sha256": "4476901c06cf19c3c6f5e0794f47f08a5c039c94c5e4df738337efbc9eda2b7e"
+    },
+    {
+      "source": "MUnique.OpenMU.Startup.runtimeconfig.json",
+      "destination": "server/MUnique.OpenMU.Startup.runtimeconfig.json",
+      "bytes": 560,
+      "sha256": "94b92d437d5be753ff0ba94af9064dbd50f8bf1a7459debbedf6cb5699910d50"
+    },
+    {
+      "source": "MUnique.OpenMU.Startup.staticwebassets.endpoints.json",
+      "destination": "server/MUnique.OpenMU.Startup.staticwebassets.endpoints.json",
+      "bytes": 10994539,
+      "sha256": "1525eb6817506acfaa94439e1a22309022b92ec7ed97b42af64085e47313dbe7"
+    },
+    {
+      "source": "MUnique.OpenMU.Startup.staticwebassets.runtime.json",
+      "destination": "server/MUnique.OpenMU.Startup.staticwebassets.runtime.json",
+      "bytes": 1031790,
+      "sha256": "cc6ad4655207d94094c9422418ee8c54fa5a267069276fb668f7daa885e8f3ab"
+    },
+    {
+      "source": "MUnique.OpenMU.Startup.xml",
+      "destination": "server/MUnique.OpenMU.Startup.xml",
+      "bytes": 25365,
+      "sha256": "7efb63223034147d3ec12a231604d40bb0e4eaa4f91e4dd62f445f8b72b6a697"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.AdminPanel.deps.json",
+      "destination": "server/MUnique.OpenMU.Web.AdminPanel.deps.json",
+      "bytes": 32430,
+      "sha256": "223bc74a9c0fdf53ffcd29f3b3784059ff71d5c5be115e2acd3e1efee327c89f"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.AdminPanel.dll",
+      "destination": "server/MUnique.OpenMU.Web.AdminPanel.dll",
+      "bytes": 920576,
+      "sha256": "24bccaef3929a4c3ef7ea1f74a841d129b4fd7fb5875c6cc40bafe4fc3f97be7"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.AdminPanel.exe",
+      "destination": "server/MUnique.OpenMU.Web.AdminPanel.exe",
+      "bytes": 162304,
+      "sha256": "f3ab8df99906728fcc1223dece9312897278d483429551d8d50a7a54dc618613"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.AdminPanel.pdb",
+      "destination": "server/MUnique.OpenMU.Web.AdminPanel.pdb",
+      "bytes": 394492,
+      "sha256": "7a19a51cc22cdf8fec2137f1cff692c14b4b0e6352a38915365d3fca94a342c8"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.AdminPanel.runtimeconfig.json",
+      "destination": "server/MUnique.OpenMU.Web.AdminPanel.runtimeconfig.json",
+      "bytes": 491,
+      "sha256": "41442586a8262bc96a1c80f82f4d9384c03bfd465d221cbf01fb3563170f9e65"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.AdminPanel.staticwebassets.endpoints.json",
+      "destination": "server/MUnique.OpenMU.Web.AdminPanel.staticwebassets.endpoints.json",
+      "bytes": 10985141,
+      "sha256": "d149115e43a06fc52b1c3a79c09a210d8b972e023ae33e71523bb1f945362188"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.AdminPanel.staticwebassets.runtime.json",
+      "destination": "server/MUnique.OpenMU.Web.AdminPanel.staticwebassets.runtime.json",
+      "bytes": 1031236,
+      "sha256": "ca1d63f4557c99e3a3aae2701e9e747a4f8c4d862d9f311fb69582fcef489847"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.AdminPanel.xml",
+      "destination": "server/MUnique.OpenMU.Web.AdminPanel.xml",
+      "bytes": 394759,
+      "sha256": "926eb9e44743ec99797d84cd2d21ab721c554d8b6b2b6d0d1780ea307a5146ac"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.ItemEditor.dll",
+      "destination": "server/MUnique.OpenMU.Web.ItemEditor.dll",
+      "bytes": 34816,
+      "sha256": "448206c3426770851c967e82611f9b8492a07705b17961abaf575096218618a7"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.ItemEditor.pdb",
+      "destination": "server/MUnique.OpenMU.Web.ItemEditor.pdb",
+      "bytes": 27256,
+      "sha256": "97e01cd29c8ce5b1778647ebf259256887edcc4bdd72026267a938024bed1c1c"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.ItemEditor.staticwebassets.endpoints.json",
+      "destination": "server/MUnique.OpenMU.Web.ItemEditor.staticwebassets.endpoints.json",
+      "bytes": 9224463,
+      "sha256": "ea9d4f75a67b5149a70c3f82d7ee429b3049824458a84ec7912d678316780e89"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.ItemEditor.staticwebassets.runtime.json",
+      "destination": "server/MUnique.OpenMU.Web.ItemEditor.staticwebassets.runtime.json",
+      "bytes": 1010367,
+      "sha256": "beab4e8dc876561a69b44b17477e022ecaae5e0efa0ceafbf1a247573afe6470"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.ItemEditor.xml",
+      "destination": "server/MUnique.OpenMU.Web.ItemEditor.xml",
+      "bytes": 15979,
+      "sha256": "ae514ab32df7fb20ed2dfbfe673fdb513be566542be518c8f8502eda1a685fe8"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Map.deps.json",
+      "destination": "server/MUnique.OpenMU.Web.Map.deps.json",
+      "bytes": 24692,
+      "sha256": "1bb0bdff7fbc1fa2a0a57695f6151c5bf0dfca73d3f36c1cd139dec44cfd21f6"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Map.dll",
+      "destination": "server/MUnique.OpenMU.Web.Map.dll",
+      "bytes": 91648,
+      "sha256": "45988ac87aaf43a421c146892bef1d1990f3fa14249bfe211e5b7695d3903476"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Map.exe",
+      "destination": "server/MUnique.OpenMU.Web.Map.exe",
+      "bytes": 162304,
+      "sha256": "4f464826062fe9463cda77172d06e8e731bc7c23af10d5a3740285be56b37b71"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Map.pdb",
+      "destination": "server/MUnique.OpenMU.Web.Map.pdb",
+      "bytes": 61456,
+      "sha256": "3bea7ed064dd172714ac5ccb6e59cde0fa5ca581a38fa52c6597a8a60e177810"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Map.runtimeconfig.json",
+      "destination": "server/MUnique.OpenMU.Web.Map.runtimeconfig.json",
+      "bytes": 491,
+      "sha256": "41442586a8262bc96a1c80f82f4d9384c03bfd465d221cbf01fb3563170f9e65"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Map.staticwebassets.endpoints.json",
+      "destination": "server/MUnique.OpenMU.Web.Map.staticwebassets.endpoints.json",
+      "bytes": 10947168,
+      "sha256": "536071c0353390f8576f7c43b526fdca689e2db230be795947bc1e64d52a63cf"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Map.staticwebassets.runtime.json",
+      "destination": "server/MUnique.OpenMU.Web.Map.staticwebassets.runtime.json",
+      "bytes": 1028866,
+      "sha256": "eaf06b393988302f0ef8866b39d16ad05ea37c4afb2eb129bc2d9868f8509290"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Map.xml",
+      "destination": "server/MUnique.OpenMU.Web.Map.xml",
+      "bytes": 51247,
+      "sha256": "cb302cf62b475ef67351f324da62c799ffa7f3e11bb4d6701d23e15761aae0b3"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Shared.dll",
+      "destination": "server/MUnique.OpenMU.Web.Shared.dll",
+      "bytes": 504832,
+      "sha256": "e980e3892547904e40ba3a4334e94c226e69eec0e6dd3313d403e519f790d26a"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Shared.pdb",
+      "destination": "server/MUnique.OpenMU.Web.Shared.pdb",
+      "bytes": 288852,
+      "sha256": "ce9190ddf49cbf5d5cc2ac45bca93b859a5e7567e8c888a737c4f105bd758288"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Shared.staticwebassets.endpoints.json",
+      "destination": "server/MUnique.OpenMU.Web.Shared.staticwebassets.endpoints.json",
+      "bytes": 10890886,
+      "sha256": "9612c7a787efdf345e17dcb8c12498bfd1a230496e8135de8436bcde43d59afb"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Shared.staticwebassets.runtime.json",
+      "destination": "server/MUnique.OpenMU.Web.Shared.staticwebassets.runtime.json",
+      "bytes": 1016839,
+      "sha256": "2f3cdc1ef157d0b30e8ae9e2a1e4e49634ed60117f0e4581cb885b24f491f42a"
+    },
+    {
+      "source": "MUnique.OpenMU.Web.Shared.xml",
+      "destination": "server/MUnique.OpenMU.Web.Shared.xml",
+      "bytes": 311060,
+      "sha256": "db61a3827072b305b3f08715eddff75a988103f2d61648a1c5f2ddd6872e335a"
+    },
+    {
+      "source": "Nito.AsyncEx.Context.dll",
+      "destination": "server/Nito.AsyncEx.Context.dll",
+      "bytes": 13824,
+      "sha256": "02cc09c061f8927841659b06031d800e969eff20a68b9462672a0fa68c3b43df"
+    },
+    {
+      "source": "Nito.AsyncEx.Coordination.dll",
+      "destination": "server/Nito.AsyncEx.Coordination.dll",
+      "bytes": 40960,
+      "sha256": "d2baa6a62d5328e982707eeafaaac23428a36c3af78bceea44a0b0f5df34514e"
+    },
+    {
+      "source": "Nito.AsyncEx.Interop.WaitHandles.dll",
+      "destination": "server/Nito.AsyncEx.Interop.WaitHandles.dll",
+      "bytes": 8704,
+      "sha256": "a2e1affc27326261bfcdc5f2f64621802f8498c643d8be1f0258142467f65ceb"
+    },
+    {
+      "source": "Nito.AsyncEx.Oop.dll",
+      "destination": "server/Nito.AsyncEx.Oop.dll",
+      "bytes": 6656,
+      "sha256": "c438a7f3cb756a2738e4cfc6f0445770da61b536f2b8f9d02b0bcb7d550ea248"
+    },
+    {
+      "source": "Nito.AsyncEx.Tasks.dll",
+      "destination": "server/Nito.AsyncEx.Tasks.dll",
+      "bytes": 35840,
+      "sha256": "2b7b0132e793b248352ea719ac116365643279fc8e2f25de4f516a11ba7be41e"
+    },
+    {
+      "source": "Nito.Cancellation.dll",
+      "destination": "server/Nito.Cancellation.dll",
+      "bytes": 8704,
+      "sha256": "b0ef5dfb70ec0486f0a332b83dd271b89d7e2b7282220b7b17cb1516e9dae780"
+    },
+    {
+      "source": "Nito.Collections.Deque.dll",
+      "destination": "server/Nito.Collections.Deque.dll",
+      "bytes": 16896,
+      "sha256": "509bed02f2ea6c4bff4e68cae5907797244d1e87a58e7aad75748139ad70eeda"
+    },
+    {
+      "source": "Nito.Disposables.dll",
+      "destination": "server/Nito.Disposables.dll",
+      "bytes": 22528,
+      "sha256": "2e1e58ae51be2bca21e1574de9d02435a18d6e514304a5c6a92d273cd910f703"
+    },
+    {
+      "source": "Npgsql.dll",
+      "destination": "server/Npgsql.dll",
+      "bytes": 1477632,
+      "sha256": "9d8db086e9eda5ff20c4a7f83fa3eae7689198f57277ff9ceea1ee3526f5fcf8"
+    },
+    {
+      "source": "Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+      "destination": "server/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+      "bytes": 676864,
+      "sha256": "0b8ca4484e12f1cd119fc6b4711015ba6ce2364f9890504f6f4f13036c2075bf"
+    },
+    {
+      "source": "Pipelines.Sockets.Unofficial.dll",
+      "destination": "server/Pipelines.Sockets.Unofficial.dll",
+      "bytes": 167424,
+      "sha256": "fa2cdb1d5ffbb2b06512c92ce8bd18918a1a996171d0a72dfc73035bc586a711"
+    },
+    {
+      "source": "pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 474416,
+      "sha256": "bfd0ba4491a1e072f243b4599d0b9fe1f189ecbef4aae6b0aa4c6306079717df"
+    },
+    {
+      "source": "pl/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/pl/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 50488,
+      "sha256": "a6d855a49e7b867ff1837b5b24d037a67a7bc9723a569ebdea85f0c73c8146e2"
+    },
+    {
+      "source": "pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 453928,
+      "sha256": "0bb661e270c1b6675bf2b06b0465ea8b0b551f0765999f31ab9cae308f83e3de"
+    },
+    {
+      "source": "pt-BR/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 49424,
+      "sha256": "40258d2ce74c4fb71bd7b145f6d33081f3d73e19afda25050832dde3e58cf33f"
+    },
+    {
+      "source": "QRCoder.dll",
+      "destination": "server/QRCoder.dll",
+      "bytes": 204288,
+      "sha256": "5cacb8e071ef6b355615e8cae1d02d94b9d191ec33db12a05d82099cddb16e9a"
+    },
+    {
+      "source": "ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 621360,
+      "sha256": "68c0ed0122bd4e153717bcbd7d8a53d52d90535859b622df601c27eab58cfb3b"
+    },
+    {
+      "source": "ru/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/ru/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 60728,
+      "sha256": "9f6778a2b6d2141397b8d331fc38577ae2b398b6120eb3654db7575b62e1b0d4"
+    },
+    {
+      "source": "runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+      "destination": "server/runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+      "bytes": 427112,
+      "sha256": "89ea595ccb1fd1384480c1e30bd487c92af5d06d3b06f295323eff601acd9019"
+    },
+    {
+      "source": "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+      "destination": "server/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+      "bytes": 53352,
+      "sha256": "142cce4ed8ac9da22d69c38a6f22738abfb22090dc9313e8b58e6f91978e89af"
+    },
+    {
+      "source": "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+      "destination": "server/runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+      "bytes": 454248,
+      "sha256": "4d3001697df50cca54f32ed2dbbd1f3f415b48d5d756b1bf9500a43ae9b68da0"
+    },
+    {
+      "source": "Serilog.dll",
+      "destination": "server/Serilog.dll",
+      "bytes": 161792,
+      "sha256": "9fbf7441a9bdc9459652dc66e18f008040651f14cb8d7a7bb806ac4a8b722d10"
+    },
+    {
+      "source": "Serilog.Extensions.Hosting.dll",
+      "destination": "server/Serilog.Extensions.Hosting.dll",
+      "bytes": 35840,
+      "sha256": "3e6d0284179ee0e1c197568fd79b58f869d15298fff8ecb8447322fe87d44f47"
+    },
+    {
+      "source": "Serilog.Extensions.Logging.dll",
+      "destination": "server/Serilog.Extensions.Logging.dll",
+      "bytes": 28672,
+      "sha256": "80d3edbe3e3ac0b4c5bc764474220e7da11df8d285e0098f3dc1b65a734c8507"
+    },
+    {
+      "source": "Serilog.Settings.Configuration.dll",
+      "destination": "server/Serilog.Settings.Configuration.dll",
+      "bytes": 70144,
+      "sha256": "ec8cfd1f8970a44e2aa3f7bcc71116ca2691b196564bff83e3e3ead0c1143b67"
+    },
+    {
+      "source": "Serilog.Sinks.Console.dll",
+      "destination": "server/Serilog.Sinks.Console.dll",
+      "bytes": 38400,
+      "sha256": "dc88002ddd9f5fd0ffec9a6568ef89954671f60f2c9161593ee78932538c1e3e"
+    },
+    {
+      "source": "Serilog.Sinks.File.dll",
+      "destination": "server/Serilog.Sinks.File.dll",
+      "bytes": 36864,
+      "sha256": "4f4282671c2ac68284b4dc99f7a76eac9cbd4e659978cef642cff9e6c01b676d"
+    },
+    {
+      "source": "ServerToClientPackets.xml",
+      "destination": "server/ServerToClientPackets.xml",
+      "bytes": 519222,
+      "sha256": "d0b70d050487979765bbf981629ed14040c253247e34cf2b01dc731adc2afed5"
+    },
+    {
+      "source": "SixLabors.Fonts.dll",
+      "destination": "server/SixLabors.Fonts.dll",
+      "bytes": 1135616,
+      "sha256": "e1e2f107e7c78fb859f1b23383107a125acd8b3a7470140850daa6f6f6c45d9f"
+    },
+    {
+      "source": "SixLabors.ImageSharp.dll",
+      "destination": "server/SixLabors.ImageSharp.dll",
+      "bytes": 1806848,
+      "sha256": "df2815a7802fd509ab941692ff5aac0fc4c8e0568abb0c79969dbc9e7e3a070d"
+    },
+    {
+      "source": "SixLabors.ImageSharp.Drawing.dll",
+      "destination": "server/SixLabors.ImageSharp.Drawing.dll",
+      "bytes": 173056,
+      "sha256": "072840f7554cab2e8a96ed1be9c199c2d07ee4d283be78418f5830836a087e93"
+    },
+    {
+      "source": "System.Configuration.ConfigurationManager.dll",
+      "destination": "server/System.Configuration.ConfigurationManager.dll",
+      "bytes": 444728,
+      "sha256": "6dbd70f8d9f7d9183b753f16db6d7964d843665b5598e4b3e7a15f97ff20d113"
+    },
+    {
+      "source": "System.Drawing.Common.dll",
+      "destination": "server/System.Drawing.Common.dll",
+      "bytes": 175216,
+      "sha256": "98d07e6b1e7d3641a8608a360b3dc273fe8a0f78926b6e1e5f679a7a074d491f"
+    },
+    {
+      "source": "System.Security.Cryptography.ProtectedData.dll",
+      "destination": "server/System.Security.Cryptography.ProtectedData.dll",
+      "bytes": 40208,
+      "sha256": "2bb0582bdcfcd7cb1ca0bcc531ae177fc3002dcc18b69eb8b0c06a62a5ce2d5f"
+    },
+    {
+      "source": "tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 449848,
+      "sha256": "93202286c8514bfa1b1c4b413666cd11a84abd69496e7aa8d2f9d565bd2d15a1"
+    },
+    {
+      "source": "tr/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/tr/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 48936,
+      "sha256": "6af8e8e793b071ef1de200629bb551dd2bdbce3823376b347836a2af15367a5c"
+    },
+    {
+      "source": "tsconfig.json",
+      "destination": "server/tsconfig.json",
+      "bytes": 732,
+      "sha256": "52ab953196b56c21c8906deeaed1890705874f7cdf749d2f7b213ecd38d729b5"
+    },
+    {
+      "source": "zh-CN/MUnique.OpenMU.DataModel.resources.dll",
+      "destination": "server/zh-CN/MUnique.OpenMU.DataModel.resources.dll",
+      "bytes": 219136,
+      "sha256": "1f2dc7803a883e578ec104a1f3b92e7faa6447dec5770366d536f28aea6529b1"
+    },
+    {
+      "source": "zh-CN/MUnique.OpenMU.GameLogic.resources.dll",
+      "destination": "server/zh-CN/MUnique.OpenMU.GameLogic.resources.dll",
+      "bytes": 89600,
+      "sha256": "ebc7cb4f1d87c01df45390574c61f6963705dded59f2d1990802b12e35a92ffb"
+    },
+    {
+      "source": "zh-CN/MUnique.OpenMU.GameServer.resources.dll",
+      "destination": "server/zh-CN/MUnique.OpenMU.GameServer.resources.dll",
+      "bytes": 112128,
+      "sha256": "acd787fd0b9478d81c87d4a0ef05049361bd64b611b3f1590f431007d16dd57b"
+    },
+    {
+      "source": "zh-CN/MUnique.OpenMU.Interfaces.resources.dll",
+      "destination": "server/zh-CN/MUnique.OpenMU.Interfaces.resources.dll",
+      "bytes": 16896,
+      "sha256": "bebae0cfbc3a73a95eb494d1e86025dd4b697ba65a0b46536f9061358c0a48e8"
+    },
+    {
+      "source": "zh-CN/MUnique.OpenMU.Network.resources.dll",
+      "destination": "server/zh-CN/MUnique.OpenMU.Network.resources.dll",
+      "bytes": 7680,
+      "sha256": "22739cebb1a6ba17c577157331388432ac3b866a24854a8841e6c1ded277ffc6"
+    },
+    {
+      "source": "zh-CN/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "destination": "server/zh-CN/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "bytes": 152064,
+      "sha256": "4aa31679d6c4e3c1e24db262ab4fcc85a73f5329ebcbc5914788c0a3e4279735"
+    },
+    {
+      "source": "zh-CN/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "destination": "server/zh-CN/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "bytes": 48640,
+      "sha256": "f3122939907aea76b38436a1f6caaf39307fcda1599a75651ecfc2b1e1eac2cd"
+    },
+    {
+      "source": "zh-CN/MUnique.OpenMU.Web.Shared.resources.dll",
+      "destination": "server/zh-CN/MUnique.OpenMU.Web.Shared.resources.dll",
+      "bytes": 24576,
+      "sha256": "14ef10e1a70192384487d9d418765c26cf704300a0436bd440433b402285b80e"
+    },
+    {
+      "source": "zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 401168,
+      "sha256": "5b81b1d4537d44a365fdb48aa24e51a0b0c3ee308debcc225c9339249e0a8bb3"
+    },
+    {
+      "source": "zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 45368,
+      "sha256": "a41b72555a1943e367e9714fb3329454dbad4366500db0899519ffb558a060cb"
+    },
+    {
+      "source": "zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "destination": "server/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "bytes": 400680,
+      "sha256": "d1e716652b5705373fb560105ca2710ff2bc0b704285b50b08ec8df9fd2f8287"
+    },
+    {
+      "source": "zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+      "destination": "server/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+      "bytes": 45328,
+      "sha256": "0bb422559a2582df1a49faed25a337b6037eb3878ac4ee7c118b68349ca312b7"
+    }
+  ],
+  "client_pe_imports": [
+    {
+      "file": "MUnique.Client.Library.dll",
+      "imports": [
+        "ADVAPI32.dll",
+        "bcrypt.dll",
+        "IPHLPAPI.DLL",
+        "KERNEL32.dll",
+        "ole32.dll",
+        "USER32.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "Main.exe",
+      "imports": [
+        "KERNEL32.dll",
+        "USER32.dll",
+        "ole32.dll",
+        "OLEAUT32.dll",
+        "ADVAPI32.dll",
+        "SETUPAPI.dll",
+        "SHELL32.dll",
+        "libcrypto-3-x64.dll",
+        "USP10.dll",
+        "GDI32.dll",
+        "RPCRT4.dll",
+        "libcurl.dll",
+        "IMM32.dll",
+        "WINMM.dll",
+        "WS2_32.dll",
+        "VERSION.dll",
+        "CRYPT32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "concrt140.dll",
+      "imports": [
+        "MSVCP140.dll",
+        "VCRUNTIME140_1.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "libcrypto-3-x64.dll",
+      "imports": [
+        "WS2_32.dll",
+        "ADVAPI32.dll",
+        "CRYPT32.dll",
+        "USER32.dll",
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "libcurl.dll",
+      "imports": [
+        "z.dll",
+        "bcrypt.dll",
+        "ADVAPI32.dll",
+        "CRYPT32.dll",
+        "Secur32.dll",
+        "WS2_32.dll",
+        "IPHLPAPI.DLL",
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "msvcp140.dll",
+      "imports": [
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "msvcp140_1.dll",
+      "imports": [
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "msvcp140_2.dll",
+      "imports": [
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "msvcp140_atomic_wait.dll",
+      "imports": [
+        "MSVCP140.dll",
+        "VCRUNTIME140_1.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "ADVAPI32.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "msvcp140_codecvt_ids.dll",
+      "imports": [
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "vccorlib140.dll",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140_1.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "MSVCP140.dll",
+        "ole32.dll",
+        "OLEAUT32.dll",
+        "api-ms-win-core-winrt-string-l1-1-0.dll",
+        "api-ms-win-core-winrt-error-l1-1-0.dll",
+        "api-ms-win-core-winrt-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "vcruntime140.dll",
+      "imports": [
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "vcruntime140_1.dll",
+      "imports": [
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "VCRUNTIME140.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "vcruntime140_threads.dll",
+      "imports": [
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "VCRUNTIME140.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    },
+    {
+      "file": "z.dll",
+      "imports": [
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "KERNEL32.dll"
+      ],
+      "architecture": "x86-64"
+    }
+  ],
+  "server_dependency_map": [
+    {
+      "library": "MUnique.OpenMU.Startup/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Startup.dll",
+      "present": "MUnique.OpenMU.Startup.dll"
+    },
+    {
+      "library": "BCrypt.Net-Next/4.0.3",
+      "type": "runtime",
+      "reference": "lib/net6.0/BCrypt.Net-Next.dll",
+      "present": "BCrypt.Net-Next.dll"
+    },
+    {
+      "library": "BlazorInputFile/0.2.0",
+      "type": "runtime",
+      "reference": "lib/netstandard2.1/BlazorInputFile.dll",
+      "present": "BlazorInputFile.dll"
+    },
+    {
+      "library": "Castle.Core/5.1.1",
+      "type": "runtime",
+      "reference": "lib/net6.0/Castle.Core.dll",
+      "present": "Castle.Core.dll"
+    },
+    {
+      "library": "Mapster/7.4.0",
+      "type": "runtime",
+      "reference": "lib/net7.0/Mapster.dll",
+      "present": "Mapster.dll"
+    },
+    {
+      "library": "Mapster.Core/1.2.1",
+      "type": "runtime",
+      "reference": "lib/net7.0/Mapster.Core.dll",
+      "present": "Mapster.Core.dll"
+    },
+    {
+      "library": "MathParser.org-mXparser/4.4.2",
+      "type": "runtime",
+      "reference": "lib/netcoreapp31/MathParser.org-mXparser.dll",
+      "present": "MathParser.org-mXparser.dll"
+    },
+    {
+      "library": "Microsoft.AspNetCore.Components.QuickGrid/10.0.2",
+      "type": "runtime",
+      "reference": "lib/net10.0/Microsoft.AspNetCore.Components.QuickGrid.dll",
+      "present": "Microsoft.AspNetCore.Components.QuickGrid.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "runtime",
+      "reference": "lib/net9.0/Microsoft.CodeAnalysis.dll",
+      "present": "Microsoft.CodeAnalysis.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/cs/Microsoft.CodeAnalysis.resources.dll",
+      "present": "cs/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/de/Microsoft.CodeAnalysis.resources.dll",
+      "present": "de/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/es/Microsoft.CodeAnalysis.resources.dll",
+      "present": "es/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/fr/Microsoft.CodeAnalysis.resources.dll",
+      "present": "fr/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/it/Microsoft.CodeAnalysis.resources.dll",
+      "present": "it/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/ja/Microsoft.CodeAnalysis.resources.dll",
+      "present": "ja/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/ko/Microsoft.CodeAnalysis.resources.dll",
+      "present": "ko/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/pl/Microsoft.CodeAnalysis.resources.dll",
+      "present": "pl/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+      "present": "pt-BR/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/ru/Microsoft.CodeAnalysis.resources.dll",
+      "present": "ru/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/tr/Microsoft.CodeAnalysis.resources.dll",
+      "present": "tr/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+      "present": "zh-Hans/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.Common/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+      "present": "zh-Hant/Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "runtime",
+      "reference": "lib/net9.0/Microsoft.CodeAnalysis.CSharp.dll",
+      "present": "Microsoft.CodeAnalysis.CSharp.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "cs/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "de/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "es/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "fr/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "it/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "ja/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "ko/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "pl/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "ru/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "tr/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.CodeAnalysis.CSharp/4.14.0",
+      "type": "resources",
+      "reference": "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "present": "zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "library": "Microsoft.EntityFrameworkCore/10.0.2",
+      "type": "runtime",
+      "reference": "lib/net10.0/Microsoft.EntityFrameworkCore.dll",
+      "present": "Microsoft.EntityFrameworkCore.dll"
+    },
+    {
+      "library": "Microsoft.EntityFrameworkCore.Abstractions/10.0.2",
+      "type": "runtime",
+      "reference": "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "present": "Microsoft.EntityFrameworkCore.Abstractions.dll"
+    },
+    {
+      "library": "Microsoft.EntityFrameworkCore.Relational/10.0.2",
+      "type": "runtime",
+      "reference": "lib/net10.0/Microsoft.EntityFrameworkCore.Relational.dll",
+      "present": "Microsoft.EntityFrameworkCore.Relational.dll"
+    },
+    {
+      "library": "Microsoft.Extensions.DependencyModel/10.0.0",
+      "type": "runtime",
+      "reference": "lib/net10.0/Microsoft.Extensions.DependencyModel.dll",
+      "present": "Microsoft.Extensions.DependencyModel.dll"
+    },
+    {
+      "library": "Microsoft.Win32.SystemEvents/6.0.0",
+      "type": "runtime",
+      "reference": "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+      "present": "Microsoft.Win32.SystemEvents.dll"
+    },
+    {
+      "library": "Microsoft.Win32.SystemEvents/6.0.0",
+      "type": "runtimeTargets",
+      "reference": "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+      "present": "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll"
+    },
+    {
+      "library": "Moq/4.20.72",
+      "type": "runtime",
+      "reference": "lib/net6.0/Moq.dll",
+      "present": "Moq.dll"
+    },
+    {
+      "library": "Nito.AsyncEx.Context/5.1.2",
+      "type": "runtime",
+      "reference": "lib/netstandard2.0/Nito.AsyncEx.Context.dll",
+      "present": "Nito.AsyncEx.Context.dll"
+    },
+    {
+      "library": "Nito.AsyncEx.Coordination/5.1.2",
+      "type": "runtime",
+      "reference": "lib/netstandard2.0/Nito.AsyncEx.Coordination.dll",
+      "present": "Nito.AsyncEx.Coordination.dll"
+    },
+    {
+      "library": "Nito.AsyncEx.Interop.WaitHandles/5.1.2",
+      "type": "runtime",
+      "reference": "lib/netstandard2.0/Nito.AsyncEx.Interop.WaitHandles.dll",
+      "present": "Nito.AsyncEx.Interop.WaitHandles.dll"
+    },
+    {
+      "library": "Nito.AsyncEx.Oop/5.1.2",
+      "type": "runtime",
+      "reference": "lib/netstandard2.0/Nito.AsyncEx.Oop.dll",
+      "present": "Nito.AsyncEx.Oop.dll"
+    },
+    {
+      "library": "Nito.AsyncEx.Tasks/5.1.2",
+      "type": "runtime",
+      "reference": "lib/netstandard2.0/Nito.AsyncEx.Tasks.dll",
+      "present": "Nito.AsyncEx.Tasks.dll"
+    },
+    {
+      "library": "Nito.Cancellation/1.1.2",
+      "type": "runtime",
+      "reference": "lib/netstandard2.0/Nito.Cancellation.dll",
+      "present": "Nito.Cancellation.dll"
+    },
+    {
+      "library": "Nito.Collections.Deque/1.1.1",
+      "type": "runtime",
+      "reference": "lib/netstandard2.0/Nito.Collections.Deque.dll",
+      "present": "Nito.Collections.Deque.dll"
+    },
+    {
+      "library": "Nito.Disposables/2.2.1",
+      "type": "runtime",
+      "reference": "lib/netstandard2.1/Nito.Disposables.dll",
+      "present": "Nito.Disposables.dll"
+    },
+    {
+      "library": "Npgsql/10.0.0",
+      "type": "runtime",
+      "reference": "lib/net10.0/Npgsql.dll",
+      "present": "Npgsql.dll"
+    },
+    {
+      "library": "Npgsql.EntityFrameworkCore.PostgreSQL/10.0.0",
+      "type": "runtime",
+      "reference": "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+      "present": "Npgsql.EntityFrameworkCore.PostgreSQL.dll"
+    },
+    {
+      "library": "Pipelines.Sockets.Unofficial/2.2.8",
+      "type": "runtime",
+      "reference": "lib/net5.0/Pipelines.Sockets.Unofficial.dll",
+      "present": "Pipelines.Sockets.Unofficial.dll"
+    },
+    {
+      "library": "QRCoder/1.8.0",
+      "type": "runtime",
+      "reference": "lib/net6.0/QRCoder.dll",
+      "present": "QRCoder.dll"
+    },
+    {
+      "library": "Serilog/4.3.0",
+      "type": "runtime",
+      "reference": "lib/net9.0/Serilog.dll",
+      "present": "Serilog.dll"
+    },
+    {
+      "library": "Serilog.Extensions.Hosting/10.0.0",
+      "type": "runtime",
+      "reference": "lib/net10.0/Serilog.Extensions.Hosting.dll",
+      "present": "Serilog.Extensions.Hosting.dll"
+    },
+    {
+      "library": "Serilog.Extensions.Logging/10.0.0",
+      "type": "runtime",
+      "reference": "lib/net10.0/Serilog.Extensions.Logging.dll",
+      "present": "Serilog.Extensions.Logging.dll"
+    },
+    {
+      "library": "Serilog.Settings.Configuration/10.0.0",
+      "type": "runtime",
+      "reference": "lib/net10.0/Serilog.Settings.Configuration.dll",
+      "present": "Serilog.Settings.Configuration.dll"
+    },
+    {
+      "library": "Serilog.Sinks.Console/6.1.1",
+      "type": "runtime",
+      "reference": "lib/net8.0/Serilog.Sinks.Console.dll",
+      "present": "Serilog.Sinks.Console.dll"
+    },
+    {
+      "library": "Serilog.Sinks.File/7.0.0",
+      "type": "runtime",
+      "reference": "lib/net9.0/Serilog.Sinks.File.dll",
+      "present": "Serilog.Sinks.File.dll"
+    },
+    {
+      "library": "SixLabors.Fonts/1.0.0",
+      "type": "runtime",
+      "reference": "lib/netcoreapp3.1/SixLabors.Fonts.dll",
+      "present": "SixLabors.Fonts.dll"
+    },
+    {
+      "library": "SixLabors.ImageSharp/2.1.11",
+      "type": "runtime",
+      "reference": "lib/netcoreapp3.1/SixLabors.ImageSharp.dll",
+      "present": "SixLabors.ImageSharp.dll"
+    },
+    {
+      "library": "SixLabors.ImageSharp.Drawing/1.0.0",
+      "type": "runtime",
+      "reference": "lib/netcoreapp3.1/SixLabors.ImageSharp.Drawing.dll",
+      "present": "SixLabors.ImageSharp.Drawing.dll"
+    },
+    {
+      "library": "System.Configuration.ConfigurationManager/10.0.2",
+      "type": "runtime",
+      "reference": "lib/net10.0/System.Configuration.ConfigurationManager.dll",
+      "present": "System.Configuration.ConfigurationManager.dll"
+    },
+    {
+      "library": "System.Drawing.Common/6.0.0",
+      "type": "runtime",
+      "reference": "lib/net6.0/System.Drawing.Common.dll",
+      "present": "System.Drawing.Common.dll"
+    },
+    {
+      "library": "System.Drawing.Common/6.0.0",
+      "type": "runtimeTargets",
+      "reference": "runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+      "present": "runtimes/unix/lib/net6.0/System.Drawing.Common.dll"
+    },
+    {
+      "library": "System.Drawing.Common/6.0.0",
+      "type": "runtimeTargets",
+      "reference": "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+      "present": "runtimes/win/lib/net6.0/System.Drawing.Common.dll"
+    },
+    {
+      "library": "System.Security.Cryptography.ProtectedData/10.0.2",
+      "type": "runtime",
+      "reference": "lib/net10.0/System.Security.Cryptography.ProtectedData.dll",
+      "present": "System.Security.Cryptography.ProtectedData.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Annotations/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Annotations.dll",
+      "present": "MUnique.OpenMU.Annotations.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.AttributeSystem/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.AttributeSystem.dll",
+      "present": "MUnique.OpenMU.AttributeSystem.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.ChatServer/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.ChatServer.dll",
+      "present": "MUnique.OpenMU.ChatServer.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.ConnectServer/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.ConnectServer.dll",
+      "present": "MUnique.OpenMU.ConnectServer.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.DataModel/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.DataModel.dll",
+      "present": "MUnique.OpenMU.DataModel.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.DataModel/1.0.0",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.DataModel.resources.dll",
+      "present": "de/MUnique.OpenMU.DataModel.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.DataModel/1.0.0",
+      "type": "resources",
+      "reference": "zh-CN/MUnique.OpenMU.DataModel.resources.dll",
+      "present": "zh-CN/MUnique.OpenMU.DataModel.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.FriendServer/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.FriendServer.dll",
+      "present": "MUnique.OpenMU.FriendServer.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.GameLogic/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.GameLogic.dll",
+      "present": "MUnique.OpenMU.GameLogic.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.GameLogic/1.0.0",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.GameLogic.resources.dll",
+      "present": "de/MUnique.OpenMU.GameLogic.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.GameLogic/1.0.0",
+      "type": "resources",
+      "reference": "zh-CN/MUnique.OpenMU.GameLogic.resources.dll",
+      "present": "zh-CN/MUnique.OpenMU.GameLogic.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.GameServer/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.GameServer.dll",
+      "present": "MUnique.OpenMU.GameServer.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.GameServer/1.0.0",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.GameServer.resources.dll",
+      "present": "de/MUnique.OpenMU.GameServer.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.GameServer/1.0.0",
+      "type": "resources",
+      "reference": "zh-CN/MUnique.OpenMU.GameServer.resources.dll",
+      "present": "zh-CN/MUnique.OpenMU.GameServer.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.GuildServer/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.GuildServer.dll",
+      "present": "MUnique.OpenMU.GuildServer.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Interfaces/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Interfaces.dll",
+      "present": "MUnique.OpenMU.Interfaces.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Interfaces/1.0.0",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.Interfaces.resources.dll",
+      "present": "de/MUnique.OpenMU.Interfaces.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Interfaces/1.0.0",
+      "type": "resources",
+      "reference": "zh-CN/MUnique.OpenMU.Interfaces.resources.dll",
+      "present": "zh-CN/MUnique.OpenMU.Interfaces.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.LoginServer/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.LoginServer.dll",
+      "present": "MUnique.OpenMU.LoginServer.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Network/0.9.10",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Network.dll",
+      "present": "MUnique.OpenMU.Network.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Network/0.9.10",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.Network.resources.dll",
+      "present": "de/MUnique.OpenMU.Network.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Network/0.9.10",
+      "type": "resources",
+      "reference": "zh-CN/MUnique.OpenMU.Network.resources.dll",
+      "present": "zh-CN/MUnique.OpenMU.Network.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Network.Analyzer/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Network.Analyzer.dll",
+      "present": "MUnique.OpenMU.Network.Analyzer.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Network.Packets/0.9.10",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Network.Packets.dll",
+      "present": "MUnique.OpenMU.Network.Packets.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Pathfinding/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Pathfinding.dll",
+      "present": "MUnique.OpenMU.Pathfinding.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Persistence/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Persistence.dll",
+      "present": "MUnique.OpenMU.Persistence.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Persistence.EntityFramework/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "present": "MUnique.OpenMU.Persistence.EntityFramework.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Persistence.Initialization/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Persistence.Initialization.dll",
+      "present": "MUnique.OpenMU.Persistence.Initialization.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Persistence.Initialization/1.0.0",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "present": "de/MUnique.OpenMU.Persistence.Initialization.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Persistence.Initialization/1.0.0",
+      "type": "resources",
+      "reference": "zh-CN/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "present": "zh-CN/MUnique.OpenMU.Persistence.Initialization.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Persistence.InMemory/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Persistence.InMemory.dll",
+      "present": "MUnique.OpenMU.Persistence.InMemory.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.PlugIns/0.9.10",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.PlugIns.dll",
+      "present": "MUnique.OpenMU.PlugIns.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.AdminPanel/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Web.AdminPanel.dll",
+      "present": "MUnique.OpenMU.Web.AdminPanel.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.AdminPanel/1.0.0",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "present": "de/MUnique.OpenMU.Web.AdminPanel.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.AdminPanel/1.0.0",
+      "type": "resources",
+      "reference": "zh-CN/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "present": "zh-CN/MUnique.OpenMU.Web.AdminPanel.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.ItemEditor/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Web.ItemEditor.dll",
+      "present": "MUnique.OpenMU.Web.ItemEditor.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.Map/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Web.Map.dll",
+      "present": "MUnique.OpenMU.Web.Map.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.Map/1.0.0",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.Web.Map.resources.dll",
+      "present": "de/MUnique.OpenMU.Web.Map.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.Shared/1.0.0",
+      "type": "runtime",
+      "reference": "MUnique.OpenMU.Web.Shared.dll",
+      "present": "MUnique.OpenMU.Web.Shared.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.Shared/1.0.0",
+      "type": "resources",
+      "reference": "de/MUnique.OpenMU.Web.Shared.resources.dll",
+      "present": "de/MUnique.OpenMU.Web.Shared.resources.dll"
+    },
+    {
+      "library": "MUnique.OpenMU.Web.Shared/1.0.0",
+      "type": "resources",
+      "reference": "zh-CN/MUnique.OpenMU.Web.Shared.resources.dll",
+      "present": "zh-CN/MUnique.OpenMU.Web.Shared.resources.dll"
+    }
+  ]
+}
