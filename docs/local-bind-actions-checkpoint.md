@@ -1,3 +1,11 @@
+# Latest execution — 2026-10-11 02:05 UTC
+
+Owner manual run38103777523, source25321d0e38a25e66572e77f13872bdd66cda3e65, job114364892672: server build FAILED. PowerShell syntax, approved artifact hashes/staging, pinned source/patch checks and SDK setup PASS. Build tail reports 165 errors/273 warnings in generated AdminPanel Pages_LogFiles_razor.g.cs, including CS0246 __builder, CS7014 and CS0103; elapsed2m01.91s. Root cause NOT YET ESTABLISHED; do not call cascade count165 separate defects.
+
+New runtime archive skipped. DB restore, server start, STR action, shutdown and relog NOT_RUN. Earlier isolated helper12/12 PASS remains valid and is not full server compile proof. Readiness unchanged.
+
+Evidence artifact11688443945, local-bind-server-smoke-38103777523-1, 14015bytes, SHA256c16bbd37f682e3fe2dcd8e7476898bd1bac77c3004548a97114784fb78500d92, expires2026-10-25. Parent read build-tail/job-status/result; tail may omit the first causal compiler error. One LOW read-only comparison of pinned Razor/source and previous successful toolchain is underway. No repeat build/dispatch or code change authorized by this diagnostic continuation.
+
 # Prepared integration stage — 2026-10-11 02:00 UTC
 
 Owner approved MEDIUM server-only build and one isolated Windows smoke with baseline DB artifact11651520969 at 01:30 UTC. Published and exact read-back verified: task/local-bind-isolated-check commit25321d0e38a25e66572e77f13872bdd66cda3e65. Three files: existing windows-client.yml plus scripts/prepare-local-bind-smoke.py and scripts/local-bind-server-smoke.ps1. One manual Windows job35min, build18min, smoke12min. No dispatch by parent; awaiting owner Run. Integration NOT_RUN.
