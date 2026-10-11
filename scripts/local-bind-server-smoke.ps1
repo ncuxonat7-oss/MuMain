@@ -448,11 +448,24 @@ function Get-CheckedChildEnvironment {
     [xml]$xml=Get-Content -LiteralPath "$serverDirectory/ConnectionSettings.xml" -Raw
     $entries=@($xml.SelectNodes('//*[local-name()="ConnectionString"]'))
     if (!$entries.Count) { throw 'Cannot verify runtime DB connection settings' }
+    $entryIndex=0
     foreach ($entry in $entries) {
-        $cs=[System.Data.Common.DbConnectionStringBuilder]::new(); $cs.ConnectionString=$entry.InnerText
-        foreach ($key in $cs.Keys) {
+        $entryIndex++
+        $cs=[System.Data.Common.DbConnectionStringBuilder]::new()
+        # Explicit CLR accessors bypass PowerShell's IDictionary property assignment.
+        try { $cs.set_ConnectionString([string]$entry.InnerText) } catch {
+            Save-Json 'connection-option-rejection.json' @{code='DB_PARSE_FAILED'; entryIndex=$entryIndex;
+                errorType=$_.Exception.GetType().FullName}
+            throw 'DB connection settings parse failed; values suppressed'
+        }
+        foreach ($key in $cs.get_Keys()) {
             if ($key -notin @('Server','Port','Database','User Id','Username','Password','Pooling',
                 'Minimum Pool Size','Maximum Pool Size','Timeout','Command Timeout','Include Error Detail')) {
+                $keyName='[suppressed]'; $keyType='null'
+                if ($null -ne $key) { $keyType=$key.GetType().FullName }
+                if ($key -is [string] -and $key -cmatch '^[A-Za-z][A-Za-z0-9 _]{0,63}$') { $keyName=$key }
+                Save-Json 'connection-option-rejection.json' @{code='DB_OPTION_REJECTED'; entryIndex=$entryIndex;
+                    keyName=$keyName; keyType=$keyType}
                 throw 'Unreviewed DB connection option; refusing launch'
             }
         }
