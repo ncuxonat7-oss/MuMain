@@ -41,3 +41,12 @@ No inspected forum history establishes measured long-running S6 uptime, concurre
 
 ## Current independent engineering blocker
 Manual Actions run 38099569774 at source 211dd945 failed a Listener byte-comparison check after pinned source verification and patch application, before SDK setup. Helper tests: 0/12, NOT RUN. Windows line endings are a hypothesis, not established cause. Engineering corrections were paused when this research began; this report does not resolve the blocker.
+
+## Independent review of the synthesis (2026-10-11)
+Requested by the owner after the first synthesis; bounded review of existing evidence, no additional source search or runtime verification. These are recommendations, not newly approved development.
+- Put the working local package first. Reconcile the existing manifest only as necessary; do not build another registry or turn every useful research lesson into a pre-Alpha task.
+- Recheck added uncertainty: one end-to-end smoke of the final package, then regressions scoped to changed components or reproducible symptoms. Existing PASS evidence is retained. H02 concerns learning/requirement gates; ancestry of that fix is not automatically a dependency for observing a cast when learning already passed.
+- Separate desired result from helper implementation. 0/12 NOT RUN describes the current helper test route, not twelve universal Alpha gates. Preserve integrity checks; diagnose the mismatch rather than suppressing it. Local network exposure and state preservation must still be demonstrated.
+- Use one prepared fixture only for a chosen difficult scenario. Actor/config-sync/test-platform adoption stays out of the critical path absent a concrete recurring need.
+- Identify the actual database and preserve its starting state. A restore rehearsal is required before risking valuable progress or transformation, but need not become an unconditional pre-Alpha gate for explicitly disposable test data. Never assume existing data is disposable.
+- Do not fill PC unavailability with endless audits. Next engineering session needs a bounded diagnosis and stopping condition. Estimates in the report are planning ranges, not a promised Alpha date or measured quota cost.
