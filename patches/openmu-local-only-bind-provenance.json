@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/MUnique/OpenMU",
+  "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "sourceSha256": {
+    "src/Network/Listener.cs": "63b9f3e22dbed204cfc6444a3d913c0a708bc659fc6bc30f9cf08837e349cc9a",
+    "src/Startup/Program.cs": "425aa92b842928e1b898fe7e0a38de1f1f53e0b55b62186028a2b1986bf931af",
+    "src/Startup/TestActors/ActorControlService.cs": "1c904ce5affeab7c3fba011427e8b271d27c07a4f3c7349aa6313c41a1def96f",
+    "src/Startup/TestActors/ActorEndpointOptions.cs": "2fad8c170ac5dc39fdc48e583baec7c5c3462198ef17759dbf49ceaefde9f5da",
+    "src/Startup/appsettings.json": "695c85d511324bd8eb901b7132d0d4d4d79164f70746f1f83a13bf3a2673e80e",
+    "src/Network/MUnique.OpenMU.Network.csproj": "f992675b5726c7e9c1e37d5e726e58a48e62ad6cbd66af3b7d17eb9dcf979d1b",
+    "docs-website/docs/deployment/startup-parameters.md": "f7c3a568e1f44dbcde917938ae69270143f24a016393565561b196022280293a"
+  },
+  "moneyPatchSha256": "85d8428452a25fef598c19ef2cda8d0ab94b2d5c13296481445ae84b7fad197d",
+  "scope": "Sparse source inspection only; no server checkout, build or runtime. Original source bytes include Listener UTF-8 BOM."
+}
