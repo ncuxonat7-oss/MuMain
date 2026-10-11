@@ -1,0 +1,19 @@
+{
+  "status": "INCOMPLETE_STATIC_ONLY",
+  "client_expected_hashes": {
+    "Main.exe": "9d895c638eb256b98d728dfc511f4c57d4a9e88cdba703e639426712b0b57cd5",
+    "MUnique.Client.Library.dll": "9292041494d9226f105fc07a94c2451f6303b906123b2932ea05a3469c378cb7"
+  },
+  "client_pe_imports": "NOT_INSPECTED_MISSING_BINARY_BYTES",
+  "server_frameworks": "NOT_INSPECTED_MISSING_RUNTIME_BYTES",
+  "required_by_reviewed_launcher": {
+    "dotnet_and_aspnet": "10.0.11",
+    "postgresql": "17.11",
+    "powershell": "7.4+",
+    "os": "Windows 11 x64"
+  },
+  "windows_dependency_archives": "NOT_PRESENT_NOT_DOWNLOADED",
+  "linux_test_powershell": "NOT_A_WINDOWS_PACKAGE_DEPENDENCY_NOT_INCLUDED",
+  "installed_anything": false,
+  "actual_component_incompatibility": "NOT_ESTABLISHED"
+}

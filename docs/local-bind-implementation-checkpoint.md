@@ -1,3 +1,5 @@
+Preservation branch note (2026-10-11): see [packaging preservation](windows11-package-preservation/README.md). Earlier unpublished/transfer/migration statements below are historical. Current owner decisions remain on docs/s6-owner-strategy-2026-10-10; this branch preserves the original local packaging chronology without enabling launch.
+
 ## 2026-10-11 continuation after 07:48 UTC owner instruction
 
 See windows11-package-static-continuation.md for pinned client dependency/shader evidence and the exact missing migration inputs. One supported Library read failed at tools/list with network; no retry/upload. Existing ZIP hashes and launcher activation remain unchanged.

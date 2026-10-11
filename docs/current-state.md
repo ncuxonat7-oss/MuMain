@@ -1,3 +1,5 @@
+Preservation branch note (2026-10-11): see [packaging preservation](windows11-package-preservation/README.md). Earlier unpublished/transfer/migration statements below are historical. Current owner decisions remain on docs/s6-owner-strategy-2026-10-10; this branch preserves the original local packaging chronology without enabling launch.
+
 Latest packaging continuation: one supported Library check still failed before transfer; pinned client source requirements and precise migration blocker recorded in docs/windows11-package-static-continuation.md. Archives and disabled launcher unchanged; no publication/runtime.
 
 Private package and review archives verified locally; required Library upload helper failed tools/list network before preparation. No confirmed Library IDs for new artifacts. Exact hashes and separate input/output transfer blockers are in the newest implementation checkpoint. No publication or activation.

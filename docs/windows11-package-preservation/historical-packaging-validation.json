@@ -1,0 +1,18 @@
+{
+  "status": "AVAILABLE_INPUTS_VERIFIED_PACKAGE_INCOMPLETE",
+  "file_counts": {
+    "client/Data": 13188,
+    "client/fonts": 13,
+    "scripts/windows11": 8
+  },
+  "inventory_entries": 13209,
+  "inventoried_bytes": 750478371,
+  "source_blob_validation": "ALL_MATCH_BEFORE_REVIEWED_OVERLAY",
+  "overlay_after_sha256": "1441360f93d80291659f63912022e0816125863acd0212ab4ec02fca33ebbb73",
+  "activation": false,
+  "new_tests_passed": 5,
+  "unchanged_lifecycle_tests": "NOT_RERUN",
+  "builds_or_runtime_tests": "NOT_RUN",
+  "manifest_state": "DRAFT_MISSING_BYTES_AND_SETUP",
+  "launcher_source_commit": "7f5b44a930a501dfc7ea4f522584cb59a22c9499"
+}

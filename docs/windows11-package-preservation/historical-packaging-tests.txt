@@ -1,0 +1,10 @@
+test_changed_bytes_do_not_inherit_git_provenance (__main__.PackagingTests.test_changed_bytes_do_not_inherit_git_provenance) ... ok
+test_draft_leaves_setup_and_endpoints_unknown (__main__.PackagingTests.test_draft_leaves_setup_and_endpoints_unknown) ... ok
+test_existing_destination_is_never_overwritten (__main__.PackagingTests.test_existing_destination_is_never_overwritten) ... ok
+test_unsafe_paths_rejected (__main__.PackagingTests.test_unsafe_paths_rejected) ... ok
+test_windows_safe_path (__main__.PackagingTests.test_windows_safe_path) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
