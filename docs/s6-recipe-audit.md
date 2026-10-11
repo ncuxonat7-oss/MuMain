@@ -1,5 +1,13 @@
 # S6 recipe semantic audit — 2026-10-10
 
+## Latest: Chaos Goblin window source chain — 2026-10-11
+
+Bounded read-only worker finding for the unfinished NPC wire/submenu queue; no code, tests, runtime execution or artifact download. Pinned OpenMU `d067b3c11c23c3145de6e2c76201ab9a93b267c8`: `src/GameLogic/PlayerActions/TalkNpcAction.cs:128–131` selects `IOpenNpcWindowPlugIn` for ChaosMachine; `src/GameServer/RemoteView/NPC/OpenNpcWindowPlugIn.cs:48,59` explicitly converts configuration enum to packet enum (not a raw cast); `src/Network/Packets/ServerToClient/ConnectionExtensions.cs:2207–2224` assigns `packet.Window`. `docs/Packets/C3-30-NpcWindowResponse_by-server.md` specifies C3/opcode 0x30, byte 3 Window, ChaosMachine=3. Pinned MuMain `8d18a2bbf29b4e3c91d3f9bb3b645f68aadc3fc5`, `src/source/Network/Server/WSclient.cpp:13846–13851`, dispatches 0x30 to ReceiveTalk; lines 6476–6479 map value 3 to `MIXTYPE_GOBLIN_NORMAL` / `INTERFACE_MIXINVENTORY`. This narrow source chain is consistent; no ID mismatch found.
+
+Important boundary: `TalkNpcAction.cs:137–140` creates BackupInventory separately, only when the actual NPC's `ItemCraftings.Any()` is true. Opening the UI therefore does not prove crafting support. Effective baseline NPC binding, generated packet layout, runtime crafting, outcomes and persistence remain UNKNOWN; other NPC/submenu paths remain unfinished. This source finding does not supersede the owner strategy or reopen completed mix38 work. Readiness 65.5/model1.1/MEDIUM unchanged; no crafting PASS or score credit.
+
+Deferred owner acceptance card `CHAOS-OPEN-01`: record client/server versions, talk to the intended Chaos Goblin, capture window title/options/errors, then close. This establishes only observed window opening/closing, not crafting acceptance; no execution is authorized by this documentation update.
+
 ## Latest: mix 38 option construction and configured Ancient correspondence
 
 Pinned native CreateItem uses CreateItemExtended, then ParseItemData and CreateItemByParameters, then SetItemAttributes. The classic 12-byte ItemSerializer is not the native entry path. ItemSerializerExtended at OpenMU d067b3c encodes Option level/type as separate nibbles and HasAncient from nonzero set discriminator, independently of Ancient Bonus presence. Native parsing preserves these fields; CMixItem::SetItem sets SET from AncientDiscriminator > 0, not AncientBonusOption. Normal option values are group-specific: weapons/staff/armor level*4, shields level*5, ordinary regeneration level*4 after SetItem conversion; special accessory/wing option types need their own branches. Never globally assume Option presence equals native OptionMin>=4. Server RequiredItemMatches tests option type presence without a level threshold.
