@@ -249,6 +249,21 @@ def evidence():
                   'tail_truncated': len(build_text) > 200_000})
         tail = build_text[-200_000:]
         Path('evidence/build-tail.txt').write_text(tail, encoding='utf-8')
+    pg_logs = {}
+    # Export fixed labels/counts only; no raw PG SQL, dump content or environment.
+    for path in list(Path('private-logs').glob('pg-*.*')) + [Path('private-logs/postgres.txt')]:
+        if not path.is_file():
+            continue
+        with path.open('rb') as stream:
+            stream.seek(max(0, path.stat().st_size - 32_768))
+            text = stream.read(32_768).decode('utf-8', errors='replace')
+        labels = ('connection refused', 'password authentication failed', 'permission denied',
+                  'server did not start', 'database system is ready to accept connections',
+                  'database system is shut down', 'timeout', 'could not connect')
+        pg_logs[path.name] = {'bytes': path.stat().st_size,
+                              'error_markers': len(re.findall(r'(?i)\b(?:ERROR|FATAL|PANIC)\b', text)),
+                              'observed_labels': [label for label in labels if label in text.lower()]}
+    save_json('postgres-log-summary.json', pg_logs)
     events = {}
     for path in Path('private-logs').glob('*-server.*'):
         text = path.read_text(encoding='utf-8', errors='replace')[-1_000_000:]
