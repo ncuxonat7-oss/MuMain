@@ -1,3 +1,17 @@
+# Windows launcher candidate checkpoint — 2026-10-11 06:50 UTC
+
+Owner approved bounded MEDIUM Start/Stop/local CollectReport implementation at06:00UTC. Candidate remains UNPUBLISHED on task/windows11-local-launcher; no Windows activation or laptop configuration. Latest local commit7f5b44a930a501dfc7ea4f522584cb59a22c9499 follows c07bfb3187a8211815a88ab73c3cee6d0457082a.
+
+Full implementation review bundle: libfile_fc6111425688819189eeb7838bd73db8 v0/file_0000000077ac81fdbeccbeb0c1be3d73,112225bytes,SHA2565184b8dee937e009afc1e01ca17acdd1ee628d103b6c0e5d7a5aedbf769b5fbe. Closeout diff bundle: libfile_0c32fdd12508819198876d8997b0a39b v0/file_00000000fd7881fdbacb8a09c75f0161,13231bytes,SHA25660b23bfe6ee744ae80f3b3815e2b2f8f14fdcaf380804004faa85cbdde0aad48. Both needed to reconstruct final source; cloud task01a1298c-f57f-759b-9875-f0d4d820d037 retains commits.
+
+Original three scripts/contract recovered from prior exact-hash Library review archive and reconciled under scripts/windows11; duplicate candidate path removed. Implemented lifecycle ownership guards, config/inventory/manifest validation, read-only DB checks, PID handshake, graceful shutdown/PG-last ordering, local allowlisted report. No ordinary restore/init commands. Actual reviewed package manifest and persistent setup are still absent, launchEnabled=false. No ready runnable laptop package claim.
+
+Evidence: author reports25 focused lifecycle checks PASS (five new closeout regressions), prior28 guard checks PASS unchanged and not repeated; Linux PowerShell/mock coverage, not Windows integration. Independent static review found and then verified closure of three issues: client could falsely report RUNNING; historical error markers could block PG stop forever; report write failure could accidentally stop active session. Closure PASS06:49UTC. Minor residual: server-error warning can carry to later sessions in same controller; record as nonblocking follow-up, do not expand this stage. Actual Windows ACLs, direct-child PG process behavior, role/schema checks and launcher Stop/relaunch persistence NOT_RUN. Previously proven smoke38108874540 is a separate valid result, not launcher acceptance.
+
+Reusable process lessons: verify materializable source/manifest inputs before implementation; define startup/stop/report failure acceptance up front; return atomic intermediate deliverables rather than long silent work; test synthetic lifecycle errors before costly Windows runs; do not repeat unchanged gameplay/build evidence. Missing implementation is not an owner-permission blocker. Stop at reviewable resource checkpoints.
+
+Next bounded decision: review publication of the prepared candidate to a test branch and separately scope package manifest/first-setup plus Windows acceptance. No code publication, workflow dispatch, persistent authentication/configuration change, production or main merge authorized by this checkpoint alone. Safe docs persistence only. Readiness65.5 unchanged.
+
 # Local-only bind implementation checkpoint
 
 2026-10-10 21:52 UTC. Owner approved one bounded MEDIUM stage. Main and runtime baseline unchanged.
