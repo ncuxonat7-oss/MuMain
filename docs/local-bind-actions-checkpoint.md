@@ -1,3 +1,11 @@
+# Latest runtime attempt — 2026-10-11 02:40 UTC
+
+Owner manually ran38105086865 at a8789a10524a7469e5bb391b183364e62fee516a; job114368780036 FAILED on smoke12-minute timeout (02:27:00–02:39:00). New runtime11689365514 reused: outer/inner hash/provenance, exact186manifestfiles PASS; client/DB/Data stagingPASS. Source checkout/build/helper checks SKIPPED as intended, no rebuild.
+
+Evidence11689786581,11577bytes,SHA25629bb1a0681de1e58c5c793006c2b28c755c61ddf08ccebba13ddc22eb75a9bb1. smoke-result NOT_RUN, cleanup completed=true/serverForceKill=false/clusterDeleted=false, server-log-summary empty. No database-identity, state, endpoint/listener snapshots or native screenshots. Do not claim server start, completedDBrestore, STR action, persistence or relog. Successful setup of input archives is not database initialization proof.
+
+Current cause UNKNOWN; one bounded read-only review of operations before first durable DB evidence is underway. Private PG setup logs were not preserved by this evidence bundle. Do not run another blind12-minute attempt or rebuildserver. Preserve current buildPASS/helperPASS independently; readinessunchanged65.5.
+
 # Latest verified build — 2026-10-11 02:17 UTC
 
 Manual run38104421623 source71159136c8f8cba949735be3ed0904fc15e5ad73, job114366770737 SUCCESS. SDK10.0.401; pinnedOpenMU d067b3c + unchanged Money/local-bind patches; same -c Release -p:ci=true and LF. Full Startup build succeeded in3m01.73s,267warnings,0errors. Build-only resultPASS; DB/client downloads and all integration steps deliberately SKIPPED. No listener/shutdown/persistence/native world-entry proof.
