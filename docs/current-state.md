@@ -1,3 +1,17 @@
+# Current owner checkpoint — 2026-10-11 22:28 UTC
+
+The reviewed local Alpha source, actual C# tests, sanitized build evidence, hashes, and warning assessment are preserved in [checkpoint 438f88e](../checkpoints/local-alpha/2026-10-11-csharp/README.md). All 69 checkpoint files were fetched back from that commit and matched byte-for-byte and by Git blob hash. The separate checkpoint branch does not promote the baseline or enable launch.
+
+Current result: Startup Release build passed; actual C# tests passed 14/14 Web and 15/15 Core. The output is a Linux framework-dependent candidate, not Windows acceptance. The 247 unique build warnings, including ImageSharp security advisories, remain documented in the [warning assessment](../checkpoints/local-alpha/2026-10-11-csharp/warning-assessment.md). Do not repeat successful builds/tests without a concrete reason.
+
+**Single next step, awaiting owner approval:** the [bounded disposable PostgreSQL restore and restricted-role acceptance proposal](../checkpoints/local-alpha/2026-10-11-csharp/next-stage-proposal.md). No real DB restore, roles, credentials, grants, server launch, or Windows-candidate integration is authorized by this checkpoint. Resolve the remaining grant contract with actual isolated database evidence; a later Windows candidate requires its own approval and source/binary/manifest alignment. Launch remains disabled.
+
+The known-good DB remains run38005996341/artifact11651520969. Run38108874540/artifact11691151847 contains integration evidence, not a replacement database backup. Existing baseline evidence and readiness score remain unchanged.
+
+## Historical checkpoints below — superseded instructions
+
+All next-action queues and claims of unpublished state below are historical, not active instructions. Completed checks remain evidence; recipe/option expansion and client optimization remain parked under the owner's current local Alpha priority. Preserve these records and links rather than replaying their queues.
+
 Review closeout: three lifecycle findings corrected;25lifecycle checks PASS,
 previous28guard PASS preserved. See newest implementation checkpoint. Still unpublished/disabled.
 
