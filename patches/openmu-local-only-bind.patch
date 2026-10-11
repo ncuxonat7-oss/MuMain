@@ -1,0 +1,45 @@
+--- a/src/Network/Listener.cs
++++ b/src/Network/Listener.cs
+@@ -61,7 +61,7 @@
+     /// <param name="backlog">The maximum length of the pending connections queue.</param>
+     public void Start(int backlog = (int)SocketOptionName.MaxConnections)
+     {
+-        this._clientListener = new TcpListener(IPAddress.Any, this._port);
++        this._clientListener = new TcpListener(LocalOnlyBinding.GetAddress(), this._port);
+         this._clientListener.Start(backlog);
+         this._clientListener.BeginAcceptSocket(this.OnAccept, null);
+     }
+--- /dev/null
++++ b/src/Network/LocalOnlyBinding.cs
+@@ -0,0 +1,31 @@
++// <copyright file="LocalOnlyBinding.cs" company="MUnique">
++// Licensed under the MIT License. See LICENSE file in the project root for full license information.
++// </copyright>
++
++namespace MUnique.OpenMU.Network;
++
++using System.Net;
++
++/// <summary>
++/// Selects the bind address for the shared game, connect and chat TCP listener.
++/// This does not configure the admin web host or optional actor endpoint.
++/// </summary>
++internal static class LocalOnlyBinding
++{
++    internal const string EnvironmentVariableName = "OPENMU_LOCAL_ONLY_TCP";
++
++    /// <summary>
++    /// Gets the bind address before a socket is constructed.
++    /// </summary>
++    /// <returns>IPv4 loopback when explicitly enabled; otherwise the legacy wildcard.</returns>
++    /// <exception cref="InvalidOperationException">The option is not unset, 0 or 1.</exception>
++    internal static IPAddress GetAddress()
++    {
++        return Environment.GetEnvironmentVariable(EnvironmentVariableName) switch
++        {
++            null or "0" => IPAddress.Any,
++            "1" => IPAddress.Loopback,
++            _ => throw new InvalidOperationException($"{EnvironmentVariableName} must be unset, 0 or 1."),
++        };
++    }
++}
