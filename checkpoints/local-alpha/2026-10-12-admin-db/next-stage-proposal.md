@@ -25,3 +25,7 @@ Deliver one focused source diff, targeted mock results and contract/hash mapping
 ## Already available, not rerun
 
 Admin provisioning/ACL/rollback and 63/2 histories are saved in this checkpoint. The prior compiled migration metadata and 14-row observed lower-bound contract remain in the C# checkpoint. The lower bound is not a full grant allowlist; the 119-table model inventory is not authority for blanket grants. Original diagnostic flags are preserved, and the earlier proposal's automatic flag changes remain superseded.
+
+## Later Windows route — reference only, not the next stage
+
+Parent-supplied saved evidence identifies the manual Windows Client Build workflow `.github/workflows/windows-client.yml` at historical commit `3a9dff7a7304c5ca0ddbeaaa81e90ab6b1df32f8`. Run38108874540 reused old runtime11689365514 without a build, reported persistedState PASS, two graceful server exits and cleanup=true; its later checkpoint visually reviewed Lorencia/stat/relog screenshots. This used `windows-latest`, not proven Windows11. These results were not rerun or independently re-audited during this checkpoint. Any future acceptance must bind the NEW package binaries/config/manifest and obtain separate owner approval; an unchanged old workflow would retest old components. No new VPS or universal test platform is proposed. The single immediate next stage above is unchanged.
