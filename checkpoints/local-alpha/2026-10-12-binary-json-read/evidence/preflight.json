@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "requiredHosts": [
+    "sdmntprwestus.oaiusercontent.com",
+    "sdmntpreastus2.oaiusercontent.com",
+    "sdmntprwestus2.oaiusercontent.com",
+    "sdmntprnortheu.oaiusercontent.com"
+  ],
+  "allRequiredHostsInActualPolicy": true,
+  "osUser": "agent",
+  "manifestVerified": true,
+  "driverSyntaxAndRestrictionsReviewed": true,
+  "originalDllSha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+  "candidateDllSha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+  "dumpSha256": "0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478",
+  "launchEnabled": false
+}

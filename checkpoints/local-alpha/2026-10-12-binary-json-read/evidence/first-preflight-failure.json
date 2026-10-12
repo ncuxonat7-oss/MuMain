@@ -1,0 +1,27 @@
+{
+  "driverFailure": "constant_defaults_only",
+  "candidateReadAttempts": 0,
+  "postgresStarted": false,
+  "pgdataAbsent": true,
+  "postmasterPidAbsent": true,
+  "socketAbsent": true,
+  "rejectedDefaults": [
+    {
+      "schemaLine": 1481,
+      "table": "data.\"Account\"",
+      "columnAndType": "\"LanguageIsoCode\" character varying(3)",
+      "expressionWithStringLiteralsRedacted": "'<redacted>'::character varying"
+    },
+    {
+      "schemaLine": 1802,
+      "table": "data.\"LetterHeader\"",
+      "columnAndType": "\"CharacterId\" uuid",
+      "expressionWithStringLiteralsRedacted": "'<redacted>'::uuid"
+    }
+  ],
+  "driverRerun": false,
+  "launchEnabled": false,
+  "originalDllStillMatches": true,
+  "sourceDumpStillMatches": true,
+  "candidateDllSha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1"
+}

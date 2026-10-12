@@ -1,0 +1,2344 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "checkpoint": "1b11beaae22cf3dc66c26d5741944708ea7215f5",
+  "sourcePin": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "scope": [
+    "GameConfiguration all-owner JSON read on EntityDataContext",
+    "PlugInConfiguration materialized Typed root",
+    "SystemConfiguration materialized Typed root"
+  ],
+  "entries": [
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.AreaSkillSettings",
+      "selectColumns": [
+        "Id",
+        "DelayBetweenHits",
+        "DelayPerOneDistance",
+        "EffectRange",
+        "FrustumDistance",
+        "FrustumEndWidth",
+        "FrustumStartWidth",
+        "HitChancePerDistanceMultiplier",
+        "MaximumNumberOfHitsPerAttack",
+        "MaximumNumberOfHitsPerTarget",
+        "MinimumNumberOfHitsPerAttack",
+        "MinimumNumberOfHitsPerTarget",
+        "ProjectileCount",
+        "TargetAreaDiameter",
+        "UseDeferredHits",
+        "UseFrustumFilter",
+        "UseTargetAreaFilter"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "UseFrustumFilter",
+        "FrustumStartWidth",
+        "FrustumEndWidth",
+        "FrustumDistance",
+        "UseTargetAreaFilter",
+        "TargetAreaDiameter",
+        "UseDeferredHits",
+        "DelayPerOneDistance",
+        "DelayBetweenHits",
+        "MinimumNumberOfHitsPerTarget",
+        "MaximumNumberOfHitsPerTarget",
+        "MaximumNumberOfHitsPerAttack",
+        "HitChancePerDistanceMultiplier",
+        "ProjectileCount",
+        "EffectRange",
+        "MinimumNumberOfHitsPerAttack"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.AttributeDefinition",
+      "selectColumns": [
+        "Id",
+        "Description",
+        "Designation",
+        "GameConfigurationId",
+        "MaximumValue"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GameConfigurationId",
+        "Designation",
+        "Description",
+        "MaximumValue"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.AttributeRelationship",
+      "selectColumns": [
+        "Id",
+        "AggregateType",
+        "CharacterClassId",
+        "GameConfigurationId",
+        "InputAttributeId",
+        "InputOperand",
+        "InputOperator",
+        "OperandAttributeId",
+        "PowerUpDefinitionValueId",
+        "SkillId",
+        "TargetAttributeId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "TargetAttributeId",
+        "InputAttributeId",
+        "CharacterClassId",
+        "PowerUpDefinitionValueId",
+        "InputOperator",
+        "InputOperand",
+        "OperandAttributeId",
+        "AggregateType",
+        "SkillId",
+        "GameConfigurationId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.AttributeRequirement",
+      "selectColumns": [
+        "Id",
+        "AttributeId",
+        "GameMapDefinitionId",
+        "ItemDefinitionId",
+        "MinimumValue",
+        "SkillId",
+        "SkillId1"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "AttributeId",
+        "GameMapDefinitionId",
+        "ItemDefinitionId",
+        "SkillId",
+        "SkillId1",
+        "MinimumValue"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.BattleZoneDefinition",
+      "selectColumns": [
+        "Id",
+        "GroundId",
+        "LeftGoalId",
+        "LeftTeamSpawnPointX",
+        "LeftTeamSpawnPointY",
+        "RightGoalId",
+        "RightTeamSpawnPointX",
+        "RightTeamSpawnPointY",
+        "Type"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GroundId",
+        "LeftGoalId",
+        "RightGoalId",
+        "Type",
+        "LeftTeamSpawnPointX",
+        "LeftTeamSpawnPointY",
+        "RightTeamSpawnPointX",
+        "RightTeamSpawnPointY"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.Buff",
+      "selectColumns": [
+        "Id",
+        "MagicEffectDefinitionId",
+        "MaximumLevel",
+        "MinimumLevel",
+        "MonsterDefinitionId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MagicEffectDefinitionId",
+        "MonsterDefinitionId",
+        "MinimumLevel",
+        "MaximumLevel"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CashShopConfiguration",
+      "selectColumns": [
+        "Id",
+        "BannerSaleZone",
+        "BannerYear",
+        "BannerYearId",
+        "ScriptSaleZone",
+        "ScriptYear",
+        "ScriptYearId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ScriptSaleZone",
+        "ScriptYear",
+        "ScriptYearId",
+        "BannerSaleZone",
+        "BannerYear",
+        "BannerYearId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CashShopPackage",
+      "selectColumns": [
+        "Id",
+        "CashShopConfigurationId",
+        "CoinType",
+        "IsBundle",
+        "IsForSale",
+        "IsGiftable",
+        "Name",
+        "PackageSequence",
+        "Price"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "CashShopConfigurationId",
+        "PackageSequence",
+        "Name",
+        "Price",
+        "CoinType",
+        "IsForSale",
+        "IsGiftable",
+        "IsBundle"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CashShopProduct",
+      "selectColumns": [
+        "Id",
+        "CashShopPackageId",
+        "Duration",
+        "ItemDefinitionId",
+        "ItemLevel",
+        "Price",
+        "PriceSequence",
+        "ProductSequence",
+        "Quantity"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemDefinitionId",
+        "CashShopPackageId",
+        "ProductSequence",
+        "PriceSequence",
+        "Price",
+        "ItemLevel",
+        "Quantity",
+        "Duration"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CastleSiegeConfiguration",
+      "selectColumns": [
+        "Id",
+        "AttackRespawnAreaId",
+        "CastleSiegeMapDefinitionId",
+        "CrownHoldTimeSeconds",
+        "DefenseRespawnAreaId",
+        "Enabled",
+        "GateBuyPrice",
+        "GateRepairCostPerHealthPoint",
+        "GuildScoreCastleSiege",
+        "GuildScoreCastleSiegeMembers",
+        "LandOfTrialsMapDefinitionId",
+        "MaxAttackingGuilds",
+        "ParticipantRewardMinSeconds",
+        "RegisterMinLevel",
+        "RegisterMinMembers",
+        "RepairCostPerUpgradeLevel",
+        "RewardItemDefinitionId",
+        "SignOfLordItemDefinitionId",
+        "SignOfLordItemLevel",
+        "StatueBuyPrice",
+        "StatueRepairCostPerHealthPoint"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "CastleSiegeMapDefinitionId",
+        "LandOfTrialsMapDefinitionId",
+        "RewardItemDefinitionId",
+        "DefenseRespawnAreaId",
+        "AttackRespawnAreaId",
+        "Enabled",
+        "CrownHoldTimeSeconds",
+        "RegisterMinLevel",
+        "RegisterMinMembers",
+        "ParticipantRewardMinSeconds",
+        "MaxAttackingGuilds",
+        "GuildScoreCastleSiege",
+        "GuildScoreCastleSiegeMembers",
+        "GateBuyPrice",
+        "StatueBuyPrice",
+        "SignOfLordItemDefinitionId",
+        "SignOfLordItemLevel",
+        "GateRepairCostPerHealthPoint",
+        "RepairCostPerUpgradeLevel",
+        "StatueRepairCostPerHealthPoint"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CastleSiegeNpcDefinition",
+      "selectColumns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "DefaultSide",
+        "Direction",
+        "InstanceId",
+        "IsPersistedToDatabase",
+        "MonsterDefinitionId",
+        "SpawnX",
+        "SpawnY"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MonsterDefinitionId",
+        "CastleSiegeConfigurationId",
+        "InstanceId",
+        "IsPersistedToDatabase",
+        "DefaultSide",
+        "SpawnX",
+        "SpawnY",
+        "Direction"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CastleSiegeStateScheduleEntry",
+      "selectColumns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "DayOfWeek",
+        "Hour",
+        "Minute",
+        "State"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "State",
+        "DayOfWeek",
+        "Hour",
+        "Minute"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CastleSiegeUpgradeDefinition",
+      "selectColumns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "CastleSiegeConfigurationId1",
+        "CastleSiegeConfigurationId2",
+        "CastleSiegeConfigurationId3",
+        "CastleSiegeConfigurationId4",
+        "Level",
+        "RequiredJewelOfGuardianCount",
+        "RequiredZen",
+        "Value"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "CastleSiegeConfigurationId1",
+        "CastleSiegeConfigurationId2",
+        "CastleSiegeConfigurationId3",
+        "CastleSiegeConfigurationId4",
+        "Level",
+        "RequiredJewelOfGuardianCount",
+        "RequiredZen",
+        "Value"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CastleSiegeZoneDefinition",
+      "selectColumns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "CastleSiegeConfigurationId1",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "CastleSiegeConfigurationId1",
+        "X1",
+        "Y1",
+        "X2",
+        "Y2"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CharacterClass",
+      "selectColumns": [
+        "Id",
+        "CanGetCreated",
+        "ComboDefinitionId",
+        "CreationAllowedFlag",
+        "FruitCalculation",
+        "GameConfigurationId",
+        "HomeMapId",
+        "IsMasterClass",
+        "LevelRequirementByCreation",
+        "LevelWarpRequirementReductionPercent",
+        "Name",
+        "NextGenerationClassId",
+        "Number"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "NextGenerationClassId",
+        "HomeMapId",
+        "GameConfigurationId",
+        "Number",
+        "Name",
+        "CanGetCreated",
+        "LevelRequirementByCreation",
+        "CreationAllowedFlag",
+        "IsMasterClass",
+        "LevelWarpRequirementReductionPercent",
+        "FruitCalculation",
+        "ComboDefinitionId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.CombinationBonusRequirement",
+      "selectColumns": [
+        "Id",
+        "ItemOptionCombinationBonusId",
+        "MinimumCount",
+        "OptionTypeId",
+        "SubOptionType"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "OptionTypeId",
+        "ItemOptionCombinationBonusId",
+        "SubOptionType",
+        "MinimumCount"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ConstValueAttribute",
+      "selectColumns": [
+        "Id",
+        "AggregateType",
+        "CharacterClassId",
+        "DefinitionId",
+        "GameConfigurationId",
+        "Value"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "DefinitionId",
+        "CharacterClassId",
+        "Value",
+        "GameConfigurationId",
+        "AggregateType"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.DropItemGroup",
+      "selectColumns": [
+        "Id",
+        "Chance",
+        "Description",
+        "GameConfigurationId",
+        "ItemLevel",
+        "ItemType",
+        "MaximumMonsterLevel",
+        "MinimumMonsterLevel",
+        "MonsterId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MonsterId",
+        "GameConfigurationId",
+        "Description",
+        "Chance",
+        "MinimumMonsterLevel",
+        "MaximumMonsterLevel",
+        "ItemLevel",
+        "ItemType"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.DuelArea",
+      "selectColumns": [
+        "Id",
+        "DuelConfigurationId",
+        "FirstPlayerGateId",
+        "Index",
+        "SecondPlayerGateId",
+        "SpectatorsGateId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "FirstPlayerGateId",
+        "SecondPlayerGateId",
+        "SpectatorsGateId",
+        "DuelConfigurationId",
+        "Index"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.DuelConfiguration",
+      "selectColumns": [
+        "Id",
+        "EntranceFee",
+        "ExitId",
+        "MaximumScore",
+        "MaximumSpectatorsPerDuelRoom",
+        "MinimumCharacterLevel"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ExitId",
+        "MaximumScore",
+        "EntranceFee",
+        "MinimumCharacterLevel",
+        "MaximumSpectatorsPerDuelRoom"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.EnterGate",
+      "selectColumns": [
+        "Id",
+        "GameMapDefinitionId",
+        "LevelRequirement",
+        "Number",
+        "TargetGateId",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "TargetGateId",
+        "GameMapDefinitionId",
+        "X1",
+        "Y1",
+        "X2",
+        "Y2",
+        "LevelRequirement",
+        "Number"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ExitGate",
+      "selectColumns": [
+        "Id",
+        "Direction",
+        "IsSpawnGate",
+        "MapId",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MapId",
+        "X1",
+        "Y1",
+        "X2",
+        "Y2",
+        "Direction",
+        "IsSpawnGate"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.GameConfiguration",
+      "selectColumns": [
+        "Id",
+        "AreaSkillHitsPlayer",
+        "CashShopConfigurationId",
+        "CastleSiegeConfigurationId",
+        "CharacterNameRegex",
+        "ClampMoneyOnPickup",
+        "DamagePerOneItemDurability",
+        "DamagePerOnePetDurability",
+        "DuelConfigurationId",
+        "ExcellentItemDropLevelDelta",
+        "ExperienceFormula",
+        "ExperienceRate",
+        "HitsPerOneItemDurability",
+        "InfoRange",
+        "ItemDropDuration",
+        "LetterSendPrice",
+        "MasterExperienceFormula",
+        "MasterExperienceRate",
+        "MaximumCharactersPerAccount",
+        "MaximumInventoryMoney",
+        "MaximumItemOptionLevelDrop",
+        "MaximumLetters",
+        "MaximumLevel",
+        "MaximumMasterLevel",
+        "MaximumPartySize",
+        "MaximumPasswordLength",
+        "MaximumVaultMoney",
+        "MinimumMonsterLevelForMasterExperience",
+        "PreventExperienceOverflow",
+        "RecoveryInterval",
+        "ShouldDropMoney"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MaximumLevel",
+        "MaximumMasterLevel",
+        "ExperienceRate",
+        "MinimumMonsterLevelForMasterExperience",
+        "InfoRange",
+        "AreaSkillHitsPlayer",
+        "MaximumInventoryMoney",
+        "MaximumVaultMoney",
+        "RecoveryInterval",
+        "MaximumLetters",
+        "LetterSendPrice",
+        "MaximumCharactersPerAccount",
+        "CharacterNameRegex",
+        "MaximumPasswordLength",
+        "MaximumPartySize",
+        "ShouldDropMoney",
+        "DamagePerOneItemDurability",
+        "DamagePerOnePetDurability",
+        "HitsPerOneItemDurability",
+        "ItemDropDuration",
+        "DuelConfigurationId",
+        "ExperienceFormula",
+        "MasterExperienceFormula",
+        "MaximumItemOptionLevelDrop",
+        "ClampMoneyOnPickup",
+        "PreventExperienceOverflow",
+        "MasterExperienceRate",
+        "ExcellentItemDropLevelDelta",
+        "CastleSiegeConfigurationId",
+        "CashShopConfigurationId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.GameMapDefinition",
+      "selectColumns": [
+        "Id",
+        "BattleZoneId",
+        "Discriminator",
+        "ExpMultiplier",
+        "GameConfigurationId",
+        "Name",
+        "Number",
+        "SafezoneMapId",
+        "TerrainData"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "SafezoneMapId",
+        "BattleZoneId",
+        "GameConfigurationId",
+        "Number",
+        "Name",
+        "TerrainData",
+        "ExpMultiplier",
+        "Discriminator"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.IncreasableItemOption",
+      "selectColumns": [
+        "Id",
+        "ItemOptionDefinitionId",
+        "LevelType",
+        "Number",
+        "OptionTypeId",
+        "PowerUpDefinitionId",
+        "SubOptionType",
+        "Weight"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "OptionTypeId",
+        "PowerUpDefinitionId",
+        "ItemOptionDefinitionId",
+        "Number",
+        "SubOptionType",
+        "LevelType",
+        "Weight"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "data.Item",
+      "selectColumns": [
+        "Id",
+        "DefinitionId",
+        "Durability",
+        "HasSkill",
+        "ItemSlot",
+        "ItemStorageId",
+        "Level",
+        "PetExperience",
+        "SocketCount",
+        "StorePrice"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemStorageId",
+        "DefinitionId",
+        "ItemSlot",
+        "Durability",
+        "Level",
+        "HasSkill",
+        "SocketCount",
+        "StorePrice",
+        "PetExperience"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemBasePowerUpDefinition",
+      "selectColumns": [
+        "Id",
+        "AggregateType",
+        "BaseValue",
+        "BonusPerLevelTableId",
+        "ItemDefinitionId",
+        "TargetAttributeId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "TargetAttributeId",
+        "BonusPerLevelTableId",
+        "ItemDefinitionId",
+        "BaseValue",
+        "AggregateType"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemCrafting",
+      "selectColumns": [
+        "Id",
+        "ItemCraftingHandlerClassName",
+        "MonsterDefinitionId",
+        "Name",
+        "Number",
+        "SimpleCraftingSettingsId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "SimpleCraftingSettingsId",
+        "MonsterDefinitionId",
+        "Number",
+        "Name",
+        "ItemCraftingHandlerClassName"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemCraftingRequiredItem",
+      "selectColumns": [
+        "Id",
+        "AddPercentage",
+        "FailResult",
+        "MaximumAmount",
+        "MaximumItemLevel",
+        "MinimumAmount",
+        "MinimumItemLevel",
+        "NpcPriceDivisor",
+        "Reference",
+        "SimpleCraftingSettingsId",
+        "SuccessResult"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "SimpleCraftingSettingsId",
+        "MinimumItemLevel",
+        "MaximumItemLevel",
+        "MinimumAmount",
+        "MaximumAmount",
+        "SuccessResult",
+        "FailResult",
+        "NpcPriceDivisor",
+        "AddPercentage",
+        "Reference"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemCraftingResultItem",
+      "selectColumns": [
+        "Id",
+        "AddLevel",
+        "Durability",
+        "ItemDefinitionId",
+        "RandomMaximumLevel",
+        "RandomMinimumLevel",
+        "Reference",
+        "SimpleCraftingSettingsId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemDefinitionId",
+        "SimpleCraftingSettingsId",
+        "RandomMinimumLevel",
+        "RandomMaximumLevel",
+        "Durability",
+        "Reference",
+        "AddLevel"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemDefinition",
+      "selectColumns": [
+        "Id",
+        "ConsumeEffectId",
+        "DropLevel",
+        "DropsFromMonsters",
+        "Durability",
+        "GameConfigurationId",
+        "Group",
+        "Height",
+        "IsAmmunition",
+        "IsBoundToCharacter",
+        "IsDroppable",
+        "IsPersonalStoreSellable",
+        "IsQuestItem",
+        "IsRepairable",
+        "IsSellableToNpc",
+        "IsStorable",
+        "IsTradable",
+        "ItemSlotId",
+        "MaximumDropLevel",
+        "MaximumItemLevel",
+        "MaximumSockets",
+        "Name",
+        "Number",
+        "PetExperienceFormula",
+        "SkillId",
+        "StorageLimitPerCharacter",
+        "Value",
+        "Width"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemSlotId",
+        "ConsumeEffectId",
+        "SkillId",
+        "GameConfigurationId",
+        "Number",
+        "Width",
+        "Height",
+        "DropsFromMonsters",
+        "IsAmmunition",
+        "IsBoundToCharacter",
+        "Name",
+        "DropLevel",
+        "MaximumItemLevel",
+        "Durability",
+        "Group",
+        "Value",
+        "MaximumSockets",
+        "PetExperienceFormula",
+        "StorageLimitPerCharacter",
+        "MaximumDropLevel",
+        "IsQuestItem",
+        "IsDroppable",
+        "IsPersonalStoreSellable",
+        "IsRepairable",
+        "IsSellableToNpc",
+        "IsStorable",
+        "IsTradable"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemDropItemGroup",
+      "selectColumns": [
+        "Id",
+        "Chance",
+        "Description",
+        "DropEffect",
+        "ItemDefinitionId",
+        "ItemLevel",
+        "ItemType",
+        "MaximumLevel",
+        "MaximumMonsterLevel",
+        "MinimumLevel",
+        "MinimumMonsterLevel",
+        "MoneyAmount",
+        "MonsterId",
+        "RequiredCharacterLevel",
+        "SourceItemLevel"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MonsterId",
+        "ItemDefinitionId",
+        "Description",
+        "Chance",
+        "MinimumMonsterLevel",
+        "MaximumMonsterLevel",
+        "ItemLevel",
+        "ItemType",
+        "SourceItemLevel",
+        "MoneyAmount",
+        "MinimumLevel",
+        "MaximumLevel",
+        "RequiredCharacterLevel",
+        "DropEffect"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemLevelBonusTable",
+      "selectColumns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "Name"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GameConfigurationId",
+        "Name",
+        "Description"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemOfItemSet",
+      "selectColumns": [
+        "Id",
+        "AncientSetDiscriminator",
+        "BonusOptionId",
+        "ItemDefinitionId",
+        "ItemSetGroupId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemSetGroupId",
+        "ItemDefinitionId",
+        "BonusOptionId",
+        "AncientSetDiscriminator"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemOptionCombinationBonus",
+      "selectColumns": [
+        "Id",
+        "AppliesMultipleTimes",
+        "BonusId",
+        "Description",
+        "GameConfigurationId",
+        "Number"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "BonusId",
+        "GameConfigurationId",
+        "Description",
+        "Number",
+        "AppliesMultipleTimes"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemOptionDefinition",
+      "selectColumns": [
+        "Id",
+        "AddChance",
+        "AddsRandomly",
+        "GameConfigurationId",
+        "MaximumOptionsPerItem",
+        "Name"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GameConfigurationId",
+        "Name",
+        "AddsRandomly",
+        "AddChance",
+        "MaximumOptionsPerItem"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "data.ItemOptionLink",
+      "selectColumns": [
+        "Id",
+        "Index",
+        "ItemId",
+        "ItemOptionId",
+        "Level"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemOptionId",
+        "ItemId",
+        "Level",
+        "Index"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemOptionOfLevel",
+      "selectColumns": [
+        "Id",
+        "IncreasableItemOptionId",
+        "Level",
+        "PowerUpDefinitionId",
+        "RequiredItemLevel"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "PowerUpDefinitionId",
+        "IncreasableItemOptionId",
+        "Level",
+        "RequiredItemLevel"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemOptionType",
+      "selectColumns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "IsVisible",
+        "Name"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GameConfigurationId",
+        "Name",
+        "Description",
+        "IsVisible"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemSetGroup",
+      "selectColumns": [
+        "Id",
+        "AlwaysApplies",
+        "CountDistinct",
+        "GameConfigurationId",
+        "MinimumItemCount",
+        "Name",
+        "OptionsId",
+        "SetLevel"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GameConfigurationId",
+        "Name",
+        "AlwaysApplies",
+        "CountDistinct",
+        "MinimumItemCount",
+        "SetLevel",
+        "OptionsId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemSlotType",
+      "selectColumns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "ItemSlots"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemSlots",
+        "GameConfigurationId",
+        "Description"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "data.ItemStorage",
+      "selectColumns": [
+        "Id",
+        "Money"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "Money"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.JewelMix",
+      "selectColumns": [
+        "Id",
+        "GameConfigurationId",
+        "MixedJewelId",
+        "Number",
+        "SingleJewelId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "SingleJewelId",
+        "MixedJewelId",
+        "GameConfigurationId",
+        "Number"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.LevelBonus",
+      "selectColumns": [
+        "Id",
+        "AdditionalValue",
+        "ItemLevelBonusTableId",
+        "Level"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemLevelBonusTableId",
+        "Level",
+        "AdditionalValue"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MagicEffectDefinition",
+      "selectColumns": [
+        "Id",
+        "ChanceId",
+        "ChancePvpId",
+        "DurationDependsOnTargetLevel",
+        "DurationId",
+        "DurationPvpId",
+        "GameConfigurationId",
+        "InformObservers",
+        "MonsterTargetLevelDivisor",
+        "Name",
+        "Number",
+        "PlayerTargetLevelDivisor",
+        "SendDuration",
+        "StopByDeath",
+        "SubType"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "DurationId",
+        "GameConfigurationId",
+        "Number",
+        "Name",
+        "SubType",
+        "InformObservers",
+        "StopByDeath",
+        "SendDuration",
+        "ChanceId",
+        "ChancePvpId",
+        "DurationDependsOnTargetLevel",
+        "DurationPvpId",
+        "MonsterTargetLevelDivisor",
+        "PlayerTargetLevelDivisor"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MasterSkillDefinition",
+      "selectColumns": [
+        "Id",
+        "Aggregation",
+        "DisplayValueFormula",
+        "ExtendsDuration",
+        "MaximumLevel",
+        "MinimumLevel",
+        "Rank",
+        "ReplacedSkillId",
+        "RootId",
+        "TargetAttributeId",
+        "ValueFormula"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "RootId",
+        "TargetAttributeId",
+        "ReplacedSkillId",
+        "Rank",
+        "MaximumLevel",
+        "MinimumLevel",
+        "ValueFormula",
+        "DisplayValueFormula",
+        "Aggregation",
+        "ExtendsDuration"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MasterSkillRoot",
+      "selectColumns": [
+        "Id",
+        "GameConfigurationId",
+        "Name"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GameConfigurationId",
+        "Name"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MiniGameChangeEvent",
+      "selectColumns": [
+        "Id",
+        "Description",
+        "Index",
+        "Message",
+        "MiniGameDefinitionId",
+        "MinimumTargetLevel",
+        "MultiplyKillsByPlayers",
+        "NumberOfKills",
+        "SpawnAreaId",
+        "Target",
+        "TargetDefinitionId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "TargetDefinitionId",
+        "SpawnAreaId",
+        "MiniGameDefinitionId",
+        "Index",
+        "Description",
+        "Message",
+        "Target",
+        "MinimumTargetLevel",
+        "NumberOfKills",
+        "MultiplyKillsByPlayers"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MiniGameDefinition",
+      "selectColumns": [
+        "Id",
+        "AllowParty",
+        "ArePlayerKillersAllowedToEnter",
+        "Description",
+        "EnterDuration",
+        "EntranceFee",
+        "EntranceId",
+        "ExitDuration",
+        "GameConfigurationId",
+        "GameDuration",
+        "GameLevel",
+        "MapCreationPolicy",
+        "MaximumCharacterLevel",
+        "MaximumPlayerCount",
+        "MaximumSpecialCharacterLevel",
+        "MinimumCharacterLevel",
+        "MinimumSpecialCharacterLevel",
+        "Name",
+        "RequiresMasterClass",
+        "SaveRankingStatistics",
+        "TicketItemId",
+        "TicketItemLevel",
+        "Type"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "EntranceId",
+        "TicketItemId",
+        "GameConfigurationId",
+        "Type",
+        "Name",
+        "Description",
+        "GameLevel",
+        "MapCreationPolicy",
+        "EnterDuration",
+        "GameDuration",
+        "ExitDuration",
+        "MaximumPlayerCount",
+        "SaveRankingStatistics",
+        "RequiresMasterClass",
+        "MinimumCharacterLevel",
+        "MaximumCharacterLevel",
+        "MinimumSpecialCharacterLevel",
+        "MaximumSpecialCharacterLevel",
+        "TicketItemLevel",
+        "AllowParty",
+        "ArePlayerKillersAllowedToEnter",
+        "EntranceFee"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MiniGameReward",
+      "selectColumns": [
+        "Id",
+        "ItemRewardId",
+        "MiniGameDefinitionId",
+        "Rank",
+        "RequiredKillId",
+        "RequiredSuccess",
+        "RewardAmount",
+        "RewardType"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemRewardId",
+        "RequiredKillId",
+        "MiniGameDefinitionId",
+        "Rank",
+        "RewardType",
+        "RewardAmount",
+        "RequiredSuccess"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MiniGameSpawnWave",
+      "selectColumns": [
+        "Id",
+        "Description",
+        "EndTime",
+        "Message",
+        "MiniGameDefinitionId",
+        "StartTime",
+        "WaveNumber"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MiniGameDefinitionId",
+        "WaveNumber",
+        "Description",
+        "Message",
+        "StartTime",
+        "EndTime"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MiniGameTerrainChange",
+      "selectColumns": [
+        "Id",
+        "EndX",
+        "EndY",
+        "IsClientUpdateRequired",
+        "MiniGameChangeEventId",
+        "SetTerrainAttribute",
+        "StartX",
+        "StartY",
+        "TerrainAttribute"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MiniGameChangeEventId",
+        "TerrainAttribute",
+        "SetTerrainAttribute",
+        "StartX",
+        "StartY",
+        "EndX",
+        "EndY",
+        "IsClientUpdateRequired"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MonsterAttribute",
+      "selectColumns": [
+        "Id",
+        "AttributeDefinitionId",
+        "MonsterDefinitionId",
+        "Value"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "AttributeDefinitionId",
+        "MonsterDefinitionId",
+        "Value"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MonsterDefinition",
+      "selectColumns": [
+        "Id",
+        "AttackDelay",
+        "AttackRange",
+        "AttackSkillId",
+        "Attribute",
+        "Designation",
+        "GameConfigurationId",
+        "IntelligenceTypeName",
+        "MerchantStoreId",
+        "MoveDelay",
+        "MoveRange",
+        "NpcWindow",
+        "Number",
+        "NumberOfMaximumItemDrops",
+        "ObjectKind",
+        "RespawnDelay",
+        "ViewRange"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "AttackSkillId",
+        "MerchantStoreId",
+        "GameConfigurationId",
+        "Number",
+        "Designation",
+        "MoveRange",
+        "AttackRange",
+        "ViewRange",
+        "MoveDelay",
+        "AttackDelay",
+        "RespawnDelay",
+        "Attribute",
+        "NumberOfMaximumItemDrops",
+        "NpcWindow",
+        "ObjectKind",
+        "IntelligenceTypeName"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MonsterSpawnArea",
+      "selectColumns": [
+        "Id",
+        "Direction",
+        "GameMapId",
+        "MaximumHealthOverride",
+        "MonsterDefinitionId",
+        "Quantity",
+        "SpawnTrigger",
+        "WaveNumber",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MonsterDefinitionId",
+        "GameMapId",
+        "X1",
+        "Y1",
+        "X2",
+        "Y2",
+        "Direction",
+        "Quantity",
+        "SpawnTrigger",
+        "WaveNumber",
+        "MaximumHealthOverride"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.PlugInConfiguration",
+      "selectColumns": [
+        "Id",
+        "CustomConfiguration",
+        "CustomPlugInSource",
+        "ExternalAssemblyName",
+        "GameConfigurationId",
+        "IsActive",
+        "TypeId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GameConfigurationId",
+        "TypeId",
+        "IsActive",
+        "CustomPlugInSource",
+        "ExternalAssemblyName",
+        "CustomConfiguration"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.PowerUpDefinition",
+      "selectColumns": [
+        "Id",
+        "BoostId",
+        "GameMapDefinitionId",
+        "MagicEffectDefinitionId",
+        "MagicEffectDefinitionId1",
+        "MasterSkillDefinitionId",
+        "TargetAttributeId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "TargetAttributeId",
+        "BoostId",
+        "MagicEffectDefinitionId",
+        "GameMapDefinitionId",
+        "MagicEffectDefinitionId1",
+        "MasterSkillDefinitionId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.PowerUpDefinitionValue",
+      "selectColumns": [
+        "Id",
+        "AggregateType",
+        "MaximumValue",
+        "Value"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "Value",
+        "AggregateType",
+        "MaximumValue"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.QuestDefinition",
+      "selectColumns": [
+        "Id",
+        "Group",
+        "MaximumCharacterLevel",
+        "MinimumCharacterLevel",
+        "MonsterDefinitionId",
+        "Name",
+        "Number",
+        "QualifiedCharacterId",
+        "QuestGiverId",
+        "RefuseNumber",
+        "Repeatable",
+        "RequiredStartMoney",
+        "RequiresClientAction",
+        "StartingNumber"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "QuestGiverId",
+        "QualifiedCharacterId",
+        "MonsterDefinitionId",
+        "Name",
+        "Group",
+        "Number",
+        "StartingNumber",
+        "RefuseNumber",
+        "Repeatable",
+        "RequiresClientAction",
+        "RequiredStartMoney",
+        "MinimumCharacterLevel",
+        "MaximumCharacterLevel"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.QuestItemRequirement",
+      "selectColumns": [
+        "Id",
+        "DropItemGroupId",
+        "ItemId",
+        "MinimumNumber",
+        "QuestDefinitionId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemId",
+        "DropItemGroupId",
+        "QuestDefinitionId",
+        "MinimumNumber"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.QuestMonsterKillRequirement",
+      "selectColumns": [
+        "Id",
+        "MinimumNumber",
+        "MonsterId",
+        "QuestDefinitionId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "MonsterId",
+        "QuestDefinitionId",
+        "MinimumNumber"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.QuestReward",
+      "selectColumns": [
+        "Id",
+        "AttributeRewardId",
+        "ItemRewardId",
+        "QuestDefinitionId",
+        "RewardType",
+        "SkillRewardId",
+        "Value"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ItemRewardId",
+        "AttributeRewardId",
+        "SkillRewardId",
+        "QuestDefinitionId",
+        "RewardType",
+        "Value"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.Rectangle",
+      "selectColumns": [
+        "Id",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "X1",
+        "Y1",
+        "X2",
+        "Y2"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.SimpleCraftingSettings",
+      "selectColumns": [
+        "Id",
+        "MaximumSuccessPercent",
+        "Money",
+        "MoneyPerFinalSuccessPercentage",
+        "MultipleAllowed",
+        "NpcPriceDivisor",
+        "ResultItemExcellentOptionChance",
+        "ResultItemLuckOptionChance",
+        "ResultItemMaxExcOptionCount",
+        "ResultItemSelect",
+        "ResultItemSkillChance",
+        "SuccessPercent",
+        "SuccessPercentageAdditionForAncientItem",
+        "SuccessPercentageAdditionForExcellentItem",
+        "SuccessPercentageAdditionForGuardianItem",
+        "SuccessPercentageAdditionForLuck",
+        "SuccessPercentageAdditionForSocketItem"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "Money",
+        "MoneyPerFinalSuccessPercentage",
+        "SuccessPercent",
+        "MaximumSuccessPercent",
+        "MultipleAllowed",
+        "ResultItemSelect",
+        "SuccessPercentageAdditionForLuck",
+        "SuccessPercentageAdditionForExcellentItem",
+        "SuccessPercentageAdditionForAncientItem",
+        "SuccessPercentageAdditionForSocketItem",
+        "ResultItemLuckOptionChance",
+        "ResultItemSkillChance",
+        "ResultItemExcellentOptionChance",
+        "ResultItemMaxExcOptionCount",
+        "NpcPriceDivisor",
+        "SuccessPercentageAdditionForGuardianItem"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.Skill",
+      "selectColumns": [
+        "Id",
+        "AreaSkillSettingsId",
+        "AttackDamage",
+        "DamageType",
+        "ElementalModifierTargetId",
+        "GameConfigurationId",
+        "ImplicitTargetRange",
+        "MagicEffectDefId",
+        "MasterDefinitionId",
+        "MovesTarget",
+        "MovesToTarget",
+        "Name",
+        "Number",
+        "NumberOfHitsPerAttack",
+        "Range",
+        "SkillType",
+        "SkipElementalModifier",
+        "Target",
+        "TargetRestriction"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "ElementalModifierTargetId",
+        "MagicEffectDefId",
+        "MasterDefinitionId",
+        "GameConfigurationId",
+        "Number",
+        "Name",
+        "Range",
+        "DamageType",
+        "SkillType",
+        "Target",
+        "ImplicitTargetRange",
+        "TargetRestriction",
+        "MovesToTarget",
+        "MovesTarget",
+        "AttackDamage",
+        "AreaSkillSettingsId",
+        "NumberOfHitsPerAttack",
+        "SkipElementalModifier"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.SkillComboDefinition",
+      "selectColumns": [
+        "Id",
+        "MaximumCompletionTime",
+        "Name"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "Name",
+        "MaximumCompletionTime"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.SkillComboStep",
+      "selectColumns": [
+        "Id",
+        "IsFinalStep",
+        "Order",
+        "SkillComboDefinitionId",
+        "SkillId"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "SkillId",
+        "SkillComboDefinitionId",
+        "Order",
+        "IsFinalStep"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.StatAttributeDefinition",
+      "selectColumns": [
+        "Id",
+        "AttributeId",
+        "BaseValue",
+        "CharacterClassId",
+        "IncreasableByPlayer"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "AttributeId",
+        "CharacterClassId",
+        "BaseValue",
+        "IncreasableByPlayer"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.WarpInfo",
+      "selectColumns": [
+        "Id",
+        "Costs",
+        "GameConfigurationId",
+        "GateId",
+        "Index",
+        "LevelRequirement",
+        "Name"
+      ],
+      "basis": "fullRowProjectionTables",
+      "savedBaselineColumns": [
+        "Id",
+        "GateId",
+        "GameConfigurationId",
+        "Index",
+        "Name",
+        "Costs",
+        "LevelRequirement"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.DropItemGroupItemDefinition",
+      "selectColumns": [
+        "DropItemGroupId",
+        "ItemDefinitionId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "DropItemGroupId",
+        "ItemDefinitionId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.GameMapDefinitionDropItemGroup",
+      "selectColumns": [
+        "DropItemGroupId",
+        "GameMapDefinitionId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "GameMapDefinitionId",
+        "DropItemGroupId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemCraftingRequiredItemItemDefinition",
+      "selectColumns": [
+        "ItemCraftingRequiredItemId",
+        "ItemDefinitionId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "ItemCraftingRequiredItemId",
+        "ItemDefinitionId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemCraftingRequiredItemItemOptionType",
+      "selectColumns": [
+        "ItemCraftingRequiredItemId",
+        "ItemOptionTypeId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "ItemCraftingRequiredItemId",
+        "ItemOptionTypeId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemDefinitionCharacterClass",
+      "selectColumns": [
+        "CharacterClassId",
+        "ItemDefinitionId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "ItemDefinitionId",
+        "CharacterClassId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemDefinitionItemOptionDefinition",
+      "selectColumns": [
+        "ItemDefinitionId",
+        "ItemOptionDefinitionId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "ItemDefinitionId",
+        "ItemOptionDefinitionId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemDefinitionItemSetGroup",
+      "selectColumns": [
+        "ItemDefinitionId",
+        "ItemSetGroupId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "ItemDefinitionId",
+        "ItemSetGroupId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.ItemDropItemGroupItemDefinition",
+      "selectColumns": [
+        "ItemDefinitionId",
+        "ItemDropItemGroupId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "ItemDropItemGroupId",
+        "ItemDefinitionId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "data.ItemItemOfItemSet",
+      "selectColumns": [
+        "ItemId",
+        "ItemOfItemSetId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "ItemId",
+        "ItemOfItemSetId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MasterSkillDefinitionSkill",
+      "selectColumns": [
+        "MasterSkillDefinitionId",
+        "SkillId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "MasterSkillDefinitionId",
+        "SkillId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.MonsterDefinitionDropItemGroup",
+      "selectColumns": [
+        "DropItemGroupId",
+        "MonsterDefinitionId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "MonsterDefinitionId",
+        "DropItemGroupId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "entity_role",
+      "intendedTemplateRole": "mu_entity",
+      "connectionKey": "EntityDataContext",
+      "table": "config.SkillCharacterClass",
+      "selectColumns": [
+        "CharacterClassId",
+        "SkillId"
+      ],
+      "basis": "joinColumnProjectionTables",
+      "savedBaselineColumns": [
+        "SkillId",
+        "CharacterClassId"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "typed_role",
+      "intendedTemplateRole": "mu_typed",
+      "connectionKey": "TypedContext",
+      "table": "config.PlugInConfiguration",
+      "selectColumns": [
+        "Id",
+        "CustomConfiguration",
+        "CustomPlugInSource",
+        "ExternalAssemblyName",
+        "GameConfigurationId",
+        "IsActive",
+        "TypeId"
+      ],
+      "basis": "typedScalarRoots",
+      "savedBaselineColumns": [
+        "Id",
+        "GameConfigurationId",
+        "TypeId",
+        "IsActive",
+        "CustomPlugInSource",
+        "ExternalAssemblyName",
+        "CustomConfiguration"
+      ],
+      "liveSchemaVerified": false
+    },
+    {
+      "roleParameter": "typed_role",
+      "intendedTemplateRole": "mu_typed",
+      "connectionKey": "TypedContext",
+      "table": "config.SystemConfiguration",
+      "selectColumns": [
+        "Id",
+        "AutoStart",
+        "AutoUpdateSchema",
+        "IpResolver",
+        "IpResolverParameter",
+        "NetworkAnalyzerLiveBufferSize",
+        "NetworkObservationArchivePath",
+        "NetworkObservationMaxSessionSizeMb",
+        "NetworkObservationMaxTotalSizeMb",
+        "NetworkObservationRetentionDays",
+        "ReadConsoleInput",
+        "TimeZoneId"
+      ],
+      "basis": "typedScalarRoots",
+      "savedBaselineColumns": [
+        "Id",
+        "IpResolver",
+        "IpResolverParameter",
+        "AutoStart",
+        "AutoUpdateSchema",
+        "ReadConsoleInput",
+        "TimeZoneId",
+        "NetworkAnalyzerLiveBufferSize",
+        "NetworkObservationArchivePath",
+        "NetworkObservationMaxSessionSizeMb",
+        "NetworkObservationMaxTotalSizeMb",
+        "NetworkObservationRetentionDays"
+      ],
+      "liveSchemaVerified": false
+    }
+  ],
+  "prerequisites": [
+    "new disposable restored database only",
+    "ephemeral NOLOGIN roles, no ownership/memberships or administrative attributes",
+    "database CONNECT and only listed schema USAGE",
+    "compare actual restored columns to this saved schema; alias.* requires every current column",
+    "review restored tables, triggers/rules/RLS/defaults and executable paths before access",
+    "actual command inspection and role/read-only enforcement on each candidate connection"
+  ],
+  "excluded": [
+    "write/sequence privileges",
+    "schema CREATE/database TEMP",
+    "migration/history privileges",
+    "public-schema blanket privileges",
+    "mu_config default-ID read (not one of this stage\u2019s three scenarios)",
+    "other feature/write/role closure"
+  ],
+  "proofLimits": [
+    "static saved branch decisions; actual generated candidate SQL not captured",
+    "saved schema match only, no live schema validation",
+    "column grants freeze the baseline projection; later added columns must not inherit SELECT automatically",
+    "no runtime role identity, counts or result hashes exist"
+  ]
+}

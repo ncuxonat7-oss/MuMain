@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "identity": {
+    "role": "entity_read_probe",
+    "sessionUser": "agent",
+    "database": "scoped_reads",
+    "readOnly": "on",
+    "listenAddresses": ""
+  },
+  "querySha256": "1c07ca26e3d3a00c165614e17b3273f6475f1d9538bacb3d9f3645faae75b686",
+  "culture": "",
+  "uiCulture": ""
+}

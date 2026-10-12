@@ -1,0 +1,222 @@
+{
+  "status": "PASS",
+  "onlyApprovedTwoTypeAddition": true,
+  "positiveCases": 16,
+  "negativeCases": 19,
+  "cases": [
+    {
+      "input": "0",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "-42",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "1.5",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "-0.5",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "true",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "false",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'abc'::text",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'1 day'::interval",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'true'::boolean",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'42'::integer",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'1.5'::real",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'1.5'::double precision",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'it''s'::text",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'en'::character varying",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "''::character varying",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "'00000000-0000-0000-0000-000000000000'::uuid",
+      "expectedAccepted": true,
+      "accepted": true,
+      "status": "PASS"
+    },
+    {
+      "input": "gen_random_uuid()",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "nextval('sequence')",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "('a' || 'b')::character varying",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'a'::text || 'b'::text",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::custom_type",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::public.uuid",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::pg_catalog.uuid",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::text::uuid",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::uuid; SELECT 1",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::uuid -- comment",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::uuid/*comment*/",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "/*comment*/'x'::uuid",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::uuid\n",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'unterminated::uuid",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "E'x'::character varying",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "$$x$$::character varying",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "'x'::character varying(3)",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "1+2",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    },
+    {
+      "input": "(SELECT 1)",
+      "expectedAccepted": false,
+      "accepted": false,
+      "status": "PASS"
+    }
+  ],
+  "retainedSchemaDefaultsAccepted": 66,
+  "testsAreDriverGuardOnly": true,
+  "originalDriverSha256": "833d02a4c8a71258971422067e2a017836ec5c93f5e9d348260add9e5275cbf4",
+  "correctedDriverSha256": "25ea17e595ed005213e2c367d991024a5d1f82cf870acdec00b0c673de13c8f1"
+}

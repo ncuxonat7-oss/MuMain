@@ -1,0 +1,18 @@
+{
+  "status": "FAIL",
+  "stage": "preflight",
+  "checks": {
+    "new_private_cluster_path": "PASS",
+    "review_gate": "PASS",
+    "sha256:gameplay-test-db.dump": "PASS",
+    "sha256:github-actions-artifact-11651520969.zip": "PASS",
+    "sha256:MUnique.OpenMU.Persistence.EntityFramework.dll": "PASS",
+    "no_executable_objects": "PASS",
+    "constant_defaults_only": "FAIL"
+  },
+  "candidateReadAttempts": 0,
+  "shutdown": "NOT_STARTED",
+  "networkIsolationGuaranteed": false,
+  "error": "constant_defaults_only",
+  "elapsedSeconds": 0.04
+}

@@ -1,3 +1,13 @@
+# Current owner checkpoint — 2026-10-12 single-read acceptance
+
+The [binary JSON candidate checkpoint](../checkpoints/local-alpha/2026-10-12-binary-json-read/README.md) records exactly **one actual GameConfiguration read PASS** on a disposable Linux PostgreSQL copy. The already built fixed EF DLL was used under the prepared restricted role and read-only transaction. **35 driver guard cases PASS**; only literal cast alternatives `character varying` and `uuid` were added. PostgreSQL stopped, before/after data hashes matched, and original binary/dump hashes remain intact.
+
+The supplied earlier candidate evidence records 10 actual C# tests PASS; none was repeated for publication. Windows acceptance, Typed reads, gameplay/server startup and full ACL closure remain unproven/deferred. Launch and first setup remain disabled. Baseline/readiness unchanged. This separate checkpoint preserves the latest project checkpoint; it does not merge into main.
+
+**Single next step:** preparation of a bounded Windows candidate acceptance proposal, pending separate owner scope approval. No further runtime, build, read, grant expansion or development is authorized by this publication checkpoint.
+
+## Earlier checkpoint instructions — superseded by the scoped result above
+
 # Current owner checkpoint — 2026-10-12 overnight
 
 The [admin-only disposable database checkpoint](../checkpoints/local-alpha/2026-10-12-admin-db/README.md) preserves official EF invocation/SQL, 2/2 admin and unchanged 63/63 game histories, original configuration flags, unchanged non-admin data hash, restricted-role zero-row rollback probes and clean PostgreSQL shutdown. The prior C# evidence remains valid; neither proves Windows or complete Alpha readiness. Known-good baseline artifact11651520969 remains unchanged.

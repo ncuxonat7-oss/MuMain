@@ -1,0 +1,11 @@
+--- run-database.py.before-cast-fix
++++ run-database.py
+@@ -29,7 +29,7 @@
+  for line in s.splitlines():
+   if ' DEFAULT ' in line:
+    expr=line.split(' DEFAULT ',1)[1].removesuffix(',').removesuffix(' NOT NULL');defaults.append(expr)
+- check('constant_defaults_only',all(re.fullmatch(r"(?:-?\d+(?:\.\d+)?|true|false|'(?:[^']|'')*'::(?:text|interval|boolean|integer|real|double precision))",x) for x in defaults))
++ check('constant_defaults_only',all(re.fullmatch(r"(?:-?\d+(?:\.\d+)?|true|false|'(?:[^']|'')*'::(?:text|interval|boolean|integer|real|double precision|character varying|uuid))",x) for x in defaults))
+  report['stage']='initialize';run('initdb',['-D',str(cluster),'--encoding=SQL_ASCII','--locale=C','--auth-local=peer','--auth-host=reject'],'initdb.log')
+  with (cluster/'postgresql.conf').open('a') as f:f.write("\nlisten_addresses = ''\nunix_socket_directories = '"+str(sock)+"'\nunix_socket_permissions = 0700\nport = 55432\n")
+  report['stage']='start';run('pg_ctl',['-D',str(cluster),'-l',str(r/'postgres.log'),'-w','start'],'pg-start.log');report['shutdown']='REQUIRED'

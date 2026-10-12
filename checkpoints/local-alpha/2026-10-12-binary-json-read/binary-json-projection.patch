@@ -1,0 +1,48 @@
+--- a/src/Persistence/EntityFramework/Json/JsonQueryBuilder.cs
++++ b/src/Persistence/EntityFramework/Json/JsonQueryBuilder.cs
+@@ -63,9 +63,44 @@
+ 
+     private void AddTypeToQuery(IEntityType entityType, StringBuilder stringBuilder, string alias)
+     {
+-        stringBuilder.Append("select ").Append(alias).Append(".\"Id\" as \"$id\", ").Append(alias).Append(".*");
++        stringBuilder.Append("select ").Append(alias).Append(".\"Id\" as \"$id\", ");
++        this.AddColumnsToQuery(entityType, stringBuilder, alias);
+         this.AddNavigationsToQuery(entityType, stringBuilder, alias);
+         stringBuilder.Append(" from ").Append(entityType.GetSchema()).Append('.').Append('"').Append(entityType.GetTableName()).Append("\" ").AppendLine(alias);
++    }
++
++    private void AddColumnsToQuery(IEntityType entityType, StringBuilder stringBuilder, string alias)
++    {
++        var tableName = entityType.GetTableName() ?? throw new InvalidOperationException("The entity type must be mapped to a table.");
++        var table = entityType.Model.GetRelationalModel().FindTable(tableName, entityType.GetSchema())
++            ?? throw new InvalidOperationException("The mapped table was not found.");
++        var columns = table.Columns.OrderBy(column => column.Name, StringComparer.Ordinal).ToList();
++        if (!columns.Any(column => column.StoreType == "bytea"))
++        {
++            stringBuilder.Append(alias).Append(".*");
++            return;
++        }
++
++        // PostgreSQL renders bytea as hex in row_to_json, but the JSON converters expect base64.
++        // Project the whole table explicitly so binary columns occur only once, while retaining
++        // shadow properties, discriminators, and columns mapped by other types sharing the table.
++        var separator = string.Empty;
++        foreach (var column in columns)
++        {
++            stringBuilder.Append(separator);
++            var columnName = column.Name.Replace("\"", "\"\"");
++            if (column.StoreType == "bytea")
++            {
++                stringBuilder.Append("encode(").Append(alias).Append(".\"").Append(columnName)
++                    .Append("\", 'base64') as \"").Append(columnName).Append('"');
++            }
++            else
++            {
++                stringBuilder.Append(alias).Append(".\"").Append(columnName).Append('"');
++            }
++
++            separator = ", ";
++        }
+     }
+ 
+     private void AddNavigationsToQuery(IEntityType entityType, StringBuilder stringBuilder, string parentAlias)

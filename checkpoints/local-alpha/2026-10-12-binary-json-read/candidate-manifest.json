@@ -1,0 +1,28 @@
+{
+  "sourceCommit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "candidateOnly": true,
+  "runtimeComponent": "MUnique.OpenMU.Persistence.EntityFramework.dll",
+  "oldSha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+  "newSha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+  "requiredCompanionDllChanges": [],
+  "changedRuntimeDlls": [
+    "MUnique.OpenMU.Persistence.EntityFramework.dll"
+  ],
+  "targetFramework": "net10.0",
+  "buildPlatform": "Linux",
+  "windowsVerified": false,
+  "liveDatabaseReadPerformedHere": false,
+  "buildCommand": "dotnet build src/Persistence/EntityFramework/MUnique.OpenMU.Persistence.EntityFramework.csproj --no-restore -c Release -p:ci=true -p:BuildProjectReferences=false -p:UseSharedCompilation=false -p:BuildInParallel=false -m:1 -v:minimal",
+  "sourceChanges": [
+    {
+      "path": "src/Persistence/EntityFramework/Json/JsonQueryBuilder.cs",
+      "beforeSha256": "b66e777e3189074cde066febd2e4350b68e752a2f8a62fda36986e7be465dad5",
+      "afterSha256": "0ebf2fc4b94d572abafe5219976cee7eea3551d73c3028ced67cadc261dd1b8f"
+    },
+    {
+      "path": "tests/MUnique.OpenMU.Tests/JsonBinaryProjectionTests.cs",
+      "beforeSha256": null,
+      "afterSha256": "9d2411a00ca84ce3334e5e09d8ba95aa44ed53e1fb32d708ceb7d2c0c6b89b33"
+    }
+  ]
+}

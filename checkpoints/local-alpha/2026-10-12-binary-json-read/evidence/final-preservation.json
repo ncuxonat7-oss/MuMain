@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "hashChecks": [
+    {
+      "path": "runtime/app/MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "sha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+      "status": "PASS"
+    },
+    {
+      "path": "candidate/MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "sha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+      "status": "PASS"
+    },
+    {
+      "path": "handoff/app/MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "sha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+      "status": "PASS"
+    },
+    {
+      "path": "dump/gameplay-test-db.dump",
+      "sha256": "0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478",
+      "status": "PASS"
+    },
+    {
+      "path": "inputs/baseline/gameplay-test-db.dump",
+      "sha256": "0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478",
+      "status": "PASS"
+    },
+    {
+      "path": "handoff/run-database.py.before-cast-fix",
+      "sha256": "833d02a4c8a71258971422067e2a017836ec5c93f5e9d348260add9e5275cbf4",
+      "status": "PASS"
+    }
+  ],
+  "otherCopiedRuntimeAssetsUnchanged": true,
+  "singleReadPassed": true,
+  "shutdown": {
+    "statusExit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "disposableClusterRetained": "consumer-local handoff/pgdata (excluded from repository)",
+  "launchEnabled": false,
+  "notTested": [
+    "Typed reads",
+    "Windows readiness",
+    "game or server startup",
+    "broader runtime acceptance"
+  ],
+  "noDownloadsRebuildsOrPublication": true
+}

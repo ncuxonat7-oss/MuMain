@@ -1,0 +1,14 @@
+OpenMU binary JSON projection candidate, 2026-10-12
+Source: d067b3c11c23c3145de6e2c76201ab9a93b267c8 plus existing local admin/preprovision patches, preserved.
+Runtime change: MUnique.OpenMU.Persistence.EntityFramework.dll only. No companion DLL changes.
+
+Build: actual EF C# project, Release/net10.0, --no-restore, BuildProjectReferences=false, ci=true.
+Result: succeeded, 34 existing-source warnings, 0 errors, 53.75 seconds. No new warning in added code; the JsonQueryBuilder obsolete DeclaringEntityType warning is pre-existing unchanged code.
+Test project build: succeeded, 20 unrelated pre-existing warnings, 0 errors.
+Focused actual C# NUnit run: 10/10 passed, 3.6209 seconds; no database was opened.
+Tests: real compiled map scalar projection; exact unchanged binary-free scalar query; nested aggregate map projection; renamed/quoted, multiple binary, shadow and TPH columns; generated map converter null/empty/mixed/65536-byte base64 including PostgreSQL-style linefeeds; negative PostgreSQL hex rejection; existing compiled/runtime query equivalence.
+Initial negative-test assertion expected unwrapped FormatException; corrected to JsonException with FormatException inner, then all 10 passed.
+
+The query builder now enumerates relational table columns only when bytea exists and encodes each such column once under its original column name. Other scalar column and navigation semantics remain unchanged. Binary-free tables retain alias.*.
+Baseline runtime DLL hashes were rechecked and are unchanged. No downloads/restores/installations, no server/DB start, no database writes, no publication.
+This is Linux candidate proof, not Windows runtime readiness or live GameConfiguration-read success. The single live read belongs to the existing PostgreSQL consumer. Preserve that consumer's baseline and verify the old EF DLL hash before replacing only this component in its isolated candidate.

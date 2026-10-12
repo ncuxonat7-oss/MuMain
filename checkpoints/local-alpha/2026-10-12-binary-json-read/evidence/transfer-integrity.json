@@ -1,0 +1,30 @@
+[
+  {
+    "file": "OpenMU-single-read-handoff-20261012.zip",
+    "size": 61134,
+    "sha256": "a56eb21018ba1513714729ab7236d5bbc0b459768093d20537797d4162b3ff7f",
+    "safe_zip_paths": true,
+    "entries": 11
+  },
+  {
+    "file": "github-actions-artifact-11651520969.zip",
+    "size": 2091291,
+    "sha256": "b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea",
+    "safe_zip_paths": true,
+    "entries": 10
+  },
+  {
+    "file": "admin-ef-existing-tools-20261012.zip",
+    "size": 13566379,
+    "sha256": "e36693ebf7d4a6c38863c5a8b82cf8024e59208097f4692002ddda2ea75dc3f0",
+    "safe_zip_paths": true,
+    "entries": 127
+  },
+  {
+    "file": "OpenMU-binary-json-candidate-20261012.zip",
+    "size": 1182757,
+    "sha256": "1e509e6a89f7d7d2833ab3486fabdfec177df5abd5873cc13f84fe42f3f1c0ca",
+    "safe_zip_paths": true,
+    "entries": 4
+  }
+]

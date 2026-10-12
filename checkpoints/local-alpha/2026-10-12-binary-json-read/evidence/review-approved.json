@@ -1,0 +1,22 @@
+{
+  "status": "PASS_REVIEWED_BEFORE_DB_EXECUTION",
+  "gameQuerySha256": "1c07ca26e3d3a00c165614e17b3273f6475f1d9538bacb3d9f3645faae75b686",
+  "gameQueryBytes": 47020,
+  "fullRowTables": 69,
+  "joinTables": 12,
+  "physicalProjectionOccurrences": 142,
+  "exactTableScope": true,
+  "allowedExpressionsOnly": true,
+  "binaryProjection": {
+    "table": "config.GameMapDefinition",
+    "column": "TerrainData",
+    "encoding": "base64",
+    "occurrences": 1,
+    "allMappedColumnsExactlyOnce": true
+  },
+  "preparedGrantsExactContractMatch": true,
+  "typedSqlGeneratedOnly": true,
+  "authorizedActualReads": 1,
+  "actualReadType": "GameConfiguration",
+  "launchEnabled": false
+}

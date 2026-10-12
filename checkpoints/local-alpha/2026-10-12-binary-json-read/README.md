@@ -1,0 +1,25 @@
+# Binary JSON candidate: one actual GameConfiguration read PASS
+
+This checkpoint extends `1b11beaae22cf3dc66c26d5741944708ea7215f5` on a separate branch. It preserves the approved 2026-10-12 Linux diagnostic, not a Windows package or launch authorization. No build, test, database read, or server action was repeated while publishing this checkpoint. Main and baseline readiness are unchanged.
+
+The already built EF candidate encoded PostgreSQL bytea columns as base64 once under their mapped names. Original EF DLL SHA256: `f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014`; candidate: `67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1`. The unique C# change is in [binary-json-projection.patch](binary-json-projection.patch); the exact new test source is [JsonBinaryProjectionTests.cs](JsonBinaryProjectionTests.cs), matched to the supplied manifest hash. The historical candidate build/test summary records 10 actual C# tests PASS; those tests were not rerun here.
+
+## Actual result and limits
+
+- Exactly one GameConfiguration read PASS; one root materialized on the disposable restored database using `entity_read_probe`, one connection, transaction read-only on, and PostgreSQL TCP listening disabled.
+- The reviewed generated query retained 69 full-row and 12 join tables, with TerrainData encoded once. Query SHA256: `1c07ca26e3d3a00c165614e17b3273f6475f1d9538bacb3d9f3645faae75b686`.
+- Prepared role attributes and exact column privileges passed: entity 638, typed 19. Creating/checking the prepared typed role did not execute Typed reads. Full production ACL closure remains deferred.
+- Normalized before/after database data hashes matched. PostgreSQL stopped; status exit 3, no postmaster PID or socket. Original binaries/source dump hashes remained intact. See [database-results](evidence/database-results.json) and [preservation](evidence/final-preservation.json).
+- The harness observed zero EF diagnostic commands because the reviewed JSON read uses the raw command path; do not interpret that counter as an independently intercepted SQL count. The harness source contains one GameConfiguration GetAsync call, and the controller recorded one candidate invocation.
+- Initial preflight rejected two literal casts before PostgreSQL startup: character varying and uuid. The approved correction adds only these type alternatives, preserving fullmatch, literal syntax, executable-object checks, hashes, paths, roles and read-only enforcement. [Exact diff](driver-cast-fix.diff), original/corrected driver and [35 guard cases](driver-cast-tests.json) are retained: 16 positive and 19 negative PASS; 66 retained schema defaults accepted. Guard tests do not substitute for C# or actual read acceptance.
+- This successful read supports the fixed candidate for this exact Linux scenario. It does not prove Windows readiness, Typed reads, gameplay/server startup, complete permissions, or identify TerrainData as the exclusive cause of the earlier failure. Launch remains disabled; readiness score unchanged.
+
+## Saved source and evidence
+
+`handoff/` contains exact diagnostic C# sources, corrected/original driver, invoker, read contract and prepared column grants. These are archived diagnostic sources, not launch/setup hooks. Do not execute from this checkout: binaries, runtime, dump, full restored schema and runtime layout are deliberately absent. The retained contract's older three-scenario scope and historical NOT_RUN statements describe its preparation stage; this checkpoint executed only GameConfiguration. The historical candidate manifest's liveDatabaseReadPerformedHere=false refers to the separate candidate-building stage.
+
+Only sanitized source, reports and hashes are published. Root identifier fingerprints were removed from public result copies; the local cluster path is generalized. No database, data rows, binary, archive, original configuration, credential, personal data or signed URL is included. Full private runtime/cluster and unsanitized local metadata remain in the consumer workspace, not this repository. Input archive/dump hashes identify retained artifacts without publishing their contents.
+
+The supplied candidate patch contains nine new C# test cases (including the four parameterized converter cases). Its summary reports ten cases including an existing compiled/runtime query-equivalence test. That existing test's source/name was not supplied in this bundle and was not recovered or invented for this checkpoint; parent should retain its exact source separately if it is unique. All other supplied unique diagnostic/test sources are saved here. The original combined patch can be reconstructed from the runtime patch and exact new test source.
+
+**Single next step:** prepare a bounded Windows candidate acceptance proposal, pending separate owner scope approval. Do not launch, rebuild, execute Typed reads, expand grants, or repeat completed checks under this publication approval.

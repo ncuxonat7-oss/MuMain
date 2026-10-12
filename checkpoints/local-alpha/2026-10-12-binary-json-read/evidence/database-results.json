@@ -1,0 +1,68 @@
+{
+  "status": "PASS_SELECTED_READS_ONLY",
+  "stage": "candidate_reads",
+  "checks": {
+    "new_private_cluster_path": "PASS",
+    "review_gate": "PASS",
+    "sha256:gameplay-test-db.dump": "PASS",
+    "sha256:github-actions-artifact-11651520969.zip": "PASS",
+    "sha256:MUnique.OpenMU.Persistence.EntityFramework.dll": "PASS",
+    "no_executable_objects": "PASS",
+    "constant_defaults_only": "PASS",
+    "cluster_identity": "PASS",
+    "peer_only": "PASS",
+    "ordinary_tables_no_rls": "PASS",
+    "no_user_executable_paths": "PASS",
+    "live_projection_columns": "PASS",
+    "role_attributes": "PASS",
+    "no_membership_or_ownership": "PASS",
+    "entity_read_probe:no_create_temp": "PASS",
+    "entity_read_probe:exact_columns_no_writes": "PASS",
+    "typed_read_probe:no_create_temp": "PASS",
+    "typed_read_probe:exact_columns_no_writes": "PASS",
+    "restored_data_unchanged": "PASS"
+  },
+  "candidateReadAttempts": 1,
+  "shutdown": {
+    "statusExit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "networkIsolationGuaranteed": false,
+  "entity_read_probe": {
+    "selectedColumnPrivileges": 638,
+    "exactMatch": true
+  },
+  "typed_read_probe": {
+    "selectedColumnPrivileges": 19,
+    "exactMatch": true
+  },
+  "beforeDataSha256": "10ed0e79e628007c55f22f6f887b6a7bb755eaf1eb9acb4d3a96d1d4b25f83a4",
+  "harnessExitCode": 0,
+  "candidate": {
+    "status": "PASS",
+    "mode": "run",
+    "results": [
+      {
+        "name": "game",
+        "status": "PASS",
+        "rootCount": 1,
+        "hashScope": "sorted materialized root identifiers only; no values output",
+        "querySha256": "1c07ca26e3d3a00c165614e17b3273f6475f1d9538bacb3d9f3645faae75b686",
+        "roleIdentity": {
+          "role": "entity_read_probe",
+          "sessionUser": "agent",
+          "database": "scoped_reads",
+          "readOnly": "on",
+          "listenAddresses": ""
+        },
+        "opens": 1,
+        "efCommandsObserved": 0,
+        "rawJsonCommandSourceReviewed": true
+      }
+    ],
+    "networkIsolationGuaranteed": false
+  },
+  "afterDataSha256": "10ed0e79e628007c55f22f6f887b6a7bb755eaf1eb9acb4d3a96d1d4b25f83a4",
+  "elapsedSeconds": 7.85
+}
