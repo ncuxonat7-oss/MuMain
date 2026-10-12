@@ -1,0 +1,22 @@
+[
+  {
+    "path": "docs/current-state.md",
+    "bytes": 22292,
+    "sha256": "c417363e5c0b8b56331dd1c1a0e19a807c490aed1b4dba10688dfc427cae7816"
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-12-admin-db/README.md",
+    "bytes": 4469,
+    "sha256": "3c18d26d5ae48fbe1b428f51e6afe83a2700e0570cfccd407f2efe88e87ca027"
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-12-admin-db/connection-attribution-report.md",
+    "bytes": 6410,
+    "sha256": "e9ee30cf96908aa44f2679ad6fd25595d482dcff4291554102ddb7c14df49e9a"
+  },
+  {
+    "path": "checkpoints/local-alpha/2026-10-12-admin-db/connection-attribution-provenance.json",
+    "bytes": 8752,
+    "sha256": "a07a5a90d128cf6fd72cc27963f48f37b48735e8ae69a7e4331019979b938edb"
+  }
+]

@@ -20,6 +20,8 @@ The [transfer recovery runbook](library-transfer-runbook.md) records the verifie
 
 The [admin integration implementation](implementation-report.md) is complete with 49/49 admin and 56/56 setup mock checks. The earlier [integration proposal](next-stage-proposal.md) is now historical; its later Windows-route reference remains a limit, not an authorization.
 
-The [startup read analysis](startup-read-report.md) is complete as a bounded investigation, with a PARTIAL static contract rather than a full permission list. Root columns, 21 first-hop table/key pairs and two Typed scalar projections are preserved; runtime navigation metadata is the precise remaining gap.
+The [startup read analysis](startup-read-report.md) is historical bounded evidence. The [candidate metadata inspection and static reconciliation](metadata-inspection/RECONCILIATION.txt) now resolve its scoped projection gap; all 18 files were published unchanged at `a972354429cfe7aed506486f9e7cbc853d75bc29` and remotely byte/hash verified. No blanket grants follow.
 
-**Single next step:** obtain the pinned candidate navigation metadata specified in that report. No database, permission, build or Windows work is authorized by this next-step note.
+The [connection attribution follow-up](connection-attribution-report.md) assigns the three scoped reads to source-selected connection keys and the disabled setup's intended roles, without asserting live deployment identity. Its [provenance](connection-attribution-provenance.json) preserves the exact source hashes.
+
+**Single next step:** locate the pinned GameConfigurationDataSource definition and inherited GetOwnerAsync implementation and trace only the already identified custom-reference/data-source calls to their context/connection key. Complete Entity/Typed closure and all activation/Windows readiness remain blocked.

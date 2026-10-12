@@ -1,0 +1,166 @@
+{
+  "sourcePin": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "priorSources": [
+    {
+      "path": "src/Persistence/EntityFramework/PersistenceContextProvider.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "42f42e3ef00f2fe3741d92bf8ee0c2ca8e0dae87",
+      "sha256": "1082a1758b3c4491e15b5d296232ca8135305dad2075b690209ad3aa6c082608",
+      "bytes": 10682,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/PersistenceContextProvider.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/EntityFrameworkContextBase.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "9ad677ddefcf426389e6be8e2de0853d2bc019ae",
+      "sha256": "f8e31e0c51be097235f4bf7dae3c29070c2621c3f67c976c6fb2a8989e60f7e6",
+      "bytes": 20990,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/EntityFrameworkContextBase.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/GenericRepository.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "f3bfeb2ca6c0c6b379cab24bc4c53a39b8a9b802",
+      "sha256": "387d4777e012416a95e997e70a3c60556ffe11dbfa82dc3473cae7373da26cbe",
+      "bytes": 2093,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/GenericRepository.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/GenericRepositoryBase.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "cc97af90ab1a91b3aad9959bd99a41952ed49507",
+      "sha256": "21b1977b5afe17e61d46338d4ee4a555aa5e753206457e1818ae8be66d5962c8",
+      "bytes": 13891,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/GenericRepositoryBase.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/GameConfigurationRepository.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "3d45474a8b7c844b359761d529b4e74d2827ba53",
+      "sha256": "15d26b999ba232dd564ba687b561ef0791b032e706f15b1b92be20778c3e847f",
+      "bytes": 3680,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/GameConfigurationRepository.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/Json/JsonObjectLoader.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "f4eb2b80357240c81b677eaf862fdfbb91b3ee31",
+      "sha256": "0ab12d3a614df00253295a41a36fd27a16af2a93d6744af0f90688d82571d6ac",
+      "bytes": 6812,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/Json/JsonObjectLoader.cs"
+    },
+    {
+      "path": "src/Startup/Program.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "6100b973211af3cc67546ec5f64b8a7686db982b",
+      "sha256": "425aa92b842928e1b898fe7e0a38de1f1f53e0b55b62186028a2b1986bf931af",
+      "bytes": 34271,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Startup/Program.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/TypedContext.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "72bf17534a42f6ee719758fe0de32da463d1461e",
+      "sha256": "6297b211005139c60c12ca904c3db783b4185ccb2f62cc93cfd4ea39620ea1fa",
+      "bytes": 14041,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/TypedContext.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/EntityDataContext.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "992bad64348b177830a69b07e72469e05f193551",
+      "sha256": "355ec1d7ee598abdc13140dd2d69c22b4e35ba40354badc6e8117dd8e2bb762b",
+      "bytes": 7270,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/EntityDataContext.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/NonCachingRepositoryProvider.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "1da19d03ae71b349469a51057572bc3696299049",
+      "sha256": "102b4337ef34addf697d96e6fd64bd5162e99d2e96d4a8bda850340e9bcfd59f",
+      "bytes": 2529,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/NonCachingRepositoryProvider.cs"
+    }
+  ],
+  "newTargetedReads": [
+    {
+      "path": "src/Persistence/EntityFramework/ConnectionConfigurator.cs",
+      "bytes": 6048,
+      "sha256": "0c35341a5301dc95ed8113094481a21fe0be12247caee75e992fc49f89ffb807",
+      "gitBlob": "1c0f904695963acd9a98e03056863fc18c3a5868",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/ConnectionConfigurator.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/ConfigFileDatabaseConnectionStringProvider.cs",
+      "bytes": 4903,
+      "sha256": "043b6532c02415d85c1b1859c209df39d8113921a004bcc02c827ec7550ecab9",
+      "gitBlob": "17433a32cc73f7c10deeb51e586fd65046273f92",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/ConfigFileDatabaseConnectionStringProvider.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/GameConfigurationContext.cs",
+      "bytes": 1359,
+      "sha256": "c23d1017c85c834be7525935a26c3b8884d7b072e7b9a456fd909eb960668b03",
+      "gitBlob": "e15b7fb062ef9a0bf0075d60b9a17cb174532338",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/GameConfigurationContext.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/ConfigurationContext.cs",
+      "bytes": 1145,
+      "sha256": "3161cd053e26d343bd14753055aff9eb8acf3fce22af672da67f378a772f1f60",
+      "gitBlob": "9c159378d68f2e0aea2c7b09f708b047defa48ec",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/ConfigurationContext.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/DatabaseConnectionStringHelper.cs",
+      "bytes": 3139,
+      "sha256": "a54130d87f5ce362d0ddfde2f1f359e794e4ad1b63f43702e785711def984242",
+      "gitBlob": "d8bce3d8440814c142922ef5c333c008bf9e8676",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/DatabaseConnectionStringHelper.cs"
+    },
+    {
+      "path": "src/Web/AdminPanel/GameConfigurationDataSource.cs",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "path": "src/Web/Shared/GameConfigurationDataSource.cs",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "checkpointSources": [
+    {
+      "path": "scripts/windows11/FirstSetup.ps1",
+      "commit": "a972354429cfe7aed506486f9e7cbc853d75bc29",
+      "bytes": 24880,
+      "sha256": "9fb765e0dda6bdbd204573442c6332cc9e91e73dbc158dc9664a0f2a1005331f",
+      "gitBlob": "e2cda4d1a00e383213641cc72ca604b8f5d36df7"
+    },
+    {
+      "path": "patches/openmu/preprovisioned-admin-20261011/source/src/Persistence/EntityFramework/ConnectionConfigurator.cs",
+      "commit": "a972354429cfe7aed506486f9e7cbc853d75bc29",
+      "bytes": 6571,
+      "sha256": "a6a687b72b9581e38a60a74aca2ff38c51a34df6dca73a8939f11eb99da2bfe3",
+      "gitBlob": "15281dfd020ccf38ac15599b096e0905c0f622e1"
+    },
+    {
+      "path": "scripts/windows11/first-setup-policy.json",
+      "commit": "a972354429cfe7aed506486f9e7cbc853d75bc29",
+      "bytes": 1173,
+      "sha256": "65bea58489911fc5c1da1ee99a0ffdd8de085bad9c37251fb04d6f4e9a5c6cb0",
+      "gitBlob": "4f368b361d88c230c62f8715029c438375f1d720"
+    },
+    {
+      "path": "scripts/windows11/local-session-contract.json",
+      "commit": "a972354429cfe7aed506486f9e7cbc853d75bc29",
+      "bytes": 1275,
+      "sha256": "dcca41db24ff561cb1161f02e075be4892f8b8452cdc48035ad0f1865d6496b3",
+      "gitBlob": "3e1a9b17dc4719aa9de83db559aac101412c1c64"
+    }
+  ],
+  "method": "Static source reads only; no candidate, configuration secrets, environment values, database or tests executed"
+}

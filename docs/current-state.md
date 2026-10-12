@@ -6,9 +6,11 @@ Owner authorized this separate checkpoint branch at 02:36 UTC and renewed at 02:
 
 The disabled first-setup admin operation is now integrated and mock-validated: **49 admin checks + 56 setup checks PASS**. See the [implementation report](../checkpoints/local-alpha/2026-10-12-admin-db/implementation-report.md). The real policy and grant-setter fences remain, and no database or Windows action ran.
 
-Startup read analysis is **PARTIAL, static only**: [report and exact column list](../checkpoints/local-alpha/2026-10-12-admin-db/startup-read-report.md) prove the pinned-model root/21 first-hop minimum and distinguish the two Typed scalar roots. Generated/compiled navigation parity and recursive closure remain unproven. No DB, test, build or permission change occurred.
+The candidate metadata inspection and static reconciliation are now preserved at [verified checkpoint a9723544](https://github.com/ncuxonat7-oss/MuMain/commit/a972354429cfe7aed506486f9e7cbc853d75bc29) in [metadata-inspection](../checkpoints/local-alpha/2026-10-12-admin-db/metadata-inspection/REPORT.txt). All 18 published files were fetched back and matched by bytes, SHA256 and Git blob. The saved traversal resolves the scoped projection to 69 full-row tables and 12 join tables; it is not a permission grant list. The earlier missing-metadata queue is completed. Runtime role attribution and complete Entity/Typed closure remain unproven.
 
-**Single next step:** obtain the existing candidate's pinned navigation-only metadata export for GameConfiguration's reachable graph and the two startup Typed models. Required fields and the separate-approval boundary if no saved export exists are in the report. Do not infer grants from all model tables or enable setup.
+The [connection attribution follow-up](../checkpoints/local-alpha/2026-10-12-admin-db/connection-attribution-report.md) proves the three scoped source paths: conditional GameConfiguration JSON read → EntityDataContext → intended `mu_entity`; PlugInConfiguration/SystemConfiguration Typed reads → TypedContext → intended `mu_typed`. The default-ID lookup uses ConfigurationContext → intended `mu_config`. These are disabled-template roles, not observed deployed session identities. No runtime work ran.
+
+**Single next step:** locate the pinned GameConfigurationDataSource definition and inherited GetOwnerAsync implementation, and trace only the already identified custom-reference/data-source calls to their context/connection key. Two exact-path lookups returned 404; source attribution for those paths remains open. Keep complete Entity/Typed closure, executable grants, setup and launch blocked.
 
 ## Earlier checkpoint instructions — superseded
 
