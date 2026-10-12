@@ -1,0 +1,16 @@
+[
+  {
+    "file": "github-actions-artifact-11651520969.zip",
+    "size": 2091291,
+    "sha256": "b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea",
+    "entries": 10,
+    "unpacked": 25372767
+  },
+  {
+    "file": "admin-ef-existing-tools-20261012.zip",
+    "size": 13566379,
+    "sha256": "e36693ebf7d4a6c38863c5a8b82cf8024e59208097f4692002ddda2ea75dc3f0",
+    "entries": 127,
+    "unpacked": 41716944
+  }
+]

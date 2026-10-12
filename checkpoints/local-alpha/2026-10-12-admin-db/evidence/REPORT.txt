@@ -1,0 +1,33 @@
+Bounded admin provisioning — PASS
+Environment requested: 0724d76c-9565-47dc-bceb-2436228d85cb~cecfgver_6acc45db63e481958283bd5c84e97bc0.
+Fresh executor workspace: /workspace/admin-provision-3f1U4Dge.
+Repository HEAD preserved: 9f2a64adc35fc9d36eed5f5147542a6176a1c545; clean before/after.
+No source changes, install, build, application startup, accounts, credentials, external publication or merge.
+
+Transfers PASS: exact eastus2 and westus2 domains confirmed in network-policy.json. One official helper download per attachment. Both archive sizes/hashes and all 125 manifest assets verified; 127 bundle entries, 41716944 unpacked bytes. Safe extraction rejected traversal, absolute paths, duplicate entries and symlinks; new empty destinations only. Originals retained.
+
+Official generator PASS, exit 0: existing EF tool 10.0.2; explicit AdminPanelContext via AdminPanelContextFactory; Persistence used as target/design-time assembly. Exact invocation in generate.sh; output in generator.log. Offline secret-free configuration used a nonexistent Unix socket and inherited DB_HOST/DB_ADMIN_USER/DB_ADMIN_PW removed. No database was running during generation. Runtime generated history ProductVersion 10.0.2, not manually synthesized.
+
+Independent pinned MuMain contracts fetched at e15e53eaeb3bf2229864f538c2073f10ad35bbb0 without moving main. Both OpenMU migration sources fetched at d067b3c11c23c3145de6e2c76201ab9a93b267c8 and exact Git blob hashes verified. SQL reviewed against their columns/types/nullability, PKs and unique indexes. Generated SQL only ensures admin schema, creates AdminUser/ApiKey/history, adds PK/unique indexes and inserts the two migration history rows. Its anonymous DO blocks only test/create the schema. No seed records, user-defined executable objects or external actions.
+
+Fresh private PostgreSQL 17.11 cluster: SQL_ASCII / C, Unix peer authentication, host authentication reject, listen_addresses empty, private socket mode 0700. Schema inspected before --no-owner --no-privileges restore. Baseline schema had no custom functions/procedures/triggers/rules/policies/extensions/external objects; defaults reviewed as literals.
+
+Game history PASS: 63/63 exact pinned IDs before and after, ProductVersions unchanged.
+Admin history PASS: absent before; 2/2 after:
+20260824171349_InitialAdminPanelUsers / 10.0.2
+20260829110159_AddApiKeys / 10.0.2
+Config PASS: GameConfiguration 00000001-0001-0000-0000-000000000000; SystemConfiguration 00000010-0000-0000-0000-000000000000.
+Flags PASS, unchanged: AutoStart=true, AutoUpdateSchema=true, ReadConsoleInput=false.
+All non-admin table data PASS: normalized pg_dump data-only streams SHA256 identical before/after (only random psql restrict markers excluded): 10ed0e79e628007c55f22f6f887b6a7bb755eaf1eb9acb4d3a96d1d4b25f83a4. Streams processed in memory; no sensitive values included in report.
+
+ACL PASS: sole diagnostic role admin_probe is NOLOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS; no memberships or object/schema/database ownership. CONNECT database + USAGE admin schema, SELECT-only admin history, SELECT/INSERT/UPDATE/DELETE on AdminUser/ApiKey, no grant options. PUBLIC database privileges and public-schema privileges revoked in disposable DB only. No CREATE/TEMP/database or schema CREATE, history DML, extra table or game/config privileges. Forbidden powers checked from metadata, no destructive operations attempted.
+Safety review PASS before probes: admin objects ordinary tables; no noninternal triggers, rules, RLS, policies, defaults, checks, foreign keys, or admin procedures/functions. Full AdminUser/ApiKey column SELECTs and zero-row INSERT/UPDATE/DELETE PASS; mandatory ROLLBACK confirmed. Admin tables remain empty. No actual row constraints/FK closure/navigation/EF equivalence or operational readiness claimed.
+
+Initial diagnostic failures retained, both recovered without altered SQL semantics or data repairs:
+1. PostgreSQL17 rejects current_setting('lc_collate'); replaced with pg_database datcollate/datctype identity check. Stopped before restore.
+2. SQL_ASCII psql rejects EF output UTF-8 BOM, SQLSTATE 42601, before any SQL applied. Removed exactly first three bytes in separate execution copy. Original SQL preserved; both hashes retained. No handwritten replacement migration SQL.
+
+Shutdown PASS after every attempt: pg_ctl status exit 3 ('no server running'), postmaster.pid absent, Unix socket absent; logs retain clean shutdown proof.
+Entity/Typed full permission closure BLOCKED / NOT RUN. Windows readiness NOT RUN. Complete Alpha readiness NOT RUN. ExternallyProvisioned activation remains blocked on broader closure. No readiness score change.
+
+Exact executed probe SQL was reformatted from the supplied preparation; its own SHA256 is recorded, not claimed as the original file identity. All source/script hashes are in source-and-script-hashes.json. Evidence archive excludes input archives, binaries, DB dumps/data, helper, and original account data.

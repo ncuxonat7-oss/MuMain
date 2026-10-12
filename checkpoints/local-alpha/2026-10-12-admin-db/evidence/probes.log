@@ -1,0 +1,24 @@
+BEGIN
+SET
+SET
+SET
+SET
+ MigrationId | ProductVersion 
+-------------+----------------
+(0 rows)
+
+ Id | LoginName | NormalizedLoginName | PasswordHash | SecurityStamp | Roles | IsTwoFactorEnabled | ProtectedAuthenticatorKey | RecoveryCodeHashes | LastAcceptedTotpStep | AccessFailedCount | LockoutEnd | IsDisabled | CreatedAt | LastLoginAt 
+----+-----------+---------------------+--------------+---------------+-------+--------------------+---------------------------+--------------------+----------------------+-------------------+------------+------------+-----------+-------------
+(0 rows)
+
+ Id | Name | KeyHash | KeyPrefix | Roles | IsDisabled | CreatedAt 
+----+------+---------+-----------+-------+------------+-----------
+(0 rows)
+
+INSERT 0 0
+UPDATE 0
+DELETE 0
+INSERT 0 0
+UPDATE 0
+DELETE 0
+ROLLBACK

@@ -1,0 +1,127 @@
+{
+  "result": "PASS",
+  "stage": "zero_row_probes",
+  "tests": {
+    "baseline_no_executable_objects": "PASS",
+    "admin_sql_scope": "PASS",
+    "cluster_identity": "PASS",
+    "peer_authentication": "PASS",
+    "game_before_63_exact": "PASS",
+    "admin_absent_before": "PASS",
+    "baseline_config_flags": "PASS",
+    "admin_2_exact": "PASS",
+    "role_flags": "PASS",
+    "no_memberships": "PASS",
+    "no_ownership": "PASS",
+    "trusted_admin_tables": "PASS",
+    "no_admin_triggers_rules_policies_defaults_checks": "PASS",
+    "no_database_create_temp": "PASS",
+    "no_schema_create": "PASS",
+    "history_select_only": "PASS",
+    "no_extra_table_privileges": "PASS",
+    "admin_zero_row_probes_rollback": "PASS",
+    "no_admin_records": "PASS",
+    "game_after_unchanged": "PASS",
+    "config_flags_unchanged": "PASS",
+    "all_nonadmin_data_unchanged": "PASS"
+  },
+  "limits": [
+    "Entity/Typed complete permission closure BLOCKED",
+    "Windows readiness NOT RUN",
+    "Complete Alpha readiness NOT RUN"
+  ],
+  "started": 1791772540.763509,
+  "data_before_sha256": "10ed0e79e628007c55f22f6f887b6a7bb755eaf1eb9acb4d3a96d1d4b25f83a4",
+  "admin_history": [
+    {
+      "MigrationId": "20260824171349_InitialAdminPanelUsers",
+      "ProductVersion": "10.0.2"
+    },
+    {
+      "MigrationId": "20260829110159_AddApiKeys",
+      "ProductVersion": "10.0.2"
+    }
+  ],
+  "acl": [
+    {
+      "table_schema": "admin",
+      "table_name": "AdminUser",
+      "privilege_type": "DELETE",
+      "is_grantable": "NO"
+    },
+    {
+      "table_schema": "admin",
+      "table_name": "AdminUser",
+      "privilege_type": "INSERT",
+      "is_grantable": "NO"
+    },
+    {
+      "table_schema": "admin",
+      "table_name": "AdminUser",
+      "privilege_type": "SELECT",
+      "is_grantable": "NO"
+    },
+    {
+      "table_schema": "admin",
+      "table_name": "AdminUser",
+      "privilege_type": "UPDATE",
+      "is_grantable": "NO"
+    },
+    {
+      "table_schema": "admin",
+      "table_name": "ApiKey",
+      "privilege_type": "DELETE",
+      "is_grantable": "NO"
+    },
+    {
+      "table_schema": "admin",
+      "table_name": "ApiKey",
+      "privilege_type": "INSERT",
+      "is_grantable": "NO"
+    },
+    {
+      "table_schema": "admin",
+      "table_name": "ApiKey",
+      "privilege_type": "SELECT",
+      "is_grantable": "NO"
+    },
+    {
+      "table_schema": "admin",
+      "table_name": "ApiKey",
+      "privilege_type": "UPDATE",
+      "is_grantable": "NO"
+    },
+    {
+      "table_schema": "admin",
+      "table_name": "__EFMigrationsHistory",
+      "privilege_type": "SELECT",
+      "is_grantable": "NO"
+    }
+  ],
+  "game_history": {
+    "before": 63,
+    "after": 63,
+    "exact_ids_match": true,
+    "product_versions_unchanged": true
+  },
+  "config": {
+    "game": [
+      "00000001-0001-0000-0000-000000000000"
+    ],
+    "system": [
+      {
+        "Id": "00000010-0000-0000-0000-000000000000",
+        "AutoStart": true,
+        "AutoUpdateSchema": true,
+        "ReadConsoleInput": false
+      }
+    ]
+  },
+  "data_after_sha256": "10ed0e79e628007c55f22f6f887b6a7bb755eaf1eb9acb4d3a96d1d4b25f83a4",
+  "shutdown": {
+    "status_exit": 3,
+    "postmaster_pid_absent": true,
+    "socket_absent": true
+  },
+  "elapsed_seconds": 0.69
+}

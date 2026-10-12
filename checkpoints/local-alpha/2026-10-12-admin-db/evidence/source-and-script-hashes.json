@@ -1,0 +1,90 @@
+{
+  "github-actions-artifact-11651520969.zip": {
+    "bytes": 2091291,
+    "sha256": "b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea"
+  },
+  "baseline/gameplay-test-db.dump": {
+    "bytes": 1367029,
+    "sha256": "0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478"
+  },
+  "admin-ef-existing-tools-20261012.zip": {
+    "bytes": 13566379,
+    "sha256": "e36693ebf7d4a6c38863c5a8b82cf8024e59208097f4692002ddda2ea75dc3f0"
+  },
+  "bundle/manifest.json": {
+    "bytes": 44340,
+    "sha256": "ea0a7b03e5d30b99a06dcc3a5a9f01a79044c598993c61aaf135bbf29a1752de"
+  },
+  "bundle/app/MUnique.OpenMU.Persistence.EntityFramework.dll": {
+    "bytes": 5968896,
+    "sha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014"
+  },
+  "bundle/app/Microsoft.EntityFrameworkCore.Design.dll": {
+    "bytes": 631328,
+    "sha256": "de16857181e97b921ad36984960a9f76e3148d6a93b329f5d0a7de51df5cada5"
+  },
+  "bundle/tools/ef.dll": {
+    "bytes": 114248,
+    "sha256": "f806ff245141c93b2a998a57cab9d657e18fc9c35c1b51f5d1b8c9c9a1f42219"
+  },
+  "admin-official.sql": {
+    "bytes": 2090,
+    "sha256": "b2c66b33e363c0c5b3b3d33698c46657699e8529bb8aad9878cefd4fee953067"
+  },
+  "admin-official-no-bom.sql": {
+    "bytes": 2087,
+    "sha256": "5e3f625b6c6b0a56596e36763df592fa1fb11a1b000d6a386e3c7e2ed95d62dd"
+  },
+  "admin-probes.sql": {
+    "bytes": 2177,
+    "sha256": "8191509b50bc4141fbbfa5677e047ada3e72f050f2ad13c8f9dbd416ef0ee5ba"
+  },
+  "admin-grants.sql": {
+    "bytes": 443,
+    "sha256": "27d33948019078cd7467410f9611c7803e6073d9d847a64e80982dbe007b3ada"
+  },
+  "generate.sh": {
+    "bytes": 881,
+    "sha256": "e255ab3815402d2904862cffee9fedd8a97a70bf5d5fe2b43660ccdc6ac29aab"
+  },
+  "run-diagnostic.py": {
+    "bytes": 9529,
+    "sha256": "217ab3d15fd2104c14adbabdd58886a25a39c43aa8dc0b96e14cbb9f54f74fef"
+  },
+  "run-diagnostic-2.py": {
+    "bytes": 9220,
+    "sha256": "893037b4e41c2d8ea1086b23851b6abe4c60fa81c6db0b34f90b4a270f3a1f4b"
+  },
+  "run-diagnostic-3.py": {
+    "bytes": 9102,
+    "sha256": "54a24894efaea3abafde74574b6cafe0baa2c08271b81b005641f8fb0199561b"
+  },
+  "contracts/database-source-contract.json": {
+    "bytes": 4753,
+    "sha256": "0718c51ba1367d476a5d3fff7a46e55b16f334688ecbb650af7148b836c2cac6"
+  },
+  "contracts/entity-typed-observed-contract.json": {
+    "bytes": 5273,
+    "sha256": "27a11d9f840f0297febf3ae7dac7ed1add38ddbcc936612f766c2921931b283d"
+  },
+  "contracts/entity-typed-grants-report.md": {
+    "bytes": 9585,
+    "sha256": "a23bf2a543f776828f4f91525f15b38bb3aee82c5516ee9c5b3884e7082be9f2"
+  },
+  "contracts/20260824171349_InitialAdminPanelUsers.cs": {
+    "bytes": 2762,
+    "sha256": "cde7fe89c24943170975386f96bce9252ddbabc7df8358b04010e47640e72f5a"
+  },
+  "contracts/compiled-migration-comparison.json": {
+    "bytes": 280,
+    "sha256": "236d04fb2f77c522617f30fe4025cfd70fd6c3129af19eb7bc4848af1d5ccbe8"
+  },
+  "contracts/20260829110159_AddApiKeys.cs": {
+    "bytes": 1860,
+    "sha256": "8889b50e4bebfd2f23b4ef2e69adb4e94d4d6b4c3d4bee50b429b304b50e38c7"
+  },
+  "contracts/compiled-migration-metadata.json": {
+    "bytes": 30505,
+    "sha256": "985333d8ca70c8118936d48fcb77edd87d128ee7cbbcee9ada9128f9a2f5cb12"
+  }
+}

@@ -54,6 +54,8 @@ Quick references:
 
 ## Checkpoint documentation
 
+The 2026-10-12 admin-only diagnostic is complete; reuse its saved evidence. Follow only the single next step in docs/current-state.md. Older restore/flag-repair queues are superseded. Entity/Typed closure and Windows readiness remain unproven; keep setup/launch guards blocked.
+
 At ordinary checkpoints, keep one unambiguous next step in docs/current-state.md and mark older completed, cancelled, or parked instructions as superseded while preserving evidence and links. After substantial code/configuration changes, refresh only the matching existing ALPHA-NAV/STACK entry or mark its evidence stale. Use the existing document structure; do not expand this into a separate audit or catalog. Publication, main merges, deployments, and costly stages still require the owner's applicable approval.
 
 ## Branch and PR conventions

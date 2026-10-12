@@ -1,0 +1,5 @@
+{
+  "reason": "SQL_ASCII psql rejects leading UTF-8 BOM; remove exactly three encoding bytes, no SQL changes",
+  "original_sha256": "b2c66b33e363c0c5b3b3d33698c46657699e8529bb8aad9878cefd4fee953067",
+  "executed_sha256": "5e3f625b6c6b0a56596e36763df592fa1fb11a1b000d6a386e3c7e2ed95d62dd"
+}

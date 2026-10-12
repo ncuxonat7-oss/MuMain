@@ -1,3 +1,15 @@
+# Current owner checkpoint — 2026-10-12 overnight
+
+The [admin-only disposable database checkpoint](../checkpoints/local-alpha/2026-10-12-admin-db/README.md) preserves official EF invocation/SQL, 2/2 admin and unchanged 63/63 game histories, original configuration flags, unchanged non-admin data hash, restricted-role zero-row rollback probes and clean PostgreSQL shutdown. The prior C# evidence remains valid; neither proves Windows or complete Alpha readiness. Known-good baseline artifact11651520969 remains unchanged.
+
+Owner authorized this separate checkpoint branch at 02:36 UTC and renewed at 02:49 UTC. Main, working DB and launch remain untouched. Admin diagnostic authorization is completed; it does not activate first setup. Complete Entity/Typed permission closure and integrated Windows package acceptance remain blocked.
+
+**Single next step:** prepare a bounded startup read-closure acceptance stage from the existing first-setup/grant material, retaining the policy and grant-setter deployment fences. No repeated database tests, server/game launch, builds or readiness score change.
+
+## Earlier checkpoint instructions — superseded
+
+All earlier next-step/approval queues below are historical. The earlier restore proposal was partially completed by the approved Linux disposable diagnostics; its flag-repair instruction was superseded by the later owner requirement to preserve original flags. Outstanding closure/Windows work remains unproven.
+
 # Current owner checkpoint — 2026-10-11 22:28 UTC
 
 The reviewed local Alpha source, actual C# tests, sanitized build evidence, hashes, and warning assessment are preserved in [checkpoint 438f88e](../checkpoints/local-alpha/2026-10-11-csharp/README.md). All 69 checkpoint files were fetched back from that commit and matched byte-for-byte and by Git blob hash. The separate checkpoint branch does not promote the baseline or enable launch.

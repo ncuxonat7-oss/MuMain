@@ -1,0 +1,140 @@
+[
+  {
+    "path": "evidence/REPORT.txt",
+    "bytes": 4995,
+    "sha256": "48005c412e09abcddb20fd5a6f98f473cab8b4e9ea918eefc4d8006badcacb29",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/results.json",
+    "bytes": 3255,
+    "sha256": "bca3aa4963b0c4a78502b278070e36a98e09902e29c8ade3acf3309fee8eb7aa",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/source-and-script-hashes.json",
+    "bytes": 3194,
+    "sha256": "f04de3a3520a9c688e61b482fe17440878b484ed12628c57e3a3c5fdf3e6cbba",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/transfer-verification.json",
+    "bytes": 423,
+    "sha256": "61628425c18259db57dfbe7bdcd586d6b30a4ffeab825d6cc8b15c08cd129bbf",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/sql-encoding-adjustment.json",
+    "bytes": 289,
+    "sha256": "76fadc7f5bbd60159d083b4bd5c85118d245d88ffcdbcb6855dcaa2d3cafb29c",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/generate.sh",
+    "bytes": 881,
+    "sha256": "e255ab3815402d2904862cffee9fedd8a97a70bf5d5fe2b43660ccdc6ac29aab",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/generator.log",
+    "bytes": 2329,
+    "sha256": "7d3c300023441c379c9f4a72c736784167d2fe65ebc83379edfb169e95fffe2d",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/admin-official.sql",
+    "bytes": 2090,
+    "sha256": "b2c66b33e363c0c5b3b3d33698c46657699e8529bb8aad9878cefd4fee953067",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/admin-official-no-bom.sql",
+    "bytes": 2087,
+    "sha256": "5e3f625b6c6b0a56596e36763df592fa1fb11a1b000d6a386e3c7e2ed95d62dd",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/admin-probes.sql",
+    "bytes": 2177,
+    "sha256": "8191509b50bc4141fbbfa5677e047ada3e72f050f2ad13c8f9dbd416ef0ee5ba",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/admin-grants.sql",
+    "bytes": 443,
+    "sha256": "27d33948019078cd7467410f9611c7803e6073d9d847a64e80982dbe007b3ada",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/run-diagnostic.py",
+    "bytes": 9529,
+    "sha256": "217ab3d15fd2104c14adbabdd58886a25a39c43aa8dc0b96e14cbb9f54f74fef",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/run-diagnostic-2.py",
+    "bytes": 9220,
+    "sha256": "893037b4e41c2d8ea1086b23851b6abe4c60fa81c6db0b34f90b4a270f3a1f4b",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/run-diagnostic-3.py",
+    "bytes": 9102,
+    "sha256": "54a24894efaea3abafde74574b6cafe0baa2c08271b81b005641f8fb0199561b",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/probes.log",
+    "bytes": 801,
+    "sha256": "2855129caeb71d460b1fe72f5dc35626aafd1ac70245dbb60c54335ab939ddd6",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/apply-admin.log",
+    "bytes": 143,
+    "sha256": "383e4e125e2a255dc77afb8028eee73eafd9d9024618b50aa77a924b37fb3b18",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/grants.log",
+    "bytes": 50,
+    "sha256": "b014d4c18422ff97e5f74c45f7e4236a957bd3ed78d4e1c68cea257d7a51b768",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/restore.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/initdb.log",
+    "bytes": 906,
+    "sha256": "d8373777d788455aab6699e10e6a89299da014a02ccbf017681947549460b850",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/pg-start.log",
+    "bytes": 52,
+    "sha256": "66afd0411ccc09366e99fdd99b85f21899c8d2d064f5835126859618802153ad",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/postgres.log",
+    "bytes": 4423,
+    "sha256": "615549671dd9b992175d4718489275831dd8942832139eeadf288572432d2c53",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/shutdown.log",
+    "bytes": 56,
+    "sha256": "ca19178a35ab4153b75b494963b66ce8243e1b94c173107c87b44d09db23652d",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  },
+  {
+    "path": "evidence/shutdown-status.log",
+    "bytes": 26,
+    "sha256": "e138ccb54fdb08283c6eb21159c53207bbbbf07077246e2804e18d22efe6e250",
+    "review": "UTF-8 source/metadata or sanitized diagnostic output; no DB values or credentials"
+  }
+]

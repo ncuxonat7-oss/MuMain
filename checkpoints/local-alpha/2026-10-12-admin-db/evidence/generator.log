@@ -1,0 +1,43 @@
+Using assembly 'MUnique.OpenMU.Persistence.EntityFramework'.
+Using startup assembly 'MUnique.OpenMU.Persistence.EntityFramework'.
+Using application base '/workspace/admin-provision-3f1U4Dge/bundle/app'.
+Using working directory '/workspace/admin-provision-3f1U4Dge'.
+Using root namespace 'MUnique.OpenMU.Persistence.EntityFramework'.
+Using project directory '/workspace/admin-provision-3f1U4Dge'.
+Remaining arguments: .
+Finding DbContext classes...
+Using environment 'Development'.
+Finding IDesignTimeDbContextFactory implementations...
+Found IDesignTimeDbContextFactory implementation 'EntityDataContextFactory'.
+Found DbContext 'EntityDataContext'.
+Found IDesignTimeDbContextFactory implementation 'AdminPanelContextFactory'.
+Found DbContext 'AdminPanelContext'.
+Finding DbContext classes in the project...
+Found DbContext 'AccountContext'.
+Found DbContext 'ConfigurationContext'.
+Found DbContext 'FriendContext'.
+Found DbContext 'GuildContext'.
+Found DbContext 'TradeContext'.
+Found DbContext 'TypedContext'.
+Found DbContext 'CastleSiegeDataTypedContext'.
+Found DbContext 'CastleSiegeGuildRegistrationTypedContext'.
+Found DbContext 'CastleSiegePendingRewardTypedContext'.
+Found DbContext 'GensAbuseTypedContext'.
+Found DbContext 'GensMemberTypedContext'.
+Found DbContext 'MiniGameRankingEntryTypedContext'.
+Found DbContext 'PlugInConfigurationTypedContext'.
+Found DbContext 'SystemConfigurationTypedContext'.
+Found DbContext 'ExtendedTypeContext'.
+Using DbContext factory 'AdminPanelContextFactory'.
+Using context 'AdminPanelContext'.
+Finding design-time services referenced by assembly 'MUnique.OpenMU.Persistence.EntityFramework'...
+Finding design-time services referenced by assembly 'MUnique.OpenMU.Persistence.EntityFramework'...
+No referenced design-time services were found.
+Finding design-time services for provider 'Npgsql.EntityFrameworkCore.PostgreSQL'...
+Using design-time services from provider 'Npgsql.EntityFrameworkCore.PostgreSQL'.
+Finding IDesignTimeServices implementations in assembly 'MUnique.OpenMU.Persistence.EntityFramework'...
+No design-time services were found.
+Generating up script for migration '20260824171349_InitialAdminPanelUsers'.
+Generating up script for migration '20260829110159_AddApiKeys'.
+'AdminPanelContext' disposed.
+Writing '/workspace/admin-provision-3f1U4Dge/admin-official.sql'...

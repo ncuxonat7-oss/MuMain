@@ -1,0 +1,42 @@
+2026-10-12 02:35:08.208 UTC [797] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-12 02:35:08.209 UTC [797] LOG:  listening on Unix socket "/workspace/admin-provision-3f1U4Dge/socket/.s.PGSQL.55432"
+2026-10-12 02:35:08.212 UTC [800] LOG:  database system was shut down at 2026-10-12 02:35:07 UTC
+2026-10-12 02:35:08.216 UTC [797] LOG:  database system is ready to accept connections
+2026-10-12 02:35:08.345 UTC [807] ERROR:  unrecognized configuration parameter "lc_collate"
+2026-10-12 02:35:08.345 UTC [807] STATEMENT:  SELECT current_database()='admin_diagnostic' AND current_user='agent' AND current_setting('data_directory')='/workspace/admin-provision-3f1U4Dge/pgdata' AND current_setting('listen_addresses')='' AND current_setting('server_encoding')='SQL_ASCII' AND current_setting('lc_collate')='C'
+2026-10-12 02:35:08.346 UTC [797] LOG:  received fast shutdown request
+2026-10-12 02:35:08.347 UTC [797] LOG:  aborting any active transactions
+2026-10-12 02:35:08.348 UTC [797] LOG:  background worker "logical replication launcher" (PID 803) exited with exit code 1
+2026-10-12 02:35:08.349 UTC [798] LOG:  shutting down
+2026-10-12 02:35:08.349 UTC [798] LOG:  checkpoint starting: shutdown immediate
+2026-10-12 02:35:08.467 UTC [798] LOG:  checkpoint complete: wrote 934 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.111 s, total=0.119 s; sync files=301, longest=0.004 s, average=0.001 s; distance=4308 kB, estimate=4308 kB; lsn=0/193FE30, redo lsn=0/193FE30
+2026-10-12 02:35:08.471 UTC [797] LOG:  database system is shut down
+2026-10-12 02:35:26.291 UTC [828] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-12 02:35:26.292 UTC [828] LOG:  listening on Unix socket "/workspace/admin-provision-3f1U4Dge/socket/.s.PGSQL.55432"
+2026-10-12 02:35:26.294 UTC [831] LOG:  database system was shut down at 2026-10-12 02:35:08 UTC
+2026-10-12 02:35:26.297 UTC [828] LOG:  database system is ready to accept connections
+2026-10-12 02:35:27.310 UTC [850] ERROR:  syntax error at or near "﻿DO" at character 1
+2026-10-12 02:35:27.310 UTC [850] STATEMENT:  ﻿DO $EF$
+	BEGIN
+	    IF NOT EXISTS(SELECT 1 FROM pg_namespace WHERE nspname = 'admin') THEN
+	        CREATE SCHEMA admin;
+	    END IF;
+	END $EF$;
+2026-10-12 02:35:27.311 UTC [828] LOG:  received fast shutdown request
+2026-10-12 02:35:27.312 UTC [828] LOG:  aborting any active transactions
+2026-10-12 02:35:27.314 UTC [828] LOG:  background worker "logical replication launcher" (PID 834) exited with exit code 1
+2026-10-12 02:35:27.314 UTC [829] LOG:  shutting down
+2026-10-12 02:35:27.315 UTC [829] LOG:  checkpoint starting: shutdown immediate
+2026-10-12 02:35:27.551 UTC [829] LOG:  checkpoint complete: wrote 1070 buffers (6.5%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.007 s, sync=0.225 s, total=0.237 s; sync files=648, longest=0.003 s, average=0.001 s; distance=9762 kB, estimate=9762 kB; lsn=0/22C86B8, redo lsn=0/22C86B8
+2026-10-12 02:35:27.555 UTC [828] LOG:  database system is shut down
+2026-10-12 02:35:40.792 UTC [873] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-12 02:35:40.793 UTC [873] LOG:  listening on Unix socket "/workspace/admin-provision-3f1U4Dge/socket/.s.PGSQL.55432"
+2026-10-12 02:35:40.795 UTC [876] LOG:  database system was shut down at 2026-10-12 02:35:27 UTC
+2026-10-12 02:35:40.797 UTC [873] LOG:  database system is ready to accept connections
+2026-10-12 02:35:41.355 UTC [873] LOG:  received fast shutdown request
+2026-10-12 02:35:41.355 UTC [873] LOG:  aborting any active transactions
+2026-10-12 02:35:41.357 UTC [873] LOG:  background worker "logical replication launcher" (PID 879) exited with exit code 1
+2026-10-12 02:35:41.358 UTC [874] LOG:  shutting down
+2026-10-12 02:35:41.358 UTC [874] LOG:  checkpoint starting: shutdown immediate
+2026-10-12 02:35:41.373 UTC [874] LOG:  checkpoint complete: wrote 56 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.012 s, total=0.016 s; sync files=48, longest=0.001 s, average=0.001 s; distance=203 kB, estimate=203 kB; lsn=0/22FB680, redo lsn=0/22FB680
+2026-10-12 02:35:41.376 UTC [873] LOG:  database system is shut down
