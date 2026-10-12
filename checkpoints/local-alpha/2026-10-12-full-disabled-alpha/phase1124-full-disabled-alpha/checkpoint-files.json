@@ -1,0 +1,169 @@
+{
+  "scope": "LOCAL ONLY; later publication requires separate approval",
+  "uniqueTextFiles": [
+    {
+      "path": "source/scripts/windows11/FirstSetup.ps1",
+      "bytes": 24748,
+      "sha256": "3090a78faaafbe3c5c9234eb8f578c33adb687f398d5d3d5ce99475d55bf53bc"
+    },
+    {
+      "path": "source/scripts/windows11/Guards.ps1",
+      "bytes": 27194,
+      "sha256": "763cfe1177c27505bd902fd5a58ea63be6a2136f7b51161b9aaa87f8386fa41f"
+    },
+    {
+      "path": "source/scripts/windows11/Launcher.psm1",
+      "bytes": 14973,
+      "sha256": "b74ddebe58aa626b1a3ea76af2225d61105b4e8c45b2026f2e39660e8f39f1ae"
+    },
+    {
+      "path": "source/scripts/windows11/StartMU.ps1",
+      "bytes": 4821,
+      "sha256": "ae84b86aa29efe40579fd66191e9e60db8211919e58388dccc3ce70361b69b45"
+    },
+    {
+      "path": "source/scripts/windows11/database-source-contract.json",
+      "bytes": 4753,
+      "sha256": "94b051417d9319afd9f2c15d4f3a646a0e08e8f1974849066acf253cde61d4c8"
+    },
+    {
+      "path": "source/scripts/windows11/first-setup-policy.json",
+      "bytes": 812,
+      "sha256": "24aec06b89d5eb16c74cb63d5899901f1e4d000f0ba9048f6e20cbed2e2ecd7b"
+    },
+    {
+      "path": "source/scripts/windows11/local-session-contract.json",
+      "bytes": 1332,
+      "sha256": "4f90536a241be977a51bc8c0e63a14615336a65ba2929008b71e87634a8c678f"
+    },
+    {
+      "path": "source/scripts/windows11/runtime-pin.json",
+      "bytes": 647,
+      "sha256": "d683f944d19eefe4ca1fa0fa85418c70e419ed132f3feb7e5b9b43640091e9b9"
+    },
+    {
+      "path": "source/tests/windows11/Test-FullDisabledAlpha.ps1",
+      "bytes": 4068,
+      "sha256": "57f75eebf06af7cade74df68c0b4f3b51273215da980ab08a9b486accf801c89"
+    },
+    {
+      "path": "source/docs/windows11-preprovisioned-runtime.md",
+      "bytes": 7133,
+      "sha256": "35ecb4675375382cfa3a8d68dc08b723db8de78ed607268b97f508a6ce9d33c1"
+    },
+    {
+      "path": "assemble-full-package.py",
+      "bytes": 5248,
+      "sha256": "22cbec6cd24195737c6b844f0370086659b393c04f048ccd8888b6ed0faa6409"
+    },
+    {
+      "path": "prepare-source.py",
+      "bytes": 6463,
+      "sha256": "4107276ff362e3b5f23b5aad7449ceddf827b9e53c0ff297a2d99ca089441173"
+    },
+    {
+      "path": "reseal-guard-fix.py",
+      "bytes": 1503,
+      "sha256": "4cd682747306a5840a814aab993605558620a2c7a874cea74ca01e609a99fccd"
+    },
+    {
+      "path": "prepare-test-fixtures.py",
+      "bytes": 2072,
+      "sha256": "78b9006b577291620af02e0d0ce885cf8184af1db2b9f5be192a58807571ad1c"
+    },
+    {
+      "path": "finalize-evidence.py",
+      "bytes": 1235,
+      "sha256": "4b285baf26b28490c95a7f8a55579169d559fca1f8dc7bb9dca0610488a1b841"
+    },
+    {
+      "path": "check-final-metadata.ps1",
+      "bytes": 235,
+      "sha256": "fa585f663ee16932af7150d37f0179153d2f7ea266290facbd6800003f7b9e0c"
+    },
+    {
+      "path": "source-changes.json",
+      "bytes": 2298,
+      "sha256": "9daca8c9d759c3a58a176e6a1a33fcd71855c329da8fd093d854b002aedf2891"
+    },
+    {
+      "path": "staging-result.json",
+      "bytes": 819,
+      "sha256": "1219dbfc587413fe9a52bfef6b77cc872d333b9edd526888839be6efd1292691"
+    },
+    {
+      "path": "final-identities.json",
+      "bytes": 226,
+      "sha256": "fb40ffd6b478b94f60abd9c741f5c86b642122814a25cd2debe94920f6910f56"
+    },
+    {
+      "path": "integration-result.json",
+      "bytes": 4545,
+      "sha256": "30790162634a2179c42291a1a33820c66049b2f990e3f2e8f8208737f5ebec7c"
+    },
+    {
+      "path": "report.txt",
+      "bytes": 3495,
+      "sha256": "587b4f92cb572605c1662f79b34e06f6e9a7da200cdc733189f0582e46458482"
+    },
+    {
+      "path": "full-powershell-verify-final.txt",
+      "bytes": 21,
+      "sha256": "a9bfa9aa986dabcfa90862584f2573e75f45595562e6912e68487495540d246c"
+    },
+    {
+      "path": "integration-tests-final.txt",
+      "bytes": 676,
+      "sha256": "cbe49f7b7f5f9bafa208817f0aafa42efa516b188f302d3b2d72f6a63bb7acd7"
+    },
+    {
+      "path": "actual-startmu-final.txt",
+      "bytes": 86,
+      "sha256": "76b4d46a86314549bf05b92d9baafbcd6a15ee0b001cc783081812e8d491a3b4"
+    },
+    {
+      "path": "actual-setupmu-final.json",
+      "bytes": 322,
+      "sha256": "5f8ce148254216065f2c7c35cb33f38e43a2ccd31a9f697157ece8a20d968f85"
+    },
+    {
+      "path": "final-inventory.sha256",
+      "bytes": 65,
+      "sha256": "69efb3d494d76b6989e236463835d1b1e1d44457c59ca350e63e5d3525104eb6"
+    },
+    {
+      "path": "final-metadata-test.txt",
+      "bytes": 18,
+      "sha256": "e70f897d3b5c1f63845a15078ac90526123b0eef7efd13ceb2f9868c3ae71de9"
+    }
+  ],
+  "derivedPackageControlIdentities": [
+    {
+      "path": "control-full-disabled-alpha-20261012/package-inventory.json",
+      "bytes": 7609555,
+      "sha256": "c3050c0a78f6cd7f71bf4fe28e4c48b123115828852c11d549a6bda4b9958e64"
+    },
+    {
+      "path": "control-full-disabled-alpha-20261012/package-admission.json",
+      "bytes": 932,
+      "sha256": "d0b11cd829a4c4eef7fd0370ac1ca08d8350fa424b0b9bafc9950272138bcc7b"
+    },
+    {
+      "path": "control-full-disabled-alpha-20261012/windows11-launch-manifest.draft.json",
+      "bytes": 3126113,
+      "sha256": "5683d5c34672c81b596ff4d70c05573e61e28be799048f62590f12e3cd8d2c21"
+    },
+    {
+      "path": "control-full-disabled-alpha-20261012/packaging-status.json",
+      "bytes": 492,
+      "sha256": "a94f0e863905dfd8348a7fbb69df441898c4372896771322b26de432bea4e873"
+    }
+  ],
+  "excluded": [
+    "binary payloads",
+    "fixtures",
+    "session caches",
+    "raw diagnostic error output"
+  ],
+  "uniqueTextBytes": 119808
+}

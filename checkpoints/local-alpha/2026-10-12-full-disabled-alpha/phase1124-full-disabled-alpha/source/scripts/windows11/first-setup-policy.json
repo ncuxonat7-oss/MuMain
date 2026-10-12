@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "runtimeGrantStatus": "RUNTIME_GRANTS_UNRESOLVED",
+  "blockers": [
+    "Full Entity/Typed feature-specific grant closure unresolved; grant setter remains unconditionally fenced.",
+    "Windows package/HTTP/lifecycle acceptance has not run; this package cannot be activated."
+  ],
+  "archiveBytes": 2091291,
+  "archiveSha256": "b40fbdbdb5c3bd9630331e0b9cb3bc7c1860db041a928bb976555635e03f79ea",
+  "dumpBytes": 1367029,
+  "dumpSha256": "0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478",
+  "database": "openmu",
+  "port": 5432,
+  "listenAddress": "127.0.0.1",
+  "encoding": "SQL_ASCII",
+  "locale": "C",
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null,
+  "runtimeSourceStatus": "REVIEWED",
+  "runtimeBinaryAlignment": true,
+  "liveValidationStatus": "NOT_RUN"
+}

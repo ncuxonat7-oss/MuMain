@@ -1,0 +1,22 @@
+{
+  "status": "COPY_HASH_PASS",
+  "payloadFiles": 24417,
+  "payloadBytes": 1417218857,
+  "inventorySha256": "c3050c0a78f6cd7f71bf4fe28e4c48b123115828852c11d549a6bda4b9958e64",
+  "admissionSha256": "d0b11cd829a4c4eef7fd0370ac1ca08d8350fa424b0b9bafc9950272138bcc7b",
+  "draftSha256": "5683d5c34672c81b596ff4d70c05573e61e28be799048f62590f12e3cd8d2c21",
+  "destination": "phase1124-full-disabled-alpha/control-full-disabled-alpha-20261012",
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null,
+  "readBackPowerShellVerification": "PASS",
+  "baseComponents": {
+    "client": 13237,
+    "dotnet": 339,
+    "postgres": 1464,
+    "powershell": 924,
+    "prerequisites": 1,
+    "server": 8440,
+    "scripts": 12
+  },
+  "guardFix": "Get-Item -Force for legitimate hidden .NET .version payload; no payload changes"
+}

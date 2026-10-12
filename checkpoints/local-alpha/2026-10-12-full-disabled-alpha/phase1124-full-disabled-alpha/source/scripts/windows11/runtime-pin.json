@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "kind": "LOCAL_FRAMEWORK_DEPENDENT_PUBLISHED_SERVER",
+  "checkpoint": "35f0ab6eab69974cab60f30780daed019cc0f8d5",
+  "sourceCheckpoint": "7f1f061f9201f460cd13a3dc8cd9a455870bdc36",
+  "sdk": "10.0.401",
+  "publishInventorySha256": "69c131ec847e6a730b13e53e49cf97f038003849b96bd83b810c3f415e0ce660",
+  "parentOverlayPlanSha256": "08dea6de7a5fcc67bda71b6e68d9f72d1a64b5366f804766cb9a4537164f1d59",
+  "correctedEfSha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+  "serverFiles": 8440,
+  "originalRuntimeArchiveCertifiesNewServer": false,
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null
+}

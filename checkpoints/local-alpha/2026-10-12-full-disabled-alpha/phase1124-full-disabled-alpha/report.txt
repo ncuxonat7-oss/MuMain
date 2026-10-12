@@ -1,0 +1,19 @@
+RESULT: full disabled Alpha package integrity PASS.
+
+Destination: phase1124-full-disabled-alpha/control-full-disabled-alpha-20261012
+Payload: 24417 files; 1417218857 bytes. Four detached control documents additionally present.
+Inventory SHA256: c3050c0a78f6cd7f71bf4fe28e4c48b123115828852c11d549a6bda4b9958e64
+
+Composition: unchanged 13,237 client/Data/fonts files, 339 .NET files, 1,464 PostgreSQL files, 924 PowerShell files and one VC++ prerequisite installer from phase2027; 8,440 published server/web files from phase1042; 12 coherent launcher/setup files. Historical runtime ZIP and historical package status/evidence were not carried into the new runnable-layout payload. No DB dump, secrets bundle or cluster was added. Original packages are untouched.
+
+One full package-inventory.json and schema-3 draft setup manifest cover all payload identities. Detached package-admission.json pins the inventory/draft/status; the independent inventory SHA from this report/checkpoint is mandatory for Verify. Detached metadata is unsigned integrity evidence, not deployment approval. No circular self-hash or false historical archive provenance is asserted.
+
+COMMON PATH: actual StartMU -Action Verify calls existing Test-MuPreflight -IntegrityOnly and Assert-MuPackageContract. Existing Get-MuApprovedSetup and Invoke-MuFirstSetup use the same contract. No phase1115 parallel component checker is installed. Candidate runtime inventory, corrected EF contract and exact web.config exception are aligned. Old archive/186-file behavior is preserved in historic sources only.
+
+ACTUAL TESTS: PowerShell 7.4.20, final full Verify exit 0 / PACKAGE_INTEGRITY_OK. Thirteen focused integration tests PASS: real preflight/start/first-setup denial; mandatory external pin; no observer compilation; incomplete, corrupt, wrong manifest, unsafe path, rogue config, wrong disabled Boolean type and wrong external pin; bad-manifest Start denial. Tripwire mocks prove protected module paths reach no ports/lock/process/DB/credential stage. Actual SetupMU exits 2 / BLOCKED_RUNTIME_GRANTS before filesystem claims or credential access. Actual StartMU Start exits 2 / WINDOWS_ACCEPTANCE_REQUIRED on Linux. No database directory or session marker exists.
+
+The first full verification and its read-only diagnostic failed on the legitimate hidden .NET .version file: the length query lacked Get-Item -Force. Fixed only this candidate guard, re-sealed its manifest and reran final full verification and all 13 integration tests successfully. Staging status was then updated to record integrity PASS; control metadata was checked separately without repeating all payload hashes. All commands used process-local XDG cache/config directories. No C# compilation, server/game/client/DB execution, migration, download, installation or publication occurred.
+
+LIMITS: this is a complete staged layout with launchEnabled=false and approvedLaunchManifestSha256=null. Runtime grants and actual Windows/HTTP/lifecycle acceptance remain open. Five existing ImageSharp warnings remain. Linux PowerShell evidence does not certify Windows. Missing-file negative case rejects as START_FAILED, not a more specific user-facing error code.
+
+NEXT PRACTICAL STEP: run this package's existing Verify entry in the agreed Windows acceptance environment using the independently retained inventory SHA. Server/DB smoke still requires separate approval and a resolved restricted-role grant contract. No additional local packaging audit is proposed.

@@ -1,0 +1,14 @@
+PASS actual preflight stops at unresolved grants
+PASS actual start stops before lock ports processes and DB
+PASS integrity requires independently supplied pin
+PASS observer was not compiled on module import
+PASS actual first setup blocked before credentials files or DB
+PASS negative integrated preflight missing
+PASS negative integrated preflight corrupt
+PASS negative integrated preflight wrong-manifest
+PASS negative integrated preflight unsafe-path
+PASS negative integrated preflight wrong-config
+PASS negative integrated preflight bad-disabled-type
+PASS negative integrated preflight wrong-external-pin
+PASS wrong manifest blocks actual start before grant gate
+PASSED 13

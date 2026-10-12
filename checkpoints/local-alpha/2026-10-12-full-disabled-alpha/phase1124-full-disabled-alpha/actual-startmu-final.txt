@@ -1,0 +1,1 @@
+WINDOWS_ACCEPTANCE_REQUIRED: Windows 11 acceptance has not run. No processes started.

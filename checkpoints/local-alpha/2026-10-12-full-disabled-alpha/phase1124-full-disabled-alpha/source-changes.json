@@ -1,0 +1,59 @@
+{
+  "unchangedFiles": [
+    "CollectReport.ps1",
+    "ConsoleObserver.cs",
+    "Database.ps1",
+    "SetupMU.ps1"
+  ],
+  "changedFiles": [
+    {
+      "path": "source/scripts/windows11/FirstSetup.ps1",
+      "oldSha256": "e44570b84439d0587d7721770748518c36e883b9d057dcdee254be227055dde0",
+      "sha256": "3090a78faaafbe3c5c9234eb8f578c33adb687f398d5d3d5ce99475d55bf53bc",
+      "bytes": 24748
+    },
+    {
+      "path": "source/scripts/windows11/Guards.ps1",
+      "oldSha256": "cf3354fb5c7d06b951a394c1cacbe21b62599fe1acee7f56e78291cfd0795bda",
+      "sha256": "763cfe1177c27505bd902fd5a58ea63be6a2136f7b51161b9aaa87f8386fa41f",
+      "bytes": 27194
+    },
+    {
+      "path": "source/scripts/windows11/Launcher.psm1",
+      "oldSha256": "deb9184ec7d09d5e627199fba14e3f8f3d6f5d18bf728f84038f3d0653a3f5e5",
+      "sha256": "b74ddebe58aa626b1a3ea76af2225d61105b4e8c45b2026f2e39660e8f39f1ae",
+      "bytes": 14973
+    },
+    {
+      "path": "source/scripts/windows11/StartMU.ps1",
+      "oldSha256": "80cda3a60079239c648550ad55bc7f003cdb06975f85c8c8c5bf99c872fb6b80",
+      "sha256": "ae84b86aa29efe40579fd66191e9e60db8211919e58388dccc3ce70361b69b45",
+      "bytes": 4821
+    },
+    {
+      "path": "source/scripts/windows11/database-source-contract.json",
+      "oldSha256": "0718c51ba1367d476a5d3fff7a46e55b16f334688ecbb650af7148b836c2cac6",
+      "sha256": "94b051417d9319afd9f2c15d4f3a646a0e08e8f1974849066acf253cde61d4c8",
+      "bytes": 4753
+    },
+    {
+      "path": "source/scripts/windows11/first-setup-policy.json",
+      "oldSha256": "65bea58489911fc5c1da1ee99a0ffdd8de085bad9c37251fb04d6f4e9a5c6cb0",
+      "sha256": "24aec06b89d5eb16c74cb63d5899901f1e4d000f0ba9048f6e20cbed2e2ecd7b",
+      "bytes": 812
+    },
+    {
+      "path": "source/scripts/windows11/local-session-contract.json",
+      "oldSha256": "dcca41db24ff561cb1161f02e075be4892f8b8452cdc48035ad0f1865d6496b3",
+      "sha256": "4f90536a241be977a51bc8c0e63a14615336a65ba2929008b71e87634a8c678f",
+      "bytes": 1332
+    },
+    {
+      "path": "source/scripts/windows11/runtime-pin.json",
+      "oldSha256": "fcf4d5e7b3a6e179287fd2a3b485e95c977c26676abf4b7cd8e080f6b1ede415",
+      "sha256": "d683f944d19eefe4ca1fa0fa85418c70e419ed132f3feb7e5b9b43640091e9b9",
+      "bytes": 647
+    }
+  ],
+  "historicSourceModified": false
+}

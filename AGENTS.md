@@ -20,7 +20,7 @@ Owner-defined model1.1 preserves model1.0 weights and original checklist; see do
 
 No complex agent orchestration. Reuse validated artifacts/cache/DB; smallest targeted validation then owner alpha testing. See docs/navigation.md for bug report format. Read the original coding rules below before code changes; preserve existing source structure. This bootstrap adds project memory and does not override original repository rules.
 
-Current packaging checkpoint (2026-10-12): read docs/current-state.md and checkpoints/local-alpha/2026-10-12-portable-server-package/README.md. Published-layout integrity is verified, not Windows/HTTP/runtime readiness. Next is narrow launcher admission alignment scope review; implementation requires separate owner approval. Keep setup/launch blocked and preserve existing evidence.
+Current packaging checkpoint (2026-10-12): read docs/current-state.md and checkpoints/local-alpha/2026-10-12-full-disabled-alpha/phase1124-full-disabled-alpha/report.txt. Full disabled-package integrity and 13 integrated PowerShell cases passed locally; Windows/HTTP/runtime acceptance has not run. Single next step is the existing package Verify command in an agreed Windows acceptance environment, awaiting separate owner authorization. Keep launch/setup/grants blocked; do not repeat completed local packaging tests.
 
 ---
 
@@ -56,7 +56,7 @@ Quick references:
 
 ## Checkpoint documentation
 
-The 2026-10-12 admin-only diagnostic and the subsequent single GameConfiguration read are complete; reuse their saved evidence. See checkpoints/local-alpha/2026-10-12-binary-json-read/README.md: one actual read PASS, 35 driver guard cases PASS, PostgreSQL stopped, original hashes intact. Follow only the newest next step in docs/current-state.md: Windows candidate acceptance preparation pending separate scope approval. Full ACL closure, Typed reads and Windows readiness remain unproven; keep setup/launch guards blocked.
+The 2026-10-12 admin-only diagnostic and the subsequent single GameConfiguration read are complete; reuse their saved evidence. See checkpoints/local-alpha/2026-10-12-binary-json-read/README.md: one actual read PASS, 35 driver guard cases PASS, PostgreSQL stopped, original hashes intact. Follow only the newest next step in docs/current-state.md; older preparation queues are historical. Full ACL closure, Typed reads and Windows readiness remain unproven; keep setup/launch guards blocked.
 
 At ordinary checkpoints, keep one unambiguous next step in docs/current-state.md and mark older completed, cancelled, or parked instructions as superseded while preserving evidence and links. After substantial code/configuration changes, refresh only the matching existing ALPHA-NAV/STACK entry or mark its evidence stale. Use the existing document structure; do not expand this into a separate audit or catalog. Publication, main merges, deployments, and costly stages still require the owner's applicable approval.
 
@@ -73,6 +73,7 @@ At ordinary checkpoints, keep one unambiguous next step in docs/current-state.md
 Don't perform large retroactive cleanups of existing code to fit the rules unless
 the user explicitly asks for it. Apply the rules going forward; pre-existing
 code can be refactored opportunistically when you're already touching it.
+
 
 
 

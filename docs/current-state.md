@@ -1,3 +1,15 @@
+# Current owner checkpoint — 2026-10-12 full disabled Alpha package
+
+The [full package report](../checkpoints/local-alpha/2026-10-12-full-disabled-alpha/phase1124-full-disabled-alpha/report.txt) preserves the completed local integration: 24,417 payload files / 1,417,218,857 bytes plus four control documents. Existing client/Data/fonts/dependencies were reused unchanged; the published server has 8,440 files and the corrected EF. A single inventory and schema-3 draft setup carry explicit provenance, without claiming the historical runtime ZIP certifies the new server.
+
+Actual Linux PowerShell 7.4.20: complete StartMU Verify → Test-MuPreflight integrity PASS; 13 focused integrated tests PASS. Actual SetupMU stops at BLOCKED_RUNTIME_GRANTS; StartMU Start stops at WINDOWS_ACCEPTANCE_REQUIRED. No DB directory or session marker was created. An initial hidden .NET .version length-query issue was corrected with -Force and the final tests passed. Launch remains false/null; Windows/HTTP/game/server/DB runtime acceptance was NOT_RUN. Full grants and five existing ImageSharp warnings remain open. Readiness and main are unchanged.
+
+The checkpoint contains 27 approved small source/test/evidence files, their identity index, and these navigation updates. Large package payload/control bytes, fixtures and private raw diagnostics are not published; omitted control identities are preserved. The earlier standalone phase1115 admission checker is superseded by the integrated guard and is not an extra dependency. Recovery still requires the already pinned local inputs; this text-only checkpoint is not a standalone executable Alpha.
+
+**Single next step:** run the existing package Verify entry in the agreed Windows acceptance environment using the independently retained inventory SHA, awaiting separate owner authorization. Publication does not authorize a workflow, Windows runtime, install, DB operation, grant expansion or launch. Do not repeat completed local packaging/tests.
+
+## Earlier checkpoint instructions — historical; result and single next step above take precedence
+
 # Current owner checkpoint — 2026-10-12 portable server packaging
 
 The [portable server component checkpoint](../checkpoints/local-alpha/2026-10-12-portable-server-package/README.md) preserves the 183-file candidate and one successful existing-SDK publish-only pass, without compilation/restore or runtime execution. Twenty new integrity tests PASS. Final component: 8,440 server/web files + 12 blocked source snapshots, 134,967,375 verified payload bytes; all 16,681 Publish endpoints resolve to 8,267 on-disk assets. Corrected EF `67adf087…93a1` and matching PDB retained explicitly; original controls preserved.
@@ -156,5 +168,6 @@ Historical/deferred findings: Crywolf incomplete (late stage), Illusion Temple i
 - Reuse existing bulk272PASS/scalar7PASS and client-resource check; no export/rebuild needed. scripts/check-trade-snapshot.py supports scoped cancel assertions; score-baseline.py freezes owner weights. Audit/navigation/test-history route further work.
 
 GitHub source/docs are canonical; private backup IDs/checksums preserve large runtime/DB evidence beyond CI retention. Never commit DB dumps, passwords, tokens or account hashes. GitHub connector writes previously403; owner-authorized browser upload fallback is documented. Credits/reset time are not visible to the agent; do not promise automatic balance warnings. Fresh-agent handoff: YES with this GitHub repository and the same owner's backup access.
+
 
 

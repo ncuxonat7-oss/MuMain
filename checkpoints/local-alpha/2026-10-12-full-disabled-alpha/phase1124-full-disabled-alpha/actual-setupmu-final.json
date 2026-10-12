@@ -1,0 +1,15 @@
+{
+  "databaseReady": false,
+  "events": [
+    {
+      "stage": "runtime-grants",
+      "result": "failed",
+      "utc": "2026-10-12T11:35:29.2142331Z"
+    }
+  ],
+  "approvedLaunchManifestSha256": null,
+  "status": "BLOCKED_RUNTIME_GRANTS",
+  "launchEnabled": false,
+  "setupDirectory": null,
+  "stage": "runtime-grants"
+}
