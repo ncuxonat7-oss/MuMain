@@ -10,7 +10,9 @@ The candidate metadata inspection and static reconciliation are now preserved at
 
 The [connection attribution follow-up](../checkpoints/local-alpha/2026-10-12-admin-db/connection-attribution-report.md) proves the three scoped source paths: conditional GameConfiguration JSON read → EntityDataContext → intended `mu_entity`; PlugInConfiguration/SystemConfiguration Typed reads → TypedContext → intended `mu_typed`. The default-ID lookup uses ConfigurationContext → intended `mu_config`. These are disabled-template roles, not observed deployed session identities. No runtime work ran.
 
-**Single next step:** locate the pinned GameConfigurationDataSource definition and inherited GetOwnerAsync implementation, and trace only the already identified custom-reference/data-source calls to their context/connection key. Two exact-path lookups returned 404; source attribution for those paths remains open. Keep complete Entity/Typed closure, executable grants, setup and launch blocked.
+The bounded continuation closed GameConfigurationDataSource.GetOwnerAsync: its inherited context factory calls CreateNewContext, selecting EntityDataContext → intended `mu_entity`; a matching cached owner requires no read. **Source attribution for the originally scoped reads is complete**, including this data-source path. Deployment-role verification and full grant closure remain outside this result.
+
+**Single next step:** review the saved scoped read projections with the completed connection attribution to define the next bounded permission-closure acceptance task. Keep executable grants, setup and launch blocked; do not repeat resolved source attribution or metadata inspection.
 
 ## Earlier checkpoint instructions — superseded
 

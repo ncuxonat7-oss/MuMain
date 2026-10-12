@@ -24,4 +24,6 @@ The [startup read analysis](startup-read-report.md) is historical bounded eviden
 
 The [connection attribution follow-up](connection-attribution-report.md) assigns the three scoped reads to source-selected connection keys and the disabled setup's intended roles, without asserting live deployment identity. Its [provenance](connection-attribution-provenance.json) preserves the exact source hashes.
 
-**Single next step:** locate the pinned GameConfigurationDataSource definition and inherited GetOwnerAsync implementation and trace only the already identified custom-reference/data-source calls to their context/connection key. Complete Entity/Typed closure and all activation/Windows readiness remain blocked.
+The bounded continuation resolved GameConfigurationDataSource.GetOwnerAsync through its DataSourceBase context factory to EntityDataContext and intended `mu_entity`. Attribution for the originally scoped reads is complete at source level; actual deployment roles and full grant closure remain unverified.
+
+**Single next step:** review the saved scoped read projections with this completed attribution to define the next bounded permission-closure acceptance task. Keep executable grants, setup and launch blocked.
