@@ -18,4 +18,6 @@ The [file manifest](files-manifest.json) covers exact copied diagnostic bytes. S
 
 The [transfer recovery runbook](library-transfer-runbook.md) records the verified transfer procedure and its limits. The previous restore proposal's flag-repair step is superseded by the owner's later preserve-original-flags instruction. Entity/Typed complete closure, package alignment, Windows readiness and full Alpha readiness remain unproven. No readiness score changes.
 
-**Single next step:** [integrate admin provisioning into disabled first setup](next-stage-proposal.md), using the saved official SQL and a reviewed contract with mock-only fail-closed tests. The material review found no admin provisioning operation between baseline restore and grants. No implementation or tests were run during this overnight publication stage; both deployment guards remain intact. Do not repeat admin provisioning or successful C# tests.
+The [admin integration implementation](implementation-report.md) is complete with 49/49 admin and 56/56 setup mock checks. The earlier [integration proposal](next-stage-proposal.md) is now historical; its later Windows-route reference remains a limit, not an authorization.
+
+**Single next step:** the source/metadata-only startup GameConfiguration read-closure proof defined in the implementation report. Complete Entity/Typed closure, package alignment and Windows readiness remain unproven.

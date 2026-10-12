@@ -1,0 +1,50 @@
+PASS real contract pins independently verified candidate and migrations
+PASS real SQL files exactly match reviewed original minus BOM
+PASS changed SQL hash rejected: originalSqlSha256
+PASS changed SQL hash rejected: executionSqlSha256
+PASS missing SQL refuses before utility calls
+PASS real policy blocks direct provisioning operation
+PASS real grant setter still independently blocks approved status
+PASS launch contract remains disabled and unapproved
+PASS source and actual candidate artifact checks precede any SQL
+PASS requires owned setup stage: stage
+PASS requires owned setup stage: pgOwner
+PASS requires owned setup stage: pgStartAttempted
+PASS requires owned setup stage: pgStopped
+PASS old packaged binary metadata rejected
+PASS actual binary mismatch rejected despite matching inventory
+PASS requires one unambiguous candidate file: 0
+PASS requires one unambiguous candidate file: 2
+PASS independent restored target accepted before schema creation
+PASS wrong target rejected: database
+PASS wrong target rejected: sessionUser
+PASS wrong target rejected: currentUser
+PASS wrong target rejected: directory
+PASS wrong target rejected: encoding
+PASS wrong target rejected: locale
+PASS wrong target rejected: ctype
+PASS existing or malformed schema state rejected: False
+PASS existing or malformed schema state rejected: true
+PASS runtime admin authority rejected
+PASS partial game history rejected
+PASS duplicate game migration rejected
+PASS wrong configuration ID rejected
+PASS original flag required: AutoStart
+PASS original flag required: AutoUpdateSchema
+PASS original flag required: ReadConsoleInput
+PASS extra system configuration rejected
+PASS exact admin postcondition accepted
+PASS wrong ProductVersion rejected
+PASS partial admin history rejected
+PASS game ProductVersion change rejected
+PASS exact reviewed SQL sent once after target checks before postconditions
+PASS unknown process ownership prevents any database I/O
+PASS SQL failure propagates without retries or postcondition queries
+PASS postcondition failure propagates without repair or grants
+PASS rejected precondition never submits SQL: admin
+PASS rejected precondition never submits SQL: user
+PASS rejected precondition never submits SQL: database
+PASS rejected precondition never submits SQL: game
+PASS changed candidate bytes prevent even target queries
+PASS postcondition history comparison ignores JSON property order
+PASS TOTAL 49

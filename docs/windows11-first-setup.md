@@ -1,3 +1,5 @@
+> Current 2026-10-12 source: [disabled admin provisioning integration](../checkpoints/local-alpha/2026-10-12-admin-db/implementation-report.md), 49 admin + 56 setup mock checks PASS. Reviewed admin-only SQL is gated between restore and grants. Real setup remains BLOCKED_RUNTIME_GRANTS; no package repin, PostgreSQL or Windows execution. The current policy is BLOCKED_SOURCE_BINARY_ALIGNMENT. Older counts, next-step queues and source-only descriptions below are historical. Follow docs/current-state.md for the single next step.
+
 > Current external checkpoint: [actual C# build/test evidence](../checkpoints/local-alpha/2026-10-11-csharp/README.md).
 > Earlier phase-specific NOT_RUN statements below are historical; the current packaged baseline still remains disabled and unintegrated.
 

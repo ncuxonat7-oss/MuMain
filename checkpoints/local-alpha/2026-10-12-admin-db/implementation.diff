@@ -1,0 +1,536 @@
+diff --git a/scripts/windows11/AdminProvisioning.ps1 b/scripts/windows11/AdminProvisioning.ps1
+new file mode 100644
+index 00000000..99c0faf6
+--- /dev/null
++++ b/scripts/windows11/AdminProvisioning.ps1
+@@ -0,0 +1,117 @@
++# Setup-only, disabled by the existing first-setup policy. Import defines functions only.
++# Pins come from the completed admin diagnostic; they do not approve a package or launch.
++function Get-MuAdminProvisioningContract {
++    $path=Join-Path $PSScriptRoot 'admin-provisioning-contract.json'
++    Assert-MuLocalPath $path
++    Assert-MuFileHash $path 'a6c0fafc5672975d4f5faf2dc0ee86b0cb3bf4e88c5f5f203ce17e85c81e73f2'
++    return Read-MuJson $path
++}
++
++function Read-MuReviewedAdminSql($State,$Contract) {
++    $root=$State.request.packageRoot
++    $original=Resolve-MuFile $root 'scripts/windows11/admin-provisioning.original.sql'
++    $execution=Resolve-MuFile $root 'scripts/windows11/admin-provisioning.sql'
++    Assert-MuFileHash $original $Contract.originalSqlSha256
++    Assert-MuFileHash $execution $Contract.executionSqlSha256
++    $before=[IO.File]::ReadAllBytes($original);$after=[IO.File]::ReadAllBytes($execution)
++    if ($before.Length -ne $after.Length+3 -or $before[0] -ne 239 -or
++        $before[1] -ne 187 -or $before[2] -ne 191) { throw 'ADMIN_SQL_MISMATCH' }
++    for ($i=0;$i -lt $after.Length;$i++) {
++        if ($before[$i+3] -ne $after[$i]) { throw 'ADMIN_SQL_MISMATCH' }
++    }
++    return [Text.UTF8Encoding]::new($false,$true).GetString($after)
++}
++
++function Assert-MuAdminProvisioningInputs($State,$Contract) {
++    if ($State.stage -cne 'admin-provision' -or $null -eq $State.pgOwner -or
++        !$State.pgStartAttempted -or $State.pgStopped) { throw 'ADMIN_SETUP_REQUIRED' }
++    $files=@($State.inventory.Keys | Where-Object {
++        ($_ -csplit '/')[-1] -ceq 'MUnique.OpenMU.Persistence.EntityFramework.dll'
++    })
++    if ($files.Count -ne 1 -or $State.inventory[$files[0]].sha256 -cne $Contract.persistenceSha256) {
++        throw 'ADMIN_BINARY_MISMATCH'
++    }
++    Assert-MuFileHash (Resolve-MuFile $State.request.packageRoot $files[0]) $Contract.persistenceSha256
++    Assert-MuFileHash $State.dump $State.policy.dumpSha256
++    $source=Get-MuDatabaseSourceContract
++    Assert-MuExactStrings $Contract.migrationIds $source.migrationHistories['AdminAuth.AdminPanelContext'].ids '^[0-9]{14}_[A-Za-z0-9_]+$'
++    return $source
++}
++
++function Get-MuAdminTargetSnapshot($State,[switch]$After) {
++    # Values only: no account records, hashes, connection strings or SQL error text.
++    $admin=if ($After) {
++        '(SELECT json_agg(h ORDER BY "MigrationId") FROM admin."__EFMigrationsHistory" h)'
++    } else { 'NULL' }
++    $sql=@'
++SELECT pg_catalog.json_build_object(
++ 'database',current_database(),'sessionUser',session_user,'currentUser',current_user,
++ 'directory',current_setting('data_directory'),'encoding',current_setting('server_encoding'),
++ 'locale',(SELECT datcollate FROM pg_catalog.pg_database WHERE datname=current_database()),
++ 'ctype',(SELECT datctype FROM pg_catalog.pg_database WHERE datname=current_database()),
++ 'adminAbsent',NOT EXISTS(SELECT FROM pg_catalog.pg_namespace WHERE nspname='admin'),
++ 'game',(SELECT json_agg(h ORDER BY "MigrationId") FROM public."__EFMigrationsHistory" h),
++ 'configurationIds',(SELECT json_agg("Id" ORDER BY "Id") FROM config."GameConfiguration"),
++ 'system',(SELECT json_agg(s) FROM (SELECT "Id","AutoStart","AutoUpdateSchema","ReadConsoleInput" FROM config."SystemConfiguration") s),
++ 'admin',
++'@ + $admin + ');'
++    return (Invoke-MuSetupSql $State $sql | ConvertFrom-Json -AsHashtable -Depth 10)
++}
++
++function Assert-MuAdminTarget($State,$Snapshot,$Source,[switch]$After) {
++    Assert-MuKeys $Snapshot @('database','sessionUser','currentUser','directory','encoding','locale','ctype','adminAbsent','game','configurationIds','system','admin')
++    if ($Snapshot.database -cne 'openmu' -or $Snapshot.sessionUser -cne 'mu_setup' -or
++        $Snapshot.currentUser -cne 'mu_setup' -or $Snapshot.encoding -cne 'SQL_ASCII' -or
++        $Snapshot.locale -cne 'C' -or $Snapshot.ctype -cne 'C' -or
++        $Snapshot.directory -isnot [string] -or
++        [IO.Path]::GetFullPath($Snapshot.directory) -ine [IO.Path]::GetFullPath($State.pgData)) {
++        throw 'ADMIN_TARGET_MISMATCH'
++    }
++    if ($Snapshot.adminAbsent -isnot [bool] -or $Snapshot.adminAbsent -eq [bool]$After) {
++        throw 'ADMIN_SCHEMA_STATE_MISMATCH'
++    }
++    if ($Snapshot.game -isnot [array]) { throw 'ADMIN_BASELINE_MISMATCH' }
++    foreach ($row in $Snapshot.game) {
++        Assert-MuKeys $row @('MigrationId','ProductVersion')
++        if ($row.ProductVersion -isnot [string] -or !$row.ProductVersion) { throw 'ADMIN_BASELINE_MISMATCH' }
++    }
++    Assert-MuExactStrings @($Snapshot.game | ForEach-Object {$_.MigrationId}) $Source.migrationHistories.EntityDataContext.ids '^[0-9]{14}_[A-Za-z0-9_]+$'
++    Assert-MuExactStrings $Snapshot.configurationIds $Source.configurationIds '^[a-f0-9-]{36}$'
++    if ($Snapshot.system -isnot [array] -or $Snapshot.system.Count -ne 1) { throw 'ADMIN_BASELINE_MISMATCH' }
++    $system=$Snapshot.system[0]
++    Assert-MuKeys $system @('Id','AutoStart','AutoUpdateSchema','ReadConsoleInput')
++    if ($system.Id -cne $Source.systemConfigurationId -or $system.AutoStart -isnot [bool] -or
++        $system.AutoUpdateSchema -isnot [bool] -or $system.ReadConsoleInput -isnot [bool] -or
++        !$system.AutoStart -or !$system.AutoUpdateSchema -or $system.ReadConsoleInput) { throw 'ADMIN_BASELINE_MISMATCH' }
++}
++
++function Assert-MuAdminProvisioningResult($Before,$After,$Contract) {
++    if ($After.admin -isnot [array]) { throw 'ADMIN_HISTORY_MISMATCH' }
++    Assert-MuExactStrings @($After.admin | ForEach-Object {$_.MigrationId}) $Contract.migrationIds '^[0-9]{14}_[A-Za-z0-9_]+$'
++    foreach ($row in $After.admin) {
++        Assert-MuKeys $row @('MigrationId','ProductVersion')
++        if ($row.ProductVersion -cne $Contract.productVersion) { throw 'ADMIN_HISTORY_MISMATCH' }
++    }
++    foreach ($row in $Before.game) {
++        $historyMatches=@($After.game | Where-Object MigrationId -CEQ $row.MigrationId)
++        if ($historyMatches.Count -ne 1 -or $historyMatches[0].ProductVersion -cne $row.ProductVersion) { throw 'ADMIN_BASELINE_MISMATCH' }
++    }
++}
++
++function Invoke-MuSetupAdminProvisioning($State) {
++    Assert-MuSetupGrantPolicy $State.policy
++    $contract=Get-MuAdminProvisioningContract
++    $source=Assert-MuAdminProvisioningInputs $State $contract
++    $sql=Read-MuReviewedAdminSql $State $contract
++    Assert-MuSetupPgOwner $State
++    $before=Get-MuAdminTargetSnapshot $State
++    Assert-MuAdminTarget $State $before $source
++    Assert-MuSetupPgOwner $State
++    # Fixed mu_setup connection, exact reviewed SQL only; never runtime DDL or grants.
++    $null=Invoke-MuSetupSql $State $sql
++    Assert-MuSetupPgOwner $State
++    $after=Get-MuAdminTargetSnapshot $State -After
++    Assert-MuAdminTarget $State $after $source -After
++    Assert-MuAdminProvisioningResult $before $after $contract
++    # Exceptions propagate to the existing owned-stop/retained-state orchestration.
++}
+diff --git a/scripts/windows11/FirstSetup.ps1 b/scripts/windows11/FirstSetup.ps1
+index 825ac959..e2cda4d1 100644
+--- a/scripts/windows11/FirstSetup.ps1
++++ b/scripts/windows11/FirstSetup.ps1
+@@ -2,6 +2,7 @@
+ # No action happens on import. The pinned unresolved grant policy blocks deployment.
+ Set-StrictMode -Version Latest
+ $ErrorActionPreference='Stop'
++. (Join-Path $PSScriptRoot 'AdminProvisioning.ps1')
+ 
+ function Get-MuFirstSetupPolicy {
+     $path=Join-Path $PSScriptRoot 'first-setup-policy.json'
+@@ -344,6 +345,11 @@ function Stop-MuSetupCluster($State) {
+     $State.pgOwner=$null;$State.pgStopped=$true
+ }
+ 
++function Get-MuFirstSetupStages {
++    return @('preflight','private-area','credentials','dump','initialize','start','roles','restore',
++        'admin-provision','grants','flags','prepare-acceptance','acceptance','seal','stop')
++}
++
+ function Invoke-MuFirstSetup($Request) {
+     $state=@{request=$Request;policy=$null;directory=$null;events=@();journalReady=$false;claim=$null;credentials=$null;
+         inventory=$null;pgOwner=$null;pgStartAttempted=$false;pgStopped=$false;acceptanceSetup=$null;status='NOT_STARTED';stage='request'}
+@@ -352,7 +358,7 @@ function Invoke-MuFirstSetup($Request) {
+         $state.policy=Get-MuFirstSetupPolicy
+         # Must stop before filesystem claims, credentials or cluster creation.
+         $state.stage='runtime-grants';Assert-MuSetupGrantPolicy $state.policy
+-        foreach ($stage in @('preflight','private-area','credentials','dump','initialize','start','roles','restore','grants','flags','prepare-acceptance','acceptance','seal','stop')) {
++        foreach ($stage in (Get-MuFirstSetupStages)) {
+             $state.stage=$stage;Write-MuSetupEvent $state $stage 'begin'
+             switch ($stage) {
+                 'preflight' { Assert-MuSetupHostAndInputs $state }
+@@ -363,6 +369,7 @@ function Invoke-MuFirstSetup($Request) {
+                 'start' { Start-MuSetupCluster $state }
+                 'roles' { New-MuSetupRolesAndDatabase $state }
+                 'restore' { Restore-MuSetupSnapshot $state }
++                'admin-provision' { Invoke-MuSetupAdminProvisioning $state }
+                 'grants' { Set-MuSetupRuntimeGrants $state }
+                 'flags' { Set-MuSetupReviewedFlags $state }
+                 'prepare-acceptance' { Prepare-MuSetupAcceptance $state }
+diff --git a/scripts/windows11/admin-provisioning-contract.json b/scripts/windows11/admin-provisioning-contract.json
+new file mode 100644
+index 00000000..1255a259
+--- /dev/null
++++ b/scripts/windows11/admin-provisioning-contract.json
+@@ -0,0 +1,13 @@
++{
++  "schema": 1,
++  "context": "MUnique.OpenMU.Persistence.EntityFramework.AdminAuth.AdminPanelContext",
++  "persistenceSha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
++  "productVersion": "10.0.2",
++  "migrationIds": [
++    "20260824171349_InitialAdminPanelUsers",
++    "20260829110159_AddApiKeys"
++  ],
++  "originalSqlSha256": "b2c66b33e363c0c5b3b3d33698c46657699e8529bb8aad9878cefd4fee953067",
++  "executionSqlSha256": "5e3f625b6c6b0a56596e36763df592fa1fb11a1b000d6a386e3c7e2ed95d62dd",
++  "evidenceCommit": "0ab3c24e5a47bbf4ff10b3185fa1e17ab4e87467"
++}
+diff --git a/scripts/windows11/admin-provisioning.original.sql b/scripts/windows11/admin-provisioning.original.sql
+new file mode 100644
+index 00000000..cd7c363b
+--- /dev/null
++++ b/scripts/windows11/admin-provisioning.original.sql
+@@ -0,0 +1,65 @@
++﻿DO $EF$
++BEGIN
++    IF NOT EXISTS(SELECT 1 FROM pg_namespace WHERE nspname = 'admin') THEN
++        CREATE SCHEMA admin;
++    END IF;
++END $EF$;
++CREATE TABLE IF NOT EXISTS admin."__EFMigrationsHistory" (
++    "MigrationId" character varying(150) NOT NULL,
++    "ProductVersion" character varying(32) NOT NULL,
++    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
++);
++
++START TRANSACTION;
++DO $EF$
++BEGIN
++    IF NOT EXISTS(SELECT 1 FROM pg_namespace WHERE nspname = 'admin') THEN
++        CREATE SCHEMA admin;
++    END IF;
++END $EF$;
++
++CREATE TABLE admin."AdminUser" (
++    "Id" uuid NOT NULL,
++    "LoginName" character varying(100) NOT NULL,
++    "NormalizedLoginName" character varying(100) NOT NULL,
++    "PasswordHash" text NOT NULL,
++    "SecurityStamp" text NOT NULL,
++    "Roles" character varying(200) NOT NULL,
++    "IsTwoFactorEnabled" boolean NOT NULL,
++    "ProtectedAuthenticatorKey" text,
++    "RecoveryCodeHashes" text,
++    "LastAcceptedTotpStep" bigint NOT NULL,
++    "AccessFailedCount" integer NOT NULL,
++    "LockoutEnd" timestamp with time zone,
++    "IsDisabled" boolean NOT NULL,
++    "CreatedAt" timestamp with time zone NOT NULL,
++    "LastLoginAt" timestamp with time zone,
++    CONSTRAINT "PK_AdminUser" PRIMARY KEY ("Id")
++);
++
++CREATE UNIQUE INDEX "IX_AdminUser_NormalizedLoginName" ON admin."AdminUser" ("NormalizedLoginName");
++
++INSERT INTO admin."__EFMigrationsHistory" ("MigrationId", "ProductVersion")
++VALUES ('20260824171349_InitialAdminPanelUsers', '10.0.2');
++
++COMMIT;
++
++START TRANSACTION;
++CREATE TABLE admin."ApiKey" (
++    "Id" uuid NOT NULL,
++    "Name" character varying(100) NOT NULL,
++    "KeyHash" character varying(100) NOT NULL,
++    "KeyPrefix" character varying(16) NOT NULL,
++    "Roles" character varying(200) NOT NULL,
++    "IsDisabled" boolean NOT NULL,
++    "CreatedAt" timestamp with time zone NOT NULL,
++    CONSTRAINT "PK_ApiKey" PRIMARY KEY ("Id")
++);
++
++CREATE UNIQUE INDEX "IX_ApiKey_KeyHash" ON admin."ApiKey" ("KeyHash");
++
++INSERT INTO admin."__EFMigrationsHistory" ("MigrationId", "ProductVersion")
++VALUES ('20260829110159_AddApiKeys', '10.0.2');
++
++COMMIT;
++
+diff --git a/scripts/windows11/admin-provisioning.sql b/scripts/windows11/admin-provisioning.sql
+new file mode 100644
+index 00000000..382db157
+--- /dev/null
++++ b/scripts/windows11/admin-provisioning.sql
+@@ -0,0 +1,65 @@
++DO $EF$
++BEGIN
++    IF NOT EXISTS(SELECT 1 FROM pg_namespace WHERE nspname = 'admin') THEN
++        CREATE SCHEMA admin;
++    END IF;
++END $EF$;
++CREATE TABLE IF NOT EXISTS admin."__EFMigrationsHistory" (
++    "MigrationId" character varying(150) NOT NULL,
++    "ProductVersion" character varying(32) NOT NULL,
++    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
++);
++
++START TRANSACTION;
++DO $EF$
++BEGIN
++    IF NOT EXISTS(SELECT 1 FROM pg_namespace WHERE nspname = 'admin') THEN
++        CREATE SCHEMA admin;
++    END IF;
++END $EF$;
++
++CREATE TABLE admin."AdminUser" (
++    "Id" uuid NOT NULL,
++    "LoginName" character varying(100) NOT NULL,
++    "NormalizedLoginName" character varying(100) NOT NULL,
++    "PasswordHash" text NOT NULL,
++    "SecurityStamp" text NOT NULL,
++    "Roles" character varying(200) NOT NULL,
++    "IsTwoFactorEnabled" boolean NOT NULL,
++    "ProtectedAuthenticatorKey" text,
++    "RecoveryCodeHashes" text,
++    "LastAcceptedTotpStep" bigint NOT NULL,
++    "AccessFailedCount" integer NOT NULL,
++    "LockoutEnd" timestamp with time zone,
++    "IsDisabled" boolean NOT NULL,
++    "CreatedAt" timestamp with time zone NOT NULL,
++    "LastLoginAt" timestamp with time zone,
++    CONSTRAINT "PK_AdminUser" PRIMARY KEY ("Id")
++);
++
++CREATE UNIQUE INDEX "IX_AdminUser_NormalizedLoginName" ON admin."AdminUser" ("NormalizedLoginName");
++
++INSERT INTO admin."__EFMigrationsHistory" ("MigrationId", "ProductVersion")
++VALUES ('20260824171349_InitialAdminPanelUsers', '10.0.2');
++
++COMMIT;
++
++START TRANSACTION;
++CREATE TABLE admin."ApiKey" (
++    "Id" uuid NOT NULL,
++    "Name" character varying(100) NOT NULL,
++    "KeyHash" character varying(100) NOT NULL,
++    "KeyPrefix" character varying(16) NOT NULL,
++    "Roles" character varying(200) NOT NULL,
++    "IsDisabled" boolean NOT NULL,
++    "CreatedAt" timestamp with time zone NOT NULL,
++    CONSTRAINT "PK_ApiKey" PRIMARY KEY ("Id")
++);
++
++CREATE UNIQUE INDEX "IX_ApiKey_KeyHash" ON admin."ApiKey" ("KeyHash");
++
++INSERT INTO admin."__EFMigrationsHistory" ("MigrationId", "ProductVersion")
++VALUES ('20260829110159_AddApiKeys', '10.0.2');
++
++COMMIT;
++
+diff --git a/tests/windows11/Test-AdminProvisioning.ps1 b/tests/windows11/Test-AdminProvisioning.ps1
+new file mode 100644
+index 00000000..842f68c1
+--- /dev/null
++++ b/tests/windows11/Test-AdminProvisioning.ps1
+@@ -0,0 +1,175 @@
++# Mock-only admin setup checks. No process, PostgreSQL, credential or migration execution.
++#requires -Version 7.4
++Set-StrictMode -Version Latest
++$ErrorActionPreference='Stop'
++$root=Split-Path (Split-Path $PSScriptRoot)
++. (Join-Path $root 'scripts/windows11/Guards.ps1')
++. (Join-Path $root 'scripts/windows11/Database.ps1')
++. (Join-Path $root 'scripts/windows11/FirstSetup.ps1')
++$script:passed=0
++function Check([string]$Name,[scriptblock]$Test) { & $Test;$script:passed++;Write-Output ('PASS '+$Name) }
++function Require([bool]$Value) { if (!$Value) {throw 'ASSERTION_FAILED'} }
++function Reject([scriptblock]$Test,[string]$Code) {
++    $caught=$false;try {& $Test} catch {if ($_.Exception.Message -cne $Code) {throw};$caught=$true};Require $caught
++}
++function Invoke-MuSetupUtility {throw 'REAL_UTILITY_FORBIDDEN'}
++$contract=Get-MuAdminProvisioningContract
++$source=Get-MuDatabaseSourceContract
++function New-State {
++    return @{request=@{packageRoot=$root};stage='admin-provision';pgOwner=@{pid=42;ticks=1};pgStartAttempted=$true;
++        pgStopped=$false;pgData='/mock/owned-cluster';dump='/mock/baseline.dump';
++        policy=Get-MuFirstSetupPolicy;inventory=@{'server/MUnique.OpenMU.Persistence.EntityFramework.dll'=@{sha256=$contract.persistenceSha256}}}
++}
++Check 'real contract pins independently verified candidate and migrations' {
++    Require ($contract.productVersion -ceq '10.0.2')
++    Require ($contract.persistenceSha256 -ceq 'f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014')
++    Assert-MuExactStrings $contract.migrationIds $source.migrationHistories['AdminAuth.AdminPanelContext'].ids '^[0-9]{14}_[A-Za-z0-9_]+$'
++}
++Check 'real SQL files exactly match reviewed original minus BOM' {
++    $sql=Read-MuReviewedAdminSql (New-State) $contract
++    Require ($sql.StartsWith('DO $EF$'));Require ($sql.Contains("'20260829110159_AddApiKeys', '10.0.2'"))
++    Require (!$sql.Contains('CREATE ROLE'));Require (!$sql.Contains('GRANT '))
++}
++foreach ($field in @('originalSqlSha256','executionSqlSha256')) {
++    Check ('changed SQL hash rejected: '+$field) {
++        $bad=$contract.Clone();$bad[$field]='0'*64
++        Reject {Read-MuReviewedAdminSql (New-State) $bad} 'HASH_MISMATCH'
++    }
++}
++Check 'missing SQL refuses before utility calls' {
++    $s=New-State;$s.request.packageRoot=Join-Path $root 'tests'
++    $caught=$false;try {Read-MuReviewedAdminSql $s $contract} catch {$caught=$true};Require $caught
++}
++Check 'real policy blocks direct provisioning operation' {
++    Reject {Invoke-MuSetupAdminProvisioning (New-State)} 'RUNTIME_GRANTS_UNRESOLVED'
++}
++Check 'real grant setter still independently blocks approved status' {
++    Reject {Set-MuSetupRuntimeGrants @{policy=@{runtimeGrantStatus='APPROVED_FOR_DEPLOYMENT';runtimeSourceStatus='REVIEWED';runtimeBinaryAlignment=$true;liveValidationStatus='PASSED'}}} 'RUNTIME_GRANTS_UNRESOLVED'
++}
++Check 'launch contract remains disabled and unapproved' {
++    $c=Read-MuJson (Join-Path $root 'scripts/windows11/local-session-contract.json')
++    Require ($c.launchEnabled -eq $false);Require ($null -eq $c.approvedLaunchManifestSha256)
++}
++# Only external artifact location/hash checks are mocked; SQL and contract bytes stay real.
++$script:realHash=${function:Assert-MuFileHash};$script:realResolve=${function:Resolve-MuFile}
++$script:binaryBad=$false
++function Resolve-MuFile($Root,$Relative) {
++    if ($Relative -ceq 'server/MUnique.OpenMU.Persistence.EntityFramework.dll') {return '/mock/candidate.dll'}
++    return & $script:realResolve $Root $Relative
++}
++function Assert-MuFileHash($Path,$Hash) {
++    if ($Path -ceq '/mock/candidate.dll') {if ($script:binaryBad) {throw 'HASH_MISMATCH'};Require ($Hash -ceq $contract.persistenceSha256);return}
++    if ($Path -ceq '/mock/baseline.dump') {Require ($Hash -ceq '0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478');return}
++    & $script:realHash $Path $Hash
++}
++Check 'source and actual candidate artifact checks precede any SQL' {$null=Assert-MuAdminProvisioningInputs (New-State) $contract}
++foreach ($pair in @(@('stage','grants'),@('pgOwner',$null),@('pgStartAttempted',$false),@('pgStopped',$true))) {
++    Check ('requires owned setup stage: '+$pair[0]) {
++        $s=New-State;$s[$pair[0]]=$pair[1];Reject {Assert-MuAdminProvisioningInputs $s $contract} 'ADMIN_SETUP_REQUIRED'
++    }
++}
++Check 'old packaged binary metadata rejected' {
++    $s=New-State;$s.inventory.Values | ForEach-Object {$_.sha256='f05e117d596f6bb74f953d8b4cbe83c73c0b30a6acf94876b6e8619bf92f1042'}
++    Reject {Assert-MuAdminProvisioningInputs $s $contract} 'ADMIN_BINARY_MISMATCH'
++}
++Check 'actual binary mismatch rejected despite matching inventory' {
++    $script:binaryBad=$true;try {Reject {Assert-MuAdminProvisioningInputs (New-State) $contract} 'HASH_MISMATCH'} finally {$script:binaryBad=$false}
++}
++foreach ($count in @(0,2)) {
++    Check ('requires one unambiguous candidate file: '+$count) {
++        $s=New-State;if ($count -eq 0) {$s.inventory=@{}} else {$s.inventory['other/MUnique.OpenMU.Persistence.EntityFramework.dll']=@{sha256=$contract.persistenceSha256}}
++        Reject {Assert-MuAdminProvisioningInputs $s $contract} 'ADMIN_BINARY_MISMATCH'
++    }
++}
++function New-Snapshot([bool]$After=$false) {
++    $admin=if ($After) {@($contract.migrationIds | ForEach-Object {@{MigrationId=$_;ProductVersion=$contract.productVersion}})} else {$null}
++    return @{database='openmu';sessionUser='mu_setup';currentUser='mu_setup';directory='/mock/owned-cluster';encoding='SQL_ASCII';locale='C';ctype='C';adminAbsent=!$After;
++        game=@($source.migrationHistories.EntityDataContext.ids | ForEach-Object {@{MigrationId=$_;ProductVersion='MOCK_VERSION'}});
++        configurationIds=@($source.configurationIds);system=@(@{Id=$source.systemConfigurationId;AutoStart=$true;AutoUpdateSchema=$true;ReadConsoleInput=$false});admin=$admin}
++}
++Check 'independent restored target accepted before schema creation' {Assert-MuAdminTarget (New-State) (New-Snapshot) $source}
++foreach ($key in @('database','sessionUser','currentUser','directory','encoding','locale','ctype')) {
++    Check ('wrong target rejected: '+$key) {
++        $s=New-Snapshot;$s[$key]=if ($key -ceq 'directory') {'/mock/other-cluster'} else {'wrong'}
++        Reject {Assert-MuAdminTarget (New-State) $s $source} 'ADMIN_TARGET_MISMATCH'
++    }
++}
++foreach ($value in @($false,'true')) {
++    Check ('existing or malformed schema state rejected: '+$value) {
++        $s=New-Snapshot;$s.adminAbsent=$value;Reject {Assert-MuAdminTarget (New-State) $s $source} 'ADMIN_SCHEMA_STATE_MISMATCH'
++    }
++}
++Check 'runtime admin authority rejected' {
++    $s=New-Snapshot;$s.currentUser='mu_admin';$s.sessionUser='mu_admin'
++    Reject {Assert-MuAdminTarget (New-State) $s $source} 'ADMIN_TARGET_MISMATCH'
++}
++Check 'partial game history rejected' {$s=New-Snapshot;$s.game=$s.game[1..62];Reject {Assert-MuAdminTarget (New-State) $s $source} 'UNSAFE_CONFIG'}
++Check 'duplicate game migration rejected' {$s=New-Snapshot;$s.game[1]=$s.game[0];Reject {Assert-MuAdminTarget (New-State) $s $source} 'UNSAFE_CONFIG'}
++Check 'wrong configuration ID rejected' {$s=New-Snapshot;$s.configurationIds=@('00000000-0000-0000-0000-000000000000');Reject {Assert-MuAdminTarget (New-State) $s $source} 'UNSAFE_CONFIG'}
++foreach ($key in @('AutoStart','AutoUpdateSchema','ReadConsoleInput')) {
++    Check ('original flag required: '+$key) {$s=New-Snapshot;$s.system[0][$key]=!$s.system[0][$key];Reject {Assert-MuAdminTarget (New-State) $s $source} 'ADMIN_BASELINE_MISMATCH'}
++}
++Check 'extra system configuration rejected' {$s=New-Snapshot;$s.system+=@($s.system[0]);Reject {Assert-MuAdminTarget (New-State) $s $source} 'ADMIN_BASELINE_MISMATCH'}
++Check 'exact admin postcondition accepted' {Assert-MuAdminProvisioningResult (New-Snapshot) (New-Snapshot $true) $contract}
++Check 'wrong ProductVersion rejected' {$s=New-Snapshot $true;$s.admin[0].ProductVersion='other';Reject {Assert-MuAdminProvisioningResult (New-Snapshot) $s $contract} 'ADMIN_HISTORY_MISMATCH'}
++Check 'partial admin history rejected' {$s=New-Snapshot $true;$s.admin=@($s.admin[0]);Reject {Assert-MuAdminProvisioningResult (New-Snapshot) $s $contract} 'UNSAFE_CONFIG'}
++Check 'game ProductVersion change rejected' {$s=New-Snapshot $true;$s.game[0].ProductVersion='changed';Reject {Assert-MuAdminProvisioningResult (New-Snapshot) $s $contract} 'ADMIN_BASELINE_MISMATCH'}
++# Exercise actual orchestration with only policy authorization and external I/O mocked.
++function Assert-MuSetupGrantPolicy($Policy) { }
++$script:ownerLost=$false;$script:calls=@();$script:failSql=$false;$script:postBad=$false;$script:beforeBad=''
++function Assert-MuSetupPgOwner($State) {$script:calls+='owner';if ($script:ownerLost) {throw 'OWNER_LOST'}}
++function Invoke-MuSetupSql($State,[string]$Sql,[string]$Database='openmu') {
++    Require ($Database -ceq 'openmu')
++    if ($Sql.StartsWith('SELECT pg_catalog.json_build_object')) {
++        $after=$Sql.Contains('FROM admin."__EFMigrationsHistory"')
++        $script:calls+=if ($after) {'after'} else {'before'}
++        $s=New-Snapshot $after
++        if (!$after -and $script:beforeBad) {
++            switch ($script:beforeBad) {
++                'admin' {$s.adminAbsent=$false}
++                'user' {$s.currentUser='mu_admin'}
++                'database' {$s.database='postgres'}
++                'game' {$s.game=$s.game[1..62]}
++            }
++        }
++        if ($after -and $script:postBad) {$s.admin[0].ProductVersion='wrong'}
++        return $s | ConvertTo-Json -Depth 10
++    }
++    Require ($Sql -ceq (Read-MuReviewedAdminSql $State $contract))
++    $script:calls+='sql';if ($script:failSql) {throw 'MOCK_SQL_FAILED'}
++}
++Check 'exact reviewed SQL sent once after target checks before postconditions' {
++    $script:calls=@();Invoke-MuSetupAdminProvisioning (New-State)
++    Require (($script:calls -join ',') -ceq 'owner,before,owner,sql,owner,after')
++}
++Check 'unknown process ownership prevents any database I/O' {
++    $script:calls=@();$script:ownerLost=$true
++    try {Reject {Invoke-MuSetupAdminProvisioning (New-State)} 'OWNER_LOST';Require (($script:calls -join ',') -ceq 'owner')} finally {$script:ownerLost=$false}
++}
++Check 'SQL failure propagates without retries or postcondition queries' {
++    $script:calls=@();$script:failSql=$true
++    try {Reject {Invoke-MuSetupAdminProvisioning (New-State)} 'MOCK_SQL_FAILED';Require (($script:calls -join ',') -ceq 'owner,before,owner,sql')} finally {$script:failSql=$false}
++}
++Check 'postcondition failure propagates without repair or grants' {
++    $script:calls=@();$script:postBad=$true
++    try {Reject {Invoke-MuSetupAdminProvisioning (New-State)} 'ADMIN_HISTORY_MISMATCH';Require (@($script:calls | Where-Object {$_ -ceq 'sql'}).Count -eq 1)} finally {$script:postBad=$false}
++}
++foreach ($case in @(@('admin','ADMIN_SCHEMA_STATE_MISMATCH'),@('user','ADMIN_TARGET_MISMATCH'),@('database','ADMIN_TARGET_MISMATCH'),@('game','UNSAFE_CONFIG'))) {
++    Check ('rejected precondition never submits SQL: '+$case[0]) {
++        $script:calls=@();$script:beforeBad=$case[0]
++        try {
++            Reject {Invoke-MuSetupAdminProvisioning (New-State)} $case[1]
++            Require (($script:calls -join ',') -ceq 'owner,before')
++        } finally {$script:beforeBad=''}
++    }
++}
++Check 'changed candidate bytes prevent even target queries' {
++    $script:calls=@();$script:binaryBad=$true
++    try {Reject {Invoke-MuSetupAdminProvisioning (New-State)} 'HASH_MISMATCH';Require ($script:calls.Count -eq 0)} finally {$script:binaryBad=$false}
++}
++Check 'postcondition history comparison ignores JSON property order' {
++    $s=New-Snapshot $true
++    $s.game=@($s.game | ForEach-Object {[ordered]@{ProductVersion=$_.ProductVersion;MigrationId=$_.MigrationId}})
++    Assert-MuAdminProvisioningResult (New-Snapshot) $s $contract
++}
++Write-Output ('PASS TOTAL '+$script:passed)
+diff --git a/tests/windows11/Test-FirstSetup.ps1 b/tests/windows11/Test-FirstSetup.ps1
+index b2fda6a1..540674cd 100644
+--- a/tests/windows11/Test-FirstSetup.ps1
++++ b/tests/windows11/Test-FirstSetup.ps1
+@@ -137,6 +137,7 @@ function Initialize-MuSetupCluster($State) {Hit $State 'initialize'}
+ function Start-MuSetupCluster($State) {$State.pgStartAttempted=$true;Hit $State 'start';$State.pgOwner=@{pid=42;ticks=1}}
+ function New-MuSetupRolesAndDatabase($State) {Hit $State 'roles'}
+ function Restore-MuSetupSnapshot($State) {Hit $State 'restore'}
++function Invoke-MuSetupAdminProvisioning($State) {Hit $State 'admin-provision'}
+ function Set-MuSetupRuntimeGrants($State) {Hit $State 'grants'}
+ function Set-MuSetupReviewedFlags($State) {Hit $State 'flags'}
+ function Prepare-MuSetupAcceptance($State) {Hit $State 'prepare-acceptance';$State.acceptanceSetup=@{}}
+@@ -146,7 +147,7 @@ function Stop-MuSetupCluster($State) {$script:calls+='stop';if ($script:failStop
+ Check 'simulated complete sequence stays launch-disabled' {
+     $script:calls=@();$script:failAt='';$r=Invoke-MuFirstSetup (New-Request)
+     Require ($r.status -ceq 'DB_PREPARED_LAUNCH_DISABLED');Require (!$r.launchEnabled)
+-    Require (($script:calls -join ',') -ceq 'preflight,private-area,credentials,dump,initialize,start,roles,restore,grants,flags,prepare-acceptance,acceptance,seal,stop')
++    Require (($script:calls -join ',') -ceq 'preflight,private-area,credentials,dump,initialize,start,roles,restore,admin-provision,grants,flags,prepare-acceptance,acceptance,seal,stop')
+ }
+ foreach ($stage in @('preflight','private-area','credentials','dump','initialize')) {
+     Check ('failure before PG start never stops any cluster: '+$stage) {
+@@ -159,7 +160,7 @@ Check 'uncertain failed PG start retained for owner review' {
+     $script:calls=@();$script:failAt='start';$r=Invoke-MuFirstSetup (New-Request)
+     Require ($r.status -ceq 'FAILED_OWNER_REVIEW_REQUIRED');Require ('stop' -notin $script:calls)
+ }
+-foreach ($stage in @('roles','restore','grants','flags','prepare-acceptance','acceptance','seal')) {
++foreach ($stage in @('roles','restore','admin-provision','grants','flags','prepare-acceptance','acceptance','seal')) {
+     Check ('owned setup failure stops owned PG and retains directory: '+$stage) {
+         $script:calls=@();$script:failAt=$stage;$r=Invoke-MuFirstSetup (New-Request)
+         Require ($r.status -ceq 'FAILED_RETAINED');Require ($script:calls[-1] -ceq 'stop');Require (!$r.databaseReady)

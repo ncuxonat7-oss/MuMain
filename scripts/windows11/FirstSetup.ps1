@@ -2,6 +2,7 @@
 # No action happens on import. The pinned unresolved grant policy blocks deployment.
 Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
+. (Join-Path $PSScriptRoot 'AdminProvisioning.ps1')
 
 function Get-MuFirstSetupPolicy {
     $path=Join-Path $PSScriptRoot 'first-setup-policy.json'
@@ -344,6 +345,11 @@ function Stop-MuSetupCluster($State) {
     $State.pgOwner=$null;$State.pgStopped=$true
 }
 
+function Get-MuFirstSetupStages {
+    return @('preflight','private-area','credentials','dump','initialize','start','roles','restore',
+        'admin-provision','grants','flags','prepare-acceptance','acceptance','seal','stop')
+}
+
 function Invoke-MuFirstSetup($Request) {
     $state=@{request=$Request;policy=$null;directory=$null;events=@();journalReady=$false;claim=$null;credentials=$null;
         inventory=$null;pgOwner=$null;pgStartAttempted=$false;pgStopped=$false;acceptanceSetup=$null;status='NOT_STARTED';stage='request'}
@@ -352,7 +358,7 @@ function Invoke-MuFirstSetup($Request) {
         $state.policy=Get-MuFirstSetupPolicy
         # Must stop before filesystem claims, credentials or cluster creation.
         $state.stage='runtime-grants';Assert-MuSetupGrantPolicy $state.policy
-        foreach ($stage in @('preflight','private-area','credentials','dump','initialize','start','roles','restore','grants','flags','prepare-acceptance','acceptance','seal','stop')) {
+        foreach ($stage in (Get-MuFirstSetupStages)) {
             $state.stage=$stage;Write-MuSetupEvent $state $stage 'begin'
             switch ($stage) {
                 'preflight' { Assert-MuSetupHostAndInputs $state }
@@ -363,6 +369,7 @@ function Invoke-MuFirstSetup($Request) {
                 'start' { Start-MuSetupCluster $state }
                 'roles' { New-MuSetupRolesAndDatabase $state }
                 'restore' { Restore-MuSetupSnapshot $state }
+                'admin-provision' { Invoke-MuSetupAdminProvisioning $state }
                 'grants' { Set-MuSetupRuntimeGrants $state }
                 'flags' { Set-MuSetupReviewedFlags $state }
                 'prepare-acceptance' { Prepare-MuSetupAcceptance $state }

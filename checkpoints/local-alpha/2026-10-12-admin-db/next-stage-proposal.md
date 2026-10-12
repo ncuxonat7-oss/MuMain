@@ -1,3 +1,5 @@
+> Superseded as an execution queue: the [disabled admin integration](implementation-report.md) is now implemented and mock-tested. The historical proposal and Windows limits below remain evidence; follow only docs/current-state.md for the next step.
+
 # Single next stage: integrate admin provisioning into disabled first setup
 
 Prepared only; not executed by this checkpoint. Route: CODEX PREFERRED, localized installer change. Proposed cap: 30 active minutes, one executor, source and mock-only tests. Keep complete Entity/Typed closure and Windows readiness explicitly unproven.

@@ -1,0 +1,57 @@
+PASS pinned real policy remains blocked
+PASS real entry stops before any filesystem credential or utility stage
+PASS status-only grant approval cannot enable incomplete grant implementation
+PASS source binary validation gate: PASSED,PATCH_REVIEW_ONLY,True
+PASS source binary validation gate: PASSED,REVIEWED,False
+PASS source binary validation gate: PASSED,REVIEWED,true
+PASS source binary validation gate: NOT_RUN,REVIEWED,True
+PASS external admin schema mode explicitly accepted
+PASS invalid admin mode rejected: 
+PASS invalid admin mode rejected: <AdminSchemaManagement>RuntimeMigrations</AdminSchemaManagement>
+PASS invalid admin mode rejected: <AdminSchemaManagement>externallyprovisioned</AdminSchemaManagement>
+PASS invalid admin mode rejected: <AdminSchemaManagement>ExternallyProvisioned</AdminSchemaManagement><AdminSchemaManagement>ExternallyProvisioned</AdminSchemaManagement>
+PASS invalid admin mode rejected: <AdminSchemaManagement xmlns="wrong">ExternallyProvisioned</AdminSchemaManagement>
+PASS other connection legacy shape remains accepted
+PASS admin mode cannot be applied to unrelated context
+PASS explicit approval required: confirmNewDatabase
+PASS explicit approval required: confirmCredentialHandling
+PASS explicit approval required: applyReviewedFlags
+PASS string approval is not a boolean approval
+PASS unsafe dedicated destination rejected: ../existing
+PASS unsafe dedicated destination rejected: database/../existing
+PASS unsafe dedicated destination rejected: server
+PASS unsafe dedicated destination rejected: database/setup-X
+PASS unsafe dedicated destination rejected: database/setup-test/cluster
+PASS unsafe dedicated destination rejected: database/setup-
+PASS relative input paths rejected
+PASS unexpected request field rejected
+PASS source snapshot and SQL_ASCII identity retained
+PASS sanitized journal has only fixed fields
+PASS raw error cannot be used as journal stage
+PASS journal has bounded event count
+PASS flag transaction changes exactly reviewed columns and checks other fields
+PASS known grant subset never gives owner or schema CREATE to runtime
+PASS restore targets only fixed database with no overwrite or owner restore
+PASS restore refuses unknown process ownership
+PASS initdb command uses SCRAM and preserved encoding without trust
+PASS role passwords travel only through stdin and never arguments
+PASS simulated complete sequence stays launch-disabled
+PASS failure before PG start never stops any cluster: preflight
+PASS failure before PG start never stops any cluster: private-area
+PASS failure before PG start never stops any cluster: credentials
+PASS failure before PG start never stops any cluster: dump
+PASS failure before PG start never stops any cluster: initialize
+PASS uncertain failed PG start retained for owner review
+PASS owned setup failure stops owned PG and retains directory: roles
+PASS owned setup failure stops owned PG and retains directory: restore
+PASS owned setup failure stops owned PG and retains directory: admin-provision
+PASS owned setup failure stops owned PG and retains directory: grants
+PASS owned setup failure stops owned PG and retains directory: flags
+PASS owned setup failure stops owned PG and retains directory: prepare-acceptance
+PASS owned setup failure stops owned PG and retains directory: acceptance
+PASS owned setup failure stops owned PG and retains directory: seal
+PASS ownership lost during cleanup retains for owner review
+PASS sealed statement-log suppression accepted by exact launcher allowlist
+PASS statement logging cannot be enabled through added config keys
+PASS error statement logging cannot be enabled through added config keys
+PASS TOTAL 56

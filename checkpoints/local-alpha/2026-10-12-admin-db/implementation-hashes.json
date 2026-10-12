@@ -1,0 +1,64 @@
+{
+  "validation": "PowerShell mocks only; PostgreSQL and migrations NOT RUN",
+  "tests": {
+    "AdminProvisioning": 49,
+    "FirstSetup": 56
+  },
+  "files": [
+    {
+      "path": "scripts/windows11/FirstSetup.ps1",
+      "bytes": 24880,
+      "sha256": "9fb765e0dda6bdbd204573442c6332cc9e91e73dbc158dc9664a0f2a1005331f"
+    },
+    {
+      "path": "scripts/windows11/AdminProvisioning.ps1",
+      "bytes": 6822,
+      "sha256": "1f4a83726d3034c9e145dce2ffaf03ae9ba634fea05a5cd37f826e1222e0c2b2"
+    },
+    {
+      "path": "scripts/windows11/admin-provisioning-contract.json",
+      "bytes": 575,
+      "sha256": "a6c0fafc5672975d4f5faf2dc0ee86b0cb3bf4e88c5f5f203ce17e85c81e73f2"
+    },
+    {
+      "path": "scripts/windows11/admin-provisioning.original.sql",
+      "bytes": 2090,
+      "sha256": "b2c66b33e363c0c5b3b3d33698c46657699e8529bb8aad9878cefd4fee953067"
+    },
+    {
+      "path": "scripts/windows11/admin-provisioning.sql",
+      "bytes": 2087,
+      "sha256": "5e3f625b6c6b0a56596e36763df592fa1fb11a1b000d6a386e3c7e2ed95d62dd"
+    },
+    {
+      "path": "tests/windows11/Test-AdminProvisioning.ps1",
+      "bytes": 11772,
+      "sha256": "b75f26a84114611d9bf189e59c7aa21bb9bfbcc9509d9be2e0d6232e46ead91a"
+    },
+    {
+      "path": "tests/windows11/Test-FirstSetup.ps1",
+      "bytes": 14360,
+      "sha256": "07b71f01da8982c5f42d951b8f334e9c3ecbb183e9de8b33a0d4dba185b397e8"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/implementation.diff",
+      "bytes": 29801,
+      "sha256": "dc5dd45df4bc60d55f6dc99f78553ba89c710eb481c5329954254e5a8a67ba8e"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/implementation-report.md",
+      "bytes": 5574,
+      "sha256": "1301d3d9d5ba01be4b6866191f90062785b748269f6f4968dcc4eacf3108362b"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/evidence/test-admin-setup-adminprovisioning.txt",
+      "bytes": 2416,
+      "sha256": "9e8471139c2f8d097f0c09d2d37b8198aab2e62fa4c60ee26df0b393e58f70fd"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/evidence/test-admin-setup-firstsetup.txt",
+      "bytes": 3654,
+      "sha256": "90fb5978215ed9f7bf5cb0ba19a37825d1bf17d209f301e100f607bfc5b3ddb6"
+    }
+  ]
+}

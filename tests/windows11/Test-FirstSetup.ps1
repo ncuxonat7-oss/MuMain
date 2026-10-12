@@ -137,6 +137,7 @@ function Initialize-MuSetupCluster($State) {Hit $State 'initialize'}
 function Start-MuSetupCluster($State) {$State.pgStartAttempted=$true;Hit $State 'start';$State.pgOwner=@{pid=42;ticks=1}}
 function New-MuSetupRolesAndDatabase($State) {Hit $State 'roles'}
 function Restore-MuSetupSnapshot($State) {Hit $State 'restore'}
+function Invoke-MuSetupAdminProvisioning($State) {Hit $State 'admin-provision'}
 function Set-MuSetupRuntimeGrants($State) {Hit $State 'grants'}
 function Set-MuSetupReviewedFlags($State) {Hit $State 'flags'}
 function Prepare-MuSetupAcceptance($State) {Hit $State 'prepare-acceptance';$State.acceptanceSetup=@{}}
@@ -146,7 +147,7 @@ function Stop-MuSetupCluster($State) {$script:calls+='stop';if ($script:failStop
 Check 'simulated complete sequence stays launch-disabled' {
     $script:calls=@();$script:failAt='';$r=Invoke-MuFirstSetup (New-Request)
     Require ($r.status -ceq 'DB_PREPARED_LAUNCH_DISABLED');Require (!$r.launchEnabled)
-    Require (($script:calls -join ',') -ceq 'preflight,private-area,credentials,dump,initialize,start,roles,restore,grants,flags,prepare-acceptance,acceptance,seal,stop')
+    Require (($script:calls -join ',') -ceq 'preflight,private-area,credentials,dump,initialize,start,roles,restore,admin-provision,grants,flags,prepare-acceptance,acceptance,seal,stop')
 }
 foreach ($stage in @('preflight','private-area','credentials','dump','initialize')) {
     Check ('failure before PG start never stops any cluster: '+$stage) {
@@ -159,7 +160,7 @@ Check 'uncertain failed PG start retained for owner review' {
     $script:calls=@();$script:failAt='start';$r=Invoke-MuFirstSetup (New-Request)
     Require ($r.status -ceq 'FAILED_OWNER_REVIEW_REQUIRED');Require ('stop' -notin $script:calls)
 }
-foreach ($stage in @('roles','restore','grants','flags','prepare-acceptance','acceptance','seal')) {
+foreach ($stage in @('roles','restore','admin-provision','grants','flags','prepare-acceptance','acceptance','seal')) {
     Check ('owned setup failure stops owned PG and retains directory: '+$stage) {
         $script:calls=@();$script:failAt=$stage;$r=Invoke-MuFirstSetup (New-Request)
         Require ($r.status -ceq 'FAILED_RETAINED');Require ($script:calls[-1] -ceq 'stop');Require (!$r.databaseReady)

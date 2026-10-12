@@ -1,0 +1,29 @@
+# Disabled first-setup admin provisioning integration
+
+Continuation of owner-approved overnight scope, based on checkpoint `0ab3c24e5a47bbf4ff10b3185fa1e17ab4e87467`. **Source integration and mock tests PASS; deployment remains blocked.** No PostgreSQL process, database operation, migration, binary build, installation, credential creation or Windows/game launch occurred in this stage.
+
+The restored baseline lacked admin schema/history, but FirstSetup previously advanced directly from restore to grants. The new `admin-provision` operation now sits between those stages. `AdminProvisioning.ps1` checks the real pinned grant policy first; an actual invocation still stops before filesystem claims, credentials or cluster initialization. `Set-MuSetupRuntimeGrants` retains its separate unconditional `RUNTIME_GRANTS_UNRESOLVED` fence. Policy, launcher contract, SetupMU entry and existing database/launch guards are byte-identical to the preceding checkpoint; launchEnabled=false and approvedLaunchManifestSha256=null remain.
+
+## Exact inputs and checks
+
+The small admin contract contains only facts from the completed diagnostic: Persistence SHA256 f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014, the two exact admin IDs, EF-generated ProductVersion10.0.2, and original/execution SQL hashes. Its own SHA256 is pinned in the loader. No new runtime/source alignment or release approval is inferred. Existing independent source-contract IDs remain the expected game/admin history, rather than deriving expectations from the target DB.
+
+Both SQL files are exact copies of saved reviewed evidence. The original EF output remains byte-for-byte intact; the execution copy equals it with exactly three BOM bytes removed. Hash, byte comparison and strict UTF-8 decoding precede SQL submission. No SQL regeneration, migration rewrite or runtime grant was introduced.
+
+The operation requires the admin-provision stage, a started owned cluster, exactly one matching Persistence inventory entry, matching actual DLL bytes and baseline dump hash. Before SQL it checks owned process identity and a read-only target snapshot: fixed openmu database, both session/current user mu_setup, owned data directory, SQL_ASCII/C/C, absent admin schema, exact game migration/config IDs and original flags. Runtime mu_admin, unexpected existing/partial admin schema, wrong database/binary/flags or missing inputs stop the operation. After the exact SQL submission it rechecks ownership/target, both admin IDs/ProductVersion and unchanged game history/flags. It neither repairs mismatches nor retries SQL. The official script retains its original transaction boundaries; a later failure can leave earlier committed admin objects. The failed copy is retained, and its existing admin schema prevents automatic re-entry. Exceptions reach existing sanitized failure journaling and owned-stop handling. No schema lock, new authorization mechanism or generalized installer architecture was added.
+
+The Windows utility/ACL implementation and the new read-only target query have NOT been executed against PostgreSQL in this stage. Mock acceptance is not SQL/Windows acceptance. The existing disabled later flag stage was not altered or authorized; original-flag preservation applies to this admin operation. Package inventory and packager pins remain unintegrated and were not refreshed.
+
+## Actual targeted validation
+
+- `Test-AdminProvisioning.ps1`: **49/49 PASS**, real contract/SQL file checks plus mocked external binary/DB/process I/O. Includes wrong target, runtime authority, existing admin schema, missing/duplicate histories, wrong ProductVersion, binary changes, exact SQL once-only submission, no SQL after rejected preconditions, and propagated failures without repairs.
+- `Test-FirstSetup.ps1`: **56/56 PASS**, existing relevant suite updated for the new stage order and admin-stage failure/cleanup. Real pinned entry and unconditional grant fence tested before simulated authorization. All mutation stages mocked; no credential inputs or PostgreSQL utilities run.
+- Reviewed SQL byte identity, unchanged policy/launch/guard bytes and `git diff --check`: PASS.
+
+Actual output is saved under evidence/test-admin-setup-*.txt; exact source/output hashes are in implementation-hashes.json. `implementation.diff` contains the focused source/test change, including new files. These results do not repeat the successful live database diagnostics or C# builds.
+
+Initial PowerShell startup failed before tests because its default cache directory was read-only. The existing setup guidance was then followed using new writable XDG cache/config/data and DOTNET_CLI_HOME directories; no installation or permission expansion was needed. Final commands used existing PowerShell7.4.20 with `-NoLogo -NoProfile -NonInteractive -File`, a 60-second per-suite bound, telemetry off and ASP.NET certificate generation disabled.
+
+## Single next unfinished stage
+
+Prepare a separately scoped, source-and-metadata-only proof of the startup `GameConfiguration` read closure for EntityDataContext and its TypedContext navigation paths, using the existing observed lower-bound report. Success means an exact read-only table/column dependency list with pinned query/model provenance, or a precise unresolved boundary; the 119-table model inventory must not become a blanket grant allowlist. Do not enable setup, expand write grants, start PostgreSQL/Windows/game, or claim full Entity/Typed closure from that one read-path result. This next investigation was not performed or implicitly authorized here.

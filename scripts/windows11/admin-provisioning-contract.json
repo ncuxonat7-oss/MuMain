@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "context": "MUnique.OpenMU.Persistence.EntityFramework.AdminAuth.AdminPanelContext",
+  "persistenceSha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+  "productVersion": "10.0.2",
+  "migrationIds": [
+    "20260824171349_InitialAdminPanelUsers",
+    "20260829110159_AddApiKeys"
+  ],
+  "originalSqlSha256": "b2c66b33e363c0c5b3b3d33698c46657699e8529bb8aad9878cefd4fee953067",
+  "executionSqlSha256": "5e3f625b6c6b0a56596e36763df592fa1fb11a1b000d6a386e3c7e2ed95d62dd",
+  "evidenceCommit": "0ab3c24e5a47bbf4ff10b3185fa1e17ab4e87467"
+}

@@ -31,6 +31,7 @@ Windows 11 подтверждён. Владелец 2026-10-10 21:14 UTC одо�
 ## Начальный индекс существующих доказательств
 
 ### STACK-01 — состав и версии
+- Уточнение 2026-10-12: прежние runtime-идентичности ниже не описывают новый непакетированный кандидат. [C# evidence](../checkpoints/local-alpha/2026-10-11-csharp/README.md), [admin DB proof](../checkpoints/local-alpha/2026-10-12-admin-db/README.md) и [disabled setup integration](../checkpoints/local-alpha/2026-10-12-admin-db/implementation-report.md) разделены. Новая интеграция проверена только mock-тестами; package alignment, полные Entity/Typed права и Windows readiness остаются непроверенными. Игровые ALPHA-NAV записи не изменены.
 - Клиент: artifact 11567737809, run 37813650810, source 8d18a2b; это готовый бинарник, не новая сборка текущей docs/test ветки.
 - Data: data-4b0ab29c58b27fc4; overlay: patches/client-socket-metadata.json и scripts/apply-client-overlay.py.
 - OpenMU: d067b3c11c23c3145de6e2c76201ab9a93b267c8 плюс Money patch; patched runtime artifact 11630698202, run 37959672391. Старый unpatched cache не заменяет этот runtime.
