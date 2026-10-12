@@ -6,7 +6,9 @@ Owner authorized this separate checkpoint branch at 02:36 UTC and renewed at 02:
 
 The disabled first-setup admin operation is now integrated and mock-validated: **49 admin checks + 56 setup checks PASS**. See the [implementation report](../checkpoints/local-alpha/2026-10-12-admin-db/implementation-report.md). The real policy and grant-setter fences remain, and no database or Windows action ran.
 
-**Single next step:** a separately scoped source/metadata proof of the startup GameConfiguration read closure and its TypedContext navigation paths. Produce a pinned read-only dependency list or precise unresolved boundary; do not broaden grants or claim full closure. This investigation is prepared only, outside the completed admin integration stage.
+Startup read analysis is **PARTIAL, static only**: [report and exact column list](../checkpoints/local-alpha/2026-10-12-admin-db/startup-read-report.md) prove the pinned-model root/21 first-hop minimum and distinguish the two Typed scalar roots. Generated/compiled navigation parity and recursive closure remain unproven. No DB, test, build or permission change occurred.
+
+**Single next step:** obtain the existing candidate's pinned navigation-only metadata export for GameConfiguration's reachable graph and the two startup Typed models. Required fields and the separate-approval boundary if no saved export exists are in the report. Do not infer grants from all model tables or enable setup.
 
 ## Earlier checkpoint instructions — superseded
 

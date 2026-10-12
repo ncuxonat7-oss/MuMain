@@ -1,0 +1,188 @@
+{
+  "sourcePin": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "method": "read-only source at immutable pin and saved metadata/schema; no assembly loading, SQL, tests or build",
+  "sources": [
+    {
+      "path": "src/Persistence/EntityFramework/PersistenceContextProvider.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "42f42e3ef00f2fe3741d92bf8ee0c2ca8e0dae87",
+      "sha256": "1082a1758b3c4491e15b5d296232ca8135305dad2075b690209ad3aa6c082608",
+      "bytes": 10682,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/PersistenceContextProvider.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/EntityFrameworkContextBase.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "9ad677ddefcf426389e6be8e2de0853d2bc019ae",
+      "sha256": "f8e31e0c51be097235f4bf7dae3c29070c2621c3f67c976c6fb2a8989e60f7e6",
+      "bytes": 20990,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/EntityFrameworkContextBase.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/GenericRepository.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "f3bfeb2ca6c0c6b379cab24bc4c53a39b8a9b802",
+      "sha256": "387d4777e012416a95e997e70a3c60556ffe11dbfa82dc3473cae7373da26cbe",
+      "bytes": 2093,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/GenericRepository.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/GenericRepositoryBase.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "cc97af90ab1a91b3aad9959bd99a41952ed49507",
+      "sha256": "21b1977b5afe17e61d46338d4ee4a555aa5e753206457e1818ae8be66d5962c8",
+      "bytes": 13891,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/GenericRepositoryBase.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/RepositoryProvider.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "1cc3e01d93a2c0859e8942eba66b0120e45c04a1",
+      "sha256": "52c6652ba920f940d4d488c35577a9b84a44978062090b76d6274e5a1842ed37",
+      "bytes": 4015,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/RepositoryProvider.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/GameConfigurationRepository.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "3d45474a8b7c844b359761d529b4e74d2827ba53",
+      "sha256": "15d26b999ba232dd564ba687b561ef0791b032e706f15b1b92be20778c3e847f",
+      "bytes": 3680,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/GameConfigurationRepository.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/Json/GameConfigurationJsonObjectLoader.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "144048db5d77214835f91762ebfa5ca6cb60c391",
+      "sha256": "7440c208de9cedeec4ea23705ca926f690c1138adf37ad48908963539e7570a8",
+      "bytes": 855,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/Json/GameConfigurationJsonObjectLoader.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/Json/JsonObjectLoader.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "f4eb2b80357240c81b677eaf862fdfbb91b3ee31",
+      "sha256": "0ab12d3a614df00253295a41a36fd27a16af2a93d6744af0f90688d82571d6ac",
+      "bytes": 6812,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/Json/JsonObjectLoader.cs"
+    },
+    {
+      "path": "src/Startup/Program.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "6100b973211af3cc67546ec5f64b8a7686db982b",
+      "sha256": "425aa92b842928e1b898fe7e0a38de1f1f53e0b55b62186028a2b1986bf931af",
+      "bytes": 34271,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Startup/Program.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.Designer.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "6998fddb12645ba0a3e44340a6c75049c5fbad16",
+      "sha256": "a34f9378b5fd46df5388b2e70b547022f78ab8b666d1749a4b16ad2a7672349c",
+      "bytes": 245731,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.Designer.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/TypedContext.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "72bf17534a42f6ee719758fe0de32da463d1461e",
+      "sha256": "6297b211005139c60c12ca904c3db783b4185ccb2f62cc93cfd4ea39620ea1fa",
+      "bytes": 14041,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/TypedContext.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/Json/GameConfigurationJsonQueryBuilder.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "33eb6dfc79228ae32e5bbda9bb434f225f697556",
+      "sha256": "eb6560b63205a4bbb64f0a0ee353de1a3d4c290326fe88af5663eccbf7c0d2a1",
+      "bytes": 1142,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/Json/GameConfigurationJsonQueryBuilder.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/Json/JsonQueryBuilder.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "531275190bce67ca417fc64ea5d2303aa701c679",
+      "sha256": "b66e777e3189074cde066febd2e4350b68e752a2f8a62fda36986e7be465dad5",
+      "bytes": 11243,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/Json/JsonQueryBuilder.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/EntityDataContext.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "992bad64348b177830a69b07e72469e05f193551",
+      "sha256": "355ec1d7ee598abdc13140dd2d69c22b4e35ba40354badc6e8117dd8e2bb762b",
+      "bytes": 7270,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/EntityDataContext.cs"
+    },
+    {
+      "path": "src/Persistence/EntityFramework/NonCachingRepositoryProvider.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "1da19d03ae71b349469a51057572bc3696299049",
+      "sha256": "102b4337ef34addf697d96e6fd64bd5162e99d2e96d4a8bda850340e9bcfd59f",
+      "bytes": 2529,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/NonCachingRepositoryProvider.cs"
+    },
+    {
+      "path": "src/DataModel/Configuration/GameConfiguration.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "268a4f9c48b920b7578a555832c44c34086e8b79",
+      "sha256": "d4716574b98c69173fd01d6d4401819e8dabfeca2651f870ee34d8b6524fa8f2",
+      "bytes": 13124,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Configuration/GameConfiguration.cs"
+    },
+    {
+      "path": "src/DataModel/Configuration/SystemConfiguration.cs",
+      "commit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+      "gitBlob": "d855d8ec879062b511ec28b9d63b70f0ec6f28d7",
+      "sha256": "8aa788977b8f89a11efbd6009253baeb357064453eb4dc9809fad544950cfd63",
+      "bytes": 6776,
+      "url": "https://github.com/MUnique/OpenMU/blob/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Configuration/SystemConfiguration.cs"
+    }
+  ],
+  "savedEvidence": [
+    {
+      "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/entity-typed-grants-report.md",
+      "commit": "79bdc39d7560cb83c467de7fb3b1172834cea8fb",
+      "sha256": "a23bf2a543f776828f4f91525f15b38bb3aee82c5516ee9c5b3884e7082be9f2"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/entity-typed-observed-contract.json",
+      "commit": "79bdc39d7560cb83c467de7fb3b1172834cea8fb",
+      "sha256": "27a11d9f840f0297febf3ae7dac7ed1add38ddbcc936612f766c2921931b283d"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/compiled-migration-metadata.json",
+      "commit": "79bdc39d7560cb83c467de7fb3b1172834cea8fb",
+      "sha256": "985333d8ca70c8118936d48fcb77edd87d128ee7cbbcee9ada9128f9a2f5cb12"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/compiled-migration-comparison.json",
+      "commit": "79bdc39d7560cb83c467de7fb3b1172834cea8fb",
+      "sha256": "236d04fb2f77c522617f30fe4025cfd70fd6c3129af19eb7bc4848af1d5ccbe8"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-11-csharp/evidence/key-binary-identities.json",
+      "commit": "79bdc39d7560cb83c467de7fb3b1172834cea8fb",
+      "sha256": "57919945ea01f87e046bb010f37f25f84239a20c155b1e15a4c4a73702d31ab6"
+    }
+  ],
+  "lookupLimits": [
+    {
+      "paths": [
+        "src/Persistence/EntityFramework/Model/GameConfiguration.cs",
+        "src/Persistence/EntityFramework/Model/PlugInConfiguration.cs",
+        "src/Persistence/EntityFramework/Model/SystemConfiguration.cs"
+      ],
+      "result": "HTTP404 at these exact paths; absence elsewhere not inferred"
+    },
+    {
+      "path": "src/DataModel/PlugIns/PlugInConfiguration.cs",
+      "result": "HTTP404; consumed migration model for scalar mapping, no missing source invented"
+    },
+    {
+      "host": "api.github.com",
+      "path": "repos/MUnique/OpenMU/contents/src/Persistence/EntityFramework/Extensions",
+      "result": "proxy tunnel403 on one directory-discovery request; stopped this route, no retry/network expansion/alternate discovery"
+    }
+  ]
+}

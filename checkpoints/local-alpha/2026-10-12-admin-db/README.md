@@ -20,4 +20,6 @@ The [transfer recovery runbook](library-transfer-runbook.md) records the verifie
 
 The [admin integration implementation](implementation-report.md) is complete with 49/49 admin and 56/56 setup mock checks. The earlier [integration proposal](next-stage-proposal.md) is now historical; its later Windows-route reference remains a limit, not an authorization.
 
-**Single next step:** the source/metadata-only startup GameConfiguration read-closure proof defined in the implementation report. Complete Entity/Typed closure, package alignment and Windows readiness remain unproven.
+The [startup read analysis](startup-read-report.md) is complete as a bounded investigation, with a PARTIAL static contract rather than a full permission list. Root columns, 21 first-hop table/key pairs and two Typed scalar projections are preserved; runtime navigation metadata is the precise remaining gap.
+
+**Single next step:** obtain the pinned candidate navigation metadata specified in that report. No database, permission, build or Windows work is authorized by this next-step note.

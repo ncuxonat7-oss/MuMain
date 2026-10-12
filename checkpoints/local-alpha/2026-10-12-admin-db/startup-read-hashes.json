@@ -1,0 +1,31 @@
+{
+  "status": "PARTIAL_STATIC_ONLY",
+  "noExecutableGrantProfile": true,
+  "files": [
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/startup-read-report.md",
+      "bytes": 9532,
+      "sha256": "b7aa85412102b29741f18f3146d57a7794938c12aef1c2f4e2ce38b651b84646"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/evidence/startup-read-contract.json",
+      "bytes": 26447,
+      "sha256": "f59e9982d5b0f7cbfc885d0a34b8c4c89879eec0987fa4e8188c3833fea0606a"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/evidence/startup-read-provenance.json",
+      "bytes": 10246,
+      "sha256": "151ee565f593e52714244e5a29c29bd20033f2e952a362ab1fec9546af10a01e"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/evidence/derive-read-boundary.py",
+      "bytes": 6718,
+      "sha256": "3a741654aad374a2d3ef3c67223774a8724dd7e93df3971b3959dc0b562876d5"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-admin-db/evidence/derivation-output.txt",
+      "bytes": 1647,
+      "sha256": "f759a71e3184b153430037f4153431c284f3910abb1d580320c9d27d1dc46da7"
+    }
+  ]
+}

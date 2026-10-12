@@ -1,0 +1,828 @@
+{
+  "status": "PARTIAL_STATIC_READ_CONTRACT_NOT_EXECUTABLE",
+  "activationAllowed": false,
+  "permissionListKind": "necessary static lower bound, insufficient for execution; no grant authority",
+  "sourceModelToCandidateQueryParity": "NOT_ESTABLISHED",
+  "sourceCommit": "d067b3c11c23c3145de6e2c76201ab9a93b267c8",
+  "modelSource": "src/Persistence/EntityFramework/Migrations/20261006212931_AddCashShop.Designer.cs",
+  "candidatePersistenceSha256": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+  "compiledNavigationParity": "NOT_ESTABLISHED; saved compiled metadata proves migration IDs/contexts only",
+  "entityJsonRoot": {
+    "table": "config.GameConfiguration",
+    "mappedColumns": [
+      "Id",
+      "AreaSkillHitsPlayer",
+      "CashShopConfigurationId",
+      "CastleSiegeConfigurationId",
+      "CharacterNameRegex",
+      "ClampMoneyOnPickup",
+      "DamagePerOneItemDurability",
+      "DamagePerOnePetDurability",
+      "DuelConfigurationId",
+      "ExcellentItemDropLevelDelta",
+      "ExperienceFormula",
+      "ExperienceRate",
+      "HitsPerOneItemDurability",
+      "InfoRange",
+      "ItemDropDuration",
+      "LetterSendPrice",
+      "MasterExperienceFormula",
+      "MasterExperienceRate",
+      "MaximumCharactersPerAccount",
+      "MaximumInventoryMoney",
+      "MaximumItemOptionLevelDrop",
+      "MaximumLetters",
+      "MaximumLevel",
+      "MaximumMasterLevel",
+      "MaximumPartySize",
+      "MaximumPasswordLength",
+      "MaximumVaultMoney",
+      "MinimumMonsterLevelForMasterExperience",
+      "PreventExperienceOverflow",
+      "RecoveryInterval",
+      "ShouldDropMoney"
+    ],
+    "primaryKey": [
+      "Id"
+    ],
+    "modelLines": [
+      1648,
+      1764
+    ],
+    "projection": "alias.*; all physical columns of this pinned baseline table",
+    "condition": "Program.CreateMissingPlugInConfigurations only after missing known plugins; other data-source invocations not promoted to Entity-role evidence"
+  },
+  "entityFirstHopCollections": [
+    {
+      "navigation": "RawAttributes",
+      "table": "config.AttributeDefinition",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "Description",
+        "Designation",
+        "GameConfigurationId",
+        "MaximumValue"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        4240,
+        4246
+      ],
+      "columnDefinitionLines": [
+        205,
+        228
+      ]
+    },
+    {
+      "navigation": "RawGlobalAttributeCombinations",
+      "table": "config.AttributeRelationship",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "AggregateType",
+        "CharacterClassId",
+        "GameConfigurationId",
+        "InputAttributeId",
+        "InputOperand",
+        "InputOperator",
+        "OperandAttributeId",
+        "PowerUpDefinitionValueId",
+        "SkillId",
+        "TargetAttributeId"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        4248,
+        4287
+      ],
+      "columnDefinitionLines": [
+        230,
+        283
+      ]
+    },
+    {
+      "navigation": "RawCharacterClasses",
+      "table": "config.CharacterClass",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "CanGetCreated",
+        "ComboDefinitionId",
+        "CreationAllowedFlag",
+        "FruitCalculation",
+        "GameConfigurationId",
+        "HomeMapId",
+        "IsMasterClass",
+        "LevelRequirementByCreation",
+        "LevelWarpRequirementReductionPercent",
+        "Name",
+        "NextGenerationClassId",
+        "Number"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        4595,
+        4620
+      ],
+      "columnDefinitionLines": [
+        1075,
+        1130
+      ]
+    },
+    {
+      "navigation": "RawGlobalBaseAttributeValues",
+      "table": "config.ConstValueAttribute",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "AggregateType",
+        "CharacterClassId",
+        "DefinitionId",
+        "GameConfigurationId",
+        "Value"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        4698,
+        4719
+      ],
+      "columnDefinitionLines": [
+        1371,
+        1401
+      ]
+    },
+    {
+      "navigation": "RawDropItemGroups",
+      "table": "config.DropItemGroup",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "Chance",
+        "Description",
+        "GameConfigurationId",
+        "ItemLevel",
+        "ItemType",
+        "MaximumMonsterLevel",
+        "MinimumMonsterLevel",
+        "MonsterId"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        4721,
+        4733
+      ],
+      "columnDefinitionLines": [
+        1403,
+        1441
+      ]
+    },
+    {
+      "navigation": "RawMaps",
+      "table": "config.GameMapDefinition",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "BattleZoneId",
+        "Discriminator",
+        "ExpMultiplier",
+        "GameConfigurationId",
+        "Name",
+        "Number",
+        "SafezoneMapId",
+        "TerrainData"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        4837,
+        4856
+      ],
+      "columnDefinitionLines": [
+        1766,
+        1807
+      ]
+    },
+    {
+      "navigation": "RawItems",
+      "table": "config.ItemDefinition",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "ConsumeEffectId",
+        "DropLevel",
+        "DropsFromMonsters",
+        "Durability",
+        "GameConfigurationId",
+        "Group",
+        "Height",
+        "IsAmmunition",
+        "IsBoundToCharacter",
+        "IsDroppable",
+        "IsPersonalStoreSellable",
+        "IsQuestItem",
+        "IsRepairable",
+        "IsSellableToNpc",
+        "IsStorable",
+        "IsTradable",
+        "ItemSlotId",
+        "MaximumDropLevel",
+        "MaximumItemLevel",
+        "MaximumSockets",
+        "Name",
+        "Number",
+        "PetExperienceFormula",
+        "SkillId",
+        "StorageLimitPerCharacter",
+        "Value",
+        "Width"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5146,
+        5170
+      ],
+      "columnDefinitionLines": [
+        2332,
+        2431
+      ]
+    },
+    {
+      "navigation": "RawItemLevelBonusTables",
+      "table": "config.ItemLevelBonusTable",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "Name"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5281,
+        5287
+      ],
+      "columnDefinitionLines": [
+        2566,
+        2588
+      ]
+    },
+    {
+      "navigation": "RawItemOptionCombinationBonuses",
+      "table": "config.ItemOptionCombinationBonus",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "AppliesMultipleTimes",
+        "BonusId",
+        "Description",
+        "GameConfigurationId",
+        "Number"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5327,
+        5340
+      ],
+      "columnDefinitionLines": [
+        2647,
+        2677
+      ]
+    },
+    {
+      "navigation": "RawItemOptions",
+      "table": "config.ItemOptionDefinition",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "AddChance",
+        "AddsRandomly",
+        "GameConfigurationId",
+        "MaximumOptionsPerItem",
+        "Name"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5342,
+        5348
+      ],
+      "columnDefinitionLines": [
+        2679,
+        2706
+      ]
+    },
+    {
+      "navigation": "RawItemOptionTypes",
+      "table": "config.ItemOptionType",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "IsVisible",
+        "Name"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5379,
+        5385
+      ],
+      "columnDefinitionLines": [
+        2763,
+        2788
+      ]
+    },
+    {
+      "navigation": "RawItemSetGroups",
+      "table": "config.ItemSetGroup",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "AlwaysApplies",
+        "CountDistinct",
+        "GameConfigurationId",
+        "MinimumItemCount",
+        "Name",
+        "OptionsId",
+        "SetLevel"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5387,
+        5399
+      ],
+      "columnDefinitionLines": [
+        2790,
+        2825
+      ]
+    },
+    {
+      "navigation": "RawItemSlotTypes",
+      "table": "config.ItemSlotType",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "ItemSlots"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5401,
+        5407
+      ],
+      "columnDefinitionLines": [
+        2827,
+        2850
+      ]
+    },
+    {
+      "navigation": "RawJewelMixes",
+      "table": "config.JewelMix",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "GameConfigurationId",
+        "MixedJewelId",
+        "Number",
+        "SingleJewelId"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5409,
+        5427
+      ],
+      "columnDefinitionLines": [
+        2866,
+        2893
+      ]
+    },
+    {
+      "navigation": "RawMagicEffects",
+      "table": "config.MagicEffectDefinition",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "ChanceId",
+        "ChancePvpId",
+        "DurationDependsOnTargetLevel",
+        "DurationId",
+        "DurationPvpId",
+        "GameConfigurationId",
+        "InformObservers",
+        "MonsterTargetLevelDivisor",
+        "Name",
+        "Number",
+        "PlayerTargetLevelDivisor",
+        "SendDuration",
+        "StopByDeath",
+        "SubType"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5464,
+        5498
+      ],
+      "columnDefinitionLines": [
+        2977,
+        3043
+      ]
+    },
+    {
+      "navigation": "RawMasterSkillRoots",
+      "table": "config.MasterSkillRoot",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "GameConfigurationId",
+        "Name"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5540,
+        5546
+      ],
+      "columnDefinitionLines": [
+        3109,
+        3127
+      ]
+    },
+    {
+      "navigation": "RawMiniGameDefinitions",
+      "table": "config.MiniGameDefinition",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "AllowParty",
+        "ArePlayerKillersAllowedToEnter",
+        "Description",
+        "EnterDuration",
+        "EntranceFee",
+        "EntranceId",
+        "ExitDuration",
+        "GameConfigurationId",
+        "GameDuration",
+        "GameLevel",
+        "MapCreationPolicy",
+        "MaximumCharacterLevel",
+        "MaximumPlayerCount",
+        "MaximumSpecialCharacterLevel",
+        "MinimumCharacterLevel",
+        "MinimumSpecialCharacterLevel",
+        "Name",
+        "RequiresMasterClass",
+        "SaveRankingStatistics",
+        "TicketItemId",
+        "TicketItemLevel",
+        "Type"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5569,
+        5587
+      ],
+      "columnDefinitionLines": [
+        3179,
+        3262
+      ]
+    },
+    {
+      "navigation": "RawMonsters",
+      "table": "config.MonsterDefinition",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "AttackDelay",
+        "AttackRange",
+        "AttackSkillId",
+        "Attribute",
+        "Designation",
+        "GameConfigurationId",
+        "IntelligenceTypeName",
+        "MerchantStoreId",
+        "MoveDelay",
+        "MoveRange",
+        "NpcWindow",
+        "Number",
+        "NumberOfMaximumItemDrops",
+        "ObjectKind",
+        "RespawnDelay",
+        "ViewRange"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5656,
+        5675
+      ],
+      "columnDefinitionLines": [
+        3429,
+        3494
+      ]
+    },
+    {
+      "navigation": "RawPlugInConfigurations",
+      "table": "config.PlugInConfiguration",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "CustomConfiguration",
+        "CustomPlugInSource",
+        "ExternalAssemblyName",
+        "GameConfigurationId",
+        "IsActive",
+        "TypeId"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5712,
+        5718
+      ],
+      "columnDefinitionLines": [
+        3559,
+        3588
+      ]
+    },
+    {
+      "navigation": "RawSkills",
+      "table": "config.Skill",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "AreaSkillSettingsId",
+        "AttackDamage",
+        "DamageType",
+        "ElementalModifierTargetId",
+        "GameConfigurationId",
+        "ImplicitTargetRange",
+        "MagicEffectDefId",
+        "MasterDefinitionId",
+        "MovesTarget",
+        "MovesToTarget",
+        "Name",
+        "Number",
+        "NumberOfHitsPerAttack",
+        "Range",
+        "SkillType",
+        "SkipElementalModifier",
+        "Target",
+        "TargetRestriction"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5852,
+        5884
+      ],
+      "columnDefinitionLines": [
+        3906,
+        3982
+      ]
+    },
+    {
+      "navigation": "RawWarpList",
+      "table": "config.WarpInfo",
+      "provenMinimumColumns": [
+        "GameConfigurationId",
+        "Id"
+      ],
+      "ifAggregateColumns": [
+        "Id",
+        "Costs",
+        "GameConfigurationId",
+        "GateId",
+        "Index",
+        "LevelRequirement",
+        "Name"
+      ],
+      "scope": "mandatory first-hop table and key-column read once JSON GameConfiguration query is issued; aggregate flag determines full-row projection and recursion",
+      "aggregateProjectionStatus": "conditional on generated navigation IsMemberOfAggregate; base property is annotated but generated navigation bridge not established",
+      "relationshipLines": [
+        5966,
+        5978
+      ],
+      "columnDefinitionLines": [
+        4168,
+        4200
+      ]
+    }
+  ],
+  "entityFirstHopReferences": [
+    {
+      "navigation": "RawCashShopConfiguration",
+      "targetTable": "config.CashShopConfiguration",
+      "parentForeignKeyColumn": "CashShopConfigurationId",
+      "targetMappedColumns": [
+        "Id",
+        "BannerSaleZone",
+        "BannerYear",
+        "BannerYearId",
+        "ScriptSaleZone",
+        "ScriptYear",
+        "ScriptYearId"
+      ],
+      "condition": "no target table read for shadow FK, inverse or nonaggregate reference; full row and recursion only for real aggregate FK without collection back-reference",
+      "relationshipLines": [
+        4813,
+        4835
+      ]
+    },
+    {
+      "navigation": "RawCastleSiegeConfiguration",
+      "targetTable": "config.CastleSiegeConfiguration",
+      "parentForeignKeyColumn": "CastleSiegeConfigurationId",
+      "targetMappedColumns": [
+        "Id",
+        "AttackRespawnAreaId",
+        "CastleSiegeMapDefinitionId",
+        "CrownHoldTimeSeconds",
+        "DefenseRespawnAreaId",
+        "Enabled",
+        "GateBuyPrice",
+        "GateRepairCostPerHealthPoint",
+        "GuildScoreCastleSiege",
+        "GuildScoreCastleSiegeMembers",
+        "LandOfTrialsMapDefinitionId",
+        "MaxAttackingGuilds",
+        "ParticipantRewardMinSeconds",
+        "RegisterMinLevel",
+        "RegisterMinMembers",
+        "RepairCostPerUpgradeLevel",
+        "RewardItemDefinitionId",
+        "SignOfLordItemDefinitionId",
+        "SignOfLordItemLevel",
+        "StatueBuyPrice",
+        "StatueRepairCostPerHealthPoint"
+      ],
+      "condition": "no target table read for shadow FK, inverse or nonaggregate reference; full row and recursion only for real aggregate FK without collection back-reference",
+      "relationshipLines": [
+        4813,
+        4835
+      ]
+    },
+    {
+      "navigation": "RawDuelConfiguration",
+      "targetTable": "config.DuelConfiguration",
+      "parentForeignKeyColumn": "DuelConfigurationId",
+      "targetMappedColumns": [
+        "Id",
+        "EntranceFee",
+        "ExitId",
+        "MaximumScore",
+        "MaximumSpectatorsPerDuelRoom",
+        "MinimumCharacterLevel"
+      ],
+      "condition": "no target table read for shadow FK, inverse or nonaggregate reference; full row and recursion only for real aggregate FK without collection back-reference",
+      "relationshipLines": [
+        4813,
+        4835
+      ]
+    }
+  ],
+  "typedRoots": [
+    {
+      "table": "config.PlugInConfiguration",
+      "mappedColumns": [
+        "Id",
+        "CustomConfiguration",
+        "CustomPlugInSource",
+        "ExternalAssemblyName",
+        "GameConfigurationId",
+        "IsActive",
+        "TypeId"
+      ],
+      "primaryKey": [
+        "Id"
+      ],
+      "modelLines": [
+        3559,
+        3588
+      ],
+      "projection": "Set<T>().ToListAsync materializes all mapped properties",
+      "navigationScope": "pinned migration model has no outgoing navigation; parent collection membership alone is not a query",
+      "compiledTypedModelParity": "NOT_ESTABLISHED"
+    },
+    {
+      "table": "config.SystemConfiguration",
+      "mappedColumns": [
+        "Id",
+        "AutoStart",
+        "AutoUpdateSchema",
+        "IpResolver",
+        "IpResolverParameter",
+        "NetworkAnalyzerLiveBufferSize",
+        "NetworkObservationArchivePath",
+        "NetworkObservationMaxSessionSizeMb",
+        "NetworkObservationMaxTotalSizeMb",
+        "NetworkObservationRetentionDays",
+        "ReadConsoleInput",
+        "TimeZoneId"
+      ],
+      "primaryKey": [
+        "Id"
+      ],
+      "modelLines": [
+        4124,
+        4166
+      ],
+      "projection": "Set<T>().ToListAsync materializes all mapped properties",
+      "navigationScope": "pinned migration model has no outgoing navigation; parent collection membership alone is not a query",
+      "compiledTypedModelParity": "NOT_ESTABLISHED"
+    }
+  ],
+  "unresolved": [
+    "Generated persistent navigation aggregate flags and FK shadow/CLR status for root Raw* properties and reachable descendants; base MemberOfAggregate attributes alone do not certify generated navigation metadata.",
+    "Concrete compiled typed-model projection parity with migration model, including property inclusion and navigation set.",
+    "Recursive aggregate descendants versus reference-only targets, join-column traversal and alias depth cutoff; no blanket table allowlist.",
+    "Conditional plugin custom-reference resolution can load GameConfiguration through a separate data-source path; exact runtime activation/connection attribution not established by this bounded source set."
+  ],
+  "notRun": [
+    "database",
+    "migrations",
+    "grants",
+    "assembly loading",
+    "builds",
+    "tests",
+    "Windows",
+    "workflows",
+    "write closure"
+  ],
+  "savedSchemaSha256": "3f25c763a9206bf8aaa6c8f8133be72aa6d8091140832dc6ea832bb8306b3835"
+}
