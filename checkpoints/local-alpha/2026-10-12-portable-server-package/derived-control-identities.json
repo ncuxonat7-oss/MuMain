@@ -1,0 +1,26 @@
+[
+  {
+    "path": "phase1022-windows-candidate/control-server-candidate-20261012/candidate-integrity.json",
+    "bytes": 104089,
+    "sha256": "69989d8a36df0c8c61e0182a6f35c08f37d85185fa96a81fa8a7cce3e019c1b1",
+    "derivedBy": "included pinned packaging recipe; raw inputs retained locally; payload not public"
+  },
+  {
+    "path": "phase1022-windows-candidate/control-server-candidate-20261012/candidate-status.json",
+    "bytes": 442,
+    "sha256": "f56e67d626d200bbde449ddc41651275f5a2af68290cac644bb8230664113512",
+    "derivedBy": "included pinned packaging recipe; raw inputs retained locally; payload not public"
+  },
+  {
+    "path": "phase1042-portable-publish/control-published-candidate-20261012/candidate-integrity.json",
+    "bytes": 3349569,
+    "sha256": "8905dc32f34c756603c2fe8dc9a70f252d363a2c198a432c30db4c52d1064cc8",
+    "derivedBy": "included pinned packaging recipe; raw inputs retained locally; payload not public"
+  },
+  {
+    "path": "phase1042-portable-publish/control-published-candidate-20261012/candidate-status.json",
+    "bytes": 539,
+    "sha256": "4dbaba3c1060a8ef8af4471c9e56ed3bdca77a29679d0f3f9e07eb38ce8db7e7",
+    "derivedBy": "included pinned packaging recipe; raw inputs retained locally; payload not public"
+  }
+]

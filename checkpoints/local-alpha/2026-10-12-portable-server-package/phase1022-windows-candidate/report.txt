@@ -1,0 +1,43 @@
+2026-10-12 bounded local Windows candidate preparation — completed
+
+Actual output: control-server-candidate-20261012/
+183 server files, 132507819 bytes: 93 unchanged identities + 90 replacements.
+12 unchanged disabled launcher/setup source snapshots, 86912 bytes.
+Total checked copied payload: 195 files, 132594731 bytes.
+Two supplemental control JSON files are outside this payload count.
+All copied bytes verified while staging and by a separate final disk readback.
+Five Linux-path staticwebasset files are preserved unchanged and marked blocked.
+No native apphosts are present. Original files were not deleted or overwritten.
+
+New code: source/scripts/package-windows-candidate.py; only one pinned recipe,
+using existing pinned packager copy_checked helper without bytecode side effects.
+New data: source/docs/disabled-launcher-source-pins.json (12 exact snapshots).
+New tests: source/tests/test_candidate.py.
+New usage/limits: source/docs/windows-candidate.md.
+No existing executable code, packager, baseline runtime or guard contract modified.
+No general overlay engine and no global 186->183 replacement.
+
+Executed: 20 new Python tests PASS (small synthetic fixtures, not game/DB tests).
+Final rerun followed one packaging-helper no-bytecode safeguard change.
+Tests cover corrupt/missing/extra files, unsafe paths, case collisions, source or
+output symlinks, existing destination refusal, incomplete output preservation,
+contract tamper, status/Windows-acceptance tamper and unconditional launch denial.
+Real 195-file integration verification PASS; real launch-check DENIED; real second
+stage call REFUSED without changing candidate control files. Original pinned input
+manifest/status/source identities still match. See integration-result.json.
+
+launchEnabled=false; approvedLaunchManifestSha256=null.
+NOT_RUN: PowerShell, .NET runtime, Windows, PostgreSQL, game/server, installer,
+credentials/ACLs, network, migrations or new gameplay/persistence test. Existing
+GameConfiguration live-read PASS belongs to separate preserved evidence only.
+No downloads, rebuilds, external publication or large transfer. Client/Data/fonts
+and already staged Windows dependencies were neither recopied nor re-audited.
+
+Explicit blockers: full-package assembly/Windows acceptance, unresolved runtime
+grants, Linux static-web paths and separate candidate-vs-legacy runtime alignment.
+FirstSetup unresolved-grants fence and original policy hash are retained.
+This output is a verifiable intermediate component, not runnable Alpha.
+
+Next: parent review of this exact component and a bounded Windows admission plan;
+no further broad audit or runtime execution is implied. Do not remove blockers or
+promote the launch manifest based on this integrity-only result.

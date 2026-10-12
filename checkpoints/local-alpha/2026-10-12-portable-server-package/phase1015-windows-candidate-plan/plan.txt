@@ -1,0 +1,75 @@
+Windows candidate preparation proposal — 2026-10-12
+PROPOSAL ONLY. No runtime or executable source modified. No payload copied.
+
+Basis
+Base: phase2027-powershell-check/control-database-guards-20261011.
+Use saved base/package and phase2129 server-build inventories; do not repeat full
+client/Data/dependency inventory. proposed-overlay-inventory.json records exact
+source/target/hash/size for every proposed server file and each exclusion.
+The resulting server set is 183 files: 93 identical base files and 90 replacements
+(99,299,643 bytes). This includes coherent phase2129 managed companions, deps,
+runtimeconfig, symbols and XML, plus the binary-JSON EF DLL and matching new PDB.
+The DLL manifest says no companion changes relative to phase2129, not relative
+to the old Windows build. The 90-file difference is not 90 source-code fixes.
+
+Two specifically verified new local output identities
+EF DLL: 5970432 bytes, SHA256
+67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1.
+EF PDB: 1356160 bytes, SHA256
+3a9a9fd0e8d0d0047383ed721e389f7b576b6f95c13d3ca55b3a43ff57c41e71.
+PDB is a matching-build local diagnostic companion, not additional runtime proof.
+EF XML is unchanged from the saved phase2129 identity. The remaining proposed
+identities come from saved inventories, not new payload certification.
+
+Native exclusions in a FRESH candidate only
+Do not copy Linux apphosts MUnique.OpenMU.Startup, MUnique.OpenMU.Web.AdminPanel,
+MUnique.OpenMU.Web.Map. Do not carry corresponding old Windows .exe launchers
+into the new server tree. Do not delete them from any existing control/archive.
+The existing daily launcher invokes private dotnet with Startup.dll. This does
+not itself prove Windows dependency loading or runtime compatibility.
+
+Precise existing source touchpoints for a LATER reviewed implementation
+1. package-windows11-local.py: current --database-guards mode admits the previous
+   dependency base, three old source pins and the old base inventory/status.
+   Add only a dedicated candidate recipe, not an arbitrary overlay engine.
+   Fresh target only; no old-directory overwrite; reject unreviewed source hashes.
+2. Guards.ps1 Read-MuRuntimeInventory: pins historical outer archive 505d1053...
+   and inner archive 4b1b1d71..., and requires 186 entries. Assert-MuHashes compares
+   each server file to that old inventory and requires serverEntries.Count=186.
+   The candidate needs its own exact provenance contract. Do not simply bypass
+   mismatches or edit the archived old runtime manifest. Keep old archive solely
+   as historical input if preserved; its identity must not certify new binaries.
+3. Guards.ps1 admin connection validation: phase2104 requires explicit
+   AdminSchemaManagement=ExternallyProvisioned. Database.ps1 and
+   database-source-contract.json already match the base; no change proposed.
+4. SetupMU.ps1, FirstSetup.ps1, first-setup-policy.json are absent from the base.
+   Add their reviewed blocked-source versions only after packaging alignment.
+   FirstSetup.ps1 pins policy hash; policy pins packageInventorySha256. Updating
+   those identities must retain unresolved-grants and source/live-validation
+   fences. Set-MuSetupRuntimeGrants retains unconditional rejection. Do not set
+   APPROVED_FOR_DEPLOYMENT, broad liveValidation PASSED or full-runtime alignment
+   solely because one read passed.
+5. Regenerate package-inventory, draft manifest and packaging-status in a fresh
+   destination only. Keep local-session-contract false/null and approved manifest
+   absent. runtime-pin.json is historical; annotate separate candidate provenance
+   rather than silently presenting the old runtime pin as the candidate build.
+
+Small implementation order (not performed)
+A. Review the exact JSON rows and allowed exclusions; settle candidate provenance
+   shape without weakening the existing disabled-launch or setup fences.
+B. Implement dedicated guarded staging plus focused synthetic tests for source
+   hash mismatch, omitted/extra file, native exclusion, stale old runtime pin,
+   source-policy pin mismatch, existing destination refusal and false/null state.
+C. Only after that implementation is approved, materialize the new candidate on
+   the selected existing task host. Verify changed files as copied and report
+   unchanged files as prior identities reused, not freshly certified.
+D. Write a first-deployment handoff naming exact baseline 11651520969 and new
+   isolated target, restricted credentials/ACL handling, known SQL_ASCII/C,
+   unresolved runtime ACLs and separate Windows/setup/launch approval boundaries.
+
+Explicit remaining blockers
+Staticwebassets.runtime.json ContentRoots point to Linux build directories.
+Do not rewrite them here or claim portable Web UI. Windows authentication,
+VC++/loader/signature/OS/GPU/runtime acceptance remains unrun. The single
+GameConfiguration read is not Typed/startup read-write/complete runtime ACL proof.
+No installer or ready first-deployment command is claimed.

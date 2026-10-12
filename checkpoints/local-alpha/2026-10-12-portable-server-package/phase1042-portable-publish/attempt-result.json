@@ -1,0 +1,31 @@
+{
+  "command": [
+    "${WORKSPACE}/phase2129-csharp-build/dotnet/dotnet",
+    "publish",
+    "src/Startup/MUnique.OpenMU.Startup.csproj",
+    "--no-build",
+    "--no-restore",
+    "--configuration",
+    "Release",
+    "--self-contained",
+    "false",
+    "-p:UseAppHost=false",
+    "-p:BuildProjectReferences=false",
+    "-p:ci=true",
+    "-p:CustomBeforeMicrosoftCommonTargets=${WORKSPACE}/phase1042-portable-publish/NoBuildOrRestore.targets",
+    "-p:UseSharedCompilation=false",
+    "-m:1",
+    "-v:normal",
+    "--output",
+    "${WORKSPACE}/phase1042-portable-publish/publish-output-20261012"
+  ],
+  "cwd": "${WORKSPACE}/phase2129-csharp-build/openmu",
+  "secondsLimit": 240,
+  "attempt": 1,
+  "output": "${WORKSPACE}/phase1042-portable-publish/publish-output-20261012",
+  "restoreApproved": false,
+  "compilationApproved": false,
+  "exitCode": 0,
+  "elapsedSeconds": 31.891,
+  "timedOut": false
+}

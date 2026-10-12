@@ -1,0 +1,128 @@
+[
+  {
+    "source": "phase1015-windows-candidate-plan/proposed-overlay-inventory.json",
+    "sourceSha256": "08dea6de7a5fcc67bda71b6e68d9f72d1a64b5366f804766cb9a4537164f1d59",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1015-windows-candidate-plan/proposed-overlay-inventory.json",
+    "publicSha256": "08dea6de7a5fcc67bda71b6e68d9f72d1a64b5366f804766cb9a4537164f1d59",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1015-windows-candidate-plan/plan.txt",
+    "sourceSha256": "54f380975713d0efb0535add8fde5ac63f542a27d045e9ae36e584da9de76abb",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1015-windows-candidate-plan/plan.txt",
+    "publicSha256": "54f380975713d0efb0535add8fde5ac63f542a27d045e9ae36e584da9de76abb",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1022-windows-candidate/source/scripts/package-windows-candidate.py",
+    "sourceSha256": "155f569c117134a7ec66ecd84edb09a880cf6fddbdc9dd9d26a841145ad9fc86",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/source/scripts/package-windows-candidate.py",
+    "publicSha256": "155f569c117134a7ec66ecd84edb09a880cf6fddbdc9dd9d26a841145ad9fc86",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1022-windows-candidate/source/tests/test_candidate.py",
+    "sourceSha256": "6bd5b9cad2e08e12e04ed460f4c69556e91a998e5e6ff953acbf58dce9602155",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/source/tests/test_candidate.py",
+    "publicSha256": "6bd5b9cad2e08e12e04ed460f4c69556e91a998e5e6ff953acbf58dce9602155",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1022-windows-candidate/source/docs/disabled-launcher-source-pins.json",
+    "sourceSha256": "e0afe98d38fd9bc60de21938b375016020f3e33c0f5883db3638a4df565f2670",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/source/docs/disabled-launcher-source-pins.json",
+    "publicSha256": "e0afe98d38fd9bc60de21938b375016020f3e33c0f5883db3638a4df565f2670",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1022-windows-candidate/source/docs/windows-candidate.md",
+    "sourceSha256": "dc56958018866b894c022327b3e16184766d62ee36a4f9dd48525172727411be",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/source/docs/windows-candidate.md",
+    "publicSha256": "0d3370e6b5667ecfe5b84efef15130f7e2bf4589596dc6e9fd60784eb5d27890",
+    "sanitization": "workspace root placeholder"
+  },
+  {
+    "source": "phase1022-windows-candidate/report.txt",
+    "sourceSha256": "baf7bf2a258b30dc9f2835fa538a25a8c8f102516055f96418bfa7edaa60ccf0",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/report.txt",
+    "publicSha256": "baf7bf2a258b30dc9f2835fa538a25a8c8f102516055f96418bfa7edaa60ccf0",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1022-windows-candidate/test-output.txt",
+    "sourceSha256": "3a545e959fd97e7af813114dd9aa01cafa1d24393e1d03ee95c7fdc1136ada0c",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/test-output.txt",
+    "publicSha256": "3a545e959fd97e7af813114dd9aa01cafa1d24393e1d03ee95c7fdc1136ada0c",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1022-windows-candidate/integration-result.json",
+    "sourceSha256": "2127950d2263a7a1196ef5603455c9723068b541aa62647a65167ecb7185af21",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/integration-result.json",
+    "publicSha256": "2127950d2263a7a1196ef5603455c9723068b541aa62647a65167ecb7185af21",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1022-windows-candidate/final-verify.json",
+    "sourceSha256": "f5b95c22e6c66fc4589b6252e7171825eab9705fe731d1d5224c2a4c81580897",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/final-verify.json",
+    "publicSha256": "f5b95c22e6c66fc4589b6252e7171825eab9705fe731d1d5224c2a4c81580897",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1042-portable-publish/NoBuildOrRestore.targets",
+    "sourceSha256": "0b65e4159c342d62b01b36739019e823e4e1228b8bbe8cb95805586f0e330094",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/NoBuildOrRestore.targets",
+    "publicSha256": "0b65e4159c342d62b01b36739019e823e4e1228b8bbe8cb95805586f0e330094",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1042-portable-publish/run-once.py",
+    "sourceSha256": "4e7e832ef9894df08f8a26151ff9d30912291e6de3253de3ddc89b085d205642",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/run-once.py",
+    "publicSha256": "4e7e832ef9894df08f8a26151ff9d30912291e6de3253de3ddc89b085d205642",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1042-portable-publish/attempt-result.json",
+    "sourceSha256": "a9ae69ab4849380530e313e6f192147e3eb901154a9c5b57372b3210b72c22ee",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/attempt-result.json",
+    "publicSha256": "14bd6e6aa8ef97b45c102b2c53827188cf1f52f3a1e2ea832197a5cba89c22db",
+    "sanitization": "workspace root placeholder"
+  },
+  {
+    "source": "phase1042-portable-publish/publish-inventory.json",
+    "sourceSha256": "69c131ec847e6a730b13e53e49cf97f038003849b96bd83b810c3f415e0ce660",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/publish-inventory.json",
+    "publicSha256": "69c131ec847e6a730b13e53e49cf97f038003849b96bd83b810c3f415e0ce660",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1042-portable-publish/assemble-published-candidate.py",
+    "sourceSha256": "5325ff9afb03c19ae23e4b249bf62e356e20676e3c68a8ee4ee844dfa47a1e60",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/assemble-published-candidate.py",
+    "publicSha256": "5325ff9afb03c19ae23e4b249bf62e356e20676e3c68a8ee4ee844dfa47a1e60",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1042-portable-publish/final-stage-result.json",
+    "sourceSha256": "b533a59e4654f079ba356ea8eb3fe96bc2b4a4706e74e0068dc3e9b04f1eb89c",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/final-stage-result.json",
+    "publicSha256": "b533a59e4654f079ba356ea8eb3fe96bc2b4a4706e74e0068dc3e9b04f1eb89c",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1042-portable-publish/final-integration-result.json",
+    "sourceSha256": "cabf6d047ef365a77f2201c9e0fc4cdba496d555a92348bbd9c3bc6ea8763459",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/final-integration-result.json",
+    "publicSha256": "cabf6d047ef365a77f2201c9e0fc4cdba496d555a92348bbd9c3bc6ea8763459",
+    "sanitization": "none; exact bytes"
+  },
+  {
+    "source": "phase1042-portable-publish/report.txt",
+    "sourceSha256": "8e09cbba777679976a95c5596a3efb1458be2a17723c89eb9cfcc3467edd25fc",
+    "publicPath": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/report.txt",
+    "publicSha256": "8e09cbba777679976a95c5596a3efb1458be2a17723c89eb9cfcc3467edd25fc",
+    "sanitization": "none; exact bytes"
+  }
+]

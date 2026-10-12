@@ -1,3 +1,13 @@
+# Current owner checkpoint — 2026-10-12 portable server packaging
+
+The [portable server component checkpoint](../checkpoints/local-alpha/2026-10-12-portable-server-package/README.md) preserves the 183-file candidate and one successful existing-SDK publish-only pass, without compilation/restore or runtime execution. Twenty new integrity tests PASS. Final component: 8,440 server/web files + 12 blocked source snapshots, 134,967,375 verified payload bytes; all 16,681 Publish endpoints resolve to 8,267 on-disk assets. Corrected EF `67adf087…93a1` and matching PDB retained explicitly; original controls preserved.
+
+Linux build-path dependence is resolved for the published layout. This is still a standalone server component, not a full playable package. Windows/HTTP/game/DB acceptance was NOT_RUN; full grants and legacy launcher runtime-contract alignment remain blocked. Launch/setup remain disabled, baseline/readiness unchanged. Five existing ImageSharp advisory warnings remain.
+
+**Single next step:** review and scope the narrow candidate-to-launcher admission alignment, pending separate owner approval before implementation. Publication does not authorize launch, grants, builds, audits or runtime tests.
+
+## Earlier checkpoint instructions — historical; current scoped result above takes precedence
+
 # Current owner checkpoint — 2026-10-12 single-read acceptance
 
 The [binary JSON candidate checkpoint](../checkpoints/local-alpha/2026-10-12-binary-json-read/README.md) records exactly **one actual GameConfiguration read PASS** on a disposable Linux PostgreSQL copy. The already built fixed EF DLL was used under the prepared restricted role and read-only transaction. **35 driver guard cases PASS**; only literal cast alternatives `character varying` and `uuid` were added. PostgreSQL stopped, before/after data hashes matched, and original binary/dump hashes remain intact.
@@ -146,4 +156,5 @@ Historical/deferred findings: Crywolf incomplete (late stage), Illusion Temple i
 - Reuse existing bulk272PASS/scalar7PASS and client-resource check; no export/rebuild needed. scripts/check-trade-snapshot.py supports scoped cancel assertions; score-baseline.py freezes owner weights. Audit/navigation/test-history route further work.
 
 GitHub source/docs are canonical; private backup IDs/checksums preserve large runtime/DB evidence beyond CI retention. Never commit DB dumps, passwords, tokens or account hashes. GitHub connector writes previously403; owner-authorized browser upload fallback is documented. Credits/reset time are not visible to the agent; do not promise automatic balance warnings. Fresh-agent handoff: YES with this GitHub repository and the same owner's backup access.
+
 

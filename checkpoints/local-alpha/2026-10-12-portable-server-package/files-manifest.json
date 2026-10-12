@@ -1,0 +1,149 @@
+{
+  "note": "Manifest excludes itself.",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 6838,
+      "sha256": "f9bd62737e900b690cea97ece47e2a25c0f016af79c09ecb2781fcd71ae0cd76",
+      "gitBlobSha1": "3891179915446c8d80ddd4785c5f3b1af3885594"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/README.md",
+      "bytes": 4059,
+      "sha256": "41b20d608ebbb2bc86cdef79657e7c20744be312cbac6b052130eef460417060",
+      "gitBlobSha1": "0a14a239a9059f57d79adc317baea2cb88a732c7"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/derived-control-identities.json",
+      "bytes": 1256,
+      "sha256": "1a0dfabb11b91b1e61c70688ff34e122ad9b1a0db007b55158a4132319620073",
+      "gitBlobSha1": "b6ddd5199c8baf61735e78c211fdaf0c7dc88110"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1015-windows-candidate-plan/plan.txt",
+      "bytes": 4981,
+      "sha256": "54f380975713d0efb0535add8fde5ac63f542a27d045e9ae36e584da9de76abb",
+      "gitBlobSha1": "415952913cf271ba9426073206aa0520903d63bc"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1015-windows-candidate-plan/proposed-overlay-inventory.json",
+      "bytes": 103653,
+      "sha256": "08dea6de7a5fcc67bda71b6e68d9f72d1a64b5366f804766cb9a4537164f1d59",
+      "gitBlobSha1": "4df38b55e11a1d77186b9cc7c546ad8dcb6d4d2c"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/final-verify.json",
+      "bytes": 423,
+      "sha256": "f5b95c22e6c66fc4589b6252e7171825eab9705fe731d1d5224c2a4c81580897",
+      "gitBlobSha1": "463838039f7eae9018829b419a22056b673ba780"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/integration-result.json",
+      "bytes": 983,
+      "sha256": "2127950d2263a7a1196ef5603455c9723068b541aa62647a65167ecb7185af21",
+      "gitBlobSha1": "dae2abf2c3924e982a5dcfec0fb7aeccb0463d84"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/report.txt",
+      "bytes": 2751,
+      "sha256": "baf7bf2a258b30dc9f2835fa538a25a8c8f102516055f96418bfa7edaa60ccf0",
+      "gitBlobSha1": "fb0e97e0493a2d1b1448744e4ffe3263b1ebe22c"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/source/docs/disabled-launcher-source-pins.json",
+      "bytes": 3222,
+      "sha256": "e0afe98d38fd9bc60de21938b375016020f3e33c0f5883db3638a4df565f2670",
+      "gitBlobSha1": "6d4b459b489dde9d7f7a211939836e532e367a05"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/source/docs/windows-candidate.md",
+      "bytes": 3081,
+      "sha256": "0d3370e6b5667ecfe5b84efef15130f7e2bf4589596dc6e9fd60784eb5d27890",
+      "gitBlobSha1": "62d63f32441cf88e240428f6d63a2eca5fe9bdce"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/source/scripts/package-windows-candidate.py",
+      "bytes": 10916,
+      "sha256": "155f569c117134a7ec66ecd84edb09a880cf6fddbdc9dd9d26a841145ad9fc86",
+      "gitBlobSha1": "215738ee53affac4cf98789dd444d1243d1e7895"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/source/tests/test_candidate.py",
+      "bytes": 7964,
+      "sha256": "6bd5b9cad2e08e12e04ed460f4c69556e91a998e5e6ff953acbf58dce9602155",
+      "gitBlobSha1": "a3390627285831c157dfb83e0fc2105af07cee85"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1022-windows-candidate/test-output.txt",
+      "bytes": 2195,
+      "sha256": "3a545e959fd97e7af813114dd9aa01cafa1d24393e1d03ee95c7fdc1136ada0c",
+      "gitBlobSha1": "570203aac4c9c49baecb2d8761f4cc326b6ee2df"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/NoBuildOrRestore.targets",
+      "bytes": 387,
+      "sha256": "0b65e4159c342d62b01b36739019e823e4e1228b8bbe8cb95805586f0e330094",
+      "gitBlobSha1": "a95b6307accfc50ea725d16a734364622ee1bc00"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/assemble-published-candidate.py",
+      "bytes": 6728,
+      "sha256": "5325ff9afb03c19ae23e4b249bf62e356e20676e3c68a8ee4ee844dfa47a1e60",
+      "gitBlobSha1": "a7675cba4a0b86ebdd0559393086010cfe0f13b3"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/attempt-result.json",
+      "bytes": 902,
+      "sha256": "14bd6e6aa8ef97b45c102b2c53827188cf1f52f3a1e2ea832197a5cba89c22db",
+      "gitBlobSha1": "99a4f9ad81923e77b081e5c5d6f480b122156740"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/final-integration-result.json",
+      "bytes": 1063,
+      "sha256": "cabf6d047ef365a77f2201c9e0fc4cdba496d555a92348bbd9c3bc6ea8763459",
+      "gitBlobSha1": "46acebbb723effb060a782524359941f91cfb826"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/final-stage-result.json",
+      "bytes": 862,
+      "sha256": "b533a59e4654f079ba356ea8eb3fe96bc2b4a4706e74e0068dc3e9b04f1eb89c",
+      "gitBlobSha1": "7169dcdf5194dfe9cc162fa1b69ff3962a7b4bb3"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/publish-inventory.json",
+      "bytes": 1758876,
+      "sha256": "69c131ec847e6a730b13e53e49cf97f038003849b96bd83b810c3f415e0ce660",
+      "gitBlobSha1": "d6fd0cffdd86bc932d850c910d45fccf95011677"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/report.txt",
+      "bytes": 3840,
+      "sha256": "8e09cbba777679976a95c5596a3efb1458be2a17723c89eb9cfcc3467edd25fc",
+      "gitBlobSha1": "8a59229f7be42c86abffda78659299d99275ea82"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/phase1042-portable-publish/run-once.py",
+      "bytes": 2213,
+      "sha256": "4e7e832ef9894df08f8a26151ff9d30912291e6de3253de3ddc89b085d205642",
+      "gitBlobSha1": "840bcbc31c4547c9a4cd9ed0175a9c054d0b8dc8"
+    },
+    {
+      "path": "checkpoints/local-alpha/2026-10-12-portable-server-package/sanitization-map.json",
+      "bytes": 7713,
+      "sha256": "935e302d19379e233bf110ee7f3e93af1d3772bc9ae39b25e0e82550b46237c1",
+      "gitBlobSha1": "c1f9cf9daf4ee73a7b97136f574ab4ce5efc844b"
+    },
+    {
+      "path": "docs/current-state.md",
+      "bytes": 25177,
+      "sha256": "d4f9d6931ad2c5b5cf058c6271f39770d013c5137faf471fed7d139bd7879edb",
+      "gitBlobSha1": "cc3279b39feed4bb1da5e7582696c45f0ac090d3"
+    },
+    {
+      "path": "docs/s6-strategy-and-mechanics-index.md",
+      "bytes": 25535,
+      "sha256": "f085f3c2381a5efcc9956cdf2e622d072da55029c4d104b2d2fed6f10db6d3cd",
+      "gitBlobSha1": "71dff9efc832aacb8370ea23dcb4942c964e2db2"
+    }
+  ]
+}

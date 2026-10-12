@@ -1,0 +1,77 @@
+{
+  "status": "UNCHANGED_DISABLED_SOURCE_SNAPSHOT",
+  "files": [
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/CollectReport.ps1",
+      "target": "scripts/windows11/CollectReport.ps1",
+      "bytes": 492,
+      "sha256": "caeedde8dc67374f72af6dccff4ae2e499a742d0c1af79efb3fc3112f8bbad1b"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/ConsoleObserver.cs",
+      "target": "scripts/windows11/ConsoleObserver.cs",
+      "bytes": 2113,
+      "sha256": "a127e6fc8522da44e1fb5fffcc7b121ddd4cd1929fddf1d9d3a7d00470e519b9"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/Database.ps1",
+      "target": "scripts/windows11/Database.ps1",
+      "bytes": 10564,
+      "sha256": "c8089453f95413cb178d03cd351ddea6140c188eb4ba2405e7c36ddbcc010b1d"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/FirstSetup.ps1",
+      "target": "scripts/windows11/FirstSetup.ps1",
+      "bytes": 24651,
+      "sha256": "e44570b84439d0587d7721770748518c36e883b9d057dcdee254be227055dde0"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/Guards.ps1",
+      "target": "scripts/windows11/Guards.ps1",
+      "bytes": 21586,
+      "sha256": "cf3354fb5c7d06b951a394c1cacbe21b62599fe1acee7f56e78291cfd0795bda"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/Launcher.psm1",
+      "target": "scripts/windows11/Launcher.psm1",
+      "bytes": 14395,
+      "sha256": "deb9184ec7d09d5e627199fba14e3f8f3d6f5d18bf728f84038f3d0653a3f5e5"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/SetupMU.ps1",
+      "target": "scripts/windows11/SetupMU.ps1",
+      "bytes": 1007,
+      "sha256": "c21f00c132d4028b947c0112b486da77cdfe238fd14d05af44d35d278c756434"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/StartMU.ps1",
+      "target": "scripts/windows11/StartMU.ps1",
+      "bytes": 4294,
+      "sha256": "80cda3a60079239c648550ad55bc7f003cdb06975f85c8c8c5bf99c872fb6b80"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/database-source-contract.json",
+      "target": "scripts/windows11/database-source-contract.json",
+      "bytes": 4753,
+      "sha256": "0718c51ba1367d476a5d3fff7a46e55b16f334688ecbb650af7148b836c2cac6"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/first-setup-policy.json",
+      "target": "scripts/windows11/first-setup-policy.json",
+      "bytes": 1173,
+      "sha256": "65bea58489911fc5c1da1ee99a0ffdd8de085bad9c37251fb04d6f4e9a5c6cb0"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/local-session-contract.json",
+      "target": "scripts/windows11/local-session-contract.json",
+      "bytes": 1275,
+      "sha256": "dcca41db24ff561cb1161f02e075be4892f8b8452cdc48035ad0f1865d6496b3"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/runtime-pin.json",
+      "target": "scripts/windows11/runtime-pin.json",
+      "bytes": 609,
+      "sha256": "fcf4d5e7b3a6e179287fd2a3b485e95c977c26676abf4b7cd8e080f6b1ede415"
+    }
+  ]
+}

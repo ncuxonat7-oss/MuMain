@@ -1,0 +1,1929 @@
+{
+  "status": "PROPOSAL_ONLY_NO_PAYLOAD_COPIED",
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null,
+  "base": "phase2027-powershell-check/control-database-guards-20261011",
+  "baseInventorySha256": "85cf983cb786f284747763074b84cd0c6bae9c2b73bd6e0923e3849cefc15feb",
+  "phase2129InventorySha256": "2fd45f91244d60758bb6b33f8ddd0e0e47c58e86aa64e58307b63fc854225a57",
+  "binaryJsonManifestSha256": "5c4e5820499bc797e33a0123c21e980c64df608cb32ade8f7ffa4fefc4bb1192",
+  "counts": {
+    "REUSE_IDENTICAL_BASE": 93,
+    "REPLACE": 90
+  },
+  "proposedServerFiles": 183,
+  "replacedBytes": 99299643,
+  "serverRows": [
+    {
+      "target": "server/BCrypt.Net-Next.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/BCrypt.Net-Next.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "115b9faff8b909a1a08b65b315058eb182c0c4c3a77c19fcd5f4da9da49d4a63",
+      "bytes": 23040,
+      "replacesSha256": "115b9faff8b909a1a08b65b315058eb182c0c4c3a77c19fcd5f4da9da49d4a63",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/BlazorInputFile.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/BlazorInputFile.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "0b42ab3262d0404ebc71dd7e14dc08396f3d9cd19b387e3c851c5002848169a0",
+      "bytes": 20480,
+      "replacesSha256": "0b42ab3262d0404ebc71dd7e14dc08396f3d9cd19b387e3c851c5002848169a0",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Castle.Core.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Castle.Core.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "9c5762ae27f2afe0913e8ffa494f705ffe9680699aa4fb79c2613344c918ee28",
+      "bytes": 385024,
+      "replacesSha256": "9c5762ae27f2afe0913e8ffa494f705ffe9680699aa4fb79c2613344c918ee28",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ChatServerPackets.xml",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ChatServerPackets.xml",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "bcb784e9ef9ea7d0440ea042d1cadb5e01c291c25a3c605517237301fb2c00ec",
+      "bytes": 5993,
+      "replacesSha256": "bcb784e9ef9ea7d0440ea042d1cadb5e01c291c25a3c605517237301fb2c00ec",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ClientToServerPackets.xml",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ClientToServerPackets.xml",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "bf4016043a85d1469caf9e3ed6116f455fb506c9b08b36a07b7a674748ca3c0b",
+      "bytes": 163177,
+      "replacesSha256": "bf4016043a85d1469caf9e3ed6116f455fb506c9b08b36a07b7a674748ca3c0b",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/CommonEnums.xml",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/CommonEnums.xml",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "d1cfaf6710c885e448fb4fdd34affdecf186b3b80f466760fcb3cdfa9660b74c",
+      "bytes": 12249,
+      "replacesSha256": "d1cfaf6710c885e448fb4fdd34affdecf186b3b80f466760fcb3cdfa9660b74c",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ConnectServerPackets.xml",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ConnectServerPackets.xml",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "7779d528b443c9d2a9eea121f163de4ba1c674b9d19e1215936ccb84c33b7cee",
+      "bytes": 8837,
+      "replacesSha256": "7779d528b443c9d2a9eea121f163de4ba1c674b9d19e1215936ccb84c33b7cee",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ConnectionSettings.xml",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ConnectionSettings.xml",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "f485a2accd54ab98322b01d6bc009653c2bed5d307aca0bd0df02fd4e8e94c09",
+      "bytes": 3957,
+      "replacesSha256": "f485a2accd54ab98322b01d6bc009653c2bed5d307aca0bd0df02fd4e8e94c09",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Annotations.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Annotations.dll",
+      "action": "REPLACE",
+      "sha256": "288e3481ea83b94a0e680f3f4db5e52cc7c0cdcc51b3619a988d960b3497a4a2",
+      "bytes": 4608,
+      "replacesSha256": "4e3309e8ec65c6f1266025ced1c5e4e70df290b963be09632bb9832a80c8a269",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Annotations.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Annotations.pdb",
+      "action": "REPLACE",
+      "sha256": "f4458321563fd65439520ac9b4e2b0e4934d52efceacbc7285e52eab5fdb13f3",
+      "bytes": 7796,
+      "replacesSha256": "2a3746bcecf4a9b3606f69bc4b071a2c4a65a07f149ef42fc1b0d6b52faad865",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.AttributeSystem.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.AttributeSystem.dll",
+      "action": "REPLACE",
+      "sha256": "5af18e7a818bc5767326257a7dfd07b0393ac1fa57d016a23111099ee2e4efeb",
+      "bytes": 24064,
+      "replacesSha256": "bc7387850827b4f43a86194a3f9e2515d6c9dfa87288cbb5ea88c67c08330ac0",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.AttributeSystem.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.AttributeSystem.pdb",
+      "action": "REPLACE",
+      "sha256": "5bfb5cf642bb866cb236d4d1a69abaf7433cbb7e7ff72ababe68b5bd204890f5",
+      "bytes": 18308,
+      "replacesSha256": "7e6606aec40f44912904c869e30d64e944b474b7779ed1e6d29629757218be3d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.AttributeSystem.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.AttributeSystem.xml",
+      "action": "REPLACE",
+      "sha256": "4376b506e86904064c1ea77833c49b8d4a404312e4add845481d2143e0af12a5",
+      "bytes": 45929,
+      "replacesSha256": "0d2d7134e4c85dd7d1e04cd31ddde377e4004fe2911b5c39a7d38e58f74e21ab",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.ChatServer.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.ChatServer.dll",
+      "action": "REPLACE",
+      "sha256": "3e4db0d85f6afc51c30159762c9646c952971e38e8850fda8a421832545059cf",
+      "bytes": 46080,
+      "replacesSha256": "a0eb51e8f6427da30ff1f951344aac56c48d5b105f6d2d8dbafecdd0eaaceb2f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.ChatServer.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.ChatServer.pdb",
+      "action": "REPLACE",
+      "sha256": "573e71a30c0ae9f2d7cd9285a0eaa0ee4823a0210c5b426431f7b5cf52e619fe",
+      "bytes": 21296,
+      "replacesSha256": "e6e9525b3ec20920b56d91b38d2dfb0291620d3a3a764483040907652285b4d3",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.ChatServer.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.ChatServer.xml",
+      "action": "REPLACE",
+      "sha256": "183d4c0a543dd0db1bb4c28534644448af4978514972fc680454e70b60271357",
+      "bytes": 26083,
+      "replacesSha256": "e8753ae80c2c6d974a90172ee3e862c18d74fcdcec3ace643c8fc67d37f4beec",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.ConnectServer.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.ConnectServer.dll",
+      "action": "REPLACE",
+      "sha256": "54bf060342efdbfa13441a06216c7cec7c1104eece981786a1eafaa0b0ee1f89",
+      "bytes": 46592,
+      "replacesSha256": "a3ca975998fb4f3c4af0958c531560854c25f3251156670edce2d6cc67b65de0",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.ConnectServer.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.ConnectServer.pdb",
+      "action": "REPLACE",
+      "sha256": "3e16f5aeafe681570571a78e129a9d429787f0b89bcc2f7d550b5d4a373397a9",
+      "bytes": 22536,
+      "replacesSha256": "44bf203f43ec5f416a0302fd073419189f9f96fc8902d824fa66fb6e9f82c518",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.ConnectServer.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.ConnectServer.xml",
+      "action": "REPLACE",
+      "sha256": "9691938c5bb6d8725aa93376d2184c2415af8569a3aa62aee1b83f6805eb7c70",
+      "bytes": 33125,
+      "replacesSha256": "ae0dac9a8f8f13017f632564b18cf0f9318179ddefdc60bb71a20b1aa0a685bf",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.DataModel.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.DataModel.dll",
+      "action": "REPLACE",
+      "sha256": "2886c3bd3bb2029cff348456a1543a6cffce6c88ef6bc44f50a50125e90ef5e3",
+      "bytes": 432128,
+      "replacesSha256": "682d5278061ec4bbd34def7ff1e7b5cd7ac85476130c0a15d7273762d576bacc",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.DataModel.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.DataModel.pdb",
+      "action": "REPLACE",
+      "sha256": "b5480ff71f4eeda715528d45057b755699f16d24249952f797cced8c3df64492",
+      "bytes": 142100,
+      "replacesSha256": "fd17f9f70a5eb082ab11148a29b3da922992b7145e36ab56e04bf8cefaf0aef0",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.DataModel.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.DataModel.xml",
+      "action": "REPLACE",
+      "sha256": "16f01585f615235cedf7a367e9d45cc110189173463ed0d28b46262fea271fb9",
+      "bytes": 418622,
+      "replacesSha256": "1c8278683914d7583e96edc5c7486da64ca5cda1c51622add2959f158d1e48e2",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.FriendServer.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.FriendServer.dll",
+      "action": "REPLACE",
+      "sha256": "d6f1f75385f09ca0fe6aa09f68adc6890128b4dd8d84a04dd241a07b87ef7fc0",
+      "bytes": 27648,
+      "replacesSha256": "56cb88c95f1d79aabccad6429b9478797f4e2af1db45d3fb504ccee888f76543",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.FriendServer.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.FriendServer.pdb",
+      "action": "REPLACE",
+      "sha256": "ac2eed42e4630e394f622a6cbc61b71bd9ff12223c35ec6a6fe999080d746bf1",
+      "bytes": 17328,
+      "replacesSha256": "1c63ca6e3aa09cc41eba3e71cb1055d2d0915ffd3920b1886b4d32b9633c8c53",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.FriendServer.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.FriendServer.xml",
+      "action": "REPLACE",
+      "sha256": "f0d09bb7ea7d39d44cc4ab0aff9335f48fbee5d43518bf35f6c39f6efc019d06",
+      "bytes": 13170,
+      "replacesSha256": "8148f271af319a1168a9a64109345ddd1e83ef7bfd48bd7a6741c22de15bad9d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GameLogic.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GameLogic.dll",
+      "action": "REPLACE",
+      "sha256": "b815ccd8623b1d5622eece11aaf2005bc52106ee44ef59fa5aeef45dd87b9e9f",
+      "bytes": 3414528,
+      "replacesSha256": "4ed96e4bc6acb02ddeb838a2144b136a48f532fd5a3572017cecdd65f2cf948c",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GameLogic.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GameLogic.pdb",
+      "action": "REPLACE",
+      "sha256": "0779c8b873be54df0be6c04454812d2346a1b0f35b602fb2239bd9d8729d5c4b",
+      "bytes": 771792,
+      "replacesSha256": "23c82d779fc71e0412946e5d43170db82d41f4a50419fcb59d1f024c93c44a5a",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GameLogic.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GameLogic.xml",
+      "action": "REPLACE",
+      "sha256": "8fb690699cc64185c84b2d44c61f04ba8edd41d3509b9cd59e2b5f7c21354304",
+      "bytes": 2387496,
+      "replacesSha256": "f0ba90249632a09147241cf5b694f140aff512cbe152664dd58b79092b0b51ce",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GameServer.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GameServer.dll",
+      "action": "REPLACE",
+      "sha256": "cff7ebcd2271d5a81f7eecbde8c1b9a99bc7f6eef4ea96c6297745bad1f54683",
+      "bytes": 1205760,
+      "replacesSha256": "1567109e36cfb26a3fe5f8ac77f2c297b38bc54ea6337e525b46b118de930297",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GameServer.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GameServer.pdb",
+      "action": "REPLACE",
+      "sha256": "d68e477733de2b139f3fa7a3a81373bbadcb23502ae3a9f18d06ea24fb388e26",
+      "bytes": 269936,
+      "replacesSha256": "241840b85725c04178d66b52b5bb1bd6362e1b03ffc2713da5fb008ed8ae0608",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GameServer.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GameServer.xml",
+      "action": "REPLACE",
+      "sha256": "939201560ffe514d9b60bdee771faf6091b37adda644c403016a8a4d03c0a660",
+      "bytes": 815660,
+      "replacesSha256": "c8ecff5bcdf31fa41976fac08f0fb3465e51513746a6986f7404bb186c0aca0f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GuildServer.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GuildServer.dll",
+      "action": "REPLACE",
+      "sha256": "7a8a2fbca9768fee620f1c581e963bc64442f3e0115b158d26f598b91f0ceb57",
+      "bytes": 61952,
+      "replacesSha256": "68887846a3d7cd490b4c7cca47ab1b12fc5208be54f6a3ba502fa913a9c1275b",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GuildServer.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GuildServer.pdb",
+      "action": "REPLACE",
+      "sha256": "8b0061b4b7acdc22d8046c92e146382c8fddb4bccc6be092967dbebd47a67d8e",
+      "bytes": 22292,
+      "replacesSha256": "78f655d05f56ff520d978344185c48a24f2507172b36b7522099277608ce60ef",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.GuildServer.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.GuildServer.xml",
+      "action": "REPLACE",
+      "sha256": "24bd35d7dd50dd0cdb7f126ff357997f3fde2902a72d59dd23db04f4ce3e68b8",
+      "bytes": 19028,
+      "replacesSha256": "810603245f4d62f774acefcfff899158e09f0cfc42a252982aade233b13dcebc",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Interfaces.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Interfaces.dll",
+      "action": "REPLACE",
+      "sha256": "b47fa99855fc4bcce2af6d1731b1608494b370f34c66d41549496a4e62bf145a",
+      "bytes": 56320,
+      "replacesSha256": "2976666c0490889b823d6937ba134f8f4207dadcc4b37d9b807af1b65f74edfa",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Interfaces.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Interfaces.pdb",
+      "action": "REPLACE",
+      "sha256": "cf2922fd89a26a06886cb91156a3ad18072e56a2f625cc91d93203a7a43a22c7",
+      "bytes": 21636,
+      "replacesSha256": "884b6081e229a7708045dce38ee8e6355560304ce8f79185d2558d69d55a7083",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Interfaces.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Interfaces.xml",
+      "action": "REPLACE",
+      "sha256": "e96b1d5222ed5af2fa0109ed0da7bd43024dfedb8835160ac19865bdac96cc13",
+      "bytes": 93990,
+      "replacesSha256": "ad134df30a642048e5187ca7be6f1f27432fc7fa52f6928481ed2125f1c4469e",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.LoginServer.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.LoginServer.dll",
+      "action": "REPLACE",
+      "sha256": "e9f11dfeb75a7a0fc90abf6a71c79a2225f5f6f61256d0b4d1c2376494f41666",
+      "bytes": 7680,
+      "replacesSha256": "dc8deecc91da04b9f0256226cfbd2e0c7e2be2f59c62dcb83470219b3f492f22",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.LoginServer.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.LoginServer.pdb",
+      "action": "REPLACE",
+      "sha256": "78bd9e2fd5797833d79ea0a7bfba03efd0bf7d046ae8f04b4a7c170d6fc0fdbd",
+      "bytes": 12280,
+      "replacesSha256": "2b93175e06c93d99458cd693747a77141889ee8f9b887f159258fa4feffad95d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.LoginServer.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.LoginServer.xml",
+      "action": "REPLACE",
+      "sha256": "1aa8c98976f7c59b5a39480b443c260fd3c261106c0a8d04c7b257d8c90c69ee",
+      "bytes": 775,
+      "replacesSha256": "2a8a922fc99b3a46edda4694f57ec416d602f4a9c5197e7b787607474978f4e9",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.Analyzer.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.Analyzer.dll",
+      "action": "REPLACE",
+      "sha256": "293327eb65bad68d52ac537dcbff2882ed96190f4c6fb5c7c6a61649f4396322",
+      "bytes": 77824,
+      "replacesSha256": "a2d49628a3dcf16cfcc9fc49cc20348401aebcc5f773a6ec0b3b982c7cc375e6",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.Analyzer.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.Analyzer.pdb",
+      "action": "REPLACE",
+      "sha256": "2cd34d378c737f4578a428968061cb76316117ee535cf9b00a175125efd04e7c",
+      "bytes": 28280,
+      "replacesSha256": "4789006f9b6e4547ce2f360d690de1a410dbf180d68f888c05337afbaafe3e47",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.Analyzer.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.Analyzer.xml",
+      "action": "REPLACE",
+      "sha256": "c5e92dc94ee5c10b8596ac94d8e6c9c8a55b4b1612f72e15dafea499cb336ba7",
+      "bytes": 54499,
+      "replacesSha256": "922f377f968a78c0969195dc453fa0e93bba20ae4352acddfe2021e46d0e83c8",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.Packets.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.Packets.dll",
+      "action": "REPLACE",
+      "sha256": "194254cc20ee293b71e13b45271ea8b27b4cd01c842b8cb5a13895b7bf0c1450",
+      "bytes": 1674240,
+      "replacesSha256": "39aadf59983ae9b3e3446c58fa1af10bb5b48b41d7055e90d0ce7667d7e7f68b",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.Packets.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.Packets.pdb",
+      "action": "REPLACE",
+      "sha256": "dbf3ed09a20288b89c76d33b6c2c997e6719058aba59223fb42313a9d246777f",
+      "bytes": 684304,
+      "replacesSha256": "593204e5a2d12fef5eeb19a6d6bc2e4352b00b2b103a3854ef4389e05c127895",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.Packets.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.Packets.xml",
+      "action": "REPLACE",
+      "sha256": "67da04caeea885a1fde34689fb1d2a28e72285c06e19ffa6854957541bda272a",
+      "bytes": 5429952,
+      "replacesSha256": "bd78a2ac5b7d2df125f392b7ecae11fcd43586cc27c543f5885b3ac85de94840",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.dll",
+      "action": "REPLACE",
+      "sha256": "fd0fa1c9014be949732599310d7a34aa440226e7bec1ccdc7c7094903fcfa000",
+      "bytes": 379392,
+      "replacesSha256": "61d346487761ad8e30d612738330b6f02f8a86f4317239b9b1208dfd622ed8ea",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.pdb",
+      "action": "REPLACE",
+      "sha256": "7b5b6845791677b66e2a6150a68516e8e41cebf61ecbdebe72f47daba023543f",
+      "bytes": 180784,
+      "replacesSha256": "f907869e5eb38d0ebf974163c73af51538d4a5ca539002cbcf41bbe2e2ad2512",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Network.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Network.xml",
+      "action": "REPLACE",
+      "sha256": "eefac5229af070be90c4df13e0c058fbcea46cc029211d8c75d42522d217242a",
+      "bytes": 161385,
+      "replacesSha256": "87622c4d46ccf022290576d8697641f7c78dfeb1116cd1f5e37a7af3e96343cc",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Pathfinding.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Pathfinding.dll",
+      "action": "REPLACE",
+      "sha256": "b0d0fdf71a29ed7b73cd004935d281464e87230289eefc89ae5c9832ff77d3e7",
+      "bytes": 31232,
+      "replacesSha256": "124ba42ee3209426a8e3cf79c84b668471d4b53aee2abfc025c270225169ce75",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Pathfinding.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Pathfinding.pdb",
+      "action": "REPLACE",
+      "sha256": "984f8f77eb083940b8515de28d0354ace2c66989c2f7d3cd808e52fd88bce937",
+      "bytes": 19984,
+      "replacesSha256": "3ee7b21b7a518084087f713d70056d35b8eed674c37cfc76d011d8d418c4e3ea",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Pathfinding.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Pathfinding.xml",
+      "action": "REPLACE",
+      "sha256": "f84054a8d0100c3e6fc5df3dd391c6c5c21d4f0b336c047cf319a1a7a7adeae6",
+      "bytes": 40639,
+      "replacesSha256": "f8b8f7c663e7171ee0c4843ac4f8acdddd599f349c9525771c9068bf3f9a5f13",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "source": "phase2129-csharp-build/binary-json-candidate/openmu/bin/Release/MUnique.OpenMU.Persistence.EntityFramework.dll",
+      "action": "REPLACE",
+      "sha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+      "bytes": 5970432,
+      "replacesSha256": "f05e117d596f6bb74f953d8b4cbe83c73c0b30a6acf94876b6e8619bf92f1042",
+      "identityBasis": "new targeted hash of EF output only",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.EntityFramework.pdb",
+      "source": "phase2129-csharp-build/binary-json-candidate/openmu/bin/Release/MUnique.OpenMU.Persistence.EntityFramework.pdb",
+      "action": "REPLACE",
+      "sha256": "3a9a9fd0e8d0d0047383ed721e389f7b576b6f95c13d3ca55b3a43ff57c41e71",
+      "bytes": 1356160,
+      "replacesSha256": "a337a943cf174ae297d28f3b880caa250761b8a066d31efddf3a66d86206239f",
+      "identityBasis": "new targeted hash of EF output only",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.EntityFramework.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.EntityFramework.xml",
+      "action": "REPLACE",
+      "sha256": "a58c64828b2ef6639a360aceab373d6ae2ac319494b01aaf14f7e1f2a2e78d5a",
+      "bytes": 647171,
+      "replacesSha256": "a750dc65bf6ada806add795720ecdf85ad8cfb2f6095f2dd1fcf24d7a5b05986",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.InMemory.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.InMemory.dll",
+      "action": "REPLACE",
+      "sha256": "b5f61e85ef03d6c726dc0602426b35255ae955184902b93c06b92b6a400f4be3",
+      "bytes": 65536,
+      "replacesSha256": "f30750b51e3b49ac28f0375c34b9c1d9ad24f728737a4d9720a5e275c9af74ee",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.InMemory.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.InMemory.pdb",
+      "action": "REPLACE",
+      "sha256": "e0ea08988191db9bf79d640fc31304b25fad0ef4aa71e02aa15cdfa48d0f4fc0",
+      "bytes": 22400,
+      "replacesSha256": "d386a711b9078ac16331fc99ea13248b49b4c6cd210c46cad61ecface3c36d5b",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.InMemory.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.InMemory.xml",
+      "action": "REPLACE",
+      "sha256": "e16d1b3b03abeaab0e4280317fcd01d9985eba38455ae1025fc3a5b0c0a72390",
+      "bytes": 24370,
+      "replacesSha256": "769126b89829c409033ee0d5ec16b7c83c9b5caf15484c4817cd2edbbeee9c19",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.Initialization.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.Initialization.dll",
+      "action": "REPLACE",
+      "sha256": "aae2c36d39310d6ac968fa67130949aedbd17e42981ce048f60aa58369da9fbc",
+      "bytes": 7328256,
+      "replacesSha256": "34ead9eaf5170439e5e5f967373787c554803dbf580f4cc3cbc99f4f60935b69",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.Initialization.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.Initialization.pdb",
+      "action": "REPLACE",
+      "sha256": "7d50800e7cb05a57dbd51c573062e215c90fedcd977a221e7d9495bf54b0c46e",
+      "bytes": 498448,
+      "replacesSha256": "25ed988a0f74c77f0ce5543edf8fd67ebeb114dadb396efb9605276934bb793d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.Initialization.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.Initialization.xml",
+      "action": "REPLACE",
+      "sha256": "647deee985dae099b3889a422260cc4ede11969fb16bb3d98304d1d9e4c61522",
+      "bytes": 1264425,
+      "replacesSha256": "1f70df658edbfa83d8499a47d68f2b95d96e9013fb66ddcdb4a2a8e2ea95716d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.dll",
+      "action": "REPLACE",
+      "sha256": "0d1debca6c172418ebf1bb2eee976d58a56fcaf4e5ce48ff771f7c04eeb805a3",
+      "bytes": 408576,
+      "replacesSha256": "81cef8008ac3efab9996577f513b5b6c76b6d5723bdd4fa1b881ca63ad23759d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.pdb",
+      "action": "REPLACE",
+      "sha256": "bac58372dcb666cf3871a13143a37da233849ee87bca81718487c862c1d1a7fc",
+      "bytes": 288632,
+      "replacesSha256": "63376ef169557aea17354ab1047691ac99ebf58501f7e3eb8215791ac14a4bab",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Persistence.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Persistence.xml",
+      "action": "REPLACE",
+      "sha256": "b520c1858ee6f523c4633f254e387ce245b7c0be3cbc769ec1e2f7628704664a",
+      "bytes": 503858,
+      "replacesSha256": "89dedbc2fd0e7ffd7231e78d07022e598eb7f1934cc853d71a1adf751e35a302",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.PlugIns.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.PlugIns.dll",
+      "action": "REPLACE",
+      "sha256": "256c6650cf5a38355329e58c4a10dcab24c90586a094d3d3aed2e07e2559abed",
+      "bytes": 58880,
+      "replacesSha256": "dcd342a5641b4e59454a3a07d346c835b09aa2a554230a6d8b12373b6ed5a1ed",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.PlugIns.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.PlugIns.pdb",
+      "action": "REPLACE",
+      "sha256": "7fe98634a268e0dfa2934e2d74751c59ef639543b4ebb3d67f7beb6ca7dd5704",
+      "bytes": 25756,
+      "replacesSha256": "d7a9a70e223d06328ff4089762415fa38e43a9c6fb1ac4853d0981a710a04626",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.PlugIns.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.PlugIns.xml",
+      "action": "REPLACE",
+      "sha256": "116bf653c256c58d066a6c806a786b5491358f27e16eceef46936495181083f7",
+      "bytes": 59934,
+      "replacesSha256": "86761b9494ce9358ab13f0d0bb4d05d14372ba4158933c2d000cf704008c3c1d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Startup.deps.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Startup.deps.json",
+      "action": "REPLACE",
+      "sha256": "26703e49b88a9653f91058e044f6bbcf64097d6c0c3eb3348aa8125f3f606046",
+      "bytes": 45646,
+      "replacesSha256": "fdcf5e2ea9855120a7cc922ee2665f1b959b7a31c04bd7c2d6bb452a69c3a7cd",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Startup.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Startup.dll",
+      "action": "REPLACE",
+      "sha256": "f82b35ad9151eb75b9eb968ea161e43d8bf1d54ce8e64596c73ab22548e1c7df",
+      "bytes": 91136,
+      "replacesSha256": "d054c7d479538adde43d1c5bc40c865b2787b3e1ab4876edd2e6ed21aa193317",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Startup.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Startup.pdb",
+      "action": "REPLACE",
+      "sha256": "2dc5e8cd74942afdb9207156aa84265a49cbb549bd660f90554427f0138283e5",
+      "bytes": 41712,
+      "replacesSha256": "4476901c06cf19c3c6f5e0794f47f08a5c039c94c5e4df738337efbc9eda2b7e",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Startup.runtimeconfig.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Startup.runtimeconfig.json",
+      "action": "REPLACE",
+      "sha256": "eff38a9750f7cca2407b1d639a963d56ffea92088e6da971bbbfa74e3dcd7224",
+      "bytes": 540,
+      "replacesSha256": "94b92d437d5be753ff0ba94af9064dbd50f8bf1a7459debbedf6cb5699910d50",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Startup.staticwebassets.endpoints.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Startup.staticwebassets.endpoints.json",
+      "action": "REPLACE",
+      "sha256": "338e95aa169a066aa149dc973396c3bfa30b0a27761f205c6dd4cf8e9fda232a",
+      "bytes": 10994539,
+      "replacesSha256": "1525eb6817506acfaa94439e1a22309022b92ec7ed97b42af64085e47313dbe7",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Startup.staticwebassets.runtime.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Startup.staticwebassets.runtime.json",
+      "action": "REPLACE",
+      "sha256": "07c3d774a173b76286a79ad15e2cfd07362ccf9ca8941f3121cf83b4019d0520",
+      "bytes": 1032218,
+      "replacesSha256": "cc6ad4655207d94094c9422418ee8c54fa5a267069276fb668f7daa885e8f3ab",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": true
+    },
+    {
+      "target": "server/MUnique.OpenMU.Startup.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Startup.xml",
+      "action": "REPLACE",
+      "sha256": "1d26bb42311c06e2163a42bb817fd6d4e703dc6f3ea76f476b78bf08f75ba1fa",
+      "bytes": 24960,
+      "replacesSha256": "7efb63223034147d3ec12a231604d40bb0e4eaa4f91e4dd62f445f8b72b6a697",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.AdminPanel.deps.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.AdminPanel.deps.json",
+      "action": "REPLACE",
+      "sha256": "0334f21cbd478e371a7962f21ee2e675e23f7a5a5ebe627519272469eb4baaba",
+      "bytes": 31477,
+      "replacesSha256": "223bc74a9c0fdf53ffcd29f3b3784059ff71d5c5be115e2acd3e1efee327c89f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.AdminPanel.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.AdminPanel.dll",
+      "action": "REPLACE",
+      "sha256": "8871779377979fdad5c38cda956622653a0de0a79eb9a2fd3a9816746b73d20f",
+      "bytes": 921088,
+      "replacesSha256": "24bccaef3929a4c3ef7ea1f74a841d129b4fd7fb5875c6cc40bafe4fc3f97be7",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.AdminPanel.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.AdminPanel.pdb",
+      "action": "REPLACE",
+      "sha256": "8cc42066246c45a8580c518a56d8a05faa1b3cc55f951daf82d4c728c6e1b4f4",
+      "bytes": 394940,
+      "replacesSha256": "7a19a51cc22cdf8fec2137f1cff692c14b4b0e6352a38915365d3fca94a342c8",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.AdminPanel.runtimeconfig.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.AdminPanel.runtimeconfig.json",
+      "action": "REPLACE",
+      "sha256": "f71b4c67b5233a19be9131b5fe4b45fe7829997cf2b42e762d6baa037da93863",
+      "bytes": 472,
+      "replacesSha256": "41442586a8262bc96a1c80f82f4d9384c03bfd465d221cbf01fb3563170f9e65",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.AdminPanel.staticwebassets.endpoints.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.AdminPanel.staticwebassets.endpoints.json",
+      "action": "REPLACE",
+      "sha256": "670b21910badcaedbdc3a111ee08b1c52e5adebe31a63048aee9bbaad618100d",
+      "bytes": 10985141,
+      "replacesSha256": "d149115e43a06fc52b1c3a79c09a210d8b972e023ae33e71523bb1f945362188",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.AdminPanel.staticwebassets.runtime.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.AdminPanel.staticwebassets.runtime.json",
+      "action": "REPLACE",
+      "sha256": "7cce3d211d8e1772a41ca2aba85682fa692c450bb1aa85c8e3eb7fc3345964d2",
+      "bytes": 1031627,
+      "replacesSha256": "ca1d63f4557c99e3a3aae2701e9e747a4f8c4d862d9f311fb69582fcef489847",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": true
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.AdminPanel.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.AdminPanel.xml",
+      "action": "REPLACE",
+      "sha256": "0dff7de8af96bcefc857e3a11173539b887705b9bc55c102e533d70253af9243",
+      "bytes": 387548,
+      "replacesSha256": "926eb9e44743ec99797d84cd2d21ab721c554d8b6b2b6d0d1780ea307a5146ac",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.ItemEditor.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.ItemEditor.dll",
+      "action": "REPLACE",
+      "sha256": "28de9302a34d7687d725c00dc0804cb422d315ee2226e3817a34111ae2660963",
+      "bytes": 34816,
+      "replacesSha256": "448206c3426770851c967e82611f9b8492a07705b17961abaf575096218618a7",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.ItemEditor.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.ItemEditor.pdb",
+      "action": "REPLACE",
+      "sha256": "177a0eaef675c37a12ea14c3c2ed81db8340b4410963ebc95954487e07d57d67",
+      "bytes": 26592,
+      "replacesSha256": "97e01cd29c8ce5b1778647ebf259256887edcc4bdd72026267a938024bed1c1c",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.ItemEditor.staticwebassets.endpoints.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.ItemEditor.staticwebassets.endpoints.json",
+      "action": "REPLACE",
+      "sha256": "b9514e90b59523545c90b62e5b578ca0b11d2e57e72144b890548446e6ec9a68",
+      "bytes": 9224463,
+      "replacesSha256": "ea9d4f75a67b5149a70c3f82d7ee429b3049824458a84ec7912d678316780e89",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.ItemEditor.staticwebassets.runtime.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.ItemEditor.staticwebassets.runtime.json",
+      "action": "REPLACE",
+      "sha256": "1c398c46e5d1eb9d66f6ac465f409a51c6f6ddba2483905eef821c63549cfcf0",
+      "bytes": 1010422,
+      "replacesSha256": "beab4e8dc876561a69b44b17477e022ecaae5e0efa0ceafbf1a247573afe6470",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": true
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.ItemEditor.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.ItemEditor.xml",
+      "action": "REPLACE",
+      "sha256": "e2fdf1ba3968728008a997b394d4e6295b559ef4689b09b6bad9d22ac973fa27",
+      "bytes": 15632,
+      "replacesSha256": "ae514ab32df7fb20ed2dfbfe673fdb513be566542be518c8f8502eda1a685fe8",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Map.deps.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Map.deps.json",
+      "action": "REPLACE",
+      "sha256": "9a28277b9a39b9a2d4bc1b5e0bf1d3a5b73e57846ca16206ce363795f8337f41",
+      "bytes": 23965,
+      "replacesSha256": "1bb0bdff7fbc1fa2a0a57695f6151c5bf0dfca73d3f36c1cd139dec44cfd21f6",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Map.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Map.dll",
+      "action": "REPLACE",
+      "sha256": "a411b81919a93781e370f2ea5c2c383af4544c8d6580a057bfb04b5da4393f3a",
+      "bytes": 91648,
+      "replacesSha256": "45988ac87aaf43a421c146892bef1d1990f3fa14249bfe211e5b7695d3903476",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Map.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Map.pdb",
+      "action": "REPLACE",
+      "sha256": "40135e5d596fc5ec83e6778cb4142e314e399d815c8ad1515754fc4da345a3f8",
+      "bytes": 60500,
+      "replacesSha256": "3bea7ed064dd172714ac5ccb6e59cde0fa5ca581a38fa52c6597a8a60e177810",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Map.runtimeconfig.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Map.runtimeconfig.json",
+      "action": "REPLACE",
+      "sha256": "f71b4c67b5233a19be9131b5fe4b45fe7829997cf2b42e762d6baa037da93863",
+      "bytes": 472,
+      "replacesSha256": "41442586a8262bc96a1c80f82f4d9384c03bfd465d221cbf01fb3563170f9e65",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Map.staticwebassets.endpoints.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Map.staticwebassets.endpoints.json",
+      "action": "REPLACE",
+      "sha256": "c8ce3033a59ad12bf64c707ee342607747f6561e30ab7c07662ac7b0e828eac6",
+      "bytes": 10947168,
+      "replacesSha256": "536071c0353390f8576f7c43b526fdca689e2db230be795947bc1e64d52a63cf",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Map.staticwebassets.runtime.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Map.staticwebassets.runtime.json",
+      "action": "REPLACE",
+      "sha256": "a50635e83d4a78ecea7befff054b53a78d855762a43e6cd9822b77e7883832fc",
+      "bytes": 1029181,
+      "replacesSha256": "eaf06b393988302f0ef8866b39d16ad05ea37c4afb2eb129bc2d9868f8509290",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": true
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Map.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Map.xml",
+      "action": "REPLACE",
+      "sha256": "65856ca9ec11557ef2c0bc1179c8d644b16136ac9be0e474e3caa22cc394655c",
+      "bytes": 50253,
+      "replacesSha256": "cb302cf62b475ef67351f324da62c799ffa7f3e11bb4d6701d23e15761aae0b3",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Shared.dll",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Shared.dll",
+      "action": "REPLACE",
+      "sha256": "69642db64ab4a449c58297aed2781c39a0926432bc4dbc2234a2195d059b44ac",
+      "bytes": 504832,
+      "replacesSha256": "e980e3892547904e40ba3a4334e94c226e69eec0e6dd3313d403e519f790d26a",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Shared.pdb",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Shared.pdb",
+      "action": "REPLACE",
+      "sha256": "9b0511b9cec3e6c503a2de70e234c973c6ae8f6a347d06e4cb616945e1991103",
+      "bytes": 289252,
+      "replacesSha256": "ce9190ddf49cbf5d5cc2ac45bca93b859a5e7567e8c888a737c4f105bd758288",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Shared.staticwebassets.endpoints.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Shared.staticwebassets.endpoints.json",
+      "action": "REPLACE",
+      "sha256": "dcdeb6d969a60d5557e1fccd4615fd646ac3b9c1a1bb9a904d518019d91c8e6d",
+      "bytes": 10890886,
+      "replacesSha256": "9612c7a787efdf345e17dcb8c12498bfd1a230496e8135de8436bcde43d59afb",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Shared.staticwebassets.runtime.json",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Shared.staticwebassets.runtime.json",
+      "action": "REPLACE",
+      "sha256": "603eabb70d04f2b89c9055a1fff0b42fc3ea8199fd456e0b72a671f92da62069",
+      "bytes": 1017056,
+      "replacesSha256": "2f3cdc1ef157d0b30e8ae9e2a1e4e49634ed60117f0e4581cb885b24f491f42a",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": true
+    },
+    {
+      "target": "server/MUnique.OpenMU.Web.Shared.xml",
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Shared.xml",
+      "action": "REPLACE",
+      "sha256": "7764f7eb9970fcdb7fcf9ae0ca4e9308bb9cfac1a0525e495ebaa15536dc61d6",
+      "bytes": 305574,
+      "replacesSha256": "db61a3827072b305b3f08715eddff75a988103f2d61648a1c5f2ddd6872e335a",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Mapster.Core.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Mapster.Core.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "8d81e1fa0b1dbdeda21216b5df5752c1850e8063200c5436a0da95daaa2e163b",
+      "bytes": 32256,
+      "replacesSha256": "8d81e1fa0b1dbdeda21216b5df5752c1850e8063200c5436a0da95daaa2e163b",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Mapster.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Mapster.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "71920ceb5ee454369ad420eb4f3085ad41855cb445fbdbab306ad6d187c37ea4",
+      "bytes": 170496,
+      "replacesSha256": "71920ceb5ee454369ad420eb4f3085ad41855cb445fbdbab306ad6d187c37ea4",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/MathParser.org-mXparser.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/MathParser.org-mXparser.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "2849f007af64bf04f2ac815654775fe2f114d862a03b3299033aa14cf6550c52",
+      "bytes": 821248,
+      "replacesSha256": "2849f007af64bf04f2ac815654775fe2f114d862a03b3299033aa14cf6550c52",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Microsoft.AspNetCore.Components.QuickGrid.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Microsoft.AspNetCore.Components.QuickGrid.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "d7e5a889d7394bb05db0c1e4766e926ce4e5ff932902d49d395a987e25f6326f",
+      "bytes": 66312,
+      "replacesSha256": "d7e5a889d7394bb05db0c1e4766e926ce4e5ff932902d49d395a987e25f6326f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Microsoft.CodeAnalysis.CSharp.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Microsoft.CodeAnalysis.CSharp.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "53302acca07700e9bb10dcf21034435d6e0454c8eebf2481164ec13e520004c9",
+      "bytes": 6697768,
+      "replacesSha256": "53302acca07700e9bb10dcf21034435d6e0454c8eebf2481164ec13e520004c9",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Microsoft.CodeAnalysis.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Microsoft.CodeAnalysis.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "395736b2d0e02be77bedc3847b269da7a93bf8e49cd3431a4a8e68d2c52d5846",
+      "bytes": 3029800,
+      "replacesSha256": "395736b2d0e02be77bedc3847b269da7a93bf8e49cd3431a4a8e68d2c52d5846",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "52db99e23651582f518f64408511710b15cbdbd0ef4ba3b3489d03629b9cdf19",
+      "bytes": 34888,
+      "replacesSha256": "52db99e23651582f518f64408511710b15cbdbd0ef4ba3b3489d03629b9cdf19",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Microsoft.EntityFrameworkCore.Relational.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Microsoft.EntityFrameworkCore.Relational.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "34dc06980825195b4bd8d596995f2895caf0dd46793fe913a202b2740dea8cbf",
+      "bytes": 2193440,
+      "replacesSha256": "34dc06980825195b4bd8d596995f2895caf0dd46793fe913a202b2740dea8cbf",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Microsoft.EntityFrameworkCore.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Microsoft.EntityFrameworkCore.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "674bc6d68545b9a56388c048742258a4b266f19f14d2495496541f39f788fa7f",
+      "bytes": 2824736,
+      "replacesSha256": "674bc6d68545b9a56388c048742258a4b266f19f14d2495496541f39f788fa7f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Microsoft.Extensions.DependencyModel.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Microsoft.Extensions.DependencyModel.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "0d7fae30684654fa9173ad248ab41b713a48d81df0ef446ee4e40c8d380893e8",
+      "bytes": 85264,
+      "replacesSha256": "0d7fae30684654fa9173ad248ab41b713a48d81df0ef446ee4e40c8d380893e8",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Microsoft.Win32.SystemEvents.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Microsoft.Win32.SystemEvents.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "ca495bf6c86b7f092d624928101985a941532d149dcd8acfea170f8a53be8850",
+      "bytes": 26224,
+      "replacesSha256": "ca495bf6c86b7f092d624928101985a941532d149dcd8acfea170f8a53be8850",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Moq.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Moq.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "8d56b9cbec93f401f7e4a4031c1691c3c849411ff09cef6f777109c0701dc30b",
+      "bytes": 312320,
+      "replacesSha256": "8d56b9cbec93f401f7e4a4031c1691c3c849411ff09cef6f777109c0701dc30b",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Nito.AsyncEx.Context.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Nito.AsyncEx.Context.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "02cc09c061f8927841659b06031d800e969eff20a68b9462672a0fa68c3b43df",
+      "bytes": 13824,
+      "replacesSha256": "02cc09c061f8927841659b06031d800e969eff20a68b9462672a0fa68c3b43df",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Nito.AsyncEx.Coordination.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Nito.AsyncEx.Coordination.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "d2baa6a62d5328e982707eeafaaac23428a36c3af78bceea44a0b0f5df34514e",
+      "bytes": 40960,
+      "replacesSha256": "d2baa6a62d5328e982707eeafaaac23428a36c3af78bceea44a0b0f5df34514e",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Nito.AsyncEx.Interop.WaitHandles.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Nito.AsyncEx.Interop.WaitHandles.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "a2e1affc27326261bfcdc5f2f64621802f8498c643d8be1f0258142467f65ceb",
+      "bytes": 8704,
+      "replacesSha256": "a2e1affc27326261bfcdc5f2f64621802f8498c643d8be1f0258142467f65ceb",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Nito.AsyncEx.Oop.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Nito.AsyncEx.Oop.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "c438a7f3cb756a2738e4cfc6f0445770da61b536f2b8f9d02b0bcb7d550ea248",
+      "bytes": 6656,
+      "replacesSha256": "c438a7f3cb756a2738e4cfc6f0445770da61b536f2b8f9d02b0bcb7d550ea248",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Nito.AsyncEx.Tasks.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Nito.AsyncEx.Tasks.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "2b7b0132e793b248352ea719ac116365643279fc8e2f25de4f516a11ba7be41e",
+      "bytes": 35840,
+      "replacesSha256": "2b7b0132e793b248352ea719ac116365643279fc8e2f25de4f516a11ba7be41e",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Nito.Cancellation.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Nito.Cancellation.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "b0ef5dfb70ec0486f0a332b83dd271b89d7e2b7282220b7b17cb1516e9dae780",
+      "bytes": 8704,
+      "replacesSha256": "b0ef5dfb70ec0486f0a332b83dd271b89d7e2b7282220b7b17cb1516e9dae780",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Nito.Collections.Deque.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Nito.Collections.Deque.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "509bed02f2ea6c4bff4e68cae5907797244d1e87a58e7aad75748139ad70eeda",
+      "bytes": 16896,
+      "replacesSha256": "509bed02f2ea6c4bff4e68cae5907797244d1e87a58e7aad75748139ad70eeda",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Nito.Disposables.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Nito.Disposables.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "2e1e58ae51be2bca21e1574de9d02435a18d6e514304a5c6a92d273cd910f703",
+      "bytes": 22528,
+      "replacesSha256": "2e1e58ae51be2bca21e1574de9d02435a18d6e514304a5c6a92d273cd910f703",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "0b8ca4484e12f1cd119fc6b4711015ba6ce2364f9890504f6f4f13036c2075bf",
+      "bytes": 676864,
+      "replacesSha256": "0b8ca4484e12f1cd119fc6b4711015ba6ce2364f9890504f6f4f13036c2075bf",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Npgsql.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Npgsql.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "9d8db086e9eda5ff20c4a7f83fa3eae7689198f57277ff9ceea1ee3526f5fcf8",
+      "bytes": 1477632,
+      "replacesSha256": "9d8db086e9eda5ff20c4a7f83fa3eae7689198f57277ff9ceea1ee3526f5fcf8",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Pipelines.Sockets.Unofficial.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Pipelines.Sockets.Unofficial.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "fa2cdb1d5ffbb2b06512c92ce8bd18918a1a996171d0a72dfc73035bc586a711",
+      "bytes": 167424,
+      "replacesSha256": "fa2cdb1d5ffbb2b06512c92ce8bd18918a1a996171d0a72dfc73035bc586a711",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/QRCoder.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/QRCoder.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "5cacb8e071ef6b355615e8cae1d02d94b9d191ec33db12a05d82099cddb16e9a",
+      "bytes": 204288,
+      "replacesSha256": "5cacb8e071ef6b355615e8cae1d02d94b9d191ec33db12a05d82099cddb16e9a",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Serilog.Extensions.Hosting.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Serilog.Extensions.Hosting.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "3e6d0284179ee0e1c197568fd79b58f869d15298fff8ecb8447322fe87d44f47",
+      "bytes": 35840,
+      "replacesSha256": "3e6d0284179ee0e1c197568fd79b58f869d15298fff8ecb8447322fe87d44f47",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Serilog.Extensions.Logging.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Serilog.Extensions.Logging.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "80d3edbe3e3ac0b4c5bc764474220e7da11df8d285e0098f3dc1b65a734c8507",
+      "bytes": 28672,
+      "replacesSha256": "80d3edbe3e3ac0b4c5bc764474220e7da11df8d285e0098f3dc1b65a734c8507",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Serilog.Settings.Configuration.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Serilog.Settings.Configuration.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "ec8cfd1f8970a44e2aa3f7bcc71116ca2691b196564bff83e3e3ead0c1143b67",
+      "bytes": 70144,
+      "replacesSha256": "ec8cfd1f8970a44e2aa3f7bcc71116ca2691b196564bff83e3e3ead0c1143b67",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Serilog.Sinks.Console.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Serilog.Sinks.Console.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "dc88002ddd9f5fd0ffec9a6568ef89954671f60f2c9161593ee78932538c1e3e",
+      "bytes": 38400,
+      "replacesSha256": "dc88002ddd9f5fd0ffec9a6568ef89954671f60f2c9161593ee78932538c1e3e",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Serilog.Sinks.File.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Serilog.Sinks.File.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "4f4282671c2ac68284b4dc99f7a76eac9cbd4e659978cef642cff9e6c01b676d",
+      "bytes": 36864,
+      "replacesSha256": "4f4282671c2ac68284b4dc99f7a76eac9cbd4e659978cef642cff9e6c01b676d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/Serilog.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/Serilog.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "9fbf7441a9bdc9459652dc66e18f008040651f14cb8d7a7bb806ac4a8b722d10",
+      "bytes": 161792,
+      "replacesSha256": "9fbf7441a9bdc9459652dc66e18f008040651f14cb8d7a7bb806ac4a8b722d10",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ServerToClientPackets.xml",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ServerToClientPackets.xml",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "d0b70d050487979765bbf981629ed14040c253247e34cf2b01dc731adc2afed5",
+      "bytes": 519222,
+      "replacesSha256": "d0b70d050487979765bbf981629ed14040c253247e34cf2b01dc731adc2afed5",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/SixLabors.Fonts.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/SixLabors.Fonts.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "e1e2f107e7c78fb859f1b23383107a125acd8b3a7470140850daa6f6f6c45d9f",
+      "bytes": 1135616,
+      "replacesSha256": "e1e2f107e7c78fb859f1b23383107a125acd8b3a7470140850daa6f6f6c45d9f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/SixLabors.ImageSharp.Drawing.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/SixLabors.ImageSharp.Drawing.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "072840f7554cab2e8a96ed1be9c199c2d07ee4d283be78418f5830836a087e93",
+      "bytes": 173056,
+      "replacesSha256": "072840f7554cab2e8a96ed1be9c199c2d07ee4d283be78418f5830836a087e93",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/SixLabors.ImageSharp.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/SixLabors.ImageSharp.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "df2815a7802fd509ab941692ff5aac0fc4c8e0568abb0c79969dbc9e7e3a070d",
+      "bytes": 1806848,
+      "replacesSha256": "df2815a7802fd509ab941692ff5aac0fc4c8e0568abb0c79969dbc9e7e3a070d",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/System.Configuration.ConfigurationManager.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/System.Configuration.ConfigurationManager.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "6dbd70f8d9f7d9183b753f16db6d7964d843665b5598e4b3e7a15f97ff20d113",
+      "bytes": 444728,
+      "replacesSha256": "6dbd70f8d9f7d9183b753f16db6d7964d843665b5598e4b3e7a15f97ff20d113",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/System.Drawing.Common.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/System.Drawing.Common.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "98d07e6b1e7d3641a8608a360b3dc273fe8a0f78926b6e1e5f679a7a074d491f",
+      "bytes": 175216,
+      "replacesSha256": "98d07e6b1e7d3641a8608a360b3dc273fe8a0f78926b6e1e5f679a7a074d491f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/System.Security.Cryptography.ProtectedData.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/System.Security.Cryptography.ProtectedData.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "2bb0582bdcfcd7cb1ca0bcc531ae177fc3002dcc18b69eb8b0c06a62a5ce2d5f",
+      "bytes": 40208,
+      "replacesSha256": "2bb0582bdcfcd7cb1ca0bcc531ae177fc3002dcc18b69eb8b0c06a62a5ce2d5f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/appsettings.json",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/appsettings.json",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "695c85d511324bd8eb901b7132d0d4d4d79164f70746f1f83a13bf3a2673e80e",
+      "bytes": 1185,
+      "replacesSha256": "695c85d511324bd8eb901b7132d0d4d4d79164f70746f1f83a13bf3a2673e80e",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "f719e4b45e06f203a1c2d4e79fa2b496f8b16f6f63c4265809844def53ad41f3",
+      "bytes": 441640,
+      "replacesSha256": "f719e4b45e06f203a1c2d4e79fa2b496f8b16f6f63c4265809844def53ad41f3",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/cs/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/cs/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "818f84b95fd8273ec0e9753f90af2a98820bb0492cb53268db70a7403eaaa2af",
+      "bytes": 48424,
+      "replacesSha256": "818f84b95fd8273ec0e9753f90af2a98820bb0492cb53268db70a7403eaaa2af",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.DataModel.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.DataModel.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "d0728b31a625c0791c21d767d3f1f9dffb163d2c9cdc19f0adaa7020a6f64317",
+      "bytes": 124416,
+      "replacesSha256": "d0728b31a625c0791c21d767d3f1f9dffb163d2c9cdc19f0adaa7020a6f64317",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.GameLogic.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.GameLogic.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "207cf4138403d311371922e0c2ed4692e809ab31399b38a7bf261196fd827f03",
+      "bytes": 128512,
+      "replacesSha256": "207cf4138403d311371922e0c2ed4692e809ab31399b38a7bf261196fd827f03",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.GameServer.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.GameServer.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "92d4eb958339463bfb05a75a45409f330db2301f85048bc23e0ac4a9c772f4dc",
+      "bytes": 127488,
+      "replacesSha256": "92d4eb958339463bfb05a75a45409f330db2301f85048bc23e0ac4a9c772f4dc",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.Interfaces.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.Interfaces.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "943f649a12cd69c5ae842b7bd1b8d22f1e83b854352652b7d370fb8ff0121103",
+      "bytes": 10752,
+      "replacesSha256": "943f649a12cd69c5ae842b7bd1b8d22f1e83b854352652b7d370fb8ff0121103",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.Network.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.Network.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "2a903ee0200543af780b95c401949ffc39518b19856c127c69b0dedfd0b87fef",
+      "bytes": 8192,
+      "replacesSha256": "2a903ee0200543af780b95c401949ffc39518b19856c127c69b0dedfd0b87fef",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "c4c4af31b9f69afe9d95d6319c853b2d0ba1cad3a551bd4356d0f7eba7b3c2fd",
+      "bytes": 91648,
+      "replacesSha256": "c4c4af31b9f69afe9d95d6319c853b2d0ba1cad3a551bd4356d0f7eba7b3c2fd",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "4c136c96130834136634808b66f07cb2632a48788b03f8f90512866bb38cb7f3",
+      "bytes": 52224,
+      "replacesSha256": "4c136c96130834136634808b66f07cb2632a48788b03f8f90512866bb38cb7f3",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.Web.Map.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.Web.Map.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "463cff86baf9ff58559b41de4cc519a591d9d5577682d027ace9e8dedab424da",
+      "bytes": 4608,
+      "replacesSha256": "463cff86baf9ff58559b41de4cc519a591d9d5577682d027ace9e8dedab424da",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/MUnique.OpenMU.Web.Shared.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/MUnique.OpenMU.Web.Shared.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "08f872a0a19c37fb57e3ae89b29df170e273064a32e2305c27f1c3496359c2e1",
+      "bytes": 26624,
+      "replacesSha256": "08f872a0a19c37fb57e3ae89b29df170e273064a32e2305c27f1c3496359c2e1",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "d936e4075af47eb5a34e8418e6bf1eaa3e4d3c86d6b40ab7dffefbd8e6f8b594",
+      "bytes": 471848,
+      "replacesSha256": "d936e4075af47eb5a34e8418e6bf1eaa3e4d3c86d6b40ab7dffefbd8e6f8b594",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/de/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/de/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "1b1d805608929ec02b8acc2fb8c09ec7a335797b11686719ee2112d5bfbb18fc",
+      "bytes": 50456,
+      "replacesSha256": "1b1d805608929ec02b8acc2fb8c09ec7a335797b11686719ee2112d5bfbb18fc",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "559fa2a4d36a832a5e05f92dabff6ba737cc0443f95850611c485b21592046fe",
+      "bytes": 461608,
+      "replacesSha256": "559fa2a4d36a832a5e05f92dabff6ba737cc0443f95850611c485b21592046fe",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/es/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/es/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "4c83f9c227fa9a912209c5450380ef34e84d91867aff8208300e8aadab269456",
+      "bytes": 49960,
+      "replacesSha256": "4c83f9c227fa9a912209c5450380ef34e84d91867aff8208300e8aadab269456",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "c538cddb8e217bc1b96312956b7923855d6f392e467d7b7c7ce9341d9da1f23c",
+      "bytes": 473880,
+      "replacesSha256": "c538cddb8e217bc1b96312956b7923855d6f392e467d7b7c7ce9341d9da1f23c",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/fr/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/fr/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "a92746c7d8f241e7d207a7995007f59d694a10e5f8903ceadfc5a73c195f63a0",
+      "bytes": 50488,
+      "replacesSha256": "a92746c7d8f241e7d207a7995007f59d694a10e5f8903ceadfc5a73c195f63a0",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "995a868345367e1c68011617d8b8ac85decf2dd15fb85ea92a28205e2c6a5fba",
+      "bytes": 468240,
+      "replacesSha256": "995a868345367e1c68011617d8b8ac85decf2dd15fb85ea92a28205e2c6a5fba",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/it/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/it/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "9489584f3d6ec723bfd2adf1a0d1bdc9bafcadab857fa7c48d18157e223a5541",
+      "bytes": 50440,
+      "replacesSha256": "9489584f3d6ec723bfd2adf1a0d1bdc9bafcadab857fa7c48d18157e223a5541",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "866eabb5f0f51df82de1a2be933c542df60617d033f463e7010719bdc6f55fa7",
+      "bytes": 515376,
+      "replacesSha256": "866eabb5f0f51df82de1a2be933c542df60617d033f463e7010719bdc6f55fa7",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ja/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ja/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "9b0bea97965c04ce925e92a5b8575b866c75b185a89741185f4b24f72182a0bb",
+      "bytes": 54040,
+      "replacesSha256": "9b0bea97965c04ce925e92a5b8575b866c75b185a89741185f4b24f72182a0bb",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "f8b995c988ddee33a02e41fe4658d63aef32f380678aef70a5164143a25c1ee4",
+      "bytes": 473392,
+      "replacesSha256": "f8b995c988ddee33a02e41fe4658d63aef32f380678aef70a5164143a25c1ee4",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ko/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ko/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "2c799493e0a5032ed0e643a550d149dc324210da3a69337a68ae6460f56bb2e1",
+      "bytes": 50464,
+      "replacesSha256": "2c799493e0a5032ed0e643a550d149dc324210da3a69337a68ae6460f56bb2e1",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "bfd0ba4491a1e072f243b4599d0b9fe1f189ecbef4aae6b0aa4c6306079717df",
+      "bytes": 474416,
+      "replacesSha256": "bfd0ba4491a1e072f243b4599d0b9fe1f189ecbef4aae6b0aa4c6306079717df",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/pl/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/pl/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "a6d855a49e7b867ff1837b5b24d037a67a7bc9723a569ebdea85f0c73c8146e2",
+      "bytes": 50488,
+      "replacesSha256": "a6d855a49e7b867ff1837b5b24d037a67a7bc9723a569ebdea85f0c73c8146e2",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "0bb661e270c1b6675bf2b06b0465ea8b0b551f0765999f31ab9cae308f83e3de",
+      "bytes": 453928,
+      "replacesSha256": "0bb661e270c1b6675bf2b06b0465ea8b0b551f0765999f31ab9cae308f83e3de",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "40258d2ce74c4fb71bd7b145f6d33081f3d73e19afda25050832dde3e58cf33f",
+      "bytes": 49424,
+      "replacesSha256": "40258d2ce74c4fb71bd7b145f6d33081f3d73e19afda25050832dde3e58cf33f",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "68c0ed0122bd4e153717bcbd7d8a53d52d90535859b622df601c27eab58cfb3b",
+      "bytes": 621360,
+      "replacesSha256": "68c0ed0122bd4e153717bcbd7d8a53d52d90535859b622df601c27eab58cfb3b",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/ru/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/ru/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "9f6778a2b6d2141397b8d331fc38577ae2b398b6120eb3654db7575b62e1b0d4",
+      "bytes": 60728,
+      "replacesSha256": "9f6778a2b6d2141397b8d331fc38577ae2b398b6120eb3654db7575b62e1b0d4",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "89ea595ccb1fd1384480c1e30bd487c92af5d06d3b06f295323eff601acd9019",
+      "bytes": 427112,
+      "replacesSha256": "89ea595ccb1fd1384480c1e30bd487c92af5d06d3b06f295323eff601acd9019",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "142cce4ed8ac9da22d69c38a6f22738abfb22090dc9313e8b58e6f91978e89af",
+      "bytes": 53352,
+      "replacesSha256": "142cce4ed8ac9da22d69c38a6f22738abfb22090dc9313e8b58e6f91978e89af",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "4d3001697df50cca54f32ed2dbbd1f3f415b48d5d756b1bf9500a43ae9b68da0",
+      "bytes": 454248,
+      "replacesSha256": "4d3001697df50cca54f32ed2dbbd1f3f415b48d5d756b1bf9500a43ae9b68da0",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "93202286c8514bfa1b1c4b413666cd11a84abd69496e7aa8d2f9d565bd2d15a1",
+      "bytes": 449848,
+      "replacesSha256": "93202286c8514bfa1b1c4b413666cd11a84abd69496e7aa8d2f9d565bd2d15a1",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/tr/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/tr/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "6af8e8e793b071ef1de200629bb551dd2bdbce3823376b347836a2af15367a5c",
+      "bytes": 48936,
+      "replacesSha256": "6af8e8e793b071ef1de200629bb551dd2bdbce3823376b347836a2af15367a5c",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/tsconfig.json",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/tsconfig.json",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "52ab953196b56c21c8906deeaed1890705874f7cdf749d2f7b213ecd38d729b5",
+      "bytes": 732,
+      "replacesSha256": "52ab953196b56c21c8906deeaed1890705874f7cdf749d2f7b213ecd38d729b5",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-CN/MUnique.OpenMU.DataModel.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-CN/MUnique.OpenMU.DataModel.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "1f2dc7803a883e578ec104a1f3b92e7faa6447dec5770366d536f28aea6529b1",
+      "bytes": 219136,
+      "replacesSha256": "1f2dc7803a883e578ec104a1f3b92e7faa6447dec5770366d536f28aea6529b1",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-CN/MUnique.OpenMU.GameLogic.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-CN/MUnique.OpenMU.GameLogic.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "ebc7cb4f1d87c01df45390574c61f6963705dded59f2d1990802b12e35a92ffb",
+      "bytes": 89600,
+      "replacesSha256": "ebc7cb4f1d87c01df45390574c61f6963705dded59f2d1990802b12e35a92ffb",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-CN/MUnique.OpenMU.GameServer.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-CN/MUnique.OpenMU.GameServer.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "acd787fd0b9478d81c87d4a0ef05049361bd64b611b3f1590f431007d16dd57b",
+      "bytes": 112128,
+      "replacesSha256": "acd787fd0b9478d81c87d4a0ef05049361bd64b611b3f1590f431007d16dd57b",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-CN/MUnique.OpenMU.Interfaces.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-CN/MUnique.OpenMU.Interfaces.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "bebae0cfbc3a73a95eb494d1e86025dd4b697ba65a0b46536f9061358c0a48e8",
+      "bytes": 16896,
+      "replacesSha256": "bebae0cfbc3a73a95eb494d1e86025dd4b697ba65a0b46536f9061358c0a48e8",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-CN/MUnique.OpenMU.Network.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-CN/MUnique.OpenMU.Network.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "22739cebb1a6ba17c577157331388432ac3b866a24854a8841e6c1ded277ffc6",
+      "bytes": 7680,
+      "replacesSha256": "22739cebb1a6ba17c577157331388432ac3b866a24854a8841e6c1ded277ffc6",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-CN/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-CN/MUnique.OpenMU.Persistence.Initialization.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "4aa31679d6c4e3c1e24db262ab4fcc85a73f5329ebcbc5914788c0a3e4279735",
+      "bytes": 152064,
+      "replacesSha256": "4aa31679d6c4e3c1e24db262ab4fcc85a73f5329ebcbc5914788c0a3e4279735",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-CN/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-CN/MUnique.OpenMU.Web.AdminPanel.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "f3122939907aea76b38436a1f6caaf39307fcda1599a75651ecfc2b1e1eac2cd",
+      "bytes": 48640,
+      "replacesSha256": "f3122939907aea76b38436a1f6caaf39307fcda1599a75651ecfc2b1e1eac2cd",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-CN/MUnique.OpenMU.Web.Shared.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-CN/MUnique.OpenMU.Web.Shared.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "14ef10e1a70192384487d9d418765c26cf704300a0436bd440433b402285b80e",
+      "bytes": 24576,
+      "replacesSha256": "14ef10e1a70192384487d9d418765c26cf704300a0436bd440433b402285b80e",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "5b81b1d4537d44a365fdb48aa24e51a0b0c3ee308debcc225c9339249e0a8bb3",
+      "bytes": 401168,
+      "replacesSha256": "5b81b1d4537d44a365fdb48aa24e51a0b0c3ee308debcc225c9339249e0a8bb3",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "a41b72555a1943e367e9714fb3329454dbad4366500db0899519ffb558a060cb",
+      "bytes": 45368,
+      "replacesSha256": "a41b72555a1943e367e9714fb3329454dbad4366500db0899519ffb558a060cb",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "d1e716652b5705373fb560105ca2710ff2bc0b704285b50b08ec8df9fd2f8287",
+      "bytes": 400680,
+      "replacesSha256": "d1e716652b5705373fb560105ca2710ff2bc0b704285b50b08ec8df9fd2f8287",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    },
+    {
+      "target": "server/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+      "source": "phase2027-powershell-check/control-database-guards-20261011/server/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+      "action": "REUSE_IDENTICAL_BASE",
+      "sha256": "0bb422559a2582df1a49faed25a337b6037eb3878ac4ee7c118b68349ca312b7",
+      "bytes": 45328,
+      "replacesSha256": "0bb422559a2582df1a49faed25a337b6037eb3878ac4ee7c118b68349ca312b7",
+      "identityBasis": "existing saved build/base inventories; no payload rehash",
+      "blockedPortability": false
+    }
+  ],
+  "nativeApphostExclusions": [
+    {
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Startup",
+      "sha256": "6502f9334e333ff54df1cff01c4bc9391233b3b28c49ec178c6ed4d70d3b2122",
+      "bytes": 78256,
+      "reason": "Linux native apphost; do not stage",
+      "oldWindowsTargetAlsoOmitted": "server/MUnique.OpenMU.Startup.exe",
+      "oldWindowsSha256": "5b1b9b5cf87f37a3ecb87539dd8d7423b4d2dc839cb565fbfc20d9c4164761ba"
+    },
+    {
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.AdminPanel",
+      "sha256": "eb84223605a0cce23f3e294b66801f765035c6fd92f2da2601c70da77315cb03",
+      "bytes": 78256,
+      "reason": "Linux native apphost; do not stage",
+      "oldWindowsTargetAlsoOmitted": "server/MUnique.OpenMU.Web.AdminPanel.exe",
+      "oldWindowsSha256": "f3ab8df99906728fcc1223dece9312897278d483429551d8d50a7a54dc618613"
+    },
+    {
+      "source": "phase2129-csharp-build/openmu/src/Startup/bin/Release/MUnique.OpenMU.Web.Map",
+      "sha256": "3337efcae3c46ff14fc59c23348fcc24a4cb25261fabebd53d0c82d7b80f3c31",
+      "bytes": 78256,
+      "reason": "Linux native apphost; do not stage",
+      "oldWindowsTargetAlsoOmitted": "server/MUnique.OpenMU.Web.Map.exe",
+      "oldWindowsSha256": "4f464826062fe9463cda77172d06e8e731bc7c23af10d5a3740285be56b37b71"
+    }
+  ],
+  "scriptReviewInputs": [
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/Database.ps1",
+      "target": "scripts/windows11/Database.ps1",
+      "sourceSha256": "c8089453f95413cb178d03cd351ddea6140c188eb4ba2405e7c36ddbcc010b1d",
+      "bytes": 10564,
+      "baseSha256": "c8089453f95413cb178d03cd351ddea6140c188eb4ba2405e7c36ddbcc010b1d",
+      "status": "REVIEW_SOURCE_ONLY; runtime pins/policy not yet aligned; do not blindly stage"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/Guards.ps1",
+      "target": "scripts/windows11/Guards.ps1",
+      "sourceSha256": "cf3354fb5c7d06b951a394c1cacbe21b62599fe1acee7f56e78291cfd0795bda",
+      "bytes": 21586,
+      "baseSha256": "8e95e68479ea364c022fd16823a8afc25ef00d0544138f019e18f9b9a2966ac6",
+      "status": "REVIEW_SOURCE_ONLY; runtime pins/policy not yet aligned; do not blindly stage"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/SetupMU.ps1",
+      "target": "scripts/windows11/SetupMU.ps1",
+      "sourceSha256": "c21f00c132d4028b947c0112b486da77cdfe238fd14d05af44d35d278c756434",
+      "bytes": 1007,
+      "baseSha256": null,
+      "status": "REVIEW_SOURCE_ONLY; runtime pins/policy not yet aligned; do not blindly stage"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/FirstSetup.ps1",
+      "target": "scripts/windows11/FirstSetup.ps1",
+      "sourceSha256": "e44570b84439d0587d7721770748518c36e883b9d057dcdee254be227055dde0",
+      "bytes": 24651,
+      "baseSha256": null,
+      "status": "REVIEW_SOURCE_ONLY; runtime pins/policy not yet aligned; do not blindly stage"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/first-setup-policy.json",
+      "target": "scripts/windows11/first-setup-policy.json",
+      "sourceSha256": "65bea58489911fc5c1da1ee99a0ffdd8de085bad9c37251fb04d6f4e9a5c6cb0",
+      "bytes": 1173,
+      "baseSha256": null,
+      "status": "REVIEW_SOURCE_ONLY; runtime pins/policy not yet aligned; do not blindly stage"
+    },
+    {
+      "source": "phase2104-admin-availability/source/scripts/windows11/database-source-contract.json",
+      "target": "scripts/windows11/database-source-contract.json",
+      "sourceSha256": "0718c51ba1367d476a5d3fff7a46e55b16f334688ecbb650af7148b836c2cac6",
+      "bytes": 4753,
+      "baseSha256": "0718c51ba1367d476a5d3fff7a46e55b16f334688ecbb650af7148b836c2cac6",
+      "status": "REVIEW_SOURCE_ONLY; runtime pins/policy not yet aligned; do not blindly stage"
+    }
+  ],
+  "limits": [
+    "No new server runtime certificate or Windows acceptance.",
+    "Existing staticwebassets runtime files contain Linux absolute paths; retain as blocked evidence, do not silently rewrite or claim portable Web UI.",
+    "Full Entity/Typed runtime ACL contract unresolved; no setup activation.",
+    "Old runtime archive remains historical provenance; its pin cannot certify this new payload."
+  ]
+}

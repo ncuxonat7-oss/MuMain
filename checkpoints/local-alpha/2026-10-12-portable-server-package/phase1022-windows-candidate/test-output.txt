@@ -1,0 +1,25 @@
+test_collision_refused (__main__.CandidateTests.test_collision_refused) ... ok
+test_corrupt_source_preserves_incomplete_output (__main__.CandidateTests.test_corrupt_source_preserves_incomplete_output) ... ok
+test_editing_windows_acceptance_does_not_enable_launch (__main__.CandidateTests.test_editing_windows_acceptance_does_not_enable_launch) ... ok
+test_existing_output_is_not_overwritten (__main__.CandidateTests.test_existing_output_is_not_overwritten) ... ok
+test_extra_file_is_rejected (__main__.CandidateTests.test_extra_file_is_rejected) ... ok
+test_incomplete_status_denies_acceptance (__main__.CandidateTests.test_incomplete_status_denies_acceptance) ... ok
+test_manifest_self_tampering_cannot_repin_payload (__main__.CandidateTests.test_manifest_self_tampering_cannot_repin_payload) ... ok
+test_missing_file_is_rejected (__main__.CandidateTests.test_missing_file_is_rejected) ... ok
+test_missing_source_refuses_before_output_claim (__main__.CandidateTests.test_missing_source_refuses_before_output_claim) ... ok
+test_native_apphosts_refused (__main__.CandidateTests.test_native_apphosts_refused) ... ok
+test_real_pinned_plan_has_only_approved_set (__main__.CandidateTests.test_real_pinned_plan_has_only_approved_set) ... ok
+test_same_size_corruption_is_rejected (__main__.CandidateTests.test_same_size_corruption_is_rejected) ... ok
+test_source_bytes_preserved (__main__.CandidateTests.test_source_bytes_preserved) ... ok
+test_symlink_member_refused (__main__.CandidateTests.test_symlink_member_refused) ... ok
+test_symlink_source_refused (__main__.CandidateTests.test_symlink_source_refused) ... ok
+test_symlink_target_parent_refused (__main__.CandidateTests.test_symlink_target_parent_refused) ... ok
+test_unsafe_paths (__main__.CandidateTests.test_unsafe_paths) ... ok
+test_valid_component_always_denies_launch (__main__.CandidateTests.test_valid_component_always_denies_launch) ... ok
+test_verified_stage_is_disabled (__main__.CandidateTests.test_verified_stage_is_disabled) ... ok
+test_wrong_input_pin_is_rejected (__main__.CandidateTests.test_wrong_input_pin_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.316s
+
+OK

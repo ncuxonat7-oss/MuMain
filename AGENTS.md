@@ -20,6 +20,8 @@ Owner-defined model1.1 preserves model1.0 weights and original checklist; see do
 
 No complex agent orchestration. Reuse validated artifacts/cache/DB; smallest targeted validation then owner alpha testing. See docs/navigation.md for bug report format. Read the original coding rules below before code changes; preserve existing source structure. This bootstrap adds project memory and does not override original repository rules.
 
+Current packaging checkpoint (2026-10-12): read docs/current-state.md and checkpoints/local-alpha/2026-10-12-portable-server-package/README.md. Published-layout integrity is verified, not Windows/HTTP/runtime readiness. Next is narrow launcher admission alignment scope review; implementation requires separate owner approval. Keep setup/launch blocked and preserve existing evidence.
+
 ---
 
 # Agent Instructions
@@ -71,5 +73,6 @@ At ordinary checkpoints, keep one unambiguous next step in docs/current-state.md
 Don't perform large retroactive cleanups of existing code to fit the rules unless
 the user explicitly asks for it. Apply the rules going forward; pre-existing
 code can be refactored opportunistically when you're already touching it.
+
 
 

@@ -1,0 +1,32 @@
+{
+  "verification": {
+    "result": "PASS_PUBLISH_LAYOUT_AND_INTEGRITY_ONLY",
+    "fileCount": 8452,
+    "bytes": 134967375,
+    "serverFiles": 8440,
+    "sourceSnapshots": 12,
+    "web": {
+      "endpointCount": 16681,
+      "uniqueAssetFiles": 8267,
+      "allReferencesResolve": true,
+      "runtimeBuildManifests": 0,
+      "activeTopLevelBuildPathReferences": 0,
+      "httpTest": "NOT_RUN"
+    },
+    "correctedEfSha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+    "matchingPdbSha256": "3a9a9fd0e8d0d0047383ed721e389f7b576b6f95c13d3ca55b3a43ff57c41e71",
+    "oldCandidateVerifiedUnchanged": true,
+    "launchEnabled": false,
+    "approvedLaunchManifestSha256": null,
+    "blockers": [
+      "NOT_WINDOWS_ACCEPTED",
+      "RUNTIME_GRANTS_UNRESOLVED",
+      "COMPONENT_ONLY_NOT_FULL_PACKAGE",
+      "LEGACY_LAUNCHER_RUNTIME_CONTRACT_NOT_ALIGNED",
+      "PUBLISHED_WEB_HTTP_BEHAVIOR_NOT_RUN"
+    ]
+  },
+  "launchCheck": "DENIED_AS_REQUIRED",
+  "overwriteCheck": "REFUSED_AS_REQUIRED",
+  "controlFilesUnchangedAfterDenials": true
+}

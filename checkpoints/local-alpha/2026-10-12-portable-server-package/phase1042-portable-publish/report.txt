@@ -1,0 +1,58 @@
+2026-10-12 — single authorized local publish-only attempt completed
+
+Command and limits: attempt-result.json. Existing local .NET SDK10.0.401;
+Startup Release, --no-build --no-restore --self-contained false,
+UseAppHost=false, BuildProjectReferences=false, fresh output. 240-second bound.
+An imported MSBuild guard errors on CoreCompile or Restore/_GenerateRestoreGraph.
+Result: exit0,31.891seconds, no timeout. No compilation/restore guard triggered;
+no compiler or restore task invocation observed in the normal-verbosity log.
+No retry, fallback, download/install, game/server/DB/HTTP execution or external
+publication. Here publish means local SDK packaging. MSBuild generated publish
+asset/compression intermediates; existing candidate and source binaries preserved.
+
+Warnings: five existing ImageSharp2.1.11 advisories (NU1902/NU1903), zero errors.
+These remain unresolved, not newly introduced or fixed by this packaging step.
+
+Raw SDK output: publish-output-20261012/
+8440files,134877911bytes, including8267files under wwwroot.
+All110DLL and25PDB identities match the saved phase2129 build inventory.
+One Startup endpoints manifest has ManifestType=Publish and16681endpoints.
+No runtime development manifest or native apphost. SDK naturally omits the five
+runtime manifests, four referenced-project build endpoint manifests and two
+standalone referenced-app deps files; adds generated web.config. No old package
+file was manually removed and no Linux ContentRoots were rewritten.
+
+The raw output retains OLD EF f12b509...7014. It was NOT accepted as the final
+candidate. Separate assembly reused the exact existing overlay identities for
+corrected EF67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1
+and matching PDB3a9a9fd0e8d0d0047383ed721e389f7b576b6f95c13d3ca55b3a43ff57c41e71.
+
+Final: control-published-candidate-20261012/
+8440server/published-web files plus12unchanged blocked launcher/setup snapshots;
+8452payload files,134967375bytes. Two supplemental control JSONs are excluded from
+this payload count. All payload bytes checked during copying and final readback.
+16681endpoints reference exactly8267relative files, all present in server/wwwroot.
+No development runtime manifests, no absolute /workspace/ dependency in active
+top-level JSON/config or publish endpoints. This checks on-disk routing layout,
+not browser rendering, every CSS/JS link, HTTP authorization or Windows loading.
+The original phase1022 candidate passes its existing195-file integrity contract
+unchanged. Raw SDK output is preserved separately with its own pinned inventory.
+
+Final integration: verify PASS; launch-check DENIED; second assembly request
+REFUSED without overwrite or control-file changes. final-integration-result.json.
+No new runtime/unit suite claimed: these are actual publish/packaging/readback/
+negative admission checks, not repeated gameplay or EF tests.
+
+launchEnabled=false; approvedLaunchManifestSha256=null; Windows acceptance NOT_RUN.
+The previous Linux-build-path packaging defect is resolved for published runtime
+layout, but published HTTP behavior is NOT_RUN. Other blockers stay: unresolved
+runtime grants, legacy launcher runtime provenance not aligned with the new full
+published payload, and component-only packaging (client/Data/dependencies still
+in preserved previous control). Included setup policy/grant fences are unchanged.
+No full client package, installer, ready first deployment or playable Alpha claim.
+
+Next necessary step: review final published inventory and authorize a separately
+bounded candidate-to-launcher/runtime admission alignment and Windows preflight
+plan. Do not activate setup or launch until their independent permissions and
+acceptance gates are satisfied. Do not restore the prior Linux-path blocker as
+an unfixed packaging claim; retain it only as historical evidence.

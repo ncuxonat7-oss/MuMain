@@ -1,0 +1,37 @@
+{
+  "actualVerify": {
+    "result": "PASS_INTEGRITY_ONLY",
+    "serverFiles": 183,
+    "sourceSnapshots": 12,
+    "verifiedBytes": 132594731,
+    "launchEnabled": false,
+    "approvedLaunchManifestSha256": null,
+    "windowsAcceptance": "NOT_RUN",
+    "blockers": [
+      "NOT_WINDOWS_ACCEPTED",
+      "RUNTIME_GRANTS_UNRESOLVED",
+      "STATIC_WEB_ASSET_LINUX_PATHS",
+      "COMPONENT_ONLY_NOT_FULL_PACKAGE",
+      "LEGACY_LAUNCHER_RUNTIME_CONTRACT_NOT_ALIGNED"
+    ]
+  },
+  "actualLaunchCheck": {
+    "result": "DENIED_AS_REQUIRED",
+    "exitCode": 1
+  },
+  "actualOverwriteCheck": {
+    "result": "REFUSED_AS_REQUIRED",
+    "exitCode": 1
+  },
+  "candidateControlFilesUnchangedAfterDenials": true,
+  "serverPayloadBytes": 132507819,
+  "sourceSnapshotBytes": 86912,
+  "serverCounts": {
+    "sameBaseIdentity": 93,
+    "replacementIdentity": 90,
+    "total": 183
+  },
+  "nativeApphostsPresent": false,
+  "originalInputPinsStillMatch": true,
+  "webAssetFilesUnchangedAndBlocked": 5
+}

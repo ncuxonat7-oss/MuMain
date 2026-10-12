@@ -1,0 +1,8 @@
+<Project>
+  <Target Name="DenyProjectCompilation" BeforeTargets="CoreCompile">
+    <Error Text="SCOPE_STOP: compilation is not authorized in this publish-only attempt." />
+  </Target>
+  <Target Name="DenyPackageRestore" BeforeTargets="Restore;_GenerateRestoreGraph">
+    <Error Text="SCOPE_STOP: package restore is not authorized in this publish-only attempt." />
+  </Target>
+</Project>
