@@ -1,0 +1,60 @@
+{
+  "status": "PASS_BOUNDED_POSTGRESQL_PREPARATION_NOT_RUNTIME_ACCEPTANCE",
+  "database": "alpha_role_probe",
+  "postgresVersion": "17.11",
+  "clusterRetained": "/workspace/openmu-runtime-role-prep-20261012/pgdata",
+  "port": 55433,
+  "transport": "private Unix socket only; TCP disabled",
+  "roleSelectColumnCounts": {
+    "alpha_entity": 641,
+    "alpha_typed": 19,
+    "alpha_config": 1,
+    "alpha_account": 92
+  },
+  "updateColumns": {
+    "alpha_account": {
+      "data.Character": [
+        "CurrentMapId",
+        "PositionX",
+        "PositionY",
+        "Experience",
+        "LevelUpPoints"
+      ],
+      "data.StatAttribute": [
+        "Value"
+      ],
+      "data.ItemStorage": [
+        "Money"
+      ]
+    }
+  },
+  "finalChecksPassed": 62,
+  "actualRollbackUpdates": 5,
+  "deniedStatementsSqlState42501": 16,
+  "crossDatabaseConnectionDenials": 4,
+  "readOnlyWriteDenialSqlState25006": 1,
+  "priorFileCountUnchanged": 2227,
+  "preparedDataSha256": "4704fda2bb7fe6a0b9099cc18bf218ec3e9591a041837dd7ac8aa3adcc5a4de6",
+  "afterProbeDataSha256": "4704fda2bb7fe6a0b9099cc18bf218ec3e9591a041837dd7ac8aa3adcc5a4de6",
+  "shutdown": {
+    "exit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "launchEnabled": false,
+  "runtimeReady": false,
+  "applicationReadAttempts": 0,
+  "credentialsGenerated": false,
+  "publicationPerformed": false,
+  "probeCorrections": [
+    "First membership assertion incorrectly included built-in pg_monitor memberships; corrected to the four runtime roles only.",
+    "psql verbosity applies after connection, so cross-database startup errors supplied no SQLSTATE; validated exact database-permission-denied diagnostic plus CONNECT=false catalog result."
+  ],
+  "remainingGates": [
+    "Generated Account JSON query and SaveChanges operation parity with this explicit profile have not been tested.",
+    "Conditional startup plugin inserts/updates remain denied and occurrence is unresolved.",
+    "Original SystemConfiguration flags retained: ReadConsoleInput=false, AutoUpdateSchema=true; not launch-safe.",
+    "Friend/Guild/Admin runtime context permissions and feature/background paths not included.",
+    "Windows SCRAM credentials and package context mapping remain unconfigured; integrity-only run is not runtime acceptance."
+  ]
+}

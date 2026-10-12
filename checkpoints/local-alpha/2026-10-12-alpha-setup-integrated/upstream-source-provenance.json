@@ -1,0 +1,114 @@
+[
+  {
+    "path": "src/Persistence/EntityFramework/AccountContext.cs",
+    "gitBlob": "617e5a450314e3ffdfc0b16a746ac101c3e02312",
+    "sha256": "71d4bde9b361133df4128b5aedf767cf16a291c25a46ffb6fcb56bb74548fabb",
+    "bytes": 1236,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/AccountContext.cs"
+  },
+  {
+    "path": "src/Persistence/EntityFramework/AccountRepository.cs",
+    "gitBlob": "9202dc88755edfc7377e5b7f441120823f2bddce",
+    "sha256": "c90bb368bae291c6257cfbb309e724dc3f684ed5f48ef3f5962243924cc9aa22",
+    "bytes": 7237,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/AccountRepository.cs"
+  },
+  {
+    "path": "src/Persistence/EntityFramework/PlayerContext.cs",
+    "gitBlob": "4c94fd3f94bd4b5f171303443225f7d12e98cb0f",
+    "sha256": "808170396376d40be094d2d9fc548b7bdfd09092eb07b3333a4d518c0e969039",
+    "bytes": 12150,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/PlayerContext.cs"
+  },
+  {
+    "path": "src/Persistence/EntityFramework/Readme.md",
+    "gitBlob": "af333f6eaac5ba8d19b18482b57026c691b7ba28",
+    "sha256": "a9219a23bb331effcb449738276a375f1d30f6ab5d74db15ecbfb57c47f0950a",
+    "bytes": 7676,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/Readme.md"
+  },
+  {
+    "path": "src/Persistence/EntityFramework/TradeContext.cs",
+    "gitBlob": "0d3849e3e95baa186727d5f28e1950aed3cb4c4e",
+    "sha256": "478d556402937947097f3137f03177689d3372c92abbbce7ae7710a27175f6bc",
+    "bytes": 1095,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/TradeContext.cs"
+  },
+  {
+    "path": "src/Persistence/EntityFramework/EntityFrameworkContextBase.cs",
+    "gitBlob": "9ad677ddefcf426389e6be8e2de0853d2bc019ae",
+    "sha256": "f8e31e0c51be097235f4bf7dae3c29070c2621c3f67c976c6fb2a8989e60f7e6",
+    "bytes": 20990,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/EntityFrameworkContextBase.cs"
+  },
+  {
+    "path": "src/Persistence/EntityFramework/PersistenceContextProvider.cs",
+    "gitBlob": "42f42e3ef00f2fe3741d92bf8ee0c2ca8e0dae87",
+    "sha256": "1082a1758b3c4491e15b5d296232ca8135305dad2075b690209ad3aa6c082608",
+    "bytes": 10682,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/PersistenceContextProvider.cs"
+  },
+  {
+    "path": "src/Persistence/EntityFramework/Json/AccountJsonObjectLoader.cs",
+    "gitBlob": "16042e0c916bba16b60cd88d233a2de7bc74e688",
+    "sha256": "1b57d079a5c9c65c56ef2b420ad7da8ad2ba3eb8427471dad3e68696f5628ba8",
+    "bytes": 970,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/Persistence/EntityFramework/Json/AccountJsonObjectLoader.cs"
+  },
+  {
+    "path": "src/DataModel/Entities/Account.cs",
+    "gitBlob": "7f24d7ef6460426b0ee9ade1e226c8e7ebfda56c",
+    "sha256": "dcda5935b52b28b7c79b084ddcc32157a5c3c7f43d7c3eb6309220a3aab0d00b",
+    "bytes": 6459,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Entities/Account.cs"
+  },
+  {
+    "path": "src/DataModel/Entities/Character.cs",
+    "gitBlob": "52851639d43e35a363b411a1dce53a5d16719f3b",
+    "sha256": "a6901490c21077f1e9c7f4ff5e91af1535e4fb20f31cd5be6960614acd9717b6",
+    "bytes": 7173,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Entities/Character.cs"
+  },
+  {
+    "path": "src/DataModel/Entities/CharacterQuestState.cs",
+    "gitBlob": "82aa4490da23d1d6f2ea39e335707305829a880e",
+    "sha256": "80a25012f0eb5ba609f960a703ce74f89a81c0ea279efdee2ff27c000f83f771",
+    "bytes": 1523,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Entities/CharacterQuestState.cs"
+  },
+  {
+    "path": "src/DataModel/Entities/Item.cs",
+    "gitBlob": "d822fc736a6451eca6ff1480d9d27ddf5dbfc359",
+    "sha256": "6234f02b0d62129d38071a866eb4cd823c3043d30d5df945388062b4d05239cf",
+    "bytes": 7730,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Entities/Item.cs"
+  },
+  {
+    "path": "src/DataModel/Entities/ItemOptionLink.cs",
+    "gitBlob": "58c6edd9d2891d843f49e033035c38811d4f3b2b",
+    "sha256": "e5885ca2aa390583e72207d82725ae85bfbe4998e867c8884d35d787e57c19d5",
+    "bytes": 1997,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Entities/ItemOptionLink.cs"
+  },
+  {
+    "path": "src/DataModel/Entities/ItemStorage.cs",
+    "gitBlob": "ac5df63d9493ebc5205fee10c1fadde232b667af",
+    "sha256": "d5762c476220aa9c95d03694cc2027e669947ef7b4650fbf912fc31cb67a9b14",
+    "bytes": 864,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Entities/ItemStorage.cs"
+  },
+  {
+    "path": "src/DataModel/Entities/QuestMonsterKillRequirementState.cs",
+    "gitBlob": "50fbd262461c3e34b320d881d79c3ac173c0851d",
+    "sha256": "1b28c213d21ac22731156deb182a84492f4153c3cf826994b28edc6e5cdf427e",
+    "bytes": 995,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Entities/QuestMonsterKillRequirementState.cs"
+  },
+  {
+    "path": "src/DataModel/Entities/SkillEntry.cs",
+    "gitBlob": "87e280262718ce77237417e12871c1d795ee46d9",
+    "sha256": "64964fffcf019f41aca3086987dad767aac8f59ff65f778cafd80a27c2dea123",
+    "bytes": 3519,
+    "url": "https://raw.githubusercontent.com/MUnique/OpenMU/d067b3c11c23c3145de6e2c76201ab9a93b267c8/src/DataModel/Entities/SkillEntry.cs"
+  }
+]

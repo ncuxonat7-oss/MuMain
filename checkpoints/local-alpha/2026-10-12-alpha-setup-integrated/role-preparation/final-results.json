@@ -1,0 +1,439 @@
+{
+  "status": "PASS_BOUNDED_SQL_ROLE_PROBES_ONLY",
+  "checks": [
+    {
+      "name": "retained_copy_stopped",
+      "status": "PASS"
+    },
+    {
+      "name": "resumed_copy_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_entity:cross_database_CONNECT_denied:catalog_CONNECT_false",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_entity:cross_database_CONNECT_denied",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_typed:direct_peer_session",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_typed:no_create_temp_schema",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_typed:exact_column_ACL",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_typed:no_sequence_privileges",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_typed:cross_database_CONNECT_denied:catalog_CONNECT_false",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_typed:cross_database_CONNECT_denied",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_config:direct_peer_session",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_config:no_create_temp_schema",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_config:exact_column_ACL",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_config:no_sequence_privileges",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_config:cross_database_CONNECT_denied:catalog_CONNECT_false",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_config:cross_database_CONNECT_denied",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_account:direct_peer_session",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_account:no_create_temp_schema",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_account:exact_column_ACL",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_account:no_sequence_privileges",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_account:cross_database_CONNECT_denied:catalog_CONNECT_false",
+      "status": "PASS"
+    },
+    {
+      "name": "alpha_account:cross_database_CONNECT_denied",
+      "status": "PASS"
+    },
+    {
+      "name": "default_config_id_projection",
+      "status": "PASS"
+    },
+    {
+      "name": "migration_history_and_schema_policy",
+      "status": "PASS"
+    },
+    {
+      "name": "typed_root_SQL_projection",
+      "status": "PASS"
+    },
+    {
+      "name": "plugin_root_SQL_projection",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.Account",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.Character",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.StatAttribute",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.ItemStorage",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.Item",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.ItemOptionLink",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.ItemItemOfItemSet",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.LetterHeader",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.SkillEntry",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.CharacterQuestState",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.QuestMonsterKillRequirementState",
+      "status": "PASS"
+    },
+    {
+      "name": "account_projection:data.CharacterDropItemGroup",
+      "status": "PASS"
+    },
+    {
+      "name": "rollback_write:character_position",
+      "status": "PASS"
+    },
+    {
+      "name": "rollback_write:character_experience",
+      "status": "PASS"
+    },
+    {
+      "name": "rollback_write:character_points",
+      "status": "PASS"
+    },
+    {
+      "name": "rollback_write:existing_stat",
+      "status": "PASS"
+    },
+    {
+      "name": "rollback_write:stored_money",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:config_write",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:plugin_write",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:account_credential_write",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:character_identity_write",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:inventory_write",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:character_delete",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:character_insert",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:admin_schema",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:history_write",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:schema_create",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:temporary_table",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:create_role",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:self_superuser",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:assume_setup_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:server_file_read",
+      "status": "PASS"
+    },
+    {
+      "name": "denied:create_database",
+      "status": "PASS"
+    },
+    {
+      "name": "read_only_fence",
+      "status": "PASS"
+    },
+    {
+      "name": "all_probes_rolled_back",
+      "status": "PASS"
+    },
+    {
+      "name": "original_flags_still_preserved",
+      "status": "PASS"
+    }
+  ],
+  "postgresStarted": true,
+  "applicationReadAttempts": 0,
+  "launchEnabled": false,
+  "runtimeReady": false,
+  "denials": [
+    {
+      "name": "alpha_entity:cross_database_CONNECT_denied",
+      "role": "alpha_entity",
+      "expectedSqlState": "42501",
+      "sqlState": null,
+      "exit": 2,
+      "startupDatabasePermissionDenied": true
+    },
+    {
+      "name": "alpha_typed:cross_database_CONNECT_denied",
+      "role": "alpha_typed",
+      "expectedSqlState": "42501",
+      "sqlState": null,
+      "exit": 2,
+      "startupDatabasePermissionDenied": true
+    },
+    {
+      "name": "alpha_config:cross_database_CONNECT_denied",
+      "role": "alpha_config",
+      "expectedSqlState": "42501",
+      "sqlState": null,
+      "exit": 2,
+      "startupDatabasePermissionDenied": true
+    },
+    {
+      "name": "alpha_account:cross_database_CONNECT_denied",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": null,
+      "exit": 2,
+      "startupDatabasePermissionDenied": true
+    },
+    {
+      "name": "denied:config_write",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:plugin_write",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:account_credential_write",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:character_identity_write",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:inventory_write",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:character_delete",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:character_insert",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:admin_schema",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:history_write",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:schema_create",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:temporary_table",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:create_role",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:self_superuser",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:assume_setup_identity",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:server_file_read",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "denied:create_database",
+      "role": "alpha_account",
+      "expectedSqlState": "42501",
+      "sqlState": "42501",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    },
+    {
+      "name": "read_only_fence",
+      "role": "alpha_account",
+      "expectedSqlState": "25006",
+      "sqlState": "25006",
+      "exit": 1,
+      "startupDatabasePermissionDenied": false
+    }
+  ],
+  "preparedDataSha256": "4704fda2bb7fe6a0b9099cc18bf218ec3e9591a041837dd7ac8aa3adcc5a4de6",
+  "afterProbeDataSha256": "4704fda2bb7fe6a0b9099cc18bf218ec3e9591a041837dd7ac8aa3adcc5a4de6",
+  "shutdown": {
+    "exit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "priorTreePreservation": {
+    "filesChecked": 2227,
+    "changedPaths": []
+  },
+  "elapsedSeconds": 1.26
+}

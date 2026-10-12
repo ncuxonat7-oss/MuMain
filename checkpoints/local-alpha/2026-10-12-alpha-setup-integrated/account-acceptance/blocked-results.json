@@ -1,0 +1,36 @@
+{
+  "status": "BLOCKED_OFFLINE_QUERY_REVIEW_NO_RUNTIME_ATTEMPT",
+  "harnessCompilation": "PASS; existing Roslyn compiler and runtime references only; no server build",
+  "offlinePreparation": "PASS",
+  "accountQuerySha256": "35384a7b2cd03faa80d4917176674fb67da1b6b56fde27b7e9b626683e52e3ca",
+  "accountQueryTables": 13,
+  "preparedAccountContractTables": 12,
+  "unexpectedTable": "data.AccountCharacterClass",
+  "requiredSelectColumns": [
+    "AccountId",
+    "CharacterClassId"
+  ],
+  "navigation": "Account.UnlockedCharacterClasses",
+  "candidateDllSha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+  "harnessDllSha256": "5e0b5ec3c223cb844c863eca2c2562a2fb7c448153181fcd4d998bc50772c6fc",
+  "accountLoadAttempts": 0,
+  "configurationDependencyReads": 0,
+  "mutations": 0,
+  "saveAttempts": 0,
+  "rollbackExecution": "UNRUN; no transaction opened",
+  "transactionReview": "Source supports holding outer EF connection and explicit transaction; actual transaction/save behavior remains untested. Internal transient save retries identified; guard uses non-retryable exception and cancellation.",
+  "postgresStarted": false,
+  "shutdown": {
+    "statusExit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "grantChanges": false,
+  "launchEnabled": false,
+  "priorStageFilesChecked": 46,
+  "priorStageFilesChanged": [],
+  "priorSingleReadFilesChecked": 2227,
+  "priorSingleReadFilesChanged": [],
+  "existingRuntimeAssetsUnchanged": true,
+  "nextStep": "Seek separate approval for SELECT(AccountId,CharacterClassId) on data.AccountCharacterClass to alpha_account on this disposable copy, then review and resume the same one-load/one-save/rollback acceptance; no wider grants."
+}

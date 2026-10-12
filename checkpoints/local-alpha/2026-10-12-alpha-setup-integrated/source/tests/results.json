@@ -1,0 +1,339 @@
+{
+  "cases": [
+    {
+      "name": "valid-prepared-policy-not-runtime-acceptance",
+      "status": "PASS"
+    },
+    {
+      "name": "explicit-pending-role-split",
+      "status": "PASS"
+    },
+    {
+      "name": "explicit-sql-no-schema-wide-or-minigame-ranking-grants",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-policy-runtimeGrantStatus",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-policy-runtimeSourceStatus",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-policy-runtimeBinaryAlignment",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-policy-liveValidationStatus",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-policy-profileSha256",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-policy-listenAddress",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-policy-launchEnabled",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-policy-approvedLaunchManifestSha256",
+      "status": "PASS"
+    },
+    {
+      "name": "synthetic-credential-shape-valid",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-credentials",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-credential-role",
+      "status": "PASS"
+    },
+    {
+      "name": "empty-credential",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong-type-credential",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid-credential-not-echoed",
+      "status": "PASS"
+    },
+    {
+      "name": "valid-setup-request",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-request-approval-confirmNewDatabase",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-request-approval-confirmCredentialHandling",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-request-approval-applyReviewedFlags",
+      "status": "PASS"
+    },
+    {
+      "name": "unsafe-setup-relative",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-application-approval-before-sql",
+      "status": "PASS"
+    },
+    {
+      "name": "valid-synthetic-application-approval",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong-application-target",
+      "status": "PASS"
+    },
+    {
+      "name": "altered-application-evidence",
+      "status": "PASS"
+    },
+    {
+      "name": "prepared-identity-with-exact-game-admin-histories",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-identity-user",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-identity-database",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-identity-dataDirectory",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-identity-listenAddress",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-identity-port",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-identity-systemIdentifier",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-admin-history-no-auto-migration",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-owner",
+      "status": "PASS"
+    },
+    {
+      "name": "grant-setter-gated-read-and-transaction-stub-only",
+      "status": "PASS"
+    },
+    {
+      "name": "bad-identity-prevents-grant-call",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-relative-../escape",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-relative-/absolute",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-relative-a/../../b",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-relative-a\\\\b",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-relative-NUL",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-relative-a:stream",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-relative-a/space ",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-relative-a//b",
+      "status": "PASS"
+    },
+    {
+      "name": "existing-private-file-no-overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "reject-symlink-parent",
+      "status": "PASS"
+    },
+    {
+      "name": "disabled-launch-real-contract",
+      "status": "PASS"
+    },
+    {
+      "name": "altered-on-disk-profile-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "altered-launch-contract-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "nonloopback-hba-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "invoke-stops-before-credentials-or-startup",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-candidate-pin-and-unchanged-migrations",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-official-sql-bom-only-and-pinned",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-wrong-sql-hash-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-state-stage",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-state-pgOwner",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-state-pgStartAttempted",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-state-pgStopped",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-original-binary-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-valid-before-and-after-exact-histories",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-database",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-sessionUser",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-currentUser",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-systemIdentifier",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-listenAddress",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-port",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-encoding",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-locale",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-reject-target-ctype",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-existing-schema-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-missing-game-migration-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-wrong-admin-product-version-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-mutated-game-version-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-application-gate-before-sql",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-exact-sql-once-with-real-target-validators",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-inventory-cannot-admit-wrong-file-bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "admin-sql-failure-propagates-without-retry",
+      "status": "PASS"
+    },
+    {
+      "name": "setup-admin-stage-order-cleanup-success",
+      "status": "PASS"
+    },
+    {
+      "name": "setup-admin-stage-order-cleanup-failure",
+      "status": "PASS"
+    },
+    {
+      "name": "no-external-utility-called",
+      "status": "PASS"
+    },
+    {
+      "name": "source-inputs-unchanged-by-tests",
+      "status": "PASS"
+    }
+  ],
+  "databaseOperations": 0,
+  "failed": 0,
+  "windowsAcceptance": "NOT_RUN",
+  "utilityCalls": 0,
+  "kind": "ACTUAL_POWERSHELL_UNIT_TESTS_WITH_EXTERNAL_BOUNDARY_STUBS",
+  "passed": 82,
+  "total": 82
+}

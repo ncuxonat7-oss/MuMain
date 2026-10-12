@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "baseCommit": "74394bbb8570ae7183952ada7c18cae8af6838f4",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5019,
+      "sha256": "316bf5f3e574a4053b2d1d1ebec8f4be9e8c2058e116e25ff79740e7c7c3a62f"
+    },
+    {
+      "path": "account-acceptance/AccountAcceptance.cs",
+      "bytes": 13372,
+      "sha256": "26a456a4219ce061fce218e9b5ad9cb21628d6f0c663a69ef54f68adfb344c8d"
+    },
+    {
+      "path": "account-acceptance/approved-join-grant.sql",
+      "bytes": 103,
+      "sha256": "db2ad39747777cd4581a8b092cffb4d92c66f63ecad7f31815b54fc215e3448b"
+    },
+    {
+      "path": "account-acceptance/blocked-results.json",
+      "bytes": 1712,
+      "sha256": "a2a9056752e97bc05630158db88867cf5030f3cc3243f0e683876ace8bfe32cc"
+    },
+    {
+      "path": "account-acceptance/continuation-summary.json",
+      "bytes": 1623,
+      "sha256": "ad6827433bb8a64835421764e6ce63f66b067aa7bbeb441929289a359a4d7933"
+    },
+    {
+      "path": "account-acceptance/execution-results.json",
+      "bytes": 8548,
+      "sha256": "c93c3a51d0d6aff8ab7e478cb612ce820489e04dfb8c8d99228c2a5548396e06"
+    },
+    {
+      "path": "account-acceptance/identity-fix.diff",
+      "bytes": 891,
+      "sha256": "a7bbbf173469c9b5eace0ee7e80f2a3ab3db9c976303bb18ca4bac56aa84bebc"
+    },
+    {
+      "path": "account-acceptance/repaired-execution-results.json",
+      "bytes": 1606,
+      "sha256": "d76b2983e0da2472071728fe0e81bab94c1cdf1e088d4906883a88774c7d3a3b"
+    },
+    {
+      "path": "account-acceptance/resume-repaired-account.py",
+      "bytes": 5047,
+      "sha256": "7cc84d1f600187d21b1a28a34e3c960f36c6e7d7c5aa285d014191326bf9adde"
+    },
+    {
+      "path": "activation-inspection/activation-summary.json",
+      "bytes": 563,
+      "sha256": "4e9585076bcf9911018c253e44822c9c244d23f9a2016923a28af4bf3d837c7f"
+    },
+    {
+      "path": "activation-inspection/maintenance-association-result.json",
+      "bytes": 1349,
+      "sha256": "3d1b157900aeea9fd5948c2fae45d8bc77bfaa86e9cf8021bed797879976b4ec"
+    },
+    {
+      "path": "activation-inspection/result.json",
+      "bytes": 3633,
+      "sha256": "dc203cf6eac83ba2d67139809260c97a1ae70b6e727e1325b9f7af1e618d14fb"
+    },
+    {
+      "path": "recovery-references.json",
+      "bytes": 9133,
+      "sha256": "c515065ef1b75c7f7a1c02881a70e17830e4039ac12543b9d6d82682ca6b323e"
+    },
+    {
+      "path": "role-preparation/NEXT-ALPHA-SMOKE-PROPOSAL.txt",
+      "bytes": 15704,
+      "sha256": "cab8d16cced3ba478f55315889bfaf6aa977a3fc48afd973dc9a7162ff52f838"
+    },
+    {
+      "path": "role-preparation/final-results.json",
+      "bytes": 10408,
+      "sha256": "5151f6b58d2f164857e7c1bb3f8fccc32103846fa4b169c809649044a40fad72"
+    },
+    {
+      "path": "role-preparation/role-contract.json",
+      "bytes": 36710,
+      "sha256": "1eebbbfcc96f856066166b0d0e7d70a02e7445d74cf624e7f618e97e76fd1245"
+    },
+    {
+      "path": "role-preparation/runtime-role-grants.sql",
+      "bytes": 20917,
+      "sha256": "030127b9eb2690a0159defddcf07b28da212b139d20ddd32f23e2d7766cd1a86"
+    },
+    {
+      "path": "role-preparation/summary.json",
+      "bytes": 2289,
+      "sha256": "3023ba4a18ef170fee2240b65f075c4cb02ba5e53065966de9f9ab3b07642b35"
+    },
+    {
+      "path": "source/IMPLEMENTATION-RESULT.txt",
+      "bytes": 3922,
+      "sha256": "b2818f28f1ebdaf9a970287d243789288f35949aaa905b3a9468bf45f5b5f079"
+    },
+    {
+      "path": "source/scripts/windows11/AdminProvisioning.ps1",
+      "bytes": 7456,
+      "sha256": "89158fa6f8d313289d68b06024c2998b5ecc5d53fb6f9a513b4ce811cf9bcd91"
+    },
+    {
+      "path": "source/scripts/windows11/FirstSetup.ps1",
+      "bytes": 31724,
+      "sha256": "86d5006183749247c7e6fae17c0b012e9a51ff752d3419c303df7f2bf3d5951b"
+    },
+    {
+      "path": "source/scripts/windows11/Guards.ps1",
+      "bytes": 28133,
+      "sha256": "1bceae83d51742743a6ca35baa96ae32e34b2c50e93eef364e4867b2b4365afe"
+    },
+    {
+      "path": "source/scripts/windows11/SetupMU.ps1",
+      "bytes": 1058,
+      "sha256": "629a674ef155182e94f5ea76ed255a43cbc7499dd885f2db24b813ad2450360a"
+    },
+    {
+      "path": "source/scripts/windows11/admin-provisioning-contract.json",
+      "bytes": 838,
+      "sha256": "3243bc44f592e7fe7b41bb5be329ab1d9021811aaf7dc1300052d6799a0c4377"
+    },
+    {
+      "path": "source/scripts/windows11/disposable-role-profile.json",
+      "bytes": 17689,
+      "sha256": "5e186c3e242b677c5d2ce37032bd3316a0bf0e30312ca252ba23b1770c57c7a6"
+    },
+    {
+      "path": "source/scripts/windows11/first-setup-policy.json",
+      "bytes": 1044,
+      "sha256": "15023e44c5997321245fd6e1851ec16671b6934b3eb6e8292c53025c90ac79cf"
+    },
+    {
+      "path": "source/scripts/windows11/local-session-contract.json",
+      "bytes": 1369,
+      "sha256": "9d59e91267dd4bf85c1b63a8b58a552781fca447bb524a86f207b1b2abab8c4c"
+    },
+    {
+      "path": "source/tests/SetupProfile.Tests.ps1",
+      "bytes": 21131,
+      "sha256": "6ff14081f1ecd7243a8abf65badf0f9cce4ceba23857032491e3c442d3c6b191"
+    },
+    {
+      "path": "source/tests/previous-54-results.json",
+      "bytes": 4753,
+      "sha256": "eeeb4383b78d6bf9f2ae58ee7f57a4c97aa47a484fd2ea5135b98c79502054b3"
+    },
+    {
+      "path": "source/tests/results.json",
+      "bytes": 7215,
+      "sha256": "47676bbe73349dc097c2e3789b0b5c1cec3f634c0292c59d4507125066695e62"
+    },
+    {
+      "path": "upstream-source-provenance.json",
+      "bytes": 6099,
+      "sha256": "c3d237234cf91d19f0ca1f3924efd1d6fd1d816e57a2aad40cecdb0bd841f1b8"
+    }
+  ],
+  "excludesSelf": true,
+  "sanitization": "Explicit source/evidence allowlist, UTF-8/type/size/token checks, manual review; no raw logs/account/custom values."
+}

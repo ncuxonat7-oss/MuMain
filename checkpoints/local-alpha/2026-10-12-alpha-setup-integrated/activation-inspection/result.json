@@ -1,0 +1,130 @@
+{
+  "status": "PARTIAL_METADATA_READ_PASS_ASSOCIATION_PERMISSION_BLOCKED",
+  "grantsChanged": false,
+  "launchEnabled": false,
+  "accountDataQueried": false,
+  "serverAssociationPrivileges": [
+    {
+      "role": "alpha_account",
+      "column": "GameConfigurationId",
+      "allowed": false
+    },
+    {
+      "role": "alpha_account",
+      "column": "Id",
+      "allowed": false
+    },
+    {
+      "role": "alpha_account",
+      "column": "ServerConfigurationId",
+      "allowed": false
+    },
+    {
+      "role": "alpha_account",
+      "column": "ServerID",
+      "allowed": false
+    },
+    {
+      "role": "alpha_config",
+      "column": "GameConfigurationId",
+      "allowed": false
+    },
+    {
+      "role": "alpha_config",
+      "column": "Id",
+      "allowed": false
+    },
+    {
+      "role": "alpha_config",
+      "column": "ServerConfigurationId",
+      "allowed": false
+    },
+    {
+      "role": "alpha_config",
+      "column": "ServerID",
+      "allowed": false
+    },
+    {
+      "role": "alpha_entity",
+      "column": "GameConfigurationId",
+      "allowed": false
+    },
+    {
+      "role": "alpha_entity",
+      "column": "Id",
+      "allowed": false
+    },
+    {
+      "role": "alpha_entity",
+      "column": "ServerConfigurationId",
+      "allowed": false
+    },
+    {
+      "role": "alpha_entity",
+      "column": "ServerID",
+      "allowed": false
+    },
+    {
+      "role": "alpha_typed",
+      "column": "GameConfigurationId",
+      "allowed": false
+    },
+    {
+      "role": "alpha_typed",
+      "column": "Id",
+      "allowed": false
+    },
+    {
+      "role": "alpha_typed",
+      "column": "ServerConfigurationId",
+      "allowed": false
+    },
+    {
+      "role": "alpha_typed",
+      "column": "ServerID",
+      "allowed": false
+    }
+  ],
+  "metadataBeforeSha256": "11f1b3f4cdbfcea7bd828d31a2a81613629720ac3287c3d07883c5b59ec0c650",
+  "metadataAfterSha256": "11f1b3f4cdbfcea7bd828d31a2a81613629720ac3287c3d07883c5b59ec0c650",
+  "missingPermission": {
+    "role": "alpha_entity",
+    "object": "config.GameServerDefinition",
+    "operation": "SELECT",
+    "columns": [
+      "Id",
+      "ServerConfigurationId",
+      "GameConfigurationId",
+      "ServerID"
+    ],
+    "applied": false
+  },
+  "metadataSummary": {
+    "gameConfigurations": 1,
+    "pluginRows": 758,
+    "activePluginRows": 729,
+    "nullCustomConfigurationRows": 706,
+    "blankCustomConfigurationRows": 0,
+    "invalidNonemptyJsonRows": 0,
+    "externalAssemblyRows": 0,
+    "customSourceRows": 0
+  },
+  "shutdown": {
+    "statusExit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "preservedInputHashes": {
+    "/workspace/openmu-single-read-20261012/dump/gameplay-test-db.dump": "0a4b0744cb9be77c8f53a6f4a73e729402d17382069ba93261d394cbadf19478",
+    "/workspace/openmu-single-read-20261012/runtime/app/MUnique.OpenMU.Persistence.EntityFramework.dll": "f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014",
+    "/workspace/openmu-single-read-20261012/candidate/MUnique.OpenMU.Persistence.EntityFramework.dll": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+    "/workspace/openmu-runtime-role-prep-20261012/role-contract.json": "1eebbbfcc96f856066166b0d0e7d70a02e7445d74cf624e7f618e97e76fd1245",
+    "/workspace/openmu-runtime-role-prep-20261012/runtime-role-grants.sql": "030127b9eb2690a0159defddcf07b28da212b139d20ddd32f23e2d7766cd1a86"
+  },
+  "inputsUnchanged": true,
+  "physicalRelationPreservation": {
+    "filesChecked": 695,
+    "changedFiles": [],
+    "scope": "Existing user and TOAST relation files, including indexes and forks; no account values queried or emitted."
+  }
+}

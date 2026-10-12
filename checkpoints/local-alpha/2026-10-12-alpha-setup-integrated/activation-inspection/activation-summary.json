@@ -1,0 +1,24 @@
+{
+  "sourceSha256": "9b4a56bb4fa75ea5822557ab6469cdd769a62c20a474841e5739859cf93b7fee",
+  "pluginRows": 758,
+  "activePluginRows": 729,
+  "scopedActivation": [
+    {
+      "type_id": "3c2b9d57-6e1a-4f84-9b0d-7a5e2c8f1d46",
+      "active": true
+    },
+    {
+      "type_id": "b7f62fa9-59e6-49e9-b499-0358a14957cf",
+      "active": true
+    },
+    {
+      "type_id": "d3f86b2a-9c17-4e05-a4b9-8e1c7d2f6053",
+      "active": true
+    },
+    {
+      "type_id": "ea4db403-84f2-4e31-b4d4-441b3eadfcb6",
+      "active": true
+    }
+  ],
+  "customValuesPublished": false
+}

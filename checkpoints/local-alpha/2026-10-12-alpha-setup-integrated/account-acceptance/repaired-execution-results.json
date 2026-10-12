@@ -1,0 +1,55 @@
+{
+  "status": "PASS_REAL_ACCOUNT_LOAD_SAVE_ROLLBACK",
+  "grantApplied": false,
+  "runnerInvocations": 1,
+  "launchEnabled": false,
+  "beforeDataSha256": "4704fda2bb7fe6a0b9099cc18bf218ec3e9591a041837dd7ac8aa3adcc5a4de6",
+  "approvedGrantAlreadyPresent": true,
+  "exactTwoColumnGrantVerified": true,
+  "newGrantChanges": false,
+  "runnerExitCode": 0,
+  "runnerResult": {
+    "status": "PASS_ACCOUNT_LOAD_REAL_SAVE_ROLLBACK",
+    "accountLoadAttempts": 1,
+    "saveAttempts": 1,
+    "launchEnabled": false,
+    "alpha_entityIdentity": {
+      "role": "alpha_entity",
+      "sessionUser": "alpha_entity",
+      "database": "alpha_role_probe",
+      "tcp": false
+    },
+    "configurationDependencyReads": 1,
+    "alpha_accountIdentity": {
+      "role": "alpha_account",
+      "sessionUser": "alpha_account",
+      "database": "alpha_role_probe",
+      "tcp": false
+    },
+    "realSaveVerifiedInsideTransaction": true,
+    "rollbackCompleted": true,
+    "observedEfCommands": [
+      {
+        "shape": "UPDATE data.\"Character\" SET \"PositionX\" = @p0 WHERE \"Id\" = @p1;",
+        "parameterTypes": [
+          "Guid",
+          "Byte"
+        ],
+        "values": "omitted"
+      }
+    ]
+  },
+  "afterDataSha256": "4704fda2bb7fe6a0b9099cc18bf218ec3e9591a041837dd7ac8aa3adcc5a4de6",
+  "dataUnchanged": true,
+  "shutdown": {
+    "statusExit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "priorSingleReadPreservation": {
+    "filesChecked": 2227,
+    "changedPaths": []
+  },
+  "candidateDllSha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+  "elapsedSeconds": 7.59
+}

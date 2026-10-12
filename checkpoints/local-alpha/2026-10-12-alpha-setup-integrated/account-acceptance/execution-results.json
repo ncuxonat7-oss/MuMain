@@ -1,0 +1,257 @@
+{
+  "status": "FAIL",
+  "grantApplied": true,
+  "runnerInvocations": 1,
+  "launchEnabled": false,
+  "beforeDataSha256": "4704fda2bb7fe6a0b9099cc18bf218ec3e9591a041837dd7ac8aa3adcc5a4de6",
+  "exactTwoColumnGrantVerified": true,
+  "runnerExitCode": 1,
+  "runnerResult": {
+    "status": "FAIL",
+    "accountLoadAttempts": 0,
+    "saveAttempts": 0,
+    "launchEnabled": false,
+    "stage": "configuration-dependency",
+    "exceptions": [
+      {
+        "type": "Npgsql.PostgresException",
+        "guardReason": null,
+        "sqlState": "42501",
+        "frames": [
+          {
+            "type": "Npgsql.Internal.NpgsqlConnector+<ReadMessageLong>d__234",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1",
+            "method": "ThrowForFailedGetResult"
+          },
+          {
+            "type": "System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1",
+            "method": "GetResult"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1+StateMachineBox`1",
+            "method": "System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult"
+          },
+          {
+            "type": "Npgsql.NpgsqlDataReader+<<ReadMessage>g__ReadMessageSequential|49_0>d",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "ThrowForNonSuccess"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "HandleNonSuccessAndDebuggerNotification"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1+ConfiguredValueTaskAwaiter",
+            "method": "GetResult"
+          },
+          {
+            "type": "Npgsql.NpgsqlDataReader+<NextResult>d__52",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "Npgsql.NpgsqlDataReader+<NextResult>d__52",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "ThrowForNonSuccess"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "HandleNonSuccessAndDebuggerNotification"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter",
+            "method": "GetResult"
+          },
+          {
+            "type": "Npgsql.NpgsqlCommand+<ExecuteReader>d__122",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "Npgsql.NpgsqlCommand+<ExecuteReader>d__122",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "ThrowForNonSuccess"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "HandleNonSuccessAndDebuggerNotification"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1+ConfiguredValueTaskAwaiter",
+            "method": "GetResult"
+          },
+          {
+            "type": "Npgsql.NpgsqlCommand+<ExecuteScalar>d__113",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "ThrowForNonSuccess"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "HandleNonSuccessAndDebuggerNotification"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter`1",
+            "method": "GetResult"
+          },
+          {
+            "type": "AccountAcceptance+<Scalar>d__11",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "AccountAcceptance+<Scalar>d__11",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "ThrowForNonSuccess"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "HandleNonSuccessAndDebuggerNotification"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter`1",
+            "method": "GetResult"
+          },
+          {
+            "type": "AccountAcceptance+<Identity>d__12",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "ThrowForNonSuccess"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "HandleNonSuccessAndDebuggerNotification"
+          },
+          {
+            "type": "AccountAcceptance+<Configuration>d__15",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "AccountAcceptance+<Configuration>d__15",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "AccountAcceptance+<Configuration>d__15",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "ThrowForNonSuccess"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "HandleNonSuccessAndDebuggerNotification"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter`1",
+            "method": "GetResult"
+          },
+          {
+            "type": "AccountAcceptance+<Run>d__16",
+            "method": "MoveNext"
+          },
+          {
+            "type": "System.Runtime.ExceptionServices.ExceptionDispatchInfo",
+            "method": "Throw"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "ThrowForNonSuccess"
+          },
+          {
+            "type": "System.Runtime.CompilerServices.TaskAwaiter",
+            "method": "HandleNonSuccessAndDebuggerNotification"
+          },
+          {
+            "type": "AccountAcceptance+<Main>d__17",
+            "method": "MoveNext"
+          }
+        ],
+        "message": "omitted"
+      }
+    ],
+    "observedEfCommands": []
+  },
+  "afterDataSha256": "4704fda2bb7fe6a0b9099cc18bf218ec3e9591a041837dd7ac8aa3adcc5a4de6",
+  "dataUnchanged": true,
+  "error": "first_runner_failure_no_retry",
+  "shutdown": {
+    "statusExit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "priorSingleReadPreservation": {
+    "filesChecked": 2227,
+    "changedPaths": []
+  },
+  "candidateDllSha256": "67adf087ec8f0d3de395740f0ce09e8040777698085747fdb23d89fee4f393a1",
+  "elapsedSeconds": 1.73
+}

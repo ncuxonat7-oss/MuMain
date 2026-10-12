@@ -1,0 +1,838 @@
+{
+  "schema": 1,
+  "proposalSha256": "cab8d16cced3ba478f55315889bfaf6aa977a3fc48afd973dc9a7162ff52f838",
+  "database": "openmu",
+  "roles": {
+    "mu_entity": {
+      "connect": "explicitly verified disposable target only",
+      "schemaUsage": [
+        "config",
+        "data",
+        "public"
+      ],
+      "tables": [
+        {
+          "table": "config.AreaSkillSettings",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.AttributeDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.AttributeRelationship",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.AttributeRequirement",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.BattleZoneDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.Buff",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CashShopConfiguration",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CashShopPackage",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CashShopProduct",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CastleSiegeConfiguration",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CastleSiegeNpcDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CastleSiegeStateScheduleEntry",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CastleSiegeUpgradeDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CastleSiegeZoneDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CharacterClass",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.CombinationBonusRequirement",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ConstValueAttribute",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.DropItemGroup",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.DuelArea",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.DuelConfiguration",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.EnterGate",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ExitGate",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.GameConfiguration",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.GameMapDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.IncreasableItemOption",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "data.Item",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemBasePowerUpDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemCrafting",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemCraftingRequiredItem",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemCraftingResultItem",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemDropItemGroup",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemLevelBonusTable",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemOfItemSet",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemOptionCombinationBonus",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemOptionDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "data.ItemOptionLink",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemOptionOfLevel",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemOptionType",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemSetGroup",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemSlotType",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "data.ItemStorage",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.JewelMix",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.LevelBonus",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MagicEffectDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MasterSkillDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MasterSkillRoot",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MiniGameChangeEvent",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MiniGameDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MiniGameReward",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MiniGameSpawnWave",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MiniGameTerrainChange",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MonsterAttribute",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MonsterDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MonsterSpawnArea",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.PlugInConfiguration",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE"
+          ]
+        },
+        {
+          "table": "config.PowerUpDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.PowerUpDefinitionValue",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.QuestDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.QuestItemRequirement",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.QuestMonsterKillRequirement",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.QuestReward",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.Rectangle",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.SimpleCraftingSettings",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.Skill",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.SkillComboDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.SkillComboStep",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.StatAttributeDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.WarpInfo",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.DropItemGroupItemDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.GameMapDefinitionDropItemGroup",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemCraftingRequiredItemItemDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemCraftingRequiredItemItemOptionType",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemDefinitionCharacterClass",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemDefinitionItemOptionDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemDefinitionItemSetGroup",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.ItemDropItemGroupItemDefinition",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "data.ItemItemOfItemSet",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MasterSkillDefinitionSkill",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.MonsterDefinitionDropItemGroup",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.SkillCharacterClass",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "public.__EFMigrationsHistory",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.SystemConfiguration",
+          "operations": [
+            "SELECT"
+          ]
+        }
+      ]
+    },
+    "mu_typed": {
+      "connect": "explicitly verified disposable target only",
+      "schemaUsage": [
+        "config",
+        "data",
+        "guild"
+      ],
+      "tables": [
+        {
+          "table": "config.SystemConfiguration",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "config.PlugInConfiguration",
+          "operations": [
+            "SELECT",
+            "UPDATE"
+          ]
+        },
+        {
+          "table": "data.GensAbuse",
+          "operations": [
+            "SELECT",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.GensMember",
+          "operations": [
+            "SELECT",
+            "UPDATE"
+          ]
+        },
+        {
+          "table": "data.CastleSiegeData",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE"
+          ]
+        },
+        {
+          "table": "data.CastleSiegeGuild",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.CastleSiegeNpcState",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.CastleSiegeGuildRegistration",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "guild.Guild",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "guild.GuildMember",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "data.Character",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "data.CastleSiegePendingReward",
+          "operations": [
+            "INSERT"
+          ]
+        }
+      ]
+    },
+    "mu_account": {
+      "connect": "explicitly verified disposable target only",
+      "schemaUsage": [
+        "data"
+      ],
+      "tables": [
+        {
+          "table": "data.Account",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.Character",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.StatAttribute",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.ItemStorage",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.Item",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.ItemOptionLink",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.ItemItemOfItemSet",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.LetterHeader",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.SkillEntry",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.CharacterQuestState",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.QuestMonsterKillRequirementState",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.CharacterDropItemGroup",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.AccountCharacterClass",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "data.CastleSiegePendingReward",
+          "operations": [
+            "SELECT",
+            "DELETE"
+          ]
+        }
+      ]
+    },
+    "mu_config": {
+      "connect": "explicitly verified disposable target only",
+      "schemaUsage": [
+        "config"
+      ],
+      "tables": [
+        {
+          "table": "config.GameConfiguration",
+          "operations": [
+            "SELECT"
+          ]
+        }
+      ]
+    },
+    "mu_friend": {
+      "connect": "explicitly verified disposable target only",
+      "schemaUsage": [
+        "data",
+        "friend"
+      ],
+      "tables": [
+        {
+          "table": "friend.Friend",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "data.Character",
+          "operations": [
+            "SELECT"
+          ]
+        }
+      ]
+    },
+    "mu_guild": {
+      "connect": "explicitly verified disposable target only",
+      "schemaUsage": [
+        "data",
+        "guild"
+      ],
+      "tables": [
+        {
+          "table": "guild.GuildMember",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "guild.Guild",
+          "operations": [
+            "SELECT"
+          ]
+        },
+        {
+          "table": "data.Character",
+          "operations": [
+            "SELECT"
+          ]
+        }
+      ]
+    },
+    "mu_admin": {
+      "connect": "explicitly verified disposable target only",
+      "schemaUsage": [
+        "admin"
+      ],
+      "tables": [
+        {
+          "table": "admin.AdminUser",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "admin.ApiKey",
+          "operations": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "table": "admin.__EFMigrationsHistory",
+          "operations": [
+            "SELECT"
+          ]
+        }
+      ]
+    }
+  }
+}

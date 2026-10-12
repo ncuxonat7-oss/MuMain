@@ -56,6 +56,8 @@ Quick references:
 
 ## Checkpoint documentation
 
+The latest integrated setup source/evidence is checkpoints/local-alpha/2026-10-12-alpha-setup-integrated/README.md: 82 unit checks PASS and prior actual Account load/save/rollback evidence retained. Parent candidate evidence backup remains pending its follow-up commit. Follow only the newest docs/current-state.md next step: separately authorized Windows deployment/credential handoff. Publication enables neither setup nor launch; do not rerun completed stages.
+
 The 2026-10-12 admin-only diagnostic and the subsequent single GameConfiguration read are complete; reuse their saved evidence. See checkpoints/local-alpha/2026-10-12-binary-json-read/README.md: one actual read PASS, 35 driver guard cases PASS, PostgreSQL stopped, original hashes intact. Follow only the newest next step in docs/current-state.md; older preparation queues are historical. Full ACL closure, Typed reads and Windows readiness remain unproven; keep setup/launch guards blocked.
 
 At ordinary checkpoints, keep one unambiguous next step in docs/current-state.md and mark older completed, cancelled, or parked instructions as superseded while preserving evidence and links. After substantial code/configuration changes, refresh only the matching existing ALPHA-NAV/STACK entry or mark its evidence stale. Use the existing document structure; do not expand this into a separate audit or catalog. Publication, main merges, deployments, and costly stages still require the owner's applicable approval.

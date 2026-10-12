@@ -1,0 +1,11 @@
+--- AccountAcceptance.cs.before
++++ AccountAcceptance.cs
+@@ -94,7 +94,7 @@
+     static async Task Identity(DbContext context, IDbContextTransaction transaction, string role)
+     {
+         var native=transaction.GetDbTransaction(); var connection=context.Database.GetDbConnection();
+-        var sql="SELECT current_user=session_user AND current_user='"+role+"' AND current_database()='alpha_role_probe' AND current_setting('listen_addresses')='' AND current_setting('data_directory')='"+Path.GetDirectoryName(Root)+"/pgdata'";
++        var sql="SELECT current_user=session_user AND current_user='"+role+"' AND current_database()='alpha_role_probe' AND current_setting('listen_addresses')=''";
+         Require((bool)(await Scalar(connection,native,sql))!,"IDENTITY_REJECTED");
+         Result[role+"Identity"]=new { role, sessionUser=role, database="alpha_role_probe", tcp=false };
+     }

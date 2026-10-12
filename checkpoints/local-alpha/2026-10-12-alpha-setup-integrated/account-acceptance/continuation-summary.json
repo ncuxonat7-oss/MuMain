@@ -1,0 +1,31 @@
+{
+  "status": "STOPPED_AT_FIRST_RUNNER_IDENTITY_PERMISSION_FAILURE",
+  "approvedGrant": "SELECT(AccountId,CharacterClassId) ON data.AccountCharacterClass TO alpha_account",
+  "grantAppliedAndVerified": true,
+  "confirmedDependency": "Account.UnlockedCharacterClasses projects CharacterClassId and filters AccountId through data.AccountCharacterClass",
+  "runnerExecutions": 1,
+  "failureSqlState": "42501",
+  "failureOperation": "current_setting('data_directory') in AccountAcceptance.Identity, line 97",
+  "retainedPostgresDiagnostic": "permission denied to examine \"data_directory\"",
+  "classification": "diagnostic runner requested privileged server-setting visibility; not evidence of an application table-permission failure",
+  "configurationDataReads": 0,
+  "accountLoads": 0,
+  "mutations": 0,
+  "realSaveCalls": 0,
+  "outcomeCoverage": "approved SQL grant verified; actual EF Account load/save remains UNRUN",
+  "dataUnchanged": true,
+  "shutdown": {
+    "statusExit": 3,
+    "pidAbsent": true,
+    "socketAbsent": true
+  },
+  "priorSingleReadPreservation": {
+    "filesChecked": 2227,
+    "changedPaths": []
+  },
+  "binaryRebuilds": 0,
+  "additionalGrantChanges": false,
+  "publication": false,
+  "launchEnabled": false,
+  "nextStep": "Authorize only a diagnostic runner correction: retain controller/setup-identity data_directory verification, remove privileged data_directory lookup from restricted runtime Identity while retaining target/socket/role/database/TCP/transaction checks, then recompile only the runner and resume the same bounded test. Do not grant pg_read_all_settings or broader role rights."
+}

@@ -14,7 +14,7 @@ Start with current-state.md, then only the relevant row below. S paths are relat
 | Item/drop/set | S VersionSeasonSix/Items, GameLogic/DefaultDropGenerator.cs; ItemDefinition(Group,Number), DropItemGroup and join tables, sets/crafting | C Data/DataHandler/ItemData, Data/GameData/ItemData; Data/Items/GroupNN_*.json and Models; Local/Eng/itemset* |
 | Skill/class/stat | S Initialization/CharacterClasses, VersionSeasonSix/SkillsInitializer.cs, GameLogic/PlayerActions/Skills | C WSclient.cpp, character/skill UI; Data/Local/Eng/skill_eng.bmd, Skill, Effect |
 | Quest/crafting/event | S VersionSeasonSix/Quests.cs, ChaosMixes.cs, Events; GameLogic/PlayerActions/Quests/Craftings, MiniGames | C GameLogic/Quests/QuestMng.cpp, MixMgr.cpp, event UI; Data/Local/Eng/Quest*, Local/Mix.bmd |
-| Persistence/connection | S Persistence/EntityFramework, Startup, DataModel; saved latest DB and logs | C ClientLibrary/network handlers; existing manual workflows |
+| Persistence/connection | S Persistence/EntityFramework, Startup, DataModel; [latest setup/Account recovery evidence](../checkpoints/local-alpha/2026-10-12-alpha-setup-integrated/README.md), parent candidate evidence backup pending; Windows/live broader-role acceptance unrun | C ClientLibrary/network handlers; existing manual workflows |
 
 ## On-demand index instead of a huge catalog
 
