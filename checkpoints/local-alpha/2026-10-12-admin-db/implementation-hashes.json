@@ -47,8 +47,8 @@
     },
     {
       "path": "checkpoints/local-alpha/2026-10-12-admin-db/implementation-report.md",
-      "bytes": 5574,
-      "sha256": "1301d3d9d5ba01be4b6866191f90062785b748269f6f4968dcc4eacf3108362b"
+      "bytes": 5844,
+      "sha256": "932db0e057ff1dca25968f8e763c0eca15812d40e5bc7a93a73f4666e7867242"
     },
     {
       "path": "checkpoints/local-alpha/2026-10-12-admin-db/evidence/test-admin-setup-adminprovisioning.txt",

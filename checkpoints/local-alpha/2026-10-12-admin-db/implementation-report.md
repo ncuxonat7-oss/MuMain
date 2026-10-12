@@ -18,7 +18,7 @@ The Windows utility/ACL implementation and the new read-only target query have N
 
 - `Test-AdminProvisioning.ps1`: **49/49 PASS**, real contract/SQL file checks plus mocked external binary/DB/process I/O. Includes wrong target, runtime authority, existing admin schema, missing/duplicate histories, wrong ProductVersion, binary changes, exact SQL once-only submission, no SQL after rejected preconditions, and propagated failures without repairs.
 - `Test-FirstSetup.ps1`: **56/56 PASS**, existing relevant suite updated for the new stage order and admin-stage failure/cleanup. Real pinned entry and unconditional grant fence tested before simulated authorization. All mutation stages mocked; no credential inputs or PostgreSQL utilities run.
-- Reviewed SQL byte identity, unchanged policy/launch/guard bytes and `git diff --check`: PASS.
+- Reviewed SQL byte identity, unchanged policy/launch/guard bytes and source/test/docs-only `git diff --check`: PASS. Whole-change whitespace checking reports preserved trailing spaces in raw test output/diff context and blank EOF lines in official SQL. These exact evidence bytes were intentionally not normalized; this is not a clean whole-diff whitespace result.
 
 Actual output is saved under evidence/test-admin-setup-*.txt; exact source/output hashes are in implementation-hashes.json. `implementation.diff` contains the focused source/test change, including new files. These results do not repeat the successful live database diagnostics or C# builds.
 
