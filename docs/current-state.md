@@ -4,7 +4,7 @@ The [admin-only disposable database checkpoint](../checkpoints/local-alpha/2026-
 
 Owner authorized this separate checkpoint branch at 02:36 UTC and renewed at 02:49 UTC. Main, working DB and launch remain untouched. Admin diagnostic authorization is completed; it does not activate first setup. Complete Entity/Typed permission closure and integrated Windows package acceptance remain blocked.
 
-**Single next step:** prepare a bounded startup read-closure acceptance stage from the existing first-setup/grant material, retaining the policy and grant-setter deployment fences. No repeated database tests, server/game launch, builds or readiness score change.
+**Single next step:** the [bounded disabled first-setup admin-provisioning integration](../checkpoints/local-alpha/2026-10-12-admin-db/next-stage-proposal.md): wire the reviewed admin-only SQL into setup authority between restore validation and runtime grants, with fail-closed mock-only tests. Keep policy/grant-setter deployment fences intact. This stage is prepared, not executed; no DB/server/game start, builds or readiness score change.
 
 ## Earlier checkpoint instructions — superseded
 
