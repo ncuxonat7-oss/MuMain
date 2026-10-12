@@ -9,9 +9,9 @@
     },
     {
       "path": "checkpoints/local-alpha/2026-10-12-binary-json-read/README.md",
-      "bytes": 4961,
-      "sha256": "03cff3e4789c709d238597bfe756c5bb4cc0392f49c29d027e4cd9add681c6bf",
-      "gitBlobSha1": "0df0407e14be12cea784bbc5cfa87d1633d282e8"
+      "bytes": 5508,
+      "sha256": "53c7dae819ac810a04ff6ec9b5cdddd88c970b64515f1279e2c350a061cd62eb",
+      "gitBlobSha1": "9c95d43611d00adb91daea24ad21a3904fca9511"
     },
     {
       "path": "checkpoints/local-alpha/2026-10-12-binary-json-read/binary-json-projection.patch",
