@@ -4,7 +4,7 @@ Canonical repository:ncuxonat7-oss/MuMain. Start with the newest section of docs
 
 Owner routing: before substantial work classify WORK (uncertain root cause/cross-system/runtime/reference investigation), CODEX PREFERRED (localized repository implementation/refactoring/tests/review with clear scope and acceptance), or mixed WORK→CODEX after investigation. Read docs/work-codex-routing.md for responsibilities and concise handoff. Use Codex proactively, not only after Work gets stuck; do not duplicate the same task. After two similar implementation attempts without meaningful progress reconsider routing. Tiny edits need no ceremony. Useful discoveries from either agent return to GitHub memory; do not assume shared session context. Future client optimization remains DEFERRED in docs/deferred-client-optimization.md and must be assessed by the future Client Modifiability / Extensibility Audit, not executed during S6 baseline work.
 
-Read only documents relevant to the task:
+Deferred external OpenMU configuration/packet issue pointers are stored in [docs/deferred-external-findings-2026-10-12.md](docs/deferred-external-findings-2026-10-12.md). Consult only when a matching future in-scope issue or upgrade arises; this is not a new task and does not change current Alpha priorities.\n\nRead only documents relevant to the task:
 
 |Task|Read next|
 |---|---|
