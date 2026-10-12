@@ -1,0 +1,102 @@
+[
+  {
+    "path": "Inspector.cs",
+    "bytes": 10896,
+    "sha256": "01376da312679d5448735f083ede83403cd9e69017f1324c256eb67f91f734a7"
+  },
+  {
+    "path": "compile.rsp",
+    "bytes": 21274,
+    "sha256": "8f7171acb0ab736301fbc5bc5419a7fb82acedf210500fcdd16166dbbea83e54"
+  },
+  {
+    "path": "compile.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "compile-invocation.json",
+    "bytes": 736,
+    "sha256": "821c3e5733154125baaa1b311da92102664bfd72179d4ef682926ecb1426f9c0"
+  },
+  {
+    "path": "run-once.py",
+    "bytes": 2407,
+    "sha256": "4f1a72f1abd95b9f789cc0077a61b42420248301d271e16aeca3cb898995ebf3"
+  },
+  {
+    "path": "invocation.json",
+    "bytes": 1521,
+    "sha256": "76f412ab017d6f22e2a249f1603939d7b8f712d149e10b787ba95284210799ac"
+  },
+  {
+    "path": "execution.json",
+    "bytes": 357,
+    "sha256": "b795f493888c759af3169fb3886049ed2dbebacfb738d0888d937bc68214878d"
+  },
+  {
+    "path": "verified-inputs.json",
+    "bytes": 23178,
+    "sha256": "fe350244f0e697d3330c3a6b33d5e170fc92c027db42808cc30d656cbada5698"
+  },
+  {
+    "path": "candidate-attempt.claim",
+    "bytes": 44,
+    "sha256": "cf9a166b2d3dbdcf41401ba8df705026283753fbd11a7f99740cde3fabc53db4"
+  },
+  {
+    "path": "SUMMARY.json",
+    "bytes": 2113,
+    "sha256": "c832ece3356c285fabd72aa5382f93dc8fa0647416ac79388bc2510fd050a8c6"
+  },
+  {
+    "path": "REPORT.txt",
+    "bytes": 3526,
+    "sha256": "17dcad01360a56d9db82110fcb732b2a8ca3b5c134e859ce90330135f9ca4547"
+  },
+  {
+    "path": "stdout.private.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "stderr.private.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "app/Inspector.dll",
+    "bytes": 46080,
+    "sha256": "0ad869020f21dc12693af22f436d49f311dcc1c1b554d676e9de40fef26723f9"
+  },
+  {
+    "path": "app/ConnectionSettings.xml",
+    "bytes": 1681,
+    "sha256": "8fcfc6adc553390fbe063e49f5db81fce1e7240e05995c244ba9c734d3eadcdd"
+  },
+  {
+    "path": "output/aggregate-methods.json",
+    "bytes": 265,
+    "sha256": "cb46c1217134d92867a5328f253c33bc56998303773198fea6475b56fe44c1d8"
+  },
+  {
+    "path": "output/game-navigation.json",
+    "bytes": 586582,
+    "sha256": "e1db620b3bdb15d8a9a133de5bb76649f6eac8fe772f6d3e67eaf87bcd9654e1"
+  },
+  {
+    "path": "output/result.json",
+    "bytes": 223,
+    "sha256": "7912cfc8df58611166b2e3331105eb1a7fd927d98373e529c5d8fa37d071b200"
+  },
+  {
+    "path": "output/typed-PlugInConfiguration.json",
+    "bytes": 16491,
+    "sha256": "ea122cd707662d790499122f1af6fc7dac0035108721dd766d50f2669d826ce9"
+  },
+  {
+    "path": "output/typed-SystemConfiguration.json",
+    "bytes": 5262,
+    "sha256": "37402f3b27e0742b40d3ebf8b9025fe2a3398a8baee20aadfcd93b913e44b490"
+  }
+]

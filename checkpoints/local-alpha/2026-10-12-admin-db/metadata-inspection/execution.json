@@ -1,0 +1,13 @@
+{
+  "status": "FINISHED",
+  "exitCode": 0,
+  "elapsedSeconds": 0.717,
+  "userCpuSeconds": 0.640061,
+  "systemCpuSeconds": 0.062432999999999995,
+  "maxRssKiB": 86604,
+  "attempts": 1,
+  "connectionAttemptSentinelPresent": false,
+  "stdoutBytes": 0,
+  "stderrBytes": 0,
+  "inspectorSha256": "0ad869020f21dc12693af22f436d49f311dcc1c1b554d676e9de40fef26723f9"
+}

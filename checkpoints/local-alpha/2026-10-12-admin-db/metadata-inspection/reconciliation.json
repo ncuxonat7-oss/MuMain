@@ -1,0 +1,1173 @@
+{
+  "status": "STATIC_RECONCILIATION_ONLY_NOT_GRANT_AUTHORITY",
+  "fullRowProjectionTables": [
+    {
+      "table": "config.AreaSkillSettings",
+      "columns": [
+        "Id",
+        "DelayBetweenHits",
+        "DelayPerOneDistance",
+        "EffectRange",
+        "FrustumDistance",
+        "FrustumEndWidth",
+        "FrustumStartWidth",
+        "HitChancePerDistanceMultiplier",
+        "MaximumNumberOfHitsPerAttack",
+        "MaximumNumberOfHitsPerTarget",
+        "MinimumNumberOfHitsPerAttack",
+        "MinimumNumberOfHitsPerTarget",
+        "ProjectileCount",
+        "TargetAreaDiameter",
+        "UseDeferredHits",
+        "UseFrustumFilter",
+        "UseTargetAreaFilter"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.AttributeDefinition",
+      "columns": [
+        "Id",
+        "Description",
+        "Designation",
+        "GameConfigurationId",
+        "MaximumValue"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.AttributeRelationship",
+      "columns": [
+        "Id",
+        "AggregateType",
+        "CharacterClassId",
+        "GameConfigurationId",
+        "InputAttributeId",
+        "InputOperand",
+        "InputOperator",
+        "OperandAttributeId",
+        "PowerUpDefinitionValueId",
+        "SkillId",
+        "TargetAttributeId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.AttributeRequirement",
+      "columns": [
+        "Id",
+        "AttributeId",
+        "GameMapDefinitionId",
+        "ItemDefinitionId",
+        "MinimumValue",
+        "SkillId",
+        "SkillId1"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.BattleZoneDefinition",
+      "columns": [
+        "Id",
+        "GroundId",
+        "LeftGoalId",
+        "LeftTeamSpawnPointX",
+        "LeftTeamSpawnPointY",
+        "RightGoalId",
+        "RightTeamSpawnPointX",
+        "RightTeamSpawnPointY",
+        "Type"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.Buff",
+      "columns": [
+        "Id",
+        "MagicEffectDefinitionId",
+        "MaximumLevel",
+        "MinimumLevel",
+        "MonsterDefinitionId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CashShopConfiguration",
+      "columns": [
+        "Id",
+        "BannerSaleZone",
+        "BannerYear",
+        "BannerYearId",
+        "ScriptSaleZone",
+        "ScriptYear",
+        "ScriptYearId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CashShopPackage",
+      "columns": [
+        "Id",
+        "CashShopConfigurationId",
+        "CoinType",
+        "IsBundle",
+        "IsForSale",
+        "IsGiftable",
+        "Name",
+        "PackageSequence",
+        "Price"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CashShopProduct",
+      "columns": [
+        "Id",
+        "CashShopPackageId",
+        "Duration",
+        "ItemDefinitionId",
+        "ItemLevel",
+        "Price",
+        "PriceSequence",
+        "ProductSequence",
+        "Quantity"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CastleSiegeConfiguration",
+      "columns": [
+        "Id",
+        "AttackRespawnAreaId",
+        "CastleSiegeMapDefinitionId",
+        "CrownHoldTimeSeconds",
+        "DefenseRespawnAreaId",
+        "Enabled",
+        "GateBuyPrice",
+        "GateRepairCostPerHealthPoint",
+        "GuildScoreCastleSiege",
+        "GuildScoreCastleSiegeMembers",
+        "LandOfTrialsMapDefinitionId",
+        "MaxAttackingGuilds",
+        "ParticipantRewardMinSeconds",
+        "RegisterMinLevel",
+        "RegisterMinMembers",
+        "RepairCostPerUpgradeLevel",
+        "RewardItemDefinitionId",
+        "SignOfLordItemDefinitionId",
+        "SignOfLordItemLevel",
+        "StatueBuyPrice",
+        "StatueRepairCostPerHealthPoint"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CastleSiegeNpcDefinition",
+      "columns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "DefaultSide",
+        "Direction",
+        "InstanceId",
+        "IsPersistedToDatabase",
+        "MonsterDefinitionId",
+        "SpawnX",
+        "SpawnY"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CastleSiegeStateScheduleEntry",
+      "columns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "DayOfWeek",
+        "Hour",
+        "Minute",
+        "State"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CastleSiegeUpgradeDefinition",
+      "columns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "CastleSiegeConfigurationId1",
+        "CastleSiegeConfigurationId2",
+        "CastleSiegeConfigurationId3",
+        "CastleSiegeConfigurationId4",
+        "Level",
+        "RequiredJewelOfGuardianCount",
+        "RequiredZen",
+        "Value"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CastleSiegeZoneDefinition",
+      "columns": [
+        "Id",
+        "CastleSiegeConfigurationId",
+        "CastleSiegeConfigurationId1",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CharacterClass",
+      "columns": [
+        "Id",
+        "CanGetCreated",
+        "ComboDefinitionId",
+        "CreationAllowedFlag",
+        "FruitCalculation",
+        "GameConfigurationId",
+        "HomeMapId",
+        "IsMasterClass",
+        "LevelRequirementByCreation",
+        "LevelWarpRequirementReductionPercent",
+        "Name",
+        "NextGenerationClassId",
+        "Number"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.CombinationBonusRequirement",
+      "columns": [
+        "Id",
+        "ItemOptionCombinationBonusId",
+        "MinimumCount",
+        "OptionTypeId",
+        "SubOptionType"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ConstValueAttribute",
+      "columns": [
+        "Id",
+        "AggregateType",
+        "CharacterClassId",
+        "DefinitionId",
+        "GameConfigurationId",
+        "Value"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.DropItemGroup",
+      "columns": [
+        "Id",
+        "Chance",
+        "Description",
+        "GameConfigurationId",
+        "ItemLevel",
+        "ItemType",
+        "MaximumMonsterLevel",
+        "MinimumMonsterLevel",
+        "MonsterId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.DuelArea",
+      "columns": [
+        "Id",
+        "DuelConfigurationId",
+        "FirstPlayerGateId",
+        "Index",
+        "SecondPlayerGateId",
+        "SpectatorsGateId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.DuelConfiguration",
+      "columns": [
+        "Id",
+        "EntranceFee",
+        "ExitId",
+        "MaximumScore",
+        "MaximumSpectatorsPerDuelRoom",
+        "MinimumCharacterLevel"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.EnterGate",
+      "columns": [
+        "Id",
+        "GameMapDefinitionId",
+        "LevelRequirement",
+        "Number",
+        "TargetGateId",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ExitGate",
+      "columns": [
+        "Id",
+        "Direction",
+        "IsSpawnGate",
+        "MapId",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.GameConfiguration",
+      "columns": [
+        "Id",
+        "AreaSkillHitsPlayer",
+        "CashShopConfigurationId",
+        "CastleSiegeConfigurationId",
+        "CharacterNameRegex",
+        "ClampMoneyOnPickup",
+        "DamagePerOneItemDurability",
+        "DamagePerOnePetDurability",
+        "DuelConfigurationId",
+        "ExcellentItemDropLevelDelta",
+        "ExperienceFormula",
+        "ExperienceRate",
+        "HitsPerOneItemDurability",
+        "InfoRange",
+        "ItemDropDuration",
+        "LetterSendPrice",
+        "MasterExperienceFormula",
+        "MasterExperienceRate",
+        "MaximumCharactersPerAccount",
+        "MaximumInventoryMoney",
+        "MaximumItemOptionLevelDrop",
+        "MaximumLetters",
+        "MaximumLevel",
+        "MaximumMasterLevel",
+        "MaximumPartySize",
+        "MaximumPasswordLength",
+        "MaximumVaultMoney",
+        "MinimumMonsterLevelForMasterExperience",
+        "PreventExperienceOverflow",
+        "RecoveryInterval",
+        "ShouldDropMoney"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.GameMapDefinition",
+      "columns": [
+        "Id",
+        "BattleZoneId",
+        "Discriminator",
+        "ExpMultiplier",
+        "GameConfigurationId",
+        "Name",
+        "Number",
+        "SafezoneMapId",
+        "TerrainData"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.IncreasableItemOption",
+      "columns": [
+        "Id",
+        "ItemOptionDefinitionId",
+        "LevelType",
+        "Number",
+        "OptionTypeId",
+        "PowerUpDefinitionId",
+        "SubOptionType",
+        "Weight"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "data.Item",
+      "columns": [
+        "Id",
+        "DefinitionId",
+        "Durability",
+        "HasSkill",
+        "ItemSlot",
+        "ItemStorageId",
+        "Level",
+        "PetExperience",
+        "SocketCount",
+        "StorePrice"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemBasePowerUpDefinition",
+      "columns": [
+        "Id",
+        "AggregateType",
+        "BaseValue",
+        "BonusPerLevelTableId",
+        "ItemDefinitionId",
+        "TargetAttributeId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemCrafting",
+      "columns": [
+        "Id",
+        "ItemCraftingHandlerClassName",
+        "MonsterDefinitionId",
+        "Name",
+        "Number",
+        "SimpleCraftingSettingsId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemCraftingRequiredItem",
+      "columns": [
+        "Id",
+        "AddPercentage",
+        "FailResult",
+        "MaximumAmount",
+        "MaximumItemLevel",
+        "MinimumAmount",
+        "MinimumItemLevel",
+        "NpcPriceDivisor",
+        "Reference",
+        "SimpleCraftingSettingsId",
+        "SuccessResult"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemCraftingResultItem",
+      "columns": [
+        "Id",
+        "AddLevel",
+        "Durability",
+        "ItemDefinitionId",
+        "RandomMaximumLevel",
+        "RandomMinimumLevel",
+        "Reference",
+        "SimpleCraftingSettingsId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemDefinition",
+      "columns": [
+        "Id",
+        "ConsumeEffectId",
+        "DropLevel",
+        "DropsFromMonsters",
+        "Durability",
+        "GameConfigurationId",
+        "Group",
+        "Height",
+        "IsAmmunition",
+        "IsBoundToCharacter",
+        "IsDroppable",
+        "IsPersonalStoreSellable",
+        "IsQuestItem",
+        "IsRepairable",
+        "IsSellableToNpc",
+        "IsStorable",
+        "IsTradable",
+        "ItemSlotId",
+        "MaximumDropLevel",
+        "MaximumItemLevel",
+        "MaximumSockets",
+        "Name",
+        "Number",
+        "PetExperienceFormula",
+        "SkillId",
+        "StorageLimitPerCharacter",
+        "Value",
+        "Width"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemDropItemGroup",
+      "columns": [
+        "Id",
+        "Chance",
+        "Description",
+        "DropEffect",
+        "ItemDefinitionId",
+        "ItemLevel",
+        "ItemType",
+        "MaximumLevel",
+        "MaximumMonsterLevel",
+        "MinimumLevel",
+        "MinimumMonsterLevel",
+        "MoneyAmount",
+        "MonsterId",
+        "RequiredCharacterLevel",
+        "SourceItemLevel"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemLevelBonusTable",
+      "columns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "Name"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemOfItemSet",
+      "columns": [
+        "Id",
+        "AncientSetDiscriminator",
+        "BonusOptionId",
+        "ItemDefinitionId",
+        "ItemSetGroupId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemOptionCombinationBonus",
+      "columns": [
+        "Id",
+        "AppliesMultipleTimes",
+        "BonusId",
+        "Description",
+        "GameConfigurationId",
+        "Number"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemOptionDefinition",
+      "columns": [
+        "Id",
+        "AddChance",
+        "AddsRandomly",
+        "GameConfigurationId",
+        "MaximumOptionsPerItem",
+        "Name"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "data.ItemOptionLink",
+      "columns": [
+        "Id",
+        "Index",
+        "ItemId",
+        "ItemOptionId",
+        "Level"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemOptionOfLevel",
+      "columns": [
+        "Id",
+        "IncreasableItemOptionId",
+        "Level",
+        "PowerUpDefinitionId",
+        "RequiredItemLevel"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemOptionType",
+      "columns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "IsVisible",
+        "Name"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemSetGroup",
+      "columns": [
+        "Id",
+        "AlwaysApplies",
+        "CountDistinct",
+        "GameConfigurationId",
+        "MinimumItemCount",
+        "Name",
+        "OptionsId",
+        "SetLevel"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.ItemSlotType",
+      "columns": [
+        "Id",
+        "Description",
+        "GameConfigurationId",
+        "ItemSlots"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "data.ItemStorage",
+      "columns": [
+        "Id",
+        "Money"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.JewelMix",
+      "columns": [
+        "Id",
+        "GameConfigurationId",
+        "MixedJewelId",
+        "Number",
+        "SingleJewelId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.LevelBonus",
+      "columns": [
+        "Id",
+        "AdditionalValue",
+        "ItemLevelBonusTableId",
+        "Level"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MagicEffectDefinition",
+      "columns": [
+        "Id",
+        "ChanceId",
+        "ChancePvpId",
+        "DurationDependsOnTargetLevel",
+        "DurationId",
+        "DurationPvpId",
+        "GameConfigurationId",
+        "InformObservers",
+        "MonsterTargetLevelDivisor",
+        "Name",
+        "Number",
+        "PlayerTargetLevelDivisor",
+        "SendDuration",
+        "StopByDeath",
+        "SubType"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MasterSkillDefinition",
+      "columns": [
+        "Id",
+        "Aggregation",
+        "DisplayValueFormula",
+        "ExtendsDuration",
+        "MaximumLevel",
+        "MinimumLevel",
+        "Rank",
+        "ReplacedSkillId",
+        "RootId",
+        "TargetAttributeId",
+        "ValueFormula"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MasterSkillRoot",
+      "columns": [
+        "Id",
+        "GameConfigurationId",
+        "Name"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MiniGameChangeEvent",
+      "columns": [
+        "Id",
+        "Description",
+        "Index",
+        "Message",
+        "MiniGameDefinitionId",
+        "MinimumTargetLevel",
+        "MultiplyKillsByPlayers",
+        "NumberOfKills",
+        "SpawnAreaId",
+        "Target",
+        "TargetDefinitionId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MiniGameDefinition",
+      "columns": [
+        "Id",
+        "AllowParty",
+        "ArePlayerKillersAllowedToEnter",
+        "Description",
+        "EnterDuration",
+        "EntranceFee",
+        "EntranceId",
+        "ExitDuration",
+        "GameConfigurationId",
+        "GameDuration",
+        "GameLevel",
+        "MapCreationPolicy",
+        "MaximumCharacterLevel",
+        "MaximumPlayerCount",
+        "MaximumSpecialCharacterLevel",
+        "MinimumCharacterLevel",
+        "MinimumSpecialCharacterLevel",
+        "Name",
+        "RequiresMasterClass",
+        "SaveRankingStatistics",
+        "TicketItemId",
+        "TicketItemLevel",
+        "Type"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MiniGameReward",
+      "columns": [
+        "Id",
+        "ItemRewardId",
+        "MiniGameDefinitionId",
+        "Rank",
+        "RequiredKillId",
+        "RequiredSuccess",
+        "RewardAmount",
+        "RewardType"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MiniGameSpawnWave",
+      "columns": [
+        "Id",
+        "Description",
+        "EndTime",
+        "Message",
+        "MiniGameDefinitionId",
+        "StartTime",
+        "WaveNumber"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MiniGameTerrainChange",
+      "columns": [
+        "Id",
+        "EndX",
+        "EndY",
+        "IsClientUpdateRequired",
+        "MiniGameChangeEventId",
+        "SetTerrainAttribute",
+        "StartX",
+        "StartY",
+        "TerrainAttribute"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MonsterAttribute",
+      "columns": [
+        "Id",
+        "AttributeDefinitionId",
+        "MonsterDefinitionId",
+        "Value"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MonsterDefinition",
+      "columns": [
+        "Id",
+        "AttackDelay",
+        "AttackRange",
+        "AttackSkillId",
+        "Attribute",
+        "Designation",
+        "GameConfigurationId",
+        "IntelligenceTypeName",
+        "MerchantStoreId",
+        "MoveDelay",
+        "MoveRange",
+        "NpcWindow",
+        "Number",
+        "NumberOfMaximumItemDrops",
+        "ObjectKind",
+        "RespawnDelay",
+        "ViewRange"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.MonsterSpawnArea",
+      "columns": [
+        "Id",
+        "Direction",
+        "GameMapId",
+        "MaximumHealthOverride",
+        "MonsterDefinitionId",
+        "Quantity",
+        "SpawnTrigger",
+        "WaveNumber",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.PlugInConfiguration",
+      "columns": [
+        "Id",
+        "CustomConfiguration",
+        "CustomPlugInSource",
+        "ExternalAssemblyName",
+        "GameConfigurationId",
+        "IsActive",
+        "TypeId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.PowerUpDefinition",
+      "columns": [
+        "Id",
+        "BoostId",
+        "GameMapDefinitionId",
+        "MagicEffectDefinitionId",
+        "MagicEffectDefinitionId1",
+        "MasterSkillDefinitionId",
+        "TargetAttributeId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.PowerUpDefinitionValue",
+      "columns": [
+        "Id",
+        "AggregateType",
+        "MaximumValue",
+        "Value"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.QuestDefinition",
+      "columns": [
+        "Id",
+        "Group",
+        "MaximumCharacterLevel",
+        "MinimumCharacterLevel",
+        "MonsterDefinitionId",
+        "Name",
+        "Number",
+        "QualifiedCharacterId",
+        "QuestGiverId",
+        "RefuseNumber",
+        "Repeatable",
+        "RequiredStartMoney",
+        "RequiresClientAction",
+        "StartingNumber"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.QuestItemRequirement",
+      "columns": [
+        "Id",
+        "DropItemGroupId",
+        "ItemId",
+        "MinimumNumber",
+        "QuestDefinitionId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.QuestMonsterKillRequirement",
+      "columns": [
+        "Id",
+        "MinimumNumber",
+        "MonsterId",
+        "QuestDefinitionId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.QuestReward",
+      "columns": [
+        "Id",
+        "AttributeRewardId",
+        "ItemRewardId",
+        "QuestDefinitionId",
+        "RewardType",
+        "SkillRewardId",
+        "Value"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.Rectangle",
+      "columns": [
+        "Id",
+        "X1",
+        "X2",
+        "Y1",
+        "Y2"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.SimpleCraftingSettings",
+      "columns": [
+        "Id",
+        "MaximumSuccessPercent",
+        "Money",
+        "MoneyPerFinalSuccessPercentage",
+        "MultipleAllowed",
+        "NpcPriceDivisor",
+        "ResultItemExcellentOptionChance",
+        "ResultItemLuckOptionChance",
+        "ResultItemMaxExcOptionCount",
+        "ResultItemSelect",
+        "ResultItemSkillChance",
+        "SuccessPercent",
+        "SuccessPercentageAdditionForAncientItem",
+        "SuccessPercentageAdditionForExcellentItem",
+        "SuccessPercentageAdditionForGuardianItem",
+        "SuccessPercentageAdditionForLuck",
+        "SuccessPercentageAdditionForSocketItem"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.Skill",
+      "columns": [
+        "Id",
+        "AreaSkillSettingsId",
+        "AttackDamage",
+        "DamageType",
+        "ElementalModifierTargetId",
+        "GameConfigurationId",
+        "ImplicitTargetRange",
+        "MagicEffectDefId",
+        "MasterDefinitionId",
+        "MovesTarget",
+        "MovesToTarget",
+        "Name",
+        "Number",
+        "NumberOfHitsPerAttack",
+        "Range",
+        "SkillType",
+        "SkipElementalModifier",
+        "Target",
+        "TargetRestriction"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.SkillComboDefinition",
+      "columns": [
+        "Id",
+        "MaximumCompletionTime",
+        "Name"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.SkillComboStep",
+      "columns": [
+        "Id",
+        "IsFinalStep",
+        "Order",
+        "SkillComboDefinitionId",
+        "SkillId"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.StatAttributeDefinition",
+      "columns": [
+        "Id",
+        "AttributeId",
+        "BaseValue",
+        "CharacterClassId",
+        "IncreasableByPlayer"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    },
+    {
+      "table": "config.WarpInfo",
+      "columns": [
+        "Id",
+        "Costs",
+        "GameConfigurationId",
+        "GateId",
+        "Index",
+        "LevelRequirement",
+        "Name"
+      ],
+      "projection": "alias.*; mapped columns captured, not live-schema validation"
+    }
+  ],
+  "joinColumnProjectionTables": [
+    {
+      "table": "config.DropItemGroupItemDefinition",
+      "columns": [
+        "DropItemGroupId",
+        "ItemDefinitionId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.GameMapDefinitionDropItemGroup",
+      "columns": [
+        "DropItemGroupId",
+        "GameMapDefinitionId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.ItemCraftingRequiredItemItemDefinition",
+      "columns": [
+        "ItemCraftingRequiredItemId",
+        "ItemDefinitionId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.ItemCraftingRequiredItemItemOptionType",
+      "columns": [
+        "ItemCraftingRequiredItemId",
+        "ItemOptionTypeId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.ItemDefinitionCharacterClass",
+      "columns": [
+        "CharacterClassId",
+        "ItemDefinitionId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.ItemDefinitionItemOptionDefinition",
+      "columns": [
+        "ItemDefinitionId",
+        "ItemOptionDefinitionId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.ItemDefinitionItemSetGroup",
+      "columns": [
+        "ItemDefinitionId",
+        "ItemSetGroupId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.ItemDropItemGroupItemDefinition",
+      "columns": [
+        "ItemDefinitionId",
+        "ItemDropItemGroupId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "data.ItemItemOfItemSet",
+      "columns": [
+        "ItemId",
+        "ItemOfItemSetId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.MasterSkillDefinitionSkill",
+      "columns": [
+        "MasterSkillDefinitionId",
+        "SkillId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.MonsterDefinitionDropItemGroup",
+      "columns": [
+        "DropItemGroupId",
+        "MonsterDefinitionId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    },
+    {
+      "table": "config.SkillCharacterClass",
+      "columns": [
+        "CharacterClassId",
+        "SkillId"
+      ],
+      "basis": "observed single other FK and pinned JSON join-column branch"
+    }
+  ],
+  "typedScalarRoots": [
+    {
+      "table": "config.PlugInConfiguration",
+      "columns": [
+        "Id",
+        "CustomConfiguration",
+        "CustomPlugInSource",
+        "ExternalAssemblyName",
+        "GameConfigurationId",
+        "IsActive",
+        "TypeId"
+      ],
+      "outgoingNavigations": 0
+    },
+    {
+      "table": "config.SystemConfiguration",
+      "columns": [
+        "Id",
+        "AutoStart",
+        "AutoUpdateSchema",
+        "IpResolver",
+        "IpResolverParameter",
+        "NetworkAnalyzerLiveBufferSize",
+        "NetworkObservationArchivePath",
+        "NetworkObservationMaxSessionSizeMb",
+        "NetworkObservationMaxTotalSizeMb",
+        "NetworkObservationRetentionDays",
+        "ReadConsoleInput",
+        "TimeZoneId"
+      ],
+      "outgoingNavigations": 0
+    }
+  ],
+  "counts": {
+    "fullRowTables": 69,
+    "joinTables": 12
+  },
+  "limits": [
+    "Depends on saved inspector branch decisions and pinned builder semantics; generated SQL was not captured.",
+    "No complete startup role/conditional-data-source attribution or feature/write closure.",
+    "Key declaring-entity identity is not separately serialized; recorded traversal actions encode the inspected declared-PK branch. If independent replay requires that raw field, it remains absent."
+  ]
+}

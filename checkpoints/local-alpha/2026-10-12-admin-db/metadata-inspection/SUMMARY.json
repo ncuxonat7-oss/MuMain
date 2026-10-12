@@ -1,0 +1,46 @@
+{
+  "result": "PASS_SCOPED_MODEL_METADATA_EXPORT",
+  "candidateAttempts": 1,
+  "candidateExitCode": 0,
+  "candidateElapsedSeconds": 0.717,
+  "candidateMaxRssKiB": 86604,
+  "candidateCpuSeconds": 0.702,
+  "metadata": {
+    "gameGraphEntityRecords": 81,
+    "rootNavigations": 24,
+    "rootAggregateTrue": 24,
+    "pluginTypedEntityRecords": 2,
+    "systemTypedEntityRecords": 1,
+    "unresolvedAggregateFlags": 0
+  },
+  "executed": [
+    "offline compilation of disposable inspector only",
+    "candidate assembly initialization",
+    "EntityDataContext.CompleteModel access",
+    "candidate IsMemberOfAggregate metadata helper",
+    "TypedContext.Create for PlugInConfiguration and SystemConfiguration",
+    "typed Model, ReadOnlyTypes and IsBackReference access"
+  ],
+  "notRun": [
+    "Startup/application entry point",
+    "JSON query builder",
+    "intentional connection-opening/query APIs",
+    "migrations",
+    "PostgreSQL startup",
+    "game/server",
+    "OpenMU build",
+    "package restore/download",
+    "permission or security changes",
+    "publication"
+  ],
+  "networkAssurance": "unchanged platform restrictions; residual risk explicitly accepted; no observed EF connection-opening/command-execution or System.Net socket/HTTP start events; monitoring is not exhaustive isolation proof",
+  "checkpoint": "07eceffcf1059ba861c929b3725ed2a2e23d3f56",
+  "checkpointClean": true,
+  "limitations": [
+    "81 metadata records are not 81 required read tables; reference-only targets are included as metadata.",
+    "No emitted SQL or complete read/column permission closure was produced.",
+    "No live catalog, role, Windows or deployment acceptance is claimed.",
+    "Export completeness is limited to the inspector traversal and requested typed models; key/FK arrays and property mappings must be interpreted with pinned query-builder rules."
+  ],
+  "nextRecommendation": "Perform a separately scoped static reconciliation of these exported metadata files with the pinned JSON builder and typed navigation rules; derive the exact read list without another candidate execution or database connection."
+}

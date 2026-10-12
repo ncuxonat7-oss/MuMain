@@ -1,0 +1,9 @@
+{
+  "status": "PASS_METADATA_EXPORTED",
+  "stage": "complete",
+  "unresolved": [],
+  "queryBuilderInvoked": false,
+  "databaseApisInvoked": false,
+  "connectionEventsObserved": false,
+  "networkIsolationGuaranteed": false
+}

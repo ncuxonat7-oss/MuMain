@@ -1,0 +1,47 @@
+[
+  {
+    "path": "output/game-navigation.json",
+    "sha256": "e1db620b3bdb15d8a9a133de5bb76649f6eac8fe772f6d3e67eaf87bcd9654e1",
+    "bytes": 586582
+  },
+  {
+    "path": "output/typed-PlugInConfiguration.json",
+    "sha256": "ea122cd707662d790499122f1af6fc7dac0035108721dd766d50f2669d826ce9",
+    "bytes": 16491
+  },
+  {
+    "path": "output/typed-SystemConfiguration.json",
+    "sha256": "37402f3b27e0742b40d3ebf8b9025fe2a3398a8baee20aadfcd93b913e44b490",
+    "bytes": 5262
+  },
+  {
+    "path": "output/aggregate-methods.json",
+    "sha256": "cb46c1217134d92867a5328f253c33bc56998303773198fea6475b56fe44c1d8",
+    "bytes": 265
+  },
+  {
+    "path": "output/result.json",
+    "sha256": "7912cfc8df58611166b2e3331105eb1a7fd927d98373e529c5d8fa37d071b200",
+    "bytes": 223
+  },
+  {
+    "path": "Inspector.cs",
+    "sha256": "01376da312679d5448735f083ede83403cd9e69017f1324c256eb67f91f734a7",
+    "bytes": 10896
+  },
+  {
+    "path": "execution.json",
+    "sha256": "b795f493888c759af3169fb3886049ed2dbebacfb738d0888d937bc68214878d",
+    "bytes": 357
+  },
+  {
+    "path": "invocation.json",
+    "sha256": "76f412ab017d6f22e2a249f1603939d7b8f712d149e10b787ba95284210799ac",
+    "bytes": 1521
+  },
+  {
+    "path": "/workspace/admin-overnight-checkpoint/checkpoints/local-alpha/2026-10-12-admin-db/evidence/startup-read-contract.json",
+    "sha256": "f59e9982d5b0f7cbfc885d0a34b8c4c89879eec0987fa4e8188c3833fea0606a",
+    "sourceCommit": "07eceffcf1059ba861c929b3725ed2a2e23d3f56"
+  }
+]

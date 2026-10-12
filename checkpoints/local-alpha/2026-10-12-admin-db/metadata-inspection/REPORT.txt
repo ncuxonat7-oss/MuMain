@@ -1,0 +1,21 @@
+Single candidate metadata inspection — PASS (scoped export)
+
+Owner changed the isolation condition for this one attempt at 2026-10-12 03:52:25 UTC. The unchanged platform restrictions were used, with residual network/database side-effect risk accepted. No bwrap retry, escalation or security/network change occurred. Prior failed-isolation evidence remains intact.
+
+Fresh private copy: 125 existing manifest files verified by size/SHA256, including Persistence f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014. No original XML or secrets copied. New credential-free XML contains only requested context mappings and a nonexistent Unix socket placeholder. The placeholder is not claimed as isolation.
+
+Compiled only Inspector.cs using existing SDK10.0.401 Roslyn, local .NET reference pack10.0.12 and the existing EF references. Compiler exit0, no output. No NuGet restore/download or OpenMU rebuild. Exact compiler response file and invocation are retained.
+
+One candidate attempt executed, exit0, 0.717 seconds, 0.702 CPU seconds, peak RSS 86604 KiB. The supervisor enforced a 120-second timeout and atomically created a nonreusable attempt marker. No retry. stdout/stderr were empty. Existing launch/grant code and checkpoint 07eceffcf1059ba861c929b3725ed2a2e23d3f56 remain unchanged/clean.
+
+ACTUALLY EXECUTED: candidate initialization, EntityDataContext.CompleteModel acquisition, candidate ModelExtensions.IsMemberOfAggregate, the two TypedContext factories, their Model/ReadOnlyTypes/IsBackReference metadata computations. This was execution of candidate/model code, not a static PE read. The actual complete model is the candidate's compiled ForEntityDataContext.EntityDataContextModel.
+
+OUTPUTS: game-navigation.json contains 81 metadata entity records and ordered traversal edges. All24 root navigations have computed aggregate=true, with no unresolved aggregate flags. PlugInConfigurationTypedContext exports two entity types: GameConfiguration(31properties,1navigation) and PlugInConfiguration(7properties,0navigations). SystemConfigurationTypedContext exports SystemConfiguration(12properties,0navigations). Exports retain schema/table/property-column mapping, CLR and shadow/property-info flags, ordered PK/FK keys, inverse/collection/aggregate flags and typed back-reference/read-only information. The three requested exports completed without exceptions.
+
+NOT RUN: Startup, application entry point, JSON query builder, intentional connection-opening/query APIs, migrations, PostgreSQL/game/server startup, database/permission changes, Windows, publication. EF DiagnosticListener and System.Net EventSource monitors were armed to terminate on observed connection-opening/command-execution/socket-connect/HTTP-request start events. No such event/sentinel appeared. This is not exhaustive proof of no possible side effects or full egress isolation.
+
+COMPLETENESS LIMIT: the requested model export succeeded within its traversal scope; a complete read-permission list is not yet established. Some of the81 records describe reference-only targets and must not be turned into grants. No emitted SQL, live-schema validation or deployment readiness is claimed.
+
+Next recommendation: a separate static reconciliation of this metadata with the already pinned JSON-builder/TypedContext rules, producing the exact table/column read list without another candidate execution or database access.
+
+Preparation and closeout used approximately6active minutes, within the15-minute limit. All results remain local.

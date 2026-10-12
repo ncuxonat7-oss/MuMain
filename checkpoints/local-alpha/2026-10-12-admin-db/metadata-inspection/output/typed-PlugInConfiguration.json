@@ -1,0 +1,468 @@
+{
+  "contextType": "MUnique.OpenMU.Persistence.EntityFramework.TypedContexts.PlugInConfigurationTypedContext",
+  "modelType": "MUnique.OpenMU.Persistence.EntityFramework.CompiledModels.ForPlugInConfigurationTypedContext.PlugInConfigurationTypedContextModel",
+  "editType": "MUnique.OpenMU.PlugIns.PlugInConfiguration",
+  "readOnlyTypes": [],
+  "entities": [
+    {
+      "name": "MUnique.OpenMU.Persistence.EntityFramework.Model.GameConfiguration",
+      "clrType": "MUnique.OpenMU.Persistence.EntityFramework.Model.GameConfiguration",
+      "baseClrType": "MUnique.OpenMU.DataModel.Configuration.GameConfiguration",
+      "schema": "config",
+      "table": "GameConfiguration",
+      "properties": [
+        {
+          "name": "Id",
+          "column": "Id",
+          "columnType": "uuid",
+          "clrType": "System.Guid",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "Id",
+          "fieldInfo": "\u003CId\u003Ek__BackingField"
+        },
+        {
+          "name": "AreaSkillHitsPlayer",
+          "column": "AreaSkillHitsPlayer",
+          "columnType": "boolean",
+          "clrType": "System.Boolean",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "AreaSkillHitsPlayer",
+          "fieldInfo": "\u003CAreaSkillHitsPlayer\u003Ek__BackingField"
+        },
+        {
+          "name": "CashShopConfigurationId",
+          "column": "CashShopConfigurationId",
+          "columnType": "uuid",
+          "clrType": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "CashShopConfigurationId",
+          "fieldInfo": "\u003CCashShopConfigurationId\u003Ek__BackingField"
+        },
+        {
+          "name": "CastleSiegeConfigurationId",
+          "column": "CastleSiegeConfigurationId",
+          "columnType": "uuid",
+          "clrType": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "CastleSiegeConfigurationId",
+          "fieldInfo": "\u003CCastleSiegeConfigurationId\u003Ek__BackingField"
+        },
+        {
+          "name": "CharacterNameRegex",
+          "column": "CharacterNameRegex",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "CharacterNameRegex",
+          "fieldInfo": "\u003CCharacterNameRegex\u003Ek__BackingField"
+        },
+        {
+          "name": "ClampMoneyOnPickup",
+          "column": "ClampMoneyOnPickup",
+          "columnType": "boolean",
+          "clrType": "System.Boolean",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "ClampMoneyOnPickup",
+          "fieldInfo": "\u003CClampMoneyOnPickup\u003Ek__BackingField"
+        },
+        {
+          "name": "DamagePerOneItemDurability",
+          "column": "DamagePerOneItemDurability",
+          "columnType": "double precision",
+          "clrType": "System.Double",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "DamagePerOneItemDurability",
+          "fieldInfo": "\u003CDamagePerOneItemDurability\u003Ek__BackingField"
+        },
+        {
+          "name": "DamagePerOnePetDurability",
+          "column": "DamagePerOnePetDurability",
+          "columnType": "double precision",
+          "clrType": "System.Double",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "DamagePerOnePetDurability",
+          "fieldInfo": "\u003CDamagePerOnePetDurability\u003Ek__BackingField"
+        },
+        {
+          "name": "DuelConfigurationId",
+          "column": "DuelConfigurationId",
+          "columnType": "uuid",
+          "clrType": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "DuelConfigurationId",
+          "fieldInfo": "\u003CDuelConfigurationId\u003Ek__BackingField"
+        },
+        {
+          "name": "ExcellentItemDropLevelDelta",
+          "column": "ExcellentItemDropLevelDelta",
+          "columnType": "smallint",
+          "clrType": "System.Byte",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "ExcellentItemDropLevelDelta",
+          "fieldInfo": "\u003CExcellentItemDropLevelDelta\u003Ek__BackingField"
+        },
+        {
+          "name": "ExperienceFormula",
+          "column": "ExperienceFormula",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "ExperienceFormula",
+          "fieldInfo": "\u003CExperienceFormula\u003Ek__BackingField"
+        },
+        {
+          "name": "ExperienceRate",
+          "column": "ExperienceRate",
+          "columnType": "real",
+          "clrType": "System.Single",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "ExperienceRate",
+          "fieldInfo": "\u003CExperienceRate\u003Ek__BackingField"
+        },
+        {
+          "name": "HitsPerOneItemDurability",
+          "column": "HitsPerOneItemDurability",
+          "columnType": "double precision",
+          "clrType": "System.Double",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "HitsPerOneItemDurability",
+          "fieldInfo": "\u003CHitsPerOneItemDurability\u003Ek__BackingField"
+        },
+        {
+          "name": "InfoRange",
+          "column": "InfoRange",
+          "columnType": "smallint",
+          "clrType": "System.Byte",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "InfoRange",
+          "fieldInfo": "\u003CInfoRange\u003Ek__BackingField"
+        },
+        {
+          "name": "ItemDropDuration",
+          "column": "ItemDropDuration",
+          "columnType": "interval",
+          "clrType": "System.TimeSpan",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "ItemDropDuration",
+          "fieldInfo": "\u003CItemDropDuration\u003Ek__BackingField"
+        },
+        {
+          "name": "LetterSendPrice",
+          "column": "LetterSendPrice",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "LetterSendPrice",
+          "fieldInfo": "\u003CLetterSendPrice\u003Ek__BackingField"
+        },
+        {
+          "name": "MasterExperienceFormula",
+          "column": "MasterExperienceFormula",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "MasterExperienceFormula",
+          "fieldInfo": "\u003CMasterExperienceFormula\u003Ek__BackingField"
+        },
+        {
+          "name": "MasterExperienceRate",
+          "column": "MasterExperienceRate",
+          "columnType": "real",
+          "clrType": "System.Single",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MasterExperienceRate",
+          "fieldInfo": "\u003CMasterExperienceRate\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumCharactersPerAccount",
+          "column": "MaximumCharactersPerAccount",
+          "columnType": "smallint",
+          "clrType": "System.Byte",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumCharactersPerAccount",
+          "fieldInfo": "\u003CMaximumCharactersPerAccount\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumInventoryMoney",
+          "column": "MaximumInventoryMoney",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumInventoryMoney",
+          "fieldInfo": "\u003CMaximumInventoryMoney\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumItemOptionLevelDrop",
+          "column": "MaximumItemOptionLevelDrop",
+          "columnType": "smallint",
+          "clrType": "System.Byte",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumItemOptionLevelDrop",
+          "fieldInfo": "\u003CMaximumItemOptionLevelDrop\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumLetters",
+          "column": "MaximumLetters",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumLetters",
+          "fieldInfo": "\u003CMaximumLetters\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumLevel",
+          "column": "MaximumLevel",
+          "columnType": "smallint",
+          "clrType": "System.Int16",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumLevel",
+          "fieldInfo": "\u003CMaximumLevel\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumMasterLevel",
+          "column": "MaximumMasterLevel",
+          "columnType": "smallint",
+          "clrType": "System.Int16",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumMasterLevel",
+          "fieldInfo": "\u003CMaximumMasterLevel\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumPartySize",
+          "column": "MaximumPartySize",
+          "columnType": "smallint",
+          "clrType": "System.Byte",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumPartySize",
+          "fieldInfo": "\u003CMaximumPartySize\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumPasswordLength",
+          "column": "MaximumPasswordLength",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumPasswordLength",
+          "fieldInfo": "\u003CMaximumPasswordLength\u003Ek__BackingField"
+        },
+        {
+          "name": "MaximumVaultMoney",
+          "column": "MaximumVaultMoney",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MaximumVaultMoney",
+          "fieldInfo": "\u003CMaximumVaultMoney\u003Ek__BackingField"
+        },
+        {
+          "name": "MinimumMonsterLevelForMasterExperience",
+          "column": "MinimumMonsterLevelForMasterExperience",
+          "columnType": "smallint",
+          "clrType": "System.Byte",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "MinimumMonsterLevelForMasterExperience",
+          "fieldInfo": "\u003CMinimumMonsterLevelForMasterExperience\u003Ek__BackingField"
+        },
+        {
+          "name": "PreventExperienceOverflow",
+          "column": "PreventExperienceOverflow",
+          "columnType": "boolean",
+          "clrType": "System.Boolean",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "PreventExperienceOverflow",
+          "fieldInfo": "\u003CPreventExperienceOverflow\u003Ek__BackingField"
+        },
+        {
+          "name": "RecoveryInterval",
+          "column": "RecoveryInterval",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "RecoveryInterval",
+          "fieldInfo": "\u003CRecoveryInterval\u003Ek__BackingField"
+        },
+        {
+          "name": "ShouldDropMoney",
+          "column": "ShouldDropMoney",
+          "columnType": "boolean",
+          "clrType": "System.Boolean",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "ShouldDropMoney",
+          "fieldInfo": "\u003CShouldDropMoney\u003Ek__BackingField"
+        }
+      ],
+      "primaryKey": [
+        "Id"
+      ],
+      "keys": [
+        [
+          "Id"
+        ]
+      ],
+      "foreignKeys": [],
+      "navigations": [
+        {
+          "name": "RawPlugInConfigurations",
+          "declaringType": "MUnique.OpenMU.Persistence.EntityFramework.Model.GameConfiguration",
+          "targetType": "MUnique.OpenMU.Persistence.EntityFramework.Model.PlugInConfiguration",
+          "targetTable": "PlugInConfiguration",
+          "targetSchema": "config",
+          "collection": true,
+          "propertyInfo": "RawPlugInConfigurations",
+          "aggregate": true,
+          "propertyAttributeTypes": [],
+          "inverse": null,
+          "fkDeclaringType": "MUnique.OpenMU.Persistence.EntityFramework.Model.PlugInConfiguration",
+          "fkProperties": [
+            {
+              "name": "GameConfigurationId",
+              "shadow": true,
+              "propertyInfo": null
+            }
+          ],
+          "principalKey": [
+            "Id"
+          ],
+          "principalToDependent": "RawPlugInConfigurations",
+          "collectionBackReference": true
+        }
+      ],
+      "skipNavigations": [],
+      "typedBackReference": false
+    },
+    {
+      "name": "MUnique.OpenMU.Persistence.EntityFramework.Model.PlugInConfiguration",
+      "clrType": "MUnique.OpenMU.Persistence.EntityFramework.Model.PlugInConfiguration",
+      "baseClrType": "MUnique.OpenMU.PlugIns.PlugInConfiguration",
+      "schema": "config",
+      "table": "PlugInConfiguration",
+      "properties": [
+        {
+          "name": "Id",
+          "column": "Id",
+          "columnType": "uuid",
+          "clrType": "System.Guid",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "Id",
+          "fieldInfo": "\u003CId\u003Ek__BackingField"
+        },
+        {
+          "name": "CustomConfiguration",
+          "column": "CustomConfiguration",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "CustomConfiguration",
+          "fieldInfo": "_customConfiguration"
+        },
+        {
+          "name": "CustomPlugInSource",
+          "column": "CustomPlugInSource",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "CustomPlugInSource",
+          "fieldInfo": "\u003CCustomPlugInSource\u003Ek__BackingField"
+        },
+        {
+          "name": "ExternalAssemblyName",
+          "column": "ExternalAssemblyName",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "ExternalAssemblyName",
+          "fieldInfo": "\u003CExternalAssemblyName\u003Ek__BackingField"
+        },
+        {
+          "name": "GameConfigurationId",
+          "column": "GameConfigurationId",
+          "columnType": "uuid",
+          "clrType": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+          "nullable": true,
+          "shadow": true,
+          "propertyInfo": null,
+          "fieldInfo": null
+        },
+        {
+          "name": "IsActive",
+          "column": "IsActive",
+          "columnType": "boolean",
+          "clrType": "System.Boolean",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "IsActive",
+          "fieldInfo": "_isActive"
+        },
+        {
+          "name": "TypeId",
+          "column": "TypeId",
+          "columnType": "uuid",
+          "clrType": "System.Guid",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "TypeId",
+          "fieldInfo": "\u003CTypeId\u003Ek__BackingField"
+        }
+      ],
+      "primaryKey": [
+        "Id"
+      ],
+      "keys": [
+        [
+          "Id"
+        ]
+      ],
+      "foreignKeys": [
+        {
+          "properties": [
+            "GameConfigurationId"
+          ],
+          "principalType": "MUnique.OpenMU.Persistence.EntityFramework.Model.GameConfiguration",
+          "principalKey": [
+            "Id"
+          ],
+          "unique": false,
+          "required": false
+        }
+      ],
+      "navigations": [],
+      "skipNavigations": [],
+      "typedBackReference": false
+    }
+  ]
+}

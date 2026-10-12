@@ -1,0 +1,8 @@
+[
+  {
+    "type": "MUnique.OpenMU.Persistence.EntityFramework.ModelExtensions",
+    "method": "IsMemberOfAggregate",
+    "argument": "Microsoft.EntityFrameworkCore.Metadata.IReadOnlyNavigationBase",
+    "assembly": "MUnique.OpenMU.Persistence.EntityFramework"
+  }
+]

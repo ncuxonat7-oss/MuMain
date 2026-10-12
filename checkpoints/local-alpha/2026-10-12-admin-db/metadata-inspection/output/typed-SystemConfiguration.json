@@ -1,0 +1,149 @@
+{
+  "contextType": "MUnique.OpenMU.Persistence.EntityFramework.TypedContexts.SystemConfigurationTypedContext",
+  "modelType": "MUnique.OpenMU.Persistence.EntityFramework.CompiledModels.ForSystemConfigurationTypedContext.SystemConfigurationTypedContextModel",
+  "editType": "MUnique.OpenMU.DataModel.Configuration.SystemConfiguration",
+  "readOnlyTypes": [],
+  "entities": [
+    {
+      "name": "MUnique.OpenMU.Persistence.EntityFramework.Model.SystemConfiguration",
+      "clrType": "MUnique.OpenMU.Persistence.EntityFramework.Model.SystemConfiguration",
+      "baseClrType": "MUnique.OpenMU.DataModel.Configuration.SystemConfiguration",
+      "schema": "config",
+      "table": "SystemConfiguration",
+      "properties": [
+        {
+          "name": "Id",
+          "column": "Id",
+          "columnType": "uuid",
+          "clrType": "System.Guid",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "Id",
+          "fieldInfo": "\u003CId\u003Ek__BackingField"
+        },
+        {
+          "name": "AutoStart",
+          "column": "AutoStart",
+          "columnType": "boolean",
+          "clrType": "System.Boolean",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "AutoStart",
+          "fieldInfo": "\u003CAutoStart\u003Ek__BackingField"
+        },
+        {
+          "name": "AutoUpdateSchema",
+          "column": "AutoUpdateSchema",
+          "columnType": "boolean",
+          "clrType": "System.Boolean",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "AutoUpdateSchema",
+          "fieldInfo": "\u003CAutoUpdateSchema\u003Ek__BackingField"
+        },
+        {
+          "name": "IpResolver",
+          "column": "IpResolver",
+          "columnType": "integer",
+          "clrType": "MUnique.OpenMU.Network.IpResolverType",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "IpResolver",
+          "fieldInfo": "\u003CIpResolver\u003Ek__BackingField"
+        },
+        {
+          "name": "IpResolverParameter",
+          "column": "IpResolverParameter",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "IpResolverParameter",
+          "fieldInfo": "\u003CIpResolverParameter\u003Ek__BackingField"
+        },
+        {
+          "name": "NetworkAnalyzerLiveBufferSize",
+          "column": "NetworkAnalyzerLiveBufferSize",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "NetworkAnalyzerLiveBufferSize",
+          "fieldInfo": "\u003CNetworkAnalyzerLiveBufferSize\u003Ek__BackingField"
+        },
+        {
+          "name": "NetworkObservationArchivePath",
+          "column": "NetworkObservationArchivePath",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "NetworkObservationArchivePath",
+          "fieldInfo": "\u003CNetworkObservationArchivePath\u003Ek__BackingField"
+        },
+        {
+          "name": "NetworkObservationMaxSessionSizeMb",
+          "column": "NetworkObservationMaxSessionSizeMb",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "NetworkObservationMaxSessionSizeMb",
+          "fieldInfo": "\u003CNetworkObservationMaxSessionSizeMb\u003Ek__BackingField"
+        },
+        {
+          "name": "NetworkObservationMaxTotalSizeMb",
+          "column": "NetworkObservationMaxTotalSizeMb",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "NetworkObservationMaxTotalSizeMb",
+          "fieldInfo": "\u003CNetworkObservationMaxTotalSizeMb\u003Ek__BackingField"
+        },
+        {
+          "name": "NetworkObservationRetentionDays",
+          "column": "NetworkObservationRetentionDays",
+          "columnType": "integer",
+          "clrType": "System.Int32",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "NetworkObservationRetentionDays",
+          "fieldInfo": "\u003CNetworkObservationRetentionDays\u003Ek__BackingField"
+        },
+        {
+          "name": "ReadConsoleInput",
+          "column": "ReadConsoleInput",
+          "columnType": "boolean",
+          "clrType": "System.Boolean",
+          "nullable": false,
+          "shadow": false,
+          "propertyInfo": "ReadConsoleInput",
+          "fieldInfo": "\u003CReadConsoleInput\u003Ek__BackingField"
+        },
+        {
+          "name": "TimeZoneId",
+          "column": "TimeZoneId",
+          "columnType": "text",
+          "clrType": "System.String",
+          "nullable": true,
+          "shadow": false,
+          "propertyInfo": "TimeZoneId",
+          "fieldInfo": "\u003CTimeZoneId\u003Ek__BackingField"
+        }
+      ],
+      "primaryKey": [
+        "Id"
+      ],
+      "keys": [
+        [
+          "Id"
+        ]
+      ],
+      "foreignKeys": [],
+      "navigations": [],
+      "skipNavigations": [],
+      "typedBackReference": false
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+Saved-metadata reconciliation — static only, local, not grant authority
+
+Resolved from the completed candidate attempt:
+- The generated Raw* aggregate bridge is now observed: all24 GameConfiguration navigations return aggregate=true through the candidate's actual ModelExtensions helper.
+- CashShopConfiguration, CastleSiegeConfiguration and DuelConfiguration root FKs are nonshadow, aggregate and not collection back-references. The pinned builder expands them; feature disablement alone cannot remove these SQL dependencies.
+- The captured recursive decisions separate full-row, parent-FK-only and join-column branches. Grouping those decisions yields69 full-row projections (66config,3data: Item, ItemOptionLink, ItemStorage) and12 join-table projections (11config,1data: ItemItemOfItemSet). This is a rule-based derivation, not permission inferred from the number81. It is not an executable grant profile.
+- The candidate compiled plugin Typed model contains GameConfiguration plus PlugInConfiguration, but the queried plugin root has zero outgoing navigations. System's compiled Typed model has only SystemConfiguration and zero outgoing navigations. Their7 and12 projected columns match the prior contract; GameConfiguration's31 columns also match.
+- Actual property-column mapping is available, including ItemSlotType.RawItemSlots -> ItemSlots. All inspected aggregate flags resolved; each traversed join has exactly one other single-column FK, so the observed join branch needs no fallback-key choice.
+
+Sufficiency and remaining limits:
+The exports plus the saved inspector branch decisions suffice for a bounded static projection list for this GameConfiguration JSON root and the two selected Typed scalar roots. reconciliation.json records that derived list without granting anything. Generated SQL was not captured, and alias.* remains tied to actual physical schema, not just mapped properties.
+One raw field is not independently serialized: the primary/key declaring entity identity (or hasDeclaredPrimaryKey). Inspector.cs already evaluated the declared-PK branch and recorded its action; thus it is not an unresolved branch in the saved trace. A checker that must independently replay from raw model fields alone would still need that field. No additional candidate run is recommended merely to repeat resolved aggregate/typed facts.
+The broader startup profile remains incomplete: conditional plugin/custom-reference data-source entry paths and their connection/role attribution are not established by these exports. Feature/write closure, live ACL acceptance and Windows/package readiness remain outside this result. No blanket grants follow for all model or metadata entities.
+
+Provenance:
+Candidate Persistence SHA256 f12b509a8e99453bec482049cc92c2ec677c424accf6e3b019c155c342437014.
+OpenMU source pin d067b3c11c23c3145de6e2c76201ab9a93b267c8.
+JsonQueryBuilder Git blob531275190bce67ca417fc64ea5d2303aa701c679; SHA256 b66e777e3189074cde066febd2e4350b68e752a2f8a62fda36986e7be465dad5.
+TypedContext Git blob72bf17534a42f6ee719758fe0de32da463d1461e.
+Existing startup-read contract is at checkpoint07eceffcf1059ba861c929b3725ed2a2e23d3f56.
+reconciliation-input-hashes.json links exact export/source/invocation hashes. Original source provenance is retained in the existing checkpoint's evidence/startup-read-provenance.json.
+
+No assembly loading, harness, database, tests, grants, installation or publication occurred in this reconciliation. Remote checkpoint and launch guards remain unchanged. Next recommendation: review this static projection list and its explicit startup-attribution boundary; obtain external checkpoint permission for the sanitized unique evidence listed in publication-candidates.json. Do not reactivate setup or widen scope from this addendum.

@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/workspace/mumain-tools/dotnet-10.0.401/dotnet",
+    "exec",
+    "/workspace/mumain-tools/dotnet-10.0.401/sdk/10.0.401/Roslyn/bincore/csc.dll",
+    "@/workspace/model-metadata-attempt-3CAOLW9n/compile.rsp"
+  ],
+  "environmentCleared": true,
+  "environment": {
+    "PATH": "/usr/bin:/bin",
+    "DOTNET_ROOT": "/workspace/mumain-tools/dotnet-10.0.401",
+    "DOTNET_CLI_HOME": "/workspace/model-metadata-attempt-3CAOLW9n/dotnet-home",
+    "DOTNET_NOLOGO": "1",
+    "DOTNET_CLI_TELEMETRY_OPTOUT": "1",
+    "DOTNET_GENERATE_ASPNET_CERTIFICATE": "false"
+  },
+  "exitCode": 0,
+  "referencePack": "Microsoft.NETCore.App.Ref/10.0.12/ref/net10.0",
+  "packageRestore": false,
+  "candidateCodeExecutedDuringCompilation": false
+}
