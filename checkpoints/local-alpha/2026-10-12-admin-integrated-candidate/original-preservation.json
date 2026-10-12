@@ -1,0 +1,12 @@
+{
+  "originalControlHashesUnchanged": {
+    "package-inventory.json": "69f7a0700ef387a23c75e0427044674974a54c0a987e6a788ab5bbf3c9aa2d5f",
+    "package-admission.json": "c7e0a32cc310f0d2d5cb27f88df89a38b42bdd9c752a637cc16b8952c71c95f0",
+    "packaging-status.json": "d7368da5d033e1373f0e4a3ed75aab3d6f236c3d9df86b70c1572aa7293cb6bb"
+  },
+  "payloadBytes": 1417254100,
+  "totalFilesIncludingFourControls": 24426,
+  "totalBytesIncludingFourControls": 1427995168,
+  "changedExisting": 4,
+  "added": 5
+}

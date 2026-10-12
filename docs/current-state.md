@@ -2,9 +2,9 @@
 
 The [integrated setup checkpoint](../checkpoints/local-alpha/2026-10-12-alpha-setup-integrated/README.md) preserves bounded SQL role checks, actual Account load/save/rollback with unchanged data and clean shutdown, sanitized activation evidence, the prepared role profile, and admin-integrated source with **82/82 PowerShell unit tests PASS** (external boundaries stubbed; prior 54 preserved). No completed runtime test was repeated for publication. Broader grants and Windows readiness are not certified.
 
-Parent reports phase1552 candidate 24,422 files / 1,417,254,100 bytes, inventory `37a88628e89530fd9da8e295d2a289f1563a4dea06653d2de161178e26e519cd`, actual full PowerShell Verify + eight package checks PASS. Parent candidate report/control-file backups are pending its follow-up commit; this first checkpoint does not claim them complete. Launch remains false/null; setup application approval remains absent.
+Parent reports phase1552 candidate 24,422 files / 1,417,254,100 bytes, inventory `37a88628e89530fd9da8e295d2a289f1563a4dea06653d2de161178e26e519cd`, actual full PowerShell Verify + eight package checks PASS. The [candidate evidence checkpoint](../checkpoints/local-alpha/2026-10-12-admin-integrated-candidate/README.md) now preserves the local builder, tests, report and exact control-file identities; large control-file/payload bytes remain private and are not included. Launch remains false/null; setup application approval remains absent.
 
-**Single next step:** separately authorized Windows deployment/credential handoff, after completing the parent's pending evidence backup. Publication does not authorize deployment, workflows, credentials, database actions, grants or startup. Main/readiness unchanged; do not replay completed tests.
+**Single next step:** separately authorized Windows deployment/credential handoff; the small candidate evidence backup is complete. Publication does not authorize deployment, workflows, credentials, database actions, grants or startup. Main/readiness unchanged; do not replay completed tests.
 
 ## Earlier checkpoints — historical; the result and next step above take precedence
 

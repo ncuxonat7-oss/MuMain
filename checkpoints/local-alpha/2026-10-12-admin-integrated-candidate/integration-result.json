@@ -1,0 +1,53 @@
+{
+  "status": "FULL_DISABLED_PACKAGE_INTEGRITY_PASS",
+  "candidateDirectory": "control-admin-integrated-disabled-20261012",
+  "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+  "inventorySha256": "37a88628e89530fd9da8e295d2a289f1563a4dea06653d2de161178e26e519cd",
+  "payloadFiles": 24422,
+  "payloadBytes": 1417254100,
+  "totalFiles": 24426,
+  "totalBytes": 1427995168,
+  "sourceOverlayFiles": 12,
+  "unchangedOverlayFiles": 3,
+  "changedExistingFiles": 4,
+  "addedFiles": 5,
+  "actualPowerShell": "7.4.20 Linux",
+  "fullVerify": {
+    "exit": 0,
+    "result": "PACKAGE_INTEGRITY_OK"
+  },
+  "unitTests": {
+    "passed": 82,
+    "failed": 0,
+    "externalUtilityCalls": 0,
+    "databaseOperations": 0
+  },
+  "packageIntegrationChecks": {
+    "passed": 8,
+    "failed": 0,
+    "checks": [
+      "PASS coherent complete-package metadata and executing-script integrity",
+      "PASS launch admission rejects disabled contract",
+      "PASS real setup orchestration stops at application approval before credentials or DB",
+      "PASS direct admin provisioning stops at application approval",
+      "PASS wrong independent manifest pin rejected before payload hashing",
+      "PASS missing admin SQL rejected by integrated package contract",
+      "PASS corrupt admin SQL rejected by integrated package contract",
+      "PASS zero external utility or SQL invocations"
+    ]
+  },
+  "firstIntegrationAttempt": "Missing-file test incorrectly expected custom exception text. Actual guard correctly raised ObjectNotFound. Test assertion fixed; package code unchanged; final eight cases passed. Original attempt retained.",
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null,
+  "setupApplicationApprovalSha256": null,
+  "windowsAcceptance": "NOT_RUN",
+  "liveValidationStatus": "NOT_RUN",
+  "runtimeGrantStatus": "DISPOSABLE_PROFILE_PREPARED",
+  "remaining": [
+    "Separate setup-application/credential authorization and target-bound approval are absent.",
+    "Admin provisioning and grants were not executed against a database.",
+    "Windows runtime/HTTP/game/login/movement/save acceptance remains NOT_RUN."
+  ],
+  "archiveCreated": false,
+  "published": false
+}

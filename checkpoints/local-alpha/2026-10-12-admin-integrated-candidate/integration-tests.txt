@@ -1,0 +1,8 @@
+PASS coherent complete-package metadata and executing-script integrity
+PASS launch admission rejects disabled contract
+PASS real setup orchestration stops at application approval before credentials or DB
+PASS direct admin provisioning stops at application approval
+PASS wrong independent manifest pin rejected before payload hashing
+PASS missing admin SQL rejected by integrated package contract
+PASS corrupt admin SQL rejected by integrated package contract
+PASS zero external utility or SQL invocations

@@ -1,0 +1,109 @@
+{
+  "status": "COPY_HASH_PASS_NOT_YET_POWERSHELL_VERIFIED",
+  "parentInventorySha256": "69f7a0700ef387a23c75e0427044674974a54c0a987e6a788ab5bbf3c9aa2d5f",
+  "inventorySha256": "37a88628e89530fd9da8e295d2a289f1563a4dea06653d2de161178e26e519cd",
+  "payloadFiles": 24422,
+  "payloadBytes": 1417254100,
+  "addedFiles": [
+    "scripts/windows11/AdminProvisioning.ps1",
+    "scripts/windows11/admin-provisioning-contract.json",
+    "scripts/windows11/admin-provisioning.original.sql",
+    "scripts/windows11/admin-provisioning.sql",
+    "scripts/windows11/disposable-role-profile.json"
+  ],
+  "changedFiles": [
+    {
+      "path": "scripts/windows11/AdminProvisioning.ps1",
+      "bytes": 7456,
+      "sha256": "89158fa6f8d313289d68b06024c2998b5ecc5d53fb6f9a513b4ce811cf9bcd91",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": null
+    },
+    {
+      "path": "scripts/windows11/FirstSetup.ps1",
+      "bytes": 31724,
+      "sha256": "86d5006183749247c7e6fae17c0b012e9a51ff752d3419c303df7f2bf3d5951b",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": "69df366719dd73622b694c61d269017e40a50215a7d6f8c0a1ae9589a50dbed7"
+    },
+    {
+      "path": "scripts/windows11/Guards.ps1",
+      "bytes": 28133,
+      "sha256": "1bceae83d51742743a6ca35baa96ae32e34b2c50e93eef364e4867b2b4365afe",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": "d7da045fd2690d4a8d67044e2a1319b510745c2bd29144dfe8dfce60e2afe77a"
+    },
+    {
+      "path": "scripts/windows11/SetupMU.ps1",
+      "bytes": 1058,
+      "sha256": "629a674ef155182e94f5ea76ed255a43cbc7499dd885f2db24b813ad2450360a",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": "c21f00c132d4028b947c0112b486da77cdfe238fd14d05af44d35d278c756434"
+    },
+    {
+      "path": "scripts/windows11/admin-provisioning-contract.json",
+      "bytes": 838,
+      "sha256": "3243bc44f592e7fe7b41bb5be329ab1d9021811aaf7dc1300052d6799a0c4377",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": null
+    },
+    {
+      "path": "scripts/windows11/admin-provisioning.original.sql",
+      "bytes": 2090,
+      "sha256": "b2c66b33e363c0c5b3b3d33698c46657699e8529bb8aad9878cefd4fee953067",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": null
+    },
+    {
+      "path": "scripts/windows11/admin-provisioning.sql",
+      "bytes": 2087,
+      "sha256": "5e3f625b6c6b0a56596e36763df592fa1fb11a1b000d6a386e3c7e2ed95d62dd",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": null
+    },
+    {
+      "path": "scripts/windows11/disposable-role-profile.json",
+      "bytes": 17689,
+      "sha256": "5e186c3e242b677c5d2ce37032bd3316a0bf0e30312ca252ba23b1770c57c7a6",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": null
+    },
+    {
+      "path": "scripts/windows11/first-setup-policy.json",
+      "bytes": 1044,
+      "sha256": "15023e44c5997321245fd6e1851ec16671b6934b3eb6e8292c53025c90ac79cf",
+      "origin": "ADMIN_SETUP_SOURCE_INTEGRATION",
+      "sourceBundleSha256": "28a139de1113f47ef47d36972f70c2684e655887e82dd1180fe6bec76483994e",
+      "parentSha256": "a4c981e1f67b3b923611968e6d97f6798187ddf67fd7b31d6db63906f24a5697"
+    }
+  ],
+  "controlFiles": {
+    "package-inventory.json": {
+      "bytes": 7612223,
+      "sha256": "37a88628e89530fd9da8e295d2a289f1563a4dea06653d2de161178e26e519cd"
+    },
+    "package-admission.json": {
+      "bytes": 1221,
+      "sha256": "843f39e5eddd840d92252b0f2bc8e145fdae65918eeb0b84d7922b3b385df6fd"
+    },
+    "windows11-launch-manifest.draft.json": {
+      "bytes": 3127009,
+      "sha256": "04675c016699342357cc198d4d07ac137693acfcc2d49b988d93121a7986f534"
+    },
+    "packaging-status.json": {
+      "bytes": 615,
+      "sha256": "4e4b9ce0b19c17e32df0b74f87e2918f9f1b98c8d98022b77e1756f3640859da"
+    }
+  },
+  "originalInventoryUnchanged": true,
+  "launchEnabled": false,
+  "approvedLaunchManifestSha256": null
+}

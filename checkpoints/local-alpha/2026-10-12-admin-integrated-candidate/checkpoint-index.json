@@ -1,0 +1,68 @@
+{
+  "kind": "SMALL_PUBLIC_TEXT_EVIDENCE_ONLY",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3409,
+      "sha256": "aa76c3cfb397941b207ca3b3544238d05da9ed87072d5a0127be094a69dae355",
+      "gitBlobSha1": "466e0db02f909f35a2c641e8785a59ad6344bf85"
+    },
+    {
+      "path": "Test-PackageIntegration.ps1",
+      "bytes": 3476,
+      "sha256": "68da5753456577de9bef9914355ed21f5dcd4b42058a324ff6ce980361a2f8a5",
+      "gitBlobSha1": "96f9a2e3268b14226f2c0fb5436c4a13df390607"
+    },
+    {
+      "path": "assemble.py",
+      "bytes": 4134,
+      "sha256": "2ab3b6629b9a0af097d18366630c49e624a2bd52ba40215ebe5e2c6fcd1a488d",
+      "gitBlobSha1": "8b5a62f75ee79d3bf2ba8274df06f5ee61bdce74"
+    },
+    {
+      "path": "candidate-identities.json",
+      "bytes": 4713,
+      "sha256": "ee890654da5992ab5e623eaf9dade66478edd6601c145963cf7b1e5bd6b3b2df",
+      "gitBlobSha1": "c2d4d350cf1eb996cb89dd9738de5091983d20e0"
+    },
+    {
+      "path": "full-verify.txt",
+      "bytes": 21,
+      "sha256": "a9bfa9aa986dabcfa90862584f2573e75f45595562e6912e68487495540d246c",
+      "gitBlobSha1": "c09c234de557ce54f49516ff2a71a2ec64db28d4"
+    },
+    {
+      "path": "integration-result.json",
+      "bytes": 2212,
+      "sha256": "45adbc6e141bd955674722c46afe1c9ef9445c017ae934acd9a8675e5e5bdc77",
+      "gitBlobSha1": "006062ded88c9470fc5cb911356be3ad1c8ff6f4"
+    },
+    {
+      "path": "integration-tests.txt",
+      "bytes": 505,
+      "sha256": "e6da52e15f587a9994a291eb1185fb9b174604059fcff67a703d9a419246c537",
+      "gitBlobSha1": "edcc56aacd65aa6410ffa1f99e215e9eebd1bdfe"
+    },
+    {
+      "path": "original-preservation.json",
+      "bytes": 498,
+      "sha256": "0e1e1d6d3a5aa47142de3d9a7159493e973ff05cf35320d4ec2f4cd1559f5592",
+      "gitBlobSha1": "2ee1343a2be5923eb7d6c8646b968c8617349209"
+    },
+    {
+      "path": "report.txt",
+      "bytes": 2411,
+      "sha256": "8d1d2ec2121d2568dd90a50c4be40d912be6d9ed46ce91058443a873e57a3aa0",
+      "gitBlobSha1": "54d15132e00c658370769c10e68ce0fdfa54ded6"
+    }
+  ],
+  "indexNote": "This index lists the other nine files; its own identity is in the external staging manifest.",
+  "notIncluded": [
+    "payload binaries",
+    "database",
+    "credentials",
+    "archives",
+    "raw private logs"
+  ],
+  "candidateInventorySha256": "37a88628e89530fd9da8e295d2a289f1563a4dea06653d2de161178e26e519cd"
+}
